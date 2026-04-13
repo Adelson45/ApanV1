@@ -1,0 +1,608 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Melhores Intercomunicadores para Moto 2026 | Comunicação em Grupo';
+const description = 'Descubra os melhores intercomunicadores para moto de 2026. Análises de headsets Bluetooth para comunicação entre pilotos, GPS e música durante a pilotagem.';
+
+const intercoms = [
+  {
+    name: 'Sena 50S',
+    subtitle: 'Harman Kardon',
+    price: 'R$ 1.800 - R$ 2.400',
+    rating: 4.9,
+    image: '/images/sena-50s.jpg',
+    affiliateLink: 'https://amzn.to/sena50s',
+    description: 'O Sena 50S com áudio Harman Kardon é o intercomunicador premium de referência, oferecendo som de alta fidelidade e comunicação Mesh 2.0 revolucionária.',
+    features: [
+      'Áudio Harman Kardon com alto-falantes premium',
+      'Mesh 2.0 - conexão automática com grupo',
+      'Alcance de até 2km em Mesh Intercom',
+      'Bluetooth 5.0',
+      'Carregamento USB-C rápido'
+    ],
+    pros: [
+      'Qualidade de som excepcional',
+      'Mesh 2.0 elimina reconexões',
+      'Comunicação em grupo ilimitada',
+      'App intuitivo e completo'
+    ],
+    cons: [
+      'Preço premium',
+      'Bateria dura menos com Mesh ativo',
+      'Compatibilidade limitada com outras marcas'
+    ]
+  },
+  {
+    name: 'Cardo Packtalk Edge',
+    subtitle: 'JBL',
+    price: 'R$ 2.200 - R$ 2.800',
+    rating: 4.9,
+    image: '/images/cardo-packtalk-edge.jpg',
+    affiliateLink: 'https://amzn.to/cardoedge',
+    description: 'O Cardo Packtalk Edge com áudio JBL oferece tecnologia Air Mount e Dynamic Mesh Communication, sendo a escolha dos pilotos mais exigentes.',
+    features: [
+      'Áudio JBL com alto-falantes de 45mm',
+      'Dynamic Mesh Communication (DMC)',
+      'Alcance de até 1.6km',
+      'Air Mount - instalação magnética',
+      'À prova d\'água (IP67)'
+    ],
+    pros: [
+      'Instalação magnética inovadora',
+      'Som JBL de alta qualidade',
+      'DMC muito estável',
+      'Controles por voz naturais'
+    ],
+    cons: [
+      'Preço mais elevado da categoria',
+      'App menos intuitivo que Sena',
+      'Bateria não removível'
+    ]
+  },
+  {
+    name: 'Interphone Urban',
+    subtitle: 'U-Com 16',
+    price: 'R$ 450 - R$ 650',
+    rating: 4.4,
+    image: '/images/interphone-urban.jpg',
+    affiliateLink: 'https://amzn.to/interphoneurban',
+    description: 'O Interphone U-Com 16 é uma opção acessível italiana que oferece funcionalidades essenciais com boa qualidade para o dia a dia.',
+    features: [
+      'Conexão Bluetooth 5.1',
+      'Alcance de até 500m',
+      'Conexão com até 4 pilotos',
+      'Bateria com 16 horas de uso',
+      'Comando por voz Siri/Google'
+    ],
+    pros: [
+      'Preço acessível',
+      'Boa autonomia de bateria',
+      'Marca europeia confiável',
+      'Fácil instalação'
+    ],
+    cons: [
+      'Alcance limitado',
+      'Qualidade de som básica',
+      'Reconexão manual necessária',
+      'Sem sistema Mesh'
+    ]
+  },
+  {
+    name: 'Sena 20S Evo',
+    subtitle: 'Evo',
+    price: 'R$ 1.200 - R$ 1.600',
+    rating: 4.7,
+    image: '/images/sena-20s-evo.jpg',
+    affiliateLink: 'https://amzn.to/sena20sevo',
+    description: 'O Sena 20S Evo é um dos intercomunicadores mais populares do mundo, oferecendo excelente equilíbrio entre recursos e preço.',
+    features: [
+      'Áudio HD com filtros de ruído',
+      'Universal Intercom - conecta com outras marcas',
+      'Alcance de até 2km',
+      'Comunicação em conferência',
+      'Rádio FM integrado'
+    ],
+    pros: [
+      'Compatibilidade universal',
+      'Comunicação em grupo fluida',
+      'Preço mais acessível que 50S',
+      'Prova de água (IP66)'
+    ],
+    cons: [
+      'Sem tecnologia Mesh',
+      'Reconexão manual entre pilotos',
+      'App com recursos limitados vs 50S'
+    ]
+  }
+];
+
+const features = [
+  {
+    title: 'Bluetooth vs Mesh',
+    description: 'Bluetooth requer pareamento manual entre dispositivos. Mesh cria uma rede dinâmica onde todos se conectam automaticamente. Mesh é superior para grupos.'
+  },
+  {
+    title: 'Alcance Real',
+    description: 'O alcance máximo é em linha reta sem obstáculos. Na cidade, espere 30-50% do alcance máximo. Terrenos acidentados reduzem significativamente.'
+  },
+  {
+    title: 'Áudio e Ruído',
+    description: 'A velocidade do vento é o maior desafio. Alto-falantes de 40mm+ e boa vedação no capacete são essenciais. Marcas como JBL e Harman Kardon oferecem qualidade superior.'
+  },
+  {
+    title: 'Bateria',
+    description: 'Considere que bateria diminui com o tempo. 10+ horas é ideal para viagens longas. Carregamento rápido é útil para paradas curtas.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Melhores Intercomunicadores para Moto 2026</h1>
+        <p class="hero-subtitle">
+          Comunicação perfeita entre pilotos. Análises dos melhores intercoms Bluetooth 
+          com tecnologia Mesh, áudio premium e conectividade avançada.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Guide -->
+    <section class="features-section">
+      <div class="container">
+        <h2>O que Considerar na Escolha</h2>
+        <div class="features-grid">
+          {features.map(feature => (
+            <div class="feature-card">
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <h2>Top Intercomunicadores</h2>
+        <div class="products-grid">
+          {intercoms.map((intercom, index) => (
+            <article class="product-card">
+              <div class="product-header">
+                <span class="rank">#{index + 1}</span>
+                <div class="product-title">
+                  <h3>{intercom.name}</h3>
+                  <p class="subtitle">{intercom.subtitle}</p>
+                </div>
+              </div>
+              
+              <div class="product-body">
+                <div class="product-image">
+                  <img src={intercom.image} alt={intercom.name} loading="lazy" />
+                  <div class="product-meta">
+                    <span class="price">{intercom.price}</span>
+                    <span class="rating">★ {intercom.rating}</span>
+                  </div>
+                </div>
+                
+                <div class="product-info">
+                  <p class="description">{intercom.description}</p>
+                  
+                  <div class="features">
+                    <h4>Características</h4>
+                    <ul>
+                      {intercom.features.map(feature => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div class="verdict">
+                    <div class="pros">
+                      <h5>Prós</h5>
+                      <ul>
+                        {intercom.pros.map(pro => (
+                          <li>{pro}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div class="cons">
+                      <h5>Contras</h5>
+                      <ul>
+                        {intercom.cons.map(con => (
+                          <li>{con}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <a href={intercom.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                    Ver na Loja
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Note -->
+    <section class="install-section">
+      <div class="container">
+        <div class="install-box">
+          <h3>🔧 Instalação no Capacete</h3>
+          <p>Antes de comprar, verifique se seu capacete é compatível:</p>
+          <ul>
+            <li><strong>Bolsas de alto-falante:</strong> Capacetes modernos têm bolsas específicas. Verifique o tamanho (padrão é 40mm)</li>
+            <li><strong>Espaço para fone:</strong> Alguns capacetes têm acolchoamento que dificulta a instalação de alto-falantes maiores</li>
+            <li><strong>Entrada de ar:</strong> A base do intercom geralmente fica na lateral esquerda - verifique se não obstrui entradas de ar</li>
+            <li><strong>Profissional ou DIY:</strong> Instalação é simples, mas requer cuidado. Muitas lojas oferecem instalação gratuita na compra</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Complete seu Equipamento</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/" class="related-card">
+            <h3>Capacetes</h3>
+            <p>Escolha um capacete compatível</p>
+          </a>
+          <a href="/melhor-capacete/luvas/" class="related-card">
+            <h3>Luvas</h3>
+            <p>Proteção para as mãos</p>
+          </a>
+          <a href="/dica-melhor-jaqueta-motociclistas/" class="related-card">
+            <h3>Jaquetas</h3>
+            <p>Proteção corporal</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .features-section, .products-section, .install-section, .related-section {
+    padding: 60px 20px;
+  }
+  
+  .features-section {
+    background: #f3e5f5;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .feature-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #7b1fa2;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #4a148c;
+  }
+  
+  .feature-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .product-header {
+    background: #212121;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .rank {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e31b1b;
+  }
+  
+  .product-title h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  
+  .subtitle {
+    margin: 5px 0 0;
+    opacity: 0.8;
+  }
+  
+  .product-body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .product-image {
+    position: relative;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .product-meta {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .price {
+    background: #4CAF50;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .rating {
+    background: #FFD700;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .features h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  .features li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .features li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #7b1fa2;
+  }
+  
+  .verdict {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .verdict .pros, .verdict .cons {
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .verdict .pros {
+    background: #e8f5e9;
+  }
+  
+  .verdict .cons {
+    background: #ffebee;
+  }
+  
+  .verdict h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .verdict .pros h5 { color: #2e7d32; }
+  .verdict .cons h5 { color: #c62828; }
+  
+  .verdict ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .verdict li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+  }
+  
+  .verdict .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+  }
+  
+  .verdict .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+  }
+  
+  .install-section {
+    background: #e8eaf6;
+  }
+  
+  .install-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-left: 4px solid #3f51b5;
+  }
+  
+  .install-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #283593;
+  }
+  
+  .install-box p {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .install-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .install-box li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .install-box li::before {
+    content: "🔧";
+    position: absolute;
+    left: 0;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-card {
+    background: #212121;
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .related-card h3 {
+    margin-bottom: 8px;
+  }
+  
+  .related-card p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .product-body {
+      grid-template-columns: 1fr;
+    }
+    
+    .verdict {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

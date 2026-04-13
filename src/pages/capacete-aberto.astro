@@ -1,0 +1,620 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Capacete Aberto 2026 | Melhores Modelos de 3/4 com Análises';
+const description = 'Descubra os melhores capacetes abertos (3/4) de 2026. Análises completas, prós e contras, e dicas para escolher o modelo ideal para uso urbano.';
+
+const openHelmets = [
+  {
+    name: 'Capacete Norisk Darth',
+    subtitle: 'Open',
+    price: 'R$ 280 - R$ 380',
+    rating: 4.5,
+    image: '/images/norisk-darth.jpg',
+    affiliateLink: 'https://amzn.to/noriskdarth',
+    description: 'O Norisk Darth Open é um capacete aberto moderno com design agressivo e excelente custo-benefício para uso urbano.',
+    features: [
+      'Casco em termoplástico de alta resistência',
+      'Viseira 2D anti-risco',
+      'Sistema de ventilação superior',
+      'Forro removível e lavável',
+      'Peso: 1.100g'
+    ],
+    pros: [
+      'Preço acessível',
+      'Design moderno e jovial',
+      'Leveza para trânsito urbano',
+      'Boa ventilação natural'
+    ],
+    cons: [
+      'Proteção inferior ao capacete fechado',
+      'Ruído em velocidades elevadas',
+      'Sem viseira solar'
+    ]
+  },
+  {
+    name: 'Capacete LS2 OF562',
+    subtitle: 'Airflow',
+    price: 'R$ 320 - R$ 450',
+    rating: 4.6,
+    image: '/images/ls2-of562.jpg',
+    affiliateLink: 'https://amzn.to/ls2of562',
+    description: 'O LS2 OF562 Airflow é referência em capacetes abertos, com excelente ventilação e acabamento superior na categoria.',
+    features: [
+      'Casco de ABS de alta resistência',
+      'Viseira anti-risco e anti-embaçante',
+      'Múltiplas entradas de ar',
+      'Forro hipoalergênico removível',
+      'Peso: 1.050g'
+    ],
+    pros: [
+      'Excelente custo-benefício',
+      'Acabamento superior',
+      'Leveza excepcional',
+      'Visibilidade periférica ampla'
+    ],
+    cons: [
+      'Proteção limitada em quedas',
+      'Não indicado para altas velocidades',
+      'Viseira sem sistema de troca rápida'
+    ]
+  },
+  {
+    name: 'Capacete Arai SZ-R',
+    subtitle: 'Vas',
+    price: 'R$ 2.800 - R$ 3.500',
+    rating: 4.9,
+    image: '/images/arai-szr.jpg',
+    affiliateLink: 'https://amzn.to/araiszr',
+    description: 'O Arai SZ-R Vas é o capacete aberto premium da marca japonesa, oferecendo segurança e qualidade excepcionais.',
+    features: [
+      'Casco em composite resistente',
+      'Viseira SAI com tratamento completo',
+      'Sistema de ventilação difusa',
+      'Forro premium Dry-Cool',
+      'Peso: 1.200g'
+    ],
+    pros: [
+      'Segurança premium',
+      'Qualidade de construção impecável',
+      'Conforto prolongado',
+      'Proteção facial superior na categoria'
+    ],
+    cons: [
+      'Preço elevado',
+      'Design conservador',
+      'Peças de reposição caras'
+    ]
+  },
+  {
+    name: 'Capacete AGV Orbyt',
+    subtitle: 'Block',
+    price: 'R$ 550 - R$ 750',
+    rating: 4.7,
+    image: '/images/agv-orbyt.jpg',
+    affiliateLink: 'https://amzn.to/agvorbyt',
+    description: 'O AGV Orbyt Block é o capacete aberto da marca italiana, com herança de competição e design esportivo.',
+    features: [
+      'Casco em HIR-TH (termoplástico)',
+      'Viseira GT2 anti-risco',
+      'Sistema de ventilação integrado',
+      'Forro sanitizado Dry-Comfort',
+      'Preparado para intercom'
+    ],
+    pros: [
+      'Design esportivo',
+      'Tecnologia da marca premium',
+      'Preparado para comunicação',
+      'Boa relação custo-benefício para marca premium'
+    ],
+    cons: [
+      'Acabamento inferior ao Arai',
+      'Ventilação limitada em baixa velocidade',
+      'Isolamento acústico básico'
+    ]
+  }
+];
+
+const comparisonPoints = [
+  {
+    title: 'Capacete Aberto vs Fechado',
+    content: 'Capacetes abertos oferecem maior visibilidade e ventilação, mas protegem menos o rosto em caso de acidente. Ideais para uso urbano em baixas velocidades.'
+  },
+  {
+    title: 'Quando Usar',
+    content: 'Perfeito para trânsito urbano, velocidades até 60km/h, e climas quentes. Não recomendado para estradas ou velocidades elevadas.'
+  },
+  {
+    title: 'Vantagens',
+    content: 'Leveza, ventilação natural, campo de visão ampliado, facilidade de comunicação, conforto em calor.'
+  },
+  {
+    title: 'Desvantagens',
+    content: 'Menor proteção facial, exposição a intempéries, ruído do vento, menos proteção em impactos faciais.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Capacete Aberto 2026</h1>
+        <p class="hero-subtitle">
+          Melhores capacetes 3/4 para uso urbano. Conforto, ventilação e praticidade 
+          para o dia a dia com segurança certificada.
+        </p>
+      </div>
+    </section>
+
+    <!-- Comparison Points -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2>Entenda os Capacetes Abertos</h2>
+        <div class="points-grid">
+          {comparisonPoints.map(point => (
+            <div class="point-card">
+              <h3>{point.title}</h3>
+              <p>{point.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Helmets List -->
+    <section class="helmets-section">
+      <div class="container">
+        <h2>Melhores Capacetes Abertos de 2026</h2>
+        <div class="helmets-grid">
+          {openHelmets.map((helmet, index) => (
+            <article class="helmet-card">
+              <div class="card-header">
+                <span class="rank">#{index + 1}</span>
+                <div class="title-group">
+                  <h3>{helmet.name}</h3>
+                  <p class="subtitle">{helmet.subtitle}</p>
+                </div>
+              </div>
+              
+              <div class="card-body">
+                <div class="image-section">
+                  <img src={helmet.image} alt={helmet.name} loading="lazy" />
+                  <div class="price-tag">{helmet.price}</div>
+                  <div class="rating">★ {helmet.rating}</div>
+                </div>
+                
+                <div class="info-section">
+                  <p class="description">{helmet.description}</p>
+                  
+                  <div class="features-list">
+                    <h4>Características</h4>
+                    <ul>
+                      {helmet.features.map(feature => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div class="verdict">
+                    <div class="pros">
+                      <h5>Prós</h5>
+                      <ul>
+                        {helmet.pros.map(pro => (
+                          <li>{pro}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div class="cons">
+                      <h5>Contras</h5>
+                      <ul>
+                        {helmet.cons.map(con => (
+                          <li>{con}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <a href={helmet.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                    Ver na Loja
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Notice -->
+    <section class="safety-section">
+      <div class="container">
+        <div class="safety-box">
+          <h3>⚠️ Importante: Segurança do Capacete Aberto</h3>
+          <p>
+            Capacetes abertos (3/4) oferecem <strong>menor proteção que os capacetes integrais</strong>. 
+            Eles não protegem o queixo e parte do rosto em caso de impacto.
+          </p>
+          <ul>
+            <li>Indicado para uso urbano em velocidades até 60km/h</li>
+            <li>Não recomendado para estradas ou velocidades elevadas</li>
+            <li>Considere usar óculos de proteção ou viseira adicional</li>
+            <li>Em caso de acidentes graves, a lesão facial pode ser severa</li>
+          </ul>
+          <p class="recommendation">
+            Para maior segurança, considere um <a href="/melhor-capacete/">capacete integral</a> 
+            ou um <a href="/custo-beneficio/">capacete articulado</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Categories -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Explore Outras Categorias</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/" class="related-card">
+            <h3>Capacetes Integrais</h3>
+            <p>Máxima proteção para todos os tipos de uso</p>
+          </a>
+          <a href="/custo-beneficio/" class="related-card">
+            <h3>Custo Benefício</h3>
+            <p>Opções acessíveis com boa proteção</p>
+          </a>
+          <a href="/cadeados-para-moto/" class="related-card">
+            <h3>Cadeados para Moto</h3>
+            <p>Proteja sua motocicleta contra roubos</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #5a4d3a 0%, #3d3427 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .comparison-section, .helmets-section, .safety-section, .related-section {
+    padding: 60px 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .point-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid #e31b1b;
+  }
+  
+  .point-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #212121;
+  }
+  
+  .point-card p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .helmets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .helmet-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background: #5a4d3a;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .rank {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e31b1b;
+  }
+  
+  .title-group h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  
+  .subtitle {
+    margin: 5px 0 0;
+    opacity: 0.8;
+  }
+  
+  .card-body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .image-section {
+    position: relative;
+  }
+  
+  .image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #4CAF50;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .rating {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #FFD700;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .features-list h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .features-list ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  .features-list li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .features-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e31b1b;
+  }
+  
+  .verdict {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .pros, .cons {
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .pros {
+    background: #e8f5e9;
+  }
+  
+  .cons {
+    background: #ffebee;
+  }
+  
+  .pros h5, .cons h5 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .pros h5 { color: #2e7d32; }
+  .cons h5 { color: #c62828; }
+  
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pros li, .cons li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+  }
+  
+  .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    font-weight: bold;
+  }
+  
+  .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+    font-weight: bold;
+  }
+  
+  .safety-section {
+    background: #fff3cd;
+  }
+  
+  .safety-box {
+    background: #fff;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .safety-box h3 {
+    color: #856404;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .safety-box p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .safety-box ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .safety-box li {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .recommendation {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #e31b1b;
+  }
+  
+  .recommendation a {
+    color: #e31b1b;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .recommendation a:hover {
+    text-decoration: underline;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-card {
+    background: #212121;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .related-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .related-card p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .card-body {
+      grid-template-columns: 1fr;
+    }
+    
+    .verdict {
+      grid-template-columns: 1fr;
+    }
+    
+    .card-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

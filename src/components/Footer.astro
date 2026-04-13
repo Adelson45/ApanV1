@@ -9,14 +9,22 @@ const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   capacetes: [
-    { href: '/capacetes-moto', label: 'Capacetes de Moto' },
-    { href: '/capacetes-bike', label: 'Capacetes de Bike' },
-    { href: '/capacetes-infantil', label: 'Capacetes Infantis' }
+    { href: '/melhor-capacete/', label: 'Melhores Capacetes' },
+    { href: '/custo-beneficio/', label: 'Custo Benefício' },
+    { href: '/capacete-aberto/', label: 'Capacete Aberto' },
+    { href: '/melhor-capacete/luvas/', label: 'Luvas' },
+    { href: '/dica-melhor-jaqueta-motociclistas/', label: 'Jaquetas' }
+  ],
+  acessorios: [
+    { href: '/cadeados-para-moto/', label: 'Cadeados' },
+    { href: '/melhor-capacete/capa-de-chuva/', label: 'Capas de Chuva' },
+    { href: '/melhor-capacete/intercomunicadores/', label: 'Intercomunicadores' }
   ],
   informacoes: [
-    { href: '/sobre', label: 'Sobre Nós' },
-    { href: '/contato', label: 'Contato' },
-    { href: '/politica-de-privacidade', label: 'Política de Privacidade' }
+    { href: '/category/reviews/', label: 'Reviews' },
+    { href: '/category/dicas/', label: 'Dicas' },
+    { href: '/contato/', label: 'Contato' },
+    { href: '/politica-de-privacidade/', label: 'Política de Privacidade' }
   ]
 };
 ---
@@ -44,6 +52,16 @@ const footerLinks = {
         <h3>Capacetes</h3>
         <ul>
           {footerLinks.capacetes.map(link => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Links de Acessórios -->
+      <div class="footer-links">
+        <h3>Acessórios</h3>
+        <ul>
+          {footerLinks.acessorios.map(link => (
             <li><a href={link.href}>{link.label}</a></li>
           ))}
         </ul>
@@ -127,8 +145,8 @@ const footerLinks = {
   
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
     margin-bottom: 40px;
   }
   

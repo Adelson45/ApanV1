@@ -1,0 +1,452 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Melhores Capacetes de Moto 2026 | Top 10 com Análises';
+const description = 'Descubra os melhores capacetes de moto de 2026. Análises completas, comparativos e reviews dos modelos mais vendidos como Arai, Shoei, AGV, LS2 e mais.';
+
+const featuredHelmets = [
+  {
+    name: 'Capacete Arai Corsair X',
+    subtitle: 'Hayden Laguna',
+    image: '/images/Capacete-arai.png',
+    affiliateLink: 'https://amzn.to/42Ejkbt',
+    rating: 4.9,
+    pros: [
+      'Conforto Superior para Longas Jornadas - Interior de nylon escovado premium, removível e lavável',
+      'Ventilação Eficiente e Silenciosa - 12 pontos de ventilação (7 entradas e 5 saídas)',
+      'Segurança Avançada - Certificação ECE R22-06, Sistema de Contorno Facial (FCS) e Sistema de Abertura de Emergência (ERS)'
+    ],
+    cons: [
+      'Preço Elevado - A partir de €789 para versões decoradas',
+      'Peso Relativamente Alto - Pode causar desconforto em longos períodos',
+      'Design Tradicional - Estilo conservador para quem prefere designs modernos'
+    ]
+  },
+  {
+    name: 'Capacete Shoei X-Spirit3',
+    subtitle: 'AM73 Alex Marquez TC-2',
+    image: '/images/capacete-shoei.png',
+    affiliateLink: 'https://amzn.to/43vmy23',
+    rating: 4.8,
+    pros: [
+      'Aerodinâmica Avançada - Desenvolvido com pilotos profissionais e testado em túnel de vento',
+      'Ventilação Superior - 6 entradas e 6 saídas de ar com sistema de resfriamento nas bochechas',
+      'Conforto Personalizado - Almofadas Max-Dry removíveis, laváveis e ajustáveis'
+    ],
+    cons: [
+      'Preço Elevado - A partir de R$ 5.999,90',
+      'Peso Relativamente Alto - Pode causar desconforto em uso prolongado',
+      'Design Específico para Pista - Foco em altas velocidades, menos adequado para uso urbano'
+    ]
+  },
+  {
+    name: 'Capacete Bell Qualifier Forced Air',
+    subtitle: 'Street Edition',
+    image: '/images/capacete-bell.png',
+    affiliateLink: 'https://amzn.to/4jiQnJp',
+    rating: 4.5,
+    pros: [
+      'Ventilação Forçada e Isolamento de Poeira - Sistema que mantém o interior fresco',
+      'Compatibilidade com Sistemas de Comunicação - Bolsos para alto-falantes Sena e Cardo',
+      'Conforto e Ajuste Personalizado - Interior removível, lavável e antibacteriano com Ionic+™'
+    ],
+    cons: [
+      'Peso Relativamente Alto - Aproximadamente 1.727g no tamanho M',
+      'Ruído em Altas Velocidades - Pode ser barulhento em velocidades elevadas',
+      'Preço Elevado - Modelo especializado com preço superior aos convencionais'
+    ]
+  }
+];
+
+const allReviews = [
+  { title: 'Capacete Peels é bom? Análise Completa', href: '/capacete-peels-review/', image: '/images/melhores-modelos-de-capacetes-Peels-aberto-fechado-e-articulados.png', category: 'Reviews' },
+  { title: 'Review completo do Capacete Norisk', href: '/capacete-norisk-review/', image: '/images/Capacete-Masculino-Norisk.png', category: 'Reviews' },
+  { title: 'Análise Completa do capacete LS2 Scope Monocolor', href: '/ls2-scope-monocolor-review/', image: '/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png', category: 'Reviews' },
+  { title: 'Review completo do capacete Axxis Draken', href: '/axxis-draken-review/', image: '/images/capacete-axxis-draker-1.png', category: 'Reviews' },
+  { title: 'Análise completa do capacete HJC I90 Hollen', href: '/reveiw-hjc-i90-hollen/', image: '/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png', category: 'Reviews' },
+  { title: 'Testado: análise do capacete de motocicleta AGV K1S', href: '/review-agv-k1/', image: '/images/Capacete-AGV-K1s.png', category: 'Reviews' }
+];
+
+const categories = [
+  { title: 'Melhores Cadeados para Moto', href: '/cadeados-para-moto/', image: '/images/cadeado-moto.png' },
+  { title: 'Melhores Luvas', href: '/melhor-capacete/luvas/', image: '/images/luvas-moto.png' },
+  { title: 'Melhores Jaquetas', href: '/dica-melhor-jaqueta-motociclistas/', image: '/images/jaqueta-moto.png' },
+  { title: 'Melhores Capas de Chuva', href: '/melhor-capacete/capa-de-chuva/', image: '/images/capa-chuva.png' },
+  { title: 'Melhores Intercomunicadores', href: '/melhor-capacete/intercomunicadores/', image: '/images/intercomunicador.png' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Melhores Capacetes de Moto 2026</h1>
+        <p class="hero-subtitle">
+          Análises completas e comparativos dos capacetes mais vendidos do mercado. 
+          Encontre o modelo ideal para sua segurança e conforto.
+        </p>
+      </div>
+    </section>
+
+    <!-- Marcas Section -->
+    <section class="brands-section">
+      <div class="container">
+        <h2>Marcas de Capacetes Mais Vendidos</h2>
+        <p class="section-intro">Confira nossas análises detalhadas dos melhores modelos disponíveis no mercado brasileiro.</p>
+        
+        <div class="helmets-grid">
+          {featuredHelmets.map((helmet, index) => (
+            <article class="helmet-card">
+              <div class="helmet-image">
+                <img src={helmet.image} alt={`${helmet.name} ${helmet.subtitle}`} loading="lazy" />
+                <span class="rating">★ {helmet.rating}</span>
+              </div>
+              <div class="helmet-content">
+                <h3>{helmet.name}</h3>
+                <p class="subtitle">{helmet.subtitle}</p>
+                
+                <div class="pros-section">
+                  <h4>Prós</h4>
+                  <ul>
+                    {helmet.pros.map(pro => (
+                      <li>{pro}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div class="cons-section">
+                  <h4>Contras</h4>
+                  <ul>
+                    {helmet.cons.map(con => (
+                      <li>{con}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <a href={helmet.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                  Ver na Loja
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Grid -->
+    <section class="reviews-section">
+      <div class="container">
+        <h2>Reviews Completos de Capacetes</h2>
+        <div class="reviews-grid">
+          {allReviews.map(review => (
+            <a href={review.href} class="review-card">
+              <div class="review-image">
+                <img src={review.image} alt={review.title} loading="lazy" />
+              </div>
+              <div class="review-overlay">
+                <span class="category">{review.category}</span>
+                <h3>{review.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Acessórios -->
+    <section class="accessories-section">
+      <div class="container">
+        <h2>Acessórios para Motociclistas</h2>
+        <p class="section-intro">Complete seu equipamento de proteção com os melhores acessórios.</p>
+        <div class="accessories-grid">
+          {categories.map(cat => (
+            <a href={cat.href} class="accessory-card">
+              <img src={cat.image} alt={cat.title} loading="lazy" />
+              <h3>{cat.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="categories-section">
+      <div class="container">
+        <h2>Escolha por Categoria</h2>
+        <div class="category-buttons">
+          <a href="/custo-beneficio/" class="category-btn">Capacete Custo Benefício</a>
+          <a href="/capacete-aberto/" class="category-btn">Capacete Aberto</a>
+          <a href="/category/reviews/" class="category-btn">Todas as Reviews</a>
+          <a href="/category/dicas/" class="category-btn">Dicas e Guias</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .brands-section, .reviews-section, .accessories-section, .categories-section {
+    padding: 60px 20px;
+  }
+  
+  .brands-section h2, .reviews-section h2, .accessories-section h2, .categories-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .section-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .helmets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .helmet-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .helmet-image {
+    position: relative;
+  }
+  
+  .helmet-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e31b1b;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .helmet-content {
+    padding: 25px;
+  }
+  
+  .helmet-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .pros-section, .cons-section {
+    margin-bottom: 20px;
+  }
+  
+  .pros-section h4, .cons-section h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .pros-section ul, .cons-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pros-section li, .cons-section li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .pros-section li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .cons-section li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .review-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .review-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .review-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+  }
+  
+  .review-overlay .category {
+    background: #e31b1b;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  
+  .review-overlay h3 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .accessories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .accessory-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+  }
+  
+  .accessory-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .accessory-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .category-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #212121;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .category-btn:hover {
+    background: #e31b1b;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    
+    .helmets-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

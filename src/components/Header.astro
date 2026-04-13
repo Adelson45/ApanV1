@@ -1,10 +1,35 @@
 ---
-const navLinks = [
+interface NavLink {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+}
+
+const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
-  { href: '/reviews', label: 'Reviews' },
-  { href: '/comparativos', label: 'Comparativos' },
-  { href: '/guia-de-compra', label: 'Guia de Compra' },
-  { href: '/contato', label: 'Contato' }
+  {
+    href: '/melhor-capacete/',
+    label: 'Capacetes',
+    children: [
+      { href: '/melhor-capacete/', label: 'Melhores Capacetes' },
+      { href: '/custo-beneficio/', label: 'Custo Benefício' },
+      { href: '/capacete-aberto/', label: 'Capacete Aberto' }
+    ]
+  },
+  {
+    href: '/cadeados-para-moto/',
+    label: 'Acessórios',
+    children: [
+      { href: '/cadeados-para-moto/', label: 'Cadeados' },
+      { href: '/melhor-capacete/luvas/', label: 'Luvas' },
+      { href: '/dica-melhor-jaqueta-motociclistas/', label: 'Jaquetas' },
+      { href: '/melhor-capacete/capa-de-chuva/', label: 'Capas de Chuva' },
+      { href: '/melhor-capacete/intercomunicadores/', label: 'Intercomunicadores' }
+    ]
+  },
+  { href: '/category/reviews/', label: 'Reviews' },
+  { href: '/category/dicas/', label: 'Dicas' },
+  { href: '/contato/', label: 'Contato' }
 ];
 ---
 
@@ -32,12 +57,28 @@ const navLinks = [
       
       <ul id="primary-menu" class="nav-menu" role="menubar">
         {navLinks.map(link => (
-          <li role="none">
+          <li role="none" class={link.children ? 'has-dropdown' : ''}>
             <a href={link.href} 
                role="menuitem" 
-               class={Astro.url.pathname === link.href ? 'active' : ''}>
+               class={Astro.url.pathname === link.href ? 'active' : ''}
+               aria-haspopup={link.children ? 'true' : undefined}
+               aria-expanded={link.children ? 'false' : undefined}>
               {link.label}
+              {link.children && <span class="dropdown-arrow">▼</span>}
             </a>
+            {link.children && (
+              <ul class="dropdown-menu" role="menu">
+                {link.children.map(child => (
+                  <li role="none">
+                    <a href={child.href} 
+                       role="menuitem"
+                       class={Astro.url.pathname === child.href ? 'active' : ''}>
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
@@ -127,7 +168,83 @@ const navLinks = [
     color: #e31b1b;
   }
   
+  /* Dropdown Menu Styles */
+  .has-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-arrow {
+    font-size: 0.6rem;
+    margin-left: 5px;
+    opacity: 0.7;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    min-width: 220px;
+    padding: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    list-style: none;
+    z-index: 1001;
+  }
+  
+  .has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .dropdown-menu a:hover {
+    background: rgba(227, 27, 27, 0.1);
+  }
+  
   @media (max-width: 768px) {
+    .dropdown-arrow {
+      display: none;
+    }
+    
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      background: #1a1a1a;
+      padding-left: 20px;
+      display: none;
+    }
+    
+    .has-dropdown.is-open .dropdown-menu {
+      display: block;
+    }
+    
+    .dropdown-menu li {
+      border-bottom: none;
+    }
     .menu-toggle {
       display: block;
     }

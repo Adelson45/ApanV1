@@ -1,0 +1,394 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Reviews de Capacetes | Análises Completas e Testes';
+const description = 'Todas as reviews e análises de capacetes de moto, bike e acessórios. Testes completos, prós e contras, e recomendações dos melhores modelos.';
+
+const allReviews = [
+  // Capacetes
+  {
+    title: 'Capacete Peels é bom? Análise Completa',
+    excerpt: 'Review completo da marca nacional Peels. Análise dos modelos aberto, fechado e articulado com preços e qualidade.',
+    image: '/images/melhores-modelos-de-capacetes-Peels-aberto-fechado-e-articulados.png',
+    href: '/capacete-peels-review/',
+    category: 'Capacetes',
+    rating: 4.4,
+    date: 'Julho 2025'
+  },
+  {
+    title: 'Review Completo do Capacete Norisk',
+    excerpt: 'Análise detalhada dos capacetes Norisk. Relação custo-benefício, segurança e conforto dos modelos mais populares.',
+    image: '/images/Capacete-Masculino-Norisk.png',
+    href: '/capacete-norisk-review/',
+    category: 'Capacetes',
+    rating: 4.5,
+    date: 'Junho 2025'
+  },
+  {
+    title: 'Análise Completa do Capacete LS2 Scope Monocolor',
+    excerpt: 'Review do LS2 Scope Monocolor. Capacete intermediário com ótimo acabamento e tecnologia.',
+    image: '/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png',
+    href: '/ls2-scope-monocolor-review/',
+    category: 'Capacetes',
+    rating: 4.6,
+    date: 'Junho 2025'
+  },
+  {
+    title: 'Review Completo do Capacete Axxis Draken',
+    excerpt: 'Análise do Axxis Draken. Design agressivo e proteção robusta para pilotos exigentes.',
+    image: '/images/capacete-axxis-draker-1.png',
+    href: '/axxis-draken-review/',
+    category: 'Capacetes',
+    rating: 4.6,
+    date: 'Maio 2025'
+  },
+  {
+    title: 'Análise Completa do Capacete HJC I90 Hollen',
+    excerpt: 'Review do HJC I90 Hollen. Capacete modular premium com excelente relação custo-benefício.',
+    image: '/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png',
+    href: '/reveiw-hjc-i90-hollen/',
+    category: 'Capacetes',
+    rating: 4.7,
+    date: 'Maio 2025'
+  },
+  {
+    title: 'Testado: Análise do Capacete AGV K1S',
+    excerpt: 'Review completo do AGV K1S. Tecnologia italiana com herança de competição.',
+    image: '/images/Capacete-AGV-K1s.png',
+    href: '/review-agv-k1/',
+    category: 'Capacetes',
+    rating: 4.8,
+    date: 'Maio 2025'
+  },
+  // Guias
+  {
+    title: 'Melhores Capacetes de Moto 2026',
+    excerpt: 'Guia completo com os melhores capacetes do mercado. Top 10 com análises detalhadas.',
+    image: '/images/Capacete-arai.png',
+    href: '/melhor-capacete/',
+    category: 'Guia de Compra',
+    rating: 5.0,
+    date: 'Atualizado 2026'
+  },
+  {
+    title: 'Capacete Custo Benefício 2026',
+    excerpt: 'Os melhores capacetes com preço justo. Opções de qualidade sem gastar muito.',
+    image: '/images/ls2-ff320.jpg',
+    href: '/custo-beneficio/',
+    category: 'Guia de Compra',
+    rating: 4.9,
+    date: 'Atualizado 2026'
+  },
+  {
+    title: 'Capacete Aberto: Melhores Modelos 3/4',
+    excerpt: 'Guia dos melhores capacetes abertos. Conforto e ventilação para uso urbano.',
+    image: '/images/capacete-aberto.jpg',
+    href: '/capacete-aberto/',
+    category: 'Guia de Compra',
+    rating: 4.7,
+    date: 'Atualizado 2026'
+  }
+];
+
+const categories = [
+  { name: 'Capacetes', count: 6, href: '/melhor-capacete/' },
+  { name: 'Acessórios', count: 5, href: '/cadeados-para-moto/' },
+  { name: 'Guia de Compra', count: 3, href: '/custo-beneficio/' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Reviews de Capacetes</h1>
+        <p class="hero-subtitle">
+          Todas as nossas análises e testes de capacetes e acessórios. 
+          Reviews completos com prós, contras e recomendações honestas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="categories-section">
+      <div class="container">
+        <h2>Filtrar por Categoria</h2>
+        <div class="category-filters">
+          <a href="#todos" class="filter-btn active">Todos</a>
+          {categories.map(cat => (
+            <a href={cat.href} class="filter-btn">
+              {cat.name} ({cat.count})
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Grid -->
+    <section class="reviews-section">
+      <div class="container">
+        <h2>Todas as Reviews</h2>
+        <div class="reviews-grid">
+          {allReviews.map((review, index) => (
+            <article class="review-card">
+              <a href={review.href} class="review-link">
+                <div class="review-image">
+                  <img src={review.image} alt={review.title} loading="lazy" />
+                  <span class="review-category">{review.category}</span>
+                  <span class="review-rating">★ {review.rating}</span>
+                </div>
+                <div class="review-content">
+                  <p class="review-date">{review.date}</p>
+                  <h3>{review.title}</h3>
+                  <p class="review-excerpt">{review.excerpt}</p>
+                  <span class="read-more">Ler review completo →</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Não Perca Nenhuma Review</h2>
+        <p>Receba alertas quando publicarmos novas análises de capacetes.</p>
+        <form class="newsletter-form" action="/api/subscribe" method="POST">
+          <input type="email" placeholder="Seu e-mail" required />
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .categories-section, .reviews-section, .cta-section {
+    padding: 60px 20px;
+  }
+  
+  .categories-section {
+    background: #f5f5f5;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #e31b1b;
+    color: #fff;
+    border-color: #e31b1b;
+  }
+  
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .review-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .review-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .review-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .review-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .review-card:hover .review-image img {
+    transform: scale(1.05);
+  }
+  
+  .review-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e31b1b;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  
+  .review-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FFD700;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .review-content {
+    padding: 25px;
+  }
+  
+  .review-date {
+    color: #999;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .review-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #212121;
+  }
+  
+  .review-excerpt {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .read-more {
+    color: #e31b1b;
+    font-weight: 600;
+  }
+  
+  .cta-section {
+    background: #212121;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    margin-bottom: 15px;
+  }
+  
+  .cta-section p {
+    opacity: 0.9;
+    margin-bottom: 25px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form {
+      flex-direction: column;
+    }
+    
+    .newsletter-form input {
+      width: 100%;
+    }
+  }
+</style>

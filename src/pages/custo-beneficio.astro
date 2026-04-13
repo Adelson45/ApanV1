@@ -1,0 +1,564 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Capacete Custo Benefício 2026 | Melhores Opções com Preço Justo';
+const description = 'Encontre o melhor capacete custo benefício de 2026. Análises de modelos acessíveis com ótima relação qualidade-preço como LS2, Norisk, Axxis e Peels.';
+
+const budgetHelmets = [
+  {
+    name: 'Capacete LS2 FF320',
+    subtitle: 'Stream Evo',
+    price: 'R$ 450 - R$ 650',
+    rating: 4.7,
+    image: '/images/ls2-ff320.jpg',
+    affiliateLink: 'https://amzn.to/ls2ff320',
+    description: 'O LS2 FF320 Stream Evo é referência em custo-benefício no mercado brasileiro. Com certificação ECE 22.05, oferece proteção confiável a um preço acessível.',
+    features: [
+      'Casco de ABS de alta resistência',
+      'Viseira solar interna',
+      'Sistema de ventilação eficiente',
+      'Forro removível e lavável',
+      'Peso aproximado: 1.450g'
+    ],
+    pros: [
+      'Excelente relação custo-benefício',
+      'Viseira solar integrada',
+      'Boa ventilação para o preço',
+      'Design moderno e aerodinâmico'
+    ],
+    cons: [
+      'Acabamento inferior a modelos premium',
+      'Isolamento acústico básico',
+      'Peças de reposição limitadas'
+    ]
+  },
+  {
+    name: 'Capacete Norisk FF302',
+    subtitle: 'Freedom',
+    price: 'R$ 380 - R$ 550',
+    rating: 4.5,
+    image: '/images/norisk-ff302.jpg',
+    affiliateLink: 'https://amzn.to/noriskff302',
+    description: 'O Norisk FF302 Freedom é uma opção econômica que não sacrifica a segurança. Ideal para quem busca proteção básica com conforto.',
+    features: [
+      'Casco em termoplástico resistente',
+      'Viseira anti-risco',
+      'Entradas de ar superiores e frontais',
+      'Forro em tecido hipoalergênico',
+      'Sistema de retenção micrométrico'
+    ],
+    pros: [
+      'Preço muito acessível',
+      'Leveza surpreendente',
+      'Conforto para uso urbano',
+      'Disponível em várias cores'
+    ],
+    cons: [
+      'Ventilação básica',
+      'Viseira sem tratamento anti-embaçante',
+      'Durabilidade do forro inferior'
+    ]
+  },
+  {
+    name: 'Capacete Axxis Eagle',
+    subtitle: 'Diversion',
+    price: 'R$ 420 - R$ 600',
+    rating: 4.6,
+    image: '/images/axxis-eagle.jpg',
+    affiliateLink: 'https://amzn.to/axxiseagle',
+    description: 'O Axxis Eagle Diversion combina estilo agressivo com proteção confiável. Excelente para pilotos que buscam design sem gastar muito.',
+    features: [
+      'Casco de policarbonato de alto impacto',
+      'Viseira 2D com tratamento anti-risco',
+      'Sistema de ventilação com 4 entradas',
+      'Forro removível e lavável',
+      'Peso: 1.350g (tamanho M)'
+    ],
+    pros: [
+      'Design esportivo e moderno',
+      'Peso reduzido',
+      'Boa ventilação',
+      'Ótimo para iniciantes'
+    ],
+    cons: [
+      'Isolamento acústico limitado',
+      'Viseira sem opção solar',
+      'Acabamento simples'
+    ]
+  },
+  {
+    name: 'Capacete Peels Icon',
+    subtitle: 'Classic',
+    price: 'R$ 350 - R$ 480',
+    rating: 4.4,
+    image: '/images/peels-icon.jpg',
+    affiliateLink: 'https://amzn.to/peelsicon',
+    description: 'O Peels Icon Classic é uma opção nacional com ótima relação qualidade-preço. Marca brasileira que entrega proteção certificada.',
+    features: [
+      'Casco ABS injetado',
+      'Certificação INMETRO e ECE',
+      'Viseira policarbonato',
+      'Forro antimicrobiano',
+      'Sistema de ventilação básico'
+    ],
+    pros: [
+      'Preço acessível',
+      'Marca nacional com suporte local',
+      'Certificações completas',
+      'Cores variadas'
+    ],
+    cons: [
+      'Ventilação limitada',
+      'Conforto em longas viagens',
+      'Disponibilidade de peças'
+    ]
+  }
+];
+
+const comparisonTable = [
+  { model: 'LS2 FF320', price: 'R$ 450-650', rating: '4.7/5', bestFor: 'Custo-benefício geral' },
+  { model: 'Norisk FF302', price: 'R$ 380-550', rating: '4.5/5', bestFor: 'Orçamento limitado' },
+  { model: 'Axxis Eagle', price: 'R$ 420-600', rating: '4.6/5', bestFor: 'Design esportivo' },
+  { model: 'Peels Icon', price: 'R$ 350-480', rating: '4.4/5', bestFor: 'Marca nacional' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Capacete Custo Benefício 2026</h1>
+        <p class="hero-subtitle">
+          Melhores capacetes com preço justo e qualidade comprovada. 
+          Análises de modelos acessíveis que oferecem proteção real sem quebrar o orçamento.
+        </p>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2>Comparativo Rápido</h2>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Faixa de Preço</th>
+                <th>Avaliação</th>
+                <th>Ideal Para</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonTable.map(item => (
+                <tr>
+                  <td><strong>{item.model}</strong></td>
+                  <td>{item.price}</td>
+                  <td>{item.rating}</td>
+                  <td>{item.bestFor}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Reviews -->
+    <section class="reviews-section">
+      <div class="container">
+        <h2>Análises Detalhadas</h2>
+        <div class="helmets-list">
+          {budgetHelmets.map((helmet, index) => (
+            <article class="helmet-detailed">
+              <div class="helmet-header">
+                <span class="rank">#{index + 1}</span>
+                <div class="helmet-title">
+                  <h3>{helmet.name}</h3>
+                  <p class="subtitle">{helmet.subtitle}</p>
+                </div>
+                <div class="helmet-meta">
+                  <span class="price">{helmet.price}</span>
+                  <span class="rating">★ {helmet.rating}</span>
+                </div>
+              </div>
+              
+              <div class="helmet-body">
+                <div class="helmet-visual">
+                  <img src={helmet.image} alt={helmet.name} loading="lazy" />
+                  <a href={helmet.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                    Ver Preço na Loja
+                  </a>
+                </div>
+                
+                <div class="helmet-info">
+                  <p class="description">{helmet.description}</p>
+                  
+                  <div class="features">
+                    <h4>Características</h4>
+                    <ul>
+                      {helmet.features.map(feature => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div class="pros-cons">
+                    <div class="pros">
+                      <h4>Prós</h4>
+                      <ul>
+                        {helmet.pros.map(pro => (
+                          <li>{pro}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div class="cons">
+                      <h4>Contras</h4>
+                      <ul>
+                        {helmet.cons.map(con => (
+                          <li>{con}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Buying Guide -->
+    <section class="guide-section">
+      <div class="container">
+        <h2>Guia: Como Escolher um Capacete Custo Benefício</h2>
+        <div class="guide-content">
+          <div class="guide-item">
+            <h3>1. Certificações Obrigatórias</h3>
+            <p>Sempre verifique se o capacete possui certificação INMETRO e preferencialmente ECE 22.05. Essas certificações garantem que o produto passou por testes de segurança.</p>
+          </div>
+          <div class="guide-item">
+            <h3>2. Tipo de Uso</h3>
+            <p>Para uso urbano diário, priorize conforto e ventilação. Para viagens longas, busque melhor isolamento acústico e sistema de retenção confiável.</p>
+          </div>
+          <div class="guide-item">
+            <h3>3. Ajuste Correto</h3>
+            <p>Meça a circunferência da sua cabeça e consulte a tabela do fabricante. Um capacete mal ajustado compromete a proteção, independente do preço.</p>
+          </div>
+          <div class="guide-item">
+            <h3>4. Peso</h3>
+            <p>Capacetes até 1.500g são considerados confortáveis para uso diário. Acima disso, podem causar fadiga em longos períodos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ainda em Dúvida?</h2>
+        <p>Confira nossas reviews completas de cada modelo ou explore outras categorias.</p>
+        <div class="cta-buttons">
+          <a href="/melhor-capacete/" class="btn btn-primary">Ver Todos os Capacetes</a>
+          <a href="/capacete-aberto/" class="btn btn-secondary">Capacetes Abertos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #2d5a3d 0%, #1a3a2a 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .comparison-section, .reviews-section, .guide-section, .cta-section {
+    padding: 60px 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .comparison-table th {
+    background: #212121;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .comparison-table tr:hover {
+    background: #f5f5f5;
+  }
+  
+  .helmets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .helmet-detailed {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .helmet-header {
+    background: #212121;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .rank {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e31b1b;
+  }
+  
+  .helmet-title {
+    flex: 1;
+  }
+  
+  .helmet-title h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  
+  .subtitle {
+    margin: 5px 0 0;
+    opacity: 0.8;
+  }
+  
+  .helmet-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: right;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+  .rating {
+    color: #FFD700;
+  }
+  
+  .helmet-body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .helmet-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .helmet-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .features h4, .pros h4, .cons h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .features ul, .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features li, .pros li, .cons li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+  }
+  
+  .features li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e31b1b;
+  }
+  
+  .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .guide-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .guide-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #e31b1b;
+  }
+  
+  .guide-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #212121;
+  }
+  
+  .guide-item p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .cta-section {
+    background: #212121;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background: #e31b1b;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background: #c41717;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .btn-secondary:hover {
+    background: #fff;
+    color: #212121;
+  }
+  
+  @media (max-width: 768px) {
+    .helmet-body {
+      grid-template-columns: 1fr;
+    }
+    
+    .helmet-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .helmet-meta {
+      text-align: center;
+    }
+    
+    .pros-cons {
+      grid-template-columns: 1fr;
+    }
+    
+    .comparison-table {
+      font-size: 0.9rem;
+    }
+  }
+</style>

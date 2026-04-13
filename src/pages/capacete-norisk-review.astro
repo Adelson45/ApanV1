@@ -1,0 +1,395 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Capacete Norisk Review 2026 | Análise Completa dos Modelos';
+const description = 'Review completo dos capacetes Norisk. Análise dos modelos FF302, FF391, Darth e Rover. Preço, qualidade, segurança e vale a pena comprar?';
+
+const models = [
+  {
+    name: 'Norisk FF302',
+    type: 'Fechado (Integral)',
+    price: 'R$ 380 - R$ 550',
+    rating: 4.5,
+    image: '/images/norisk-ff302.jpg',
+    features: [
+      'Casco em termoplástico ABS',
+      'Certificação INMETRO e ECE 22.05',
+      'Viseira anti-risco',
+      'Entradas de ar superiores e frontais',
+      'Forro em tecido hipoalergênico',
+      'Peso: 1.400g'
+    ],
+    verdict: 'Excelente custo-benefício para uso urbano e viagens curtas.'
+  },
+  {
+    name: 'Norisk FF391',
+    type: 'Fechado (Sport)',
+    price: 'R$ 480 - R$ 680',
+    rating: 4.6,
+    image: '/images/norisk-ff391.jpg',
+    features: [
+      'Design esportivo aerodinâmico',
+      'Dupla viseira (transparente + fumê)',
+      'Sistema de ventilação avançado',
+      'Forro premium removível',
+      'Preparado para intercom',
+      'Peso: 1.450g'
+    ],
+    verdict: 'Ótima opção para quem busca estilo esportivo sem gastar muito.'
+  },
+  {
+    name: 'Norisk Darth',
+    type: 'Aberto (3/4)',
+    price: 'R$ 280 - R$ 380',
+    rating: 4.4,
+    image: '/images/norisk-darth.jpg',
+    features: [
+      'Design moderno e agressivo',
+      'Viseira 2D anti-risco',
+      'Sistema de ventilação superior',
+      'Forro confortável removível',
+      'Óculos de sol interno',
+      'Peso: 1.100g'
+    ],
+    verdict: 'Capacete aberto estiloso para uso urbano diário.'
+  },
+  {
+    name: 'Norisk Rover',
+    type: 'Cross/Enduro',
+    price: 'R$ 450 - R$ 600',
+    rating: 4.3,
+    image: '/images/norisk-rover.jpg',
+    features: [
+      'Casco reforçado para off-road',
+      'Pala solar removível',
+      'Viseira ampla para óculos',
+      'Forro antibacteriano',
+      'Alça de resgate de emergência',
+      'Peso: 1.350g'
+    ],
+    verdict: 'Boa opção para trilhas leves e uso misto.'
+  }
+];
+
+const pros = [
+  'Preço competitivo na categoria',
+  'Design moderno e variado',
+  'Certificações completas (INMETRO/ECE)',
+  'Boa disponibilidade no mercado brasileiro',
+  'Forro confortável para o preço',
+  'Ótimo para iniciantes'
+];
+
+const cons = [
+  'Acabamento inferior a marcas premium',
+  'Isolamento acústico básico',
+  'Viseira sem tratamento anti-embaçante premium',
+  'Ventilação poderia ser melhor',
+  'Durabilidade do mecanismo de viseira',
+  'Peças de reposição limitadas'
+];
+
+const comparisonTable = [
+  { aspect: 'Preço', norisk: '★★★★★', ls2: '★★★★☆', agv: '★★☆☆☆' },
+  { aspect: 'Segurança', norisk: '★★★★☆', ls2: '★★★★☆', agv: '★★★★★' },
+  { aspect: 'Conforto', norisk: '★★★☆☆', ls2: '★★★★☆', agv: '★★★★★' },
+  { aspect: 'Design', norisk: '★★★★☆', ls2: '★★★★☆', agv: '★★★★★' },
+  { aspect: 'Acabamento', norisk: '★★★☆☆', ls2: '★★★★☆', agv: '★★★★★' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Capacete Norisk é Bom?</h1>
+        <p class="hero-subtitle">
+          Análise completa da marca Norisk. Review dos modelos FF302, FF391, Darth e Rover 
+          com preços, qualidade e nossa opinião sincera.
+        </p>
+        <div class="hero-verdict">
+          <span class="verdict-badge">Veredito: Bom</span>
+          <p>Excelente relação custo-benefício</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="summary-section">
+      <div class="container">
+        <div class="summary-box">
+          <h2>Resumo da Análise</h2>
+          <p>
+            A <strong>Norisk</strong> é uma marca que se consolidou no mercado brasileiro oferecendo 
+            <strong>capacetes com boa relação custo-benefício</strong>. Seus produtos são voltados para 
+            o público que busca segurança certificada sem investir em marcas premium.
+          </p>
+          <p>
+            A marca se destaca pelo <strong>design moderno</strong> e variedade de cores, sendo uma 
+            escolha popular entre jovens e iniciantes. Para uso urbano diário, entrega proteção 
+            adequada com conforto aceitável.
+          </p>
+          <div class="rating-summary">
+            <div class="rating-item">
+              <span class="rating-number">4.5</span>
+              <span class="rating-label">Nota Geral</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-stars">★★★★☆</span>
+              <span class="rating-label">Custo-Benefício</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-recommend">82%</span>
+              <span class="rating-label">Recomendam</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="models-section">
+      <div class="container">
+        <h2>Modelos Analisados</h2>
+        <div class="models-grid">
+          {models.map((model, index) => (
+            <article class="model-card">
+              <div class="model-header">
+                <span class="model-type">{model.type}</span>
+                <span class="model-rating">★ {model.rating}</span>
+              </div>
+              <div class="model-image">
+                <img src={model.image} alt={model.name} loading="lazy" />
+              </div>
+              <div class="model-content">
+                <h3>{model.name}</h3>
+                <p class="model-price">{model.price}</p>
+                <div class="model-features">
+                  <h4>Principais Características</h4>
+                  <ul>
+                    {model.features.map(feature => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="model-verdict">
+                  <strong>Nossa opinião:</strong> {model.verdict}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pros and Cons -->
+    <section class="pros-cons-section">
+      <div class="container">
+        <div class="pros-cons-grid">
+          <div class="pros-box">
+            <h3>✓ Pontos Positivos</h3>
+            <ul>
+              {pros.map(pro => (
+                <li>{pro}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h3>✗ Pontos Negativos</h3>
+            <ul>
+              {cons.map(con => (
+                <li>{con}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2>Norisk vs Concorrentes</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>Norisk</th>
+                <th>LS2</th>
+                <th>AGV (Premium)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonTable.map(row => (
+                <tr>
+                  <td><strong>{row.aspect}</strong></td>
+                  <td>{row.norisk}</td>
+                  <td>{row.ls2}</td>
+                  <td>{row.agv}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">
+          <strong>Nota:</strong> Comparação considerando faixa de preço similar. AGV custa 3x-5x mais que Norisk.
+        </p>
+      </div>
+    </section>
+
+    <!-- Final Verdict -->
+    <section class="final-verdict-section">
+      <div class="container">
+        <div class="verdict-box">
+          <h2>Vale a Pena Comprar?</h2>
+          <div class="verdict-content">
+            <div class="verdict-recommend">
+              <span class="recommend-badge">👍 Recomendado</span>
+              <p class="recommend-for"><strong>Para quem é ideal:</strong></p>
+              <ul>
+                <li>Iniciantes no mundo das motos</li>
+                <li>Uso urbano diário</li>
+                <li>Quem busca design moderno</li>
+                <li>Orçamento até R$ 600</li>
+                <li>Pilotos de scooter/city</li>
+              </ul>
+            </div>
+            <div class="verdict-not-recommend">
+              <span class="not-recommend-badge">👎 Não Recomendado</span>
+              <p class="not-recommend-for"><strong>Não compre se:</strong></p>
+              <ul>
+                <li>Faz viagens longas frequentes</li>
+                <li>Pilota em estradas em alta velocidade</li>
+                <li>Busca máximo conforto e silêncio</li>
+                <li>Prefere marcas premium</li>
+              </ul>
+            </div>
+          </div>
+          <div class="final-cta">
+            <p class="final-opinion">
+              <strong>Nossa opinião final:</strong> A Norisk é uma excelente escolha para quem busca 
+              um capacete moderno, certificado e acessível. Não oferece o refinamento de marcas premium, 
+              mas entrega segurança real por um preço justo.
+            </p>
+            <a href="https://amzn.to/noriskff302" target="_blank" rel="nofollow noopener" class="btn btn-primary">
+              Ver Preços dos Modelos Norisk
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Reviews -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Reviews Relacionadas</h2>
+        <div class="related-grid">
+          <a href="/capacete-peels-review/" class="related-card">
+            <h3>Review Peels</h3>
+            <p>Concorrente direto nacional</p>
+          </a>
+          <a href="/ls2-scope-monocolor-review/" class="related-card">
+            <h3>Review LS2</h3>
+            <p>Alternativa de qualidade</p>
+          </a>
+          <a href="/custo-beneficio/" class="related-card">
+            <h3>Custo Benefício</h3>
+            <p>Veja todas as opções</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+  .hero-subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+  .hero-verdict { display: inline-block; background: rgba(255,255,255,0.2); padding: 20px 40px; border-radius: 8px; backdrop-filter: blur(10px); }
+  .verdict-badge { display: block; font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+  .hero-verdict p { margin: 0; opacity: 0.9; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .summary-section, .models-section, .pros-cons-section, .comparison-section, .final-verdict-section, .related-section { padding: 60px 20px; }
+  .summary-section { background: #f5f5f5; }
+  .summary-box { background: #fff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .summary-box h2 { text-align: center; margin-bottom: 25px; }
+  .summary-box p { line-height: 1.7; color: #555; margin-bottom: 15px; }
+  .rating-summary { display: flex; justify-content: center; gap: 40px; margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+  .rating-item { text-align: center; }
+  .rating-number { display: block; font-size: 2.5rem; font-weight: bold; color: #1565c0; }
+  .rating-stars { display: block; font-size: 1.8rem; color: #FFD700; }
+  .rating-recommend { display: block; font-size: 2rem; font-weight: bold; color: #4CAF50; }
+  .rating-label { display: block; font-size: 0.9rem; color: #666; margin-top: 5px; }
+  h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+  .models-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .model-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+  .model-header { background: #212121; color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .model-type { font-size: 0.85rem; text-transform: uppercase; opacity: 0.9; }
+  .model-rating { color: #FFD700; font-weight: bold; }
+  .model-image { height: 200px; overflow: hidden; }
+  .model-image img { width: 100%; height: 100%; object-fit: cover; }
+  .model-content { padding: 25px; }
+  .model-content h3 { font-size: 1.4rem; margin-bottom: 5px; }
+  .model-price { font-size: 1.2rem; color: #4CAF50; font-weight: bold; margin-bottom: 20px; }
+  .model-features h4 { font-size: 1rem; margin-bottom: 12px; color: #333; }
+  .model-features ul { list-style: none; padding: 0; margin-bottom: 20px; }
+  .model-features li { padding: 6px 0; padding-left: 20px; position: relative; font-size: 0.9rem; color: #555; border-bottom: 1px solid #f0f0f0; }
+  .model-features li::before { content: "▸"; position: absolute; left: 0; color: #1565c0; }
+  .model-verdict { background: #e3f2fd; padding: 15px; border-radius: 4px; border-left: 4px solid #1565c0; }
+  .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .pros-box, .cons-box { padding: 30px; border-radius: 8px; }
+  .pros-box { background: #e8f5e9; }
+  .cons-box { background: #ffebee; }
+  .pros-box h3 { color: #2e7d32; margin-bottom: 20px; font-size: 1.3rem; }
+  .cons-box h3 { color: #c62828; margin-bottom: 20px; font-size: 1.3rem; }
+  .pros-box ul, .cons-box ul { list-style: none; padding: 0; }
+  .pros-box li, .cons-box li { padding: 10px 0; padding-left: 25px; position: relative; line-height: 1.5; }
+  .pros-box li::before { content: "✓"; position: absolute; left: 0; color: #2e7d32; font-weight: bold; }
+  .cons-box li::before { content: "×"; position: absolute; left: 0; color: #c62828; font-weight: bold; }
+  .comparison-table-wrapper { overflow-x: auto; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+  .comparison-table th { background: #212121; color: #fff; font-weight: 600; }
+  .comparison-table tr:hover { background: #f5f5f5; }
+  .comparison-note { text-align: center; margin-top: 20px; color: #666; font-style: italic; }
+  .final-verdict-section { background: #f5f5f5; }
+  .verdict-box { background: #fff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .verdict-box h2 { margin-bottom: 30px; }
+  .verdict-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+  .verdict-recommend { background: #e8f5e9; padding: 25px; border-radius: 8px; }
+  .verdict-not-recommend { background: #ffebee; padding: 25px; border-radius: 8px; }
+  .recommend-badge { display: block; font-size: 1.3rem; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+  .not-recommend-badge { display: block; font-size: 1.3rem; font-weight: bold; color: #c62828; margin-bottom: 15px; }
+  .verdict-content ul { list-style: none; padding: 0; }
+  .verdict-content li { padding: 8px 0; padding-left: 20px; position: relative; color: #555; }
+  .verdict-content li::before { content: "•"; position: absolute; left: 0; font-weight: bold; }
+  .final-cta { background: #fff3cd; padding: 25px; border-radius: 8px; border-left: 4px solid #ffc107; text-align: center; }
+  .final-opinion { font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .related-card { background: #212121; color: #fff; padding: 25px; border-radius: 8px; text-decoration: none; text-align: center; transition: transform 0.3s ease; }
+  .related-card:hover { transform: translateY(-5px); background: #1565c0; }
+  .related-card h3 { margin-bottom: 8px; }
+  .related-card p { opacity: 0.9; font-size: 0.9rem; }
+  .btn { display: inline-block; padding: 15px 30px; background: #1565c0; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s ease; }
+  .btn:hover { background: #0d47a1; }
+  @media (max-width: 768px) {
+    .pros-cons-grid, .verdict-content { grid-template-columns: 1fr; }
+    .rating-summary { flex-direction: column; gap: 20px; }
+    .hero-verdict { padding: 15px 25px; }
+    .verdict-badge { font-size: 1.2rem; }
+  }
+</style>

@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'LS2 Scope Monocolor Review 2026 | Análise Completa';
+const description = 'Review completo do capacete LS2 Scope Monocolor. Análise do modelo intermediário da LS2 com preço, qualidade e vale a pena comprar?';
+
+const specs = [
+  { label: 'Material', value: 'Casco KPA (Fibra de vidro + Kevlar + Aramida)' },
+  { label: 'Peso', value: '1.350g (±50g)' },
+  { label: 'Certificações', value: 'ECE 22.05, INMETRO' },
+  { label: 'Viseira', value: 'Policarbonato 2D com UV400' },
+  { label: 'Viseira Solar', value: 'Sim, retrátil' },
+  { label: 'Ventilação', value: '2 entradas superiores, 1 frontal, 2 exaustores' },
+  { label: 'Forro', value: 'Hipoalergênico, removível e lavável' },
+  { label: 'Fechamento', value: 'Micrométrico de aço' },
+  { label: 'Garantia', value: '2 anos' }
+];
+
+const pros = [
+  'Material KPA leve e resistente',
+  'Viseira solar integrada muito útil',
+  'Design moderno e esportivo',
+  'Ventilação eficiente',
+  'Forro de qualidade superior',
+  'Ótima relação custo-benefício',
+  'Preparado para intercomunicador',
+  'Acabamento superior na categoria'
+];
+
+const cons = [
+  'Preço médio-alto para iniciantes',
+  'Isolamento acústico poderia ser melhor',
+  'Viseira principal sem pinlock incluso',
+  'Peças de reposição limitadas no Brasil',
+  'Tamanho da viseira solar pequeno',
+  'Ruído de vento acima de 100km/h'
+];
+
+const comparisons = [
+  { model: 'LS2 Scope Monocolor', price: 'R$ 650-850', material: 'KPA', weight: '1.350g', rating: '4.6' },
+  { model: 'Norisk FF391', price: 'R$ 480-680', material: 'ABS', weight: '1.450g', rating: '4.5' },
+  { model: 'AGV K1S', price: 'R$ 900-1.200', material: 'HIR-TH', weight: '1.400g', rating: '4.8' }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>LS2 Scope Monocolor</h1>
+        <p class="hero-subtitle">
+          Review completo do capacete intermediário da LS2. Análise detalhada 
+          com preços, especificações e nossa opinião sincera.
+        </p>
+        <div class="hero-verdict">
+          <span class="verdict-badge">Veredito: Muito Bom</span>
+          <p>Excelente intermediário com boa relação custo-benefício</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="summary-section">
+      <div class="container">
+        <div class="summary-box">
+          <h2>Resumo da Análise</h2>
+          <p>
+            O <strong>LS2 Scope Monocolor</strong> é um capacete que se posiciona no segmento 
+            <strong>intermediário</strong> do mercado, oferecendo tecnologia e acabamento superiores 
+            aos modelos de entrada, mas por um preço mais acessível que marcas premium.
+          </p>
+          <p>
+            Seu diferencial é o <strong>casco KPA</strong> (fibra de vidro + Kevlar), que proporciona 
+            leveza e resistência. A <strong>viseira solar retrátil</strong> é um adicionais valioso 
+            para quem pilota em diferentes condições de luz.
+          </p>
+          <div class="rating-summary">
+            <div class="rating-item">
+              <span class="rating-number">4.6</span>
+              <span class="rating-label">Nota Geral</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-stars">★★★★☆</span>
+              <span class="rating-label">Qualidade</span>
+            </div>
+            <div class="rating-item">
+              <span class="rating-recommend">89%</span>
+              <span class="rating-label">Recomendam</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section class="specs-section">
+      <div class="container">
+        <h2>Especificações Técnicas</h2>
+        <div class="specs-grid">
+          <div class="specs-image">
+            <img src="/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png" alt="LS2 Scope Monocolor" loading="lazy" />
+          </div>
+          <div class="specs-table">
+            {specs.map(spec => (
+              <div class="spec-row">
+                <span class="spec-label">{spec.label}</span>
+                <span class="spec-value">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pros and Cons -->
+    <section class="pros-cons-section">
+      <div class="container">
+        <div class="pros-cons-grid">
+          <div class="pros-box">
+            <h3>✓ Pontos Positivos</h3>
+            <ul>
+              {pros.map(pro => (
+                <li>{pro}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="cons-box">
+            <h3>✗ Pontos Negativos</h3>
+            <ul>
+              {cons.map(con => (
+                <li>{con}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2>Comparativo com Concorrentes</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Preço</th>
+                <th>Material</th>
+                <th>Peso</th>
+                <th>Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisons.map(row => (
+                <tr class={row.model.includes('LS2') ? 'highlight' : ''}>
+                  <td><strong>{row.model}</strong></td>
+                  <td>{row.price}</td>
+                  <td>{row.material}</td>
+                  <td>{row.weight}</td>
+                  <td>★ {row.rating}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Verdict -->
+    <section class="final-verdict-section">
+      <div class="container">
+        <div class="verdict-box">
+          <h2>Vale a Pena Comprar?</h2>
+          <div class="verdict-content">
+            <div class="verdict-recommend">
+              <span class="recommend-badge">👍 Recomendado</span>
+              <p class="recommend-for"><strong>Ideal para:</strong></p>
+              <ul>
+                <li>Quem busca capacete intermediário de qualidade</li>
+                <li>Pilotos que valorizam leveza</li>
+                <li>Uso misto urbano/estrada</li>
+                <li>Quem usa viseira solar frequentemente</li>
+                <li>Orçamento até R$ 900</li>
+              </ul>
+            </div>
+            <div class="verdict-not-recommend">
+              <span class="not-recommend-badge">👎 Não Recomendado</span>
+              <p class="not-recommend-for"><strong>Evite se:</strong></p>
+              <ul>
+                <li>Busca o menor preço possível</li>
+                <li>Faz muitas viagens noturnas (ruído)</li>
+                <li>Prefere marcas premium consolidadas</li>
+                <li>Necessita de peças de reposição fáceis</li>
+              </ul>
+            </div>
+          </div>
+          <div class="final-cta">
+            <p class="final-opinion">
+              <strong>Opinião final:</strong> O LS2 Scope Monocolor é um dos melhores capacetes 
+              na faixa de R$ 600-900. Oferece tecnologia superior aos modelos de entrada e 
+              competi de igual para igual com opções mais caras. Recomendamos para quem busca 
+              evolução em relação aos capacetes básicos.
+            </p>
+            <a href="https://amzn.to/ls2scope" target="_blank" rel="nofollow noopener" class="btn btn-primary">
+              Ver Preço do LS2 Scope
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Reviews Relacionadas</h2>
+        <div class="related-grid">
+          <a href="/capacete-norisk-review/" class="related-card">
+            <h3>Norisk FF391</h3>
+            <p>Alternativa mais barata</p>
+          </a>
+          <a href="/review-agv-k1/" class="related-card">
+            <h3>AGV K1S</h3>
+            <p>Opção premium italiana</p>
+          </a>
+          <a href="/custo-beneficio/" class="related-card">
+            <h3>Custo Benefício</h3>
+            <p>Todas as opções</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero { background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%); color: #fff; padding: 80px 20px; text-align: center; }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+  .hero-subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+  .hero-verdict { display: inline-block; background: rgba(255,255,255,0.2); padding: 20px 40px; border-radius: 8px; backdrop-filter: blur(10px); }
+  .verdict-badge { display: block; font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+  .hero-verdict p { margin: 0; opacity: 0.9; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .summary-section, .specs-section, .pros-cons-section, .comparison-section, .final-verdict-section, .related-section { padding: 60px 20px; }
+  .summary-section { background: #f5f5f5; }
+  .summary-box { background: #fff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .summary-box h2 { text-align: center; margin-bottom: 25px; }
+  .summary-box p { line-height: 1.7; color: #555; margin-bottom: 15px; }
+  .rating-summary { display: flex; justify-content: center; gap: 40px; margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+  .rating-item { text-align: center; }
+  .rating-number { display: block; font-size: 2.5rem; font-weight: bold; color: #ff6f00; }
+  .rating-stars { display: block; font-size: 1.8rem; color: #FFD700; }
+  .rating-recommend { display: block; font-size: 2rem; font-weight: bold; color: #4CAF50; }
+  .rating-label { display: block; font-size: 0.9rem; color: #666; margin-top: 5px; }
+  h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .specs-image img { width: 100%; height: auto; border-radius: 8px; }
+  .specs-table { background: #fff; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .spec-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label { font-weight: 600; color: #333; }
+  .spec-value { color: #666; }
+  .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .pros-box, .cons-box { padding: 30px; border-radius: 8px; }
+  .pros-box { background: #e8f5e9; }
+  .cons-box { background: #ffebee; }
+  .pros-box h3 { color: #2e7d32; margin-bottom: 20px; font-size: 1.3rem; }
+  .cons-box h3 { color: #c62828; margin-bottom: 20px; font-size: 1.3rem; }
+  .pros-box ul, .cons-box ul { list-style: none; padding: 0; }
+  .pros-box li, .cons-box li { padding: 10px 0; padding-left: 25px; position: relative; line-height: 1.5; }
+  .pros-box li::before { content: "✓"; position: absolute; left: 0; color: #2e7d32; font-weight: bold; }
+  .cons-box li::before { content: "×"; position: absolute; left: 0; color: #c62828; font-weight: bold; }
+  .comparison-table-wrapper { overflow-x: auto; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+  .comparison-table th { background: #212121; color: #fff; font-weight: 600; }
+  .comparison-table tr:hover { background: #f5f5f5; }
+  .comparison-table tr.highlight { background: #fff3e0; }
+  .final-verdict-section { background: #f5f5f5; }
+  .verdict-box { background: #fff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .verdict-box h2 { margin-bottom: 30px; }
+  .verdict-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+  .verdict-recommend { background: #e8f5e9; padding: 25px; border-radius: 8px; }
+  .verdict-not-recommend { background: #ffebee; padding: 25px; border-radius: 8px; }
+  .recommend-badge { display: block; font-size: 1.3rem; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+  .not-recommend-badge { display: block; font-size: 1.3rem; font-weight: bold; color: #c62828; margin-bottom: 15px; }
+  .verdict-content ul { list-style: none; padding: 0; }
+  .verdict-content li { padding: 8px 0; padding-left: 20px; position: relative; color: #555; }
+  .verdict-content li::before { content: "•"; position: absolute; left: 0; font-weight: bold; }
+  .final-cta { background: #fff3cd; padding: 25px; border-radius: 8px; border-left: 4px solid #ffc107; text-align: center; }
+  .final-opinion { font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .related-card { background: #212121; color: #fff; padding: 25px; border-radius: 8px; text-decoration: none; text-align: center; transition: transform 0.3s ease; }
+  .related-card:hover { transform: translateY(-5px); background: #ff6f00; }
+  .related-card h3 { margin-bottom: 8px; }
+  .related-card p { opacity: 0.9; font-size: 0.9rem; }
+  .btn { display: inline-block; padding: 15px 30px; background: #ff6f00; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s ease; }
+  .btn:hover { background: #e65100; }
+  @media (max-width: 768px) {
+    .specs-grid, .pros-cons-grid, .verdict-content { grid-template-columns: 1fr; }
+    .rating-summary { flex-direction: column; gap: 20px; }
+  }
+</style>

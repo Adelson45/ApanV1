@@ -1,0 +1,584 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Melhores Capas de Chuva para Moto 2026 | Impermeáveis e Resistentes';
+const description = 'Descubra as melhores capas de chuva para moto de 2026. Análises de conjuntos impermeáveis, calças e jaquetas para pilotar em qualquer clima.';
+
+const rainGear = [
+  {
+    name: 'Capa de Chuva X11',
+    subtitle: 'City',
+    price: 'R$ 180 - R$ 250',
+    rating: 4.6,
+    image: '/images/capa-chuva-x11-city.jpg',
+    affiliateLink: 'https://amzn.to/x11city',
+    description: 'A X11 City é uma capa de chuva completa com jaqueta e calça, oferecendo proteção total contra chuva e vento para uso urbano.',
+    features: [
+      'Material PVC resistente de 0.25mm',
+      'Costuras seladas termicamente',
+      'Capuz embutido na gola',
+      'Fechamento de velcro nas mangas e pernas',
+      'Bolsos laterais na jaqueta'
+    ],
+    pros: [
+      'Preço acessível',
+      'Proteção completa (jaqueta + calça)',
+      'Resistente a ventos',
+      'Fácil de colocar e tirar'
+    ],
+    cons: [
+      'Não é respirável (acumula suor)',
+      'Material pode rasgar em quedas',
+      'Barulho em alta velocidade'
+    ]
+  },
+  {
+    name: 'Capa de Chuva Tutto',
+    subtitle: 'Moto',
+    price: 'R$ 220 - R$ 320',
+    rating: 4.7,
+    image: '/images/capa-chuva-tutto.jpg',
+    affiliateLink: 'https://amzn.to/tuttomoto',
+    description: 'A Tutto Moto é uma capa de chuva premium nacional, com acabamento superior e reforços estratégicos para pilotagem.',
+    features: [
+      'Nylon 190T com revestimento PU',
+      'Costuras termo-soldadas',
+      'Fecho YKK na jaqueta',
+      'Cintura elástica ajustável',
+      'Refletivos 3M nas costas e pernas'
+    ],
+    pros: [
+      'Acabamento superior',
+      'Material mais leve e flexível',
+      'Refletivos de alta qualidade',
+      'Marca nacional com garantia'
+    ],
+    cons: [
+      'Preço médio-alto',
+      'Ainda não é totalmente respirável',
+      'Tamanhos podem variar'
+    ]
+  },
+  {
+    name: 'Poncho Capa de Chuva',
+    subtitle: 'Delta Flex',
+    price: 'R$ 80 - R$ 120',
+    rating: 4.3,
+    image: '/images/poncho-delta-flex.jpg',
+    affiliateLink: 'https://amzn.to/deltaflex',
+    description: 'O Delta Flex é um poncho prático e rápido para emergências de chuva, ideal para ter sempre na mochila.',
+    features: [
+      'Material PVC leve',
+      'Cobre moto e piloto',
+      'Capuz com visor transparente',
+      'Saco de transporte incluso',
+      'Disponível em várias cores'
+    ],
+    pros: [
+      'Extremamente portátil',
+      'Cobre guidão e instrumentos',
+      'Preço muito acessível',
+      'Instalação rápida'
+    ],
+    cons: [
+      'Proteção inferior a conjunto completo',
+      'Sem calça (pernas expostas)',
+      'Pode voar em vento forte',
+      'Estética pouco esportiva'
+    ]
+  },
+  {
+    name: 'Capa de Chuva Alpinestars',
+    subtitle: 'Hurricane',
+    price: 'R$ 650 - R$ 850',
+    rating: 4.8,
+    image: '/images/capa-chuva-alpinestars.jpg',
+    affiliateLink: 'https://amzn.to/alpinestarshurricane',
+    description: 'A Alpinestars Hurricane é uma capa de chuva técnica de alta performance, desenvolvida para pilotagem em condições extremas.',
+    features: [
+      'Tecido têxtil impermeável e respirável',
+      'Membrana Drystar® proprietária',
+      'Costuras totalmente seladas',
+      'Ajustes em cintura, punhos e tornozelos',
+      'Compatível com uso sobre jaqueta de moto'
+    ],
+    pros: [
+      'Material respirável (não acumula suor)',
+      'Qualidade Alpinestars',
+      'Ajustes precisos',
+      'Resistência ao vento'
+    ],
+    cons: [
+      'Preço premium',
+      'Peso maior que capas de PVC',
+      'Requer manutenção (reimpermeabilização)'
+    ]
+  }
+];
+
+const tips = [
+  {
+    title: 'Tamanho Adequado',
+    content: 'Escolha uma capa um número maior que sua jaqueta normal. Ela precisa vestir sobre todo seu equipamento de moto.'
+  },
+  {
+    title: 'Teste Antes de Usar',
+    content: 'Use a capa em casa antes de precisar na rua. Verifique se cobre bem e se é fácil de colocar com luvas.'
+  },
+  {
+    title: 'Cuidado com a Velocidade',
+    content: 'Capas de PVC podem rasgar ou voar em velocidades acima de 80km/h. Use zíperes e velcros adequadamente.'
+  },
+  {
+    title: 'Secagem Adequada',
+    content: 'Sempre seque a capa completamente antes de guardar. Capas molhadas desenvolvem mofo e perdem impermeabilidade.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Melhores Capas de Chuva para Moto 2026</h1>
+        <p class="hero-subtitle">
+          Pilotar na chuva com segurança e conforto. Análises das melhores capas de chuva, 
+          ponchos e conjuntos impermeáveis para motociclistas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <h2>Conjuntos Impermeáveis Recomendados</h2>
+        <div class="products-grid">
+          {rainGear.map((gear, index) => (
+            <article class="product-card">
+              <div class="product-rank">#{index + 1}</div>
+              <div class="product-image">
+                <img src={gear.image} alt={gear.name} loading="lazy" />
+                <span class="product-rating">★ {gear.rating}</span>
+              </div>
+              <div class="product-content">
+                <h3>{gear.name}</h3>
+                <p class="subtitle">{gear.subtitle}</p>
+                <p class="price">{gear.price}</p>
+                <p class="description">{gear.description}</p>
+                
+                <div class="features-list">
+                  <h4>Características</h4>
+                  <ul>
+                    {gear.features.map(feature => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div class="verdict">
+                  <div class="pros">
+                    <h5>Prós</h5>
+                    <ul>
+                      {gear.pros.map(pro => (
+                        <li>{pro}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="cons">
+                    <h5>Contras</h5>
+                    <ul>
+                      {gear.cons.map(con => (
+                        <li>{con}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href={gear.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                  Ver na Loja
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+      <div class="container">
+        <h2>Dicas para Usar Capa de Chuva</h2>
+        <div class="tips-grid">
+          {tips.map(tip => (
+            <div class="tip-card">
+              <h3>{tip.title}</h3>
+              <p>{tip.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Warning -->
+    <section class="safety-section">
+      <div class="container">
+        <div class="safety-box">
+          <h3>⚠️ Cuidados na Pilotagem com Chuva</h3>
+          <ul>
+            <li><strong>Reduza a velocidade:</strong> O aquaplanagem é um risco real em pisos molhados</li>
+            <li><strong>Aumente a distância:</strong> A frenagem é prejudicada na chuva</li>
+            <li><strong>Evite manchas de óleo:</strong> Asfalto molhado mostra manchas escuras - evite-as</li>
+            <li><strong>Cuidado com curvas:</strong> Reduza a inclinação e seja suave no acelerador</li>
+            <li><strong>Primeira chuva:</strong> As primeiras gotas levantam a sujeira da pista - espere ou vá devagar</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Complete sua Proteção</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/" class="related-card">
+            <h3>Capacetes</h3>
+            <p>Proteção essencial para cabeça</p>
+          </a>
+          <a href="/melhor-capacete/luvas/" class="related-card">
+            <h3>Luvas Impermeáveis</h3>
+            <p>Mãos secas e protegidas</p>
+          </a>
+          <a href="/dica-melhor-jaqueta-motociclistas/" class="related-card">
+            <h3>Jaquetas</h3>
+            <p>Proteção corporal completa</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .products-section, .tips-section, .safety-section, .related-section {
+    padding: 60px 20px;
+  }
+  
+  .products-section {
+    background: #f5f5f5;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .product-rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e31b1b;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FFD700;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .product-content {
+    padding: 25px;
+  }
+  
+  .product-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .features-list h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .features-list ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .features-list li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .features-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e31b1b;
+  }
+  
+  .verdict {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .pros, .cons {
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .pros {
+    background: #e8f5e9;
+  }
+  
+  .cons {
+    background: #ffebee;
+  }
+  
+  .pros h5, .cons h5 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .pros h5 { color: #2e7d32; }
+  .cons h5 { color: #c62828; }
+  
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pros li, .cons li {
+    padding: 4px 0;
+    padding-left: 15px;
+    position: relative;
+    font-size: 0.85rem;
+  }
+  
+  .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+  }
+  
+  .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+  }
+  
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .tip-card {
+    background: #e1f5fe;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #0288d1;
+  }
+  
+  .tip-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #01579b;
+  }
+  
+  .tip-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .safety-section {
+    background: #fff3cd;
+  }
+  
+  .safety-box {
+    background: #fff;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .safety-box h3 {
+    color: #856404;
+    margin-bottom: 20px;
+  }
+  
+  .safety-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .safety-box li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .safety-box li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-card {
+    background: #212121;
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .related-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .related-card p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .verdict {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

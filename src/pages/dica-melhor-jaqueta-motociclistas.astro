@@ -1,0 +1,690 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Melhores Jaquetas para Motociclistas 2026 | Proteção e Estilo';
+const description = 'Descubra as melhores jaquetas para moto de 2026. Análises de jaquetas de couro, têxtil, impermeáveis e com proteções. Segurança para seu corpo na pilotagem.';
+
+const jackets = [
+  {
+    name: 'Jaqueta Alpinestars T-GP Plus',
+    subtitle: 'R v3',
+    price: 'R$ 1.200 - R$ 1.600',
+    rating: 4.8,
+    image: '/images/jaqueta-alpinestars-tgp.jpg',
+    affiliateLink: 'https://amzn.to/alpinestarstgp',
+    description: 'A Alpinestars T-GP Plus R v3 é uma jaqueta esportiva de têxtil com proteções integradas e excelente ventilação para pilotagens dinâmicas.',
+    features: [
+      'Tecido 600D poliester resistente',
+      'Proteções de ombro e cotovelo CE Nível 2',
+      'Bolso para protetor de costas CE',
+      'Múltiplas entradas de ventilação',
+      'Ajuste em cintura e mangas'
+    ],
+    pros: [
+      'Proteção CE Nível 2 inclusa',
+      'Excelente ventilação',
+      'Qualidade Alpinestars',
+      'Versátil para diferentes climas'
+    ],
+    cons: [
+      'Preço elevado',
+      'Não é impermeável',
+      'Corte esportivo (justo)'
+    ]
+  },
+  {
+    name: 'Jaqueta X11 Iron',
+    subtitle: 'Masc 2',
+    price: 'R$ 450 - R$ 650',
+    rating: 4.6,
+    image: '/images/jaqueta-x11-iron.jpg',
+    affiliateLink: 'https://amzn.to/x11iron',
+    description: 'A X11 Iron Masc 2 oferece proteção robusta com ótima relação custo-benefício, sendo uma das jaquetas mais vendidas do Brasil.',
+    features: [
+      'Tecido Oxford 600D',
+      'Proteções de ombro e cotovelo CE',
+      'Forro interno removível',
+      'Impermeável com tratamento DWR',
+      'Refletivos noturnos'
+    ],
+    pros: [
+      'Ótima relação custo-benefício',
+      'Impermeável',
+      'Forro removível para versatilidade',
+      'Marca reconhecida no Brasil'
+    ],
+    cons: [
+      'Proteções CE básicas',
+      'Ventilação limitada',
+      'Acabamento inferior a marcas premium'
+    ]
+  },
+  {
+    name: 'Jaqueta Tutto Moto',
+    subtitle: 'Tifon 2',
+    price: 'R$ 380 - R$ 550',
+    rating: 4.5,
+    image: '/images/jaqueta-tutto-tifon.jpg',
+    affiliateLink: 'https://amzn.to/tuttottifon',
+    description: 'A Tutto Moto Tifon 2 é uma jaqueta urbana brasileira que combina proteção, estilo e preço acessível para o dia a dia.',
+    features: [
+      'Tecido Cordura resistente',
+      'Proteções de ombro e cotovelo',
+      'Impermeável com membrana',
+      'Forro térmico removível',
+      'Ajustes em múltiplos pontos'
+    ],
+    pros: [
+      'Preço acessível',
+      'Marca nacional com suporte',
+      'Impermeável e térmica',
+      'Design urbano discreto'
+    ],
+    cons: [
+      'Proteções básicas',
+      'Durabilidade do zíper',
+      'Ventilação limitada'
+    ]
+  },
+  {
+    name: 'Jaqueta Dainese Racing 3',
+    subtitle: 'Perforated',
+    price: 'R$ 2.800 - R$ 3.500',
+    rating: 4.9,
+    image: '/images/jaqueta-dainese-racing.jpg',
+    affiliateLink: 'https://amzn.to/daineseracing',
+    description: 'A Dainese Racing 3 é uma jaqueta de couro esportiva italiana, oferecendo proteção máxima e estilo agressivo para pilotagens esportivas.',
+    features: [
+      'Couro Tutu de alta qualidade',
+      'Proteções de ombro em alumínio',
+      'Proteções de cotovelo CE Nível 2',
+      'Inserções elásticas para mobilidade',
+      'Bolso para protetor de costas'
+    ],
+    pros: [
+      'Proteção máxima de couro',
+      'Acabamento premium italiano',
+      'Design esportivo icônico',
+      'Mobilidade apesar da proteção'
+    ],
+    cons: [
+      'Preço premium',
+      'Não é impermeável',
+      'Quente em dias de calor',
+      'Corte muito esportivo'
+    ]
+  }
+];
+
+const materials = [
+  {
+    name: 'Couro',
+    description: 'Máxima proteção contra abrasão. Ideal para uso esportivo e alta velocidade.',
+    pros: ['Proteção superior', 'Durabilidade extrema', 'Estilo clássico'],
+    cons: ['Preço elevado', 'Quente no verão', 'Manutenção necessária']
+  },
+  {
+    name: 'Têxtil',
+    description: 'Versátil e acessível. Opção mais popular para uso urbano e touring.',
+    pros: ['Preço acessível', 'Leveza', 'Impermeável (geralmente)', 'Ventilação'],
+    cons: ['Proteção inferior ao couro', 'Durabilidade menor', 'Troca a cada 3-5 anos']
+  },
+  {
+    name: 'Mesh/Air Flow',
+    description: 'Máxima ventilação para climas quentes. Proteção básica com conforto térmico.',
+    pros: ['Ventilação máxima', 'Leveza', 'Conforto em calor'],
+    cons: ['Proteção limitada', 'Sem isolamento térmico', 'Não é impermeável']
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Melhores Jaquetas para Motociclistas 2026</h1>
+        <p class="hero-subtitle">
+          Proteja seu corpo com as melhores jaquetas do mercado. 
+          Análises de jaquetas de couro, têxtil e impermeáveis para todos os estilos de pilotagem.
+        </p>
+      </div>
+    </section>
+
+    <!-- Materials Guide -->
+    <section class="materials-section">
+      <div class="container">
+        <h2>Escolha o Material Ideal</h2>
+        <div class="materials-grid">
+          {materials.map(material => (
+            <div class="material-card">
+              <h3>{material.name}</h3>
+              <p class="material-desc">{material.description}</p>
+              <div class="material-pros-cons">
+                <div class="pros">
+                  <h4>Vantagens</h4>
+                  <ul>
+                    {material.pros.map(pro => (
+                      <li>{pro}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="cons">
+                  <h4>Desvantagens</h4>
+                  <ul>
+                    {material.cons.map(con => (
+                      <li>{con}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <h2>Top Jaquetas Recomendadas</h2>
+        <div class="products-grid">
+          {jackets.map((jacket, index) => (
+            <article class="product-card">
+              <div class="product-header">
+                <span class="rank">#{index + 1}</span>
+                <div class="product-title">
+                  <h3>{jacket.name}</h3>
+                  <p class="subtitle">{jacket.subtitle}</p>
+                </div>
+              </div>
+              
+              <div class="product-body">
+                <div class="product-image">
+                  <img src={jacket.image} alt={jacket.name} loading="lazy" />
+                  <div class="product-meta">
+                    <span class="price">{jacket.price}</span>
+                    <span class="rating">★ {jacket.rating}</span>
+                  </div>
+                </div>
+                
+                <div class="product-info">
+                  <p class="description">{jacket.description}</p>
+                  
+                  <div class="features">
+                    <h4>Características</h4>
+                    <ul>
+                      {jacket.features.map(feature => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div class="verdict">
+                    <div class="pros">
+                      <h5>Prós</h5>
+                      <ul>
+                        {jacket.pros.map(pro => (
+                          <li>{pro}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div class="cons">
+                      <h5>Contras</h5>
+                      <ul>
+                        {jacket.cons.map(con => (
+                          <li>{con}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <a href={jacket.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                    Ver na Loja
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Protection Importance -->
+    <section class="protection-section">
+      <div class="container">
+        <div class="protection-box">
+          <h3>🛡️ A Importância das Proteções</h3>
+          <p>
+            Uma jaqueta de moto adequada pode fazer a diferença entre ferimentos leves e lesões graves em caso de queda.
+          </p>
+          <div class="protection-grid">
+            <div class="protection-item">
+              <h4>Proteções de Ombro</h4>
+              <p>Absorvem impactos nas quedas laterais e protegem uma das áreas mais vulneráveis.</p>
+            </div>
+            <div class="protection-item">
+              <h4>Proteções de Cotovelo</h4>
+              <p>Essenciais, pois o reflexo natural em quedas é apoiar-se nos cotovelos.</p>
+            </div>
+            <div class="protection-item">
+              <h4>Protetor de Costas</h4>
+              <p>Protege a coluna vertebral contra impactos diretos. Recomendado CE Nível 2.</p>
+            </div>
+            <div class="protection-item">
+              <h4>Abrasion Resistance</h4>
+              <p>O tecido deve resistir à abrasão em deslizamento. Couro > Cordura > Poliéster.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Complete seu Equipamento</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/" class="related-card">
+            <h3>Capacetes</h3>
+            <p>Proteção essencial para cabeça</p>
+          </a>
+          <a href="/melhor-capacete/luvas/" class="related-card">
+            <h3>Luvas</h3>
+            <p>Proteção para as mãos</p>
+          </a>
+          <a href="/melhor-capacete/capa-de-chuva/" class="related-card">
+            <h3>Capas de Chuva</h3>
+            <p>Impermeabilidade completa</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #3d5afe 0%, #1a237e 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .materials-section, .products-section, .protection-section, .related-section {
+    padding: 60px 20px;
+  }
+  
+  .materials-section {
+    background: #f5f5f5;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .material-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .material-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #212121;
+  }
+  
+  .material-desc {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .material-pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  .material-pros-cons h4 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .material-pros-cons .pros h4 { color: #4CAF50; }
+  .material-pros-cons .cons h4 { color: #f44336; }
+  
+  .material-pros-cons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .material-pros-cons li {
+    padding: 4px 0;
+    padding-left: 15px;
+    position: relative;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  
+  .material-pros-cons .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+  }
+  
+  .material-pros-cons .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #f44336;
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .product-header {
+    background: #212121;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .rank {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e31b1b;
+  }
+  
+  .product-title h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  
+  .subtitle {
+    margin: 5px 0 0;
+    opacity: 0.8;
+  }
+  
+  .product-body {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .product-image {
+    position: relative;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .product-meta {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .price {
+    background: #4CAF50;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .rating {
+    background: #FFD700;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .features h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  .features li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .features li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e31b1b;
+  }
+  
+  .verdict {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .verdict .pros, .verdict .cons {
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .verdict .pros {
+    background: #e8f5e9;
+  }
+  
+  .verdict .cons {
+    background: #ffebee;
+  }
+  
+  .verdict h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .verdict .pros h5 { color: #2e7d32; }
+  .verdict .cons h5 { color: #c62828; }
+  
+  .verdict ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .verdict li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+  }
+  
+  .verdict .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+  }
+  
+  .verdict .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+  }
+  
+  .protection-section {
+    background: #e3f2fd;
+  }
+  
+  .protection-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    border-left: 4px solid #3d5afe;
+  }
+  
+  .protection-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #1a237e;
+  }
+  
+  .protection-box > p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .protection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .protection-item {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .protection-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #3d5afe;
+  }
+  
+  .protection-item p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-card {
+    background: #212121;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .related-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .related-card p {
+    opacity: 0.9;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .product-body {
+      grid-template-columns: 1fr;
+    }
+    
+    .verdict {
+      grid-template-columns: 1fr;
+    }
+    
+    .material-pros-cons {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,375 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Dicas para Motociclistas | Guias e Tutoriais';
+const description = 'Dicas essenciais para motociclistas. Guias de compra, manutenção, segurança e tudo que você precisa saber sobre capacetes e equipamentos.';
+
+const guides = [
+  {
+    title: 'Como Escolher o Tamanho Correto do Capacete',
+    excerpt: 'Guia completo para medir sua cabeça e escolher o tamanho perfeito. Ajuste correto é essencial para segurança.',
+    image: '/images/guia-tamanho-capacete.jpg',
+    href: '/como-escolher-tamanho-capacete/',
+    category: 'Guia de Compra',
+    readTime: '5 min'
+  },
+  {
+    title: 'Cuidados com o Capacete: Limpeza e Manutenção',
+    excerpt: 'Aprenda a limpar o interior e exterior do capacete, cuidar da viseira e prolongar a vida útil do seu equipamento.',
+    image: '/images/limpeza-capacete.jpg',
+    href: '/cuidados-capacete/',
+    category: 'Manutenção',
+    readTime: '7 min'
+  },
+  {
+    title: 'Quando Trocar o Capacete?',
+    excerpt: 'Saiba identificar os sinais de que seu capacete precisa ser substituído. Vida útil, quedas e envelhecimento do material.',
+    image: '/images/trocar-capacete.jpg',
+    href: '/quando-trocar-capacete/',
+    category: 'Segurança',
+    readTime: '4 min'
+  },
+  {
+    title: 'Entenda as Certificações INMETRO e ECE',
+    excerpt: 'Guia completo sobre certificações de segurança. O que significam e por que são importantes para sua proteção.',
+    image: '/images/certificacoes-capacete.jpg',
+    href: '/certificacoes-capacete/',
+    category: 'Segurança',
+    readTime: '6 min'
+  },
+  {
+    title: 'Dicas para Pilotar na Chuva',
+    excerpt: 'Técnicas essenciais para pilotagem segura em dias de chuva. Equipamentos, velocidade e cuidados especiais.',
+    image: '/images/pilotar-chuva.jpg',
+    href: '/dicas-pilotar-chuva/',
+    category: 'Pilotagem',
+    readTime: '8 min'
+  },
+  {
+    title: 'Acessórios Essenciais para Motociclistas',
+    excerpt: 'Lista completa de acessórios que todo motociclista deve considerar. Do básico ao avançado.',
+    image: '/images/acessorios-moto.jpg',
+    href: '/acessorios-essenciais/',
+    category: 'Equipamentos',
+    readTime: '10 min'
+  }
+];
+
+const quickTips = [
+  {
+    icon: '🛡️',
+    title: 'Segurança Primeiro',
+    content: 'Nunca economize no capacete. É o único equipamento que protege sua cabeça em uma queda.'
+  },
+  {
+    icon: '📏',
+    title: 'Medição Correta',
+    content: 'Meça a circunferência da cabeça com fita métrica, 2cm acima das sobrancelhas.'
+  },
+  {
+    icon: '🔄',
+    title: 'Vida Útil',
+    content: 'Capacetes devem ser trocados a cada 5 anos, ou imediatamente após quedas significativas.'
+  },
+  {
+    icon: '🧼',
+    title: 'Limpeza Regular',
+    content: 'Limpe o interior mensalmente para evitar odor e bactérias. Use produtos específicos.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Dicas para Motociclistas</h1>
+        <p class="hero-subtitle">
+          Guias completos, tutoriais e dicas essenciais para quem vive sobre duas rodas. 
+          Aprenda a escolher, cuidar e aproveitar ao máximo seus equipamentos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Tips -->
+    <section class="quick-tips-section">
+      <div class="container">
+        <h2>Dicas Rápidas</h2>
+        <div class="tips-grid">
+          {quickTips.map(tip => (
+            <div class="tip-card">
+              <span class="tip-icon">{tip.icon}</span>
+              <h3>{tip.title}</h3>
+              <p>{tip.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Guides Grid -->
+    <section class="guides-section">
+      <div class="container">
+        <h2>Guias Completos</h2>
+        <div class="guides-grid">
+          {guides.map(guide => (
+            <article class="guide-card">
+              <a href={guide.href} class="guide-link">
+                <div class="guide-image">
+                  <img src={guide.image} alt={guide.title} loading="lazy" />
+                  <span class="guide-category">{guide.category}</span>
+                </div>
+                <div class="guide-content">
+                  <div class="guide-meta">
+                    <span class="read-time">⏱️ {guide.readTime} de leitura</span>
+                  </div>
+                  <h3>{guide.title}</h3>
+                  <p class="guide-excerpt">{guide.excerpt}</p>
+                  <span class="read-more">Ler guia completo →</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-section">
+      <div class="container">
+        <h2>Explore por Tema</h2>
+        <div class="categories-grid">
+          <a href="/melhor-capacete/" class="category-card">
+            <span class="category-icon">🏍️</span>
+            <h3>Capacetes</h3>
+            <p>Reviews e guias de compra</p>
+          </a>
+          <a href="/cadeados-para-moto/" class="category-card">
+            <span class="category-icon">🔒</span>
+            <h3>Segurança</h3>
+            <p>Cadeados e proteção antifurto</p>
+          </a>
+          <a href="/melhor-capacete/luvas/" class="category-card">
+            <span class="category-icon">🧤</span>
+            <h3>Acessórios</h3>
+            <p>Luvas, jaquetas e equipamentos</p>
+          </a>
+          <a href="/category/reviews/" class="category-card">
+            <span class="category-icon">⭐</span>
+            <h3>Reviews</h3>
+            <p>Análises completas de produtos</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .quick-tips-section, .guides-section, .categories-section {
+    padding: 60px 20px;
+  }
+  
+  .quick-tips-section {
+    background: #e8f5e9;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .tip-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .tip-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .tip-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #212121;
+  }
+  
+  .tip-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .guide-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .guide-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .guide-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .guide-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .guide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .guide-card:hover .guide-image img {
+    transform: scale(1.05);
+  }
+  
+  .guide-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #2e7d32;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+  
+  .guide-content {
+    padding: 25px;
+  }
+  
+  .guide-meta {
+    margin-bottom: 10px;
+  }
+  
+  .read-time {
+    color: #999;
+    font-size: 0.85rem;
+  }
+  
+  .guide-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #212121;
+  }
+  
+  .guide-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .read-more {
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .category-card {
+    background: #212121;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .category-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .category-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .category-card p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .guides-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

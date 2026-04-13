@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'HJC I90 Hollen Review 2026 | Análise do Capacete Modular';
+const description = 'Review completo do capacete modular HJC I90 Hollen. Análise do modelo premium coreano com preço, qualidade e vale a pena comprar?';
+
+const specs = [
+  { label: 'Material', value: 'Fibra de vidro avançada (Advanced Fiberglass)' },
+  { label: 'Peso', value: '1.650g (±50g) - Leve para modular' },
+  { label: 'Certificações', value: 'ECE 22.05, DOT, INMETRO' },
+  { label: 'Tipo', value: 'Modular (Articulado/Robocop)' },
+  { label: 'Viseira', value: 'HJ-33 com preparação Pinlock' },
+  { label: 'Viseira Solar', value: 'Sim, integrada e retrátil' },
+  { label: 'Ventilação', value: '5 entradas + 2 exaustores' },
+  { label: 'Forro', value: 'MultiCool interior premium' },
+  { label: 'Preço', value: 'R$ 1.200 - R$ 1.600' }
+];
+
+const pros = [
+  'Extremamente leve para um modular',
+  'Mecanismo de articulação suave e confiável',
+  'Viseira solar grande e efetiva',
+  'Compatível com óculos de grau',
+  'Pinlock incluso anti-embaçante',
+  'Acabamento premium coreano',
+  'Ótima ventilação',
+  'Preparado para intercom Smart HJC'
+];
+
+const cons = [
+  'Preço elevado',
+  'Mecanismo pode vedar com tempo',
+  'Ruído maior que capacete fechado',
+  'Manutenção do mecanismo necessária',
+  'Peças de reposição caras',
+  'Disponibilidade limitada de cores'
+];
+
+const verdict = {
+  recommend: [
+    'Quem precisa de capacete aberto e fechado',
+    'Pilotos de touring e viagens longas',
+    'Usuários de óculos de grau',
+    'Quem valoriza leveza em modular',
+    'Orçamento até R$ 1.600'
+  ],
+  notRecommend: [
+    'Uso exclusivamente urbano curto',
+    'Orçamento limitado',
+    'Pilotos esportivos agressivos',
+    'Quem busca o menor peso possível'
+  ]
+};
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>HJC I90 Hollen</h1>
+        <p class="hero-subtitle">
+          Review do capacete modular premium da HJC. Leveza e versatilidade 
+          para pilotos exigentes.
+        </p>
+        <div class="hero-verdict">
+          <span class="verdict-badge">Veredito: Excelente</span>
+          <p>Um dos melhores modulares do mercado</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="container">
+        <div class="summary-box">
+          <h2>Sobre o HJC I90</h2>
+          <p>
+            O <strong>HJC I90</strong> é um capacete <strong>modular premium</strong> da marca 
+            sul-coreana que se destaca pela <strong>leveza excepcional</strong>. Pesando apenas 
+            1.650g, é um dos modulares mais leves do mercado.
+          </p>
+          <p>
+            A versão <strong>Hollen</strong> traz uma colorway única e elegante, combinando 
+            tons sóbrios com detalhes em contraste. O mecanismo de articulação é suave e 
+            confiável, permitindo transformar de fechado para aberto facilmente.
+          </p>
+          <div class="rating-summary">
+            <div class="rating-item"><span class="rating-number">4.7</span><span class="rating-label">Nota Geral</span></div>
+            <div class="rating-item"><span class="rating-stars">★★★★★</span><span class="rating-label">Qualidade</span></div>
+            <div class="rating-item"><span class="rating-recommend">91%</span><span class="rating-label">Recomendam</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="specs-section">
+      <div class="container">
+        <h2>Especificações Técnicas</h2>
+        <div class="specs-grid">
+          <div class="specs-image">
+            <img src="/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png" alt="HJC I90 Hollen" loading="lazy" />
+          </div>
+          <div class="specs-table">
+            {specs.map(spec => (
+              <div class="spec-row">
+                <span class="spec-label">{spec.label}</span>
+                <span class="spec-value">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pros-cons-section">
+      <div class="container">
+        <div class="pros-cons-grid">
+          <div class="pros-box">
+            <h3>✓ Pontos Positivos</h3>
+            <ul>{pros.map(pro => <li>{pro}</li>)}</ul>
+          </div>
+          <div class="cons-box">
+            <h3>✗ Pontos Negativos</h3>
+            <ul>{cons.map(con => <li>{con}</li>)}</ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-verdict-section">
+      <div class="container">
+        <div class="verdict-box">
+          <h2>Vale a Pena?</h2>
+          <div class="verdict-content">
+            <div class="verdict-recommend">
+              <span class="recommend-badge">👍 Sim</span>
+              <ul>{verdict.recommend.map(item => <li>{item}</li>)}</ul>
+            </div>
+            <div class="verdict-not-recommend">
+              <span class="not-recommend-badge">👎 Não</span>
+              <ul>{verdict.notRecommend.map(item => <li>{item}</li>)}</ul>
+            </div>
+          </div>
+          <div class="final-cta">
+            <p class="final-opinion">
+              <strong>Opinião:</strong> O HJC I90 é referência em capacetes modulares. 
+              A leveza surpreende e o conforto em longas viagens é excepcional. 
+              Se você precisa de versatilidade, este é uma das melhores escolhas.
+            </p>
+            <a href="https://amzn.to/hjci90" target="_blank" rel="nofollow noopener" class="btn btn-primary">Ver Preço</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <div class="container">
+        <h2>Relacionados</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/" class="related-card"><h3>Capacetes</h3><p>Top 10 geral</p></a>
+          <a href="/review-agv-k1/" class="related-card"><h3>AGV K1S</h3><p>Alternativa fechada</p></a>
+          <a href="/capacete-aberto/" class="related-card"><h3>Abertos</h3><p>Compare opções</p></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hero { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color: #fff; padding: 80px 20px; text-align: center; }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+  .hero-subtitle { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+  .hero-verdict { display: inline-block; background: rgba(255,255,255,0.2); padding: 20px 40px; border-radius: 8px; }
+  .verdict-badge { display: block; font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+  .hero-verdict p { margin: 0; opacity: 0.9; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .summary-section, .specs-section, .pros-cons-section, .final-verdict-section, .related-section { padding: 60px 20px; }
+  .summary-section { background: #f5f5f5; }
+  .summary-box { background: #fff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .summary-box h2 { text-align: center; margin-bottom: 25px; }
+  .summary-box p { line-height: 1.7; color: #555; margin-bottom: 15px; }
+  .rating-summary { display: flex; justify-content: center; gap: 40px; margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+  .rating-item { text-align: center; }
+  .rating-number { display: block; font-size: 2.5rem; font-weight: bold; color: #2e7d32; }
+  .rating-stars { display: block; font-size: 1.8rem; color: #FFD700; }
+  .rating-recommend { display: block; font-size: 2rem; font-weight: bold; color: #4CAF50; }
+  .rating-label { display: block; font-size: 0.9rem; color: #666; margin-top: 5px; }
+  h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .specs-image img { width: 100%; height: auto; border-radius: 8px; }
+  .specs-table { background: #fff; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .spec-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-label { font-weight: 600; color: #333; }
+  .spec-value { color: #666; }
+  .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .pros-box, .cons-box { padding: 30px; border-radius: 8px; }
+  .pros-box { background: #e8f5e9; }
+  .cons-box { background: #ffebee; }
+  .pros-box h3 { color: #2e7d32; margin-bottom: 20px; }
+  .cons-box h3 { color: #c62828; margin-bottom: 20px; }
+  .pros-box ul, .cons-box ul { list-style: none; padding: 0; }
+  .pros-box li, .cons-box li { padding: 10px 0; padding-left: 25px; position: relative; }
+  .pros-box li::before { content: "✓"; position: absolute; left: 0; color: #2e7d32; font-weight: bold; }
+  .cons-box li::before { content: "×"; position: absolute; left: 0; color: #c62828; font-weight: bold; }
+  .final-verdict-section { background: #f5f5f5; }
+  .verdict-box { background: #fff; border-radius: 8px; padding: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .verdict-box h2 { margin-bottom: 30px; }
+  .verdict-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+  .verdict-recommend { background: #e8f5e9; padding: 25px; border-radius: 8px; }
+  .verdict-not-recommend { background: #ffebee; padding: 25px; border-radius: 8px; }
+  .recommend-badge { display: block; font-size: 1.3rem; font-weight: bold; color: #2e7d32; margin-bottom: 15px; }
+  .not-recommend-badge { display: block; font-size: 1.3rem; font-weight: bold; color: #c62828; margin-bottom: 15px; }
+  .verdict-content ul { list-style: none; padding: 0; }
+  .verdict-content li { padding: 8px 0; padding-left: 20px; position: relative; color: #555; }
+  .verdict-content li::before { content: "•"; position: absolute; left: 0; font-weight: bold; }
+  .final-cta { background: #fff3cd; padding: 25px; border-radius: 8px; text-align: center; }
+  .final-opinion { font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .related-card { background: #212121; color: #fff; padding: 25px; border-radius: 8px; text-decoration: none; text-align: center; transition: transform 0.3s ease; }
+  .related-card:hover { transform: translateY(-5px); background: #2e7d32; }
+  .related-card h3 { margin-bottom: 8px; }
+  .related-card p { opacity: 0.9; font-size: 0.9rem; }
+  .btn { display: inline-block; padding: 15px 30px; background: #2e7d32; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.3s ease; }
+  .btn:hover { background: #1b5e20; }
+  @media (max-width: 768px) {
+    .specs-grid, .pros-cons-grid, .verdict-content { grid-template-columns: 1fr; }
+    .rating-summary { flex-direction: column; gap: 20px; }
+  }
+</style>

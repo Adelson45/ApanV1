@@ -1,0 +1,598 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Melhores Luvas para Moto 2026 | Proteção e Conforto';
+const description = 'Descubra as melhores luvas para moto de 2026. Análises de luvas de couro, têxtil, impermeáveis e de verão. Proteção para suas mãos em pilotagem.';
+
+const gloves = [
+  {
+    name: 'Luva Alpinestars SP-8',
+    subtitle: 'V2',
+    price: 'R$ 350 - R$ 480',
+    rating: 4.8,
+    image: '/images/luva-alpinestars-sp8.jpg',
+    affiliateLink: 'https://amzn.to/alpinestarssp8',
+    description: 'A Alpinestars SP-8 V2 é uma luva esportiva de couro que oferece excelente proteção e flexibilidade para pilotagem urbana e estradista.',
+    features: [
+      'Couro bovino de alta qualidade',
+      'Protetor de nós dos dedos em TPU',
+      'Palma reforçada com couro de cabra',
+      'Fechamento de velcro duplo no punho',
+      'Compatível com touchscreen'
+    ],
+    pros: [
+      'Proteção superior na categoria',
+      'Couro macio e confortável',
+      'Acabamento premium Alpinestars',
+      'Boa ventilação para couro'
+    ],
+    cons: [
+      'Preço elevado',
+      'Não é impermeável',
+      'Quebra de vento limitada'
+    ]
+  },
+  {
+    name: 'Luva X11 Race',
+    subtitle: 'Track',
+    price: 'R$ 180 - R$ 280',
+    rating: 4.6,
+    image: '/images/luva-x11-race.jpg',
+    affiliateLink: 'https://amzn.to/x11race',
+    description: 'A X11 Race Track oferece proteção de nível racing a um preço mais acessível. Excelente para pilotagem esportiva.',
+    features: [
+      'Couro sintético de alta resistência',
+      'Protetores de carbono nos nós',
+      'Reforço de borracha na palma',
+      'Cunha de proteção no pulso',
+      'Design ergonômico pré-curvado'
+    ],
+    pros: [
+      'Ótima relação custo-benefício',
+      'Proteção de nível racing',
+      'Design esportivo agressivo',
+      'Disponível em várias cores'
+    ],
+    cons: [
+      'Couro sintético (não natural)',
+      'Ventilação limitada',
+      'Durabilidade inferior ao couro premium'
+    ]
+  },
+  {
+    name: 'Luva Tutto Moto',
+    subtitle: 'Titã',
+    price: 'R$ 120 - R$ 180',
+    rating: 4.4,
+    image: '/images/luva-tutto-tita.jpg',
+    affiliateLink: 'https://amzn.to/tuttottan',
+    description: 'A Tutto Moto Titã é uma luva urbana brasileira que equilibra proteção, conforto e preço acessível para o dia a dia.',
+    features: [
+      'Material têxtil resistente',
+      'Protetores de EVA nos nós',
+      'Reforço de couro na palma',
+      'Tela touch nos dedos indicador e polegar',
+      'Punho elástico com velcro'
+    ],
+    pros: [
+      'Preço acessível',
+      'Leveza para uso urbano',
+      'Funciona com celular',
+      'Marca nacional com suporte'
+    ],
+    cons: [
+      'Proteção inferior a luvas de couro',
+      'Resistência à abrasão limitada',
+      'Menos durável em quedas'
+    ]
+  },
+  {
+    name: 'Luva Racer',
+    subtitle: 'Highway',
+    price: 'R$ 220 - R$ 320',
+    rating: 4.7,
+    image: '/images/luva-racer-highway.jpg',
+    affiliateLink: 'https://amzn.to/racerhighway',
+    description: 'A Racer Highway é uma luva de couro touring que oferece conforto para longas viagens com proteção robusta.',
+    features: [
+      'Couro de vaca premium',
+      'Membrana impermeável Hipora',
+      'Isolamento térmico Thinsulate',
+      'Protetores de carbono nos nós',
+      'Escova de limpador de viseira'
+    ],
+    pros: [
+      'Totalmente impermeável',
+      'Ótimo para frio e chuva',
+      'Couro premium macio',
+      'Versátil para touring'
+    ],
+    cons: [
+      'Quente no verão',
+      'Preço médio-alto',
+      'Peso superior a luvas leves'
+    ]
+  }
+];
+
+const types = [
+  {
+    title: 'Luvas de Couro',
+    description: 'Máxima proteção contra abrasão. Ideais para pilotagem esportiva e uso em alta velocidade.',
+    icon: '🧤'
+  },
+  {
+    title: 'Luvas Têxtil',
+    description: 'Leves e ventiladas. Perfeitas para uso urbano e climas quentes.',
+    icon: '🎋'
+  },
+  {
+    title: 'Luvas Impermeáveis',
+    description: 'Proteção contra chuva e frio. Essenciais para quem pilota em qualquer clima.',
+    icon: '☔'
+  },
+  {
+    title: 'Luvas de Verão',
+    description: 'Máxima ventilação. Proteção com conforto térmico em dias quentes.',
+    icon: '☀️'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Melhores Luvas para Moto 2026</h1>
+        <p class="hero-subtitle">
+          Proteja suas mãos com as melhores luvas do mercado. 
+          Análises de luvas de couro, têxtil, impermeáveis e específicas para cada estilo de pilotagem.
+        </p>
+      </div>
+    </section>
+
+    <!-- Types Section -->
+    <section class="types-section">
+      <div class="container">
+        <h2>Tipos de Luvas</h2>
+        <div class="types-grid">
+          {types.map(type => (
+            <div class="type-card">
+              <span class="type-icon">{type.icon}</span>
+              <h3>{type.title}</h3>
+              <p>{type.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <h2>Top Luvas Recomendadas</h2>
+        <div class="products-grid">
+          {gloves.map((glove, index) => (
+            <article class="product-card">
+              <div class="product-rank">#{index + 1}</div>
+              <div class="product-image">
+                <img src={glove.image} alt={glove.name} loading="lazy" />
+                <span class="product-rating">★ {glove.rating}</span>
+              </div>
+              <div class="product-content">
+                <h3>{glove.name}</h3>
+                <p class="subtitle">{glove.subtitle}</p>
+                <p class="price">{glove.price}</p>
+                <p class="description">{glove.description}</p>
+                
+                <div class="features-list">
+                  <h4>Características</h4>
+                  <ul>
+                    {glove.features.map(feature => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div class="verdict">
+                  <div class="pros">
+                    <h5>Prós</h5>
+                    <ul>
+                      {glove.pros.map(pro => (
+                        <li>{pro}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="cons">
+                    <h5>Contras</h5>
+                    <ul>
+                      {glove.cons.map(con => (
+                        <li>{con}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href={glove.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                  Ver na Loja
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety Info -->
+    <section class="safety-section">
+      <div class="container">
+        <div class="safety-box">
+          <h3>🛡️ Por que usar luvas de moto?</h3>
+          <ul>
+            <li><strong>Proteção contra abrasão:</strong> Em quedas, as mãos são frequentemente usadas para amortecer o impacto</li>
+            <li><strong>Proteção contra impacto:</strong> Protetores nos nós protegem contra fraturas em colisões</li>
+            <li><strong>Conforto térmico:</strong> Proteção contra frio, calor excessivo e vento</li>
+            <li><strong>Segurança no guidão:</strong> Melhor aderência e controle da motocicleta</li>
+            <li><strong>Proteção climática:</strong> Contra chuva, sol e intempéries</li>
+          </ul>
+          <p class="recommendation">
+            <strong>Nunca pilote sem luvas.</strong> Mesmo em trajetos curtos, uma queda a 30km/h pode causar ferimentos graves nas mãos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Complete sua Proteção</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/" class="related-card">
+            <h3>Capacetes</h3>
+            <p>Proteção essencial para a cabeça</p>
+          </a>
+          <a href="/dica-melhor-jaqueta-motociclistas/" class="related-card">
+            <h3>Jaquetas</h3>
+            <p>Proteção corporal completa</p>
+          </a>
+          <a href="/melhor-capacete/capa-de-chuva/" class="related-card">
+            <h3>Capas de Chuva</h3>
+            <p>Impermeabilidade completa</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .types-section, .products-section, .safety-section, .related-section {
+    padding: 60px 20px;
+  }
+  
+  .types-section {
+    background: #f5f5f5;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .type-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .type-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .type-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #212121;
+  }
+  
+  .type-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .product-rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e31b1b;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FFD700;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .product-content {
+    padding: 25px;
+  }
+  
+  .product-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .features-list h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .features-list ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .features-list li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .features-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e31b1b;
+  }
+  
+  .verdict {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .pros, .cons {
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .pros {
+    background: #e8f5e9;
+  }
+  
+  .cons {
+    background: #ffebee;
+  }
+  
+  .pros h5, .cons h5 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .pros h5 { color: #2e7d32; }
+  .cons h5 { color: #c62828; }
+  
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pros li, .cons li {
+    padding: 4px 0;
+    padding-left: 15px;
+    position: relative;
+    font-size: 0.85rem;
+  }
+  
+  .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+  }
+  
+  .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+  }
+  
+  .safety-section {
+    background: #e8f5e9;
+  }
+  
+  .safety-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-left: 4px solid #4CAF50;
+  }
+  
+  .safety-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #2e7d32;
+  }
+  
+  .safety-box ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .safety-box li {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .recommendation {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #ffc107;
+    color: #856404;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-card {
+    background: #212121;
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .related-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .related-card p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .verdict {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

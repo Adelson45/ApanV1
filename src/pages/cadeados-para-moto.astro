@@ -1,0 +1,667 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Melhores Cadeados para Moto 2026 | Anti-Furto e Segurança';
+const description = 'Descubra os melhores cadeados para moto de 2026. Análises de cadeados disco, corrente e trava de guidão. Proteja sua motocicleta contra roubos.';
+
+const locks = [
+  {
+    name: 'Cadeado de Disco',
+    subtitle: 'XENA XX15',
+    price: 'R$ 180 - R$ 280',
+    rating: 4.8,
+    image: '/images/cadeado-disco-xena.jpg',
+    affiliateLink: 'https://amzn.to/xenaxx15',
+    description: 'O XENA XX15 é referência em cadeados de disco para moto, com alarme integrado de 120dB e resistência máxima contra cortes.',
+    features: [
+      'Alarme integrado de 120dB',
+      'Pin de aço temperado de 14mm',
+      'Resistente a cortes e serras',
+      'Bateria substituível CR2',
+      'Certificação Sold Secure Gold'
+    ],
+    pros: [
+      'Alarme extremamente alto',
+      'Construção reforçada',
+      'Resistente às intempéries',
+      'Sistema de bateria durável'
+    ],
+    cons: [
+      'Preço elevado',
+      'Peso considerável (1.2kg)',
+      'Bateria precisa ser trocada'
+    ]
+  },
+  {
+    name: 'Cadeado em Corrente',
+    subtitle: 'Abus Granit CityChain X-Plus',
+    price: 'R$ 450 - R$ 650',
+    rating: 4.9,
+    image: '/images/cadeado-corrente-abus.jpg',
+    affiliateLink: 'https://amzn.to/abuscitychain',
+    description: 'A corrente Abus Granit CityChain oferece máxima flexibilidade e segurança com elos de aço cementado de 10mm.',
+    features: [
+      'Elo de aço cementado 10mm',
+      'Comprimento: 106cm ou 170cm',
+      'Cilindro ABUS X-Plus',
+      'Revestimento em têxtil resistente',
+      'Proteção contra ferrugem'
+    ],
+    pros: [
+      'Extremamente resistente',
+      'Flexibilidade de uso',
+      'Acabamento premium',
+      'Sistema de chave seguro'
+    ],
+    cons: [
+      'Peso muito alto (4.5kg)',
+      'Preço premium',
+      'Difícil de transportar'
+    ]
+  },
+  {
+    name: 'Trava de Guidão',
+    subtitle: 'Grip-Lock',
+    price: 'R$ 120 - R$ 180',
+    rating: 4.5,
+    image: '/images/trava-guidao-griplock.jpg',
+    affiliateLink: 'https://amzn.to/griplock',
+    description: 'A Grip-Lock é uma trava de guidão compacta e eficaz, impedindo a aceleração e a utilização da moto.',
+    features: [
+      'Bloqueio do punho de aceleração e freio',
+      'Instalação em segundos',
+      'Material reforçado em nylon',
+      'Design compacto e portátil',
+      'Visível de longe (deterrente visual)'
+    ],
+    pros: [
+      'Extremamente portátil',
+      'Instalação rápida',
+      'Preço acessível',
+      'Visível como deterrente'
+    ],
+    cons: [
+      'Proteção limitada (não fixa a moto)',
+      'Pode ser cortada com ferramentas',
+      'Protege apenas contra uso, não contra roubo completo'
+    ]
+  },
+  {
+    name: 'Cadeado Disco',
+    subtitle: 'Abus Detecto 7000 RS1',
+    price: 'R$ 320 - R$ 450',
+    rating: 4.7,
+    image: '/images/cadeado-abus-detecto.jpg',
+    affiliateLink: 'https://amzn.to/abudetecto',
+    description: 'O Abus Detecto 7000 combina alarme de 3D com detecção de movimento, oferecendo segurança de última geração.',
+    features: [
+      'Alarme de 100dB com detecção 3D',
+      'Pin de aço de 13mm',
+      'Chave de alta segurança ABUS Plus',
+      'LED indicador de status',
+      'Bateria com autonomia de 6 meses'
+    ],
+    pros: [
+      'Detecção de movimento inteligente',
+      'Alarme muito alto',
+      'Acabamento premium ABUS',
+      'Sistema de LED útil'
+    ],
+    cons: [
+      'Preço elevado',
+      'Bateria necessita recarga',
+      'Sensibilidade pode gerar falsos alarmes'
+    ]
+  }
+];
+
+const tips = [
+  {
+    title: 'Use Múltiplas Camadas',
+    content: 'Combine diferentes tipos de cadeados. Um cadeado de disco + corrente oferece proteção significativamente maior que apenas um.'
+  },
+  {
+    title: 'Fixe em Objeto Sólido',
+    content: 'Sempre prenda sua moto em um poste, grade ou outro objeto fixo e resistente quando usar corrente.'
+  },
+  {
+    title: 'Escolha Locais Movimentados',
+    content: 'Estacione em locais com boa iluminação e movimento de pessoas. Ladrões evitam locais com testemunhas.'
+  },
+  {
+    title: 'Mantenha o Cadeado Lubrificado',
+    content: 'Cadeados de disco expostos à chuva podem enferrujar. Lubrifique regularmente para garantir funcionamento.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Melhores Cadeados para Moto 2026</h1>
+        <p class="hero-subtitle">
+          Proteja sua motocicleta com os melhores cadeados anti-furto do mercado. 
+          Análises de cadeados disco, corrente e travas de guidão.
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+      <div class="container">
+        <h2>Top Cadeados Anti-Furto</h2>
+        <div class="products-grid">
+          {locks.map((lock, index) => (
+            <article class="product-card">
+              <div class="product-header">
+                <span class="rank">#{index + 1}</span>
+                <div class="product-title">
+                  <h3>{lock.name}</h3>
+                  <p class="subtitle">{lock.subtitle}</p>
+                </div>
+              </div>
+              
+              <div class="product-image">
+                <img src={lock.image} alt={`${lock.name} ${lock.subtitle}`} loading="lazy" />
+                <span class="rating">★ {lock.rating}</span>
+              </div>
+              
+              <div class="product-info">
+                <p class="price">{lock.price}</p>
+                <p class="description">{lock.description}</p>
+                
+                <div class="features">
+                  <h4>Características</h4>
+                  <ul>
+                    {lock.features.map(feature => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div class="pros-cons">
+                  <div class="pros">
+                    <h5>Vantagens</h5>
+                    <ul>
+                      {lock.pros.map(pro => (
+                        <li>{pro}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="cons">
+                    <h5>Desvantagens</h5>
+                    <ul>
+                      {lock.cons.map(con => (
+                        <li>{con}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <a href={lock.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
+                  Ver Preço na Loja
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Tips -->
+    <section class="tips-section">
+      <div class="container">
+        <h2>Dicas de Segurança para sua Moto</h2>
+        <div class="tips-grid">
+          {tips.map(tip => (
+            <div class="tip-card">
+              <h3>{tip.title}</h3>
+              <p>{tip.content}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2>Comparativo: Qual Cadeado Escolher?</h2>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Segurança</th>
+                <th>Portabilidade</th>
+                <th>Preço</th>
+                <th>Ideal Para</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cadeado Disco com Alarme</strong></td>
+                <td>★★★★★</td>
+                <td>★★★☆☆</td>
+                <td>Médio-Alto</td>
+                <td>Uso diário, alta segurança</td>
+              </tr>
+              <tr>
+                <td><strong>Corrente Pesada</strong></td>
+                <td>★★★★★</td>
+                <td>★☆☆☆☆</td>
+                <td>Alto</td>
+                <td>Estacionamento fixo, motos caras</td>
+              </tr>
+              <tr>
+                <td><strong>Trava de Guidão</strong></td>
+                <td>★★☆☆☆</td>
+                <td>★★★★★</td>
+                <td>Baixo</td>
+                <td>Portabilidade, uso rápido</td>
+              </tr>
+              <tr>
+                <td><strong>Cadeado Disco Simples</strong></td>
+                <td>★★★☆☆</td>
+                <td>★★★★☆</td>
+                <td>Baixo</td>
+                <td>Orçamento limitado, uso básico</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Warning -->
+    <section class="warning-section">
+      <div class="container">
+        <div class="warning-box">
+          <h3>⚠️ Nenhum Cadeado é Inviolável</h3>
+          <p>
+            <strong>Todos os cadeados podem ser violados</strong> com ferramentas e tempo suficientes. 
+            O objetivo é aumentar o tempo e o esforço necessários, desmotivando ladrões oportunistas.
+          </p>
+          <ul>
+            <li>Cadeados de qualidade aumentam o risco e o tempo para o ladrão</li>
+            <li>Alarmes servem como deterrente auditivo e visual</li>
+            <li>Múltiplas camadas de proteção são sempre melhores</li>
+            <li>Seguro é a proteção final contra perda total</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <div class="container">
+        <h2>Continue Protegido</h2>
+        <div class="related-grid">
+          <a href="/melhor-capacete/luvas/" class="related-card">
+            <h3>Melhores Luvas</h3>
+            <p>Proteção para as mãos em pilotagem</p>
+          </a>
+          <a href="/dica-melhor-jaqueta-motociclistas/" class="related-card">
+            <h3>Jaquetas de Moto</h3>
+            <p>Proteção corporal completa</p>
+          </a>
+          <a href="/melhor-capacete/intercomunicadores/" class="related-card">
+            <h3>Intercomunicadores</h3>
+            <p>Comunicação em grupo</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .products-section, .tips-section, .comparison-section, .warning-section, .related-section {
+    padding: 60px 20px;
+  }
+  
+  .products-section {
+    background: #f8f9fa;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .product-header {
+    background: #212121;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .rank {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e31b1b;
+  }
+  
+  .product-title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .subtitle {
+    margin: 3px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FFD700;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .product-info {
+    padding: 25px;
+  }
+  
+  .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .features h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .features li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .features li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #e31b1b;
+  }
+  
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .pros, .cons {
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  .pros {
+    background: #e8f5e9;
+  }
+  
+  .cons {
+    background: #ffebee;
+  }
+  
+  .pros h5, .cons h5 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .pros h5 { color: #2e7d32; }
+  .cons h5 { color: #c62828; }
+  
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pros li, .cons li {
+    padding: 5px 0;
+    padding-left: 15px;
+    position: relative;
+    font-size: 0.85rem;
+  }
+  
+  .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+  }
+  
+  .cons li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+  }
+  
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .tip-card {
+    background: #e3f2fd;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #2196F3;
+  }
+  
+  .tip-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #1565C0;
+  }
+  
+  .tip-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .comparison-table th {
+    background: #212121;
+    color: #fff;
+  }
+  
+  .comparison-table tr:hover {
+    background: #f5f5f5;
+  }
+  
+  .warning-section {
+    background: #fff3cd;
+  }
+  
+  .warning-box {
+    background: #fff;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .warning-box h3 {
+    color: #856404;
+    margin-bottom: 15px;
+  }
+  
+  .warning-box p {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .warning-box ul {
+    padding-left: 20px;
+  }
+  
+  .warning-box li {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-card {
+    background: #212121;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-card:hover {
+    transform: translateY(-5px);
+    background: #e31b1b;
+  }
+  
+  .related-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .related-card p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e31b1b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background: #c41717;
+  }
+  
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .pros-cons {
+      grid-template-columns: 1fr;
+    }
+    
+    .comparison-table {
+      font-size: 0.85rem;
+    }
+  }
+</style>
