@@ -1,0 +1,183 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  capacetes: [
+    { href: '/capacetes-moto', label: 'Capacetes de Moto' },
+    { href: '/capacetes-bike', label: 'Capacetes de Bike' },
+    { href: '/capacetes-infantil', label: 'Capacetes Infantis' }
+  ],
+  informacoes: [
+    { href: '/sobre', label: 'Sobre Nós' },
+    { href: '/contato', label: 'Contato' },
+    { href: '/politica-de-privacidade', label: 'Política de Privacidade' }
+  ]
+};
+---
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Logo e Descrição -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/images/Logo-dos-melhores-capacetes.png" 
+               alt="Jovem Apan" 
+               width="250" 
+               height="50" 
+               loading="lazy" />
+        </a>
+        <p class="footer-description">
+          Reviews completas e imparciais dos melhores capacetes do mercado. 
+          Ajudamos você a escolher o modelo ideal com segurança e estilo.
+        </p>
+      </div>
+      
+      <!-- Links de Capacetes -->
+      <div class="footer-links">
+        <h3>Capacetes</h3>
+        <ul>
+          {footerLinks.capacetes.map(link => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Links de Informações -->
+      <div class="footer-links">
+        <h3>Informações</h3>
+        <ul>
+          {footerLinks.informacoes.map(link => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Contato -->
+      <div class="footer-contact">
+        <h3>Contato</h3>
+        <p>
+          <a href="tel:+5511968037428">+55 (11) 96803-7428</a>
+        </p>
+        <p class="footer-address">
+          São Paulo, SP - Brasil
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Jovem Apan. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #212121;
+    color: #fff;
+    padding: 60px 0 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-brand img {
+    height: 50px;
+    width: auto;
+    margin-bottom: 15px;
+  }
+  
+  .footer-description {
+    color: #b0b0b0;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+  
+  .footer-links h3,
+  .footer-contact h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a,
+  .footer-contact a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: #e31b1b;
+  }
+  
+  .footer-contact p {
+    color: #b0b0b0;
+    font-size: 14px;
+    margin: 0 0 10px;
+  }
+  
+  .footer-address {
+    font-size: 13px;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    color: #878787;
+    font-size: 13px;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .footer-brand {
+      text-align: center;
+    }
+    
+    .footer-brand img {
+      margin: 0 auto 15px;
+    }
+    
+    .footer-description {
+      max-width: none;
+    }
+    
+    .footer-links,
+    .footer-contact {
+      text-align: center;
+    }
+  }
+</style>

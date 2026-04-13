@@ -1,0 +1,165 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/comparativos', label: 'Comparativos' },
+  { href: '/guia-de-compra', label: 'Guia de Compra' },
+  { href: '/contato', label: 'Contato' }
+];
+---
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/" aria-label="Jovem Apan - Início">
+        <img src="/images/Logo-dos-melhores-capacetes.png" 
+             alt="Jovem Apan - Reviews de Capacetes" 
+             width="350" 
+             height="70" 
+             loading="eager" />
+      </a>
+    </div>
+    
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button class="menu-toggle" 
+              aria-expanded="false" 
+              aria-controls="primary-menu"
+              aria-label="Abrir menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul id="primary-menu" class="nav-menu" role="menubar">
+        {navLinks.map(link => (
+          <li role="none">
+            <a href={link.href} 
+               role="menuitem" 
+               class={Astro.url.pathname === link.href ? 'active' : ''}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  menuToggle?.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+    navMenu?.classList.toggle('is-open');
+  });
+</script>
+
+<style>
+  .site-header {
+    background-color: #121212;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+  }
+  
+  .logo img {
+    height: 65px;
+    width: auto;
+    display: block;
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+  }
+  
+  .nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    color: #e31b1b;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background-color: #121212;
+      flex-direction: column;
+      padding: 20px;
+      gap: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-menu.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .nav-menu li {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-menu a {
+      display: block;
+      padding: 15px 0;
+    }
+  }
+</style>

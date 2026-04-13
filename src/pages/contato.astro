@@ -1,0 +1,370 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Contato | Jovem Apan';
+const description = 'Entre em contato conosco para dúvidas, sugestões ou parcerias. Estamos prontos para ajudar você a escolher o melhor capacete.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h1 id="contact-heading">Entre em Contato</h1>
+            <p class="contact-intro">
+              Tem alguma dúvida sobre capacetes? Quer sugerir um review ou fazer uma parceria? 
+              Estamos à disposição para ajudar!
+            </p>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <h3>E-mail</h3>
+                  <a href="mailto:contato@jovemapan.com.br">contato@jovemapan.com.br</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <span class="contact-icon">📱</span>
+                <div>
+                  <h3>Telefone/WhatsApp</h3>
+                  <a href="tel:+5511968037428">+55 (11) 96803-7428</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <h3>Localização</h3>
+                  <p>São Paulo, SP - Brasil</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form" action="/api/contact" method="POST">
+              <h2>Envie uma mensagem</h2>
+              
+              <div class="form-group">
+                <label for="name">Nome completo *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  placeholder="Seu nome completo"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="seu@email.com"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Assunto *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="duvida">Dúvida sobre produto</option>
+                  <option value="sugestao">Sugestão de review</option>
+                  <option value="parceria">Proposta de parceria</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Mensagem *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  required 
+                  placeholder="Escreva sua mensagem aqui..."
+                ></textarea>
+              </div>
+              
+              <div class="form-group form-checkbox">
+                <input type="checkbox" id="privacy" name="privacy" required />
+                <label for="privacy">
+                  Concordo com a <a href="/politica-de-privacidade" target="_blank">Política de Privacidade</a> *
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-full">
+                Enviar Mensagem
+              </button>
+              
+              <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const statusDiv = document.getElementById('formStatus') as HTMLDivElement;
+  
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    
+    try {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      
+      const result = await response.json();
+      
+      if (result.ok) {
+        statusDiv.className = 'form-status success';
+        statusDiv.textContent = 'Mensagem enviada com sucesso! Responderemos em breve.';
+        form.reset();
+      } else {
+        throw new Error(result.error?.message || 'Erro ao enviar mensagem');
+      }
+    } catch (error) {
+      statusDiv.className = 'form-status error';
+      statusDiv.textContent = error instanceof Error ? error.message : 'Erro ao enviar. Tente novamente.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar Mensagem';
+    }
+  });
+</script>
+
+<style>
+  .contact-section {
+    padding: 60px 0 80px;
+    background-color: #fafafa;
+    min-height: calc(100vh - 300px);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+  }
+  
+  .contact-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 20px;
+  }
+  
+  .contact-intro {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e31b1b;
+    border-radius: 50%;
+  }
+  
+  .contact-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 5px;
+  }
+  
+  .contact-item a,
+  .contact-item p {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-item a:hover {
+    color: #e31b1b;
+  }
+  
+  /* Form */
+  .contact-form-wrapper {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  
+  .contact-form h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #e31b1b;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .form-checkbox input {
+    width: auto;
+    margin-top: 3px;
+  }
+  
+  .form-checkbox label {
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  
+  .form-checkbox a {
+    color: #e31b1b;
+    text-decoration: none;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn-primary {
+    background-color: #e31b1b;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #c41818;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .btn-full {
+    width: 100%;
+  }
+  
+  .form-status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
+  .form-status.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .form-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .contact-info h1 {
+      font-size: 2rem;
+    }
+    
+    .contact-form-wrapper {
+      padding: 25px;
+    }
+  }
+</style>

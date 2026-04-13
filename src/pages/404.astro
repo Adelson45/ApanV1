@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Página não encontrada | Jovem Apan';
+const description = 'A página que você procura não foi encontrada. Explore nossos reviews de capacetes.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <section class="error-section" aria-labelledby="error-heading">
+      <div class="container">
+        <div class="error-content">
+          <span class="error-code">404</span>
+          <h1 id="error-heading">Página não encontrada</h1>
+          <p class="error-message">
+            Ops! Parece que você se perdeu. A página que você procura não existe 
+            ou foi movida.
+          </p>
+          <div class="error-actions">
+            <a href="/" class="btn btn-primary">Voltar para Home</a>
+            <a href="/contato" class="btn btn-secondary">Falar conosco</a>
+          </div>
+          
+          <div class="suggestions">
+            <h2>Ou explore nossas categorias:</h2>
+            <div class="suggestion-links">
+              <a href="/capacetes-moto">Capacetes de Moto</a>
+              <a href="/capacetes-bike">Capacetes de Bike</a>
+              <a href="/capacetes-infantil">Capacetes Infantis</a>
+              <a href="/guia-de-compra">Guia de Compra</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .error-section {
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+    background-color: #fafafa;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .error-content {
+    padding: 40px 0;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: #e31b1b;
+    line-height: 1;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+  
+  .error-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 15px;
+  }
+  
+  .error-message {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .error-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #e31b1b;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #c41818;
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: #212121;
+    border: 2px solid #212121;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #212121;
+    color: #fff;
+  }
+  
+  .suggestions {
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .suggestions h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .suggestion-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .suggestion-links a {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .suggestion-links a:hover {
+    background-color: #e31b1b;
+    border-color: #e31b1b;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .error-code {
+      font-size: 5rem;
+    }
+    
+    .error-content h1 {
+      font-size: 1.5rem;
+    }
+    
+    .error-actions {
+      flex-direction: column;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+  }
+</style>

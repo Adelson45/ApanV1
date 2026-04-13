@@ -1,0 +1,173 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Reviews de Capacetes para Moto, Bike e Mais | Qual o Melhor?',
+  description = 'Confira análises completas e imparciais dos melhores capacetes do mercado. Comparativos, avaliações de usuários e dicas para escolher o modelo ideal!',
+  ogImage = '/images/Logo-dos-melhores-capacetes.png'
+} = Astro.props;
+
+const canonicalUrl = Astro.url.pathname === '/' 
+  ? 'https://jovemapan.com.br/' 
+  : `https://jovemapan.com.br${Astro.url.pathname}`;
+---
+
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Open Graph -->
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:site_name" content="jovemapan.com.br" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Favicons -->
+    <link rel="icon" href="/images/cropped-fivecon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/images/cropped-fivecon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/images/cropped-fivecon-180x180.png" />
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumblist`,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "@id": `${canonicalUrl}#listItem`,
+              "position": 1,
+              "name": "Home"
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": `${canonicalUrl}#organization`,
+          "name": title,
+          "description": description,
+          "url": canonicalUrl,
+          "telephone": "+5511968037428",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `https://jovemapan.com.br${ogImage}`,
+            "@id": `${canonicalUrl}#organizationLogo`,
+            "width": 350,
+            "height": 70
+          },
+          "image": {
+            "@id": `${canonicalUrl}#organizationLogo`
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": `${canonicalUrl}#webpage`,
+          "url": canonicalUrl,
+          "name": title,
+          "description": description,
+          "inLanguage": "pt-PT",
+          "isPartOf": {
+            "@id": `${canonicalUrl}#website`
+          },
+          "breadcrumb": {
+            "@id": `${canonicalUrl}#breadcrumblist`
+          },
+          "datePublished": "2025-05-02T04:00:15+00:00",
+          "dateModified": new Date().toISOString()
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${canonicalUrl}#website`,
+          "url": canonicalUrl,
+          "name": "jovemapan.com.br",
+          "alternateName": "Jovem Apan",
+          "inLanguage": "pt-PT",
+          "publisher": {
+            "@id": `${canonicalUrl}#organization`
+          }
+        }
+      ]
+    })} />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KFT454R4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GT-KFT454R4');
+      gtag('config', 'AW-17834250789');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PJKHBTZD');
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJKHBTZD"
+              height="0" width="0" 
+              style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <slot />
+    
+    <!-- Consent Mode -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        "ad_personalization": "denied",
+        "ad_storage": "denied",
+        "ad_user_data": "denied",
+        "analytics_storage": "granted",
+        "functionality_storage": "granted",
+        "security_storage": "granted",
+        "personalization_storage": "denied"
+      });
+    </script>
+  </body>
+</html>
