@@ -116,7 +116,32 @@ O projeto inclui:
 - Canonical URLs
 - Twitter Cards e Open Graph
 
-## 🚧 Roadmap
+## � Deploy
+
+### Vercel (Recomendado)
+
+O projeto está otimizado para deploy na Vercel:
+
+```bash
+# Instale a CLI da Vercel
+npm i -g vercel
+
+# Deploy (comando interativo)
+vercel
+
+# Deploy em produção
+vercel --prod
+```
+
+Ou use o botão **"Deploy with Vercel"** no repositório GitHub.
+
+Veja mais detalhes em [`VERCEL_DEPLOY.md`](./VERCEL_DEPLOY.md)
+
+### GitHub Pages
+
+Alternativa gratuita disponível. Veja [`GITHUB_DEPLOY.md`](./GITHUB_DEPLOY.md)
+
+## �🚧 Roadmap
 
 - [ ] Integração com Resend para envio de e-mails
 - [ ] Páginas de reviews individuais
