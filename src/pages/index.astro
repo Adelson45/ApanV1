@@ -3,154 +3,297 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const categories = [
+const title = 'Reviews de Capacetes para Moto, Bike e Mais | Qual o Melhor?';
+const description = 'Confira análises completas e imparciais dos melhores capacetes do mercado. Comparativos, avaliações de usuários e dicas para escolher o modelo ideal!';
+
+const reviewsCapacetes = [
+  { name: 'Capacete Peels', href: '/capacete-peels-review/', image: '/images/Capacete-Peels-Crystal-Pretofosco1-2.png' },
+  { name: 'Capacete Norisk', href: '/capacete-norisk-review/', image: '/images/468852-800-auto.png' },
+  { name: 'LS2 Scope Monocolor', href: '/ls2-scope-monocolor-review/', image: '/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png' },
+  { name: 'Axxis Draken', href: '/axxis-draken-review/', image: '/images/capacete-axxis-draker-1.png' },
+  { name: 'HJC I90 Hollen', href: '/reveiw-hjc-i90-hollen/', image: '/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png' },
+  { name: 'AGV K1S', href: '/review-agv-k1/', image: '/images/Capacete-AGV-K1s.png' }
+];
+
+const marcasVendidas = [
   {
-    title: 'Capacetes de Moto',
-    description: 'Reviews completos dos melhores capacetes para motociclistas, com foco em segurança, conforto e estilo.',
-    image: '/images/capacete-moto.jpg',
-    href: '/capacetes-moto'
+    nome: 'Capacete Arai Corsair X - Hayden Laguna',
+    imagem: '/images/capacete-arai-corsair.jpg',
+    linkAfiliado: 'https://amzn.to/42Ejkbt',
+    pros: [
+      'Conforto Superior para Longas Jornadas - Interior de nylon escovado premium, removível e lavável',
+      'Ventilação Eficiente e Silenciosa - 12 pontos de ventilação (7 entradas e 5 saídas)',
+      'Segurança Avançada - Certificação ECE R22-06, Sistema de Contorno Facial (FCS) e Sistema de Abertura de Emergência (ERS)'
+    ],
+    contras: [
+      'Preço Elevado - A partir de €789 para versões decoradas',
+      'Peso Relativamente Alto - Pode causar desconforto em longos períodos',
+      'Design Tradicional - Pode ser considerado conservador por alguns motociclistas'
+    ]
   },
   {
-    title: 'Capacetes de Bike',
-    description: 'Análises detalhadas de capacetes para ciclismo, mountain bike e bicicletas urbanas.',
-    image: '/images/capacete-bike.jpg',
-    href: '/capacetes-bike'
+    nome: 'Capacete Shoei X-Spirit3 Am73 Alex Marquez Tc-2 60',
+    imagem: '/images/shoei-xspirit3.jpg',
+    linkAfiliado: 'https://amzn.to/43vmy23',
+    pros: [
+      'Aerodinâmica Avançada - Desenvolvido com pilotos profissionais e testado em túnel de vento',
+      'Ventilação Superior - 6 entradas e 6 saídas de ar, sistema de resfriamento nas bochechas',
+      'Conforto Personalizado - Almofadas Max-Dry removíveis, laváveis e ajustáveis'
+    ],
+    contras: [
+      'Preço Elevado - A partir de R$ 5.999,90, um dos mais caros do mercado',
+      'Peso Relativamente Alto - Pode causar desconforto em uso prolongado',
+      'Design Específico para Uso Esportivo - Não ideal para uso urbano diário'
+    ]
   },
   {
-    title: 'Capacetes Infantis',
-    description: 'Os melhores capacetes para crianças, com segurança certificada e designs divertidos.',
-    image: '/images/capacete-infantil.jpg',
-    href: '/capacetes-infantil'
+    nome: 'Capacetes Bell Qualifier Forced Air Street',
+    imagem: '/images/bell-qualifier.jpg',
+    linkAfiliado: 'https://amzn.to/4jiQnJp',
+    pros: [
+      'Ventilação Forçada e Isolamento de Poeira - Sistema que mantém o interior fresco e limpo',
+      'Compatibilidade com Sistemas de Comunicação - Bolsos internos para alto-falantes Sena e Cardo',
+      'Conforto e Ajuste Personalizado - Interior removível, lavável e antibacteriano com sistema Ionic+'
+    ],
+    contras: [
+      'Peso Relativamente Alto - Aproximadamente 1.727g no tamanho M',
+      'Ruído em Altas Velocidades - Pode ser barulhento devido à ventilação',
+      'Preço Elevado - Modelo especializado com preço superior aos convencionais'
+    ]
   }
 ];
 
-const featuredReviews = [
-  {
-    title: 'Capacete AGV K-3 SV',
-    category: 'Moto',
-    rating: 4.8,
-    image: '/images/agv-k3-sv.jpg',
-    excerpt: 'Excelente custo-benefício com ventilação superior e ótima aerodinâmica.',
-    href: '/reviews/agv-k3-sv'
-  },
-  {
-    title: 'Capacete LS2 FF320',
-    category: 'Moto',
-    rating: 4.7,
-    image: '/images/ls2-ff320.jpg',
-    excerpt: 'Capacete versátil com ótima relação custo-benefício e acabamento premium.',
-    href: '/reviews/ls2-ff320'
-  },
-  {
-    title: 'Capacete Troy Lee Designs',
-    category: 'Bike',
-    rating: 4.9,
-    image: '/images/troy-lee-designs.jpg',
-    excerpt: 'Referência em capacetes de downhill com proteção máxima.',
-    href: '/reviews/troy-lee-designs'
-  }
+const categoriasCapacetes = [
+  { nome: 'Capacetes para Motos', href: '/melhor-capacete/', imagem: '/images/capacete-moto-categoria.jpg' },
+  { nome: 'Capacetes para Bicicleta', href: '/melhor-capacete-para-bike/', imagem: '/images/capacete-bike-categoria.jpg' },
+  { nome: 'Capacetes para Skates', href: '/melhor-capacete-para-skate/', imagem: '/images/capacete-skate.jpg' },
+  { nome: 'Capacete para Futebol', href: '#', imagem: '/images/capacete-futebol.jpg' },
+  { nome: 'Capacete para Ski', href: 'https://amzn.to/43UthDI', imagem: '/images/capacete-ski.jpg', external: true },
+  { nome: 'Capacete para Boxe', href: '#', imagem: '/images/capacete-boxe.jpg' }
+];
+
+const postsMaisVistos = [
+  { titulo: 'Intercomunicador Cardo Review', href: '/intercomunicador-cardo-review/' },
+  { titulo: 'Comparativo Michelin vs Pirelli', href: '/comparativo-michelin-vs-pirelli/' },
+  { titulo: 'Michelin Pilot Street Review', href: '/michelin-pilot-street-review/' },
+  { titulo: 'Pirelli Super City Review', href: '/pirelli-super-city-review/' }
 ];
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <Header />
   
   <main>
     <!-- Hero Section -->
-    <section class="hero" aria-label="Introdução">
-      <div class="hero-content">
-        <h1>Reviews de Capacetes para Moto, Bike e Mais</h1>
-        <p class="hero-subtitle">
-          Análises completas e imparciais dos melhores capacetes do mercado. 
-          Comparativos, avaliações de usuários e dicas para escolher o modelo ideal.
-        </p>
-        <div class="hero-cta">
-          <a href="#categorias" class="btn btn-primary">Explorar Reviews</a>
-          <a href="/guia-de-compra" class="btn btn-secondary">Guia de Compra</a>
-        </div>
+    <section class="hero">
+      <div class="container">
+        <h1>Encontre os melhores capacetes para pilotar com estilo</h1>
+        <p class="hero-subtitle">Nosso guia traz análises detalhadas dos modelos mais confiáveis.</p>
       </div>
     </section>
-    
-    <!-- Categories Section -->
-    <section id="categorias" class="categories-section" aria-labelledby="categories-heading">
+
+    <!-- Reviews dos Melhores Capacetes -->
+    <section class="reviews-section">
       <div class="container">
-        <h2 id="categories-heading" class="section-title">Escolha sua Categoria</h2>
-        <div class="categories-grid">
-          {categories.map(category => (
-            <article class="category-card">
-              <a href={category.href} class="category-link">
-                <div class="category-image">
-                  <img src={category.image} 
-                       alt={category.title} 
-                       width="400" 
-                       height="250" 
-                       loading="lazy" />
-                </div>
-                <div class="category-content">
-                  <h3>{category.title}</h3>
-                  <p>{category.description}</p>
-                  <span class="category-cta">Ver reviews →</span>
-                </div>
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-    
-    <!-- Featured Reviews -->
-    <section class="featured-section" aria-labelledby="featured-heading">
-      <div class="container">
-        <h2 id="featured-heading" class="section-title">Reviews em Destaque</h2>
+        <h2>Reviews dos Melhores Capacetes de 2026</h2>
         <div class="reviews-grid">
-          {featuredReviews.map(review => (
-            <article class="review-card">
-              <a href={review.href} class="review-link">
-                <div class="review-image">
-                  <img src={review.image} 
-                       alt={review.title} 
-                       width="350" 
-                       height="220" 
-                       loading="lazy" />
-                  <span class="review-badge">{review.category}</span>
-                </div>
-                <div class="review-content">
-                  <div class="review-rating" aria-label={`Avaliação: ${review.rating} de 5 estrelas`}>
-                    {'★'.repeat(Math.floor(review.rating))}
-                    {review.rating % 1 !== 0 && '½'}
-                    <span class="rating-number">{review.rating}</span>
-                  </div>
-                  <h3>{review.title}</h3>
-                  <p>{review.excerpt}</p>
-                  <span class="read-more">Ler review completo →</span>
-                </div>
-              </a>
-            </article>
+          {reviewsCapacetes.map(review => (
+            <a href={review.href} class="review-card">
+              <div class="review-image">
+                <img src={review.image} alt={review.name} loading="lazy" />
+              </div>
+              <h3>{review.name} é bom? Análise Completa</h3>
+              <span class="read-more">Ler review →</span>
+            </a>
           ))}
         </div>
       </div>
     </section>
-    
-    <!-- Newsletter Section -->
-    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+
+    <!-- Marcas Mais Vendidas -->
+    <section class="marcas-section">
       <div class="container">
-        <div class="newsletter-content">
-          <h2 id="newsletter-heading">Receba as Melhores Ofertas</h2>
-          <p>Cadastre-se para receber alertas de promoções e novos reviews diretamente no seu e-mail.</p>
-          <form class="newsletter-form" action="/api/subscribe" method="POST">
-            <label for="email" class="visually-hidden">Seu e-mail</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              placeholder="Digite seu e-mail" 
-              required 
-              aria-required="true"
-            />
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-          </form>
-          <p class="privacy-note">
-            Ao cadastrar, você concorda com nossa <a href="/politica-de-privacidade">Política de Privacidade</a>.
+        <h2>Marcas de capacetes mais vendidos</h2>
+        <div class="marcas-grid">
+          {marcasVendidas.map(marca => (
+            <div class="marca-card">
+              <div class="marca-header">
+                <h3>{marca.nome}</h3>
+                <a href={marca.linkAfiliado} target="_blank" rel="nofollow noopener" class="btn-afiliado">IR A LOJA</a>
+              </div>
+              <div class="marca-pros-cons">
+                <div class="pros">
+                  <h4>Prós</h4>
+                  <ul>
+                    {marca.pros.map(pro => (
+                      <li>{pro}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="contras">
+                  <h4>Contras</h4>
+                  <ul>
+                    {marca.contras.map(contra => (
+                      <li>{contra}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem Sou -->
+    <section class="quem-sou-section">
+      <div class="container">
+        <h2>Quem Sou</h2>
+        <div class="quem-sou-content">
+          <p>
+            Olá, sou Pamela Pan, enfim, apaixonada por motos e tudo que as envolve! 
+            Desde que pisei na minha primeira moto, fui cativado pela liberdade e pela 
+            adrenalina que a pilotagem proporciona.
+          </p>
+          <p>
+            Com o tempo, desenvolvi um amor especial por capacetes e sua importância na 
+            segurança dos motociclistas. Neste blog, compartilho minhas experiências e 
+            avaliações dos melhores capacetes do mercado, sempre buscando ajudar outros 
+            motociclistas a fazer escolhas seguras e estilosas. Sinta-se em casa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capacete Aberto ou Fechado -->
+    <section class="guia-section">
+      <div class="container">
+        <h2>Capacete aberto ou fechado, qual o melhor?</h2>
+        <p class="guia-texto">
+          A escolha do capacete ideal é uma decisão crucial para qualquer motociclista, 
+          ciclista ou praticante de esportes radicais. A segurança deve sempre vir em 
+          primeiro lugar, a escolha de um bom capacete pode fazer a diferença entre 
+          uma experiência emocionante e um acidente potencialmente grave.
+        </p>
+        <p class="guia-texto">
+          Neste blog, vamos explorar as melhores marcas disponíveis no mercado, levando 
+          em consideração não apenas a proteção, mas também o conforto, o estilo e a 
+          tecnologia envolvida.
+        </p>
+        <a href="/capacete-aberto/" class="btn-primary">Saiba mais sobre capacetes abertos</a>
+      </div>
+    </section>
+
+    <!-- Categorias de Capacetes -->
+    <section class="categorias-section">
+      <div class="container">
+        <h2>Capacetes por Categoria</h2>
+        <div class="categorias-grid">
+          {categoriasCapacetes.map(cat => (
+            <a 
+              href={cat.href} 
+              class="categoria-card" 
+              target={cat.external ? "_blank" : undefined}
+              rel={cat.external ? "nofollow noopener" : undefined}
+            >
+              <div class="categoria-icon">
+                <img src={cat.imagem} alt={cat.nome} loading="lazy" />
+              </div>
+              <h3>{cat.nome}</h3>
+              <span class="ver-modelos">Ver Modelos</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Posts Mais Vistos -->
+    <section class="posts-populares-section">
+      <div class="container">
+        <h2>Posts mais vistos</h2>
+        <div class="posts-list">
+          {postsMaisVistos.map(post => (
+            <a href={post.href} class="post-card">
+              <h3>{post.titulo}</h3>
+              <span class="leia-mais">Leia mais »</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre o Blog -->
+    <section class="sobre-blog-section">
+      <div class="container">
+        <div class="sobre-content">
+          <p>
+            Se você está em busca de informações confiáveis e detalhadas sobre capacetes 
+            <a href="/custo-beneficio/">custo-benefício</a>, você está no lugar certo! Aqui, 
+            nossa missão é fornecer a você análises aprofundadas e imparciais dos melhores 
+            capacetes disponíveis no mercado.
+          </p>
+          <p>
+            Sabemos que escolher o capacete ideal pode ser uma tarefa desafiadora, 
+            especialmente com a diversidade de modelos e marcas disponíveis. Estamos aqui 
+            para tornar essa decisão mais fácil e informada.
+          </p>
+          <p>
+            Os capacetes desempenham um papel crucial na segurança de ciclistas, 
+            motociclistas e praticantes de esportes radicais. Seja você um piloto experiente, 
+            um ciclista casual ou alguém que simplesmente aprecia a adrenalina, a proteção da 
+            sua cabeça deve sempre ser uma prioridade.
+          </p>
+          <p>
+            Nós acreditamos que, além da segurança, o conforto e o estilo também são 
+            fundamentais na escolha de um capacete. Em nosso blog, abordaremos não apenas 
+            a segurança, mas também o conforto, o design e a durabilidade dos capacetes que 
+            revisarmos.
+          </p>
+          <p>
+            Nossas análises são feitas com base em testes práticos e pesquisas completas, 
+            garantindo que você receba informações precisas e atualizadas. Avaliamos diversos 
+            aspectos dos capacetes, incluindo materiais utilizados, sistemas de ventilação, 
+            peso, ajuste e facilidade de limpeza.
+          </p>
+          <p>
+            Você encontrará categorias específicas que ajudam a navegar pelo nosso conteúdo. 
+            Temos seções dedicadas a capacetes para motocicletas, bicicletas, skate e outros 
+            esportes, facilitando a busca pelo capacete que melhor se adapta às suas necessidades.
+          </p>
+          <p>
+            Se você está buscando dicas para a escolha do capacete perfeito, também temos 
+            uma seção de guias onde compartilhamos informações valiosas sobre como avaliar e 
+            selecionar o capacete ideal para você.
+          </p>
+          <p>
+            Além dos reviews e guias, nossa intenção é criar uma comunidade acolhedora e 
+            engajada. Queremos que você compartilhe suas experiências e opiniões sobre os 
+            capacetes que já testou. Seu feedback é fundamental para que outros leitores 
+            possam tomar decisões informadas.
+          </p>
+          <p>
+            Estamos abertos a comentários e sugestões, criando um espaço onde todos possam 
+            aprender e trocar informações sobre segurança e conforto.
+          </p>
+          <p>
+            Manter-se atualizado sobre as últimas novidades do mercado de capacetes é essencial. 
+            Por isso, estaremos sempre compartilhando informações sobre tendências, lançamentos 
+            e inovações tecnológicas que podem impactar sua escolha.
+          </p>
+          <p>
+            Nossos leitores são nossa prioridade, e estamos comprometidos em proporcionar 
+            conteúdo de qualidade que atenda às suas expectativas.
+          </p>
+          <p>
+            Agradecemos sua visita ao nosso blog e esperamos que você encontre informações 
+            úteis e inspiradoras. Navegue por nossas avaliações, descubra novos capacetes e, 
+            acima de tudo, priorize sua segurança. O equipamento certo pode fazer toda a 
+            diferença, seja ele <a href="/capacetes-feminino/">capacete feminino</a> ou 
+            masculino, estamos aqui para ajudá-lo nessa jornada.
+          </p>
+          <p class="afiliacao-nota">
+            Este site tem como afiliação algumas plataformas como: Amazon, Hotmart, Kiwify e 
+            outras plataformas, e podemos receber a comissão de alguns produtos.
           </p>
         </div>
       </div>
@@ -161,328 +304,450 @@ const featuredReviews = [
 </Layout>
 
 <style>
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #fff;
-    padding: 100px 20px;
-    text-align: center;
+  :root {
+    --primary-color: #e31b1b;
+    --secondary-color: #212121;
+    --text-color: #333;
+    --bg-light: #f5f5f5;
+    --white: #ffffff;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
   }
-  
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.25rem;
-    color: #b0b0b0;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
-  
-  .hero-cta {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .btn-primary {
-    background-color: #e31b1b;
-    color: #fff;
-  }
-  
-  .btn-primary:hover {
-    background-color: #c41818;
-  }
-  
-  .btn-secondary {
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #fff;
-    color: #1a1a2e;
-  }
-  
-  /* Container */
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  
-  /* Section Title */
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: var(--white);
+    padding: 100px 20px;
     text-align: center;
-    margin-bottom: 50px;
-    color: #212121;
   }
-  
-  /* Categories Section */
-  .categories-section {
-    padding: 80px 0;
-    background-color: #fafafa;
-  }
-  
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-  }
-  
-  .category-card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  }
-  
-  .category-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  
-  .category-image {
-    aspect-ratio: 16/10;
-    overflow: hidden;
-  }
-  
-  .category-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .category-card:hover .category-image img {
-    transform: scale(1.05);
-  }
-  
-  .category-content {
-    padding: 25px;
-  }
-  
-  .category-content h3 {
-    font-size: 1.5rem;
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
-    margin-bottom: 10px;
-    color: #212121;
+    margin-bottom: 20px;
+    line-height: 1.2;
   }
-  
-  .category-content p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #b0b0b0;
+    max-width: 600px;
+    margin: 0 auto;
   }
-  
-  .category-cta {
-    color: #e31b1b;
-    font-weight: 600;
-  }
-  
-  /* Featured Section */
-  .featured-section {
+
+  /* Reviews Section */
+  .reviews-section {
     padding: 80px 0;
-    background-color: #fff;
+    background: var(--bg-light);
   }
-  
+
+  .reviews-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+  }
+
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
   }
-  
+
   .review-card {
-    background: #fff;
-    border-radius: 16px;
+    background: var(--white);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: rgba(23, 43, 99, 0.2) 0 7px 28px;
-    transition: transform 0.3s ease;
-  }
-  
-  .review-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .review-link {
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: inherit;
-    display: block;
   }
-  
-  .review-image {
-    position: relative;
-    aspect-ratio: 16/10;
+
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .review-card .review-image {
+    height: 200px;
     overflow: hidden;
   }
-  
-  .review-image img {
+
+  .review-card .review-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
-  .review-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: #e31b1b;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
+
+  .review-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
   }
-  
-  .review-content {
-    padding: 25px;
-  }
-  
-  .review-rating {
-    color: #ffc107;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  
-  .rating-number {
-    color: #666;
-    margin-left: 5px;
-  }
-  
-  .review-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #212121;
-  }
-  
-  .review-content p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  .read-more {
-    color: #e31b1b;
+
+  .review-card .read-more {
+    display: block;
+    padding: 0 20px 20px;
+    color: var(--primary-color);
     font-weight: 600;
   }
-  
-  /* Newsletter Section */
-  .newsletter-section {
+
+  /* Marcas Section */
+  .marcas-section {
     padding: 80px 0;
-    background-color: #f7f8f9;
+    background: var(--white);
   }
-  
-  .newsletter-content {
-    max-width: 600px;
+
+  .marcas-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+  }
+
+  .marcas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .marca-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+  }
+
+  .marca-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .marca-header h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+  }
+
+  .btn-afiliado {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .btn-afiliado:hover {
+    background: #c41818;
+  }
+
+  .marca-pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .marca-pros-cons .pros {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .marca-pros-cons .contras {
+    background: #ffebee;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .marca-pros-cons h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+
+  .marca-pros-cons .pros h4 { color: #2e7d32; }
+  .marca-pros-cons .contras h4 { color: #c62828; }
+
+  .marca-pros-cons ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .marca-pros-cons li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .marca-pros-cons .pros li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    font-weight: bold;
+  }
+
+  .marca-pros-cons .contras li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #c62828;
+    font-weight: bold;
+  }
+
+  /* Quem Sou Section */
+  .quem-sou-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+  }
+
+  .quem-sou-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+  }
+
+  .quem-sou-content {
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
   }
-  
-  .newsletter-content h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #212121;
-  }
-  
-  .newsletter-content > p {
-    color: #666;
-    margin-bottom: 30px;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    gap: 10px;
+
+  .quem-sou-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
     margin-bottom: 20px;
   }
-  
-  .newsletter-form input {
-    flex: 1;
-    padding: 15px 20px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+
+  /* Guia Section */
+  .guia-section {
+    padding: 80px 0;
+    background: var(--white);
+    text-align: center;
   }
-  
-  .newsletter-form input:focus {
-    outline: none;
-    border-color: #e31b1b;
+
+  .guia-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
   }
-  
-  .privacy-note {
-    font-size: 0.875rem;
-    color: #878787;
+
+  .guia-texto {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
   }
-  
-  .privacy-note a {
-    color: #e31b1b;
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 6px;
     text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.3s ease;
   }
-  
-  /* Visually Hidden */
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+
+  .btn-primary:hover {
+    background: #c41818;
+  }
+
+  /* Categorias Section */
+  .categorias-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+  }
+
+  .categorias-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+  }
+
+  .categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .categoria-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .categoria-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: var(--bg-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
   }
-  
+
+  .categoria-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .categoria-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+  }
+
+  .ver-modelos {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Posts Populares */
+  .posts-populares-section {
+    padding: 80px 0;
+    background: var(--white);
+  }
+
+  .posts-populares-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .post-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-light);
+    padding: 20px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s ease;
+  }
+
+  .post-card:hover {
+    background: #e8e8e8;
+  }
+
+  .post-card h3 {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+  }
+
+  .leia-mais {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Sobre Blog */
+  .sobre-blog-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+  }
+
+  .sobre-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .sobre-content p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .sobre-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .sobre-content a:hover {
+    text-decoration: underline;
+  }
+
+  .afiliacao-nota {
+    background: #fff3cd;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
     .hero {
       padding: 60px 20px;
     }
-    
-    .section-title {
+
+    .hero h1 {
       font-size: 2rem;
     }
-    
-    .newsletter-form {
-      flex-direction: column;
+
+    .marca-pros-cons {
+      grid-template-columns: 1fr;
     }
-    
-    .newsletter-form .btn {
-      width: 100%;
+
+    .marca-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .post-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
   }
 </style>
