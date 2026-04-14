@@ -80,11 +80,18 @@ const footerLinks = {
       <!-- Contato -->
       <div class="footer-contact">
         <h3>Contato</h3>
-        <p>
-          <a href="tel:+5511968037428">+55 (11) 96803-7428</a>
+        <p style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          <a href="tel:+5511968037428" style="color: #fff; font-weight: 600;">(11) 96803 -7428</a>
         </p>
-        <p class="footer-address">
-          São Paulo, SP - Brasil
+        <p>
+          <strong style="color: #fff;">E-mail:</strong><br>
+          <a href="mailto:contato@jovemapan.com.br">contato@jovemapan.com.br</a>
+        </p>
+        <p>
+          <strong style="color: #fff;">Endereço:</strong><br>
+          R. Maestro Tom Jobim, 85 - Jardim<br>
+          Anália Franco, São Paulo - SP, 03337-040
         </p>
       </div>
     </div>
@@ -195,7 +202,8 @@ const footerLinks = {
   .footer-contact p {
     color: #b0b0b0;
     font-size: 14px;
-    margin: 0 0 10px;
+    margin: 0 0 15px;
+    line-height: 1.5;
   }
   
   .footer-address {
