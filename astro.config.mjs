@@ -4,10 +4,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://jovemapan.com.br',
   output: 'static',
+  trailingSlash: 'always',
   compressHTML: true,
   integrations: [sitemap()],
   build: {
-    format: 'file'
+    format: 'directory'
   },
   vite: {
     build: {
