@@ -16,3 +16,4 @@ export default defineConfig({
     }
   }
 });
+// Triggering deploy after activating GitHub Pages
