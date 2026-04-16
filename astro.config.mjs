@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://jovemapan.com.br',
+  site: 'https://adelson45.github.io',
+  base: '/ApanV1',
   output: 'static',
   trailingSlash: 'always',
   compressHTML: true,
