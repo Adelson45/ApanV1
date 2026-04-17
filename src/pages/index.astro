@@ -429,8 +429,15 @@ const postsMaisVistos = [
 
   @media (max-width: 768px) {
     .na-midia-logos {
-      flex-direction: column;
-      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 20px 15px;
+      gap: 20px;
+    }
+
+    .na-midia-logos img {
+      height: 30px;
+      margin: 0 auto;
     }
   }
 
