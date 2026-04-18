@@ -429,8 +429,15 @@ const postsMaisVistos = [
 
   @media (max-width: 768px) {
     .na-midia-logos {
-      flex-direction: column;
-      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 20px 15px;
+      gap: 20px;
+    }
+
+    .na-midia-logos img {
+      height: 30px;
+      margin: 0 auto;
     }
   }
 
@@ -742,7 +749,7 @@ const postsMaisVistos = [
     line-height: 1.8;
     color: #e0e0e0;
     margin: 0;
-    text-align: justify;
+    text-align: left;
   }
 
   @media (max-width: 991px) {
@@ -1022,7 +1029,7 @@ const postsMaisVistos = [
   .sobre-content {
     padding: 30px 25px;
     border-top: 1px solid #eee;
-    text-align: justify;
+    text-align: left;
   }
 
   .sobre-content p {
