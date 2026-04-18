@@ -131,6 +131,9 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
           <p>Para te ajudar nessa missão, preparamos o guia definitivo com os <strong>26 melhores capacetes de moto mais procurados com custo-benefício para 2026</strong>. Nossa seleção foi feita com base em critérios rigorosos de segurança, materiais, avaliações de usuários e, claro, acessível e agradável, e melhor valor pelo seu dinheiro.</p>
 
           <h2 id="ranking">Ranking dos melhores capacetes de moto custo-benefício para 2026</h2>
+          <div class="h2-image-card">
+            <img src="/images/capacete-ranking-2026.png" alt="Ranking dos Melhores Capacetes 2026" />
+          </div>
           <p>Para uma visualização rápida, aqui está nosso ranking com os destaques de 2026:</p>
           <ul>
             <li><strong>HJC HJ-09:</strong> Melhor para Inovação</li>
@@ -151,11 +154,17 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
           </ul>
 
           <h2 id="como-escolher">Como escolher o melhor capacete custo benefício?</h2>
+          <div class="h2-image-card">
+            <img src="/images/como-escolher-capacete.png" alt="Como Escolher o Melhor Capacete" />
+          </div>
           <p>A escolha ideal vai além da estética. Para encontrar o melhor capacete custo-benefício, você precisa analisar um conjunto de fatores essenciais. 
 
 Considere a certificação de segurança do INMETRO (obrigatória e indispensável), o material do casco, seu tipo de uso principal (cidade ou estrada), o conforto do forro interno e a eficiência do sistema de ventilação antirruído. Não se preocupe, vamos detalhar cada um desses pontos mais adiante neste guia completo.</p>
 
           <h2 id="analise">Melhores marcas de capacete custo-benefício</h2>
+          <div class="h2-image-card">
+            <img src="/images/marcas-capacetes.png" alt="Melhores Marcas de Capacete" />
+          </div>
           <p class="intro-marcas">Algumas marcas se destacam por oferecer produtos de qualidade com preços acessíveis. Fique de olho nelas:</p>
 
           <div class="marcas-lista">
@@ -172,6 +181,9 @@ Considere a certificação de segurança do INMETRO (obrigatória e indispensáv
           <!-- PRODUCT 1 -->
           <div class="product-section" id="peels-icon">
             <h3>1. Capacete Peels Icon Fast (Melhor no Geral)</h3>
+            <div class="h2-image-card product-image">
+              <img src="/images/Capacete-arai.png" alt="Capacete Peels Icon Fast" />
+            </div>
             <p>O Peels Icon Fast foi projetado com um público-alvo claro em mente: o motociclista urbano. Ele é a escolha ideal para quem roda diariamente pela cidade, seja para trabalhar, estudar ou para o lazer. É perfeito para entregadores, iniciantes no motociclismo e para qualquer um que busque um capacete com um visual arrojado sem precisar gastar uma fortuna.</p>
             
             <div class="pros-cons-grid">
@@ -200,6 +212,9 @@ Considere a certificação de segurança do INMETRO (obrigatória e indispensáv
           <!-- PRODUCT 2 -->
           <div class="product-section" id="pro-tork-liberty">
             <h3>2. Capacete Pro Tork New Liberty (Melhor Ventilação)</h3>
+            <div class="h2-image-card product-image">
+              <img src="/images/Capacete-arai.png" alt="Capacete Pro Tork New Liberty" />
+            </div>
             <p>O Pro Tork New Liberty é um verdadeiro campeão de vendas e não é por acaso. Ele entrega tudo o que o motociclista do dia a dia precisa: segurança, simplicidade e um preço extremamente baixo. Seu design é clássico e funcional.</p>
             
             <ul>
@@ -234,6 +249,9 @@ Considere a certificação de segurança do INMETRO (obrigatória e indispensáv
           <!-- PRODUCT 3 -->
           <div class="product-section" id="pro-tork-auto">
             <h3>3. Capacete Pro Tork Automático Sm (Melhor Custo Benefício)</h3>
+            <div class="h2-image-card product-image">
+              <img src="/images/Capacete-arai.png" alt="Capacete Pro Tork Automático Sm" />
+            </div>
             <p>Este modelo se destaca por uma característica muito prática: a viseira com abertura automática por botão. Com um simples toque, a viseira se abre, facilitando a vida do piloto em paradas rápidas. É um pequeno detalhe de conveniência que faz uma grande diferença.</p>
             
             <div class="pros-cons-grid">
@@ -260,6 +278,9 @@ Considere a certificação de segurança do INMETRO (obrigatória e indispensáv
           </div>
 
           <h2 id="conclusao">Conclusão</h2>
+          <div class="h2-image-card">
+            <img src="/images/conclusao-capacetes.png" alt="Conclusão - Capacetes Custo Benefício" />
+          </div>
           <p>Escolher o capacete certo é o investimento mais importante que você pode fazer na sua segurança. Como vimos neste guia, não é preciso gastar uma fortuna para estar bem protegido. Um bom capacete custo benefício é aquele que entrega segurança certificada, conforto para o seu tipo de uso e um preço que cabe no seu orçamento.</p>
           <p>Boas curvas e pilote sempre em segurança!</p>
 
@@ -730,6 +751,42 @@ Considere a certificação de segurança do INMETRO (obrigatória e indispensáv
   .newsletter-form button span { font-size: 1.2rem; line-height: 0; margin-top: -2px; }
 
   /* ==================================
+     CARDS DE IMAGEM ABAIXO DOS H2
+     ================================== */
+  .h2-image-card {
+    width: 100%;
+    max-width: 733px;
+    margin: 16px 0 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: var(--gray-light);
+  }
+  .h2-image-card img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .h2-image-card.product-image {
+    max-width: 500px;
+    margin: 12px auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .h2-image-card.product-image img {
+    max-height: 350px;
+    object-fit: contain;
+    background: var(--white);
+    padding: 16px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* ==================================
      RESPONSIVO: GRID E ESTRUTURA GERAL
      ================================== */
   @media (max-width: 1024px) {
@@ -742,6 +799,10 @@ Considere a certificação de segurança do INMETRO (obrigatória e indispensáv
     .post-sidebar-col { position: static; margin-top: 40px; }
     .post-title { font-size: 2.2rem; }
     .post-cover-image { aspect-ratio: 733 / 440; margin-bottom: 24px; } /* Mantém proporção exata no mobile */
+    .h2-image-card { margin: 12px 0 20px; border-radius: 8px; }
+    .h2-image-card img { max-height: 250px; }
+    .h2-image-card.product-image { max-width: 100%; margin: 12px auto 20px; }
+    .h2-image-card.product-image img { max-height: 280px; padding: 12px; margin: 0 auto; }
   }
 </style>
 
