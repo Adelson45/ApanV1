@@ -36,7 +36,7 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
           {category}
         </a>
 
-        <h1 class="post-title">Melhores Custo-Benefício 2026: O Guia Definitivo para sua Escolha Certa</h1>
+        <h1 class="post-title">28 Melhores Capacetes de Moto Custo-Benefício 2026</h1>
 
         <div class="post-meta-data">
           <div class="meta-author">
@@ -298,28 +298,13 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
         <!-- [DIREITA] Sidebar -->
         <aside class="post-sidebar-col">
           
-          <!-- Widget Conecte-se -->
-          <div class="sidebar-widget conecte-se">
-            <h4 class="sidebar-widget-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--red)" stroke-width="2" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-              CONECTE-SE
-            </h4>
-            <div class="social-stats">
-              <div class="stat-box">
-                <div class="stat-icon fb">
-                  <svg viewBox="0 0 24 24" fill="#3b5998" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                </div>
-                <strong>24.5k</strong>
-                <span>FÃS</span>
-              </div>
-              <div class="stat-box">
-                <div class="stat-icon tw">
-                  <svg viewBox="0 0 24 24" fill="#1da1f2" width="18" height="18"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.953 13.953 0 0 1 1.671 3.149 4.93 4.93 0 0 0 3.194 9.723a4.902 4.902 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89-.396.108-.811.162-1.23.162-.304 0-.599-.028-.888-.081.619 1.932 2.415 3.334 4.544 3.373a9.866 9.866 0 0 1-7.29 2.031 13.904 13.904 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
-                </div>
-                <strong>12.2k</strong>
-                <span>SEGUIDORES</span>
-              </div>
-            </div>
+          <!-- Widget Produto em Destaque -->
+          <div class="sidebar-widget produto-destaque">
+            <p class="frete-gratis">Aproveite frete GRÁTIS</p>
+            <img src="/images/capacete-peels-mirage-classic-branco.png" alt="Capacete Moto Peels Mirage Classic Branco" class="produto-imagem" />
+            <h4 class="produto-nome">Capacete Moto Peels Mirage<br/>Classic Branco</h4>
+            <a href="javascript:void(0)" class="btn-produto-destaque ml">VER NO MERCADO LIVRE</a>
+            <a href="javascript:void(0)" class="btn-produto-destaque amazon">VER OFERTA NA AMAZON</a>
           </div>
 
           <!-- Widget Newsletter VIP (Solid Red) -->
@@ -561,31 +546,63 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
     top: 100px;
   }
 
-  /* Widget 1: CONECTE-SE (Branco com abas) */
+  /* Widget 1: PRODUTO EM DESTAQUE (Fundo Preto) */
   .sidebar-widget {
-    background: var(--white);
     border-radius: 8px;
     padding: 24px;
     border: 1px solid var(--border);
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .sidebar-widget-title {
-    font-size: 0.95rem; font-style: italic; font-weight: 900; margin-bottom: 20px;
-    color: var(--black); text-transform: uppercase;
-    display: flex; align-items: center; gap: 8px;
-    border-bottom: 1px solid #f4f4f4; padding-bottom: 15px; /* Traço sutil */
+  .sidebar-widget.produto-destaque {
+    background: #000000;
+    color: var(--white);
+    text-align: center;
+    padding: 24px 20px;
   }
-
-  .social-stats {
-    display: flex; justify-content: space-around;
+  .frete-gratis {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin: 0 0 16px;
   }
-  .stat-box { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
-  .stat-icon {
-    width: 48px; height: 48px; border-radius: 50%; border: 1px solid #EAEAEA;
-    display: flex; align-items: center; justify-content: center;
+  .produto-imagem {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    margin: 0 auto 16px;
+    display: block;
   }
-  .stat-box strong { font-size: 1.05rem; color: var(--black); margin-top: 4px;}
-  .stat-box span { font-size: 0.6rem; color: #a0a0a0; font-weight: 800; letter-spacing: 0.5px;}
+  .produto-nome {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--white);
+    margin: 0 0 20px;
+    line-height: 1.4;
+  }
+  .btn-produto-destaque {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    transition: background 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .btn-produto-destaque:hover {
+    background: var(--red-dark);
+  }
+  .btn-produto-destaque:last-child {
+    margin-bottom: 0;
+  }
 
   /* Widget 2: NEWSLETTER VIP (Caixa Vermelha Sólida) */
   .newsletter-vip {
