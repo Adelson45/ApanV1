@@ -3,562 +3,866 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = 'Capacete Custo Benefício 2026 | Melhores Opções com Preço Justo';
-const description = 'Encontre o melhor capacete custo benefício de 2026. Análises de modelos acessíveis com ótima relação qualidade-preço como LS2, Norisk, Axxis e Peels.';
-
-const budgetHelmets = [
-  {
-    name: 'Capacete LS2 FF320',
-    subtitle: 'Stream Evo',
-    price: 'R$ 450 - R$ 650',
-    rating: 4.7,
-    image: '/images/ls2-ff320.jpg',
-    affiliateLink: 'https://amzn.to/ls2ff320',
-    description: 'O LS2 FF320 Stream Evo é referência em custo-benefício no mercado brasileiro. Com certificação ECE 22.05, oferece proteção confiável a um preço acessível.',
-    features: [
-      'Casco de ABS de alta resistência',
-      'Viseira solar interna',
-      'Sistema de ventilação eficiente',
-      'Forro removível e lavável',
-      'Peso aproximado: 1.450g'
-    ],
-    pros: [
-      'Excelente relação custo-benefício',
-      'Viseira solar integrada',
-      'Boa ventilação para o preço',
-      'Design moderno e aerodinâmico'
-    ],
-    cons: [
-      'Acabamento inferior a modelos premium',
-      'Isolamento acústico básico',
-      'Peças de reposição limitadas'
-    ]
-  },
-  {
-    name: 'Capacete Norisk FF302',
-    subtitle: 'Freedom',
-    price: 'R$ 380 - R$ 550',
-    rating: 4.5,
-    image: '/images/norisk-ff302.jpg',
-    affiliateLink: 'https://amzn.to/noriskff302',
-    description: 'O Norisk FF302 Freedom é uma opção econômica que não sacrifica a segurança. Ideal para quem busca proteção básica com conforto.',
-    features: [
-      'Casco em termoplástico resistente',
-      'Viseira anti-risco',
-      'Entradas de ar superiores e frontais',
-      'Forro em tecido hipoalergênico',
-      'Sistema de retenção micrométrico'
-    ],
-    pros: [
-      'Preço muito acessível',
-      'Leveza surpreendente',
-      'Conforto para uso urbano',
-      'Disponível em várias cores'
-    ],
-    cons: [
-      'Ventilação básica',
-      'Viseira sem tratamento anti-embaçante',
-      'Durabilidade do forro inferior'
-    ]
-  },
-  {
-    name: 'Capacete Axxis Eagle',
-    subtitle: 'Diversion',
-    price: 'R$ 420 - R$ 600',
-    rating: 4.6,
-    image: '/images/axxis-eagle.jpg',
-    affiliateLink: 'https://amzn.to/axxiseagle',
-    description: 'O Axxis Eagle Diversion combina estilo agressivo com proteção confiável. Excelente para pilotos que buscam design sem gastar muito.',
-    features: [
-      'Casco de policarbonato de alto impacto',
-      'Viseira 2D com tratamento anti-risco',
-      'Sistema de ventilação com 4 entradas',
-      'Forro removível e lavável',
-      'Peso: 1.350g (tamanho M)'
-    ],
-    pros: [
-      'Design esportivo e moderno',
-      'Peso reduzido',
-      'Boa ventilação',
-      'Ótimo para iniciantes'
-    ],
-    cons: [
-      'Isolamento acústico limitado',
-      'Viseira sem opção solar',
-      'Acabamento simples'
-    ]
-  },
-  {
-    name: 'Capacete Peels Icon',
-    subtitle: 'Classic',
-    price: 'R$ 350 - R$ 480',
-    rating: 4.4,
-    image: '/images/peels-icon.jpg',
-    affiliateLink: 'https://amzn.to/peelsicon',
-    description: 'O Peels Icon Classic é uma opção nacional com ótima relação qualidade-preço. Marca brasileira que entrega proteção certificada.',
-    features: [
-      'Casco ABS injetado',
-      'Certificação INMETRO e ECE',
-      'Viseira policarbonato',
-      'Forro antimicrobiano',
-      'Sistema de ventilação básico'
-    ],
-    pros: [
-      'Preço acessível',
-      'Marca nacional com suporte local',
-      'Certificações completas',
-      'Cores variadas'
-    ],
-    cons: [
-      'Ventilação limitada',
-      'Conforto em longas viagens',
-      'Disponibilidade de peças'
-    ]
-  }
-];
-
-const comparisonTable = [
-  { model: 'LS2 FF320', price: 'R$ 450-650', rating: '4.7/5', bestFor: 'Custo-benefício geral' },
-  { model: 'Norisk FF302', price: 'R$ 380-550', rating: '4.5/5', bestFor: 'Orçamento limitado' },
-  { model: 'Axxis Eagle', price: 'R$ 420-600', rating: '4.6/5', bestFor: 'Design esportivo' },
-  { model: 'Peels Icon', price: 'R$ 350-480', rating: '4.4/5', bestFor: 'Marca nacional' }
-];
+const title = 'Título da Página Aqui';
+const description = 'Sua descrição SEO aqui...';
+const canonical   = 'https://jovemapan.com.br/sua-url/';
+const author      = 'Marcelo Ferreira';
+const publishDate = '27 MAR, 2026';
+const category    = 'CAPACETES';
+const categoryHref = '/melhor-capacete/';
+const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} canonical={canonical}>
   <Header />
-  
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <h1>Capacete Custo Benefício 2026</h1>
-        <p class="hero-subtitle">
-          Melhores capacetes com preço justo e qualidade comprovada. 
-          Análises de modelos acessíveis que oferecem proteção real sem quebrar o orçamento.
-        </p>
-      </div>
-    </section>
 
-    <!-- Comparison Table -->
-    <section class="comparison-section">
-      <div class="container">
-        <h2>Comparativo Rápido</h2>
-        <div class="table-wrapper">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Modelo</th>
-                <th>Faixa de Preço</th>
-                <th>Avaliação</th>
-                <th>Ideal Para</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonTable.map(item => (
-                <tr>
-                  <td><strong>{item.model}</strong></td>
-                  <td>{item.price}</td>
-                  <td>{item.rating}</td>
-                  <td>{item.bestFor}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+  <main class="post-main">
+    <div class="post-container">
+
+      <!-- ==========================================
+           1. CABEÇALHO (Breadcrumb, Título, Info)
+           ========================================== -->
+      <div class="post-header-section">
+        <nav class="top-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">HOME</a>
+          <span class="separator">›</span>
+          <a href={categoryHref}>{category}</a>
+          <span class="separator">›</span>
+          <span class="current-page">{title.toUpperCase()}</span>
+        </nav>
+
+        <a href={categoryHref} class="post-category-tag">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          {category}
+        </a>
+
+        <h1 class="post-title">Melhores Custo-Benefício 2026: O Guia Definitivo para sua Escolha Certa</h1>
+
+        <div class="post-meta-data">
+          <div class="meta-author">
+            <img src="/images/marcelo-ferreira.png" alt={author} class="author-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Marcelo+Ferreira&background=random'" />
+            <strong>{author.toUpperCase()}</strong>
+          </div>
+          <div class="meta-info">
+             <span class="meta-item">
+               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+               {publishDate}
+             </span>
+             <span class="meta-item">
+               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+               45K VIEWS
+             </span>
+             <span class="meta-item">
+               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+               12 COMMENTS
+             </span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Detailed Reviews -->
-    <section class="reviews-section">
-      <div class="container">
-        <h2>Análises Detalhadas</h2>
-        <div class="helmets-list">
-          {budgetHelmets.map((helmet, index) => (
-            <article class="helmet-detailed">
-              <div class="helmet-header">
-                <span class="rank">#{index + 1}</span>
-                <div class="helmet-title">
-                  <h3>{helmet.name}</h3>
-                  <p class="subtitle">{helmet.subtitle}</p>
+      <!-- ==========================================
+           2. GRID PRINCIPAL (Col 1: Social | Col 2: Artigo | Col 3: Sidebar)
+           ========================================== -->
+      <div class="post-layout-grid">
+        
+        <!-- [ESQUERDA] Botões Sociais -->
+        <div class="post-social-col">
+          <div class="sticky-socials">
+            <a href="javascript:void(0)" class="social-btn facebook" aria-label="Facebook">f</a>
+            <a href="javascript:void(0)" class="social-btn twitter" aria-label="Twitter">
+              <!-- Ícone de Pássaro/Twitter no lugar do X do Frigo-Lab print -->
+              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.953 13.953 0 0 1 1.671 3.149 4.93 4.93 0 0 0 3.194 9.723a4.902 4.902 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89-.396.108-.811.162-1.23.162-.304 0-.599-.028-.888-.081.619 1.932 2.415 3.334 4.544 3.373a9.866 9.866 0 0 1-7.29 2.031 13.904 13.904 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
+            </a>
+            <a href="javascript:void(0)" class="social-btn linkedin" aria-label="LinkedIn">in</a>
+            <a href="javascript:void(0)" class="social-btn instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- [CENTRO] Artigo -->
+        <article class="post-content-col">
+          
+          <!-- Foto de Capa (Hero) com Selo Verified -->
+          <div class="post-cover-image">
+            <img src={coverImage} alt="Capa do Artigo" />
+            <div class="verified-badge">
+              <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              APAN VERIFIED
+            </div>
+          </div>
+
+          <!-- Índice Modo Accordion (Estilo Print) -->
+          <div class="post-indice">
+            <div class="indice-left">
+              <div class="indice-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              </div>
+              <strong>ÍNDICE DE CONTEÚDO</strong>
+            </div>
+            <div class="indice-arrow">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--text-meta)" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+
+          <!-- Seu texto começa aqui -->
+          <p class="post-lead">Seja para ir ao trabalho, fazer uma entrega ou curtir a estrada no fim de semana, uma coisa é inegociável: sua segurança. E quando falamos em segurança sobre duas rodas, o capacete não é um acessório, é o equipamento mais importante que você irá usar. Mas como encontrar um modelo que proteja de verdade, seja confortável e não pese no bolso?</p>
+
+          <p>A boa notícia é que o mercado evoluiu muito, e hoje é totalmente possível aliar proteção certificada, conforto e um preço justo. Chega de pensar que um capacete bom e barato não existe, ou que a segurança precisa custar uma fortuna para o motociclista brasileiro.</p>
+
+          <p>Para te ajudar nessa missão, preparamos o guia definitivo com os <strong>26 melhores capacetes de moto mais procurados com custo-benefício para 2026</strong>. Nossa seleção foi feita com base em critérios rigorosos de segurança, materiais, avaliações de usuários e, claro, o melhor valor pelo seu dinheiro.</p>
+
+          <h2>Ranking dos melhores capacetes de moto custo-benefício para 2026</h2>
+          <p>Para uma visualização rápida, aqui está nosso ranking com os destaques de 2026:</p>
+          <ul>
+            <li><strong>HJC HJ-09:</strong> Melhor para Inovação</li>
+            <li><strong>X11 Trust Solides:</strong> Melhor para Elegância</li>
+            <li><strong>Norisk Razor Nardo Grey:</strong> Melhor para Tecnologia</li>
+            <li><strong>Peels Mirage Techride:</strong> Melhor para Personalização</li>
+            <li><strong>Evolution G6 Factor:</strong> Melhor Visibilidade</li>
+            <li><strong>ASX City:</strong> Melhor em Segurança</li>
+            <li><strong>EBF New Spark Flash:</strong> Melhor Aerodinâmica</li>
+            <li><strong>Pro Tork New Liberty:</strong> Melhor no Geral</li>
+            <li><strong>Pro Tork Automático Sm:</strong> Melhor Custo Benefício</li>
+            <li><strong>Pro Tork New Atomic Skull:</strong> Melhor para Conforto</li>
+            <li><strong>Mixs Gladiator Neo:</strong> Melhor para Versatilidade</li>
+            <li><strong>Mixs MX2 Storm:</strong> Melhor para Estilo</li>
+            <li><strong>Pro Tork Liberty Compact:</strong> Melhor para Desempenho</li>
+            <li><strong>Liberty Three Pro Tork:</strong> Melhor Minimalismo</li>
+            <li><strong>R8 Pro Tork Fosco:</strong> Melhor em Design</li>
+          </ul>
+
+          <h2>Como escolher o melhor capacete custo benefício?</h2>
+          <p>A escolha ideal vai além da estética. Para encontrar o melhor capacete custo-benefício, você precisa analisar um conjunto de fatores essenciais. Considere a certificação de segurança do INMETRO (obrigatória e indispensável), o material do casco, seu tipo de uso principal (cidade ou estrada), o conforto do forro interno e a eficiência do sistema de ventilação antirruído. Não se preocupe, vamos detalhar cada um desses pontos mais adiante neste guia.</p>
+
+          <h2>Análise dos Capacetes Custo-Benefício 2026</h2>
+          <p>Vamos à análise detalhada de cada modelo que se destacou em nossa seleção.</p>
+
+          <!-- PRODUCT 1 -->
+          <div class="product-section">
+            <h3>1. Capacete Peels Icon Fast (Melhor no Geral)</h3>
+            <p>O Peels Icon Fast foi projetado com um público-alvo claro em mente: o motociclista urbano. Ele é a escolha ideal para quem roda diariamente pela cidade, seja para trabalhar, estudar ou para o lazer. É perfeito para entregadores, iniciantes no motociclismo e para qualquer um que busque um capacete com um visual arrojado sem precisar gastar uma fortuna.</p>
+            
+            <div class="pros-cons-grid">
+              <div class="pc-col">
+                <h4 class="pros">PRÓS</h4>
+                <ul class="pc-list pros">
+                  <li>Design Moderno e Aerodinâmico, reduzindo arrasto.</li>
+                  <li>Viseira Solar Interna (Sun Visor) integrada.</li>
+                  <li>Forração Removível e Lavável.</li>
+                </ul>
+              </div>
+              <div class="pc-col">
+                <h4 class="cons">CONTRAS</h4>
+                <ul class="pc-list cons">
+                  <li>Isolamento Acústico inferior em altas velocidades.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="btn-buy-container">
+              <a href="javascript:void(0)" class="btn-buy">Ver na Amazon</a>
+              <a href="javascript:void(0)" class="btn-buy ml">Mercado Livre</a>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+          <div class="product-section">
+            <h3>2. Capacete Pro Tork New Liberty (Melhor Ventilação)</h3>
+            <p>O Pro Tork New Liberty é um verdadeiro campeão de vendas e não é por acaso. Ele entrega tudo o que o motociclista do dia a dia precisa: segurança, simplicidade e um preço extremamente baixo. Seu design é clássico e funcional.</p>
+            
+            <ul>
+              <li><strong>Casco:</strong> ABS Injetado de alto impacto.</li>
+              <li><strong>Viseira:</strong> Cristal em policarbonato com 2mm de espessura.</li>
+              <li><strong>Forro:</strong> Nylon pluma antialérgico.</li>
+            </ul>
+
+            <div class="pros-cons-grid">
+              <div class="pc-col">
+                <h4 class="pros">PRÓS</h4>
+                <ul class="pc-list pros">
+                  <li>Preço imbatível e economia.</li>
+                  <li>Leve, compacto e confiável.</li>
+                </ul>
+              </div>
+              <div class="pc-col">
+                <h4 class="cons">CONTRAS</h4>
+                <ul class="pc-list cons">
+                  <li>Forro não é removível.</li>
+                  <li>Ventilação básica.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="btn-buy-container">
+              <a href="javascript:void(0)" class="btn-buy">Ver na Amazon</a>
+              <a href="javascript:void(0)" class="btn-buy ml">Mercado Livre</a>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+          <div class="product-section">
+            <h3>3. Capacete Pro Tork Automático Sm (Melhor Custo Benefício)</h3>
+            <p>Este modelo se destaca por uma característica muito prática: a viseira com abertura automática por botão. Com um simples toque, a viseira se abre, facilitando a vida do piloto em paradas rápidas. É um pequeno detalhe de conveniência que faz uma grande diferença.</p>
+            
+            <div class="pros-cons-grid">
+              <div class="pc-col">
+                <h4 class="pros">PRÓS</h4>
+                <ul class="pc-list pros">
+                  <li>Abertura automática da viseira maravilhosa.</li>
+                  <li>Preço extremamente acessível.</li>
+                </ul>
+              </div>
+              <div class="pc-col">
+                <h4 class="cons">CONTRAS</h4>
+                <ul class="pc-list cons">
+                  <li>Acabamento interno simples.</li>
+                  <li>Ruidoso em velocidades mais altas.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="btn-buy-container">
+              <a href="javascript:void(0)" class="btn-buy">Ver na Amazon</a>
+              <a href="javascript:void(0)" class="btn-buy ml">Mercado Livre</a>
+            </div>
+          </div>
+
+          <h2>Conclusão</h2>
+          <p>Escolher o capacete certo é o investimento mais importante que você pode fazer na sua segurança. Como vimos neste guia, não é preciso gastar uma fortuna para estar bem protegido. Um bom capacete custo benefício é aquele que entrega segurança certificada, conforto para o seu tipo de uso e um preço que cabe no seu orçamento.</p>
+          <p>Boas curvas e pilote sempre em segurança!</p>
+
+          <!-- ==========================================
+               FOOTER DO ARTIGO (Tags, Share, Autor)
+               ========================================== -->
+          <div class="post-footer">
+            
+            <div class="post-tags-container">
+              <strong>TAGS:</strong>
+              <div class="post-tags">
+                <a href="javascript:void(0)">REVIEW</a>
+                <a href="javascript:void(0)">CAPACETES</a>
+                <a href="javascript:void(0)">RECOMENDAÇÃO</a>
+                <a href="javascript:void(0)">2026</a>
+              </div>
+            </div>
+
+            <div class="post-share-container">
+              <strong>COMPARTILHE ESTE ARTIGO:</strong>
+              <div class="post-share-buttons">
+                <a href="javascript:void(0)" class="share-btn fb"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg> Facebook</a>
+                <a href="javascript:void(0)" class="share-btn tw"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.953 13.953 0 0 1 1.671 3.149 4.93 4.93 0 0 0 3.194 9.723a4.902 4.902 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89-.396.108-.811.162-1.23.162-.304 0-.599-.028-.888-.081.619 1.932 2.415 3.334 4.544 3.373a9.866 9.866 0 0 1-7.29 2.031 13.904 13.904 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg> Twitter</a>
+                <a href="javascript:void(0)" class="share-btn link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> Link</a>
+              </div>
+            </div>
+
+            <div class="author-bio-box">
+              <div class="bio-avatar">
+                <img src="/images/marcelo-ferreira.png" alt={author} onerror="this.src='https://ui-avatars.com/api/?name=Marcelo+Ferreira&background=random'" />
+              </div>
+              <div class="bio-content">
+                <span class="bio-label">SOBRE O AUTOR</span>
+                <h4 class="bio-name">{author}</h4>
+                <p class="bio-desc">Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.</p>
+                <a href="/author-marcelo-ferreira/" class="bio-link">Ver perfil completo &rsaquo;</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ==========================================
+               SESSÃO DE COMENTÁRIOS
+               ========================================== -->
+          <div class="post-comments-section">
+            <h3 class="comments-title">DEIXE UM COMENTÁRIO</h3>
+            <p class="comments-note">Seu e-mail não será publicado. Campos obrigatórios estão marcados com *</p>
+            
+            <form class="comments-form" action="javascript:void(0)" method="POST">
+              <div class="form-group full-width">
+                <textarea placeholder="Escreva seu comentário aqui... *" required rows="6"></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" placeholder="Seu nome *" required />
                 </div>
-                <div class="helmet-meta">
-                  <span class="price">{helmet.price}</span>
-                  <span class="rating">★ {helmet.rating}</span>
+                <div class="form-group">
+                  <input type="email" placeholder="Seu e-mail *" required />
                 </div>
               </div>
-              
-              <div class="helmet-body">
-                <div class="helmet-visual">
-                  <img src={helmet.image} alt={helmet.name} loading="lazy" />
-                  <a href={helmet.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                    Ver Preço na Loja
-                  </a>
+              <button type="submit" class="btn-submit-comment">POSTAR COMENTÁRIO</button>
+            </form>
+          </div>
+
+        </article>
+
+        <!-- [DIREITA] Sidebar -->
+        <aside class="post-sidebar-col">
+          
+          <!-- Widget Conecte-se -->
+          <div class="sidebar-widget conecte-se">
+            <h4 class="sidebar-widget-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--red)" stroke-width="2" fill="none"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+              CONECTE-SE
+            </h4>
+            <div class="social-stats">
+              <div class="stat-box">
+                <div class="stat-icon fb">
+                  <svg viewBox="0 0 24 24" fill="#3b5998" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </div>
-                
-                <div class="helmet-info">
-                  <p class="description">{helmet.description}</p>
-                  
-                  <div class="features">
-                    <h4>Características</h4>
-                    <ul>
-                      {helmet.features.map(feature => (
-                        <li>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div class="pros-cons">
-                    <div class="pros">
-                      <h4>Prós</h4>
-                      <ul>
-                        {helmet.pros.map(pro => (
-                          <li>{pro}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div class="cons">
-                      <h4>Contras</h4>
-                      <ul>
-                        {helmet.cons.map(con => (
-                          <li>{con}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <strong>24.5k</strong>
+                <span>FÃS</span>
               </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+              <div class="stat-box">
+                <div class="stat-icon tw">
+                  <svg viewBox="0 0 24 24" fill="#1da1f2" width="18" height="18"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.953 13.953 0 0 1 1.671 3.149 4.93 4.93 0 0 0 3.194 9.723a4.902 4.902 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89-.396.108-.811.162-1.23.162-.304 0-.599-.028-.888-.081.619 1.932 2.415 3.334 4.544 3.373a9.866 9.866 0 0 1-7.29 2.031 13.904 13.904 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg>
+                </div>
+                <strong>12.2k</strong>
+                <span>SEGUIDORES</span>
+              </div>
+            </div>
+          </div>
 
-    <!-- Buying Guide -->
-    <section class="guide-section">
-      <div class="container">
-        <h2>Guia: Como Escolher um Capacete Custo Benefício</h2>
-        <div class="guide-content">
-          <div class="guide-item">
-            <h3>1. Certificações Obrigatórias</h3>
-            <p>Sempre verifique se o capacete possui certificação INMETRO e preferencialmente ECE 22.05. Essas certificações garantem que o produto passou por testes de segurança.</p>
+          <!-- Widget Newsletter VIP (Solid Red) -->
+          <div class="sidebar-widget newsletter-vip">
+            <div class="newsletter-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <h3>Newsletter VIP</h3>
+            <p>As melhores análises de mercado, cupons secretos e dicas entregues todo domingo.</p>
+            <form action="javascript:void(0)" method="POST" class="newsletter-form">
+              <input type="email" placeholder="Seu melhor e-mail" required />
+              <button type="submit">QUERO PARTICIPAR <span>›</span></button>
+            </form>
           </div>
-          <div class="guide-item">
-            <h3>2. Tipo de Uso</h3>
-            <p>Para uso urbano diário, priorize conforto e ventilação. Para viagens longas, busque melhor isolamento acústico e sistema de retenção confiável.</p>
-          </div>
-          <div class="guide-item">
-            <h3>3. Ajuste Correto</h3>
-            <p>Meça a circunferência da sua cabeça e consulte a tabela do fabricante. Um capacete mal ajustado compromete a proteção, independente do preço.</p>
-          </div>
-          <div class="guide-item">
-            <h3>4. Peso</h3>
-            <p>Capacetes até 1.500g são considerados confortáveis para uso diário. Acima disso, podem causar fadiga em longos períodos.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <h2>Ainda em Dúvida?</h2>
-        <p>Confira nossas reviews completas de cada modelo ou explore outras categorias.</p>
-        <div class="cta-buttons">
-          <a href="/melhor-capacete/" class="btn btn-primary">Ver Todos os Capacetes</a>
-          <a href="/capacete-aberto/" class="btn btn-secondary">Capacetes Abertos</a>
-        </div>
-      </div>
-    </section>
+        </aside>
+
+      </div> <!-- ./post-layout-grid -->
+    </div> <!-- ./post-container -->
   </main>
-  
+
   <Footer />
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(135deg, #2d5a3d 0%, #1a3a2a 100%);
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
+  :root {
+    --red: #E31E24;
+    --red-dark: #C41A1F;
+    --black: #000000;
+    --gray-bg: #F4F4F4;      /* Fundo da tela base */
+    --gray-light: #F9FAFB;
+    --border: #EAEAEA;
+    --text: #374151;
+    --text-meta: #777;
+    --white: #ffffff;
+    --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-title: 'Georgia', 'Playfair Display', serif; /* Mantido pra estética premium */
   }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+
+  /* Body & Container */
+  .post-main {
+    background: var(--gray-bg);
+    padding: 30px 0 80px;
+    font-family: var(--font-primary);
+    color: var(--text);
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.9;
-  }
-  
-  .container {
+
+  .post-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  
-  .comparison-section, .reviews-section, .guide-section, .cta-section {
-    padding: 60px 20px;
+
+  /* ==================================
+     1. CABEÇALHO (Breadcrumb, Título, Info)
+     ================================== */
+  .post-header-section {
+    max-width: 800px;       
+    margin-left: 60px;      /* Alinhado com a esquerda da Foto (40px botão + 20px gap) */
+    margin-bottom: 20px;
   }
-  
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .table-wrapper {
-    overflow-x: auto;
-  }
-  
-  .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .comparison-table th,
-  .comparison-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .comparison-table th {
-    background: #212121;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .comparison-table tr:hover {
-    background: #f5f5f5;
-  }
-  
-  .helmets-list {
+
+  .top-breadcrumb {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-meta);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
   }
-  
-  .helmet-detailed {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
+  .top-breadcrumb a { color: var(--text-meta); text-decoration: none; transition: color 0.2s;}
+  .top-breadcrumb a:hover { color: var(--red); }
+  .top-breadcrumb .current-page { color: var(--red); }
+  .separator { font-weight: normal; color: #ccc; }
+
+  .post-category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--black);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
   }
-  
-  .helmet-header {
-    background: #212121;
-    color: #fff;
-    padding: 20px;
+
+  .post-title {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #0c1827; /* Azul marinho ultrasscuro / Quase preto */
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .post-meta-data {
     display: flex;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    font-size: 0.7rem;
+    color: var(--text-meta);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-  
-  .rank {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #e31b1b;
-  }
-  
-  .helmet-title {
-    flex: 1;
-  }
-  
-  .helmet-title h3 {
-    margin: 0;
-    font-size: 1.4rem;
-  }
-  
-  .subtitle {
-    margin: 5px 0 0;
-    opacity: 0.8;
-  }
-  
-  .helmet-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    text-align: right;
-  }
-  
-  .price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #4CAF50;
-  }
-  
-  .rating {
-    color: #FFD700;
-  }
-  
-  .helmet-body {
+  .meta-author { display: flex; align-items: center; gap: 8px; color: var(--black); }
+  .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+  .meta-info { display: flex; align-items: center; gap: 16px; }
+  .meta-item { display: flex; align-items: center; gap: 4px; color: var(--text-meta); }
+  .meta-item svg { color: var(--red); }
+
+  /* ==================================
+     2. GRID PRINCIPAL
+     ================================== */
+  .post-layout-grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 30px;
-    padding: 30px;
+    grid-template-columns: 40px minmax(0, 1fr) 300px;
+    gap: 20px 20px; 
+    align-items: start;
   }
-  
-  .helmet-visual {
+
+  /* --- [ESQUERDA] Botões Sociais --- */
+  .post-social-col {
+    position: relative;
+    height: 100%;
+  }
+  .sticky-socials {
+    position: sticky;
+    top: 100px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
   }
-  
-  .helmet-visual img {
+  .social-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 4px; /* Quadrados com cantos levemente arredondados */
+    color: var(--white); font-weight: bold; text-decoration: none;
+    font-family: Arial, sans-serif; transition: transform 0.2s;
+  }
+  .social-btn:hover { transform: scale(1.05); }
+  .social-btn.facebook { background: #3b5998; font-size: 1.1rem; }
+  .social-btn.twitter { background: #1da1f2; }
+  .social-btn.linkedin { background: #0077b5; font-size: 1rem; }
+  .social-btn.instagram { background: #333333; } /* Cor escura baseada no print */
+
+  /* --- [CENTRO] Artigo e Capa --- */
+  .post-content-col {
+    background: transparent;
+    min-width: 0;
+  }
+  .post-cover-image {
+    position: relative; 
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    border-radius: 12px; /* Arredondamento exato do FrigoLab */
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    height: 450px; /* Altura padrão cravada do FrigoLab */
+  }
+  .post-cover-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    display: block; 
   }
   
-  .description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 20px;
-  }
-  
-  .features h4, .pros h4, .cons h4 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .features ul, .pros ul, .cons ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .features li, .pros li, .cons li {
-    padding: 8px 0;
-    padding-left: 25px;
-    position: relative;
-    line-height: 1.5;
-  }
-  
-  .features li::before {
-    content: "▸";
+  /* Selo FRIGOLAB VERIFIED -> APAN VERIFIED */
+  .verified-badge {
     position: absolute;
+    bottom: 0;
     left: 0;
-    color: #e31b1b;
+    background: #1A1A1A;
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-top-right-radius: 4px;
+  }
+
+  /* --- Índice Accordion (Embaixo da Capa) --- */
+  .post-indice {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .indice-left { display: flex; align-items: center; gap: 12px; }
+  .indice-icon {
+    background: var(--red);
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .post-indice strong {
+    color: var(--black);
+    font-size: 1.05rem;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  .indice-arrow { color: var(--text-meta); }
+
+  .post-lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 24px;
+    font-weight: 400;
   }
   
-  .pros li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #28a745;
-    font-weight: bold;
+  .post-content-col p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
+
+  /* --- [DIREITA] Sidebar --- */
+  .post-sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: sticky;
+    top: 100px;
+  }
+
+  /* Widget 1: CONECTE-SE (Branco com abas) */
+  .sidebar-widget {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .sidebar-widget-title {
+    font-size: 0.95rem; font-style: italic; font-weight: 900; margin-bottom: 20px;
+    color: var(--black); text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid #f4f4f4; padding-bottom: 15px; /* Traço sutil */
+  }
+
+  .social-stats {
+    display: flex; justify-content: space-around;
+  }
+  .stat-box { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  .stat-icon {
+    width: 48px; height: 48px; border-radius: 50%; border: 1px solid #EAEAEA;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .stat-box strong { font-size: 1.05rem; color: var(--black); margin-top: 4px;}
+  .stat-box span { font-size: 0.6rem; color: #a0a0a0; font-weight: 800; letter-spacing: 0.5px;}
+
+  /* Widget 2: NEWSLETTER VIP (Caixa Vermelha Sólida) */
+  .newsletter-vip {
+    background: var(--red); /* Vermelho Sólido como no print */
+    border: none;
+    color: var(--white);
+    text-align: center;
+    border-radius: 8px;
+  }
+  .newsletter-icon {
+    margin: 0 auto 10px;
+    color: var(--white);
+  }
+  .newsletter-vip h3 {
+    font-size: 1.6rem; font-weight: 900; font-style: italic; margin-bottom: 15px;
+  }
+  .newsletter-vip p {
+    font-size: 0.85rem; line-height: 1.4; margin-bottom: 24px; font-weight: 500;
+  }
+  .newsletter-form {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .newsletter-form input {
+    width: 100%; padding: 14px; border-radius: 4px; border: none; font-size: 0.9rem;
+    font-family: var(--font-primary); box-sizing: border-box;
+  }
+  .newsletter-form button {
+    width: 100%; border-radius: 4px; border: none; font-size: 0.9rem; padding: 14px;
+    background: var(--black); color: var(--white); font-weight: 900;
+    text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: background 0.2s;
+  }
+  .newsletter-form button:hover { background: #1a1a1a; }
+  .newsletter-form button span { font-size: 1.2rem; line-height: 0; margin-top: -2px; }
+
+  /* ==================================
+     RESPONSIVO: GRID E ESTRUTURA GERAL
+     ================================== */
+  @media (max-width: 1024px) {
+    .post-layout-grid { grid-template-columns: 1fr 300px; gap: 20px; }
+    .post-header-section { margin-left: 0; max-width: 100%; }
+    .post-social-col { display: none; }
+  }
+  @media (max-width: 768px) {
+    .post-layout-grid { grid-template-columns: 1fr; }
+    .post-sidebar-col { position: static; margin-top: 40px; }
+    .post-title { font-size: 2.2rem; }
+    .post-cover-image { height: 300px; margin-bottom: 24px; } /* Evita imagem super alta no mobile */
+  }
+</style>
+
+<style is:global>
+  /* ==================================
+     FOOTER DO ARTIGO E ELEMENTOS
+     ================================== */
+  .post-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
   }
   
-  .cons li::before {
-    content: "×";
-    position: absolute;
-    left: 0;
-    color: #dc3545;
-    font-weight: bold;
+  .post-tags-container, .post-share-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
   }
-  
-  .pros-cons {
+  .post-tags-container strong, .post-share-container strong {
+    font-size: 0.95rem; font-weight: 900; letter-spacing: 1px; color: var(--black);
+    text-transform: uppercase;
+  }
+  .post-tags { display: flex; gap: 12px; flex-wrap: wrap; }
+  .post-tags a {
+    border: 1px solid var(--border); border-radius: 4px; padding: 8px 16px;
+    font-size: 0.75rem; font-weight: 800; color: #6b7280; text-decoration: none;
+    letter-spacing: 0.5px; transition: border-color 0.2s; background: transparent;
+  }
+  .post-tags a:hover { border-color: #a0a0a0; }
+
+  .post-share-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .share-btn {
+    display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 800; text-decoration: none; color: var(--white);
+    transition: opacity 0.2s;
+  }
+  .share-btn:hover { opacity: 0.9; }
+  .share-btn.fb { background: #3b5998; color: var(--white) !important; }
+  .share-btn.tw { background: #1da1f2; color: var(--white) !important; }
+  .share-btn.link { background: transparent; color: var(--text) !important; border: none; font-weight: 800; padding: 8px 12px;}
+  .share-btn.link svg { stroke: var(--text); }
+  .share-btn.link:hover { text-decoration: underline; }
+
+  .author-bio-box {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid var(--border);
+  }
+  .bio-avatar img {
+    width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+  }
+  .bio-content { flex: 1; }
+  .bio-label {
+    display: block; font-size: 0.75rem; font-weight: 900; color: var(--red);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  }
+  .bio-name {
+    font-size: 1.6rem; font-weight: 900; color: var(--black); margin: 0 0 12px;
+  }
+  .bio-desc {
+    font-size: 1.05rem; line-height: 1.6; color: var(--text-meta); margin-bottom: 16px;
+  }
+  .bio-link {
+    font-size: 0.95rem; font-weight: 800; color: var(--black); text-decoration: none;
+    border-bottom: 2px solid var(--red); padding-bottom: 4px; transition: color 0.2s;
+  }
+  .bio-link:hover { color: var(--red); }
+
+  /* ==================================
+     SESSÃO DE COMENTÁRIOS
+     ================================== */
+  .post-comments-section {
+    margin-top: 48px;
+    padding-top: 20px;
+  }
+  .comments-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--black);
+    text-transform: uppercase;
+    border-left: 4px solid var(--red);
+    padding-left: 12px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .comments-note {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .comments-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .form-group.full-width textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text);
+    resize: vertical;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    box-sizing: border-box;
+  }
+  .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 16px;
   }
-  
-  .guide-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-  
-  .guide-item {
-    background: #f8f9fa;
-    padding: 25px;
+  .form-row input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    border-left: 4px solid #e31b1b;
+    background: var(--white);
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    box-sizing: border-box;
+  }
+  textarea:focus, input:focus {
+    outline: none;
+    border-color: #a0a0a0;
+  }
+  .btn-submit-comment {
+    align-self: flex-start;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .btn-submit-comment:hover {
+    background: #C41A1F;
+  }
+
+  @media (max-width: 600px) {
+    .author-bio-box { flex-direction: column; text-align: center; gap: 15px; padding: 24px; }
+    .bio-avatar img { width: 100px; height: 100px; }
+    .bio-name { font-size: 1.4rem; margin-bottom: 8px; }
+    .bio-desc { font-size: 0.95rem; margin-bottom: 12px; }
+    .post-tags-container, .post-share-container { flex-direction: column; align-items: flex-start; gap: 12px;}
+    .form-row { grid-template-columns: 1fr; }
+    .btn-submit-comment { width: 100%; align-self: stretch;}
+  }
+
+  /* ==================================
+     ESTILOS DO CONTEÚDO DO ARTIGO (PRODUTOS, PRÓS/CONTRAS, ETC)
+     ================================== */
+  .post-content-col h2 {
+    font-family: var(--font-title); font-size: 2.2rem; font-weight: 800;
+    color: var(--black); margin: 40px 0 24px; line-height: 1.2;
+  }
+  .post-content-col h3 {
+    font-family: var(--font-primary); font-size: 1.5rem; font-weight: 900;
+    color: var(--red); margin: 32px 0 16px;
+  }
+  .post-content-col ul, .post-content-col ol {
+    margin: 0 0 24px 20px; font-size: 1.05rem; line-height: 1.8; color: var(--text);
+  }
+  .post-content-col li { margin-bottom: 8px; }
+
+  /* Product Card */
+  .product-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 40px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+  .product-section h3 {
+    margin-top: 0; padding-bottom: 16px; border-bottom: 1px solid var(--border);
   }
   
-  .guide-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #212121;
+  /* Botões Affiliates */
+  .btn-buy-container { display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; }
+  .btn-buy {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: #FF9900; color: #000; font-weight: 900; text-decoration: none;
+    padding: 14px 24px; border-radius: 6px; font-size: 0.95rem;
+    text-transform: uppercase; letter-spacing: 0.5px; transition: opacity 0.2s;
   }
-  
-  .guide-item p {
-    color: #555;
-    line-height: 1.6;
+  .btn-buy:hover { opacity: 0.9; }
+  .btn-buy.ml { background: #FFE600; color: #2D3277; }
+
+  /* Pros & Cons Box */
+  .pros-cons-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;
+    background: var(--gray-light); padding: 24px; border-radius: 8px; border: 1px solid var(--border);
   }
-  
-  .cta-section {
-    background: #212121;
-    color: #fff;
-    text-align: center;
+  .pc-col h4 { font-size: 1.1rem; font-weight: 900; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;}
+  .pc-col h4.pros { color: #10B981; }
+  .pc-col h4.cons { color: #EF4444; }
+  .pc-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+  .pc-list li {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 0.95rem;
+    line-height: 1.5; margin-bottom: 12px;
   }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-primary {
-    background: #e31b1b;
-    color: #fff;
-  }
-  
-  .btn-primary:hover {
-    background: #c41717;
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-  }
-  
-  .btn-secondary:hover {
-    background: #fff;
-    color: #212121;
-  }
-  
-  @media (max-width: 768px) {
-    .helmet-body {
-      grid-template-columns: 1fr;
-    }
-    
-    .helmet-header {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .helmet-meta {
-      text-align: center;
-    }
-    
-    .pros-cons {
-      grid-template-columns: 1fr;
-    }
-    
-    .comparison-table {
-      font-size: 0.9rem;
-    }
+  .pc-list.pros li::before { content: '✓'; color: #10B981; font-weight: bold; }
+  .pc-list.cons li::before { content: '✕'; color: #EF4444; font-weight: bold; }
+
+  @media (max-width: 600px) {
+    .pros-cons-grid { grid-template-columns: 1fr; }
+    .product-section { padding: 20px; }
   }
 </style>
