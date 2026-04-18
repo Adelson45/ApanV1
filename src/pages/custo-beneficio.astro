@@ -93,26 +93,43 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
           </div>
 
           <!-- Índice Modo Accordion (Estilo Print) -->
-          <div class="post-indice">
-            <div class="indice-left">
-              <div class="indice-icon">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <div class="post-indice" id="indice-accordion">
+            <div class="indice-header" onclick="toggleIndice()">
+              <div class="indice-left">
+                <div class="indice-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                </div>
+                <strong>ÍNDICE DE CONTEÚDO</strong>
               </div>
-              <strong>ÍNDICE DE CONTEÚDO</strong>
+              <div class="indice-arrow" id="indice-arrow">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--text-meta)" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
             </div>
-            <div class="indice-arrow">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--text-meta)" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <div class="indice-content" id="indice-content">
+              <ul class="indice-links">
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#ranking">Ranking dos melhores capacetes</a></li>
+                <li><a href="#como-escolher">Como escolher o melhor capacete</a></li>
+                <li><a href="#analise">Análise dos Capacetes Custo-Benefício</a>
+                  <ul>
+                    <li><a href="#peels-icon">1. Capacete Peels Icon Fast</a></li>
+                    <li><a href="#pro-tork-liberty">2. Capacete Pro Tork New Liberty</a></li>
+                    <li><a href="#pro-tork-auto">3. Capacete Pro Tork Automático Sm</a></li>
+                  </ul>
+                </li>
+                <li><a href="#conclusao">Conclusão</a></li>
+              </ul>
             </div>
           </div>
 
           <!-- Seu texto começa aqui -->
-          <p class="post-lead">Seja para ir ao trabalho, fazer uma entrega ou curtir a estrada no fim de semana, uma coisa é inegociável: sua segurança. E quando falamos em segurança sobre duas rodas, o capacete não é um acessório, é o equipamento mais importante que você irá usar. Mas como encontrar um modelo que proteja de verdade, seja confortável e não pese no bolso?</p>
+          <p class="post-lead" id="introducao">Seja para ir ao trabalho, fazer uma entrega ou curtir a estrada no fim de semana, uma coisa é inegociável: sua segurança. E quando falamos em segurança sobre duas rodas, o capacete não é um acessório, é o equipamento mais importante que você irá usar. Mas como encontrar um modelo que proteja de verdade, seja confortável e não pese no bolso?</p>
 
           <p>A boa notícia é que o mercado evoluiu muito, e hoje é totalmente possível aliar proteção certificada, conforto e um preço justo. Chega de pensar que um capacete bom e barato não existe, ou que a segurança precisa custar uma fortuna para o motociclista brasileiro.</p>
 
           <p>Para te ajudar nessa missão, preparamos o guia definitivo com os <strong>26 melhores capacetes de moto mais procurados com custo-benefício para 2026</strong>. Nossa seleção foi feita com base em critérios rigorosos de segurança, materiais, avaliações de usuários e, claro, o melhor valor pelo seu dinheiro.</p>
 
-          <h2>Ranking dos melhores capacetes de moto custo-benefício para 2026</h2>
+          <h2 id="ranking">Ranking dos melhores capacetes de moto custo-benefício para 2026</h2>
           <p>Para uma visualização rápida, aqui está nosso ranking com os destaques de 2026:</p>
           <ul>
             <li><strong>HJC HJ-09:</strong> Melhor para Inovação</li>
@@ -132,14 +149,14 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
             <li><strong>R8 Pro Tork Fosco:</strong> Melhor em Design</li>
           </ul>
 
-          <h2>Como escolher o melhor capacete custo benefício?</h2>
+          <h2 id="como-escolher">Como escolher o melhor capacete custo benefício?</h2>
           <p>A escolha ideal vai além da estética. Para encontrar o melhor capacete custo-benefício, você precisa analisar um conjunto de fatores essenciais. Considere a certificação de segurança do INMETRO (obrigatória e indispensável), o material do casco, seu tipo de uso principal (cidade ou estrada), o conforto do forro interno e a eficiência do sistema de ventilação antirruído. Não se preocupe, vamos detalhar cada um desses pontos mais adiante neste guia.</p>
 
-          <h2>Análise dos Capacetes Custo-Benefício 2026</h2>
+          <h2 id="analise">Análise dos Capacetes Custo-Benefício 2026</h2>
           <p>Vamos à análise detalhada de cada modelo que se destacou em nossa seleção.</p>
 
           <!-- PRODUCT 1 -->
-          <div class="product-section">
+          <div class="product-section" id="peels-icon">
             <h3>1. Capacete Peels Icon Fast (Melhor no Geral)</h3>
             <p>O Peels Icon Fast foi projetado com um público-alvo claro em mente: o motociclista urbano. Ele é a escolha ideal para quem roda diariamente pela cidade, seja para trabalhar, estudar ou para o lazer. É perfeito para entregadores, iniciantes no motociclismo e para qualquer um que busque um capacete com um visual arrojado sem precisar gastar uma fortuna.</p>
             
@@ -167,7 +184,7 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
           </div>
 
           <!-- PRODUCT 2 -->
-          <div class="product-section">
+          <div class="product-section" id="pro-tork-liberty">
             <h3>2. Capacete Pro Tork New Liberty (Melhor Ventilação)</h3>
             <p>O Pro Tork New Liberty é um verdadeiro campeão de vendas e não é por acaso. Ele entrega tudo o que o motociclista do dia a dia precisa: segurança, simplicidade e um preço extremamente baixo. Seu design é clássico e funcional.</p>
             
@@ -201,7 +218,7 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
           </div>
 
           <!-- PRODUCT 3 -->
-          <div class="product-section">
+          <div class="product-section" id="pro-tork-auto">
             <h3>3. Capacete Pro Tork Automático Sm (Melhor Custo Benefício)</h3>
             <p>Este modelo se destaca por uma característica muito prática: a viseira com abertura automática por botão. Com um simples toque, a viseira se abre, facilitando a vida do piloto em paradas rápidas. É um pequeno detalhe de conveniência que faz uma grande diferença.</p>
             
@@ -228,7 +245,7 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
             </div>
           </div>
 
-          <h2>Conclusão</h2>
+          <h2 id="conclusao">Conclusão</h2>
           <p>Escolher o capacete certo é o investimento mais importante que você pode fazer na sua segurança. Como vimos neste guia, não é preciso gastar uma fortuna para estar bem protegido. Um bom capacete custo benefício é aquele que entrega segurança certificada, conforto para o seu tipo de uso e um preço que cabe no seu orçamento.</p>
           <p>Boas curvas e pilote sempre em segurança!</p>
 
@@ -525,7 +542,55 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
     font-style: italic;
     text-transform: uppercase;
   }
-  .indice-arrow { color: var(--text-meta); }
+  .indice-arrow { color: var(--text-meta); transition: transform 0.3s ease; }
+  .indice-arrow.open { transform: rotate(180deg); }
+  
+  .indice-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-top: 1px solid transparent;
+  }
+  .indice-content.open {
+    max-height: 500px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+  .indice-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .indice-links li {
+    margin-bottom: 8px;
+  }
+  .indice-links li ul {
+    list-style: none;
+    margin: 8px 0 8px 20px;
+    padding: 0;
+  }
+  .indice-links li ul li {
+    margin-bottom: 6px;
+  }
+  .indice-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    display: block;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .indice-links a:hover {
+    color: var(--red);
+  }
+  .indice-links a::before {
+    content: '›';
+    margin-right: 8px;
+    color: var(--red);
+    font-weight: bold;
+  }
 
   .post-lead {
     font-size: 1.15rem;
@@ -883,3 +948,20 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
     .product-section { padding: 20px; }
   }
 </style>
+
+<script is:inline>
+  function toggleIndice() {
+    const content = document.getElementById('indice-content');
+    const arrow = document.getElementById('indice-arrow');
+    
+    if (content.classList.contains('open')) {
+      content.classList.remove('open');
+      arrow.classList.remove('open');
+    } else {
+      content.classList.add('open');
+      arrow.classList.add('open');
+    }
+  }
+</script>
+
+</Layout>
