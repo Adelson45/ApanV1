@@ -88,11 +88,66 @@ const navLinks: NavLink[] = [
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
-  
+  const dropdownItems = document.querySelectorAll('.has-dropdown > a');
+
+  // Toggle menu principal
   menuToggle?.addEventListener('click', () => {
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', String(!isExpanded));
     navMenu?.classList.toggle('is-open');
+  });
+
+  // Toggle dropdowns no mobile
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      // Só previne navegação e toggle se estiver no mobile
+      if (window.innerWidth <= 768) {
+        const parent = item.parentElement;
+        const isOpen = parent?.classList.contains('is-open');
+
+        // Fecha outros dropdowns abertos
+        document.querySelectorAll('.has-dropdown.is-open').forEach(openItem => {
+          if (openItem !== parent) {
+            openItem.classList.remove('is-open');
+            const openLink = openItem.querySelector('a');
+            openLink?.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle do dropdown atual
+        if (parent) {
+          parent.classList.toggle('is-open', !isOpen);
+          item.setAttribute('aria-expanded', String(!isOpen));
+        }
+
+        // Se o dropdown estava fechado, previne navegação para mostrar submenu
+        // Se estava aberto, permite navegação normal
+        if (!isOpen) {
+          e.preventDefault();
+        }
+      }
+    });
+  });
+
+  // Fecha menu ao clicar fora
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    if (!navMenu?.contains(target) && !menuToggle?.contains(target)) {
+      navMenu?.classList.remove('is-open');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Ajusta ao redimensionar
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu?.classList.remove('is-open');
+      document.querySelectorAll('.has-dropdown.is-open').forEach(item => {
+        item.classList.remove('is-open');
+        const link = item.querySelector('a');
+        link?.setAttribute('aria-expanded', 'false');
+      });
+    }
   });
 </script>
 
@@ -227,9 +282,26 @@ const navLinks: NavLink[] = [
     }
 
     .dropdown-arrow {
-      display: none;
+      display: inline-block;
+      font-size: 0.7rem;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
     }
-    
+
+    .has-dropdown.is-open .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .has-dropdown > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .has-dropdown.is-open > a {
+      color: #e31b1b;
+    }
+
     .dropdown-menu {
       position: static;
       opacity: 1;
@@ -239,14 +311,39 @@ const navLinks: NavLink[] = [
       background: #1a1a1a;
       padding-left: 20px;
       display: none;
+      border-left: 2px solid #e31b1b;
+      margin-left: 0;
     }
-    
+
     .has-dropdown.is-open .dropdown-menu {
       display: block;
+      animation: slideDown 0.3s ease;
     }
-    
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        max-height: 0;
+      }
+      to {
+        opacity: 1;
+        max-height: 500px;
+      }
+    }
+
     .dropdown-menu li {
       border-bottom: none;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 0 12px 15px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .dropdown-menu a:hover {
+      color: #e31b1b;
+      background: transparent;
     }
     .menu-toggle {
       display: block;
