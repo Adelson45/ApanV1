@@ -1793,32 +1793,21 @@ const coverImage  = '/images/moto-shop-cover.png'; // Imagem de loja premium
     margin: 0 auto;
     text-align: center;
     background: #E31919; /* Vermelho Amazon */
-    color: #fff;
+    color: #fff !important; /* Texto branco com !important para sobrescrever */
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: none !important; /* Remove sublinhado */
     padding: 12px 20px;
     border-radius: 50px; /* Pill shape */
     font-size: 0.9rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: none; /* Remove transições */
     border: none;
     cursor: pointer;
   }
-  .btn-buy:hover { 
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
-    background: #fff; 
-    color: #E31919; 
-    border: 2px solid #E31919;
-  }
   .btn-buy.ml { 
     background: #FFE600; /* Amarelo Mercado Livre */
-    color: #333;
+    color: #00008B !important; /* Azul escuro */
     font-weight: 700;
-  }
-  .btn-buy.ml:hover {
-    background: #fff;
-    color: #333;
-    border: 2px solid #FFE600;
+    text-decoration: none !important; /* Remove sublinhado */
   }
 
   /* Pros & Cons Box */
