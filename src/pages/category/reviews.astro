@@ -3,392 +3,577 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-const title = 'Reviews de Capacetes | Análises Completas e Testes';
-const description = 'Todas as reviews e análises de capacetes de moto, bike e acessórios. Testes completos, prós e contras, e recomendações dos melhores modelos.';
+const title = 'Reviews » jovemapan.com.br';
+const description = 'Todas as reviews e análises de capacetes, jaquetas, pneus e acessórios para moto. Testes completos, comparativos e recomendações honestas.';
+const canonical = 'https://jovemapan.com.br/category/reviews/';
 
 const allReviews = [
-  // Capacetes
-  {
-    title: 'Capacete Peels é bom? Análise Completa',
-    excerpt: 'Review completo da marca nacional Peels. Análise dos modelos aberto, fechado e articulado com preços e qualidade.',
-    image: '/images/melhores-modelos-de-capacetes-Peels-aberto-fechado-e-articulados.png',
-    href: '/capacete-peels-review/',
-    category: 'Capacetes',
-    rating: 4.4,
-    date: 'Julho 2025'
-  },
-  {
-    title: 'Review Completo do Capacete Norisk',
-    excerpt: 'Análise detalhada dos capacetes Norisk. Relação custo-benefício, segurança e conforto dos modelos mais populares.',
-    image: '/images/Capacete-Masculino-Norisk.png',
-    href: '/capacete-norisk-review/',
-    category: 'Capacetes',
-    rating: 4.5,
-    date: 'Junho 2025'
-  },
-  {
-    title: 'Análise Completa do Capacete LS2 Scope Monocolor',
-    excerpt: 'Review do LS2 Scope Monocolor. Capacete intermediário com ótimo acabamento e tecnologia.',
-    image: '/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png',
-    href: '/ls2-scope-monocolor-review/',
-    category: 'Capacetes',
-    rating: 4.6,
-    date: 'Junho 2025'
-  },
-  {
-    title: 'Review Completo do Capacete Axxis Draken',
-    excerpt: 'Análise do Axxis Draken. Design agressivo e proteção robusta para pilotos exigentes.',
-    image: '/images/capacete-axxis-draker-1.png',
-    href: '/axxis-draken-review/',
-    category: 'Capacetes',
-    rating: 4.6,
-    date: 'Maio 2025'
-  },
-  {
-    title: 'Análise Completa do Capacete HJC I90 Hollen',
-    excerpt: 'Review do HJC I90 Hollen. Capacete modular premium com excelente relação custo-benefício.',
-    image: '/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png',
-    href: '/reveiw-hjc-i90-hollen/',
-    category: 'Capacetes',
-    rating: 4.7,
-    date: 'Maio 2025'
-  },
-  {
-    title: 'Testado: Análise do Capacete AGV K1S',
-    excerpt: 'Review completo do AGV K1S. Tecnologia italiana com herança de competição.',
-    image: '/images/Capacete-AGV-K1s.png',
-    href: '/review-agv-k1/',
-    category: 'Capacetes',
-    rating: 4.8,
-    date: 'Maio 2025'
-  },
-  // Guias
-  {
-    title: 'Melhores Capacetes de Moto 2026',
-    excerpt: 'Guia completo com os melhores capacetes do mercado. Top 10 com análises detalhadas.',
-    image: '/images/Capacete-arai.png',
-    href: '/melhor-capacete/',
-    category: 'Guia de Compra',
-    rating: 5.0,
-    date: 'Atualizado 2026'
-  },
-  {
-    title: 'Capacete Custo Benefício 2026',
-    excerpt: 'Os melhores capacetes com preço justo. Opções de qualidade sem gastar muito.',
-    image: '/images/ls2-ff320.jpg',
-    href: '/custo-beneficio/',
-    category: 'Guia de Compra',
-    rating: 4.9,
-    date: 'Atualizado 2026'
-  },
-  {
-    title: 'Capacete Aberto: Melhores Modelos 3/4',
-    excerpt: 'Guia dos melhores capacetes abertos. Conforto e ventilação para uso urbano.',
-    image: '/images/capacete-aberto.jpg',
-    href: '/capacete-aberto/',
-    category: 'Guia de Compra',
-    rating: 4.7,
-    date: 'Atualizado 2026'
-  }
-];
-
-const categories = [
-  { name: 'Capacetes', count: 6, href: '/melhor-capacete/' },
-  { name: 'Acessórios', count: 5, href: '/cadeados-para-moto/' },
-  { name: 'Guia de Compra', count: 3, href: '/custo-beneficio/' }
+  { title: 'Intercomunicador Cardo Review', href: '/intercomunicador-cardo-review/', date: 'Janeiro 23, 2026', excerpt: 'Intercomunicador Cardo Spirit é bom? Se você está buscando uma resposta direta: sim, o Interfone Cardo Spirit é excelente. Ele ...' },
+  { title: 'Comparativo Michelin vs Pirelli', href: '/comparativo-michelin-vs-pirelli/', date: 'Janeiro 16, 2026', excerpt: 'Análise e Comparação: Pneu de Moto Michelin vs Pirelli Escolher o pneu certo para sua moto não é apenas uma ...' },
+  { title: 'Michelin Pilot Street Review', href: '/michelin-pilot-street-review/', date: 'Janeiro 16, 2026', excerpt: 'Análise completa do pneu Michelin Pilot Street. Desempenho, durabilidade e aderência em diferentes condições ...' },
+  { title: 'Pirelli Super City Review', href: '/pirelli-super-city-review/', date: 'Janeiro 16, 2026', excerpt: 'Review detalhado do Pirelli Super City. Um dos pneus mais populares para motos urbanas no Brasil ...' },
+  { title: 'Melhores pneus para CG160', href: '/melhores-pneus-para-cg160/', date: 'Janeiro 13, 2026', excerpt: 'Guia completo dos melhores pneus para Honda CG 160. Comparativo de marcas, modelos e preços ...' },
+  { title: 'Comparativo Jaqueta texx vs X11', href: '/comparativo-jaqueta-texx-vs-x11/', date: 'Janeiro 8, 2026', excerpt: 'Texx ou X11? Comparamos as duas marcas mais populares de jaquetas para motociclistas no Brasil ...' },
+  { title: 'melhor capacete hjc helmets', href: '/melhor-capacete-hjc-helmets/', date: 'Dezembro 14, 2025', excerpt: 'Os melhores capacetes HJC Helmets do mercado. Análise dos modelos mais vendidos com prós e contras ...' },
+  { title: 'Melhores Cadeados para Moto', href: '/cadeados-para-moto/', date: 'Dezembro 7, 2025', excerpt: 'Guia dos melhores cadeados e travas para moto. Proteja seu veículo com as opções mais seguras ...' },
+  { title: 'Análise Completa do Intercomunicador Ejeas V6', href: '/intercomunicador-ejeas-review/', date: 'Dezembro 6, 2025', excerpt: 'Review completo do intercomunicador Ejeas V6. Vale a pena? Testamos qualidade de áudio, alcance e bateria ...' },
+  { title: 'Comparação Shark vs LS2', href: '/comparacao-shark-vs-ls2/', date: 'Dezembro 2, 2025', excerpt: 'Shark ou LS2? Comparativo completo entre duas das maiores marcas de capacetes do mercado ...' },
+  { title: 'Comparação Mixs vs Mormaii', href: '/comparacao-mixs-vs-mormaii/', date: 'Novembro 30, 2025', excerpt: 'Comparativo entre capacetes Mixs e Mormaii. Qual oferece melhor custo-benefício? Descubra ...' },
+  { title: 'Comparacao MT vs Peels', href: '/comparacao-mt-vs-peels/', date: 'Novembro 29, 2025', excerpt: 'MT Helmets ou Peels? Análise comparativa das duas marcas populares de capacetes nacionais ...' },
+  { title: 'Capacete Bieffe B-Trail Review', href: '/capacete-bieffe-b-trail-review/', date: 'Novembro 23, 2025', excerpt: 'Análise do capacete Bieffe B-Trail. Um modelo adventure com boa relação custo-benefício ...' },
+  { title: 'Análise e Comparação do Capacete HJC I90 vs AGV K1S', href: '/comparacao-agv-vs-hjc/', date: 'Novembro 23, 2025', excerpt: 'HJC I90 ou AGV K1S? Comparativo detalhado entre dois capacetes premium do mercado ...' },
+  { title: 'Melhores Capacetes Anti-ruído', href: '/capacetes-anti-ruido/', date: 'Novembro 21, 2025', excerpt: 'Os capacetes mais silenciosos do mercado. Guia para quem busca conforto acústico nas viagens ...' },
+  { title: 'Comparação LS2 X Nolan', href: '/comparacao-ls2-x-nolan/', date: 'Novembro 18, 2025', excerpt: 'LS2 ou Nolan? Comparamos qualidade, conforto e segurança entre as duas marcas renomadas ...' },
+  { title: 'Comparativo Taurus vs ProTork', href: '/comparativo-taurus-vs-protork/', date: 'Novembro 17, 2025', excerpt: 'Taurus ou Pro Tork? Qual marca oferece os melhores capacetes na faixa de entrada ...' },
+  { title: 'Comparativo bieffe vs Norisk', href: '/comparativo-bieffe-vs-norisk/', date: 'Novembro 16, 2025', excerpt: 'Bieffe ou Norisk? Comparativo completo de duas marcas brasileiras que disputam o mercado ...' },
+  { title: 'Jaqueta de Moto X11 Super Air: Vale A Pena?', href: '/jaqueta-x11-air-review/', date: 'Novembro 10, 2025', excerpt: 'Review da jaqueta X11 Super Air. Ventilação, proteção e conforto para o dia a dia na moto ...' },
+  { title: 'Análise Completa da Jaqueta Texx: Vale a Pena?', href: '/jaqueta-texx-motociclista-review/', date: 'Novembro 3, 2025', excerpt: 'Review detalhada da jaqueta Texx. Materiais, proteções e acabamento analisados a fundo ...' },
+  { title: 'Melhores Jaquetas Alpinestars: Guia Completo', href: '/jaquetas-alpinestars-review/', date: 'Novembro 2, 2025', excerpt: 'Guia com as melhores jaquetas Alpinestars para motociclistas. Modelos premium com tecnologia ...' },
+  { title: 'Análise Completa do Capacete X11 Crossover Adventure: Vale a Pena?', href: '/x11-crossover-adventure-review/', date: 'Novembro 2, 2025', excerpt: 'Review do X11 Crossover Adventure. Um capacete trail com visor solar e ventilação eficiente ...' },
+  { title: 'Vale a Pena Comprar um Capacete X11? Análise Completa 2026', href: '/analise-da-marca-x11/', date: 'Outubro 29, 2025', excerpt: 'Análise completa da marca X11. Qualidade, segurança e custo-benefício dos capacetes ...' },
+  { title: 'Melhores Capacetes Adventure', href: '/capacete-adventure/', date: 'Outubro 29, 2025', excerpt: 'Os melhores capacetes adventure do mercado para trilhas e estradas. Ranking com análises ...' },
+  { title: 'Vale a Pena Capacete Feminino Peels Freeway?', href: '/capacete-peels-freeway-review/', date: 'Outubro 25, 2025', excerpt: 'Review do capacete feminino Peels Freeway. Design, conforto e segurança para mulheres motociclistas ...' },
+  { title: 'Análise Completa do Capacete Peels Icon Fast: Vale a Pena?', href: '/peels-icon-fast-review/', date: 'Outubro 25, 2025', excerpt: 'Review do Peels Icon Fast. Capacete fechado com excelente ventilação e visual esportivo ...' },
+  { title: 'Capacete R8 Pro Tork é bom? Análise Completa 2026', href: '/capacete-r8-protork-review/', date: 'Outubro 25, 2025', excerpt: 'Análise do capacete Pro Tork R8. O modelo de entrada vale a pena? Testamos e comparamos ...' },
+  { title: 'Vale a pena o Capacete Pro Tork Liberty Evolution G8? Descubra!', href: '/protork-evolution-g8-review/', date: 'Outubro 24, 2025', excerpt: 'Review do Pro Tork Liberty Evolution G8. Um dos capacetes mais vendidos do Brasil ...' },
+  { title: 'Capacete Astone é bom? Analise Completa!', href: '/capacete-astone-review/', date: 'Outubro 19, 2025', excerpt: 'Análise completa dos capacetes Astone. Qualidade europeia com preço acessível no Brasil ...' },
+  { title: 'Capacete Permitido na Pilotagem', href: '/capacete-permitido-na-pilotagem/', date: 'Outubro 13, 2025', excerpt: 'Quais capacetes são permitidos na pilotagem? Entenda as regras e normas do INMETRO ...' },
+  { title: 'Capacete Peels é bom? Análise Completa', href: '/capacete-peels-review/', date: 'Julho 2025', excerpt: 'Review completo da marca nacional Peels. Análise dos modelos aberto, fechado e articulado ...' },
+  { title: 'Review Completo do Capacete Norisk', href: '/capacete-norisk-review/', date: 'Junho 2025', excerpt: 'Análise detalhada dos capacetes Norisk. Relação custo-benefício, segurança e conforto ...' },
+  { title: 'Análise Completa do Capacete LS2 Scope Monocolor', href: '/ls2-scope-monocolor-review/', date: 'Junho 2025', excerpt: 'Review do LS2 Scope Monocolor. Capacete intermediário com ótimo acabamento e tecnologia ...' },
+  { title: 'Review Completo do Capacete Axxis Draken', href: '/axxis-draken-review/', date: 'Maio 2025', excerpt: 'Análise do Axxis Draken. Design agressivo e proteção robusta para pilotos exigentes ...' },
+  { title: 'Análise Completa do Capacete HJC I90 Hollen', href: '/reveiw-hjc-i90-hollen/', date: 'Maio 2025', excerpt: 'Review do HJC I90 Hollen. Capacete modular premium com excelente relação custo-benefício ...' },
+  { title: 'Testado: Análise do Capacete AGV K1S', href: '/review-agv-k1/', date: 'Maio 2025', excerpt: 'Review completo do AGV K1S. Tecnologia italiana com herança de competição a preço acessível ...' }
 ];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} canonical={canonical}>
   <Header />
-  
+
   <main>
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
       <div class="container">
-        <h1>Reviews de Capacetes</h1>
-        <p class="hero-subtitle">
-          Todas as nossas análises e testes de capacetes e acessórios. 
-          Reviews completos com prós, contras e recomendações honestas.
-        </p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <span class="current">Reviews</span>
+        </nav>
       </div>
     </section>
 
-    <!-- Categories Filter -->
-    <section class="categories-section">
+    <!-- Page Title -->
+    <section class="page-title-section">
       <div class="container">
-        <h2>Filtrar por Categoria</h2>
-        <div class="category-filters">
-          <a href="#todos" class="filter-btn active">Todos</a>
-          {categories.map(cat => (
-            <a href={cat.href} class="filter-btn">
-              {cat.name} ({cat.count})
-            </a>
-          ))}
-        </div>
+        <h1>Reviews</h1>
       </div>
     </section>
 
-    <!-- Reviews Grid -->
+    <!-- Reviews List -->
     <section class="reviews-section">
       <div class="container">
-        <h2>Todas as Reviews</h2>
-        <div class="reviews-grid">
-          {allReviews.map((review, index) => (
-            <article class="review-card">
-              <a href={review.href} class="review-link">
-                <div class="review-image">
-                  <img src={review.image} alt={review.title} loading="lazy" />
-                  <span class="review-category">{review.category}</span>
-                  <span class="review-rating">★ {review.rating}</span>
+        <div class="reviews-layout">
+          <!-- Main Content -->
+          <div class="reviews-main" id="reviews-main">
+            {allReviews.map((review, i) => (
+              <article class="review-card" data-index={i}>
+                <a href={review.href} class="review-title-link">
+                  <h2 class="review-title">{review.title}</h2>
+                </a>
+                <p class="review-date">{review.date}</p>
+                <div class="review-body">
+                  <a href={review.href} class="review-thumb">
+                    <div class="thumb-placeholder">
+                      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#aaa" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg>
+                    </div>
+                  </a>
+                  <div class="review-text">
+                    <p class="review-excerpt">{review.excerpt}</p>
+                    <a href={review.href} class="read-more-btn">Leia mais</a>
+                  </div>
                 </div>
-                <div class="review-content">
-                  <p class="review-date">{review.date}</p>
-                  <h3>{review.title}</h3>
-                  <p class="review-excerpt">{review.excerpt}</p>
-                  <span class="read-more">Ler review completo →</span>
-                </div>
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+              </article>
+            ))}
 
-    <!-- Newsletter CTA -->
-    <section class="cta-section">
-      <div class="container">
-        <h2>Não Perca Nenhuma Review</h2>
-        <p>Receba alertas quando publicarmos novas análises de capacetes.</p>
-        <form class="newsletter-form" action="/api/subscribe" method="POST">
-          <input type="email" placeholder="Seu e-mail" required />
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </form>
+            <!-- Paginação -->
+            <nav class="pagination" id="pagination" aria-label="Paginação"></nav>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="reviews-sidebar">
+            <!-- Widget: Produto Destaque 1 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge">Aproveite frete GRÁTIS</p>
+              <h4>Capacete Moto Peels Mirage Classic Branco</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/1qaAz5s" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/3MjKWy9" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 2 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 32% de DESCONTO</p>
+              <h4>Intercomunicador V6 Plus para Capacete</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/2rQAwF3" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/481F17S" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 3 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 10% de DESCONTO</p>
+              <h4>Capacete Moto Peels Icon Ekko</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/2iCYhgR" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/4oGNbZT" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 4 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <h4>Jaqueta Texx Armor Masculina</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/2xVBsV9" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/3K2DQ0e" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 5 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <h4>Capacete Aberto Moto Peels Freeway King Preto</h4>
+              <div class="widget-links">
+                <a href="https://amzn.to/4a7tpTA" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 6 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <h4>Capacete Shoei Gt-Air 3 Discipline Tc-2</h4>
+              <div class="widget-links">
+                <a href="https://amzn.to/3MeTrKC" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 7 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <h4>Capacete Nexx Sx100 Core Azul Fosco</h4>
+              <div class="widget-links">
+                <a href="https://amzn.to/4oPtAaJ" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">VER OFERTA NA AMAZON</a>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
+
+<script is:inline>
+  const PER_PAGE = 10;
+  let currentPage = 1;
+  const cards = document.querySelectorAll('.review-card');
+  const totalPages = Math.ceil(cards.length / PER_PAGE);
+  const paginationEl = document.getElementById('pagination');
+
+  function showPage(page) {
+    currentPage = page;
+    const start = (page - 1) * PER_PAGE;
+    const end = start + PER_PAGE;
+
+    cards.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
+    renderPagination();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPagination() {
+    let html = '';
+
+    // Anterior
+    if (currentPage > 1) {
+      html += '<a href="#" class="pg-btn pg-arrow" data-page="' + (currentPage - 1) + '">‹ Anterior</a>';
+    }
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+        html += '<a href="#" class="pg-btn' + (i === currentPage ? ' pg-active' : '') + '" data-page="' + i + '">' + i + '</a>';
+      } else if (i === currentPage - 2 || i === currentPage + 2) {
+        html += '<span class="pg-dots">…</span>';
+      }
+    }
+
+    // Próximo
+    if (currentPage < totalPages) {
+      html += '<a href="#" class="pg-btn pg-arrow" data-page="' + (currentPage + 1) + '">Proxímo ›</a>';
+    }
+
+    paginationEl.innerHTML = html;
+
+    // Bind clicks
+    paginationEl.querySelectorAll('.pg-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPage(parseInt(this.dataset.page));
+      });
+    });
+  }
+
+  showPage(1);
+</script>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
+  :root {
+    --red: #E31E24;
+    --red-dark: #C41A1F;
+    --black: #000000;
+    --gray-bg: #F4F4F4;
+    --border: #EAEAEA;
+    --text: #374151;
+    --text-meta: #777;
+    --white: #ffffff;
+    --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
   }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+
+  /* Breadcrumb */
+  .breadcrumb-section {
+    background: var(--white);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.9;
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-meta);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-  
+  .breadcrumb a {
+    color: var(--text-meta);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb a:hover {
+    color: var(--red);
+  }
+  .breadcrumb .current {
+    color: var(--red);
+  }
+  .breadcrumb .sep {
+    color: #ccc;
+  }
+
+  /* Page Title */
+  .page-title-section {
+    background: var(--white);
+    padding: 40px 0 30px;
+    border-bottom: 3px solid var(--red);
+  }
+  .page-title-section h1 {
+    font-family: var(--font-primary);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--black);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  /* Container */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  
-  .categories-section, .reviews-section, .cta-section {
-    padding: 60px 20px;
+
+  /* Reviews Section */
+  .reviews-section {
+    background: var(--gray-bg);
+    padding: 40px 0 80px;
   }
-  
-  .categories-section {
-    background: #f5f5f5;
+
+  .reviews-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
   }
-  
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .category-filters {
+
+  /* Review Cards */
+  .reviews-main {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
   }
-  
-  .filter-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #fff;
-    color: #333;
+
+  .review-card {
+    background: var(--white);
+    padding: 24px 20px 28px;
+    border-bottom: 3px solid var(--border);
+  }
+  .review-card:last-child {
+    border-bottom: none;
+  }
+
+  .review-title-link {
     text-decoration: none;
-    border-radius: 25px;
-    border: 2px solid #ddd;
-    transition: all 0.3s ease;
   }
+
+  .review-title {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 4px;
+    line-height: 1.35;
+    transition: color 0.2s;
+  }
+  .review-title-link:hover .review-title {
+    color: #2563EB;
+  }
+
+  .review-date {
+    font-size: 0.8rem;
+    color: var(--text-meta);
+    font-weight: 500;
+    margin: 0 0 14px;
+  }
+
+  /* Two-column body: image left, text right */
+  .review-body {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .review-thumb {
+    flex-shrink: 0;
+    width: 180px;
+    height: 130px;
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8eaf0 0%, #d1d5db 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+  }
+
+  .review-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .review-excerpt {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0 0 14px;
+  }
+
+  .read-more-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #1a1a2e;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .read-more-btn:hover {
+    background: #2563EB;
+    transform: translateY(-1px);
+  }
+
+  /* Sidebar */
+  .reviews-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .produto-widget {
+    text-align: center;
+  }
+
+  .widget-badge {
+    display: inline-block;
+    background: #22C55E;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin: 0 0 12px;
+  }
+  .widget-badge.desconto {
+    background: var(--red);
+  }
+
+  .produto-widget h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 16px;
+    line-height: 1.4;
+  }
+
+  .widget-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-widget {
+    display: block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-widget:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .btn-ml {
+    background: #FFE600;
+    color: #2D3277;
+  }
+  .btn-ml:hover {
+    background: #E6CF00;
+  }
+
+  .btn-amazon {
+    background: var(--black);
+    color: var(--white);
+  }
+  .btn-amazon:hover {
+    background: #1a1a1a;
+  }
+
   
-  .filter-btn:hover,
-  .filter-btn.active {
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .reviews-layout {
+      grid-template-columns: 1fr;
+    }
+    .reviews-sidebar {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-title-section h1 {
+      font-size: 1.8rem;
+    }
+    .review-card {
+      padding: 20px 0;
+    }
+    .review-title {
+      font-size: 1.15rem;
+    }
+    .review-body {
+      flex-direction: column;
+    }
+    .review-thumb {
+      width: 100%;
+      height: 180px;
+    }
+    .reviews-sidebar {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<style is:global>
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 32px 0 8px;
+    flex-wrap: wrap;
+  }
+  .pagination .pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    background: #fff;
+    color: #e31b1b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .pagination .pg-btn:hover {
+    background: #f0f0f0;
+    color: #c41818;
+    border-color: #ccc;
+  }
+  .pagination .pg-btn.pg-active {
     background: #e31b1b;
     color: #fff;
     border-color: #e31b1b;
+    pointer-events: none;
   }
-  
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-  }
-  
-  .review-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .review-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .review-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  
-  .review-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .review-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .review-card:hover .review-image img {
-    transform: scale(1.05);
-  }
-  
-  .review-category {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #e31b1b;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-  }
-  
-  .review-rating {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #FFD700;
-    color: #000;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  
-  .review-content {
-    padding: 25px;
-  }
-  
-  .review-date {
-    color: #999;
+  .pagination .pg-arrow {
     font-size: 0.85rem;
-    margin-bottom: 10px;
+    padding: 0 16px;
   }
-  
-  .review-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #212121;
-  }
-  
-  .review-excerpt {
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-  
-  .read-more {
-    color: #e31b1b;
-    font-weight: 600;
-  }
-  
-  .cta-section {
-    background: #212121;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .cta-section h2 {
-    margin-bottom: 15px;
-  }
-  
-  .cta-section p {
-    opacity: 0.9;
-    margin-bottom: 25px;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    gap: 15px;
+  .pagination .pg-dots {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    max-width: 500px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-  
-  .newsletter-form input {
-    flex: 1;
-    min-width: 250px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #e31b1b;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .btn:hover {
-    background: #c41717;
-  }
-  
-  @media (max-width: 768px) {
-    .reviews-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .newsletter-form {
-      flex-direction: column;
-    }
-    
-    .newsletter-form input {
-      width: 100%;
-    }
+    min-width: 36px;
+    height: 36px;
+    color: #777;
+    font-size: 0.9rem;
   }
 </style>
