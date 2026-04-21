@@ -5,663 +5,794 @@ import Footer from '../components/Footer.astro';
 
 const title = 'Melhores Cadeados para Moto 2026 | Anti-Furto e Segurança';
 const description = 'Descubra os melhores cadeados para moto de 2026. Análises de cadeados disco, corrente e trava de guidão. Proteja sua motocicleta contra roubos.';
-
-const locks = [
-  {
-    name: 'Cadeado de Disco',
-    subtitle: 'XENA XX15',
-    price: 'R$ 180 - R$ 280',
-    rating: 4.8,
-    image: '/images/cadeado-disco-xena.jpg',
-    affiliateLink: 'https://amzn.to/xenaxx15',
-    description: 'O XENA XX15 é referência em cadeados de disco para moto, com alarme integrado de 120dB e resistência máxima contra cortes.',
-    features: [
-      'Alarme integrado de 120dB',
-      'Pin de aço temperado de 14mm',
-      'Resistente a cortes e serras',
-      'Bateria substituível CR2',
-      'Certificação Sold Secure Gold'
-    ],
-    pros: [
-      'Alarme extremamente alto',
-      'Construção reforçada',
-      'Resistente às intempéries',
-      'Sistema de bateria durável'
-    ],
-    cons: [
-      'Preço elevado',
-      'Peso considerável (1.2kg)',
-      'Bateria precisa ser trocada'
-    ]
-  },
-  {
-    name: 'Cadeado em Corrente',
-    subtitle: 'Abus Granit CityChain X-Plus',
-    price: 'R$ 450 - R$ 650',
-    rating: 4.9,
-    image: '/images/cadeado-corrente-abus.jpg',
-    affiliateLink: 'https://amzn.to/abuscitychain',
-    description: 'A corrente Abus Granit CityChain oferece máxima flexibilidade e segurança com elos de aço cementado de 10mm.',
-    features: [
-      'Elo de aço cementado 10mm',
-      'Comprimento: 106cm ou 170cm',
-      'Cilindro ABUS X-Plus',
-      'Revestimento em têxtil resistente',
-      'Proteção contra ferrugem'
-    ],
-    pros: [
-      'Extremamente resistente',
-      'Flexibilidade de uso',
-      'Acabamento premium',
-      'Sistema de chave seguro'
-    ],
-    cons: [
-      'Peso muito alto (4.5kg)',
-      'Preço premium',
-      'Difícil de transportar'
-    ]
-  },
-  {
-    name: 'Trava de Guidão',
-    subtitle: 'Grip-Lock',
-    price: 'R$ 120 - R$ 180',
-    rating: 4.5,
-    image: '/images/trava-guidao-griplock.jpg',
-    affiliateLink: 'https://amzn.to/griplock',
-    description: 'A Grip-Lock é uma trava de guidão compacta e eficaz, impedindo a aceleração e a utilização da moto.',
-    features: [
-      'Bloqueio do punho de aceleração e freio',
-      'Instalação em segundos',
-      'Material reforçado em nylon',
-      'Design compacto e portátil',
-      'Visível de longe (deterrente visual)'
-    ],
-    pros: [
-      'Extremamente portátil',
-      'Instalação rápida',
-      'Preço acessível',
-      'Visível como deterrente'
-    ],
-    cons: [
-      'Proteção limitada (não fixa a moto)',
-      'Pode ser cortada com ferramentas',
-      'Protege apenas contra uso, não contra roubo completo'
-    ]
-  },
-  {
-    name: 'Cadeado Disco',
-    subtitle: 'Abus Detecto 7000 RS1',
-    price: 'R$ 320 - R$ 450',
-    rating: 4.7,
-    image: '/images/cadeado-abus-detecto.jpg',
-    affiliateLink: 'https://amzn.to/abudetecto',
-    description: 'O Abus Detecto 7000 combina alarme de 3D com detecção de movimento, oferecendo segurança de última geração.',
-    features: [
-      'Alarme de 100dB com detecção 3D',
-      'Pin de aço de 13mm',
-      'Chave de alta segurança ABUS Plus',
-      'LED indicador de status',
-      'Bateria com autonomia de 6 meses'
-    ],
-    pros: [
-      'Detecção de movimento inteligente',
-      'Alarme muito alto',
-      'Acabamento premium ABUS',
-      'Sistema de LED útil'
-    ],
-    cons: [
-      'Preço elevado',
-      'Bateria necessita recarga',
-      'Sensibilidade pode gerar falsos alarmes'
-    ]
-  }
-];
-
-const tips = [
-  {
-    title: 'Use Múltiplas Camadas',
-    content: 'Combine diferentes tipos de cadeados. Um cadeado de disco + corrente oferece proteção significativamente maior que apenas um.'
-  },
-  {
-    title: 'Fixe em Objeto Sólido',
-    content: 'Sempre prenda sua moto em um poste, grade ou outro objeto fixo e resistente quando usar corrente.'
-  },
-  {
-    title: 'Escolha Locais Movimentados',
-    content: 'Estacione em locais com boa iluminação e movimento de pessoas. Ladrões evitam locais com testemunhas.'
-  },
-  {
-    title: 'Mantenha o Cadeado Lubrificado',
-    content: 'Cadeados de disco expostos à chuva podem enferrujar. Lubrifique regularmente para garantir funcionamento.'
-  }
-];
+const canonical   = 'https://jovemapan.com.br/cadeados-para-moto/';
+const author      = 'Johnny Pan';
+const publishDate = '20 ABR, 2026';
+const category    = 'ACESSÓRIOS';
+const categoryHref = '/acessorios/';
+const coverImage  = '/images/cadeado-disco-xena.jpg';
 ---
 
-<Layout title={title} description={description}>
-  <Header />
-  
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <h1>Melhores Cadeados para Moto 2026</h1>
-        <p class="hero-subtitle">
-          Proteja sua motocicleta com os melhores cadeados anti-furto do mercado. 
-          Análises de cadeados disco, corrente e travas de guidão.
-        </p>
-      </div>
-    </section>
-
-    <!-- Products Grid -->
-    <section class="products-section">
-      <div class="container">
-        <h2>Top Cadeados Anti-Furto</h2>
-        <div class="products-grid">
-          {locks.map((lock, index) => (
-            <article class="product-card">
-              <div class="product-header">
-                <span class="rank">#{index + 1}</span>
-                <div class="product-title">
-                  <h3>{lock.name}</h3>
-                  <p class="subtitle">{lock.subtitle}</p>
-                </div>
-              </div>
-              
-              <div class="product-image">
-                <img src={lock.image} alt={`${lock.name} ${lock.subtitle}`} loading="lazy" />
-                <span class="rating">★ {lock.rating}</span>
-              </div>
-              
-              <div class="product-info">
-                <p class="price">{lock.price}</p>
-                <p class="description">{lock.description}</p>
-                
-                <div class="features">
-                  <h4>Características</h4>
-                  <ul>
-                    {lock.features.map(feature => (
-                      <li>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div class="pros-cons">
-                  <div class="pros">
-                    <h5>Vantagens</h5>
-                    <ul>
-                      {lock.pros.map(pro => (
-                        <li>{pro}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div class="cons">
-                    <h5>Desvantagens</h5>
-                    <ul>
-                      {lock.cons.map(con => (
-                        <li>{con}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                
-                <a href={lock.affiliateLink} target="_blank" rel="nofollow noopener" class="btn btn-primary">
-                  Ver Preço na Loja
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Security Tips -->
-    <section class="tips-section">
-      <div class="container">
-        <h2>Dicas de Segurança para sua Moto</h2>
-        <div class="tips-grid">
-          {tips.map(tip => (
-            <div class="tip-card">
-              <h3>{tip.title}</h3>
-              <p>{tip.content}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Comparison Table -->
-    <section class="comparison-section">
-      <div class="container">
-        <h2>Comparativo: Qual Cadeado Escolher?</h2>
-        <div class="table-wrapper">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Tipo</th>
-                <th>Segurança</th>
-                <th>Portabilidade</th>
-                <th>Preço</th>
-                <th>Ideal Para</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Cadeado Disco com Alarme</strong></td>
-                <td>★★★★★</td>
-                <td>★★★☆☆</td>
-                <td>Médio-Alto</td>
-                <td>Uso diário, alta segurança</td>
-              </tr>
-              <tr>
-                <td><strong>Corrente Pesada</strong></td>
-                <td>★★★★★</td>
-                <td>★☆☆☆☆</td>
-                <td>Alto</td>
-                <td>Estacionamento fixo, motos caras</td>
-              </tr>
-              <tr>
-                <td><strong>Trava de Guidão</strong></td>
-                <td>★★☆☆☆</td>
-                <td>★★★★★</td>
-                <td>Baixo</td>
-                <td>Portabilidade, uso rápido</td>
-              </tr>
-              <tr>
-                <td><strong>Cadeado Disco Simples</strong></td>
-                <td>★★★☆☆</td>
-                <td>★★★★☆</td>
-                <td>Baixo</td>
-                <td>Orçamento limitado, uso básico</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- Warning -->
-    <section class="warning-section">
-      <div class="container">
-        <div class="warning-box">
-          <h3>⚠️ Nenhum Cadeado é Inviolável</h3>
-          <p>
-            <strong>Todos os cadeados podem ser violados</strong> com ferramentas e tempo suficientes. 
-            O objetivo é aumentar o tempo e o esforço necessários, desmotivando ladrões oportunistas.
-          </p>
-          <ul>
-            <li>Cadeados de qualidade aumentam o risco e o tempo para o ladrão</li>
-            <li>Alarmes servem como deterrente auditivo e visual</li>
-            <li>Múltiplas camadas de proteção são sempre melhores</li>
-            <li>Seguro é a proteção final contra perda total</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Related -->
-    <section class="related-section">
-      <div class="container">
-        <h2>Continue Protegido</h2>
-        <div class="related-grid">
-          <a href="/melhor-capacete/luvas/" class="related-card">
-            <h3>Melhores Luvas</h3>
-            <p>Proteção para as mãos em pilotagem</p>
-          </a>
-          <a href="/dica-melhor-jaqueta-motociclistas/" class="related-card">
-            <h3>Jaquetas de Moto</h3>
-            <p>Proteção corporal completa</p>
-          </a>
-          <a href="/melhor-capacete/intercomunicadores/" class="related-card">
-            <h3>Intercomunicadores</h3>
-            <p>Comunicação em grupo</p>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <Footer />
-</Layout>
-
-<style>
-  .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.9;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .products-section, .tips-section, .comparison-section, .warning-section, .related-section {
-    padding: 60px 20px;
-  }
-  
-  .products-section {
-    background: #f8f9fa;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 30px;
-  }
-  
-  .product-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-  }
-  
-  .product-header {
-    background: #212121;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .rank {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #e31b1b;
-  }
-  
-  .product-title h3 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  .subtitle {
-    margin: 3px 0 0;
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
-  
-  .product-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .rating {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #FFD700;
-    color: #000;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  
-  .product-info {
-    padding: 25px;
-  }
-  
-  .price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #4CAF50;
-    margin-bottom: 15px;
-  }
-  
-  .description {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .features h4 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-  }
-  
-  .features ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  
-  .features li {
-    padding: 8px 0;
-    padding-left: 20px;
-    position: relative;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .features li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: #e31b1b;
-  }
-  
-  .pros-cons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .pros, .cons {
-    padding: 15px;
-    border-radius: 4px;
-  }
-  
-  .pros {
-    background: #e8f5e9;
-  }
-  
-  .cons {
-    background: #ffebee;
-  }
-  
-  .pros h5, .cons h5 {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-  }
-  
-  .pros h5 { color: #2e7d32; }
-  .cons h5 { color: #c62828; }
-  
-  .pros ul, .cons ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .pros li, .cons li {
-    padding: 5px 0;
-    padding-left: 15px;
-    position: relative;
-    font-size: 0.85rem;
-  }
-  
-  .pros li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #2e7d32;
-  }
-  
-  .cons li::before {
-    content: "×";
-    position: absolute;
-    left: 0;
-    color: #c62828;
-  }
-  
-  .tips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-  }
-  
-  .tip-card {
-    background: #e3f2fd;
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid #2196F3;
-  }
-  
-  .tip-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #1565C0;
-  }
-  
-  .tip-card p {
-    color: #555;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-  
-  .table-wrapper {
-    overflow-x: auto;
-  }
-  
-  .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .comparison-table th,
-  .comparison-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .comparison-table th {
-    background: #212121;
-    color: #fff;
-  }
-  
-  .comparison-table tr:hover {
-    background: #f5f5f5;
-  }
-  
-  .warning-section {
-    background: #fff3cd;
-  }
-  
-  .warning-box {
-    background: #fff;
-    border: 2px solid #ffc107;
-    border-radius: 8px;
-    padding: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .warning-box h3 {
-    color: #856404;
-    margin-bottom: 15px;
-  }
-  
-  .warning-box p {
-    color: #555;
-    margin-bottom: 15px;
-  }
-  
-  .warning-box ul {
-    padding-left: 20px;
-  }
-  
-  .warning-box li {
-    margin-bottom: 8px;
-    color: #555;
-  }
-  
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .related-card {
-    background: #212121;
-    color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .related-card:hover {
-    transform: translateY(-5px);
-    background: #e31b1b;
-  }
-  
-  .related-card h3 {
-    margin-bottom: 10px;
-  }
-  
-  .related-card p {
-    opacity: 0.9;
-    font-size: 0.9rem;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #e31b1b;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: background 0.3s ease;
-    text-align: center;
-  }
-  
-  .btn:hover {
-    background: #c41717;
-  }
-  
-  @media (max-width: 768px) {
-    .products-grid {
-      grid-template-columns: 1fr;
+<Layout title={title} description={description} canonical={canonical}>
+  <style>
+    /* ==================================
+       VARIÁVEIS E CONFIGURAÇÕES
+       ================================== */
+    :root {
+      --red: #E31E24;
+      --red-dark: #C41A1F;
+      --black: #000000;
+      --gray-bg: #F4F4F4;
+      --gray-light: #F9FAFB;
+      --border: #EAEAEA;
+      --text: #374151;
+      --text-meta: #777;
+      --white: #ffffff;
+      --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      --font-title: 'Georgia', 'Playfair Display', serif;
     }
-    
-    .pros-cons {
-      grid-template-columns: 1fr;
+
+    /* Body & Container */
+    .post-main {
+      background: var(--gray-bg);
+      padding: 30px 0 80px;
+      font-family: var(--font-primary);
+      color: var(--text);
     }
-    
-    .comparison-table {
+
+    .post-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==================================
+       CABEÇALHO
+       ================================== */
+    .post-header-section {
+      max-width: 800px;
+      margin-left: 60px;
+      margin-bottom: 20px;
+    }
+
+    .top-breadcrumb {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--text-meta);
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+    }
+    .top-breadcrumb a { color: var(--text-meta); text-decoration: none; transition: color 0.2s;}
+    .top-breadcrumb a:hover { color: var(--red); }
+    .top-breadcrumb .current-page { color: var(--red); }
+    .separator { font-weight: normal; color: #ccc; }
+
+    .post-category-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--black);
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .post-title {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #0c1827;
+      margin: 0 0 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .post-meta-data {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.7rem;
+      color: var(--text-meta);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .meta-author { display: flex; align-items: center; gap: 8px; color: var(--black); }
+    .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+    .meta-info { display: flex; align-items: center; gap: 16px; }
+    .meta-item { display: flex; align-items: center; gap: 4px; color: var(--text-meta); }
+    .meta-item svg { color: var(--red); }
+
+    /* ==================================
+       GRID PRINCIPAL
+       ================================== */
+    .post-layout-grid {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr) 300px;
+      gap: 20px 20px;
+      align-items: start;
+    }
+
+    /* --- [ESQUERDA] Botões Sociais --- */
+    .post-social-col {
+      position: relative;
+      height: 100%;
+    }
+    .sticky-socials {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .social-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 4px;
+      color: var(--white); font-weight: bold; text-decoration: none;
+      font-family: Arial, sans-serif; transition: transform 0.2s;
+    }
+    .social-btn:hover { transform: scale(1.05); }
+    .social-btn.facebook { background: #3b5998; font-size: 1.1rem; }
+    .social-btn.pinterest { background: #E60023; }
+    .social-btn.youtube { background: #FF0000; }
+    .social-btn.instagram { background: #E4405F; }
+
+    /* --- [CENTRO] Artigo --- */
+    .post-content-col {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 12px;
+      min-width: 0;
+    }
+    .post-cover-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 733 / 440;
+      margin-bottom: 32px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .post-cover-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .verified-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: var(--red);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Índice Accordion */
+    .post-indice {
+      background: var(--gray-light);
+      border-radius: 12px;
+      margin-bottom: 40px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .indice-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      background: var(--gray-light);
+    }
+    .indice-left { display: flex; align-items: center; gap: 12px; }
+    .indice-icon {
+      width: 36px; height: 36px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .indice-header strong {
       font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
-  }
-</style>
+    .indice-arrow { transition: transform 0.3s ease; }
+    .indice-arrow.open { transform: rotate(180deg); }
+    .indice-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .indice-content.open { max-height: 500px; }
+    .indice-links {
+      list-style: none;
+      padding: 0 24px 24px;
+      margin: 0;
+    }
+    .indice-links li { border-bottom: 1px solid var(--border); }
+    .indice-links li:last-child { border-bottom: none; }
+    .indice-links a {
+      display: block;
+      padding: 14px 0;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .indice-links a:hover { color: var(--red); }
+
+    /* --- [DIREITA] Sidebar --- */
+    .post-sidebar-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar-widget {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+    .produto-destaque { text-align: center; }
+    .frete-gratis {
+      background: #10B981;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .produto-imagem {
+      width: 100%;
+      max-width: 180px;
+      margin: 0 auto 16px;
+    }
+    .produto-nome {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--black);
+    }
+    .btn-produto-destaque {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+    }
+    .btn-produto-destaque.ml {
+      background: #FFE600;
+      color: #333;
+    }
+    .btn-produto-destaque.amazon {
+      background: #E31919;
+      color: white;
+    }
+    .btn-produto-destaque:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .newsletter-vip {
+      background: var(--red);
+      color: white;
+      text-align: center;
+    }
+    .newsletter-icon {
+      width: 56px; height: 56px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .newsletter-vip h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .newsletter-vip p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .newsletter-form input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 50px;
+      border: none;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+    .newsletter-form button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 50px;
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .newsletter-form button:hover {
+      background: white;
+      color: var(--red);
+    }
+
+    /* ==================================
+       CONTEÚDO DO ARTIGO
+       ================================== */
+    .post-content-col h2 {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--black);
+      margin: 40px 0 24px;
+      line-height: 1.2;
+    }
+    .post-content-col h3 {
+      font-family: var(--font-primary);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--red);
+      margin: 32px 0 16px;
+    }
+    .post-content-col p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+    .post-content-col ul, .post-content-col ol {
+      margin: 0 0 24px 20px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .post-content-col li { margin-bottom: 8px; }
+
+    /* Product Card */
+    .product-section {
+      background: var(--gray-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin: 40px 0;
+    }
+    .product-section h3 {
+      margin-top: 0;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--black);
+    }
+    .h2-image-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .h2-image-card img {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+    }
+
+    /* Botões */
+    .btn-buy-container { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .btn-buy {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      text-align: center;
+      background: #E31919;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      border: 2px solid #E31919;
+    }
+    .btn-buy:hover {
+      background: #fff;
+      color: #E31919;
+    }
+
+    /* Pros & Cons */
+    .pros-cons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .pc-col {
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .pc-col:has(.pros) {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+    }
+    .pc-col:has(.cons) {
+      background: #FEF2F2;
+      border-color: #FECACA;
+    }
+    .pc-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pc-col h4.pros { color: #166534; }
+    .pc-col h4.cons { color: #991B1B; }
+    .pc-list {
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .pc-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .pc-list.pros li::before {
+      content: '';
+      width: 18px; height: 18px;
+      min-width: 18px;
+      background: #22C55E;
+      border-radius: 50%;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: 12px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .pc-list.cons li::before {
+      content: '';
+      width: 18px; height: 18px;
+      min-width: 18px;
+      background: #EF4444;
+      border-radius: 50%;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+      background-size: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Tabela Comparativa */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      background: #212121;
+      color: #fff;
+    }
+    .comparison-table tr:hover {
+      background: var(--gray-light);
+    }
+
+    /* Warning Box */
+    .warning-box {
+      background: #FEF3C7;
+      border: 2px solid #F59E0B;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .warning-box h3 {
+      color: #92400E;
+      margin-top: 0;
+    }
+
+    /* Dicas Grid */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .tip-card {
+      background: #DBEAFE;
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid #2563EB;
+    }
+    .tip-card h4 {
+      color: #1E40AF;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .tip-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .post-layout-grid { grid-template-columns: 1fr; }
+      .post-social-col { display: none; }
+      .post-sidebar-col { position: static; margin-top: 40px; }
+      .post-title { font-size: 2.2rem; }
+      .post-content-col { padding: 24px; }
+      .pros-cons-grid { grid-template-columns: 1fr; }
+      .post-header-section { margin-left: 0; }
+    }
+  </style>
+
+  <Header />
+
+  <main class="post-main">
+    <div class="post-container">
+
+      <!-- CABEÇALHO -->
+      <div class="post-header-section">
+        <nav class="top-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">HOME</a>
+          <span class="separator">›</span>
+          <a href={categoryHref}>{category}</a>
+          <span class="separator">›</span>
+          <span class="current-page">Cadeados para Moto 2026</span>
+        </nav>
+
+        <a href={categoryHref} class="post-category-tag">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          {category}
+        </a>
+
+        <h1 class="post-title">Melhores Cadeados para Moto 2026</h1>
+
+        <div class="post-meta-data">
+          <div class="meta-author">
+            <img src="/images/autor-johnny-pan.png" alt={author} class="author-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Johnny+Pan&background=random'" />
+            <strong>{author.toUpperCase()}</strong>
+          </div>
+          <div class="meta-info">
+             <span class="meta-item">
+               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+               {publishDate}
+             </span>
+             <span class="meta-item">
+               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+               12K VIEWS
+             </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID PRINCIPAL -->
+      <div class="post-layout-grid">
+        
+        <!-- [ESQUERDA] Botões Sociais -->
+        <div class="post-social-col">
+          <div class="sticky-socials">
+            <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Facebook">f</a>
+            <a href="https://br.pinterest.com/jovemapan/" target="_blank" rel="noopener noreferrer" class="social-btn pinterest" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCChj9-uIY5ERfidZ6K-zt_w" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/jovem_apan/" target="_blank" rel="noopener noreferrer" class="social-btn instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- [CENTRO] Artigo -->
+        <article class="post-content-col">
+          <!-- Foto de Capa -->
+          <div class="post-cover-image">
+            <img src={coverImage} alt="Melhores Cadeados para Moto 2026" />
+            <div class="verified-badge">
+              <svg viewBox="0 0 24 24" width="12" height="12" stroke="white" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              APAN VERIFIED
+            </div>
+          </div>
+
+          <!-- Índice Accordion -->
+          <div class="post-indice" id="indice-accordion">
+            <div class="indice-header" onclick="toggleIndice()">
+              <div class="indice-left">
+                <div class="indice-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                </div>
+                <strong>ÍNDICE DE CONTEÚDO</strong>
+              </div>
+              <div class="indice-arrow" id="indice-arrow">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+            <div class="indice-content" id="indice-content">
+              <ul class="indice-links">
+                <li><a href="#introducao">Introdução: Segurança Anti-Furto</a></li>
+                <li><a href="#tipos">Tipos de Cadeados para Moto</a></li>
+                <li><a href="#top4">Top 4 Melhores Cadeados 2026</a></li>
+                <li><a href="#comparativo">Comparativo: Qual Escolher?</a></li>
+                <li><a href="#dicas">Dicas de Segurança Essenciais</a></li>
+                <li><a href="#conclusao">Conclusão e Recomendações</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CONTEÚDO DE EXEMPLO -->
+          
+          <h2 id="introducao">Melhores Cadeados para Moto em 2026</h2>
+          <p>
+            <strong>Conteúdo de exemplo</strong> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Este é um texto placeholder que será substituído pelo conteúdo original da página sobre cadeados para moto.
+          </p>
+          <p>
+            Aqui você pode adicionar a introdução completa com todas as análises dos melhores cadeados de 2026, 
+            incluindo modelos de disco com alarme, correntes pesadas e travas de guidão.
+          </p>
+
+          <h2 id="tipos">Tipos de Cadeados para Moto</h2>
+          <p>Conteúdo de exemplo sobre os diferentes tipos de cadeados disponíveis no mercado...</p>
+
+          <h2 id="top4">Top 4 Melhores Cadeados 2026</h2>
+          <p>Conteúdo de exemplo com os produtos recomendados...</p>
+
+          <h2 id="comparativo">Comparativo</h2>
+          <p>Tabela comparativa dos modelos...</p>
+
+          <h2 id="dicas">Dicas de Segurança</h2>
+          <p>Dicas práticas para proteger sua motocicleta...</p>
+
+          <h2 id="conclusao">Conclusão</h2>
+          <p>Resumo e recomendações finais...</p>
+
+          <!-- TAGS -->
+          <div class="post-tags-section" style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-meta); text-transform: uppercase; letter-spacing: 0.5px; margin-right: 8px;">TAGS:</span>
+              <a href="#" style="background: var(--white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: var(--text-meta); text-decoration: none; text-transform: uppercase;">Review</a>
+              <a href="#" style="background: var(--white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: var(--text-meta); text-decoration: none; text-transform: uppercase;">Cadeados</a>
+              <a href="#" style="background: var(--white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: var(--text-meta); text-decoration: none; text-transform: uppercase;">Recomendação</a>
+              <a href="#" style="background: var(--white); border: 1px solid var(--border); padding: 8px 16px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; color: var(--text-meta); text-decoration: none; text-transform: uppercase;">2026</a>
+            </div>
+          </div>
+
+          <!-- COMPARTILHAMENTO -->
+          <div class="post-share-section" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);">
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+              <span style="font-size: 0.8rem; font-weight: 800; color: var(--black); text-transform: uppercase; letter-spacing: 0.5px; margin-right: 8px;">COMPARTILHE ESTE ARTIGO:</span>
+              <a href="#" style="background: #3b5998; color: white; padding: 10px 18px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                Facebook
+              </a>
+              <a href="#" style="background: #1DA1F2; color: white; padding: 10px 18px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="white"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                Twitter
+              </a>
+              <a href="#" style="background: var(--white); border: 1px solid var(--border); color: var(--text); padding: 10px 18px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                Link
+              </a>
+            </div>
+          </div>
+
+          <!-- SOBRE O AUTOR -->
+          <div style="margin-top: 40px; padding: 24px 0; display: flex; gap: 20px; align-items: flex-start;">
+            <img src="/images/marcelo-ferreira.png" alt="Marcelo Ferreira" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; flex-shrink: 0;" onerror="this.src='https://ui-avatars.com/api/?name=Johnny+Pan&background=random&size=90'" />
+            <div>
+              <p style="font-size: 0.65rem; font-weight: 800; color: var(--red); text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px 0;">SOBRE O AUTOR</p>
+              <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--black); margin: 0 0 8px 0;">Marcelo Ferreira</h4>
+              <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text); margin: 0 0 12px 0;">
+                Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.
+              </p>
+              <a href="#" style="font-size: 0.8rem; font-weight: 700; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 1px;">Ver perfil completo ></a>
+            </div>
+          </div>
+
+          <!-- COMENTÁRIOS -->
+          <div style="margin-top: 40px;">
+            <h3 style="font-size: 1rem; font-weight: 800; color: var(--red); text-transform: uppercase; font-style: italic; margin: 0 0 12px 0; display: flex; align-items: center; gap: 10px; line-height: 1;">
+              <span style="width: 3px; height: 20px; background: var(--red); border-radius: 2px; display: inline-block;"></span>
+              DEIXE UM COMENTÁRIO
+            </h3>
+            <p style="font-size: 0.8rem; color: var(--text-meta); margin: 0 0 20px 0;">Seu e-mail não será publicado. Campos obrigatórios estão marcados com *</p>
+            
+            <form style="display: flex; flex-direction: column; gap: 12px;">
+              <textarea placeholder="Escreva seu comentário aqui... *" required style="width: 100%; min-height: 100px; padding: 14px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 0.9rem; resize: vertical; box-sizing: border-box; background: var(--white);"></textarea>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <input type="text" placeholder="Seu nome *" required style="padding: 12px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; box-sizing: border-box; background: var(--white);" />
+                <input type="email" placeholder="Seu e-mail *" required style="padding: 12px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; box-sizing: border-box; background: var(--white);" />
+              </div>
+              
+              <button type="submit" style="align-self: flex-start; background: var(--red); color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; cursor: pointer; margin-top: 4px;">
+                POSTAR COMENTÁRIO
+              </button>
+            </form>
+          </div>
+
+        </article>
+
+        <!-- [DIREITA] Sidebar -->
+        <aside class="post-sidebar-col">
+          
+          <!-- Widget Produto em Destaque - Fundo Preto -->
+          <div class="sidebar-widget" style="background: #000; border-radius: 8px; padding: 24px; text-align: center; border: none;">
+            <p style="color: #fff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 20px 0;">APROVEITE FRETE GRÁTIS</p>
+            <img src="/images/capacete-shoei.png" alt="Capacete Shoei" style="width: 100%; max-width: 160px; margin: 0 auto 20px;" />
+            <h4 style="color: #fff; font-size: 1rem; font-weight: 800; text-align: center; margin: 0 0 20px 0; line-height: 1.4;">Capacete Shoei<br/>Premium Edition</h4>
+            <a href="#" style="display: block; width: 100%; background: #E31E24; color: #fff; text-decoration: none; padding: 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-align: center; margin-bottom: 10px; text-transform: uppercase;">VER NO MERCADO LIVRE</a>
+            <a href="#" style="display: block; width: 100%; background: #E31E24; color: #fff; text-decoration: none; padding: 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-align: center; text-transform: uppercase;">VER OFERTA NA AMAZON</a>
+          </div>
+
+          <!-- Widget Newsletter VIP - Fundo Vermelho -->
+          <div class="sidebar-widget" style="background: #E31E24; border-radius: 8px; padding: 24px; text-align: center; border: none;">
+            <div style="margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="32" height="32" stroke="white" stroke-width="1.5" fill="none" style="margin: 0 auto;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <h3 style="color: #000; font-size: 1.3rem; font-weight: 800; margin: 0 0 12px 0; text-align: center;">Newsletter VIP</h3>
+            <p style="color: #fff; font-size: 0.85rem; line-height: 1.5; margin: 0 0 20px 0; text-align: center;">As melhores análises de mercado, cupons secretos e dicas entregues todo domingo.</p>
+            <form style="display: flex; flex-direction: column; gap: 10px;">
+              <input type="email" placeholder="Seu melhor e-mail" required style="width: 100%; padding: 12px 16px; border-radius: 4px; border: none; font-size: 0.9rem; box-sizing: border-box;" />
+              <button type="submit" style="width: 100%; padding: 12px; background: #000; color: #fff; border: none; border-radius: 4px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; cursor: pointer;">QUERO PARTICIPAR ›</button>
+            </form>
+          </div>
+
+        </aside>
+    </div>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    function toggleIndice() {
+      const content = document.getElementById('indice-content');
+      const arrow = document.getElementById('indice-arrow');
+      
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        arrow.classList.remove('open');
+      } else {
+        content.classList.add('open');
+        arrow.classList.add('open');
+      }
+    }
+  </script>
+</Layout>
