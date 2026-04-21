@@ -10,7 +10,7 @@ const author      = 'Marcelo Ferreira';
 const publishDate = '20 ABR, 2026';
 const category    = 'CAPACETES';
 const categoryHref = '/melhor-capacete/';
-const coverImage  = '/images/capacetes-2026-guia-completo.png';
+const coverImage  = '/images/piloto-com-sua-moro-branca.png';
 ---
 
 <Layout title={title} description={description} canonical={canonical}>
@@ -47,6 +47,59 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
       .info-card-grid {
         grid-template-columns: 1fr;
       }
+    }
+    /* Carrossel Styles */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #f8f9fa;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .carousel-btn.prev {
+      left: 10px;
+    }
+    .carousel-btn.next {
+      right: 10px;
     }
   </style>
   <Header />
@@ -221,10 +274,12 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           </ul>
 
           <h2 id="ajuste">O Melhor Capacete de Moto é aquele que se Adapta a Você</h2>
-          <div class="h2-image-card">
-            <img src="/images/Capacete-arai.png" alt="Capacete Arai - Melhor capacete de moto" />
+
+          <div class="h2-image-card" style="max-width: 500px; margin: 20px auto;">
+            <img src="/images/capacete-shoei.png" alt="Capacete Shoei" style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
           </div>
-          <p><a href="https://amzn.to/42Ejkbt" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a></p>
+
+          <p><a href="https://amzn.to/4vEOj4K" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a></p>
           <p>Ninguém avaliou todos os tipos de capacetes, independentemente do que eles alegam, e alguns podem estar sendo pagos para influenciar você, ou talvez querer vender uma marca específica.</p>
           <p>Neste artigo, destacaremos nossos favoritos e o manteremos atualizado regularmente à medida que <a href="https://jovemapan.com.br/melhor-capacete/bem-avaliados/">avaliamos</a> mais produtos, mas o mais importante é que um capacete se ajuste adequadamente a você.</p>
           <p>Se você quiser saber o quão boas são certas marcas com base nas opiniões de mais de 5.000 pilotos do mundo que cobrem mais de 10 milhões de km, confira nosso vídeo mais adiante neste artigo.</p>
@@ -289,6 +344,27 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           </div>
 
           <h2 id="integral-premium">Melhor capacete de moto integral em 2026</h2>
+
+          <!-- Carrossel de Capacetes -->
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="/images/capacete bell.png" alt="Capacete Bell" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/images/Capacete ls2 Advant FF906 Escamoteável Robocop Oculo Branco.png" alt="Capacete LS2 Advant FF906 Robocop" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/images/Capacete Arai XD4 - Visão.png" alt="Capacete Arai XD4" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/images/capacete azul shoei.png" alt="Capacete Azul Shoei" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+          </div>
+
           <p>Um capacete de rosto inteiro envolve completamente sua cabeça e é o estilo mais comum, oferecendo excelente proteção. Elas também são o que os corredores têm que usar na pista.</p>
           <p>A etiqueta (geralmente na tira) é marcada com um 'P', mas esteja ciente de que alguns modelos têm uma máscara que as faz parecer um rosto inteiro, mas oferecem apenas a segurança de um rosto aberto – elas são marcadas com 'NP' para Não Protetoras ou como Jet – 'J'.</p>
           <p>Algumas pessoas acham um full-face um pouco claustrofóbico, e se você usa óculos, terá que tirá-los antes de colocar o capacete. Ah, e alguns postos de gasolina vão pedir para você tirá-los antes de poder abastecer, mas você pode <a href="https://www.brasilpostos.com.br/noticias/noticias-mercado/se-entrar-de-moto-no-posto-tire-o-capacete/">descobrir o porquê disso aqui</a>.</p>
@@ -298,7 +374,7 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="hjc-i90">
             <h3>1. Capacete HJC I90 Hollen</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-hjc-i90-hollen.png" alt="Capacete HJC I90 Hollen" />
+              <img src="/images/Capacete-hjc-azul.png" alt="Capacete HJC I90 Hollen" />
             </div>
             <p>Este capacete tem uma ventilação excelente e é muito bom de usar, apesar de ser um pouco apertado para colocar. O protetor solar dele não é tão bom quanto o do <a href="https://jovemapan.com.br/capacete-nolan-review/">Nolan N90-3</a>, mas o encaixe na cabeça é ótimo (isso pode variar de pessoa para pessoa).</p>
             <p>Ele não tem uma aparência tão sofisticada quanto outros modelos caros, mas entrega muita qualidade. Não deixe de conferir a <a href="https://jovemapan.com.br/reveiw-hjc-i90-hollen/">análise completa do HJC I90 HOLLEN</a>.</p>
@@ -309,17 +385,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Dupla Homologação P/J:</strong> O capacete possui homologação integral (P) e jet (J), permitindo usá-lo tanto fechado quanto aberto.</li>
-                  <li><strong>Conforto e Ventilação:</strong> Interior removível e lavável, tecido antibacteriano e sistema de ventilação eficiente.</li>
-                  <li><strong>Compatibilidade com Intercomunicador:</strong> Pré-equipado para instalação do sistema SMART HJC Bluetooth.</li>
+                  <li><strong></strong> O capacete possui homologação integral (P) e jet (J), permitindo usá-lo tanto fechado quanto aberto.</li>
+                  <li><strong></strong> Interior removível e lavável, tecido antibacteriano e sistema de ventilação eficiente.</li>
+                  <li><strong></strong> Pré-equipado para instalação do sistema SMART HJC Bluetooth.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso Relativamente Alto:</strong> Pode ser mais pesado em comparação com modelos de fibra.</li>
-                  <li><strong>Preço Elevado:</strong> Pode ser considerado caro em relação a outros capacetes modulares.</li>
-                  <li><strong>Design Menos Atraente:</strong> Alguns usuários podem achar o design menos estiloso.</li>
+                  <li><strong></strong> Pode ser mais pesado em comparação com modelos de fibra.</li>
+                  <li><strong></strong> Pode ser considerado caro em relação a outros capacetes modulares.</li>
+                  <li><strong></strong> Alguns usuários podem achar o design menos estiloso.</li>
                 </ul>
               </div>
             </div>
@@ -329,7 +405,7 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="arai-quantic">
             <h3>2. Capacete Arai Quantic</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-arai-quantic.png" alt="Capacete Arai Quantic" />
+              <img src="/images/Capacete-Arai-Regent.png" alt="Capacete Arai Quantic" />
             </div>
             <p>Foi o primeiro capacete aprovado pela nova norma de segurança ECE 22.06. Ele oferece ótima ventilação e é bem confortável. Na época em que esse texto foi escrito, era considerado um dos melhores capacetes esportivos de turismo, além de ser bem versátil para diferentes tipos de moto.</p>
             <p><strong>Preço sugerido:</strong> a partir de R$ 7.104,26 | <strong>Certificação ECE 22.06:</strong> Sim</p>
@@ -339,16 +415,16 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Conforto Premium:</strong> Interior de nylon escovado, removível e lavável, garantindo conforto duradouro.</li>
-                  <li><strong>Ventilação Eficiente:</strong> Com 12 pontos de ventilação estrategicamente posicionados.</li>
-                  <li><strong>Segurança Avançada:</strong> Certificado pela ECE R22-06, combina calota resistente e sistemas FCS e ERS.</li>
+                  <li><strong></strong> Interior de nylon escovado, removível e lavável, garantindo conforto duradouro.</li>
+                  <li><strong></strong> Com 12 pontos de ventilação estrategicamente posicionados.</li>
+                  <li><strong></strong> Certificado pela ECE R22-06, combina calota resistente e sistemas FCS e ERS.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Preço Elevado:</strong> Está entre os modelos mais caros do mercado.</li>
-                  <li><strong>Peso Relativamente Alto:</strong> Pode gerar desconforto em usos prolongados.</li>
+                  <li><strong></strong> Está entre os modelos mais caros do mercado.</li>
+                  <li><strong></strong> Pode gerar desconforto em usos prolongados.</li>
                   <li><strong>Design Tradicional:</strong> Pode parecer conservador para quem busca estilo moderno.</li>
                 </ul>
               </div>
@@ -359,27 +435,27 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="shoei-xspirit3">
             <h3>3. Capacete Shoei X-Spirit 3</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-shoei-xspirit3.png" alt="Capacete Shoei X-Spirit 3" />
+              <img src="/images/capacete-shoei.png" alt="Capacete Shoei X-Spirit 3" />
             </div>
             <p>Retrátil, fecho micrométrico, boa viseira e ventilação eficiente — um ótimo modelo para quem busca um capacete esportivo-turístico completo. É um dos mais queridos da lista e a conexão com sistemas de comunicação não é tão simples, mas, no geral, é um excelente capacete.</p>
             <p><a href="https://jovemapan.com.br/review-do-shoei-x-spirit3/">Análise do SHOEI X-SPIRIT3</a> | <strong>Preço sugerido:</strong> a partir de R$ 6.990,00 | <strong>Certificação ECE 22.06:</strong> Sim</p>
-            <p><a href="https://amzn.to/4iXYJpP" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a></p>
+            <p><a href="https://amzn.to/4vEOj4K" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a></p>
             
             <div class="pros-cons-grid">
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Aerodinâmica Avançada:</strong> Testado em túnel de vento com design com spoiler integrado e abas ajustáveis.</li>
-                  <li><strong>Ventilação Superior:</strong> Com 12 pontos de ventilação e resfriamento nas bochechas.</li>
-                  <li><strong>Conforto Personalizado:</strong> Almofadas Max-Dry 3D, removíveis e ajustáveis.</li>
+                  <li><strong></strong> Testado em túnel de vento com design com spoiler integrado e abas ajustáveis.</li>
+                  <li><strong></strong> Com 12 pontos de ventilação e resfriamento nas bochechas.</li>
+                  <li><strong></strong> Almofadas Max-Dry 3D, removíveis e ajustáveis.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Preço Elevado:</strong> A partir de R$ 5.999,90, está entre os mais caros.</li>
-                  <li><strong>Peso Relativamente Alto:</strong> Pode causar desconforto em usos prolongados.</li>
-                  <li><strong>Design Esportivo:</strong> Voltado para alta velocidade, pode não ser ideal para uso urbano.</li>
+                  <li><strong></strong> A partir de R$ 5.999,90, está entre os mais caros.</li>
+                  <li><strong></strong> Pode causar desconforto em usos prolongados.</li>
+                  <li><strong></strong> Voltado para alta velocidade, pode não ser ideal para uso urbano.</li>
                 </ul>
               </div>
             </div>
@@ -389,7 +465,7 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="shark-evo">
             <h3>4. Capacete Shark Evo</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-shark-evo.png" alt="Capacete Shark Evo" />
+              <img src="/images/capacete-shark-preto.png" alt="Capacete Shark Evo" />
             </div>
             <p>O EVO impressionou nosso revisor com seu conforto e qualidade de construção luxuosa. Ele também tem um ótimo estilo. Se ele se encaixa em você, pode ser uma boa opção de preço médio.</p>
             <p><a href="https://jovemapan.com.br/review-do-capacete-shark-evo/">Análise do SHARK EVO</a> | <strong>Preço:</strong> A partir de R$ 3.299,00 | <strong>ECE 22.06:</strong> Sim</p>
@@ -399,17 +475,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Versatilidade Modular:</strong> Pode ser usado fechado ou aberto.</li>
-                  <li><strong>Conforto e Ventilação:</strong> Interior antialérgico, removível e lavável.</li>
-                  <li><strong>Proteção UV:</strong> Viseira solar interna com proteção UV380 e sistema Autoseal.</li>
+                  <li><strong></strong> Pode ser usado fechado ou aberto.</li>
+                  <li><strong></strong> Interior antialérgico, removível e lavável.</li>
+                  <li><strong></strong> Viseira solar interna com proteção UV380 e sistema Autoseal.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Preço Elevado:</strong> A partir de R$ 3.299, pode ser considerado caro.</li>
-                  <li><strong>Peso Relativamente Alto:</strong> Pode causar desconforto em longos períodos.</li>
-                  <li><strong>Compatibilidade Limitada:</strong> Acessórios adicionais podem ser limitados.</li>
+                  <li><strong></strong> A partir de R$ 3.299, pode ser considerado caro.</li>
+                  <li><strong></strong> Pode causar desconforto em longos períodos.</li>
+                  <li><strong></strong> Acessórios adicionais podem ser limitados.</li>
                 </ul>
               </div>
             </div>
@@ -419,7 +495,7 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="ls2-scope">
             <h3>5. Capacete LS2 Scope Monocolor</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-ls2-scope.png" alt="Capacete LS2 Scope Monocolor" />
+              <img src="/images/LS2-Scope-Monocolor-Titanium-Fosco.png" alt="Capacete LS2 Scope Monocolor" />
             </div>
             <p><a href="https://jovemapan.com.br/ls2-scope-monocolor-review/">Análise LS2 Scope Monocolor</a> | <strong>Preço:</strong> A partir de R$ 1.429,90 | <strong>ECE 22.06:</strong> Sim</p>
             <p><a href="https://amzn.to/4e69YL1" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a></p>
@@ -428,17 +504,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Abertura 180°:</strong> Sistema escamoteável permite transformar em modelo open face.</li>
-                  <li><strong>Conforto Avançado:</strong> Forração removível com tratamento Outlast® (tecnologia NASA).</li>
-                  <li><strong>Óculos Solar Interno:</strong> Viseira solar interna e preparado para Pinlock®.</li>
+                  <li><strong></strong> Sistema escamoteável permite transformar em modelo open face.</li>
+                  <li><strong></strong> Forração removível com tratamento Outlast® (tecnologia NASA).</li>
+                  <li><strong></strong> Viseira solar interna e preparado para Pinlock®.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso Relativamente Alto:</strong> Aproximadamente 1.600g.</li>
-                  <li><strong>Preço Elevado:</strong> Pode ser considerado elevado para alguns motociclistas.</li>
-                  <li><strong>Ruído em Altas Velocidades:</strong> Pode ser um pouco barulhento.</li>
+                  <li><strong></strong> Aproximadamente 1.600g.</li>
+                  <li><strong></strong> Pode ser considerado elevado para alguns motociclistas.</li>
+                  <li><strong></strong> Pode ser um pouco barulhento.</li>
                 </ul>
               </div>
             </div>
@@ -448,7 +524,7 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="shoei-gtair2">
             <h3>6. Capacete Shoei GT-Air 2</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-shoei-gtair2.png" alt="Capacete Shoei GT-Air 2" />
+              <img src="/images/capacete azul shoei.png" alt="Capacete Shoei GT-Air 2" />
             </div>
             <p>O SHOEI GT-AIR 2 tem excelente aerodinâmica e uma ótima viseira, mas é um ajuste mais apertado e esportivo do que modelos como o <a href="https://amzn.to/42CPfJ9">GT-Air 3</a>. Se você tem orçamento, saber qual é o melhor para você é impossível sem experimentar os dois.</p>
             <p><strong>Preço sugerido:</strong> a partir de R$ 5.290,00 | <strong>Certificação ECE 22.06:</strong> Sim</p>
@@ -458,17 +534,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Conforto Personalizado:</strong> Forração removível, lavável e antialérgica, otimizada para usuários de óculos.</li>
-                  <li><strong>Viseira Solar Interna:</strong> QSV-2 5mm maior, compatível com Pinlock Evo.</li>
-                  <li><strong>Compatibilidade:</strong> Projetado para integração com Sena SRL-02.</li>
+                  <li><strong></strong> Forração removível, lavável e antialérgica, otimizada para usuários de óculos.</li>
+                  <li><strong></strong> QSV-2 5mm maior, compatível com Pinlock Evo.</li>
+                  <li><strong></strong> Projetado para integração com Sena SRL-02.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Preço Elevado:</strong> A partir de R$ 5.290,00.</li>
-                  <li><strong>Peso Relativamente Alto:</strong> Aproximadamente 1.400g.</li>
-                  <li><strong>Ruído em Altas Velocidades:</strong> Pode gerar ruído em ventos fortes.</li>
+                  <li><strong></strong> A partir de R$ 5.290,00.</li>
+                  <li><strong></strong> Aproximadamente 1.400g.</li>
+                  <li><strong></strong> Pode gerar ruído em ventos fortes.</li>
                 </ul>
               </div>
             </div>
@@ -478,7 +554,7 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <div class="product-section" id="bell-qualifier">
             <h3>7. Capacetes Bell Qualifier Forced Air</h3>
             <div class="h2-image-card product-image">
-              <img src="/images/capacete-bell-qualifier.png" alt="Capacete Bell Qualifier Forced Air" />
+              <img src="/images/capacete bell.png" alt="Capacete Bell Qualifier Forced Air" />
             </div>
             <p>O Capacete Bell Qualifier Forced Air Street é a escolha perfeita para quem busca um equilíbrio entre estilo e funcionalidade. Com um design moderno e ousado, equipado com sistema de ventilação inovador que canaliza o fluxo de ar, garantindo frescor durante viagens longas.</p>
             <p><strong>Preço de varejo recomendado:</strong> a partir de R$ 2.701,71 | <strong>ECE 22.06:</strong> Sim</p>
@@ -488,17 +564,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Ventilação Forçada:</strong> Sistema que permite entrada de ar limpo e saia de poeira completa.</li>
-                  <li><strong>Compatibilidade:</strong> Bolsos internos para alto-falantes de sistemas Sena e Cardo.</li>
-                  <li><strong>Conforto:</strong> Interior removível, lavável e antibacteriano com sistema Ionic+™.</li>
+                  <li><strong></strong> Sistema que permite entrada de ar limpo e saia de poeira completa.</li>
+                  <li><strong></strong> Bolsos internos para alto-falantes de sistemas Sena e Cardo.</li>
+                  <li><strong></strong> Interior removível, lavável e antibacteriano com sistema Ionic+™.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso Relativamente Alto:</strong> Aproximadamente 1.727g no tamanho M.</li>
-                  <li><strong>Ruído em Altas Velocidades:</strong> Pode ser barulhento em altas velocidades.</li>
-                  <li><strong>Preço Elevado:</strong> Modelo especializado com preço mais alto.</li>
+                  <li><strong></strong> Aproximadamente 1.727g no tamanho M.</li>
+                  <li><strong></strong> Pode ser barulhento em altas velocidades.</li>
+                  <li><strong></strong> Modelo especializado com preço mais alto.</li>
                 </ul>
               </div>
             </div>
@@ -522,17 +598,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Boa Relação Custo-Benefício:</strong> Qualidade razoável por preço acessível.</li>
-                  <li><strong>Design Moderno:</strong> Ampla gama de modelos com designs modernos.</li>
-                  <li><strong>Conforto:</strong> Sistemas de ventilação eficazes e forração removível.</li>
+                  <li><strong></strong> Qualidade razoável por preço acessível.</li>
+                  <li><strong></strong> Ampla gama de modelos com designs modernos.</li>
+                  <li><strong></strong> Sistemas de ventilação eficazes e forração removível.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Durabilidade Inferior:</strong> Desgaste mais rápido comparado a marcas premium.</li>
-                  <li><strong>Falta de Recursos Avançados:</strong> Sem viseiras solares internas em alguns modelos.</li>
-                  <li><strong>Reclamações de Conforto:</strong> Relatos de compressão na cabeça e ruídos.</li>
+                  <li><strong></strong> Desgaste mais rápido comparado a marcas premium.</li>
+                  <li><strong></strong> Sem viseiras solares internas em alguns modelos.</li>
+                  <li><strong> </strong> Relatos de compressão na cabeça e ruídos.</li>
                 </ul>
               </div>
             </div>
@@ -551,16 +627,16 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Alta segurança:</strong> Certificações ECE/DOT, atendendo padrões internacionais.</li>
-                  <li><strong>Conforto interno:</strong> Forração macia, removível e lavável.</li>
-                  <li><strong>Design e aerodinâmica:</strong> Visual esportivo e casco bem projetado.</li>
+                  <li><strong></strong> Certificações ECE/DOT, atendendo padrões internacionais.</li>
+                  <li><strong></strong> Forração macia, removível e lavável.</li>
+                  <li><strong></strong> Visual esportivo e casco bem projetado.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso:</strong> Um pouco acima da média.</li>
-                  <li><strong>Custo de reposição:</strong> Viseira um pouco elevada comparada a marcas nacionais.</li>
+                  <li><strong></strong> Um pouco acima da média.</li>
+                  <li><strong></strong> Viseira um pouco elevada comparada a marcas nacionais.</li>
                 </ul>
               </div>
             </div>
@@ -579,17 +655,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Certificação INMETRO:</strong> Atende à NBR 7471.</li>
-                  <li><strong>Conforto e Higiene:</strong> Forro removível e hipoalergênico.</li>
-                  <li><strong>Design Aerodinâmico:</strong> Peso médio de 1.500g.</li>
+                  <li><strong></strong> Atende à NBR 7471.</li>
+                  <li><strong></strong> Forro removível e hipoalergênico.</li>
+                  <li><strong></strong> Peso médio de 1.500g.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Sem Pinlock:</strong> Não possui suporte para o sistema.</li>
-                  <li><strong>Ajuste Inicial Apertado:</strong> Forro pode ser apertado nos primeiros usos.</li>
-                  <li><strong>Viseira Cristal:</strong> Apenas viseira transparente inclusa.</li>
+                  <li><strong></strong> Não possui suporte para o sistema.</li>
+                  <li><strong></strong> Forro pode ser apertado nos primeiros usos.</li>
+                  <li><strong></strong> Apenas viseira transparente inclusa.</li>
                 </ul>
               </div>
             </div>
@@ -608,17 +684,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Visor Solar Interno:</strong> Óculos interno retrátil para proteção contra o sol.</li>
-                  <li><strong>Ventilação Eficiente:</strong> Entradas de ar frontal e superior com exaustores traseiros.</li>
-                  <li><strong>Conforto:</strong> Tecido antialérgico, removível e lavável.</li>
+                  <li><strong></strong> Óculos interno retrátil para proteção contra o sol.</li>
+                  <li><strong></strong> Entradas de ar frontal e superior com exaustores traseiros.</li>
+                  <li><strong></strong> Tecido antialérgico, removível e lavável.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso:</strong> Aproximado de 1.450g.</li>
-                  <li><strong>Sem Pinlock:</strong> Não possui suporte para o sistema.</li>
-                  <li><strong>Design Limitado:</strong> Poucas opções de personalização.</li>
+                  <li><strong></strong> Aproximado de 1.450g.</li>
+                  <li><strong></strong> Não possui suporte para o sistema.</li>
+                  <li><strong></strong> Poucas opções de personalização.</li>
                 </ul>
               </div>
             </div>
@@ -637,17 +713,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Certificação INMETRO:</strong> Atende à NBR 7471.</li>
-                  <li><strong>Conforto:</strong> Forro removível e hipoalergênico.</li>
-                  <li><strong>Leveza:</strong> Peso médio de 1.500g.</li>
+                  <li><strong></strong> Atende à NBR 7471.</li>
+                  <li><strong></strong> Forro removível e hipoalergênico.</li>
+                  <li><strong></strong> Peso médio de 1.500g.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Sem Pinlock:</strong> Não possui suporte.</li>
-                  <li><strong>Ajuste Apertado:</strong> Inicialmente pode ser apertado.</li>
-                  <li><strong>Viseira Cristal:</strong> Apenas transparente inclusa.</li>
+                  <li><strong></strong> Não possui suporte.</li>
+                  <li><strong></strong> Inicialmente pode ser apertado.</li>
+                  <li><strong></strong> Apenas transparente inclusa.</li>
                 </ul>
               </div>
             </div>
@@ -666,17 +742,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Homologação:</strong> ECE 22.06 e INMETRO.</li>
-                  <li><strong>Conforto:</strong> Forro hipoalergênico, removível e lavável.</li>
-                  <li><strong>Design:</strong> Peso médio de 1.550g com boa aerodinâmica.</li>
+                  <li><strong></strong> ECE 22.06 e INMETRO.</li>
+                  <li><strong></strong> Forro hipoalergênico, removível e lavável.</li>
+                  <li><strong></strong> Peso médio de 1.550g com boa aerodinâmica.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso:</strong> Aproximadamente 1.550g.</li>
-                  <li><strong>Pinlock não incluso:</strong> Preparado mas não acompanha.</li>
-                  <li><strong>Viseira Cristal:</strong> Apenas transparente.</li>
+                  <li><strong></strong> Aproximadamente 1.550g.</li>
+                  <li><strong></strong> Preparado mas não acompanha.</li>
+                  <li><strong></strong> Apenas transparente.</li>
                 </ul>
               </div>
             </div>
@@ -695,17 +771,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Construção Premium:</strong> HPFC (fibra de vidro, carbono e aramida), 1.440g.</li>
-                  <li><strong>Ventilação:</strong> Entradas de ar frontal e superior com spoiler traseiro.</li>
-                  <li><strong>Recursos:</strong> Viseira solar interna retrátil e troca rápida.</li>
+                  <li><strong></strong> HPFC (fibra de vidro, carbono e aramida), 1.440g.</li>
+                  <li><strong></strong> Entradas de ar frontal e superior com spoiler traseiro.</li>
+                  <li><strong></strong> Viseira solar interna retrátil e troca rápida.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Preço Elevado:</strong> Modelo premium.</li>
-                  <li><strong>Peso:</strong> 1.440g pode ser pesado para uso urbano.</li>
-                  <li><strong>Disponibilidade:</strong> Tamanhos podem ser limitados.</li>
+                  <li><strong></strong> Modelo premium.</li>
+                  <li><strong></strong> 1.440g pode ser pesado para uso urbano.</li>
+                  <li><strong></strong> Tamanhos podem ser limitados.</li>
                 </ul>
               </div>
             </div>
@@ -724,17 +800,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Versatilidade:</strong> Design escamoteável facilita comunicação.</li>
-                  <li><strong>Conforto:</strong> Forração removível, antialérgica e antibacteriana.</li>
-                  <li><strong>Design:</strong> Aerodinâmico com viseira solar retrátil e proteção UVA/UVB.</li>
+                  <li><strong></strong> Design escamoteável facilita comunicação.</li>
+                  <li><strong></strong> Forração removível, antialérgica e antibacteriana.</li>
+                  <li><strong></strong> Aerodinâmico com viseira solar retrátil e proteção UVA/UVB.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso:</strong> Médio de 1.550g.</li>
-                  <li><strong>Sem Pinlock:</strong> Não acompanha o sistema.</li>
-                  <li><strong>Preço:</strong> Modelo premium.</li>
+                  <li><strong></strong> Médio de 1.550g.</li>
+                  <li><strong></strong> Não acompanha o sistema.</li>
+                  <li><strong></strong> Modelo premium.</li>
                 </ul>
               </div>
             </div>
@@ -754,17 +830,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Conectividade:</strong> Compatível com Bluetooth Smart Trip.</li>
-                  <li><strong>Conforto:</strong> Forração removível, antialérgica e antibacteriana.</li>
-                  <li><strong>Design:</strong> Viseira solar retrátil, proteção UVA/UVB.</li>
+                  <li><strong></strong> Compatível com Bluetooth Smart Trip.</li>
+                  <li><strong></strong> Forração removível, antialérgica e antibacteriana.</li>
+                  <li><strong></strong> Viseira solar retrátil, proteção UVA/UVB.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Isolamento Acústico:</strong> Limitado segundo usuários.</li>
-                  <li><strong>Peso:</strong> Médio de 1.5 kg.</li>
-                  <li><strong>Preço:</strong> Modelo premium.</li>
+                  <li><strong></strong> Limitado segundo usuários.</li>
+                  <li><strong></strong> Médio de 1.5 kg.</li>
+                  <li><strong></strong> Modelo premium.</li>
                 </ul>
               </div>
             </div>
@@ -783,17 +859,17 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
               <div class="pc-col">
                 <h4 class="pros">PRÓS</h4>
                 <ul class="pc-list pros">
-                  <li><strong>Tecnologia MIPS:</strong> Reduz energia rotacional em impactos angulares.</li>
-                  <li><strong>Ventilação:</strong> Sistema Velocity Flow Ventilation™.</li>
-                  <li><strong>Versatilidade:</strong> Viseira ajustável e escudo removível.</li>
+                  <li><strong></strong> Reduz energia rotacional em impactos angulares.</li>
+                  <li><strong></strong> Sistema Velocity Flow Ventilation™.</li>
+                  <li><strong></strong> Viseira ajustável e escudo removível.</li>
                 </ul>
               </div>
               <div class="pc-col">
                 <h4 class="cons">CONTRAS</h4>
                 <ul class="pc-list cons">
-                  <li><strong>Peso:</strong> Aproximadamente 1.6 kg.</li>
-                  <li><strong>Preço:</strong> Modelo premium.</li>
-                  <li><strong>Ruído:</strong> Pala pode gerar ruído em altas velocidades.</li>
+                  <li><strong></strong> Aproximadamente 1.6 kg.</li>
+                  <li><strong></strong> Modelo premium.</li>
+                  <li><strong></strong> Pala pode gerar ruído em altas velocidades.</li>
                 </ul>
               </div>
             </div>
@@ -802,6 +878,11 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <p>Estes são apenas alguns dos muitos capacetes integrais de motocicleta que testamos na A Pan. Não deixe de ver o comparativo do LS2 versus Axxis clicando <a href="https://jovemapan.com.br/melhor-capacete/axxis-x-ls2/">aqui</a>.</p>
 
           <h2 id="normas">Saiba como são realizados os testes exigidos pelas normas brasileiras, para que um capacete possa receber a certificação do Inmetro</h2>
+
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/C9mlpJwAZek?si=YbzLtGv1UqyyiazC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
           <p>Os capacetes certificados pelo INMETRO passam por rigorosos testes de segurança que avaliam:</p>
           <ul>
             <li>Resistência à penetração</li>
@@ -840,6 +921,10 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <h2 id="escolher" style="color: #000;">Como Escolher o Melhor Capacete de Moto</h2>
           <p>Para escolher o melhor capacete de moto, considere o tipo de uso — urbano ou off-road. Experimente diferentes tamanhos para garantir um ajuste confortável. Verifique as certificações de segurança e opte por modelos com bom sistema de ventilação, além de materiais leves e resistentes. Saiba mais clicando <a href="https://jovemapan.com.br/tamanho-do-capacete/">aqui</a>.</p>
 
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/B9ftWGap1PU?si=DIDf3RVrPZoZH1Iv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
           <h3 id="tipo-uso" style="color: #000;">Escolha o Capacete de Acordo com o Modelo e Tipo de Uso</h3>
           <p>Escolher o capacete de moto certo é essencial para garantir segurança e conforto. Primeiro, considere o tipo de uso que você fará: se for para deslocamentos urbanos, um capacete integral ou aberto pode ser ideal, oferecendo boa visibilidade e leveza.</p>
           <p>Para os amantes de aventuras off-road, capacetes projetados especificamente para esse ambiente são fundamentais. Os capacetes modulares são uma excelente opção versátil para quem busca conveniência.</p>
@@ -865,15 +950,35 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
           <p><a href="https://amzn.to/42nfV2k" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a></p>
 
           <h3 style="color: #000;">Prefira Modelos com Cascos Feitos em ABS</h3>
+
+          <div class="h2-image-card">
+            <img src="/images/Homem-com-capacete-de-moto.png" alt="Homem com capacete de moto" />
+          </div>
+
           <p>Na hora de escolher um capacete de moto, opte por modelos com cascos feitos em ABS (Acrilonitrila Butadieno Estireno). Este material é amplamente utilizado devido à sua excelente combinação de leveza e resistência a impactos.</p>
 
           <h3 style="color: #000;">Escolha um Capacete Leve e Confortável</h3>
+
+          <div class="h2-image-card">
+            <img src="/images/moto-parada-na-rua-com-capacete-encima.png" alt="Moto parada na rua com capacete em cima" />
+          </div>
+
           <p>Ao escolher um capacete, é fundamental priorizar o peso e o conforto. Capacetes leves reduzem a fadiga durante longas jornadas. Um bom ajuste é crucial; ele deve se encaixar firmemente, mas sem causar desconforto.</p>
 
           <h3 style="color: #000;">Garanta Sua Segurança, Prefira Capacetes com Selo do Inmetro</h3>
+
+          <div class="h2-image-card">
+            <img src="/images/capacete-com-selo-do-imetro.png" alt="Capacete com selo do Inmetro" />
+          </div>
+
           <p>Ao escolher um capacete, é crucial optar por modelos que possuam o selo do INMETRO. Este selo garante que o produto foi testado e aprovado conforme normas de segurança rigorosas.</p>
 
           <h3 style="color: #000;">Capacetes com Recursos Extras São Mais Práticos</h3>
+
+          <div class="h2-image-card">
+            <img src="/images/capacete-motrocross.png" alt="Capacete motocross" />
+          </div>
+
           <p>Optar por capacetes que oferecem recursos extras pode tornar sua experiência mais prática. Modelos com sistemas de ventilação ajustáveis, visores antiembaçantes, forros removíveis e conectividade Bluetooth.</p>
           <p>Falando de chuva, confira nossa avaliação das melhores <a href="https://jovemapan.com.br/melhor-capacete/capa-de-chuva/">capas de chuva</a> clicando aqui.</p>
 
@@ -977,6 +1082,31 @@ const coverImage  = '/images/capacetes-2026-guia-completo.png';
   </main>
 
   <Footer />
+
+  <script is:inline>
+    // Carrossel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+
+    function moveCarousel(direction) {
+      currentSlide += direction;
+      
+      if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+      } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+      }
+      
+      const track = document.querySelector('.carousel-track');
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Auto-play carrossel
+    setInterval(() => {
+      moveCarousel(1);
+    }, 5000);
+  </script>
 </Layout>
 
 <style>
