@@ -3,373 +3,603 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-const title = 'Dicas para Motociclistas | Guias e Tutoriais';
-const description = 'Dicas essenciais para motociclistas. Guias de compra, manutenção, segurança e tudo que você precisa saber sobre capacetes e equipamentos.';
+const title = 'Dicas » jovemapan.com.br';
+const description = 'Dicas essenciais para motociclistas: guias de escolha de capacete, manutenção, legislação, jaquetas e muito mais. Informação prática para o dia a dia na moto.';
+const canonical = 'https://jovemapan.com.br/category/dicas/';
 
-const guides = [
-  {
-    title: 'Como Escolher o Tamanho Correto do Capacete',
-    excerpt: 'Guia completo para medir sua cabeça e escolher o tamanho perfeito. Ajuste correto é essencial para segurança.',
-    image: '/images/guia-tamanho-capacete.jpg',
-    href: '/como-escolher-tamanho-capacete/',
-    category: 'Guia de Compra',
-    readTime: '5 min'
-  },
-  {
-    title: 'Cuidados com o Capacete: Limpeza e Manutenção',
-    excerpt: 'Aprenda a limpar o interior e exterior do capacete, cuidar da viseira e prolongar a vida útil do seu equipamento.',
-    image: '/images/limpeza-capacete.jpg',
-    href: '/cuidados-capacete/',
-    category: 'Manutenção',
-    readTime: '7 min'
-  },
-  {
-    title: 'Quando Trocar o Capacete?',
-    excerpt: 'Saiba identificar os sinais de que seu capacete precisa ser substituído. Vida útil, quedas e envelhecimento do material.',
-    image: '/images/trocar-capacete.jpg',
-    href: '/quando-trocar-capacete/',
-    category: 'Segurança',
-    readTime: '4 min'
-  },
-  {
-    title: 'Entenda as Certificações INMETRO e ECE',
-    excerpt: 'Guia completo sobre certificações de segurança. O que significam e por que são importantes para sua proteção.',
-    image: '/images/certificacoes-capacete.jpg',
-    href: '/certificacoes-capacete/',
-    category: 'Segurança',
-    readTime: '6 min'
-  },
-  {
-    title: 'Dicas para Pilotar na Chuva',
-    excerpt: 'Técnicas essenciais para pilotagem segura em dias de chuva. Equipamentos, velocidade e cuidados especiais.',
-    image: '/images/pilotar-chuva.jpg',
-    href: '/dicas-pilotar-chuva/',
-    category: 'Pilotagem',
-    readTime: '8 min'
-  },
-  {
-    title: 'Acessórios Essenciais para Motociclistas',
-    excerpt: 'Lista completa de acessórios que todo motociclista deve considerar. Do básico ao avançado.',
-    image: '/images/acessorios-moto.jpg',
-    href: '/acessorios-essenciais/',
-    category: 'Equipamentos',
-    readTime: '10 min'
-  }
-];
-
-const quickTips = [
-  {
-    icon: '🛡️',
-    title: 'Segurança Primeiro',
-    content: 'Nunca economize no capacete. É o único equipamento que protege sua cabeça em uma queda.'
-  },
-  {
-    icon: '📏',
-    title: 'Medição Correta',
-    content: 'Meça a circunferência da cabeça com fita métrica, 2cm acima das sobrancelhas.'
-  },
-  {
-    icon: '🔄',
-    title: 'Vida Útil',
-    content: 'Capacetes devem ser trocados a cada 5 anos, ou imediatamente após quedas significativas.'
-  },
-  {
-    icon: '🧼',
-    title: 'Limpeza Regular',
-    content: 'Limpe o interior mensalmente para evitar odor e bactérias. Use produtos específicos.'
-  }
+const allDicas = [
+  // ===== PÁGINA 1 =====
+  { title: 'Intercomunicador é permitido?', href: '/intercomunicador-e-permitido/', date: 'Dezembro 6, 2025', excerpt: 'Descubra se o uso de intercomunicador para capacete é permitido por lei no Brasil. Entenda a legislação e as regras de trânsito ...' },
+  { title: 'Melhores Jaquetas para motociclista em 2026', href: '/dica-melhor-jaqueta-motociclistas/', date: 'Novembro 2, 2025', excerpt: 'Guia completo das melhores jaquetas para motociclistas. Comparativo de marcas, materiais e proteções para sua segurança ...' },
+  { title: 'Guia de escolha custo benefício', href: '/guia-de-escolha-custo-beneficio/', date: 'Outubro 26, 2025', excerpt: 'Como escolher o melhor capacete custo-benefício? Guia prático com dicas de especialistas para encontrar a opção ideal ...' },
+  { title: 'Comparativo Modular x Integral', href: '/comparativo-modular-x-integral/', date: 'Outubro 23, 2025', excerpt: 'Capacete modular ou integral? Entenda as diferenças, vantagens e desvantagens de cada tipo para fazer a melhor escolha ...' },
+  { title: 'Como Prender o Capacete na Moto', href: '/como-prender-o-capacete/', date: 'Outubro 10, 2025', excerpt: 'Aprenda as melhores formas de prender o capacete na moto com segurança. Dicas práticas para evitar furtos e danos ...' },
+  { title: 'Saiba onde consertar capacete de moto?', href: '/reparo-e-acessorios/', date: 'Outubro 5, 2025', excerpt: 'Guia de onde consertar seu capacete de moto. Assistências técnicas, peças de reposição e dicas de manutenção ...' },
+  { title: 'Limpeza do capacete: Guia Profissional', href: '/limpeza-do-capacete/', date: 'Outubro 1, 2025', excerpt: 'Como limpar seu capacete corretamente? Guia profissional passo a passo para manter seu capacete higienizado e conservado ...' },
+  { title: 'Pode usar capacete aberto em rodovia', href: '/pode-usar-capacete-aberto-rodovia/', date: 'Julho 4, 2025', excerpt: 'É permitido usar capacete aberto em rodovias? Entenda o que diz a lei e quais são os riscos de segurança ...' },
+  { title: 'Para que serve narigueira no capacete', href: '/narigueira-capacete-seguranca-conforto/', date: 'Julho 3, 2025', excerpt: 'Descubra a importância da narigueira no capacete. Função, benefícios para segurança e conforto durante a pilotagem ...' },
+  { title: 'Melhores capacetes para quem usa óculos', href: '/capacete-para-quem-usa-oculos/', date: 'Julho 2, 2025', excerpt: 'Guia dos melhores capacetes para quem usa óculos de grau. Modelos com visor interno e encaixe confortável ...' },
+  // ===== PÁGINA 2 =====
+  { title: 'Qual o valor da Multa ao dirigir sem capacete', href: '/multa-dirigir-sem-capacete/', date: 'Julho 1, 2025', excerpt: 'Saiba qual é o valor da multa por dirigir sem capacete. Penalidades, pontos na CNH e como evitar infrações ...' },
+  { title: 'Saiba qual Prazo de Validade do Capacete', href: '/capacete-prazo-validade/', date: 'Julho 1, 2025', excerpt: 'Qual o prazo de validade do capacete? Entenda quando trocar e como verificar se seu capacete ainda está seguro ...' },
+  { title: 'Saiba qual o tamanho ideal do seu capacete', href: '/tamanho-do-capacete/', date: 'Maio 17, 2025', excerpt: 'Como medir e escolher o tamanho ideal do capacete. Tabela de medidas e dicas para um encaixe perfeito ...' }
 ];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} canonical={canonical}>
   <Header />
-  
+
   <main>
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
       <div class="container">
-        <h1>Dicas para Motociclistas</h1>
-        <p class="hero-subtitle">
-          Guias completos, tutoriais e dicas essenciais para quem vive sobre duas rodas. 
-          Aprenda a escolher, cuidar e aproveitar ao máximo seus equipamentos.
-        </p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <span class="current">Dicas</span>
+        </nav>
       </div>
     </section>
 
-    <!-- Quick Tips -->
-    <section class="quick-tips-section">
+    <!-- Page Title -->
+    <section class="page-title-section">
       <div class="container">
-        <h2>Dicas Rápidas</h2>
-        <div class="tips-grid">
-          {quickTips.map(tip => (
-            <div class="tip-card">
-              <span class="tip-icon">{tip.icon}</span>
-              <h3>{tip.title}</h3>
-              <p>{tip.content}</p>
-            </div>
-          ))}
-        </div>
+        <h1>Dicas</h1>
       </div>
     </section>
 
-    <!-- Guides Grid -->
-    <section class="guides-section">
+    <!-- Dicas List -->
+    <section class="reviews-section">
       <div class="container">
-        <h2>Guias Completos</h2>
-        <div class="guides-grid">
-          {guides.map(guide => (
-            <article class="guide-card">
-              <a href={guide.href} class="guide-link">
-                <div class="guide-image">
-                  <img src={guide.image} alt={guide.title} loading="lazy" />
-                  <span class="guide-category">{guide.category}</span>
-                </div>
-                <div class="guide-content">
-                  <div class="guide-meta">
-                    <span class="read-time">⏱️ {guide.readTime} de leitura</span>
+        <div class="reviews-layout">
+          <!-- Main Content -->
+          <div class="reviews-main" id="reviews-main">
+            {allDicas.map((dica, i) => (
+              <article class="review-card" data-index={i}>
+                <a href={dica.href} class="review-title-link">
+                  <h2 class="review-title">{dica.title}</h2>
+                </a>
+                <p class="review-date">{dica.date}</p>
+                <div class="review-body">
+                  <a href={dica.href} class="review-thumb">
+                    <div class="thumb-placeholder">
+                      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#aaa" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg>
+                    </div>
+                  </a>
+                  <div class="review-text">
+                    <p class="review-excerpt">{dica.excerpt}</p>
+                    <a href={dica.href} class="read-more-btn">Leia mais</a>
                   </div>
-                  <h3>{guide.title}</h3>
-                  <p class="guide-excerpt">{guide.excerpt}</p>
-                  <span class="read-more">Ler guia completo →</span>
                 </div>
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+              </article>
+            ))}
 
-    <!-- Categories -->
-    <section class="categories-section">
-      <div class="container">
-        <h2>Explore por Tema</h2>
-        <div class="categories-grid">
-          <a href="/melhor-capacete/" class="category-card">
-            <span class="category-icon">🏍️</span>
-            <h3>Capacetes</h3>
-            <p>Reviews e guias de compra</p>
-          </a>
-          <a href="/cadeados-para-moto/" class="category-card">
-            <span class="category-icon">🔒</span>
-            <h3>Segurança</h3>
-            <p>Cadeados e proteção antifurto</p>
-          </a>
-          <a href="/melhor-capacete/luvas/" class="category-card">
-            <span class="category-icon">🧤</span>
-            <h3>Acessórios</h3>
-            <p>Luvas, jaquetas e equipamentos</p>
-          </a>
-          <a href="/category/reviews/" class="category-card">
-            <span class="category-icon">⭐</span>
-            <h3>Reviews</h3>
-            <p>Análises completas de produtos</p>
-          </a>
+            <!-- Paginação -->
+            <nav class="pagination" id="pagination" aria-label="Paginação"></nav>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="reviews-sidebar">
+            <!-- Widget: Produto Destaque 1 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge">Aproveite frete GRÁTIS</p>
+              <img src="/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png" alt="Capacete Moto Peels Mirage Classic Branco" class="widget-img" />
+              <h4>Capacete Moto Peels Mirage Classic Branco</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/1qaAz5s" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/3MjKWy9" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 2 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 32% de DESCONTO</p>
+              <img src="/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png" alt="Intercomunicador V6 Plus para Capacete" class="widget-img" />
+              <h4>Intercomunicador V6 Plus para Capacete</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/2rQAwF3" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/481F17S" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 3 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 10% de DESCONTO</p>
+              <img src="/images/Capacete-Moto-Peels-Icon-Ekko-1.png" alt="Capacete Moto Peels Icon Ekko" class="widget-img" />
+              <h4>Capacete Moto Peels Icon Ekko</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/2iCYhgR" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/4oGNbZT" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 4 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <img src="/images/jaqueta-Texx-Armor-Masculina.png" alt="Jaqueta Texx Armor Masculina" class="widget-img" />
+              <h4>Jaqueta Texx Armor Masculina</h4>
+              <div class="widget-links">
+                <a href="https://mercadolivre.com/sec/2xVBsV9" target="_blank" rel="noopener noreferrer" class="btn-widget btn-ml">VER NO MERCADO LIVRE</a>
+                <a href="https://amzn.to/3K2DQ0e" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 5 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <img src="/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png" alt="Capacete Aberto Moto Peels Freeway King Preto" class="widget-img" />
+              <h4>Capacete Aberto Moto Peels Freeway King Preto</h4>
+              <div class="widget-links">
+                <a href="https://amzn.to/4a7tpTA" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 6 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <img src="/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png" alt="Capacete Shoei Gt-Air 3 Discipline Tc-2" class="widget-img" />
+              <h4>Capacete Shoei Gt-Air 3 Discipline Tc-2</h4>
+              <div class="widget-links">
+                <a href="https://amzn.to/3MeTrKC" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+
+            <!-- Widget: Produto Destaque 7 -->
+            <div class="sidebar-widget produto-widget">
+              <p class="widget-badge desconto">Aproveite 20% de DESCONTO</p>
+              <img src="/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png" alt="Capacete Nexx Sx100 Core Azul Fosco" class="widget-img" />
+              <h4>Capacete Nexx Sx100 Core Azul Fosco</h4>
+              <div class="widget-links">
+                <a href="https://amzn.to/4oPtAaJ" target="_blank" rel="noopener noreferrer" class="btn-widget btn-amazon">Ver na Amazon</a>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
+
+<script is:inline>
+  const PER_PAGE = 10;
+  let currentPage = 1;
+  const cards = document.querySelectorAll('.review-card');
+  const totalPages = Math.ceil(cards.length / PER_PAGE);
+  const paginationEl = document.getElementById('pagination');
+
+  function showPage(page) {
+    currentPage = page;
+    const start = (page - 1) * PER_PAGE;
+    const end = start + PER_PAGE;
+
+    cards.forEach((card, i) => {
+      card.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+
+    renderPagination();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderPagination() {
+    let html = '';
+
+    // Anterior
+    if (currentPage > 1) {
+      html += '<a href="#" class="pg-btn pg-arrow" data-page="' + (currentPage - 1) + '">‹ Anterior</a>';
+    }
+
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+        html += '<a href="#" class="pg-btn' + (i === currentPage ? ' pg-active' : '') + '" data-page="' + i + '">' + i + '</a>';
+      } else if (i === currentPage - 2 || i === currentPage + 2) {
+        html += '<span class="pg-dots">…</span>';
+      }
+    }
+
+    // Próximo
+    if (currentPage < totalPages) {
+      html += '<a href="#" class="pg-btn pg-arrow" data-page="' + (currentPage + 1) + '">Proxímo ›</a>';
+    }
+
+    paginationEl.innerHTML = html;
+
+    // Bind clicks
+    paginationEl.querySelectorAll('.pg-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPage(parseInt(this.dataset.page));
+      });
+    });
+  }
+
+  showPage(1);
+</script>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
+  :root {
+    --red: #E31E24;
+    --red-dark: #C41A1F;
+    --black: #000000;
+    --gray-bg: #F4F4F4;
+    --border: #EAEAEA;
+    --text: #374151;
+    --text-meta: #777;
+    --white: #ffffff;
+    --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
   }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+
+  /* Breadcrumb */
+  .breadcrumb-section {
+    background: var(--white);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.9;
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-  
+  .breadcrumb a {
+    color: var(--text-meta);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb a:hover {
+    color: var(--red);
+  }
+  .breadcrumb .sep {
+    color: var(--text-meta);
+  }
+  .breadcrumb .current {
+    color: var(--red);
+  }
+
+  /* Page Title */
+  .page-title-section {
+    background: var(--white);
+    padding: 40px 0 30px;
+    border-bottom: 3px solid var(--red);
+  }
+  .page-title-section h1 {
+    font-family: var(--font-primary);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--black);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  /* Container */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
-  
-  .quick-tips-section, .guides-section, .categories-section {
-    padding: 60px 20px;
+
+  /* Reviews Section */
+  .reviews-section {
+    background: var(--gray-bg);
+    padding: 40px 0 80px;
   }
-  
-  .quick-tips-section {
-    background: #e8f5e9;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .tips-grid {
+
+  .reviews-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
   }
-  
-  .tip-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  /* Review Cards */
+  .reviews-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
   }
-  
-  .tip-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 15px;
+
+  .review-card {
+    background: var(--white);
+    padding: 24px 20px 28px;
+    border-bottom: 3px solid var(--border);
   }
-  
-  .tip-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #212121;
+  .review-card:last-child {
+    border-bottom: none;
   }
-  
-  .tip-card p {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  
-  .guides-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-  }
-  
-  .guide-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .guide-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .guide-link {
+
+  .review-title-link {
     text-decoration: none;
-    color: inherit;
-    display: block;
   }
-  
-  .guide-image {
-    position: relative;
-    height: 180px;
+
+  .review-title {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 4px;
+    line-height: 1.35;
+    transition: color 0.2s;
+  }
+  .review-title-link:hover .review-title {
+    color: #2563EB;
+  }
+
+  .review-date {
+    font-size: 0.8rem;
+    color: var(--text-meta);
+    font-weight: 500;
+    margin: 0 0 14px;
+  }
+
+  /* Two-column body: image left, text right */
+  .review-body {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .review-thumb {
+    flex-shrink: 0;
+    width: 180px;
+    height: 130px;
+    display: block;
+    border-radius: 6px;
     overflow: hidden;
   }
-  
-  .guide-image img {
+
+  .thumb-placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, #e8eaf0 0%, #d1d5db 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
   }
-  
-  .guide-card:hover .guide-image img {
-    transform: scale(1.05);
+
+  .review-text {
+    flex: 1;
+    min-width: 0;
   }
-  
-  .guide-category {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #2e7d32;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 3px;
-    font-size: 0.8rem;
-  }
-  
-  .guide-content {
-    padding: 25px;
-  }
-  
-  .guide-meta {
-    margin-bottom: 10px;
-  }
-  
-  .read-time {
-    color: #999;
-    font-size: 0.85rem;
-  }
-  
-  .guide-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #212121;
-  }
-  
-  .guide-excerpt {
-    color: #666;
+
+  .review-excerpt {
+    font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 15px;
+    color: var(--text);
+    margin: 0 0 14px;
   }
-  
-  .read-more {
-    color: #2e7d32;
-    font-weight: 600;
-  }
-  
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .category-card {
-    background: #212121;
-    color: #fff;
-    padding: 30px;
-    border-radius: 8px;
+
+  .read-more-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #1a1a2e;
+    color: var(--white);
     text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .read-more-btn:hover {
+    background: #2a2a3e;
+    transform: translateY(-1px);
+  }
+
+  /* Sidebar */
+  .reviews-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .produto-widget {
     text-align: center;
-    transition: transform 0.3s ease;
   }
-  
-  .category-card:hover {
-    transform: translateY(-5px);
-    background: #e31b1b;
+
+  .widget-badge {
+    display: inline-block;
+    background: #E31E24;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin: 0 0 12px;
   }
-  
-  .category-icon {
-    font-size: 3rem;
+  .widget-badge.desconto {
+    background: var(--red);
+  }
+
+  .produto-widget h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 16px;
+    line-height: 1.4;
+  }
+
+  .widget-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    border-radius: 4px;
+  }
+
+  .widget-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-widget {
     display: block;
-    margin-bottom: 15px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  
-  .category-card h3 {
-    margin-bottom: 8px;
-    font-size: 1.2rem;
+  .btn-widget:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
-  
-  .category-card p {
-    opacity: 0.9;
+
+  .btn-ml {
+    background: #E31E24;
+    color: #fff;
+  }
+  .btn-ml:hover {
+    background: #C41A1F;
+  }
+
+  .btn-amazon {
+    background: #E31E24;
+    color: #fff;
+  }
+  .btn-amazon:hover {
+    background: #C41A1F;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .reviews-layout {
+      grid-template-columns: 1fr;
+    }
+    .reviews-sidebar {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-title-section h1 {
+      font-size: 1.8rem;
+    }
+    .review-card {
+      padding: 16px 12px;
+    }
+    .review-title {
+      font-size: 1.1rem;
+    }
+    .review-body {
+      flex-direction: row;
+      gap: 14px;
+    }
+    .review-thumb {
+      width: 120px;
+      height: 90px;
+      flex-shrink: 0;
+    }
+    .review-excerpt {
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    .read-more-btn {
+      font-size: 0.75rem;
+      padding: 6px 16px;
+    }
+    .reviews-sidebar {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<style is:global>
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 32px 0 8px;
+    flex-wrap: wrap;
+  }
+  .pagination .pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    background: #fff;
+    color: #e31b1b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .pagination .pg-btn:hover {
+    background: #f0f0f0;
+    color: #c41818;
+    border-color: #ccc;
+  }
+  .pagination .pg-btn.pg-active {
+    background: #e31b1b;
+    color: #fff;
+    border-color: #e31b1b;
+    pointer-events: none;
+  }
+  .pagination .pg-arrow {
+    font-size: 0.85rem;
+    padding: 0 16px;
+  }
+  .pagination .pg-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    color: #777;
     font-size: 0.9rem;
   }
-  
-  @media (max-width: 768px) {
-    .guides-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .tips-grid {
-      grid-template-columns: 1fr;
-    }
+
+  /* Sidebar Buttons - global to override main.css a color */
+  .btn-widget.btn-ml,
+  .btn-widget.btn-amazon {
+    background: #E31E24;
+    color: #fff !important;
+    display: block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn-widget.btn-ml:hover,
+  .btn-widget.btn-amazon:hover {
+    background: #C41A1F;
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 </style>
