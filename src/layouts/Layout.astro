@@ -3,21 +3,23 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  canonical?: string;
 }
 
 const {
   title = 'Reviews de Capacetes para Moto, Bike e Mais | Qual o Melhor?',
   description = 'Confira análises completas e imparciais dos melhores capacetes do mercado. Comparativos, avaliações de usuários e dicas para escolher o modelo ideal!',
-  ogImage = '/images/Logo-dos-melhores-capacetes.png'
+  ogImage = '/images/Logo-dos-melhores-capacetes.png',
+  canonical
 } = Astro.props;
 
-const canonicalUrl = Astro.url.pathname === '/' 
+const canonicalUrl = canonical || (Astro.url.pathname === '/' 
   ? 'https://jovemapan.com.br/' 
-  : `https://jovemapan.com.br${Astro.url.pathname}`;
+  : `https://jovemapan.com.br${Astro.url.pathname}`);
 ---
 
 <!DOCTYPE html>
-<html dir="ltr" lang="pt-PT">
+<html dir="ltr" lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +29,7 @@ const canonicalUrl = Astro.url.pathname === '/'
     <link rel="canonical" href={canonicalUrl} />
     
     <!-- Open Graph -->
-    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="jovemapan.com.br" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -76,19 +78,19 @@ const canonicalUrl = Astro.url.pathname === '/'
         {
           "@type": "Organization",
           "@id": `${canonicalUrl}#organization`,
-          "name": title,
+          "name": "Jovem Apan",
           "description": description,
-          "url": canonicalUrl,
+          "url": "https://jovemapan.com.br/",
           "telephone": "+5511968037428",
           "logo": {
             "@type": "ImageObject",
-            "url": `https://jovemapan.com.br${ogImage}`,
-            "@id": `${canonicalUrl}#organizationLogo`,
+            "url": `https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png`,
+            "@id": `https://jovemapan.com.br/#organizationLogo`,
             "width": 350,
             "height": 70
           },
           "image": {
-            "@id": `${canonicalUrl}#organizationLogo`
+            "@id": `https://jovemapan.com.br/#organizationLogo`
           }
         },
         {
@@ -97,9 +99,9 @@ const canonicalUrl = Astro.url.pathname === '/'
           "url": canonicalUrl,
           "name": title,
           "description": description,
-          "inLanguage": "pt-PT",
+          "inLanguage": "pt-BR",
           "isPartOf": {
-            "@id": `${canonicalUrl}#website`
+            "@id": `https://jovemapan.com.br/#website`
           },
           "breadcrumb": {
             "@id": `${canonicalUrl}#breadcrumblist`
@@ -109,13 +111,13 @@ const canonicalUrl = Astro.url.pathname === '/'
         },
         {
           "@type": "WebSite",
-          "@id": `${canonicalUrl}#website`,
-          "url": canonicalUrl,
+          "@id": `https://jovemapan.com.br/#website`,
+          "url": "https://jovemapan.com.br/",
           "name": "jovemapan.com.br",
           "alternateName": "Jovem Apan",
-          "inLanguage": "pt-PT",
+          "inLanguage": "pt-BR",
           "publisher": {
-            "@id": `${canonicalUrl}#organization`
+            "@id": `https://jovemapan.com.br/#organization`
           }
         }
       ]

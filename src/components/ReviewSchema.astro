@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  authorName?: string;
+  publishDate?: string;
+  ratingValue?: number;
+  reviewCount?: number;
+  priceCurrency?: string;
+  lowPrice?: number;
+  highPrice?: number;
+}
+
+const {
+  title,
+  description,
+  image,
+  authorName = "Jovem Apan",
+  publishDate = new Date().toISOString(),
+  ratingValue = 4.5,
+  reviewCount = 10,
+  priceCurrency = "BRL",
+  lowPrice,
+  highPrice
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "headline": title,
+  "description": description,
+  "image": image,
+  "author": {
+    "@type": "Person",
+    "name": authorName
+  },
+  "datePublished": publishDate,
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": ratingValue,
+    "bestRating": "5"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": title.split('|')[0].trim(),
+    "image": image,
+    "description": description,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": ratingValue,
+      "reviewCount": reviewCount
+    },
+    ...(lowPrice && highPrice && {
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": priceCurrency,
+        "lowPrice": lowPrice,
+        "highPrice": highPrice,
+        "offerCount": "1"
+      }
+    })
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
