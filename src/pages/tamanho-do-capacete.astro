@@ -1,0 +1,77 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Tamanho do Capacete: Como Medir e Escolher o Ideal';
+const description = 'Guia completo para descobrir o tamanho ideal do seu capacete de moto. Aprenda a medir a cabeça, interpretar tabelas de numeração e evitar erros comuns.';
+const canonical = 'https://jovemapan.com.br/tamanho-do-capacete/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Guias';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Como medir a cabeça', href: '#medir' },
+  { label: '3. Tabela de tamanhos', href: '#tabela' },
+  { label: '4. Como testar o ajuste', href: '#ajuste' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'TAMANHO', href: '#' },
+  { label: 'AJUSTE', href: '#' },
+  { label: 'GUIA', href: '#' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">
+    Conteúdo do post em breve.
+  </p>
+
+  <h2 id="medir">Como medir a cabeça</h2>
+  <p>Em breve.</p>
+
+  <h2 id="tabela">Tabela de tamanhos</h2>
+  <p>Em breve.</p>
+
+  <h2 id="ajuste">Como testar o ajuste</h2>
+  <p>Em breve.</p>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>

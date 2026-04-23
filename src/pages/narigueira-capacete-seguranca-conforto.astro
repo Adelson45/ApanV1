@@ -1,0 +1,77 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Narigueira no Capacete: Segurança e Conforto para o Motociclista';
+const description = 'Saiba o que é a narigueira do capacete, para que serve, quando usar e como ela melhora segurança, conforto e a visibilidade em longas pilotagens.';
+const canonical = 'https://jovemapan.com.br/narigueira-capacete-seguranca-conforto/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Acessórios';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. O que é a narigueira', href: '#o-que-e' },
+  { label: '3. Para que serve', href: '#serventia' },
+  { label: '4. Quando usar', href: '#quando-usar' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'NARIGUEIRA', href: '#' },
+  { label: 'ACESSÓRIOS', href: '#' },
+  { label: 'CONFORTO', href: '#' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">
+    Conteúdo do post em breve.
+  </p>
+
+  <h2 id="o-que-e">O que é a narigueira</h2>
+  <p>Em breve.</p>
+
+  <h2 id="serventia">Para que serve</h2>
+  <p>Em breve.</p>
+
+  <h2 id="quando-usar">Quando usar</h2>
+  <p>Em breve.</p>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>
