@@ -18,7 +18,7 @@ const jackets = [
     subtitle: 'R v3',
     price: 'R$ 1.200 - R$ 1.600',
     rating: 4.8,
-    image: '/images/jaqueta-alpinestars-tgp.jpg',
+    image: '/images/Jaqueta Alpinestars T SPS WP.png',
     affiliateLink: 'https://amzn.to/alpinestarstgp',
     description: 'A Alpinestars T-GP Plus R v3 é uma jaqueta esportiva de têxtil com proteções integradas e excelente ventilação para pilotagens dinâmicas.',
     features: [
@@ -45,7 +45,7 @@ const jackets = [
     subtitle: 'Masc 2',
     price: 'R$ 450 - R$ 650',
     rating: 4.6,
-    image: '/images/jaqueta-x11-iron.jpg',
+    image: '/images/Jaqueta de motociclista Preta e vermelha da marca x11 .png',
     affiliateLink: 'https://amzn.to/x11iron',
     description: 'A X11 Iron Masc 2 oferece proteção robusta com ótima relação custo-benefício, sendo uma das jaquetas mais vendidas do Brasil.',
     features: [
@@ -72,7 +72,7 @@ const jackets = [
     subtitle: 'Tifon 2',
     price: 'R$ 380 - R$ 550',
     rating: 4.5,
-    image: '/images/jaqueta-tutto-tifon.jpg',
+    image: '/images/Jaqueta para  Mototociclista texx .png',
     affiliateLink: 'https://amzn.to/tuttottifon',
     description: 'A Tutto Moto Tifon 2 é uma jaqueta urbana brasileira que combina proteção, estilo e preço acessível para o dia a dia.',
     features: [
@@ -99,7 +99,7 @@ const jackets = [
     subtitle: 'Perforated',
     price: 'R$ 2.800 - R$ 3.500',
     rating: 4.9,
-    image: '/images/jaqueta-dainese-racing.jpg',
+    image: '/images/Dainese Jaqueta térmica masculina Veloce D-dry.png',
     affiliateLink: 'https://amzn.to/daineseracing',
     description: 'A Dainese Racing 3 é uma jaqueta de couro esportiva italiana, oferecendo proteção máxima e estilo agressivo para pilotagens esportivas.',
     features: [
@@ -388,11 +388,10 @@ const materials = [
               <img src="/images/Pamela pan coufundadora e editoara chefe do blog apan .png" alt="Pamela Pan" onerror="this.src='https://ui-avatars.com/api/?name=Pamela+Pan&background=random'" />
             </div>
             <div class="bio-content">
+              <span class="bio-label">SOBRE A AUTORA</span>
               <h4 class="bio-name">Pamela Pan</h4>
-              <p class="bio-desc">
-                Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.
-              </p>
-              <a href="/author-pamela-pan/" class="bio-link">SOBRE A AUTORA →</a>
+              <p class="bio-desc">Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.</p>
+              <a href="/author-pamela-pan/" class="bio-link">Ver perfil completo &rsaquo;</a>
             </div>
           </div>
 
@@ -987,28 +986,27 @@ const materials = [
   /* Autor Bio Box */
   .author-bio-box {
     margin-top: 40px;
-    padding: 32px;
     background: var(--white);
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
-  }
-  .bio-avatar {
-    flex-shrink: 0;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid var(--border);
   }
   .bio-avatar img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 140px; 
+    height: 140px !important; 
+    aspect-ratio: 1 / 1;
+    border-radius: 50%; 
     object-fit: cover;
-    display: block;
-    border: 2px solid var(--white);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
   }
-  .bio-content {
-    flex: 1;
+  .bio-content { flex: 1; }
+  .bio-label {
+    display: block; font-size: 0.75rem; font-weight: 900; color: var(--red);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   }
   .bio-name {
     font-size: 1.6rem; font-weight: 900; color: var(--black); margin: 0 0 12px;

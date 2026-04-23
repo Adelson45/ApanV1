@@ -353,11 +353,8 @@ const coverImage  = '/images/Capacete aberto vale a pena .png';
               <img src="/images/Pamela pan coufundadora e editoara chefe do blog apan .png" alt="Pamela Pan" onerror="this.src='https://ui-avatars.com/api/?name=Pamela+Pan&background=random'" />
             </div>
             <div class="bio-content">
+              <span class="bio-label">SOBRE A AUTORA</span>
               <h4 class="bio-name">Pamela Pan</h4>
-              <p class="bio-desc">
-                Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. 
-                Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.
-              </p>
               <a href="/author-pamela-pan/" class="bio-link">SOBRE O AUTOR →</a>
             </div>
           </div>
@@ -1109,28 +1106,27 @@ const coverImage  = '/images/Capacete aberto vale a pena .png';
   /* Autor Bio Box */
   .author-bio-box {
     margin-top: 40px;
-    padding: 32px;
     background: var(--white);
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
-  }
-  .bio-avatar {
-    flex-shrink: 0;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid var(--border);
   }
   .bio-avatar img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 140px; 
+    height: 140px !important; 
+    aspect-ratio: 1 / 1;
+    border-radius: 50%; 
     object-fit: cover;
-    display: block;
-    border: 2px solid var(--white);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
   }
-  .bio-content {
-    flex: 1;
+  .bio-content { flex: 1; }
+  .bio-label {
+    display: block; font-size: 0.75rem; font-weight: 900; color: var(--red);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   }
   .bio-name {
     font-size: 1.6rem; font-weight: 900; color: var(--black); margin: 0 0 12px;
