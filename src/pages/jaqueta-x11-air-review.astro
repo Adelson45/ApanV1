@@ -1,0 +1,71 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Jaqueta X11 Air Review: Análise Completa 2026';
+const description = 'Review completo da jaqueta X11 Air. Ventilação, proteção, acabamento, preço e se vale a pena para o motociclista brasileiro em 2026.';
+const canonical = 'https://jovemapan.com.br/jaqueta-x11-air-review/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Reviews';
+const categoryHref = '/dica-melhor-jaqueta-motociclistas/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Características técnicas', href: '#tecnicas' },
+  { label: '3. Ventilação e uso no calor', href: '#ventilacao' },
+  { label: '4. Prós e contras', href: '#pros-contras' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'REVIEW', href: '#' },
+  { label: 'X11', href: '#' },
+  { label: 'JAQUETAS', href: '/dica-melhor-jaqueta-motociclistas/' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">Conteúdo do post em breve.</p>
+  <h2 id="tecnicas">Características técnicas</h2>
+  <p>Em breve.</p>
+  <h2 id="ventilacao">Ventilação e uso no calor</h2>
+  <p>Em breve.</p>
+  <h2 id="pros-contras">Prós e contras</h2>
+  <p>Em breve.</p>
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>

@@ -1,0 +1,71 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Capacete Permitido na Pilotagem: O Que Diz a Lei em 2026';
+const description = 'Saiba quais capacetes são permitidos na pilotagem no Brasil. Certificações obrigatórias, modelos liberados e como evitar multas e perda da CNH.';
+const canonical = 'https://jovemapan.com.br/capacete-permitido-na-pilotagem/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Legislação';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Certificações obrigatórias', href: '#certificacoes' },
+  { label: '3. Tipos liberados', href: '#tipos' },
+  { label: '4. Modelos proibidos', href: '#proibidos' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'LEGISLAÇÃO', href: '#' },
+  { label: 'PILOTAGEM', href: '#' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">Conteúdo do post em breve.</p>
+  <h2 id="certificacoes">Certificações obrigatórias</h2>
+  <p>Em breve.</p>
+  <h2 id="tipos">Tipos liberados</h2>
+  <p>Em breve.</p>
+  <h2 id="proibidos">Modelos proibidos</h2>
+  <p>Em breve.</p>
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>

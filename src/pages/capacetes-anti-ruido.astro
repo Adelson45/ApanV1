@@ -1,0 +1,71 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Capacetes Anti-Ruído: Os Melhores Modelos Silenciosos para 2026';
+const description = 'Descubra os capacetes com melhor isolamento acústico do mercado. Tecnologias anti-ruído, materiais, modelos e como escolher para viagens tranquilas.';
+const canonical = 'https://jovemapan.com.br/capacetes-anti-ruido/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Guias';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Como funciona o isolamento acústico', href: '#isolamento' },
+  { label: '3. Melhores modelos silenciosos', href: '#modelos' },
+  { label: '4. Dicas para reduzir o ruído', href: '#dicas' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'ANTI-RUÍDO', href: '#' },
+  { label: 'SILENCIOSO', href: '#' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">Conteúdo do post em breve.</p>
+  <h2 id="isolamento">Como funciona o isolamento acústico</h2>
+  <p>Em breve.</p>
+  <h2 id="modelos">Melhores modelos silenciosos</h2>
+  <p>Em breve.</p>
+  <h2 id="dicas">Dicas para reduzir o ruído</h2>
+  <p>Em breve.</p>
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>

@@ -1,0 +1,71 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Capacete Adventure: Os Melhores Modelos para Pilotar Fora da Estrada';
+const description = 'Os melhores capacetes adventure de 2026. Modelos com pala, viseira e ventilação reforçada para pilotar na cidade, estrada e trilhas.';
+const canonical = 'https://jovemapan.com.br/capacete-adventure/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Guias';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. O que é um capacete adventure', href: '#o-que-e' },
+  { label: '3. Top modelos de 2026', href: '#top-modelos' },
+  { label: '4. Como escolher o seu', href: '#como-escolher' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'ADVENTURE', href: '#' },
+  { label: 'OFF-ROAD', href: '#' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">Conteúdo do post em breve.</p>
+  <h2 id="o-que-e">O que é um capacete adventure</h2>
+  <p>Em breve.</p>
+  <h2 id="top-modelos">Top modelos de 2026</h2>
+  <p>Em breve.</p>
+  <h2 id="como-escolher">Como escolher o seu</h2>
+  <p>Em breve.</p>
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>

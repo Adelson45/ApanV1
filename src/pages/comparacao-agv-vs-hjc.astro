@@ -1,0 +1,71 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Comparação AGV vs HJC: Qual a Melhor Marca de Capacete?';
+const description = 'AGV ou HJC? Comparativo entre duas das maiores marcas de capacete do mundo. Proteção, tecnologia, design e qual escolher para pista e rua.';
+const canonical = 'https://jovemapan.com.br/comparacao-agv-vs-hjc/';
+const author = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
+const publishDate = '2026-04-23';
+const category = 'Comparativos';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/moto-shop-cover.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. AGV: características', href: '#agv' },
+  { label: '3. HJC: características', href: '#hjc' },
+  { label: '4. Comparativo direto', href: '#comparativo' },
+  { label: '5. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'COMPARATIVO', href: '#' },
+  { label: 'AGV', href: '#' },
+  { label: 'HJC', href: '#' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei Premium Edition',
+  name: 'Capacete Shoei<br/>Premium Edition',
+  mercadoLivreHref: '#',
+  amazonHref: '#',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: authorImage,
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›',
+};
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <p class="post-lead" id="introducao">Conteúdo do post em breve.</p>
+  <h2 id="agv">AGV: características</h2>
+  <p>Em breve.</p>
+  <h2 id="hjc">HJC: características</h2>
+  <p>Em breve.</p>
+  <h2 id="comparativo">Comparativo direto</h2>
+  <p>Em breve.</p>
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Em breve.</p>
+</PostLayout>
