@@ -1,20 +1,226 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
 const title = 'Capacete Aberto é Bom? Guia Completo: Prós, Contras, Segurança e Legislação';
 const description = 'Tudo sobre o capacete aberto: suas vantagens e desvantagens, quando e onde usá-lo com segurança, o que a lei diz e dicas essenciais. Tome a melhor decisão.';
 const canonical   = 'https://jovemapan.com.br/capacete-aberto/';
 const author      = 'Pamela Pan';
+const authorImage = '/images/Pamela pan coufundadora e editoara chefe do blog apan .png';
 const publishDate = '21 ABR, 2026';
 const category    = 'CAPACETES';
 const categoryHref = '/melhor-capacete/';
 const coverImage  = '/images/Capacete aberto vale a pena .png';
+const views       = '32K VIEWS';
+const comments    = '8 COMMENTS';
+
+const indice = [
+  { label: 'Introdução', href: '#introducao' },
+  { label: 'Destaques do Capacete Aberto', href: '#destaques' },
+  { label: 'Onde e quando não usar capacete aberto', href: '#onde-quando-nao-usar', children: [
+    { label: 'O que diz a lei?', href: '#o-que-diz-a-lei' },
+    { label: 'Quando usar o capacete?', href: '#quando-usar-o-capacete' },
+  ]},
+  { label: 'Situações para não usar o capacete aberto', href: '#situacoes-nao-usar', children: [
+    { label: 'Durante o inverno e dias frios', href: '#durante-inverno' },
+    { label: 'Quando for pilotar em estradas', href: '#pilotar-estradas' },
+    { label: '1. Capacete Masculino Asx Aberto City Air', href: '#capacete-asx' },
+    { label: '2. Capacete Peels Aberto New Classic', href: '#capacete-peels' },
+    { label: '3. Capacete Aberto Norisk Orion Free', href: '#capacete-norisk' },
+  ]},
+  { label: 'Minhas Impressões Pessoais', href: '#impressoes-pessoais' },
+  { label: 'Perguntas Frequentes', href: '#perguntas-frequentes', children: [
+    { label: 'Principais vantagens', href: '#vantagens-principais' },
+    { label: 'É seguro?', href: '#seguranca-capacete-aberto' },
+    { label: 'Como escolher o tamanho', href: '#escolher-tamanho' },
+    { label: 'Adequado para todas as motos?', href: '#adequado-todas-motos' },
+    { label: 'Compatibilidade com óculos', href: '#oculos-compatibilidade' },
+    { label: 'Cuidados e limpeza', href: '#cuidados-limpeza' },
+  ]},
+  { label: 'Conclusão', href: '#conclusao' }
+];
+
+const tags = [
+  { label: 'Capacetes', href: '/melhor-capacete/' },
+  { label: 'Capacete Aberto', href: '#' },
+  { label: '3/4', href: '#' },
+  { label: 'Urbando', href: '#' },
+  { label: '2026', href: '#' }
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'SOBRE O AUTOR →'
+};
+
+const featuredProduct = {
+  preTitle: 'FRETE GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete em Destaque',
+  name: 'Capacete Shoei X-Spirit 3',
+  amazonHref: 'https://amzn.to/4vEOj4K'
+};
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <!-- CONTEÚDO DO ARTIGO -->
+  <div class="post-lead" id="introducao">
+    <p>Capacetes abertos, também conhecidos como jet ou abertos, são uma escolha popular entre motociclistas urbanos e amantes de um visual mais clássico. Mas, o que realmente os torna atraentes e quais são suas limitações? Vamos explorar em detalhes.</p>
+  </div>
+
+  <h2 id="destaques">Destaques do Capacete Aberto</h2>
+  <p>Capacetes abertos, também conhecidos como jet ou abertos, são uma escolha popular entre motociclistas urbanos e amantes de um visual mais clássico. Mas, o que realmente os torna atraentes e quais são suas limitações? Vamos explorar em detalhes.</p>
+
+  <h2 id="onde-quando-nao-usar">Onde e quando não usar capacete aberto de motociclista?</h2>
+  <p>A escolha do capacete certo vai além do estilo; ela envolve segurança e conformidade com a legislação.</p>
+
+  <h3 id="o-que-diz-a-lei">O que diz a lei?</h3>
+  <p>No Brasil, a legislação exige o uso de capacete certificado pelo INMETRO. Embora os capacetes abertos sejam permitidos, é fundamental verificar se eles possuem viseira (ou se o motociclista utiliza óculos de proteção) e se o engate rápido ou a jugular está devidamente afivelada. A ausência de viseira ou óculos de proteção é considerada infração.</p>
+
+  <h3 id="quando-usar-o-capacete">Quando usar o capacete?</h3>
+  <p>O capacete deve ser usado sempre que o motociclista estiver em movimento, independentemente da distância ou velocidade. É um item de segurança obrigatório e crucial para a proteção da cabeça.</p>
+
+  <h2 id="situacoes-nao-usar">Situações para não usar o capacete aberto</h2>
+  <p>Existem cenários onde o capacete aberto pode não ser a melhor, ou mesmo a mais segura, opção.</p>
+
+  <div class="h2-image-card" style="margin: 24px 0;">
+    <img src="/images/um motociclista na estrada com sua moto em alta velocidade com capacete fechado.png" alt="Motociclista na estrada com capacete fechado" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  </div>
+
+  <h3 id="durante-inverno">Durante o inverno e dias frios</h3>
+  <p>A exposição ao vento e ao frio pode causar desconforto térmico, resfriados e até mesmo hipotermia em viagens mais longas, mesmo com o uso de balaclavas.</p>
+
+  <h3 id="pilotar-estradas">Quando for pilotar em estradas</h3>
+  <p>Em rodovias, as velocidades são maiores, o que aumenta o risco e a gravidade de acidentes. Nesses ambientes, a proteção facial e aerodinâmica de um capacete fechado é imprescindível para minimizar danos e garantir conforto contra o vento e detritos.</p>
+
+  <h3 id="capacete-asx">1. Capacete Masculino Asx Aberto City Air</h3>
+  <p>O Capacete Masculino ASX Aberto City Air combina leveza com excelente ventilação para o uso urbano diário. Seu design compacto garante conforto mesmo em trajetos longos. Uma opção prática e acessível para quem busca mobilidade sem abrir mão da segurança básica.</p>
+  <div class="product-section">
+    <div class="product-gallery">
+      <div class="product-item">
+        <div class="gallery-item">
+          <img src="/images/Capacete-Feminino-Masculino-Asx-Aberto-City-Air-Square-Moto.png" alt="Capacete ASX City Air Feminino/Masculino" />
+        </div>
+        <div class="product-links">
+          <a href="https://amzn.to/48ODdQX" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/1HVKaGX" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="gallery-item">
+          <img src="/images/Capacete-Aberto-ASX-City-Air-Branco-Brilhante-58M.png" alt="Capacete ASX City Air Branco Brilhante" />
+        </div>
+        <div class="product-links">
+          <a href="https://amzn.to/3UZtRe4" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/1FNjSiz" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="capacete-peels">2. Capacete Peels Aberto New Classic</h3>
+  <p>Uma releitura do capacete aberto clássico, com forração mais confortável e materiais modernos, mas mantendo o visual atemporal.</p>
+  <div class="product-section">
+    <div class="product-gallery">
+      <div class="product-item">
+        <div class="gallery-item">
+          <img src="/images/Capacete-Aberto-Moto-Freeway-New-Classic-Preto-Fosco-60.png" alt="Capacete Peels Freeway New Classic Preto Fosco" />
+        </div>
+        <div class="product-links">
+          <a href="https://amzn.to/4oniOsy" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/32oQhnq" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="gallery-item">
+          <img src="/images/Peels-Capacete-Moto-Aberto-Freeway-Hype-RoxoPink-54.png" alt="Capacete Peels Freeway Hype RoxoPink" />
+        </div>
+        <div class="product-links">
+          <a href="https://amzn.to/4lTND6y" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/1mrkCWf" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="capacete-norisk">3. Capacete Aberto Norisk Orion Free</h3>
+  <p>O <a href="https://www.norisk.com.br/">Norisk</a> Orion é um dos queridinhos do mercado e não é por acaso. Ele entrega um pacote completo, com design moderno e aerodinâmico, e se destaca pela qualidade dos seus materiais.</p>
+  <p>O casco é produzido em resina termoplástica ABS, garantindo alta absorção de impacto. Seu grande trunfo é a viseira solar interna com proteção UV, que o torna extremamente versátil para qualquer condição de luminosidade.</p>
+  <div class="product-section">
+    <div class="product-gallery">
+      <div class="product-item">
+        <div class="gallery-item">
+          <img src="/images/Capacete-Norisk-Aberto-feminino-Orion-SV-Denver-Verde-Agua.png" alt="Capacete Norisk Orion Feminino Denver Verde Água" />
+        </div>
+        <div class="product-links">
+          <a href="https://amzn.to/3WGBs1H" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/1xWZXm4" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="gallery-item">
+          <img src="/images/Capacete-Masculino-Aberto-Norisk-Orion-Free-Preto-Oculos.png" alt="Capacete Norisk Orion Masculino Preto com Óculos" />
+        </div>
+        <div class="product-links">
+          <a href="https://amzn.to/4813uue" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/2yvFEy1" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="impressoes-pessoais">Minhas Impressões Pessoais</h2>
+  <p>Pessoalmente, acho o capacete aberto imbatível para o dia a dia na cidade, especialmente nos dias quentes de verão. A sensação de liberdade e a facilidade de comunicação são pontos fortes. No entanto, para viagens mais longas ou em rodovias, sempre opto por um capacete fechado devido à segurança e ao conforto em altas velocidades.</p>
+
+  <h2 id="perguntas-frequentes">Perguntas Frequentes sobre Capacetes Abertos</h2>
+  <p>Para ajudar a sanar as principais dúvidas, compilamos algumas perguntas e respostas importantes.</p>
+
+  <h3 id="vantagens-principais">Quais são as principais vantagens de usar um capacete aberto?</h3>
+  <p>As principais vantagens são a excelente ventilação, o amplo campo de visão, a leveza e o conforto em baixas velocidades, além do estilo diferenciado.</p>
+
+  <h3 id="seguranca-capacete-aberto">Um capacete aberto é seguro?</h3>
+  <p>Sim, desde que seja certificado e usado corretamente (com viseira ou óculos de proteção e jugular afivelada). No entanto, oferece menor proteção contra impactos frontais no queixo e rosto em comparação com capacetes fechados.</p>
+
+  <h3 id="escolher-tamanho">Como escolher o tamanho certo do capacete aberto?</h3>
+  <p>Meça a circunferência da sua cabeça e compare com a tabela de tamanhos do fabricante. O capacete deve ficar justo, mas confortável, sem pontos de pressão excessiva. Experimente-o para garantir que não haja folgas.</p>
+
+  <h3 id="adequado-todas-motos">Os capacetes abertos são adequados para todos os tipos de motocicletas?</h3>
+  <p>São mais adequados para motocicletas urbanas, scooters e motos custom. Para motos esportivas ou de alta cilindrada, especialmente em estradas, os capacetes fechados são mais recomendados pela segurança e aerodinâmica.</p>
+
+  <h3 id="oculos-compatibilidade">É possível usar óculos com capacete aberto?</h3>
+  <p>Sim, muitos modelos de capacetes abertos são projetados para acomodar óculos de grau ou de sol confortavelmente. Em alguns casos, é até necessário o uso de óculos de proteção em substituição à viseira integrada.</p>
+
+  <h3 id="cuidados-limpeza">Como cuidar e limpar um capacete aberto?</h3>
+  <p>Limpe a parte externa com água e sabão neutro. O forro interno, se removível, pode ser lavado à mão com sabão suave. Deixe secar à sombra e nunca use produtos químicos agressivos.</p>
+
+  <h2 id="conclusao">Conclusão: vale a pena adquirir o Capacete Aberto?</h2>
+  <p>A decisão de adquirir um capacete aberto depende muito do seu estilo de pilotagem, das condições em que você trafega e das suas prioridades. Se você busca conforto, ventilação e um visual descolado para o uso urbano, ele pode ser uma excelente opção.</p>
+  <p>Contudo, para quem pega estrada frequentemente ou busca a máxima proteção, um capacete fechado ainda é a escolha mais indicada. Avalie seus riscos e necessidades para fazer a melhor escolha, sempre priorizando sua segurança.</p>
+  <p>Você já usou o capacete aberto? Compartilhe sua experiência nos comentários!</p>
+  <p>Pronto para elevar sua segurança e performance? Veja nossas análises dos melhores capacetes clicando <a href="/melhor-capacete/">aqui.</a></p>
+
   <style>
+    /* Estilos específicos para o artigo de capacete-aberto */
     .info-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -43,944 +249,52 @@ const coverImage  = '/images/Capacete aberto vale a pena .png';
       color: #555;
       font-size: 0.95rem;
     }
-    @media (max-width: 768px) {
-      .info-card-grid {
-        grid-template-columns: 1fr;
-      }
+
+    .product-section {
+      margin-bottom: 40px;
+      padding: 24px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-  </style>
-  <Header />
-
-  <main class="post-main">
-    <div class="post-container">
-
-      <!-- ==========================================
-           1. CABEÇALHO (Breadcrumb, Título, Info)
-           ========================================== -->
-      <div class="post-header-section">
-        <nav class="top-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">HOME</a>
-          <span class="separator">›</span>
-          <a href={categoryHref}>{category}</a>
-          <span class="separator">›</span>
-          <span class="current-page">Capacete Aberto</span>
-        </nav>
-
-        <a href={categoryHref} class="post-category-tag">
-          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          {category}
-        </a>
-
-        <h1 class="post-title">Capacete Aberto é Bom? Guia Completo: Prós, Contras, Segurança e Legislação</h1>
-
-        <div class="post-meta-data">
-          <div class="meta-author">
-            <img src="/images/Pamela pan coufundadora e editoara chefe do blog apan .png" alt={author} class="author-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Pamela+Pan&background=random'" />
-            <strong>{author.toUpperCase()}</strong>
-          </div>
-          <div class="meta-info">
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-               {publishDate}
-             </span>
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-               32K VIEWS
-             </span>
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-               8 COMMENTS
-             </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==========================================
-           2. GRID PRINCIPAL (Col 1: Social | Col 2: Artigo | Col 3: Sidebar)
-           ========================================== -->
-      <div class="post-layout-grid">
-        
-        <!-- [ESQUERDA] Botões Sociais -->
-        <div class="post-social-col">
-          <div class="sticky-socials">
-            <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Facebook">f</a>
-            <a href="https://br.pinterest.com/jovemapan/" target="_blank" rel="noopener noreferrer" class="social-btn pinterest" aria-label="Pinterest">
-              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/channel/UCChj9-uIY5ERfidZ6K-zt_w" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/jovem_apan/" target="_blank" rel="noopener noreferrer" class="social-btn instagram" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- [CENTRO] Artigo -->
-        <article class="post-content-col">
-          
-          <!-- Foto de Capa (Hero) com Selo Verified -->
-          <div class="post-cover-image">
-            <img src={coverImage} alt="Capa do Artigo" />
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              APAN VERIFIED
-            </div>
-          </div>
-
-          <!-- Índice Modo Accordion -->
-          <div class="post-indice" id="indice-accordion">
-            <div class="indice-header" onclick="toggleIndice()">
-              <div class="indice-left">
-                <div class="indice-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                </div>
-                <strong>ÍNDICE DE CONTEÚDO</strong>
-              </div>
-              <div class="indice-arrow" id="indice-arrow">
-                <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--text-meta)" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-            </div>
-            <div class="indice-content" id="indice-content">
-              <ul class="indice-links">
-                <li><a href="#introducao">Introdução</a></li>
-                <li><a href="#destaques">Destaques do Capacete Aberto</a></li>
-                <li><a href="#onde-quando-nao-usar">Onde e quando não usar capacete aberto</a>
-                  <ul>
-                    <li><a href="#o-que-diz-a-lei">O que diz a lei?</a></li>
-                    <li><a href="#quando-usar-o-capacete">Quando usar o capacete?</a></li>
-                  </ul>
-                </li>
-                <li><a href="#situacoes-nao-usar">Situações para não usar o capacete aberto</a>
-                  <ul>
-                    <li><a href="#durante-inverno">Durante o inverno e dias frios</a></li>
-                    <li><a href="#pilotar-estradas">Quando for pilotar em estradas</a></li>
-                    <li><a href="#capacete-asx">1. Capacete Masculino Asx Aberto City Air</a></li>
-                    <li><a href="#capacete-peels">2. Capacete Peels Aberto New Classic</a></li>
-                    <li><a href="#capacete-norisk">3. Capacete Aberto Norisk Orion Free</a></li>
-                  </ul>
-                </li>
-                <li><a href="#impressoes-pessoais">Minhas Impressões Pessoais</a></li>
-                <li><a href="#perguntas-frequentes">Perguntas Frequentes</a>
-                  <ul>
-                    <li><a href="#vantagens-principais">Principais vantagens</a></li>
-                    <li><a href="#seguranca-capacete-aberto">É seguro?</a></li>
-                    <li><a href="#escolher-tamanho">Como escolher o tamanho</a></li>
-                    <li><a href="#adequado-todas-motos">Adequado para todas as motos?</a></li>
-                    <li><a href="#oculos-compatibilidade">Compatibilidade com óculos</a></li>
-                    <li><a href="#cuidados-limpeza">Cuidados e limpeza</a></li>
-                  </ul>
-                </li>
-                <li><a href="#conclusao">Conclusão</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- CONTEÚDO DO ARTIGO -->
-          <div class="post-lead" id="introducao">
-            <p>Capacetes abertos, também conhecidos como jet ou abertos, são uma escolha popular entre motociclistas urbanos e amantes de um visual mais clássico. Mas, o que realmente os torna atraentes e quais são suas limitações? Vamos explorar em detalhes.</p>
-          </div>
-
-          <h2 id="destaques">Destaques do Capacete Aberto</h2>
-          <p>Capacetes abertos, também conhecidos como jet ou abertos, são uma escolha popular entre motociclistas urbanos e amantes de um visual mais clássico. Mas, o que realmente os torna atraentes e quais são suas limitações? Vamos explorar em detalhes.</p>
-
-          <h2 id="onde-quando-nao-usar">Onde e quando não usar capacete aberto de motociclista?</h2>
-          <p>A escolha do capacete certo vai além do estilo; ela envolve segurança e conformidade com a legislação.</p>
-
-          <h3 id="o-que-diz-a-lei">O que diz a lei?</h3>
-          <p>No Brasil, a legislação exige o uso de capacete certificado pelo INMETRO. Embora os capacetes abertos sejam permitidos, é fundamental verificar se eles possuem viseira (ou se o motociclista utiliza óculos de proteção) e se o engate rápido ou a jugular está devidamente afivelada. A ausência de viseira ou óculos de proteção é considerada infração.</p>
-
-          <h3 id="quando-usar-o-capacete">Quando usar o capacete?</h3>
-          <p>O capacete deve ser usado sempre que o motociclista estiver em movimento, independentemente da distância ou velocidade. É um item de segurança obrigatório e crucial para a proteção da cabeça.</p>
-
-          <h2 id="situacoes-nao-usar">Situações para não usar o capacete aberto</h2>
-          <p>Existem cenários onde o capacete aberto pode não ser a melhor, ou mesmo a mais segura, opção.</p>
-
-          <div class="h2-image-card" style="margin: 24px 0;">
-            <img src="/images/um motociclista na estrada com sua moto em alta velocidade com capacete fechado.png" alt="Motociclista na estrada com capacete fechado" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-          </div>
-
-          <h3 id="durante-inverno">Durante o inverno e dias frios</h3>
-          <p>A exposição ao vento e ao frio pode causar desconforto térmico, resfriados e até mesmo hipotermia em viagens mais longas, mesmo com o uso de balaclavas.</p>
-
-          <h3 id="pilotar-estradas">Quando for pilotar em estradas</h3>
-          <p>Em rodovias, as velocidades são maiores, o que aumenta o risco e a gravidade de acidentes. Nesses ambientes, a proteção facial e aerodinâmica de um capacete fechado é imprescindível para minimizar danos e garantir conforto contra o vento e detritos.</p>
-
-          <h3 id="capacete-asx">1. Capacete Masculino Asx Aberto City Air</h3>
-          <p>O Capacete Masculino ASX Aberto City Air combina leveza com excelente ventilação para o uso urbano diário. Seu design compacto garante conforto mesmo em trajetos longos. Uma opção prática e acessível para quem busca mobilidade sem abrir mão da segurança básica.</p>
-          <div class="product-section">
-            <div class="product-gallery">
-              <div class="product-item">
-                <div class="gallery-item">
-                  <img src="/images/Capacete-Feminino-Masculino-Asx-Aberto-City-Air-Square-Moto.png" alt="Capacete ASX City Air Feminino/Masculino" />
-                </div>
-                <div class="product-links">
-                  <a href="https://amzn.to/48ODdQX" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
-                  <a href="https://mercadolivre.com/sec/1HVKaGX" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
-                </div>
-              </div>
-
-              <div class="product-item">
-                <div class="gallery-item">
-                  <img src="/images/Capacete-Aberto-ASX-City-Air-Branco-Brilhante-58M.png" alt="Capacete ASX City Air Branco Brilhante" />
-                </div>
-                <div class="product-links">
-                  <a href="https://amzn.to/3UZtRe4" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
-                  <a href="https://mercadolivre.com/sec/1FNjSiz" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h3 id="capacete-peels">2. Capacete Peels Aberto New Classic</h3>
-          <p>Uma releitura do capacete aberto clássico, com forração mais confortável e materiais modernos, mas mantendo o visual atemporal.</p>
-          <div class="product-section">
-            <div class="product-gallery">
-              <div class="product-item">
-                <div class="gallery-item">
-                  <img src="/images/Capacete-Aberto-Moto-Freeway-New-Classic-Preto-Fosco-60.png" alt="Capacete Peels Freeway New Classic Preto Fosco" />
-                </div>
-                <div class="product-links">
-                  <a href="https://amzn.to/4oniOsy" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
-                  <a href="https://mercadolivre.com/sec/32oQhnq" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
-                </div>
-              </div>
-
-              <div class="product-item">
-                <div class="gallery-item">
-                  <img src="/images/Peels-Capacete-Moto-Aberto-Freeway-Hype-RoxoPink-54.png" alt="Capacete Peels Freeway Hype RoxoPink" />
-                </div>
-                <div class="product-links">
-                  <a href="https://amzn.to/4lTND6y" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
-                  <a href="https://mercadolivre.com/sec/1mrkCWf" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h3 id="capacete-norisk">3. Capacete Aberto Norisk Orion Free</h3>
-          <p>O <a href="https://www.norisk.com.br/">Norisk</a> Orion é um dos queridinhos do mercado e não é por acaso. Ele entrega um pacote completo, com design moderno e aerodinâmico, e se destaca pela qualidade dos seus materiais.</p>
-          <p>O casco é produzido em resina termoplástica ABS, garantindo alta absorção de impacto. Seu grande trunfo é a viseira solar interna com proteção UV, que o torna extremamente versátil para qualquer condição de luminosidade.</p>
-          <div class="product-section">
-            <div class="product-gallery">
-              <div class="product-item">
-                <div class="gallery-item">
-                  <img src="/images/Capacete-Norisk-Aberto-feminino-Orion-SV-Denver-Verde-Agua.png" alt="Capacete Norisk Orion Feminino Denver Verde Água" />
-                </div>
-                <div class="product-links">
-                  <a href="https://amzn.to/3WGBs1H" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
-                  <a href="https://mercadolivre.com/sec/1xWZXm4" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
-                </div>
-              </div>
-
-              <div class="product-item">
-                <div class="gallery-item">
-                  <img src="/images/Capacete-Masculino-Aberto-Norisk-Orion-Free-Preto-Oculos.png" alt="Capacete Norisk Orion Masculino Preto com Óculos" />
-                </div>
-                <div class="product-links">
-                  <a href="https://amzn.to/4813uue" class="btn-buy" target="_blank" rel="noopener noreferrer">Ver na Amazon</a>
-                  <a href="https://mercadolivre.com/sec/2yvFEy1" class="btn-buy btn-mercadolivre" target="_blank" rel="noopener noreferrer">Mercado Livre</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h2 id="impressoes-pessoais">Minhas Impressões Pessoais</h2>
-          <p>Pessoalmente, acho o capacete aberto imbatível para o dia a dia na cidade, especialmente nos dias quentes de verão. A sensação de liberdade e a facilidade de comunicação são pontos fortes. No entanto, para viagens mais longas ou em rodovias, sempre opto por um capacete fechado devido à segurança e ao conforto em altas velocidades.</p>
-
-          <h2 id="perguntas-frequentes">Perguntas Frequentes sobre Capacetes Abertos</h2>
-          <p>Para ajudar a sanar as principais dúvidas, compilamos algumas perguntas e respostas importantes.</p>
-
-          <h3 id="vantagens-principais">Quais são as principais vantagens de usar um capacete aberto?</h3>
-          <p>As principais vantagens são a excelente ventilação, o amplo campo de visão, a leveza e o conforto em baixas velocidades, além do estilo diferenciado.</p>
-
-          <h3 id="seguranca-capacete-aberto">Um capacete aberto é seguro?</h3>
-          <p>Sim, desde que seja certificado e usado corretamente (com viseira ou óculos de proteção e jugular afivelada). No entanto, oferece menor proteção contra impactos frontais no queixo e rosto em comparação com capacetes fechados.</p>
-
-          <h3 id="escolher-tamanho">Como escolher o tamanho certo do capacete aberto?</h3>
-          <p>Meça a circunferência da sua cabeça e compare com a tabela de tamanhos do fabricante. O capacete deve ficar justo, mas confortável, sem pontos de pressão excessiva. Experimente-o para garantir que não haja folgas.</p>
-
-          <h3 id="adequado-todas-motos">Os capacetes abertos são adequados para todos os tipos de motocicletas?</h3>
-          <p>São mais adequados para motocicletas urbanas, scooters e motos custom. Para motos esportivas ou de alta cilindrada, especialmente em estradas, os capacetes fechados são mais recomendados pela segurança e aerodinâmica.</p>
-
-          <h3 id="oculos-compatibilidade">É possível usar óculos com capacete aberto?</h3>
-          <p>Sim, muitos modelos de capacetes abertos são projetados para acomodar óculos de grau ou de sol confortavelmente. Em alguns casos, é até necessário o uso de óculos de proteção em substituição à viseira integrada.</p>
-
-          <h3 id="cuidados-limpeza">Como cuidar e limpar um capacete aberto?</h3>
-          <p>Limpe a parte externa com água e sabão neutro. O forro interno, se removível, pode ser lavado à mão com sabão suave. Deixe secar à sombra e nunca use produtos químicos agressivos.</p>
-
-          <h2 id="conclusao">Conclusão: vale a pena adquirir o Capacete Aberto?</h2>
-          <p>A decisão de adquirir um capacete aberto depende muito do seu estilo de pilotagem, das condições em que você trafega e das suas prioridades. Se você busca conforto, ventilação e um visual descolado para o uso urbano, ele pode ser uma excelente opção.</p>
-          <p>Contudo, para quem pega estrada frequentemente ou busca a máxima proteção, um capacete fechado ainda é a escolha mais indicada. Avalie seus riscos e necessidades para fazer a melhor escolha, sempre priorizando sua segurança.</p>
-          <p>Você já usou o capacete aberto? Compartilhe sua experiência nos comentários!</p>
-          <p>Pronto para elevar sua segurança e performance? Veja nossas análises dos melhores capacetes clicando <a href="/melhor-capacete/">aqui.</a></p>
-
-          <!-- TAGS E COMPARTILHAMENTO -->
-          <div class="post-footer-meta">
-            <div class="post-tags-container">
-              <strong>TAGS:</strong>
-              <div class="post-tags">
-                <a href="/melhor-capacete/" class="post-tag">Capacetes</a>
-                <a href="#" class="post-tag">Capacete Aberto</a>
-                <a href="#" class="post-tag">3/4</a>
-                <a href="#" class="post-tag">Urbando</a>
-                <a href="#" class="post-tag">2026</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="post-share-container">
-            <strong>COMPARTILHE ESTE ARTIGO:</strong>
-            <div class="post-share">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://jovemapan.com.br/capacete-aberto/" target="_blank" rel="noopener noreferrer" class="share-btn facebook" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook
-              </a>
-              <a href="https://twitter.com/intent/tweet?url=https://jovemapan.com.br/capacete-aberto/&text=Capacete%20Aberto%20%C3%A9%20Bom%3F%20Guia%20Completo%3A%20Pr%C3%B3s%2C%20Contras%2C%20Seguran%C3%A7a%20e%20Legisla%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer" class="share-btn twitter" aria-label="Twitter">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                Twitter
-              </a>
-              <a href="#" onclick="navigator.clipboard.writeText('https://jovemapan.com.br/capacete-aberto/'); alert('Link copiado!'); return false;" class="share-btn link" aria-label="Copiar Link">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="#666"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                Link
-              </a>
-            </div>
-          </div>
-
-          <!-- BIO DO AUTOR -->
-          <div class="author-bio-box" id="author">
-            <div class="bio-avatar">
-              <img src="/images/Pamela pan coufundadora e editoara chefe do blog apan .png" alt="Pamela Pan" onerror="this.src='https://ui-avatars.com/api/?name=Pamela+Pan&background=random'" />
-            </div>
-            <div class="bio-content">
-              <span class="bio-label">SOBRE A AUTORA</span>
-              <h4 class="bio-name">Pamela Pan</h4>
-              <a href="/author-pamela-pan/" class="bio-link">SOBRE O AUTOR →</a>
-            </div>
-          </div>
-
-          <!-- SEÇÃO DE COMENTÁRIOS -->
-          <div class="post-comments-section" id="comments">
-            <h3 class="comments-title">COMENTÁRIOS</h3>
-            <p class="comments-note">Seu endereço de email não será publicado.</p>
-            
-            <form class="comments-form" onsubmit="event.preventDefault(); alert('Comentário enviado para moderação!');">
-              <div class="form-group full-width">
-                <textarea rows="5" placeholder="Deixe seu comentário..." required></textarea>
-              </div>
-              <div class="form-row">
-                <input type="text" placeholder="Nome" required />
-                <input type="email" placeholder="Email" required />
-              </div>
-              <button type="submit" class="btn-submit-comment">Publicar Comentário</button>
-            </form>
-          </div>
-
-        </article>
-
-        <!-- [DIREITA] Sidebar -->
-        <aside class="post-sidebar-col">
-          
-          <!-- Widget 1: PRODUTO EM DESTAQUE -->
-          <div class="sidebar-widget produto-destaque">
-            <p class="frete-gratis">FRETE GRÁTIS</p>
-            <img src="/images/capacete-shoei.png" alt="Capacete em Destaque" class="produto-imagem" />
-            <h4 class="produto-nome">Capacete Shoei X-Spirit 3</h4>
-            <a href="https://amzn.to/4vEOj4K" target="_blank" rel="noopener noreferrer" class="btn-produto-destaque">VER PREÇO NA AMAZON</a>
-            <a href="/melhor-capacete/" class="btn-produto-destaque" style="background: #333;">VER REVIEW COMPLETO</a>
-          </div>
-
-          <!-- Widget 2: NEWSLETTER VIP -->
-          <div class="sidebar-widget newsletter-vip">
-            <div class="newsletter-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-            <h3>NEWSLETTER<br>VIP</h3>
-            <p>Receba as melhores ofertas e análises de capacetes diretamente no seu email!</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrito com sucesso!');">
-              <input type="text" placeholder="Seu nome" required />
-              <input type="email" placeholder="Seu email" required />
-              <button type="submit">QUERO RECEBER <span>→</span></button>
-            </form>
-          </div>
-
-          <!-- Widget 3: MAIS LIDOS -->
-          <div class="sidebar-widget mais-lidos">
-            <h3>MAIS LIDOS</h3>
-            <ul class="mais-lidos-list">
-              <li><a href="/melhor-capacete/">Melhores Capacetes de Moto 2026</a></li>
-              <li><a href="/custo-beneficio/">Capacetes Custo Benefício</a></li>
-              <li><a href="/capacete-norisk-vale-a-pena/">Capacete Norisk Vale a Pena?</a></li>
-              <li><a href="/ls2-scope-monocolor-review/">Review LS2 Scope Monocolor</a></li>
-              <li><a href="/mochila-para-moto/">Melhores Mochilas para Moto</a></li>
-            </ul>
-          </div>
-
-        </aside>
-      </div>
-    </div>
-  </main>
-
-  <Footer />
-
-<script is:inline>
-  function toggleIndice() {
-    const content = document.getElementById('indice-content');
-    const arrow = document.getElementById('indice-arrow');
-    
-    if (content.classList.contains('open')) {
-      content.classList.remove('open');
-      arrow.classList.remove('open');
-    } else {
-      content.classList.add('open');
-      arrow.classList.add('open');
-    }
-  }
-</script>
-
-<style>
-  :root {
-    --red: #E31E24;
-    --red-dark: #C41A1F;
-    --black: #000000;
-    --gray-bg: #F4F4F4;
-    --gray-light: #F9FAFB;
-    --border: #EAEAEA;
-    --text: #374151;
-    --text-meta: #777;
-    --white: #ffffff;
-    --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-title: 'Georgia', 'Playfair Display', serif;
-  }
-
-  /* Body & Container */
-  .post-main {
-    background: var(--gray-bg);
-    padding: 30px 0 80px;
-    font-family: var(--font-primary);
-    color: var(--text);
-  }
-
-  .post-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  /* ==================================
-     1. CABEÇALHO (Breadcrumb, Título, Info)
-     ================================== */
-  .post-header-section {
-    max-width: 800px;
-    margin-left: 60px;
-    margin-bottom: 20px;
-  }
-
-  .top-breadcrumb {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: var(--text-meta);
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
-  }
-  .top-breadcrumb a { color: var(--text-meta); text-decoration: none; transition: color 0.2s;}
-  .top-breadcrumb a:hover { color: var(--red); }
-  .top-breadcrumb .current-page { color: var(--red); }
-  .separator { font-weight: normal; color: #ccc; }
-
-  .post-category-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--black);
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  .post-title {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: #0c1827;
-    margin: 0 0 24px;
-    letter-spacing: -0.01em;
-  }
-
-  .post-meta-data {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 0.7rem;
-    color: var(--text-meta);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .meta-author { display: flex; align-items: center; gap: 8px; color: var(--black); }
-  .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
-  .meta-info { display: flex; align-items: center; gap: 16px; }
-  .meta-item { display: flex; align-items: center; gap: 4px; color: var(--text-meta); }
-  .meta-item svg { color: var(--red); }
-
-  /* ==================================
-     2. GRID PRINCIPAL
-     ================================== */
-  .post-layout-grid {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr) 300px;
-    gap: 20px 20px;
-    align-items: start;
-  }
-
-  /* --- [ESQUERDA] Botões Sociais --- */
-  .post-social-col {
-    position: relative;
-    height: 100%;
-  }
-  .sticky-socials {
-    position: sticky;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .social-btn {
-    display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 4px;
-    color: var(--white); font-weight: bold; text-decoration: none;
-    font-family: Arial, sans-serif; transition: transform 0.2s;
-  }
-  .social-btn:hover { transform: scale(1.05); }
-  .social-btn.facebook { background: #3b5998; font-size: 1.1rem; font-weight: bold; }
-  .social-btn.pinterest { background: #E60023; }
-  .social-btn.youtube { background: #FF0000; }
-  /* Table of Contents */
-  .table-of-contents {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 32px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .table-of-contents h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--black);
-    margin: 0 0 16px 0;
-    border-bottom: 2px solid var(--red);
-    padding-bottom: 8px;
-  }
-  .table-of-contents ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .table-of-contents li {
-    margin-bottom: 8px;
-  }
-  .table-of-contents a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-    padding: 4px 0;
-    transition: color 0.2s;
-  }
-  .table-of-contents a:hover {
-    color: var(--red);
-  }
-  .table-of-contents a::before {
-    content: '›';
-    margin-right: 8px;
-    color: var(--red);
-    font-weight: bold;
-  }
-
-  /* Product Sections */
-  .product-section {
-    margin-bottom: 40px;
-    padding: 24px;
-    background: var(--white);
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-
-  /* Product Gallery */
-  .product-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-  .gallery-item {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  .gallery-item:hover {
-    transform: translateY(-2px);
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-  .product-item {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    background: var(--white);
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  @media (max-width: 768px) {
     .product-gallery {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
     }
-  }
-
-  .product-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 16px;
-  }
-  .product-links .btn-buy {
-    background: var(--red);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.2s, transform 0.1s;
-  }
-  .product-links .btn-buy:hover {
-    background: var(--red-dark);
-    transform: translateY(-1px);
-  }
-  .product-links .btn-buy.btn-mercadolivre {
-    background: #FFE600;
-    color: #2D3277;
-  }
-  .product-links .btn-buy.btn-mercadolivre:hover {
-    background: #E6CF00;
-    color: #1A1F5C;
-  }
-
-  .social-btn.instagram { background: #E4405F; }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .post-layout-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
-    .post-social-col {
-      display: none;
+    .gallery-item:hover {
+      transform: translateY(-2px);
     }
-    .post-sidebar-col {
-      position: static;
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .product-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     .product-links {
-      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
     }
     .product-links .btn-buy {
-      text-align: center;
-    }
-  }
-
-  /* --- [CENTRO] Artigo e Capa --- */
-  .post-content-col {
-    background: transparent;
-    min-width: 0;
-  }
-  .post-cover-image {
-    position: relative;
-    width: 733px;
-    height: 440px;
-    max-width: 100%;
-    margin: 0 auto 32px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-  .post-cover-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  /* Selo APAN VERIFIED */
-  .verified-badge {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #1A1A1A;
-    color: #fff;
-    font-family: var(--font-primary);
-    font-size: 0.65rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border-top-right-radius: 4px;
-  }
-
-  /* --- Índice Accordion --- */
-  .post-indice {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .indice-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-  }
-  .indice-left { display: flex; align-items: center; gap: 12px; }
-  .indice-icon {
-    background: var(--red);
-    width: 32px; height: 32px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .post-indice strong {
-    color: var(--black);
-    font-size: 1.05rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-  }
-  .indice-arrow {
-    color: var(--text-meta);
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    margin-left: 12px;
-  }
-  .indice-arrow.open { transform: rotate(180deg); }
-
-  .indice-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    border-top: 1px solid transparent;
-    opacity: 0;
-  }
-  .indice-content.open {
-    max-height: 500px;
-    border-top: 1px solid var(--border);
-    margin-top: 16px;
-    padding-top: 16px;
-    opacity: 1;
-  }
-  .indice-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .indice-links li {
-    margin-bottom: 8px;
-  }
-  .indice-links li ul {
-    list-style: none;
-    margin: 8px 0 8px 20px;
-    padding: 0;
-  }
-  .indice-links li ul li {
-    margin-bottom: 6px;
-  }
-  .indice-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-    padding: 4px 0;
-    transition: color 0.2s;
-  }
-  .indice-links a:hover {
-    color: var(--red);
-  }
-  .indice-links a::before {
-    content: '›';
-    margin-right: 8px;
-    color: var(--red);
-    font-weight: bold;
-  }
-
-  .post-lead {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 24px;
-    font-weight: 400;
-  }
-
-  .post-content-col p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
-  .post-content-col h2 { color: var(--black); font-size: 1.8rem; font-weight: 700; margin: 32px 0 16px 0; }
-  .post-content-col h3 { color: var(--black); font-size: 1.4rem; font-weight: 600; margin: 24px 0 12px 0; }
-
-  /* --- [DIREITA] Sidebar --- */
-  .post-sidebar-col {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    position: sticky;
-    top: 100px;
-  }
-
-  /* Widget 1: PRODUTO EM DESTAQUE */
-  .sidebar-widget {
-    border-radius: 8px;
-    padding: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    background: var(--white);
-  }
-  .sidebar-widget.produto-destaque {
-    background: #000000;
-    color: var(--white);
-    text-align: center;
-    padding: 24px 20px;
-  }
-  .frete-gratis {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin: 0 0 16px;
-  }
-  .produto-imagem {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    margin: 0 auto 16px;
-    display: block;
-  }
-  .produto-nome {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--white);
-    margin: 0 0 20px;
-    line-height: 1.4;
-  }
-  .btn-produto-destaque {
-    display: block;
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--red);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    margin-bottom: 12px;
-    transition: background 0.2s;
-    letter-spacing: 0.5px;
-  }
-  .btn-produto-destaque:hover {
-    background: var(--red-dark);
-  }
-  .btn-produto-destaque:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Widget 2: NEWSLETTER VIP */
-  .sidebar-widget.newsletter-vip {
-    background: var(--red);
-    border: none;
-    color: var(--white);
-    text-align: center;
-    border-radius: 8px;
-  }
-  .newsletter-icon {
-    margin: 0 auto 10px;
-    color: var(--white);
-  }
-  .sidebar-widget.newsletter-vip h3 {
-    font-size: 1.6rem; font-weight: 900; font-style: italic; margin-bottom: 15px;
-  }
-  .sidebar-widget.newsletter-vip p {
-    font-size: 0.85rem; line-height: 1.4; margin-bottom: 24px; font-weight: 500;
-  }
-  .newsletter-form {
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .newsletter-form input {
-    width: 100%; padding: 14px; border-radius: 4px; border: none; font-size: 0.9rem;
-    font-family: var(--font-primary); box-sizing: border-box;
-  }
-  .newsletter-form button {
-    width: 100%; border-radius: 4px; border: none; font-size: 0.9rem; padding: 14px;
-    background: var(--black); color: var(--white); font-weight: 900;
-    text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    transition: background 0.2s;
-  }
-  .newsletter-form button:hover { background: #1a1a1a; }
-  .newsletter-form button span { font-size: 1.2rem; line-height: 0; margin-top: -2px; }
-
-  /* Widget 3: MAIS LIDOS */
-  .sidebar-widget.mais-lidos h3 {
-    font-size: 1.1rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-  }
-  .mais-lidos-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .mais-lidos-list li {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .mais-lidos-list li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  .mais-lidos-list a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.4;
     transition: color 0.2s;
     display: block;
   }

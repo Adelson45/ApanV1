@@ -1,270 +1,103 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
 const title = 'Melhores Capacetes de Moto em 2026 | Guia Completo e Atualizado';
 const description = 'Confira os melhores capacetes para moto em 2026. Avaliações, marcas confiáveis como Arai, Bell, Shark, Shoei, dicas de segurança e modelos com certificação Inmetro.';
 const canonical   = 'https://jovemapan.com.br/melhor-capacete/';
 const author      = 'Marcelo Ferreira';
+const authorImage = '/images/marcelo-ferreira.png';
 const publishDate = '20 ABR, 2026';
 const category    = 'CAPACETES';
 const categoryHref = '/melhor-capacete/';
 const coverImage  = '/images/piloto-com-sua-moro-branca.png';
+const views       = '45K VIEWS';
+const comments    = '12 COMMENTS';
+
+const indice = [
+  { label: 'Introdução', href: '#introducao' },
+  { label: 'Nossa avaliação dos melhores capacetes de 2026', href: '#avaliacao' },
+  { label: 'Quais são as melhores marcas de capacetes do mundo?', href: '#marcas' },
+  { label: 'O Melhor Capacete é aquele que se Adapta a Você', href: '#ajuste' },
+  { label: 'Por que investir em um capacete de moto?', href: '#investir' },
+  { label: 'Perguntas Frequentes', href: '#faq' },
+  { label: 'Melhor capacete de moto integral em 2026', href: '#integral-premium', children: [
+    { label: '1. Capacete HJC I90 Hollen', href: '#hjc-i90' },
+    { label: '2. Capacete Arai Quantic', href: '#arai-quantic' },
+    { label: '3. Capacete Shoei X-Spirit 3', href: '#shoei-xspirit3' },
+    { label: '4. Capacete Shark Evo', href: '#shark-evo' },
+    { label: '5. Capacete LS2 Scope Monocolor', href: '#ls2-scope' },
+    { label: '6. Capacete Shoei GT-Air 2', href: '#shoei-gtair2' },
+    { label: '7. Capacetes Bell Qualifier Forced Air', href: '#bell-qualifier' }
+  ]},
+  { label: 'Melhor capacete integral abaixo de R$ 1.000,00 em 2026', href: '#integral-1000', children: [
+    { label: '1. Capacete Norisk Edition', href: '#norisk-edition' },
+    { label: '2. Capacete Mt Helmets Targo', href: '#mt-targo' },
+    { label: '3. Capacete ASX Draken Solid', href: '#asx-draken' },
+    { label: '4. Capacete Peels Icon Fast', href: '#peels-icon-fast' },
+    { label: '5. Capacete ASX City Solid', href: '#asx-city' },
+    { label: '6. Capacete LS2 Stream', href: '#ls2-stream' },
+    { label: '7. Capacete LS2 Vector', href: '#ls2-vector' },
+    { label: '8. Capacete X11 Turner Solides', href: '#x11-turner' },
+    { label: '9. Capacete Peels Dynamic', href: '#peels-dynamic' },
+    { label: '10. Capacete Bell Helmets MX 9 Adventure', href: '#bell-mx9' }
+  ]},
+  { label: 'Saiba como são realizados os testes do Inmetro', href: '#normas' },
+  { label: 'O que é ECE 22.06?', href: '#ece2206' },
+  { label: 'Como devo cuidar do meu capacete?', href: '#cuidados' },
+  { label: 'Por que Usar o Capacete de Moto?', href: '#usar' },
+  { label: 'Como Escolher o Melhor Capacete de Moto', href: '#escolher', children: [
+    { label: 'Escolha de Acordo com o Tipo de Uso', href: '#tipo-uso' },
+    { label: 'Capacete Aberto', href: '#capacete-aberto' },
+    { label: 'Capacete Fechado (Integral)', href: '#capacete-fechado' },
+    { label: 'Capacete Articulado', href: '#capacete-articulado' },
+    { label: 'Capacete Off-Road', href: '#offroad' }
+  ]},
+  { label: 'Conclusão', href: '#conclusao' }
+];
+
+const tags = [
+  { label: 'REVIEW', href: '#' },
+  { label: 'CAPACETES', href: '#' },
+  { label: 'RECOMENDAÇÃO', href: '#' },
+  { label: '2026', href: '#' }
+];
+
+const authorBio = {
+  name: 'Marcelo Ferreira',
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: '/images/marcelo-ferreira.png',
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const featuredProduct = {
+  preTitle: 'Aproveite frete GRÁTIS',
+  image: '/images/capacete-shoei.png',
+  imageAlt: 'Capacete Shoei',
+  name: 'Capacete Shoei Premium Edition',
+  amazonHref: 'javascript:void(0)',
+  mercadoLivreHref: 'javascript:void(0)'
+};
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
-  <style>
-    .info-card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items: center;
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 20px 0;
-    }
-    .info-card-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-    .info-card-content h4 {
-      margin: 0 0 10px 0;
-      font-size: 1.1rem;
-    }
-    .info-card-content h4 a {
-      color: #0066cc;
-      text-decoration: underline;
-    }
-    .info-card-content p {
-      margin: 0;
-      color: #555;
-      font-size: 0.95rem;
-    }
-    @media (max-width: 768px) {
-      .info-card-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    /* Carrossel Styles */
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #f8f9fa;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    .carousel-slide {
-      min-width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .carousel-slide img {
-      max-width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-      border-radius: 4px;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s;
-    }
-    .carousel-btn:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-    .carousel-btn.prev {
-      left: 10px;
-    }
-    .carousel-btn.next {
-      right: 10px;
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 733px;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      margin: 30px auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
-  <Header />
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
 
-  <main class="post-main">
-    <div class="post-container">
-
-      <!-- ==========================================
-           1. CABEÇALHO (Breadcrumb, Título, Info)
-           ========================================== -->
-      <div class="post-header-section">
-        <nav class="top-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">HOME</a>
-          <span class="separator">›</span>
-          <a href={categoryHref}>{category}</a>
-          <span class="separator">›</span>
-          <span class="current-page">Melhores Capacetes de Moto em 2026</span>
-        </nav>
-
-        <a href={categoryHref} class="post-category-tag">
-          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          {category}
-        </a>
-
-        <h1 class="post-title">Melhores Capacetes de Moto em 2026</h1>
-
-        <div class="post-meta-data">
-          <div class="meta-author">
-            <img src="/images/marcelo-ferreira.png" alt={author} class="author-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Marcelo+Ferreira&background=random'" />
-            <strong>{author.toUpperCase()}</strong>
-          </div>
-          <div class="meta-info">
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-               {publishDate}
-             </span>
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-               45K VIEWS
-             </span>
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-               12 COMMENTS
-             </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==========================================
-           2. GRID PRINCIPAL (Col 1: Social | Col 2: Artigo | Col 3: Sidebar)
-           ========================================== -->
-      <div class="post-layout-grid">
-        
-        <!-- [ESQUERDA] Botões Sociais -->
-        <div class="post-social-col">
-          <div class="sticky-socials">
-            <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Facebook">f</a>
-            <a href="https://br.pinterest.com/jovemapan/" target="_blank" rel="noopener noreferrer" class="social-btn pinterest" aria-label="Pinterest">
-              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/channel/UCChj9-uIY5ERfidZ6K-zt_w" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/jovem_apan/" target="_blank" rel="noopener noreferrer" class="social-btn instagram" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- [CENTRO] Artigo -->
-        <article class="post-content-col">
-          
-          <!-- Foto de Capa (Hero) com Selo Verified -->
-          <div class="post-cover-image">
-            <img src={coverImage} alt="Capa do Artigo" />
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              APAN VERIFIED
-            </div>
-          </div>
-
-          <!-- Índice Modo Accordion (Estilo Print) -->
-          <div class="post-indice" id="indice-accordion">
-            <div class="indice-header" onclick="toggleIndice()">
-              <div class="indice-left">
-                <div class="indice-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                </div>
-                <strong>ÍNDICE DE CONTEÚDO</strong>
-              </div>
-              <div class="indice-arrow" id="indice-arrow">
-                <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--text-meta)" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-            </div>
-            <div class="indice-content" id="indice-content">
-              <ul class="indice-links">
-                <li><a href="#introducao">Introdução</a></li>
-                <li><a href="#avaliacao">Nossa avaliação dos melhores capacetes de 2026</a></li>
-                <li><a href="#marcas">Quais são as melhores marcas de capacetes do mundo?</a></li>
-                <li><a href="#ajuste">O Melhor Capacete é aquele que se Adapta a Você</a></li>
-                <li><a href="#investir">Por que investir em um capacete de moto?</a></li>
-                <li><a href="#faq">Perguntas Frequentes</a></li>
-                <li><a href="#integral-premium">Melhor capacete de moto integral em 2026</a>
-                  <ul>
-                    <li><a href="#hjc-i90">1. Capacete HJC I90 Hollen</a></li>
-                    <li><a href="#arai-quantic">2. Capacete Arai Quantic</a></li>
-                    <li><a href="#shoei-xspirit3">3. Capacete Shoei X-Spirit 3</a></li>
-                    <li><a href="#shark-evo">4. Capacete Shark Evo</a></li>
-                    <li><a href="#ls2-scope">5. Capacete LS2 Scope Monocolor</a></li>
-                    <li><a href="#shoei-gtair2">6. Capacete Shoei GT-Air 2</a></li>
-                    <li><a href="#bell-qualifier">7. Capacetes Bell Qualifier Forced Air</a></li>
-                  </ul>
-                </li>
-                <li><a href="#integral-1000">Melhor capacete integral abaixo de R$ 1.000,00 em 2026</a>
-                  <ul>
-                    <li><a href="#norisk-edition">1. Capacete Norisk Edition</a></li>
-                    <li><a href="#mt-targo">2. Capacete Mt Helmets Targo</a></li>
-                    <li><a href="#asx-draken">3. Capacete ASX Draken Solid</a></li>
-                    <li><a href="#peels-icon-fast">4. Capacete Peels Icon Fast</a></li>
-                    <li><a href="#asx-city">5. Capacete ASX City Solid</a></li>
-                    <li><a href="#ls2-stream">6. Capacete LS2 Stream</a></li>
-                    <li><a href="#ls2-vector">7. Capacete LS2 Vector</a></li>
-                    <li><a href="#x11-turner">8. Capacete X11 Turner Solides</a></li>
-                    <li><a href="#peels-dynamic">9. Capacete Peels Dynamic</a></li>
-                    <li><a href="#bell-mx9">10. Capacete Bell Helmets MX 9 Adventure</a></li>
-                  </ul>
-                </li>
-                <li><a href="#normas">Saiba como são realizados os testes do Inmetro</a></li>
-                <li><a href="#ece2206">O que é ECE 22.06?</a></li>
-                <li><a href="#cuidados">Como devo cuidar do meu capacete?</a></li>
-                <li><a href="#usar">Por que Usar o Capacete de Moto?</a></li>
-                <li><a href="#escolher">Como Escolher o Melhor Capacete de Moto</a>
-                  <ul>
-                    <li><a href="#tipo-uso">Escolha de Acordo com o Tipo de Uso</a></li>
-                    <li><a href="#capacete-aberto">Capacete Aberto</a></li>
-                    <li><a href="#capacete-fechado">Capacete Fechado (Integral)</a></li>
-                    <li><a href="#capacete-articulado">Capacete Articulado</a></li>
-                    <li><a href="#offroad">Capacete Off-Road</a></li>
-                  </ul>
-                </li>
-                <li><a href="#conclusao">Conclusão</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- CONTEÚDO MIGRADO DO WORDPRESS -->
           <p class="post-lead" id="introducao">Com a evolução constante da tecnologia, novos modelos de capacetes surgem a cada ano, trazendo funcionalidades inovadoras e mais segurança. Legalmente, um capacete é a única peça do kit de motocicleta que você tem que usar e, sem dúvida, a coisa mais importante que você vai comprar.</p>
 
           <p>Aqui nós levamos os testes a sério, então as avaliações dos melhores capacetes, <a href="https://jovemapan.com.br/dica-melhor-jaqueta-motociclistas/">jaquetas</a>, luvas e outros acessórios de motocicleta que selecionamos abaixo são o resultado de centenas de milhares de km, pilotando em todos os climas.</p>
@@ -1006,114 +839,6 @@ const coverImage  = '/images/piloto-com-sua-moro-branca.png';
           <p>Qualquer crítico honesto dirá que só pode aconselhar com base em sua própria experiência e que você deve levar esse conselho em consideração junto com sua própria avaliação de ajuste e preço ao escolher o que comprar.</p>
           <p>Aqui na A PAN, acreditamos em fornecer a você o máximo de informações possível e, como a experiência do proprietário pode ser muito valiosa, entrevistamos mais de 3.000 membros do A PAN para descobrir o que eles achavam dos capacetes que usam.</p>
 
-          <!-- ==========================================
-               FOOTER DO ARTIGO (Tags, Share, Autor)
-               ========================================== -->
-          <div class="post-footer">
-            
-            <div class="post-tags-container">
-              <strong>TAGS:</strong>
-              <div class="post-tags">
-                <a href="javascript:void(0)">REVIEW</a>
-                <a href="javascript:void(0)">CAPACETES</a>
-                <a href="javascript:void(0)">RECOMENDAÇÃO</a>
-                <a href="javascript:void(0)">2026</a>
-              </div>
-            </div>
-
-            <div class="post-share-container">
-              <strong>COMPARTILHE ESTE ARTIGO:</strong>
-              <div class="post-share-buttons">
-                <a href="javascript:void(0)" class="share-btn fb"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg> Facebook</a>
-                <a href="javascript:void(0)" class="share-btn tw"><svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.384 4.482A13.953 13.953 0 0 1 1.671 3.149 4.93 4.93 0 0 0 3.194 9.723a4.902 4.902 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89-.396.108-.811.162-1.23.162-.304 0-.599-.028-.888-.081.619 1.932 2.415 3.334 4.544 3.373a9.866 9.866 0 0 1-7.29 2.031 13.904 13.904 0 0 0 7.548 2.212c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/></svg> Twitter</a>
-                <a href="javascript:void(0)" class="share-btn link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> Link</a>
-              </div>
-            </div>
-
-            <div class="author-bio-box">
-              <div class="bio-avatar">
-                <img src="/images/marcelo-ferreira.png" alt={author} onerror="this.src='https://ui-avatars.com/api/?name=Marcelo+Ferreira&background=random'" />
-              </div>
-              <div class="bio-content">
-                <span class="bio-label">SOBRE O AUTOR</span>
-                <h4 class="bio-name">{author}</h4>
-                <p class="bio-desc">Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.</p>
-                <a href="/author-marcelo-ferreira/" class="bio-link">Ver perfil completo &rsaquo;</a>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- ==========================================
-               SESSÃO DE COMENTÁRIOS
-               ========================================== -->
-          <div class="post-comments-section">
-            <h3 class="comments-title">DEIXE UM COMENTÁRIO</h3>
-            <p class="comments-note">Seu e-mail não será publicado. Campos obrigatórios estão marcados com *</p>
-            
-            <form class="comments-form" action="javascript:void(0)" method="POST">
-              <div class="form-group full-width">
-                <textarea placeholder="Escreva seu comentário aqui... *" required rows="6"></textarea>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <input type="text" placeholder="Seu nome *" required />
-                </div>
-                <div class="form-group">
-                  <input type="email" placeholder="Seu e-mail *" required />
-                </div>
-              </div>
-              <button type="submit" class="btn-submit-comment">POSTAR COMENTÁRIO</button>
-            </form>
-          </div>
-
-        </article>
-
-        <!-- [DIREITA] Sidebar -->
-        <aside class="post-sidebar-col">
-          
-          <!-- Widget Produto em Destaque -->
-          <div class="sidebar-widget produto-destaque">
-            <p class="frete-gratis">Aproveite frete GRÁTIS</p>
-            <img src="/images/capacete-shoei.png" alt="Capacete Shoei" class="produto-imagem" />
-            <h4 class="produto-nome">Capacete Shoei<br/>Premium Edition</h4>
-            <a href="javascript:void(0)" class="btn-produto-destaque ml">VER NO MERCADO LIVRE</a>
-            <a href="javascript:void(0)" class="btn-produto-destaque amazon">VER OFERTA NA AMAZON</a>
-          </div>
-
-          <!-- Widget Newsletter VIP (Solid Red) -->
-          <div class="sidebar-widget newsletter-vip">
-            <div class="newsletter-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-            <h3>Newsletter VIP</h3>
-            <p>As melhores análises de mercado, cupons secretos e dicas entregues todo domingo.</p>
-            <form action="javascript:void(0)" method="POST" class="newsletter-form">
-              <input type="email" placeholder="Seu melhor e-mail" required />
-              <button type="submit">QUERO PARTICIPAR <span>›</span></button>
-            </form>
-          </div>
-
-          <!-- Widget MAIS LIDOS -->
-          <div class="sidebar-widget mais-lidos">
-            <h3>MAIS LIDOS</h3>
-            <ul class="mais-lidos-list">
-              <li><a href="/melhor-capacete/">Melhores Capacetes de Moto 2026</a></li>
-              <li><a href="/custo-beneficio/">Capacetes Custo Benefício</a></li>
-              <li><a href="/capacete-norisk-vale-a-pena/">Capacete Norisk Vale a Pena?</a></li>
-              <li><a href="/ls2-scope-monocolor-review/">Review LS2 Scope Monocolor</a></li>
-              <li><a href="/mochila-para-moto/">Melhores Mochilas para Moto</a></li>
-            </ul>
-          </div>
-
-        </aside>
-
-      </div> <!-- ./post-layout-grid -->
-    </div> <!-- ./post-container -->
-  </main>
-
-  <Footer />
-
   <script is:inline>
     // Carrossel functionality
     let currentSlide = 0;
@@ -1138,7 +863,7 @@ const coverImage  = '/images/piloto-com-sua-moro-branca.png';
       moveCarousel(1);
     }, 5000);
   </script>
-</Layout>
+</PostLayout>
 
 <style>
   :root {
@@ -1923,4 +1648,4 @@ const coverImage  = '/images/piloto-com-sua-moro-branca.png';
   }
 </script>
 
-</Layout>
+</PostLayout>
