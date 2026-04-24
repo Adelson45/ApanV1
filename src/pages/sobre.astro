@@ -1,1172 +1,374 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
-const title = '» Sobre Nós | Jovem Apan';
+const title = 'Sobre Nós | Jovem Apan - Nossa Missão e Valores';
 const description = 'Conheça o jovem apan. Unimos a expertise de uma piloto de MotoGP e um engenheiro para seus reviews de moto e dicas de segurança. Confiança e performance.';
+
+const authorBio = {
+  name: 'Equipe Jovem Apan',
+  description: 'Unindo a adrenalina das pistas com a ciência do asfalto desde 2024.',
+  image: '/images/marcelo-ferreira.png',
+  profileHref: '/sobre/',
+  profileLabel: 'Conheça nossa história'
+};
+
+const indice = [
+  { label: 'Nossa Missão', href: '#missao' },
+  { label: 'Fundadores', href: '#fundadores' },
+  { label: 'Equipe', href: '#equipe' },
+  { label: 'História', href: '#historia' },
+  { label: 'Transparência', href: '#transparencia' },
+  { label: 'Comunidade', href: '#comunidade' },
+];
 ---
 
-<Layout title={title} description={description}>
-  <Header />
+<PostLayout
+  title={title}
+  description={description}
+  category="INSTITUCIONAL"
+  author="Jovem Apan"
+  authorBio={authorBio}
+  coverImage="/images/sobre-hero.png"
+  indice={indice}
+  hideShare={true}
+  hideAuthor={true}
+  hideComments={true}
+>
+  <div class="post-lead" id="missao">
+    <p>
+      O vento no rosto, a liberdade no horizonte e o ronco do motor como trilha sonora. Entendemos essa paixão porque a vivemos todos os dias. Mas também sabemos que, no mundo digital, encontrar informações confiáveis é como navegar em uma estrada sem sinalização.
+    </p>
+    <p>
+      Em meio a um mar de opiniões baseadas em "achismo", o jovem apan nasceu para ser a sua bússola: uma fonte de conhecimento técnico, prático e, acima de tudo, honesto. Nossa missão é garantir que cada quilômetro que você rode seja mais seguro e emocionante, combinando o melhor da segurança para motociclistas com a busca por uma performance em duas rodas inteligente e acessível.
+    </p>
+  </div>
 
-  <main id="content">
-
-    <!-- Hero Banner -->
-    <section class="sobre-hero">
-      <!-- Imagem de fundo via tag img (mais robusto que background-image com CSS scoped) -->
-      <img
-        src="/images/sobre-hero.png"
-        alt="Piloto de moto em alta velocidade em rodovia aberta"
-        class="hero-bg-img"
-        loading="eager"
-        width="1440"
-        height="480"
-      />
-      <div class="hero-overlay">
-        <div class="container">
-          <div class="hero-badge">🏍️ Sobre Nós</div>
-          <h1>Sua bússola na jornada sobre segurança e performance em duas rodas</h1>
-          <p>
-            O vento no rosto, a liberdade no horizonte e o ronco do motor como trilha sonora.
-            Entendemos essa paixão porque a vivemos todos os dias. Em meio a um mar de opiniões
-            baseadas em "achismo", o jovem apan nasceu para ser a sua bússola: uma fonte de
-            conhecimento técnico, prático e, acima de tudo, honesto.
-          </p>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>+50</strong>
-              <span>Reviews publicados</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-              <strong>2</strong>
-              <span>Especialistas fundadores</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-              <strong>100%</strong>
-              <span>Opinião independente</span>
-            </div>
-          </div>
-        </div>
+  <section class="section mission-section">
+    <div class="section-header">
+      <h2>Missão Total da Apan</h2>
+      <p>
+        Acreditamos que o motociclismo vai além de apenas pilotar. É um estilo de vida que exige equilíbrio e conhecimento. Por isso, toda a nossa filosofia é baseada em três pilares fundamentais:
+      </p>
+    </div>
+    <div class="mission-pillars">
+      <div class="pillar-card">
+        <span class="pillar-icon">🛡️</span>
+        <h3>Segurança Sem Negociação</h3>
+        <p>Não se trata apenas de recomendar o melhor capacete. Abordamos a segurança de forma completa, desde a escolha dos equipamentos de moto até as melhores dicas de pilotagem defensiva para antecipar riscos no trânsito urbano e nas estradas.</p>
       </div>
-    </section>
-
-    <!-- Fundadores -->
-    <section class="section founders-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Conheça os fundadores da jovem apan</h2>
-          <p>
-            A alma do jovem apan vem da união de duas perspectivas complementares. Somos a
-            combinação perfeita entre a adrenalina das pistas e a ciência do asfalto, unindo
-            a prática extrema com a teoria rigorosa.
-          </p>
-        </div>
-
-        <div class="founders-grid">
-          <!-- Pamela -->
-          <div class="founder-card">
-            <div class="founder-avatar" aria-label="Pamela Pan">
-              <img src="/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png" alt="Pamela Pan" />
-            </div>
-            <div class="founder-info">
-              <span class="founder-role">Cofundadora e Editora-chefe</span>
-              <h3><a href="/author-pamela-pan/" class="author-link">Pamela Pan</a></h3>
-              <span class="founder-title">🏍️ Piloto Profissional de Moto</span>
-              <p class="founder-tagline">A Velocidade na Veia, a Precisão no Olhar.</p>
-              <p class="founder-bio">
-                Pamela vive e respira motociclismo no mais alto nível. Com anos de experiência
-                em circuitos internacionais, ela entende como ninguém a dinâmica de uma moto
-                no limite. No jovem apan, Pamela garante que os reviews tenham a profundidade
-                e autoridade que só quem viveu a competição pode oferecer.
-              </p>
-              <div class="founder-contact">
-                <a href="mailto:pamela@jovemapan.com.br" class="contact-link">
-                  <span>📧</span> pamela@jovemapan.com.br
-                </a>
-                <div class="social-links">
-                  <a href="https://www.instagram.com/apanpamela/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Pamela">Instagram</a>
-                </div>
-                <a href="/author-pamela-pan/" class="profile-link">Ver perfil completo →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Marcelo -->
-          <div class="founder-card">
-            <div class="founder-avatar marcelo" aria-label="Marcelo Ferreira">
-              <img src="/images/Marcelo%20ferreira%20coufundador%20do%20blog%20apan%20.png" alt="Marcelo Ferreira" />
-            </div>
-            <div class="founder-info">
-              <span class="founder-role">Cofundador e Diretor de Marketing</span>
-              <h3><a href="/author-marcelo-ferreira/" class="author-link">Marcelo Ferreira</a></h3>
-              <span class="founder-title">⚙️ Engenheiro de Tráfego</span>
-              <p class="founder-tagline">A Ciência do Asfalto, a Segurança na Prancheta.</p>
-              <p class="founder-bio">
-                Enquanto Pamela domina a pista, Marcelo domina os dados. Como Engenheiro de
-                Tráfego, ele enxerga a física por trás de cada curva e a estatística por trás
-                de cada acidente. É ele quem garante que nossas recomendações tenham a base
-                técnica sólida de engenharia e segurança viária.
-              </p>
-              <div class="founder-contact">
-                <a href="mailto:marcelo@jovemapan.com.br" class="contact-link">
-                  <span>📧</span> marcelo@jovemapan.com.br
-                </a>
-                <a href="/author-marcelo-ferreira/" class="profile-link">Ver perfil completo →</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🏎️</span>
+        <h3>Performance com Propósito</h3>
+        <p>Velocidade é apenas uma parte da equação. Performance, para nós, significa extrair o melhor da sua máquina — seja através de ajustes finos, manutenção preventiva ou técnicas que otimizam a pilotagem no dia a dia.</p>
       </div>
-    </section>
-
-    <!-- Equipe -->
-    <section class="section team-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Conheça nossa equipe</h2>
-          <p>
-            A expertise dos nossos fundadores ganha vida através de um time de redatores
-            apaixonados. São eles que transformam dados complexos e experiências práticas
-            em textos claros, envolventes e fáceis de entender.
-          </p>
-        </div>
-
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-avatar">
-              <img src="/images/Arthur%20.png" alt="Arthur Gomes" />
-            </div>
-            <h4><a href="/autor-arthur-gomes/" class="author-link">Arthur Gomes</a></h4>
-            <span class="team-role">Redator</span>
-            <p>
-              Arthur é a voz do jovem apan. Um estradeiro nato e entusiasta de longas viagens,
-              ele tem o dom de traduzir o tecniquês mais denso em uma conversa clara e objetiva.
-              Se um artigo nosso parece fácil e gostoso de ler, agradeça ao Arthur.
-            </p>
-            <a href="mailto:Arthur@jovemapan.com.br" class="team-email">Arthur@jovemapan.com.br</a>
-            <a href="/autor-arthur-gomes/" class="profile-link">Ver perfil completo →</a>
-          </div>
-
-          <div class="team-card">
-            <div class="team-avatar">
-              <img src="/images/Ana%20paula%20editora%20do%20blog%20apan%20.png" alt="Paula Becker" />
-            </div>
-            <h4><a href="/author-paula-becker/" class="author-link">Paula Becker</a></h4>
-            <span class="team-role">Redatora</span>
-            <p>
-              Ana Paula é nossa especialista em equipamentos e lifestyle. Com um olhar clínico
-              para detalhes, ela é focada nos reviews de vestuário, acessórios e tudo que envolve
-              a cultura do motociclismo. Ela traz o lado humano e comunitário para nossas pautas.
-            </p>
-            <a href="mailto:ana@jovemapan.com.br" class="team-email">ana@jovemapan.com.br</a>
-            <a href="/author-paula-becker/" class="profile-link">Ver perfil completo →</a>
-          </div>
-        </div>
+      <div class="pillar-card">
+        <span class="pillar-icon">🌍</span>
+        <h3>Cultura e Liberdade</h3>
+        <p>Um motociclista bem-informado toma as melhores decisões. Fornecemos o conhecimento para que sua paixão seja seu guia, e não um risco — fomentando uma comunidade que celebra a estrada com responsabilidade.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Missão -->
-    <section class="section mission-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Missão Total da Apan</h2>
-          <p>
-            Acreditamos que o motociclismo vai além de apenas pilotar. É um estilo de vida que
-            exige equilíbrio e conhecimento. Por isso, toda a nossa filosofia é baseada em três
-            pilares fundamentais:
-          </p>
+  <hr />
+
+  <section class="section founders-section" id="fundadores">
+    <div class="section-header">
+      <h2>Conheça os fundadores</h2>
+      <p>A alma do jovem apan vem da união de duas perspectivas complementares. Somos a combinação perfeita entre a adrenalina das pistas e a ciência do asfalto, unindo a prática extrema com a teoria rigorosa para criar o conteúdo sobre motociclismo mais completo e confiável que você irá encontrar.</p>
+    </div>
+    <div class="founders-grid">
+      <!-- Pamela -->
+      <div class="author-card">
+        <div class="author-photo">
+          <img src="/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png" alt="Pamela Pan" />
         </div>
-
-        <div class="mission-pillars">
-          <div class="pillar-card">
-            <div class="pillar-icon">🛡️</div>
-            <h3>Segurança Máxima</h3>
-            <p>
-              Não se trata apenas de recomendar o melhor capacete. Abordamos a segurança de
-              forma completa, desde a escolha dos equipamentos até as melhores dicas de
-              pilotagem defensiva para antecipar riscos no trânsito urbano e nas estradas.
-            </p>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">⚡</div>
-            <h3>Performance Inteligente</h3>
-            <p>
-              Velocidade é apenas uma parte da equação. Performance para nós significa extrair
-              o melhor da sua máquina — seja através de ajustes finos, manutenção preventiva
-              ou técnicas que otimizam a pilotagem. É sobre eficiência, controle e prazer.
-            </p>
-          </div>
-
-          <div class="pillar-card">
-            <div class="pillar-icon">💡</div>
-            <h3>Paixão Informada</h3>
-            <p>
-              Um motociclista bem-informado toma as melhores decisões. Fornecemos o conhecimento
-              para que sua paixão seja seu guia, e não um risco. Nossas análises detalhadas
-              transformam dados técnicos em escolhas claras para você.
-            </p>
-          </div>
+        <span class="author-role">Cofundadora e Editora-chefe</span>
+        <h3 class="author-name">Pamela Pan</h3>
+        <p class="author-tagline">"A Velocidade na Veia, a Precisão no Olhar."</p>
+        <div class="author-title">
+          <span class="icon">🏍️</span> Piloto Profissional de Moto
         </div>
+        <p class="author-bio">Pamela vive e respira motociclismo no mais alto nível. Com anos de experiência em circuitos internacionais, ela entende como ninguém a dinâmica de uma moto no limite — e traduz essa vivência em reviews com autoridade e profundidade técnica.</p>
+        <p class="author-email"><span aria-hidden="true">✉️</span> <a href="mailto:pamela@jovemapan.com.br">pamela@jovemapan.com.br</a></p>
+        <a href="/author-pamela-pan/" class="author-link">Ver perfil completo →</a>
       </div>
-    </section>
 
-    <!-- Nossa História + Quem Somos -->
-    <section class="section story-section">
-      <div class="container">
-        <div class="story-grid">
-          <div class="story-block">
-            <h2>Nossa história</h2>
-            <p>
-              O jovem apan não começou em uma sala de reuniões, mas sim em uma conversa de
-              garagem entre uma piloto profissional e um engenheiro de tráfego. De um lado,
-              a experiência prática da adrenalina das pistas; do outro, a ciência por trás
-              da segurança no asfalto.
-            </p>
-            <p>
-              Ambos compartilhavam uma frustração: a carência de conteúdo no Brasil que unisse
-              esses dois mundos de forma confiável. Dessa pergunta nasceu o jovem apan — um
-              projeto movido pela vontade de elevar o nível da informação para todos que amam
-              as duas rodas.
-            </p>
-          </div>
-
-          <div class="story-block">
-            <h2>Quem somos</h2>
-            <p>
-              Hoje, o jovem apan é mais do que um blog. Somos um coletivo de especialistas,
-              entusiastas e comunicadores dedicados a testar, analisar e traduzir o complexo
-              universo das motocicletas para você. Cada artigo, vídeo e recomendação é o
-              resultado de horas de pesquisa, testes práticos e discussões acaloradas.
-            </p>
-            <p>
-              Somos feitos de motociclista para motociclista, seja você um novato procurando
-              as melhores motos para iniciantes ou um veterano em busca de aprimorar sua
-              pilotagem.
-            </p>
-          </div>
+      <!-- Marcelo -->
+      <div class="author-card">
+        <div class="author-photo">
+          <img src="/images/Marcelo%20ferreira%20coufundador%20do%20blog%20apan%20.png" alt="Marcelo Ferreira" />
         </div>
-      </div>
-    </section>
-
-    <!-- Responsabilidade e Monetização -->
-    <section class="section transparency-section">
-      <div class="container">
-        <div class="transparency-grid">
-          <div class="transparency-card guarantee">
-            <div class="trans-icon">🤝</div>
-            <h2>Nossa Responsabilidade e Garantia</h2>
-            <p>
-              Nosso maior ativo é a sua confiança. E a conquistamos com um compromisso inabalável
-              com a imparcialidade. Todas as nossas análises são baseadas em testes rigorosos,
-              dados técnicos mensuráveis e nossa experiência real com os produtos.
-            </p>
-            <p>
-              As recomendações que você lê aqui são as mesmas que daríamos aos nossos amigos e
-              familiares em uma conversa de domingo.
-            </p>
-            <div class="badge">Nossa opinião não está à venda.</div>
-          </div>
-
-          <div class="transparency-card monetization">
-            <div class="trans-icon">💰</div>
-            <h2>Como ganhamos dinheiro</h2>
-            <p>Transparência total é um de nossos pilares. Monetizamos de algumas formas:</p>
-            <ul class="monetization-list">
-              <li>
-                <strong>Links de Afiliados:</strong> Muitos dos nossos links para produtos são
-                de afiliados. Se você comprar através deles, recebemos uma pequena comissão,
-                sem custo adicional para você.
-              </li>
-              <li>
-                <strong>Parcerias e Conteúdo Patrocinado:</strong> Ocasionalmente fazemos
-                parcerias com marcas em que confiamos. Todo conteúdo patrocinado é identificado
-                de forma clara no início do post.
-              </li>
-              <li>
-                <strong>Publicidade:</strong> Exibimos anúncios programáticos no site.
-              </li>
-            </ul>
-          </div>
+        <span class="author-role">Cofundador e Diretor Técnico</span>
+        <h3 class="author-name">Marcelo Ferreira</h3>
+        <p class="author-tagline">"A Ciência do Asfalto, a Segurança na Prancheta."</p>
+        <div class="author-title">
+          <span class="icon">⚙️</span> Engenheiro de Tráfego
         </div>
+        <p class="author-bio">Enquanto Pamela domina a pista, Marcelo domina os dados. Como Engenheiro de Tráfego, ele enxerga a física por trás de cada curva e a estatística por trás de cada acidente, analisando equipamentos sob o prisma da segurança viária.</p>
+        <p class="author-email"><span aria-hidden="true">✉️</span> <a href="mailto:marcelo@jovemapan.com.br">marcelo@jovemapan.com.br</a></p>
+        <a href="/author-marcelo-ferreira/" class="author-link">Ver perfil completo →</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Comunidade / CTA -->
-    <section class="section community-section">
-      <div class="container">
-        <div class="community-content">
-          <h2>Faça parte da nossa comunidade!</h2>
-          <p>
-            A conversa não termina aqui! Siga-nos e não perca nenhuma novidade, teste ou
-            dica de segurança.
-          </p>
-          <div class="social-cta">
-            <a href="https://www.instagram.com/jovem_apan/" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              Instagram
-            </a>
-            <a href="https://www.youtube.com/channel/UCChj9-uIY5ERfidZ6K-zt_w" target="_blank" rel="noopener noreferrer" class="social-btn youtube">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              YouTube
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              Facebook
-            </a>
-          </div>
-          <p class="contact-cta">
-            Adoramos ouvir nossos leitores! Para dúvidas, sugestões ou parcerias, entre em
-            contato pelo e-mail <a href="mailto:contato@jovemapan.com.br">contato@jovemapan.com.br</a>
-          </p>
-          <div class="cta-buttons">
-            <a href="/contato/" class="btn btn-primary">Fale Conosco</a>
-            <a href="/" class="btn btn-secondary">Explorar o Site</a>
-          </div>
+  <section class="section team-section" id="equipe">
+    <div class="section-header">
+      <h2>Conheça nossa equipe</h2>
+      <p>A expertise dos nossos fundadores ganha vida através de um time de redatores apaixonados. São eles que transformam dados complexos e experiências práticas em textos claros, envolventes e fáceis de entender.</p>
+    </div>
+    <div class="team-grid">
+      <!-- Arthur -->
+      <div class="author-card">
+        <div class="author-photo">
+          <img src="/images/Arthur%20.png" alt="Arthur Gomes" />
         </div>
+        <span class="author-role">Redator Principal</span>
+        <h3 class="author-name">Arthur Gomes</h3>
+        <div class="author-title">
+          <span class="icon">🛣️</span> Especialista em Viagens e Rotas
+        </div>
+        <p class="author-bio">Arthur é a voz do jovem apan. Estradeiro nato e entusiasta de longas viagens, ele tem o dom de traduzir o tecniquês mais denso em uma conversa clara e objetiva — transformando quilômetros percorridos em guias práticos.</p>
+        <p class="author-email"><span aria-hidden="true">✉️</span> <a href="mailto:arthur@jovemapan.com.br">arthur@jovemapan.com.br</a></p>
+        <a href="/autor-arthur-gomes/" class="author-link">Ver perfil completo →</a>
       </div>
-    </section>
 
-  </main>
+      <!-- Paula -->
+      <div class="author-card">
+        <div class="author-photo">
+          <img src="/images/Ana%20paula%20editora%20do%20blog%20apan%20.png" alt="Paula Becker" />
+        </div>
+        <span class="author-role">Redatora Especialista</span>
+        <h3 class="author-name">Paula Becker</h3>
+        <div class="author-title">
+          <span class="icon">🔍</span> Especialista em Equipamentos e Lifestyle
+        </div>
+        <p class="author-bio">Paula é nossa especialista em equipamentos e lifestyle. Com um olhar clínico para detalhes, ela é focada nos reviews de vestuário, acessórios e tudo que envolve a cultura do motociclismo.</p>
+        <p class="author-email"><span aria-hidden="true">✉️</span> <a href="mailto:ana@jovemapan.com.br">ana@jovemapan.com.br</a></p>
+        <a href="/author-paula-becker/" class="author-link">Ver perfil completo →</a>
+      </div>
+    </div>
+  </section>
 
-  <Footer />
-</Layout>
+  <hr />
+
+  <section class="section story-section" id="historia">
+    <div class="story-grid">
+      <div class="story-block">
+        <h2>Nossa história</h2>
+        <p>O jovem apan não começou em uma sala de reuniões, mas sim em uma conversa de garagem entre uma piloto profissional e um engenheiro de tráfego. De um lado, a experiência prática da adrenalina das pistas; do outro, a ciência por trás da segurança no asfalto.</p>
+        <p>Ambos compartilhavam uma frustração: a carência de conteúdo no Brasil que unisse esses dois mundos de forma confiável. E se fosse possível criar um espaço onde um review de moto tivesse tanto o feeling das pistas quanto a validação técnica de um especialista em segurança?</p>
+        <p>Dessa pergunta, nasceu o jovem apan — um projeto movido pela vontade de elevar o nível da informação para todos que amam as duas rodas.</p>
+      </div>
+      <div class="story-block">
+        <h2>Quem somos</h2>
+        <p>Hoje, o jovem apan é mais do que um blog. Somos um coletivo de especialistas, entusiastas e comunicadores dedicados a testar, analisar e traduzir o complexo universo das motocicletas para você.</p>
+        <p>Cada artigo, vídeo e recomendação é o resultado de horas de pesquisa, testes práticos e discussões acaloradas. Somos feitos de motociclista para motociclista — seja você um novato em busca da primeira moto ou um veterano querendo aprimorar a pilotagem.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section transparency-section" id="transparencia">
+    <div class="transparency-grid">
+      <div class="transparency-card">
+        <span class="trans-icon">🤝</span>
+        <h2>Nossa Responsabilidade</h2>
+        <p>Nosso maior ativo é a sua confiança. E a conquistamos com um compromisso inabalável com a imparcialidade: todas as nossas análises são baseadas em testes rigorosos, dados técnicos mensuráveis e nossa experiência real com os produtos.</p>
+        <p>As recomendações que você lê aqui são as mesmas que daríamos aos nossos amigos e familiares em uma conversa de domingo.</p>
+        <div class="badge">Nossa opinião não está à venda.</div>
+      </div>
+      <div class="transparency-card">
+        <span class="trans-icon">💰</span>
+        <h2>Como ganhamos dinheiro</h2>
+        <ul class="monetization-list">
+          <li><strong>Links de Afiliados:</strong> muitos de nossos links para produtos são de afiliados. Se você comprar algo através deles, recebemos uma pequena comissão — sem nenhum custo adicional para você.</li>
+          <li><strong>Parcerias e Conteúdo Patrocinado:</strong> ocasionalmente fazemos parcerias com marcas que confiamos. Quando um conteúdo for patrocinado, ele será sempre identificado de forma clara e transparente no início do post.</li>
+          <li><strong>Publicidade:</strong> exibimos anúncios programáticos no site, o que nos permite manter a independência editorial e o conteúdo gratuito.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section community-section" id="comunidade">
+    <div class="community-content">
+      <h2>Faça parte da nossa comunidade!</h2>
+      <p>A conversa não termina aqui. Siga-nos nas redes sociais para não perder nenhuma novidade, teste ou dica de segurança.</p>
+      <div class="social-cta">
+        <a href="https://www.instagram.com/jovem_apan/" target="_blank" class="social-btn instagram">Instagram</a>
+        <a href="https://www.youtube.com/channel/UCChj9-uIY5ERfidZ6K-zt_w" target="_blank" class="social-btn youtube">YouTube</a>
+        <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" class="social-btn facebook">Facebook</a>
+      </div>
+      <p>Adoramos ouvir nossos leitores! Se você tiver dúvidas, sugestões ou quiser compartilhar sua experiência com um capacete, fale com a gente: <a href="mailto:contato@jovemapan.com.br">contato@jovemapan.com.br</a>.</p>
+      <p class="community-thanks">Obrigado por visitar o jovemapan.com.br — junte-se a nós nesta jornada pela segurança e pelo amor ao motociclismo!</p>
+    </div>
+  </section>
+</PostLayout>
 
 <style>
-  /* ============================================
-     HERO
-  ============================================ */
-  .sobre-hero {
-    position: relative;
-    width: 100%;
-    /* Primeira dobra: altura da viewport menos o header (~64px) */
-    height: calc(100vh - 64px);
-    min-height: 500px;
-    max-height: 900px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    background-color: #0a0a0a;
-  }
-
-  /* Imagem de fundo via <img> absoluta - confinada ao hero */
-  .hero-bg-img {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center center !important;
-    z-index: 0 !important;
-    display: block !important;
-    pointer-events: none;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Overlay gradiente - escuro na esquerda, translúcido na direita */
-  .sobre-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      105deg,
-      rgba(5, 5, 5, 0.95) 0%,
-      rgba(8, 0, 0, 0.85) 40%,
-      rgba(0, 0, 0, 0.55) 65%,
-      rgba(0, 0, 0, 0.20) 100%
-    );
-    z-index: 1;
-  }
-
-  .sobre-hero::after {
-    content: '';
-    display: none;
-  }
-
-  .hero-overlay {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    /* Texto fixo na esquerda - ajustado para não ficar colado na borda */
-    padding-left: 100px;
-    padding-right: 40px;
-  }
-
-  .hero-overlay .container {
-    /* Bloco de texto confinado à esquerda - tornado mais estreito */
-    max-width: 520px;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #e31b1b;
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: 6px 16px;
-    border-radius: 20px;
-    margin-bottom: 22px;
-  }
-
-  .sobre-hero h1 {
-    font-size: clamp(1.7rem, 3vw, 2.62rem) !important;
-    font-weight: 800 !important;
-    color: #ffffff !important;
-    line-height: 1.15 !important;
-    margin-bottom: 20px !important;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
-  }
-
-  .sobre-hero p {
-    font-size: 0.98rem;
-    color: rgba(255,255,255,0.82) !important;
-    line-height: 1.75;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
-    margin-bottom: 36px;
-  }
-
-  /* Stats bar */
-  .hero-stats {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: nowrap;
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .stat strong {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: #e31b1b;
-    line-height: 1;
-    text-shadow: 0 0 20px rgba(227,27,27,0.5);
-  }
-
-  .stat span {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-  }
-
-  .stat-divider {
-    width: 1px;
-    height: 44px;
-    background: rgba(255,255,255,0.2);
-    flex-shrink: 0;
-  }
-
-  /* ============================================
-     SHARED
-  ============================================ */
-  .container {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .section {
-    padding: 80px 0;
-  }
-
-  .section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 16px;
-    position: relative;
-    display: inline-block;
-  }
-
-  .section-header h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: #e31b1b;
-    border-radius: 2px;
-    margin: 12px auto 0;
-  }
-
-  .section-header p {
-    color: #555;
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
-
-  /* ============================================
-     FOUNDERS
-  ============================================ */
-  .founders-section {
-    background: #fff;
-  }
-
-  .founders-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .founder-card {
-    display: flex;
-    gap: 28px;
-    background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 20px;
-    padding: 36px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-
-  .founder-card:hover {
-    box-shadow: 0 12px 40px rgba(227, 27, 27, 0.1);
-    transform: translateY(-4px);
-  }
-
-  .founder-avatar {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #eee;
-    box-shadow: 0 4px 16px rgba(227, 27, 27, 0.3);
-  }
-
-  .founder-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .founder-avatar.marcelo {
-    background: linear-gradient(135deg, #1a1a2e, #e31b1b);
-  }
-
-  .avatar-initials {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #fff;
-  }
-
-  .founder-role {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #e31b1b;
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .founder-info h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 4px;
-  }
-
-  .founder-title {
-    font-size: 0.9rem;
-    color: #555;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .founder-tagline {
-    font-style: italic;
-    color: #e31b1b;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 14px;
-  }
-
-  .founder-bio {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 18px;
-  }
-
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
-    color: #555;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .contact-link:hover { color: #e31b1b; }
-
-  .social-links {
-    display: flex;
-    gap: 10px;
-    margin-top: 8px;
-  }
-
-  .social-links a {
-    font-size: 0.8rem;
-    color: #e31b1b;
-    text-decoration: none;
-    border: 1px solid #e31b1b;
-    padding: 3px 10px;
-    border-radius: 20px;
-    transition: all 0.2s;
-  }
-
-  .social-links a:hover {
-    background: #e31b1b;
-    color: #fff;
-  }
-
-  .author-link {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .author-link:hover {
-    color: #e31b1b;
-  }
-
-  .profile-link {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #e31b1b;
-    text-decoration: none;
-    margin-top: 8px;
-    transition: all 0.2s;
-  }
-
-  .profile-link:hover {
-    color: #c01515;
-    text-decoration: underline;
-  }
-
-  /* ============================================
-     TEAM
-  ============================================ */
-  .team-section {
-    background: #f5f5f5;
-  }
-
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-
-  .team-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 32px;
-    text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    border: 1px solid #eee;
-  }
-
-  .team-card:hover {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    transform: translateY(-4px);
-  }
-
-  .team-avatar {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 16px;
-    background: #eee;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .team-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .team-card h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 4px;
-  }
-
-  .team-role {
-    display: inline-block;
-    background: #fff0f0;
-    color: #e31b1b;
-    font-size: 0.78rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 3px 12px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-  }
-
-  .team-card p {
-    font-size: 0.93rem;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .team-email {
-    font-size: 0.85rem;
-    color: #e31b1b;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .team-email:hover { opacity: 0.75; }
-
-  /* ============================================
-     MISSION
-  ============================================ */
-  .mission-section {
-    background: #fff;
-    color: #111;
-  }
-
-  .mission-section .section-header h2 {
-    color: #111;
-  }
-
-  .mission-section .section-header h2::after {
-    background: #e31b1b;
-  }
-
-  .mission-section .section-header p {
-    color: #555;
-  }
+  .section { padding: 40px 0; }
+  .section-header { margin-bottom: 30px; text-align: center; }
+  .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 15px; }
 
   .mission-pillars {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin-bottom: 40px;
+  }
+  .pillar-card {
+    background: #f9f9f9;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #eee;
+  }
+  .pillar-icon { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+  .pillar-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+
+  .founders-grid, .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 
-  .pillar-card {
-    background: #fafafa;
+  .author-card {
+    background: #fff;
     border: 1px solid #eee;
-    border-radius: 16px;
-    padding: 36px 28px;
+    border-radius: 20px;
+    padding: 40px 30px;
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .pillar-card:hover {
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(227, 27, 27, 0.08);
-    transform: translateY(-4px);
+  .author-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     border-color: rgba(227, 27, 27, 0.2);
   }
 
-  .pillar-icon {
-    font-size: 2.5rem;
-    margin-bottom: 18px;
-    display: block;
-  }
-
-  .pillar-card h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 14px;
-  }
-
-  .pillar-card p {
-    font-size: 0.93rem;
-    color: #555;
-    line-height: 1.7;
-  }
-
-  /* ============================================
-     STORY
-  ============================================ */
-  .story-section {
-    background: #fff;
-  }
-
-  .story-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
-
-  .story-block h2 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 3px solid #e31b1b;
-    display: inline-block;
-  }
-
-  .story-block p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 16px;
-  }
-
-  /* ============================================
-     TRANSPARENCY
-  ============================================ */
-  .transparency-section {
-    background: #f5f5f5;
-  }
-
-  .transparency-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .transparency-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 40px;
-    border: 1px solid #eee;
-  }
-
-  .trans-icon {
-    font-size: 2.5rem;
-    margin-bottom: 18px;
-    display: block;
-  }
-
-  .transparency-card h2 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 16px;
-  }
-
-  .transparency-card p {
-    font-size: 0.97rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #e31b1b, #c01515);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 10px 22px;
-    border-radius: 30px;
-    margin-top: 8px;
-  }
-
-  .monetization-list {
-    list-style: none;
-    padding: 0;
+  .author-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #e31b1b;
+    box-shadow: 0 8px 22px rgba(227, 27, 27, 0.15);
+    background: #f0f0f0;
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .monetization-list li {
-    display: flex;
-    gap: 12px;
-    font-size: 0.93rem;
-    color: #555;
-    line-height: 1.7;
-    padding: 14px 18px;
-    background: #fafafa;
-    border-radius: 10px;
-    border-left: 3px solid #e31b1b;
-  }
-
-  .monetization-list li strong {
-    color: #111;
-  }
-
-  /* ============================================
-     COMMUNITY CTA
-  ============================================ */
-  .community-section {
-    background: #fff;
-  }
-
-  .community-content {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .community-content h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 16px;
-  }
-
-  .community-content > p {
-    font-size: 1.05rem;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 32px;
-  }
-
-  .social-cta {
-    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 36px;
   }
 
-  .social-btn {
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .author-card:hover .author-photo img {
+    transform: scale(1.1);
+  }
+
+  .author-role {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .author-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #e31b1b;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .author-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .author-bio {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 320px;
+  }
+
+  .author-link {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e31b1b;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .author-link:hover {
+    text-decoration: underline;
+  }
+
+  .author-tagline {
+    font-style: italic;
+    color: var(--red);
+    font-size: 0.95rem;
+    margin: -4px 0 12px;
+    font-weight: 500;
+    max-width: 320px;
+  }
+
+  .author-email {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0 0 16px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: all 0.25s ease;
+    gap: 6px;
   }
+  .author-email a { color: #555; text-decoration: none; border-bottom: 1px dotted #999; }
+  .author-email a:hover { color: var(--red); border-color: var(--red); }
 
-  .social-btn.instagram {
-    background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);
-    color: #fff;
+  .community-thanks { margin-top: 18px; font-size: 0.95rem; color: #666; font-style: italic; }
+
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+  .story-block h2 { font-size: 1.6rem; border-bottom: 3px solid var(--red); display: inline-block; margin-bottom: 20px; padding-bottom: 10px; }
+
+  .transparency-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .transparency-card { background: #f8f8f8; padding: 35px; border-radius: 20px; border: 1px solid #eee; }
+  .trans-icon { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+  .badge { background: var(--red); color: #fff; padding: 8px 16px; border-radius: 20px; font-weight: 700; display: inline-block; margin-top: 10px; }
+  .monetization-list { list-style: none; padding: 0; }
+  .monetization-list li { background: #fff; padding: 12px; margin-bottom: 10px; border-radius: 8px; border-left: 4px solid var(--red); font-size: 0.9rem; }
+
+  .community-content { text-align: center; padding: 40px 0; }
+  .social-cta { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
+  .social-cta .social-btn { 
+    padding: 10px 20px; 
+    border-radius: 30px; 
+    color: #fff !important; 
+    text-decoration: none !important; 
+    font-weight: 700; 
   }
+  .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .social-btn.youtube { background: #ff0000; }
+  .social-btn.facebook { background: #1877f2; }
 
-  .social-btn.youtube {
-    background: #ff0000;
-    color: #fff;
-  }
-
-  .social-btn.facebook {
-    background: #1877f2;
-    color: #fff;
-  }
-
-  .social-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-
-  .contact-cta {
-    font-size: 0.97rem;
-    color: #555;
-    margin-bottom: 32px;
-  }
-
-  .contact-cta a {
-    color: #e31b1b;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .contact-cta a:hover { text-decoration: underline; }
-
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 14px 32px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
-
-  .btn-primary {
-    background: #e31b1b;
-    color: #fff;
-  }
-
-  .btn-primary:hover {
-    background: #c01515;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(227, 27, 27, 0.35);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: #111;
-    border: 2px solid #ddd;
-  }
-
-  .btn-secondary:hover {
-    border-color: #e31b1b;
-    color: #e31b1b;
-    transform: translateY(-2px);
-  }
-
-  /* ============================================
-     RESPONSIVE
-  ============================================ */
-
-  /* --- Tablet (≤900px) --- */
   @media (max-width: 900px) {
-    .founders-grid,
-    .mission-pillars,
-    .story-grid,
-    .transparency-grid,
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .founder-card {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .founder-avatar {
-      margin-bottom: 20px;
-    }
-
-    .founder-contact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .social-links {
-      justify-content: center;
-    }
-  }
-
-  /* --- Mobile grande (≤768px) --- */
-  @media (max-width: 768px) {
-    /* Hero */
-    .sobre-hero {
-      height: auto;
-      min-height: 100svh;
-    }
-
-    .hero-overlay {
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 60px;
-      padding-bottom: 60px;
-      align-items: flex-end; /* ancora o texto na parte de baixo no mobile */
-    }
-
-    .hero-overlay .container {
-      max-width: 100%;
-    }
-
-    /* Overlay mais escuro no mobile para o texto ser legível */
-    .sobre-hero::before {
-      background: linear-gradient(
-        to top,
-        rgba(5, 5, 5, 0.97) 0%,
-        rgba(5, 5, 5, 0.90) 50%,
-        rgba(0, 0, 0, 0.55) 100%
-      ) !important;
-    }
-
-    .sobre-hero h1 {
-      font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
-      margin-bottom: 14px !important;
-    }
-
-    .sobre-hero p {
-      font-size: 0.97rem;
-      margin-bottom: 28px;
-    }
-
-    .hero-stats {
-      gap: 16px;
-    }
-
-    .stat strong {
-      font-size: 1.4rem;
-    }
-
-    .stat span {
-      font-size: 0.68rem;
-    }
-
-    .stat-divider {
-      height: 36px;
-    }
-
-    /* Seções gerais */
-    .section { padding: 56px 0; }
-    .section-header { margin-bottom: 40px; }
-    .section-header h2 { font-size: 1.6rem; }
-  }
-
-  /* --- Mobile pequeno (≤480px) --- */
-  @media (max-width: 480px) {
-    .hero-overlay {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .sobre-hero h1 {
-      font-size: clamp(1.4rem, 7vw, 1.9rem) !important;
-    }
-
-    /* Stats em coluna no mobile pequeno */
-    .hero-stats {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .stat-divider {
-      display: none;
-    }
-
-    /* Cards */
-    .founder-card { padding: 24px 20px; }
-    .transparency-card { padding: 28px 20px; }
-    .team-card { padding: 24px 16px; }
-
-    /* CTA */
-    .social-cta { flex-direction: column; align-items: stretch; }
-    .social-btn { justify-content: center; }
-    .cta-buttons { flex-direction: column; align-items: stretch; }
-    .btn { text-align: center; }
+    .mission-pillars, .founders-grid, .team-grid, .story-grid, .transparency-grid { grid-template-columns: 1fr; }
   }
 </style>

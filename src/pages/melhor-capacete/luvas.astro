@@ -1,16 +1,45 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import PostLayout from '../../layouts/PostLayout.astro';
 
 const title = 'Melhores Luvas para Moto 2026 | Proteção e Conforto';
 const description = 'Descubra as melhores luvas para moto de 2026. Análises de luvas de couro, têxtil, impermeáveis e de verão. Proteção para suas mãos em pilotagem.';
-const canonical   = 'https://jovemapan.com.br/melhor-capacete/luvas/';
-const author      = 'Pamela Pan';
+const canonical = 'https://jovemapan.com.br/melhor-capacete/luvas/';
+const author = 'Pamela Pan';
 const publishDate = '20 ABR, 2026';
-const category    = 'ACESSÓRIOS';
+const category = 'ACESSÓRIOS';
 const categoryHref = '/acessorios/';
-const coverImage  = '/images/luva-alpinestars-sp8.jpg';
+const coverImage = '/images/luva-alpinestars-sp8.jpg';
+
+const indice = [
+  { label: 'Introdução', href: '#introducao' },
+  { label: 'Tipos de Luvas para Moto', href: '#tipos' },
+  { label: 'Top Luvas Recomendadas', href: '#top' },
+  { label: 'Por que usar luvas de moto?', href: '#seguranca' },
+  { label: 'Conclusão', href: '#conclusao' }
+];
+
+const tags = [
+  { label: 'Review', href: '/acessorios/' },
+  { label: 'Luvas', href: '#' },
+  { label: 'Segurança', href: '#' },
+  { label: '2026', href: '#' }
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const featuredProduct = {
+  preTitle: 'FRETE GRÁTIS',
+  image: '/images/luva-alpinestars-sp8.jpg',
+  imageAlt: 'Luva em Destaque',
+  name: 'Luva Alpinestars SP-8<br/>Premium',
+  amazonHref: 'https://amzn.to/alpinestarssp8'
+};
 
 const gloves = [
   {
@@ -147,8 +176,100 @@ const types = [
 ];
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
-  <style>
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+>
+  <!-- CONTEÚDO DO ARTIGO -->
+  <div class="post-lead" id="introducao">
+    <p>Proteja suas mãos com as melhores luvas do mercado. Análises de luvas de couro, têxtil, impermeáveis e específicas para cada estilo de pilotagem.</p>
+  </div>
+
+  <h2 id="tipos">Tipos de Luvas para Moto</h2>
+  <div class="info-card-grid">
+    {types.map(type => (
+      <div style="background: var(--white); padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
+        <span style="font-size: 2rem; display: block; margin-bottom: 10px;">{type.icon}</span>
+        <h4 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--black);">{type.title}</h4>
+        <p style="margin: 0; color: var(--text); font-size: 0.95rem;">{type.description}</p>
+      </div>
+    ))}
+  </div>
+
+  <h2 id="top">Top Luvas Recomendadas</h2>
+  
+  {gloves.map((glove, index) => (
+    <div class="product-section" id={`produto-${index}`}>
+      <h3 style="font-size: 1.6rem; color: var(--black); margin-top: 0;">{index + 1}. {glove.name}</h3>
+      <p style="color: var(--text-meta); font-size: 1rem; margin-bottom: 20px;">{glove.subtitle} • {glove.price} • Avaliação: ★ {glove.rating}</p>
+      
+      <div class="h2-image-card" style="margin: 20px 0;">
+        <img src={glove.image} alt={glove.name} />
+      </div>
+      
+      <p>{glove.description}</p>
+      
+      <h4 style="margin-top: 20px;">Características:</h4>
+      <ul>
+        {glove.features.map(feature => (
+          <li>{feature}</li>
+        ))}
+      </ul>
+      
+      <div class="pros-cons-grid">
+        <div class="pc-col">
+          <h4 class="pros">Prós</h4>
+          <ul class="pc-list pros">
+            {glove.pros.map(pro => (
+              <li>{pro}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="pc-col">
+          <h4 class="cons">Contras</h4>
+          <ul class="pc-list cons">
+            {glove.cons.map(con => (
+              <li>{con}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      
+      <div class="btn-buy-container" style="margin-top: 30px;">
+        <a href={glove.affiliateLink} target="_blank" rel="noopener noreferrer" class="btn-buy">VER OFERTA NA AMAZON</a>
+      </div>
+    </div>
+  ))}
+
+  <h2 id="seguranca">Por que usar luvas de moto?</h2>
+  <div style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 24px; border-radius: 8px; margin: 30px 0;">
+    <ul>
+      <li><strong>Proteção contra abrasão:</strong> Em quedas, as mãos são frequentemente usadas para amortecer o impacto</li>
+      <li><strong>Proteção contra impacto:</strong> Protetores nos nós protegem contra fraturas em colisões</li>
+      <li><strong>Conforto térmico:</strong> Proteção contra frio, calor excessivo e vento</li>
+      <li><strong>Segurança no guidão:</strong> Melhor aderência e controle da motocicleta</li>
+      <li><strong>Proteção climática:</strong> Contra chuva, sol e intempéries</li>
+    </ul>
+    <p style="margin-top: 20px; font-weight: bold; color: #2e7d32;">
+      Nunca pilote sem luvas. Mesmo em trajetos curtos, uma queda a 30km/h pode causar ferimentos graves nas mãos.
+    </p>
+  </div>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>Escolher a luva certa depende do seu estilo de pilotagem e do clima predominante na sua região. O importante é nunca pilotar sem proteção nas mãos.</p>
+</PostLayout>
+
+<style>
     .info-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -159,18 +280,9 @@ const types = [
       padding: 15px;
       margin: 20px 0;
     }
-    .info-card-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
     .info-card-content h4 {
       margin: 0 0 10px 0;
       font-size: 1.1rem;
-    }
-    .info-card-content h4 a {
-      color: #0066cc;
-      text-decoration: underline;
     }
     .info-card-content p {
       margin: 0;
@@ -182,1256 +294,12 @@ const types = [
         grid-template-columns: 1fr;
       }
     }
-  </style>
-  <Header />
-
-  <main class="post-main">
-    <div class="post-container">
-
-      <!-- ==========================================
-           1. CABEÇALHO (Breadcrumb, Título, Info)
-           ========================================== -->
-      <div class="post-header-section">
-        <nav class="top-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">HOME</a>
-          <span class="separator">›</span>
-          <a href={categoryHref}>{category}</a>
-          <span class="separator">›</span>
-          <span class="current-page">Melhores Luvas para Moto</span>
-        </nav>
-
-        <a href={categoryHref} class="post-category-tag">
-          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          {category}
-        </a>
-
-        <h1 class="post-title">Melhores Luvas para Moto 2026</h1>
-
-        <div class="post-meta-data">
-          <div class="meta-author">
-            <img src="/images/Pamela pan coufundadora e editoara chefe do blog apan .png" alt={author} class="author-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Pamela+Pan&background=random'" />
-            <strong>{author.toUpperCase()}</strong>
-          </div>
-          <div class="meta-info">
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-               {publishDate}
-             </span>
-             <span class="meta-item">
-               <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-               15K VIEWS
-             </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==========================================
-           2. GRID PRINCIPAL (Col 1: Social | Col 2: Artigo | Col 3: Sidebar)
-           ========================================== -->
-      <div class="post-layout-grid">
-        
-        <!-- [ESQUERDA] Botões Sociais -->
-        <div class="post-social-col">
-          <div class="sticky-socials">
-            <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Facebook">f</a>
-            <a href="https://br.pinterest.com/jovemapan/" target="_blank" rel="noopener noreferrer" class="social-btn pinterest" aria-label="Pinterest">
-              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/channel/UCChj9-uIY5ERfidZ6K-zt_w" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/jovem_apan/" target="_blank" rel="noopener noreferrer" class="social-btn instagram" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- [CENTRO] Artigo -->
-        <article class="post-content-col">
-          
-          <!-- Foto de Capa (Hero) com Selo Verified -->
-          <div class="post-cover-image">
-            <img src={coverImage} alt="Capa do Artigo" />
-            <div class="verified-badge">
-              <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              APAN VERIFIED
-            </div>
-          </div>
-
-          <!-- Índice Modo Accordion -->
-          <div class="post-indice" id="indice-accordion">
-            <div class="indice-header" onclick="toggleIndice()">
-              <div class="indice-left">
-                <div class="indice-icon">
-                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                </div>
-                <strong>ÍNDICE DE CONTEÚDO</strong>
-              </div>
-              <div class="indice-arrow" id="indice-arrow">
-                <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--text-meta)" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
-            </div>
-            <div class="indice-content" id="indice-content">
-              <ul class="indice-links">
-                <li><a href="#introducao">Introdução</a></li>
-                <li><a href="#tipos">Tipos de Luvas para Moto</a></li>
-                <li><a href="#top">Top Luvas Recomendadas</a></li>
-                <li><a href="#seguranca">Por que usar luvas de moto?</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- CONTEÚDO DO ARTIGO -->
-          <div class="post-lead" id="introducao">
-            <p>Proteja suas mãos com as melhores luvas do mercado. Análises de luvas de couro, têxtil, impermeáveis e específicas para cada estilo de pilotagem.</p>
-          </div>
-
-          <h2 id="tipos">Tipos de Luvas para Moto</h2>
-          <div class="info-card-grid">
-            {types.map(type => (
-              <div style="background: var(--white); padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
-                <span style="font-size: 2rem; display: block; margin-bottom: 10px;">{type.icon}</span>
-                <h4 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--black);">{type.title}</h4>
-                <p style="margin: 0; color: var(--text); font-size: 0.95rem;">{type.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <h2 id="top">Top Luvas Recomendadas</h2>
-          
-          {gloves.map((glove, index) => (
-            <div class="product-section" id={`produto-${index}`}>
-              <h3 style="font-size: 1.6rem; color: var(--black); margin-top: 0;">{index + 1}. {glove.name}</h3>
-              <p style="color: var(--text-meta); font-size: 1rem; margin-bottom: 20px;">{glove.subtitle} • {glove.price} • Avaliação: ★ {glove.rating}</p>
-              
-              <div class="h2-image-card" style="margin: 20px 0;">
-                <img src={glove.image} alt={glove.name} />
-              </div>
-              
-              <p>{glove.description}</p>
-              
-              <h4 style="margin-top: 20px;">Características:</h4>
-              <ul>
-                {glove.features.map(feature => (
-                  <li>{feature}</li>
-                ))}
-              </ul>
-              
-              <div class="pros-cons-grid">
-                <div class="pc-col">
-                  <h4 class="pros">Prós</h4>
-                  <ul class="pc-list pros">
-                    {glove.pros.map(pro => (
-                      <li>{pro}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="pc-col">
-                  <h4 class="cons">Contras</h4>
-                  <ul class="pc-list cons">
-                    {glove.cons.map(con => (
-                      <li>{con}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              
-              <div class="btn-buy-container" style="margin-top: 30px;">
-                <a href={glove.affiliateLink} target="_blank" rel="noopener noreferrer" class="btn-buy amazon">VER OFERTA NA AMAZON</a>
-              </div>
-            </div>
-          ))}
-
-          <h2 id="seguranca">Por que usar luvas de moto?</h2>
-          <div style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 24px; border-radius: 8px; margin: 30px 0;">
-            <ul>
-              <li><strong>Proteção contra abrasão:</strong> Em quedas, as mãos são frequentemente usadas para amortecer o impacto</li>
-              <li><strong>Proteção contra impacto:</strong> Protetores nos nós protegem contra fraturas em colisões</li>
-              <li><strong>Conforto térmico:</strong> Proteção contra frio, calor excessivo e vento</li>
-              <li><strong>Segurança no guidão:</strong> Melhor aderência e controle da motocicleta</li>
-              <li><strong>Proteção climática:</strong> Contra chuva, sol e intempéries</li>
-            </ul>
-            <p style="margin-top: 20px; font-weight: bold; color: #2e7d32;">
-              Nunca pilote sem luvas. Mesmo em trajetos curtos, uma queda a 30km/h pode causar ferimentos graves nas mãos.
-            </p>
-          </div>
-
-          <!-- TAGS E COMPARTILHAMENTO -->
-          <div class="post-footer-meta">
-            <div class="post-tags-container">
-              <strong>TAGS:</strong>
-              <div class="post-tags">
-                <a href="/acessorios/" class="post-tag">Review</a>
-                <a href="#" class="post-tag">Luvas</a>
-                <a href="#" class="post-tag">Segurança</a>
-                <a href="#" class="post-tag">2026</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="post-share-container">
-            <strong>COMPARTILHE ESTE ARTIGO:</strong>
-            <div class="post-share">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://jovemapan.com.br/melhor-capacete/luvas/" target="_blank" rel="noopener noreferrer" class="share-btn facebook" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook
-              </a>
-              <a href="https://twitter.com/intent/tweet?url=https://jovemapan.com.br/melhor-capacete/luvas/&text=Melhores%20Luvas%20para%20Moto%202026" target="_blank" rel="noopener noreferrer" class="share-btn twitter" aria-label="Twitter">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                Twitter
-              </a>
-              <a href="#" onclick="navigator.clipboard.writeText('https://jovemapan.com.br/melhor-capacete/luvas/'); alert('Link copiado!'); return false;" class="share-btn link" aria-label="Copiar Link">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="#666"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                Link
-              </a>
-            </div>
-          </div>
-
-          <!-- BIO DO AUTOR -->
-          <div class="author-bio-box" id="author">
-            <div class="bio-avatar">
-              <img src="/images/Pamela pan coufundadora e editoara chefe do blog apan .png" alt="Pamela Pan" onerror="this.src='https://ui-avatars.com/api/?name=Pamela+Pan&background=random'" />
-            </div>
-            <div class="bio-content">
-              <span class="bio-label">SOBRE A AUTORA</span>
-              <h4 class="bio-name">Pamela Pan</h4>
-              <p class="bio-desc">Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.</p>
-              <a href="/author-pamela-pan/" class="bio-link">Ver perfil completo &rsaquo;</a>
-            </div>
-          </div>
-
-          <!-- SEÇÃO DE COMENTÁRIOS -->
-          <div class="post-comments-section" id="comments">
-            <h3 class="comments-title">COMENTÁRIOS</h3>
-            <p class="comments-note">Seu endereço de email não será publicado.</p>
-            
-            <form class="comments-form" onsubmit="event.preventDefault(); alert('Comentário enviado para moderação!');">
-              <div class="form-group full-width">
-                <textarea rows="5" placeholder="Deixe seu comentário..." required></textarea>
-              </div>
-              <div class="form-row">
-                <input type="text" placeholder="Nome" required />
-                <input type="email" placeholder="Email" required />
-              </div>
-              <button type="submit" class="btn-submit-comment">Publicar Comentário</button>
-            </form>
-          </div>
-
-        </article>
-
-        <!-- [DIREITA] Sidebar -->
-        <aside class="post-sidebar-col">
-          
-          <!-- Widget 1: PRODUTO EM DESTAQUE -->
-          <div class="sidebar-widget produto-destaque">
-            <p class="frete-gratis">FRETE GRÁTIS</p>
-            <img src="/images/luva-alpinestars-sp8.jpg" alt="Luva em Destaque" class="produto-imagem" />
-            <h4 class="produto-nome">Luva Alpinestars SP-8<br/>Premium</h4>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-produto-destaque" style="background: #FFE600; color: #333;">VER NO MERCADO LIVRE</a>
-            <a href="#" class="btn-produto-destaque">VER OFERTA NA AMAZON</a>
-          </div>
-
-          <!-- Widget 2: NEWSLETTER VIP -->
-          <div class="sidebar-widget newsletter-vip">
-            <div class="newsletter-icon">
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-            <h3>NEWSLETTER<br>VIP</h3>
-            <p>Receba as melhores ofertas e análises de luvas diretamente no seu email!</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrito com sucesso!');">
-              <input type="text" placeholder="Seu nome" required />
-              <input type="email" placeholder="Seu email" required />
-              <button type="submit">QUERO RECEBER <span>→</span></button>
-            </form>
-          </div>
-
-          <!-- Widget 3: MAIS LIDOS -->
-          <div class="sidebar-widget mais-lidos">
-            <h3>MAIS LIDOS</h3>
-            <ul class="mais-lidos-list">
-              <li><a href="/melhor-capacete/">Melhores Capacetes de Moto 2026</a></li>
-              <li><a href="/custo-beneficio/">Capacetes Custo Benefício</a></li>
-              <li><a href="/capacete-norisk-vale-a-pena/">Capacete Norisk Vale a Pena?</a></li>
-              <li><a href="/ls2-scope-monocolor-review/">Review LS2 Scope Monocolor</a></li>
-              <li><a href="/mochila-para-moto/">Melhores Mochilas para Moto</a></li>
-            </ul>
-          </div>
-
-        </aside>
-      </div>
-    </div>
-  </main>
-
-  <Footer />
-
-<script is:inline>
-  function toggleIndice() {
-    const content = document.getElementById('indice-content');
-    const arrow = document.getElementById('indice-arrow');
-    
-    if (content.classList.contains('open')) {
-      content.classList.remove('open');
-      arrow.classList.remove('open');
-    } else {
-      content.classList.add('open');
-      arrow.classList.add('open');
+    .product-section {
+      margin-bottom: 40px;
+      padding: 24px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-  }
-</script>
-
-<style>
-  :root {
-    --red: #E31E24;
-    --red-dark: #C41A1F;
-    --black: #000000;
-    --gray-bg: #F4F4F4;
-    --gray-light: #F9FAFB;
-    --border: #EAEAEA;
-    --text: #374151;
-    --text-meta: #777;
-    --white: #ffffff;
-    --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-title: 'Georgia', 'Playfair Display', serif;
-  }
-
-  /* Body & Container */
-  .post-main {
-    background: var(--gray-bg);
-    padding: 30px 0 80px;
-    font-family: var(--font-primary);
-    color: var(--text);
-  }
-
-  .post-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  /* ==================================
-     1. CABEÇALHO (Breadcrumb, Título, Info)
-     ================================== */
-  .post-header-section {
-    max-width: 800px;
-    margin-left: 60px;
-    margin-bottom: 20px;
-  }
-
-  .top-breadcrumb {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: var(--text-meta);
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
-  }
-  .top-breadcrumb a { color: var(--text-meta); text-decoration: none; transition: color 0.2s;}
-  .top-breadcrumb a:hover { color: var(--red); }
-  .top-breadcrumb .current-page { color: var(--red); }
-  .separator { font-weight: normal; color: #ccc; }
-
-  .post-category-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--black);
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  .post-title {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: #0c1827;
-    margin: 0 0 24px;
-    letter-spacing: -0.01em;
-  }
-
-  .post-meta-data {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 0.7rem;
-    color: var(--text-meta);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .meta-author { display: flex; align-items: center; gap: 8px; color: var(--black); }
-  .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
-  .meta-info { display: flex; align-items: center; gap: 16px; }
-  .meta-item { display: flex; align-items: center; gap: 4px; color: var(--text-meta); }
-  .meta-item svg { color: var(--red); }
-
-  /* ==================================
-     2. GRID PRINCIPAL
-     ================================== */
-  .post-layout-grid {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr) 300px;
-    gap: 20px 20px;
-    align-items: start;
-  }
-
-  /* --- [ESQUERDA] Botões Sociais --- */
-  .post-social-col {
-    position: relative;
-    height: 100%;
-  }
-  .sticky-socials {
-    position: sticky;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .social-btn {
-    display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 4px;
-    color: var(--white); font-weight: bold; text-decoration: none;
-    font-family: Arial, sans-serif; transition: transform 0.2s;
-  }
-  .social-btn:hover { transform: scale(1.05); }
-  .social-btn.facebook { background: #3b5998; font-size: 1.1rem; font-weight: bold; }
-  .social-btn.pinterest { background: #E60023; }
-  .social-btn.youtube { background: #FF0000; }
-  /* Table of Contents */
-  .table-of-contents {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 32px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .table-of-contents h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--black);
-    margin: 0 0 16px 0;
-    border-bottom: 2px solid var(--red);
-    padding-bottom: 8px;
-  }
-  .table-of-contents ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .table-of-contents li {
-    margin-bottom: 8px;
-  }
-  .table-of-contents a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-    padding: 4px 0;
-    transition: color 0.2s;
-  }
-  .table-of-contents a:hover {
-    color: var(--red);
-  }
-  .table-of-contents a::before {
-    content: '›';
-    margin-right: 8px;
-    color: var(--red);
-    font-weight: bold;
-  }
-
-  /* Product Sections */
-  .product-section {
-    margin-bottom: 40px;
-    padding: 24px;
-    background: var(--white);
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-
-  /* Product Gallery */
-  .product-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-  .gallery-item {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  .gallery-item:hover {
-    transform: translateY(-2px);
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-  .product-item {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    background: var(--white);
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  @media (max-width: 768px) {
-    .product-gallery {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .product-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 16px;
-  }
-  .product-links .btn-buy {
-    background: var(--red);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.2s, transform 0.1s;
-  }
-  .product-links .btn-buy:hover {
-    background: var(--red-dark);
-    transform: translateY(-1px);
-  }
-  .product-links .btn-buy.btn-mercadolivre {
-    background: #FFE600;
-    color: #2D3277;
-  }
-  .product-links .btn-buy.btn-mercadolivre:hover {
-    background: #E6CF00;
-    color: #1A1F5C;
-  }
-
-  .social-btn.instagram { background: #E4405F; }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .post-layout-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    .post-social-col {
-      display: none;
-    }
-    .post-sidebar-col {
-      position: static;
-    }
-    .product-links {
-      flex-direction: column;
-    }
-    .product-links .btn-buy {
-      text-align: center;
-    }
-  }
-
-  /* --- [CENTRO] Artigo e Capa --- */
-  .post-content-col {
-    background: transparent;
-    min-width: 0;
-  }
-  .post-cover-image {
-    position: relative;
-    width: 733px;
-    height: 440px;
-    max-width: 100%;
-    margin: 0 auto 32px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-  .post-cover-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  /* Selo APAN VERIFIED */
-  .verified-badge {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #1A1A1A;
-    color: #fff;
-    font-family: var(--font-primary);
-    font-size: 0.65rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border-top-right-radius: 4px;
-  }
-
-  /* --- Índice Accordion --- */
-  .post-indice {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .indice-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-  }
-  .indice-left { display: flex; align-items: center; gap: 12px; }
-  .indice-icon {
-    background: var(--red);
-    width: 32px; height: 32px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .post-indice strong {
-    color: var(--black);
-    font-size: 1.05rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-  }
-  .indice-arrow {
-    color: var(--text-meta);
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    margin-left: 12px;
-  }
-  .indice-arrow.open { transform: rotate(180deg); }
-
-  .indice-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    border-top: 1px solid transparent;
-    opacity: 0;
-  }
-  .indice-content.open {
-    max-height: 500px;
-    border-top: 1px solid var(--border);
-    margin-top: 16px;
-    padding-top: 16px;
-    opacity: 1;
-  }
-  .indice-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .indice-links li {
-    margin-bottom: 8px;
-  }
-  .indice-links li ul {
-    list-style: none;
-    margin: 8px 0 8px 20px;
-    padding: 0;
-  }
-  .indice-links li ul li {
-    margin-bottom: 6px;
-  }
-  .indice-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-    padding: 4px 0;
-    transition: color 0.2s;
-  }
-  .indice-links a:hover {
-    color: var(--red);
-  }
-  .indice-links a::before {
-    content: '›';
-    margin-right: 8px;
-    color: var(--red);
-    font-weight: bold;
-  }
-
-  .post-lead {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 24px;
-    font-weight: 400;
-  }
-
-  .post-content-col p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
-  .post-content-col h2 { color: var(--black); font-size: 1.8rem; font-weight: 700; margin: 32px 0 16px 0; }
-  .post-content-col h3 { color: var(--black); font-size: 1.4rem; font-weight: 600; margin: 24px 0 12px 0; }
-
-  /* --- [DIREITA] Sidebar --- */
-  .post-sidebar-col {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    position: sticky;
-    top: 100px;
-  }
-
-  /* Widget 1: PRODUTO EM DESTAQUE */
-  .sidebar-widget {
-    border-radius: 8px;
-    padding: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    background: var(--white);
-  }
-  .sidebar-widget.produto-destaque {
-    background: #000000;
-    color: var(--white);
-    text-align: center;
-    padding: 24px 20px;
-  }
-  .frete-gratis {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin: 0 0 16px;
-  }
-  .produto-imagem {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    margin: 0 auto 16px;
-    display: block;
-  }
-  .produto-nome {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--white);
-    margin: 0 0 20px;
-    line-height: 1.4;
-  }
-  .btn-produto-destaque {
-    display: block;
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--red);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    margin-bottom: 12px;
-    transition: background 0.2s;
-    letter-spacing: 0.5px;
-  }
-  .btn-produto-destaque:hover {
-    background: var(--red-dark);
-  }
-  .btn-produto-destaque:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Widget 2: NEWSLETTER VIP */
-  .sidebar-widget.newsletter-vip {
-    background: var(--red);
-    border: none;
-    color: var(--white);
-    text-align: center;
-    border-radius: 8px;
-  }
-  .newsletter-icon {
-    margin: 0 auto 10px;
-    color: var(--white);
-  }
-  .sidebar-widget.newsletter-vip h3 {
-    font-size: 1.6rem; font-weight: 900; font-style: italic; margin-bottom: 15px;
-  }
-  .sidebar-widget.newsletter-vip p {
-    font-size: 0.85rem; line-height: 1.4; margin-bottom: 24px; font-weight: 500;
-  }
-  .newsletter-form {
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .newsletter-form input {
-    width: 100%; padding: 14px; border-radius: 4px; border: none; font-size: 0.9rem;
-    font-family: var(--font-primary); box-sizing: border-box;
-  }
-  .newsletter-form button {
-    width: 100%; border-radius: 4px; border: none; font-size: 0.9rem; padding: 14px;
-    background: var(--black); color: var(--white); font-weight: 900;
-    text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    transition: background 0.2s;
-  }
-  .newsletter-form button:hover { background: #1a1a1a; }
-  .newsletter-form button span { font-size: 1.2rem; line-height: 0; margin-top: -2px; }
-
-  /* Widget 3: MAIS LIDOS */
-  .sidebar-widget.mais-lidos h3 {
-    font-size: 1.1rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-  }
-  .mais-lidos-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .mais-lidos-list li {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .mais-lidos-list li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  .mais-lidos-list a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.4;
-    transition: color 0.2s;
-    display: block;
-  }
-  .mais-lidos-list a:hover {
-    color: var(--red);
-  }
-
-  /* ==================================
-     CARDS DE IMAGEM ABAIXO DOS H2
-     ================================== */
-  .h2-image-card {
-    width: 100%;
-    max-width: 733px;
-    margin: 16px 0 24px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background: var(--gray-light);
-  }
-  .h2-image-card img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  /* ==================================
-     3. FOOTER DO ARTIGO (TAGS, SHARE, AUTOR, COMENTÁRIOS)
-     ================================== */
-
-  /* Tags e Compartilhamento */
-  .post-footer-meta {
-    margin-top: 40px;
-    padding: 24px 0;
-    border-top: 1px solid var(--border);
-  }
-  .post-tags-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-  }
-  .post-tags-container strong {
-    font-size: 0.8rem;
-    color: var(--text-meta);
-    font-weight: 800;
-  }
-  .post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .post-tag {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
-  }
-  .post-tag:hover {
-    background: var(--red);
-    color: var(--white);
-    border-color: var(--red);
-  }
-
-  .post-share-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .post-share-container strong {
-    font-size: 0.8rem;
-    color: var(--text-meta);
-    font-weight: 800;
-  }
-  .post-share {
-    display: flex;
-    gap: 8px;
-  }
-  .share-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 6px;
-    color: var(--white);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .share-btn:hover { 
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  .share-btn.facebook { background: #1877f2; }
-  .share-btn.facebook:hover { background: #166fe5; }
-  .share-btn.twitter { background: #1DA1F2; }
-  .share-btn.twitter:hover { background: #1a91da; }
-  .share-btn.link { 
-    background: #f3f4f6; 
-    color: #666;
-    border: 1px solid #d1d5db;
-  }
-  .share-btn.link:hover { 
-    background: #e5e7eb; 
-    color: #4b5563;
-  }
-
-  /* Autor Bio Box */
-  .author-bio-box {
-    margin-top: 40px;
-    background: var(--white);
-    border-radius: 12px;
-    padding: 32px;
-    display: flex;
-    gap: 32px;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    border: 1px solid var(--border);
-  }
-  .bio-avatar img {
-    width: 140px; 
-    height: 140px !important; 
-    aspect-ratio: 1 / 1;
-    border-radius: 50%; 
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-  }
-  .bio-content { flex: 1; }
-  .bio-label {
-    display: block; font-size: 0.75rem; font-weight: 900; color: var(--red);
-    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
-  }
-  .bio-name {
-    font-size: 1.6rem; font-weight: 900; color: var(--black); margin: 0 0 12px;
-  }
-  .bio-desc {
-    font-size: 1.05rem; line-height: 1.6; color: var(--text-meta); margin-bottom: 16px;
-  }
-  .bio-link {
-    font-size: 0.95rem; font-weight: 800; color: var(--black); text-decoration: none;
-    border-bottom: 2px solid var(--red); padding-bottom: 4px; transition: color 0.2s;
-  }
-  .bio-link:hover { color: var(--red); }
-
-  /* Seção de Comentários */
-  .post-comments-section {
-    margin-top: 48px;
-    padding-top: 20px;
-  }
-  .comments-title {
-    font-size: 1.4rem;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--black);
-    text-transform: uppercase;
-    border-left: 4px solid var(--red);
-    padding-left: 12px;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-  }
-  .comments-note {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
-  .comments-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .form-group.full-width textarea {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--white);
-    font-size: 0.95rem;
-    font-family: inherit;
-    color: var(--text);
-    resize: vertical;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    box-sizing: border-box;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .form-row input {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--white);
-    font-size: 0.95rem;
-    font-family: inherit;
-    color: var(--text);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    box-sizing: border-box;
-  }
-  textarea:focus, input:focus {
-    outline: none;
-    border-color: #a0a0a0;
-  }
-  .btn-submit-comment {
-    align-self: flex-start;
-    background: var(--red);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 16px 32px;
-    font-size: 0.9rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 8px;
-  }
-  .btn-submit-comment:hover {
-    background: #C41A1F;
-  }
-
-  @media (max-width: 600px) {
-    .author-bio-box { flex-direction: column; align-items: center; text-align: center; gap: 15px; padding: 24px; }
-    .bio-avatar img { width: 100px; height: 100px; }
-    .bio-name { font-size: 1.4rem; margin-bottom: 8px; }
-    .bio-desc { font-size: 0.95rem; margin-bottom: 12px; }
-    .post-tags-container, .post-share-container { flex-direction: column; align-items: flex-start; gap: 12px;}
-    .form-row { grid-template-columns: 1fr; }
-    .btn-submit-comment { width: 100%; align-self: stretch;}
-  }
-
-  @media (max-width: 1024px) {
-    .post-layout-grid {
-      grid-template-columns: 40px 1fr;
-    }
-    .post-sidebar-col {
-      display: none;
-    }
-    .post-header-section {
-      margin-left: 60px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .post-header-section {
-      margin-left: 0;
-    }
-    .post-social-col {
-      display: none;
-    }
-    .post-layout-grid {
-      grid-template-columns: 1fr;
-    }
-    .post-cover-image {
-      height: auto;
-      min-height: 250px;
-    }
-  }
-
-  /* ==================================
-     ESTILOS DO CONTEÚDO DO ARTIGO (PRODUTOS, PRÓS/CONTRAS, ETC)
-     ================================== */
-  .post-content-col h2 {
-    font-family: var(--font-title); font-size: 2.2rem; font-weight: 800;
-    color: var(--black); margin: 40px 0 24px; line-height: 1.2;
-  }
-  .post-content-col h3 {
-    font-family: var(--font-primary); font-size: 1.5rem; font-weight: 900;
-    color: var(--black); margin: 32px 0 16px;
-  }
-  .post-content-col ul, .post-content-col ol {
-    margin: 0 0 24px 20px; font-size: 1.05rem; line-height: 1.8; color: var(--text);
-  }
-  .post-content-col li { margin-bottom: 8px; }
-
-  /* Product Card */
-  .product-section {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    margin: 40px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-  }
-  .product-section h3 {
-    margin-top: 0;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
-    color: var(--black);
-  }
-
-  /* Botões Affiliates */
-  .btn-buy-container { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
-  .btn-buy {
-    display: block;
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-    text-align: center;
-    background: #E31919;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-    cursor: pointer;
-  }
-  .btn-buy:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    background: #fff;
-    color: #E31919;
-    border: 2px solid #E31919;
-  }
-  .btn-buy.btn-mercadolivre {
-    background: #FFE600 !important;
-    color: #2D3277 !important;
-  }
-  .btn-buy.btn-mercadolivre:hover {
-    background: #E6CF00 !important;
-    color: #1A1F5C !important;
-    border-color: #FFE600 !important;
-  }
-
-  /* Pros & Cons Box */
-  .pros-cons-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px;
-  }
-  .pc-col {
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-  }
-  .pc-col:has(.pros) {
-    background: #F0FDF4;
-    border-color: #BBF7D0;
-  }
-  .pc-col:has(.cons) {
-    background: #FEF2F2;
-    border-color: #FECACA;
-  }
-  .pc-col h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;}
-  .pc-col h4.pros { color: #166534; }
-  .pc-col h4.cons { color: #991B1B; }
-  .pc-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
-  .pc-list li {
-    display: flex; align-items: flex-start;
-    gap: 12px;
-    font-size: 0.9rem;
-    color: var(--text);
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
-  .pc-list.pros li::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    background: #22C55E;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    background-size: 12px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .pc-list.cons li::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    background: #EF4444;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
-    background-size: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  @media (max-width: 600px) {
-    .pros-cons-grid { grid-template-columns: 1fr; }
-    .product-section { padding: 20px; }
-  }
 </style>
-</Layout>

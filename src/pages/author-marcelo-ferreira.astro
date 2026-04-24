@@ -1,148 +1,197 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
-const title = '» Marcelo Ferreira | Engenheiro de Tráfego';
+const title = 'Marcelo Ferreira | Engenheiro de Tráfego e Especialista Jovem Apan';
 const description = 'Conheça Marcelo Ferreira, o Engenheiro de Tráfego por trás do jovem apan. Sua expertise em segurança viária garante a máxima confiabilidade em nossos reviews.';
+
+const authorBio = {
+  name: 'Marcelo Ferreira',
+  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
+  image: '/images/marcelo-ferreira.png',
+  profileHref: '/author-marcelo-ferreira/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const indice = [
+  { label: 'Bio', href: '#introducao' },
+  { label: 'Destaques', href: '#destaques' },
+  { label: 'Experiência', href: '#experiencia' },
+  { label: 'Educação', href: '#educacao' },
+];
 ---
 
-<Layout title={title} description={description}>
-  <Header />
+<PostLayout
+  title={title}
+  description={description}
+  category="EQUIPE"
+  author="Marcelo Ferreira"
+  authorBio={authorBio}
+  coverImage="/images/Marcelo%20ferreira%20coufundador%20do%20blog%20apan%20.png"
+  indice={indice}
+  hideShare={true}
+  hideAuthor={true}
+  hideComments={true}
+>
+  <div class="author-profile-header" id="introducao">
+    <div class="author-photo">
+      <img src="/images/Marcelo%20ferreira%20coufundador%20do%20blog%20apan%20.png" alt="Marcelo Ferreira" />
+    </div>
+    <span class="author-role">Cofundador e Diretor Técnico</span>
+    <h1 class="author-name">Marcelo Ferreira</h1>
+    <div class="author-title">
+      <span class="icon">⚙️</span> Engenheiro de Tráfego
+    </div>
+    <p class="author-intro-text">
+      Se Pamela Pan representa a alma e a adrenalina do jovem apan, Marcelo Ferreira é o cérebro e o alicerce científico. Como Engenheiro de Tráfego e cofundador do blog, sua paixão não está na velocidade pura, mas na física, nos dados e nos sistemas que garantem que essa velocidade possa ser desfrutada com o máximo de segurança possível.
+    </p>
+  </div>
 
-  <main id="content">
+  <h2 id="destaques">Destaques</h2>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-icon">🎓</div>
+      <h3>Engenheiro de Tráfego</h3>
+      <p>Formação sólida e experiência prática em análise de infraestrutura, comportamento do condutor e prevenção de acidentes.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">✅</div>
+      <h3>Análise Técnica e Validação</h3>
+      <p>Responsável por validar a precisão técnica de todos os reviews de equipamentos de moto e artigos sobre pilotagem defensiva.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">🔍</div>
+      <h3>Especialista em Análise de Acidentes</h3>
+      <p>Profundo conhecimento sobre as causas e a dinâmica de acidentes envolvendo motociclistas, utilizando esse conhecimento para criar conteúdo preventivo e altamente eficaz.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">📊</div>
+      <h3>Estrategista de Conteúdo</h3>
+      <p>Criador da metodologia de testes baseada em dados do blog, garantindo que a imparcialidade e a precisão técnica sejam os pilares de todo o projeto.</p>
+    </div>
+  </div>
 
-    <section class="author-hero">
-      <div class="container">
-        <a href="/sobre/" class="back-link">← Voltar para Sobre</a>
-        <div class="author-hero-content">
-          <div class="author-photo">
-            <img src="/images/Marcelo%20ferreira%20coufundador%20do%20blog%20apan%20.png" alt="Marcelo Ferreira" />
-          </div>
-          <div class="author-intro">
-            <span class="author-role-badge">Cofundador e Diretor de Marketing</span>
-            <h1>Marcelo Ferreira</h1>
-            <p class="author-subtitle">⚙️ Engenheiro de Tráfego</p>
-            <div class="author-meta">
-              <span>📍 São Paulo, SP</span>
-              <a href="mailto:marcelo@jovemapan.com.br">📧 marcelo@jovemapan.com.br</a>
-            </div>
-            <div class="author-social">
-              <a href="https://www.linkedin.com/in/marcelo-ferreira-b6110a392/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <h2 id="experiencia">Experiência</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Co-fundador e Chefe de Segurança e Análise Técnica</h3>
+      <p><strong>Jovem Apan</strong></p>
+      <p>Desenvolve os critérios técnicos para avaliação de produtos. Valida todos os artigos sobre segurança e legislação, garantindo que cada recomendação seja baseada em evidências científicas e normas vigentes.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Consultor de Segurança Viária</h3>
+      <p><strong>Projetos Públicos e Privados</strong></p>
+      <p>Atuou na análise de pontos críticos de acidentes em rodovias e cidades, propondo soluções de engenharia para mitigar riscos. Desenvolveu treinamentos de pilotagem defensiva para frotas corporativas.</p>
+    </div>
+  </div>
 
-    <section class="section bio-section">
-      <div class="container">
-        <p class="bio-text">
-          Se Pamela Pan representa a alma e a adrenalina do jovem apan, Marcelo Ferreira é o cérebro e o alicerce científico. Como Engenheiro de Tráfego e cofundador do blog, sua paixão não está na velocidade pura, mas na física, nos dados e nos sistemas que garantem que essa velocidade possa ser desfrutada com o máximo de segurança possível.
-        </p>
-        <p class="bio-text">
-          Marcelo enxerga o motociclismo através de uma lente analítica, onde cada curva é um vetor de forças e cada equipamento é uma variável em uma complexa equação de proteção. É essa abordagem metódica que garante que cada artigo e cada review de moto no jovem apan seja mais do que uma opinião: é um veredito técnico fundamentado em ciência.
-        </p>
-      </div>
-    </section>
+  <h2 id="educacao">Educação</h2>
+  <ul class="education-list">
+    <li><strong>Graduação em Engenharia Civil com Ênfase em Transportes:</strong> Base fundamental sobre planejamento, infraestrutura e dinâmica de veículos.</li>
+    <li><strong>Pós-Graduação em Engenharia de Tráfego e Segurança Viária:</strong> Especialização aprofundada nos fatores humanos, veiculares e ambientais que influenciam a segurança no trânsito.</li>
+    <li><strong>Certificação Internacional em Análise e Prevenção de Acidentes de Trânsito:</strong> Credencial que atesta sua capacidade técnica para investigar e desenvolver estratégias para prevenir acidentes.</li>
+  </ul>
 
-    <section class="section highlights-section">
-      <div class="container">
-        <h2>Destaques</h2>
-        <div class="highlights-grid">
-          <div class="highlight-card">
-            <div class="highlight-icon">🎓</div>
-            <h3>Engenheiro de Tráfego</h3>
-            <p>Formação sólida e experiência prática em análise de infraestrutura, comportamento do condutor e prevenção de acidentes.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">✅</div>
-            <h3>Análise Técnica e Validação</h3>
-            <p>Responsável por validar a precisão técnica de todos os reviews de equipamentos de moto e artigos sobre pilotagem defensiva.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">🔍</div>
-            <h3>Especialista em Análise de Acidentes</h3>
-            <p>Profundo conhecimento sobre as causas e a dinâmica de acidentes envolvendo motociclistas, utilizando esse conhecimento para criar conteúdo preventivo e altamente eficaz.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">📊</div>
-            <h3>Estrategista de Conteúdo</h3>
-            <p>Criador da metodologia de testes baseada em dados do blog, garantindo que a imparcialidade e a precisão técnica sejam os pilares de todo o projeto.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section experience-section">
-      <div class="container">
-        <h2>Experiência</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Co-fundador e Chefe de Segurança e Análise Técnica</h3>
-              <span class="timeline-place">Jovem Apan</span>
-              <p>Desenvolve os critérios técnicos para avaliação de produtos. Valida todos os artigos sobre segurança e legislação, garantindo que cada recomendação seja baseada em evidências científicas e normas vigentes.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Consultor de Segurança Viária</h3>
-              <span class="timeline-place">Projetos Públicos e Privados</span>
-              <p>Atuou na análise de pontos críticos de acidentes em rodovias e cidades, propondo soluções de engenharia para mitigar riscos. Desenvolveu treinamentos de pilotagem defensiva para frotas corporativas.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Perito Técnico em Reconstrução de Acidentes</h3>
-              <span class="timeline-place">Consultoria Técnica</span>
-              <p>Trabalhou na análise forense de acidentes de trânsito, utilizando princípios da física e da engenharia para determinar suas causas. Essa experiência proporciona uma visão única sobre os pontos de falha de equipamentos e comportamentos de risco.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section education-section">
-      <div class="container">
-        <h2>Educação</h2>
-        <p class="section-intro">A credibilidade de Marcelo é sustentada por uma formação acadêmica robusta e focada:</p>
-        <ul class="education-list">
-          <li><strong>Graduação em Engenharia Civil com Ênfase em Transportes:</strong> Base fundamental sobre planejamento, infraestrutura e dinâmica de veículos.</li>
-          <li><strong>Pós-Graduação em Engenharia de Tráfego e Segurança Viária:</strong> Especialização aprofundada nos fatores humanos, veiculares e ambientais que influenciam a segurança no trânsito.</li>
-          <li><strong>Certificação Internacional em Análise e Prevenção de Acidentes de Trânsito:</strong> Credencial que atesta sua capacidade técnica para investigar e desenvolver estratégias para prevenir acidentes.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section quote-section">
-      <div class="container">
-        <blockquote class="author-quote">
-          <p>"Eu sempre acreditei que a verdadeira liberdade sobre duas rodas vem do conhecimento, não da sorte. Minha missão no jovem apan é simples: usar a engenharia para proteger a paixão."</p>
-          <p>"Quero que cada motociclista tenha as ferramentas e as informações necessárias para entender os riscos e tomar as melhores decisões, seja na compra de um capacete ou em uma ultrapassagem na estrada. Quero que todos voltem para casa seguros no final do dia."</p>
-          <cite>— Marcelo Ferreira</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container cta-content">
-        <h2>Conheça toda a equipe</h2>
-        <p>Marcelo é apenas uma parte do time que faz o jovem apan acontecer.</p>
-        <div class="cta-buttons">
-          <a href="/sobre/" class="btn btn-primary">Ver Equipe Completa</a>
-          <a href="/" class="btn btn-secondary">Explorar Artigos</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-  <Footer />
-</Layout>
+  <blockquote class="author-quote">
+    <p>"Eu sempre acreditei que a verdadeira liberdade sobre duas rodas vem do conhecimento, não da sorte. Minha missão no jovem apan é simples: usar a engenharia para proteger a paixão."</p>
+    <cite>— Marcelo Ferreira</cite>
+  </blockquote>
+</PostLayout>
 
 <style>
-  .author-hero{background:linear-gradient(135deg,#0a0a0a 0%,#1a0000 100%);padding:50px 0 60px}.back-link{display:inline-block;color:rgba(255,255,255,.6);text-decoration:none;font-size:.85rem;margin-bottom:30px;transition:color .2s}.back-link:hover{color:#e31b1b}.author-hero-content{display:flex;align-items:center;gap:40px}.author-photo{flex-shrink:0;width:160px;height:160px;border-radius:50%;overflow:hidden;border:4px solid rgba(227,27,27,.5);box-shadow:0 8px 30px rgba(227,27,27,.25)}.author-photo img{width:100%;height:100%;object-fit:cover}.author-role-badge{display:inline-block;background:#e31b1b;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:5px 14px;border-radius:20px;margin-bottom:12px}.author-intro h1{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.1}.author-subtitle{font-size:1.05rem;color:rgba(255,255,255,.7);margin-bottom:16px}.author-meta{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px}.author-meta a,.author-meta span{font-size:.88rem;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}.author-meta a:hover{color:#e31b1b}.author-social{display:flex;gap:10px}.social-link{font-size:.8rem;color:#e31b1b;text-decoration:none;border:1px solid #e31b1b;padding:4px 14px;border-radius:20px;transition:all .2s}.social-link:hover{background:#e31b1b;color:#fff}.container{max-width:900px;margin:0 auto;padding:0 24px}.section{padding:60px 0}.section h2{font-size:1.8rem;font-weight:800;color:#111;margin-bottom:24px;padding-bottom:12px;border-bottom:3px solid #e31b1b;display:inline-block}.section-intro{color:#555;font-size:1rem;line-height:1.7;margin-bottom:24px}.bio-section{background:#fff;border-bottom:1px solid #eee}.bio-text{font-size:1.08rem;color:#333;line-height:1.85;margin-bottom:20px}.highlights-section{background:#f8f8f8}.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.highlight-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:32px 24px;transition:all .3s ease}.highlight-card:hover{box-shadow:0 8px 24px rgba(227,27,27,.08);transform:translateY(-3px);border-color:rgba(227,27,27,.2)}.highlight-icon{font-size:2rem;margin-bottom:14px}.highlight-card h3{font-size:1.1rem;font-weight:700;color:#111;margin-bottom:10px}.highlight-card p{font-size:.93rem;color:#555;line-height:1.7}.experience-section{background:#fff}.timeline{position:relative;padding-left:30px;border-left:3px solid #eee}.timeline-item{position:relative;margin-bottom:36px}.timeline-item:last-child{margin-bottom:0}.timeline-dot{position:absolute;left:-39px;top:6px;width:14px;height:14px;border-radius:50%;background:#e31b1b;border:3px solid #fff;box-shadow:0 0 0 3px #eee}.timeline-content h3{font-size:1.15rem;font-weight:700;color:#111;margin-bottom:4px}.timeline-place{font-size:.85rem;color:#e31b1b;font-weight:600;display:block;margin-bottom:10px}.timeline-content p{font-size:.95rem;color:#555;line-height:1.7}.education-section{background:#f8f8f8}.education-list{list-style:none;padding:0}.education-list li{background:#fff;border:1px solid #eee;border-radius:12px;padding:20px 24px;margin-bottom:14px;font-size:.95rem;color:#444;line-height:1.7}.education-list li strong{color:#111}.quote-section{background:#fff}.author-quote{position:relative;background:#fafafa;border-left:4px solid #e31b1b;border-radius:0 16px 16px 0;padding:36px 36px 28px;margin:0}.author-quote p{font-size:1.05rem;color:#333;font-style:italic;line-height:1.8;margin-bottom:16px}.author-quote cite{font-size:.9rem;color:#e31b1b;font-weight:700;font-style:normal}.cta-section{background:#f5f5f5}.cta-content{text-align:center}.cta-content h2{border-bottom:none;display:block}.cta-content p{color:#555;font-size:1.05rem;margin-bottom:28px}.cta-buttons{display:flex;gap:16px;justify-content:center}.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-size:.95rem;font-weight:600;text-decoration:none;transition:all .3s ease}.btn-primary{background:#e31b1b;color:#fff}.btn-primary:hover{background:#c01515;transform:translateY(-2px);box-shadow:0 6px 20px rgba(227,27,27,.35)}.btn-secondary{background:transparent;color:#111;border:2px solid #ddd}.btn-secondary:hover{border-color:#e31b1b;color:#e31b1b}@media(max-width:768px){.author-hero-content{flex-direction:column;text-align:center}.author-photo{width:120px;height:120px}.author-intro h1{font-size:2rem}.author-meta{justify-content:center}.author-social{justify-content:center}.highlights-grid{grid-template-columns:1fr}.cta-buttons{flex-direction:column;align-items:center}}@media(max-width:480px){.author-intro h1{font-size:1.7rem}.author-quote{padding:24px 20px 20px}.timeline{padding-left:20px}}
+  .author-profile-header {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .author-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid #e31b1b;
+    padding: 5px;
+    margin-bottom: 25px;
+  }
+
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .author-role {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .author-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #e31b1b;
+    margin-bottom: 10px;
+  }
+
+  .author-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .author-intro-text {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 30px 0;
+  }
+  .highlight-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .highlight-icon { font-size: 2rem; margin-bottom: 10px; }
+  .highlight-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  
+  .timeline-item {
+    margin-bottom: 24px;
+    padding-left: 20px;
+    border-left: 3px solid #e31b1b;
+  }
+  
+  .author-quote {
+    background: #fafafa;
+    border-left: 4px solid #e31b1b;
+    padding: 20px 30px;
+    margin: 40px 0;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .highlights-grid { grid-template-columns: 1fr; }
+    .author-name { font-size: 2rem; }
+  }
 </style>
+
+

@@ -1,572 +1,197 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
-const title = '» Pamela Pan | Co-fundadora da Jovem Apan';
+const title = 'Pamela Pan | Piloto Profissional e Cofundadora Jovem Apan';
 const description = 'Conheça Pamela Pan, piloto de MotoGP e co-fundadora da jovem apan. Descubra como sua experiência nas pistas transforma nossos reviews e dicas de segurança.';
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const indice = [
+  { label: 'Bio', href: '#introducao' },
+  { label: 'Destaques', href: '#destaques' },
+  { label: 'Experiência', href: '#experiencia' },
+  { label: 'Educação', href: '#educacao' },
+];
 ---
 
-<Layout title={title} description={description}>
-  <Header />
+<PostLayout
+  title={title}
+  description={description}
+  category="EQUIPE"
+  author="Pamela Pan"
+  authorBio={authorBio}
+  coverImage="/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png"
+  indice={indice}
+  hideShare={true}
+  hideAuthor={true}
+  hideComments={true}
+>
+  <div class="author-profile-header" id="introducao">
+    <div class="author-photo">
+      <img src="/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png" alt="Pamela Pan" />
+    </div>
+    <span class="author-role">Cofundadora e Editora-chefe</span>
+    <h1 class="author-name">Pamela Pan</h1>
+    <div class="author-title">
+      <span class="icon">🏆</span> Piloto Profissional de MotoGP
+    </div>
+    <p class="author-intro-text">
+      Para Pamela Pan, a vida a 300 km/h não é uma exceção, é o escritório. Como piloto profissional de MotoGP e co-fundadora do jovem apan, ela vive e respira a busca incessante pelo limite da performance, onde cada detalhe do equipamento e cada decisão milimétrica definem o resultado. Essa experiência é a base de autoridade que ela traz para cada análise técnica no blog.
+    </p>
+  </div>
 
-  <main id="content">
+  <h2 id="destaques">Destaques</h2>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-icon">🏆</div>
+      <h3>Piloto Profissional de MotoGP</h3>
+      <p>Anos de experiência competindo nos circuitos mais desafiadores do mundo, trazendo um conhecimento prático incomparável sobre dinâmica e tecnologia.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">⚡</div>
+      <h3>Especialista em Performance Extrema</h3>
+      <p>Responsável por levar os equipamentos testados no blog ao seu limite absoluto, garantindo que nossas análises reflitam condições rigorosas.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">🛡️</div>
+      <h3>Defensora da Segurança Ativa</h3>
+      <p>Pamela aplica a mesma mentalidade de prevenção de riscos das pistas para desenvolver dicas de pilotagem focadas na segurança real.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">💡</div>
+      <h3>Visão Estratégica</h3>
+      <p>Criadora da filosofia do blog, unindo a paixão pela velocidade com um compromisso inabalável com a precisão técnica e honestidade.</p>
+    </div>
+  </div>
 
-    <!-- Author Hero -->
-    <section class="author-hero">
-      <div class="container">
-        <a href="/sobre/" class="back-link">← Voltar para Sobre</a>
-        <div class="author-hero-content">
-          <div class="author-photo">
-            <img src="/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png" alt="Pamela Pan" />
-          </div>
-          <div class="author-intro">
-            <span class="author-role-badge">Cofundadora e Editora-chefe</span>
-            <h1>Pamela Pan</h1>
-            <p class="author-subtitle">🏍️ Piloto Profissional de Moto</p>
-            <div class="author-meta">
-              <span>📍 São Paulo, SP</span>
-              <a href="mailto:pamela@jovemapan.com.br">📧 pamela@jovemapan.com.br</a>
-            </div>
-            <div class="author-social">
-              <a href="https://www.instagram.com/apanpamela/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <h2 id="experiencia">Experiência</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Co-fundadora e Especialista Chefe de Performance</h3>
+      <p><strong>Jovem Apan</strong></p>
+      <p>Desenvolve e supervisiona a metodologia de testes para todos os equipamentos. Valida tecnicamente o conteúdo sobre performance e dinâmica.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Piloto de Testes e Desenvolvimento</h3>
+      <p><strong>Fabricantes de Equipamentos Premium</strong></p>
+      <p>Colaborou com marcas líderes no desenvolvimento de capacetes e macacões, oferecendo feedback crítico para produtos de alta performance.</p>
+    </div>
+  </div>
 
-    <!-- Bio -->
-    <section class="section bio-section">
-      <div class="container">
-        <p class="bio-text">
-          Para Pamela Pan, a vida a 300 km/h não é uma exceção, é o escritório. Como piloto profissional de MotoGP e co-fundadora do jovem apan, ela vive e respira a busca incessante pelo limite da performance, onde cada detalhe do equipamento e cada decisão milimétrica definem o resultado.
-        </p>
-        <p class="bio-text">
-          Essa experiência, forjada no ambiente mais competitivo do motociclismo mundial, é a base de autoridade que ela traz para cada review de moto e análise técnica que você encontra em nosso blog. Pamela não apenas entende de motocicletas; ela as compreende em um nível que só a elite da pilotagem consegue alcançar.
-        </p>
-      </div>
-    </section>
+  <h2 id="educacao">Educação</h2>
+  <ul class="education-list">
+    <li><strong>Academia de Pilotagem de Alta Performance:</strong> Treinamento intensivo de nível internacional.</li>
+    <li><strong>Certificações Avançadas em Dinâmica Veicular:</strong> Cursos especializados em leitura de dados e ajustes.</li>
+    <li><strong>Treinamentos de Segurança (FIM Standard):</strong> Conhecimento essencial de segurança holística em pista.</li>
+  </ul>
 
-    <!-- Destaques -->
-    <section class="section highlights-section">
-      <div class="container">
-        <h2>Destaques</h2>
-        <div class="highlights-grid">
-          <div class="highlight-card">
-            <div class="highlight-icon">🏆</div>
-            <h3>Piloto Profissional de MotoGP</h3>
-            <p>Anos de experiência competindo nos circuitos mais desafiadores do mundo, trazendo um conhecimento prático incomparável sobre dinâmica, performance e tecnologia de ponta.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">⚡</div>
-            <h3>Especialista em Performance Extrema</h3>
-            <p>Responsável por levar os equipamentos testados no jovem apan ao seu limite absoluto, garantindo que nossas análises reflitam o comportamento dos produtos sob as condições mais rigorosas.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">🛡️</div>
-            <h3>Defensora da Segurança Ativa</h3>
-            <p>Pamela sabe em primeira mão que a segurança é o alicerce da velocidade. Ela aplica a mesma mentalidade de prevenção de riscos das pistas para desenvolver dicas de pilotagem focadas na segurança para motociclistas do dia a dia.</p>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-icon">💡</div>
-            <h3>Visão Estratégica</h3>
-            <p>Criadora da filosofia do blog, garantindo que todo conteúdo una a paixão pela velocidade com um compromisso inabalável com a precisão técnica e a honestidade.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experiência -->
-    <section class="section experience-section">
-      <div class="container">
-        <h2>Experiência</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Co-fundadora e Especialista Chefe de Performance</h3>
-              <span class="timeline-place">Jovem Apan</span>
-              <p>Desenvolve e supervisiona a metodologia de testes para todos os equipamentos de moto e veículos. Valida tecnicamente o conteúdo sobre performance, dinâmica e pilotagem avançada.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Piloto de Testes e Desenvolvimento</h3>
-              <span class="timeline-place">Fabricantes de Equipamentos Premium</span>
-              <p>Colaborou com marcas líderes no desenvolvimento de capacetes, macacões e componentes de performance, oferecendo feedback crítico para a criação de produtos mais seguros e eficientes.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Piloto de Competição</h3>
-              <span class="timeline-place">Campeonato Mundial de MotoGP e Categorias de Acesso</span>
-              <p>Competiu em diversas categorias do motociclismo internacional, acumulando profundo conhecimento sobre ajustes de chassi, eletrônica, telemetria e a relação entre piloto e máquina.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Educação -->
-    <section class="section education-section">
-      <div class="container">
-        <h2>Educação</h2>
-        <p class="section-intro">A formação de Pamela foi construída no asfalto. Sua educação formal inclui:</p>
-        <ul class="education-list">
-          <li><strong>Academia de Pilotagem de Alta Performance:</strong> Treinamento intensivo com alguns dos maiores nomes do esporte, focando em técnica de pilotagem, leitura de pista e preparação mental.</li>
-          <li><strong>Certificações Avançadas em Dinâmica Veicular e Análise de Telemetria:</strong> Cursos especializados que a permitem "ler" os dados da moto, traduzindo gráficos e números em ajustes práticos para extrair o máximo de performance.</li>
-          <li><strong>Treinamentos de Segurança e Primeiros Socorros em Pista (FIM Standard):</strong> Conhecimento essencial que reforça sua visão holística sobre a segurança no esporte.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Depoimento -->
-    <section class="section quote-section">
-      <div class="container">
-        <blockquote class="author-quote">
-          <p>"As pistas me ensinaram que a confiança é tudo. Você precisa confiar na sua moto, no seu equipamento e na sua equipe. Quando criei o jovem apan com o Marcelo, meu objetivo era construir exatamente isso: um espaço onde todo motociclista pudesse encontrar informação em que pudesse confiar cegamente."</p>
-          <p>"Meu papel aqui é pegar todo o conhecimento complexo que adquiri nas competições e traduzi-lo em conselhos práticos e honestos, para que você possa pilotar com mais segurança e extrair mais prazer da sua paixão."</p>
-          <cite>— Pamela Pan</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta-section">
-      <div class="container cta-content">
-        <h2>Conheça toda a equipe</h2>
-        <p>Pamela é apenas uma parte do time que faz o jovem apan acontecer.</p>
-        <div class="cta-buttons">
-          <a href="/sobre/" class="btn btn-primary">Ver Equipe Completa</a>
-          <a href="/" class="btn btn-secondary">Explorar Artigos</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <Footer />
-</Layout>
+  <blockquote class="author-quote">
+    <p>"As pistas me ensinaram que a confiança é tudo. Você precisa confiar na sua moto e no seu equipamento. Criamos o jovem apan para ser essa base de confiança."</p>
+    <cite>— Pamela Pan</cite>
+  </blockquote>
+</PostLayout>
 
 <style>
-  /* ============================================
-     AUTHOR HERO
-  ============================================ */
-  .author-hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 100%);
-    padding: 50px 0 60px;
-  }
-
-  .back-link {
-    display: inline-block;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-bottom: 30px;
-    transition: color 0.2s;
-  }
-
-  .back-link:hover { color: #e31b1b; }
-
-  .author-hero-content {
+  .author-profile-header {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
   }
 
   .author-photo {
-    flex-shrink: 0;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid rgba(227, 27, 27, 0.5);
-    box-shadow: 0 8px 30px rgba(227, 27, 27, 0.25);
+    border: 2px solid #e31b1b;
+    padding: 5px;
+    margin-bottom: 25px;
   }
 
   .author-photo img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
   }
 
-  .author-role-badge {
-    display: inline-block;
-    background: #e31b1b;
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 700;
+  .author-role {
+    font-size: 0.9rem;
+    color: #666;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 5px 14px;
-    border-radius: 20px;
     margin-bottom: 12px;
   }
 
-  .author-intro h1 {
+  .author-name {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #fff;
-    margin-bottom: 6px;
-    line-height: 1.1;
-  }
-
-  .author-subtitle {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 16px;
-  }
-
-  .author-meta {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-
-  .author-meta span,
-  .author-meta a {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .author-meta a:hover { color: #e31b1b; }
-
-  .author-social {
-    display: flex;
-    gap: 10px;
-  }
-
-  .social-link {
-    font-size: 0.8rem;
     color: #e31b1b;
-    text-decoration: none;
-    border: 1px solid #e31b1b;
-    padding: 4px 14px;
-    border-radius: 20px;
-    transition: all 0.2s;
+    margin-bottom: 10px;
   }
 
-  .social-link:hover {
-    background: #e31b1b;
-    color: #fff;
-  }
-
-  /* ============================================
-     SHARED
-  ============================================ */
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .section h2 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #e31b1b;
-    display: inline-block;
-  }
-
-  .section-intro {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-
-  /* ============================================
-     BIO
-  ============================================ */
-  .bio-section {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-  }
-
-  .bio-text {
-    font-size: 1.08rem;
+  .author-title {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #333;
-    line-height: 1.85;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 20px;
   }
 
-  /* ============================================
-     HIGHLIGHTS
-  ============================================ */
-  .highlights-section {
-    background: #f8f8f8;
+  .author-intro-text {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
   }
 
   .highlights-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+    margin: 30px 0;
   }
-
   .highlight-card {
-    background: #fff;
+    background: #fdfdfd;
     border: 1px solid #eee;
     border-radius: 16px;
-    padding: 32px 24px;
-    transition: all 0.3s ease;
+    padding: 24px;
   }
-
-  .highlight-card:hover {
-    box-shadow: 0 8px 24px rgba(227, 27, 27, 0.08);
-    transform: translateY(-3px);
-    border-color: rgba(227, 27, 27, 0.2);
-  }
-
-  .highlight-icon {
-    font-size: 2rem;
-    margin-bottom: 14px;
-  }
-
-  .highlight-card h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 10px;
-  }
-
-  .highlight-card p {
-    font-size: 0.93rem;
-    color: #555;
-    line-height: 1.7;
-  }
-
-  /* ============================================
-     EXPERIENCE TIMELINE
-  ============================================ */
-  .experience-section {
-    background: #fff;
-  }
-
-  .timeline {
-    position: relative;
-    padding-left: 30px;
-    border-left: 3px solid #eee;
-  }
-
+  .highlight-icon { font-size: 2rem; margin-bottom: 10px; }
+  .highlight-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  
   .timeline-item {
-    position: relative;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
+    padding-left: 20px;
+    border-left: 3px solid #e31b1b;
   }
-
-  .timeline-item:last-child { margin-bottom: 0; }
-
-  .timeline-dot {
-    position: absolute;
-    left: -39px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #e31b1b;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 3px #eee;
-  }
-
-  .timeline-content h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 4px;
-  }
-
-  .timeline-place {
-    font-size: 0.85rem;
-    color: #e31b1b;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .timeline-content p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.7;
-  }
-
-  /* ============================================
-     EDUCATION
-  ============================================ */
-  .education-section {
-    background: #f8f8f8;
-  }
-
-  .education-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .education-list li {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 14px;
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.7;
-  }
-
-  .education-list li strong {
-    color: #111;
-  }
-
-  /* ============================================
-     QUOTE
-  ============================================ */
-  .quote-section {
-    background: #fff;
-  }
-
+  
   .author-quote {
-    position: relative;
     background: #fafafa;
     border-left: 4px solid #e31b1b;
-    border-radius: 0 16px 16px 0;
-    padding: 36px 36px 28px;
-    margin: 0;
-  }
-
-  .author-quote p {
-    font-size: 1.05rem;
-    color: #333;
+    padding: 20px 30px;
+    margin: 40px 0;
     font-style: italic;
-    line-height: 1.8;
-    margin-bottom: 16px;
   }
-
-  .author-quote cite {
-    font-size: 0.9rem;
-    color: #e31b1b;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  /* ============================================
-     CTA
-  ============================================ */
-  .cta-section {
-    background: #f5f5f5;
-  }
-
-  .cta-content {
-    text-align: center;
-  }
-
-  .cta-content h2 {
-    border-bottom: none;
-    display: block;
-  }
-
-  .cta-content p {
-    color: #555;
-    font-size: 1.05rem;
-    margin-bottom: 28px;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .btn-primary {
-    background: #e31b1b;
-    color: #fff;
-  }
-
-  .btn-primary:hover {
-    background: #c01515;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(227, 27, 27, 0.35);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: #111;
-    border: 2px solid #ddd;
-  }
-
-  .btn-secondary:hover {
-    border-color: #e31b1b;
-    color: #e31b1b;
-  }
-
-  /* ============================================
-     RESPONSIVE
-  ============================================ */
+  
   @media (max-width: 768px) {
-    .author-hero-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .author-photo {
-      width: 120px;
-      height: 120px;
-    }
-
-    .author-intro h1 {
-      font-size: 2rem;
-    }
-
-    .author-meta {
-      justify-content: center;
-    }
-
-    .author-social {
-      justify-content: center;
-    }
-
-    .highlights-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .author-intro h1 {
-      font-size: 1.7rem;
-    }
-
-    .author-quote {
-      padding: 24px 20px 20px;
-    }
-
-    .timeline {
-      padding-left: 20px;
-    }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .author-name { font-size: 2rem; }
   }
 </style>
+
+

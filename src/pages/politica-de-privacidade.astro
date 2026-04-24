@@ -1,194 +1,154 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
 const title = 'Política de Privacidade | Jovem Apan';
 const description = 'Conheça nossa política de privacidade e como protegemos seus dados pessoais.';
-
-const lastUpdated = '12 de Abril de 2026';
+const publishDate = '12 ABR, 2026';
 ---
 
-<Layout title={title} description={description}>
-  <Header />
-  
-  <main>
-    <article class="privacy-section">
-      <div class="container">
-        <header class="privacy-header">
-          <h1>Política de Privacidade</h1>
-          <p class="last-updated">Última atualização: {lastUpdated}</p>
-        </header>
-        
-        <div class="privacy-content">
-          <section>
-            <h2>1. Introdução</h2>
-            <p>
-              A Jovem Apan valoriza a privacidade de seus usuários. Esta política descreve 
-              como coletamos, usamos, armazenamos e protegemos suas informações pessoais 
-              quando você visita nosso site ou utiliza nossos serviços.
-            </p>
-          </section>
-          
-          <section>
-            <h2>2. Informações que Coletamos</h2>
-            <p>Podemos coletar as seguintes informações:</p>
-            <ul>
-              <li><strong>Informações de contato:</strong> nome, e-mail, telefone (quando você preenche formulários)</li>
-              <li><strong>Informações de uso:</strong> páginas visitadas, tempo de navegação, cliques</li>
-              <li><strong>Informações técnicas:</strong> endereço IP, tipo de navegador, dispositivo utilizado</li>
-              <li><strong>Cookies:</strong> dados armazenados no seu navegador para melhorar a experiência</li>
-            </ul>
-          </section>
-          
-          <section>
-            <h2>3. Como Usamos suas Informações</h2>
-            <p>Utilizamos suas informações para:</p>
-            <ul>
-              <li>Fornecer e melhorar nossos serviços</li>
-              <li>Responder suas dúvidas e solicitações</li>
-              <li>Enviar newsletters e comunicações (com seu consentimento)</li>
-              <li>Analisar o tráfego do site e comportamento dos usuários</li>
-              <li>Personalizar sua experiência de navegação</li>
-              <li>Cumprir obrigações legais</li>
-            </ul>
-          </section>
-          
-          <section>
-            <h2>4. Cookies e Tecnologias Similares</h2>
-            <p>
-              Utilizamos cookies e tecnologias similares para melhorar a funcionalidade 
-              do site, analisar o tráfego e personalizar conteúdo. Você pode gerenciar 
-              suas preferências de cookies através das configurações do seu navegador.
-            </p>
-            <p>Tipos de cookies que utilizamos:</p>
-            <ul>
-              <li><strong>Essenciais:</strong> necessários para o funcionamento básico do site</li>
-              <li><strong>Analíticos:</strong> nos ajudam a entender como os visitantes interagem com o site</li>
-              <li><strong>Marketing:</strong> utilizados para exibir anúncios relevantes</li>
-            </ul>
-          </section>
-          
-          <section>
-            <h2>5. Google Analytics e Google Tag Manager</h2>
-            <p>
-              Utilizamos o Google Analytics e Google Tag Manager para analisar o tráfego 
-              do site. Esses serviços podem coletar dados sobre seu comportamento de 
-              navegação. Para mais informações, consulte a 
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-                Política de Privacidade do Google
-              </a>.
-            </p>
-          </section>
-          
-          <section>
-            <h2>6. Compartilhamento de Informações</h2>
-            <p>
-              Não vendemos suas informações pessoais. Podemos compartilhar dados apenas 
-              nas seguintes situações:
-            </p>
-            <ul>
-              <li>Com prestadores de serviços que nos auxiliam na operação do site</li>
-              <li>Para cumprir obrigações legais ou proteger nossos direitos</li>
-              <li>Em caso de fusão, aquisição ou venda de ativos (com aviso prévio)</li>
-            </ul>
-          </section>
-          
-          <section>
-            <h2>7. Segurança dos Dados</h2>
-            <p>
-              Implementamos medidas de segurança técnicas e organizacionais para proteger 
-              suas informações contra acesso não autorizado, alteração, divulgação ou 
-              destruição. No entanto, nenhuma transmissão de dados pela internet é 100% segura.
-            </p>
-          </section>
-          
-          <section>
-            <h2>8. Seus Direitos</h2>
-            <p>Você tem o direito de:</p>
-            <ul>
-              <li>Acessar seus dados pessoais</li>
-              <li>Solicitar correção de informações incorretas</li>
-              <li>Solicitar exclusão de seus dados</li>
-              <li>Retirar consentimento para processamento de dados</li>
-              <li>Solicitar portabilidade dos dados</li>
-              <li>Opor-se ao processamento de dados</li>
-            </ul>
-            <p>
-              Para exercer seus direitos, entre em contato através do e-mail: 
-              <a href="mailto:privacidade@jovemapan.com.br">privacidade@jovemapan.com.br</a>
-            </p>
-          </section>
-          
-          <section>
-            <h2>9. Retenção de Dados</h2>
-            <p>
-              Mantemos suas informações apenas pelo tempo necessário para cumprir as 
-              finalidades descritas nesta política, ou conforme exigido por lei. 
-              Após esse período, os dados são excluídos ou anonimizados.
-            </p>
-          </section>
-          
-          <section>
-            <h2>10. Alterações nesta Política</h2>
-            <p>
-              Podemos atualizar esta política periodicamente. Recomendamos que você 
-              revise esta página regularmente para se manter informado sobre quaisquer 
-              alterações. A data da última atualização é indicada no topo da página.
-            </p>
-          </section>
-          
-          <section>
-            <h2>11. Contato</h2>
-            <p>
-              Se você tiver dúvidas sobre esta política de privacidade ou sobre como 
-              tratamos seus dados, entre em contato:
-            </p>
-            <ul>
-              <li>E-mail: <a href="mailto:privacidade@jovemapan.com.br">privacidade@jovemapan.com.br</a></li>
-              <li>Telefone: <a href="tel:+5511968037428">+55 (11) 96803-7428</a></li>
-              <li>Endereço: São Paulo, SP - Brasil</li>
-            </ul>
-          </section>
-        </div>
-      </div>
-    </article>
-  </main>
-  
-  <Footer />
-</Layout>
+<PostLayout
+  title={title}
+  description={description}
+  publishDate={publishDate}
+  category="LEGAL"
+  hideShare={true}
+  hideAuthor={true}
+  hideComments={true}
+>
+  <div class="privacy-content" id="introducao">
+    <section>
+      <h2>1. Introdução</h2>
+      <p>
+        A Jovem Apan valoriza a privacidade de seus usuários. Esta política descreve 
+        como coletamos, usamos, armazenamos e protegemos suas informações pessoais 
+        quando você visita nosso site ou utiliza nossos serviços.
+      </p>
+    </section>
+    
+    <section>
+      <h2>2. Informações que Coletamos</h2>
+      <p>Podemos coletar as seguintes informações:</p>
+      <ul>
+        <li><strong>Informações de contato:</strong> nome, e-mail, telefone (quando você preenche formulários)</li>
+        <li><strong>Informações de uso:</strong> páginas visitadas, tempo de navegação, cliques</li>
+        <li><strong>Informações técnicas:</strong> endereço IP, tipo de navegador, dispositivo utilizado</li>
+        <li><strong>Cookies:</strong> dados armazenados no seu navegador para melhorar a experiência</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>3. Como Usamos suas Informações</h2>
+      <p>Utilizamos suas informações para:</p>
+      <ul>
+        <li>Fornecer e melhorar nossos serviços</li>
+        <li>Responder suas dúvidas e solicitações</li>
+        <li>Enviar newsletters e comunicações (com seu consentimento)</li>
+        <li>Analisar o tráfego do site e comportamento dos usuários</li>
+        <li>Personalizar sua experiência de navegação</li>
+        <li>Cumprir obrigações legais</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>4. Cookies e Tecnologias Similares</h2>
+      <p>
+        Utilizamos cookies e tecnologias similares para melhorar a funcionalidade 
+        do site, analisar o tráfego e personalizar conteúdo. Você pode gerenciar 
+        suas preferências de cookies através das configurações do seu navegador.
+      </p>
+      <p>Tipos de cookies que utilizamos:</p>
+      <ul>
+        <li><strong>Essenciais:</strong> necessários para o funcionamento básico do site</li>
+        <li><strong>Analíticos:</strong> nos ajudam a entender como os visitantes interagem com o site</li>
+        <li><strong>Marketing:</strong> utilizados para exibir anúncios relevantes</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>5. Google Analytics e Google Tag Manager</h2>
+      <p>
+        Utilizamos o Google Analytics e Google Tag Manager para analisar o tráfego 
+        do site. Esses serviços podem coletar dados sobre seu comportamento de 
+        navegação. Para mais informações, consulte a 
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          Política de Privacidade do Google
+        </a>.
+      </p>
+    </section>
+    
+    <section>
+      <h2>6. Compartilhamento de Informações</h2>
+      <p>
+        Não vendemos suas informações pessoais. Podemos compartilhar dados apenas 
+        nas seguintes situações:
+      </p>
+      <ul>
+        <li>Com prestadores de serviços que nos auxiliam na operação do site</li>
+        <li>Para cumprir obrigações legais ou proteger nossos direitos</li>
+        <li>Em caso de fusão, aquisição ou venda de ativos (com aviso prévio)</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>7. Segurança dos Dados</h2>
+      <p>
+        Implementamos medidas de segurança técnicas e organizacionais para proteger 
+        suas informações contra acesso não autorizado, alteração, divulgação ou 
+        destruição. No entanto, nenhuma transmissão de dados pela internet é 100% segura.
+      </p>
+    </section>
+    
+    <section>
+      <h2>8. Seus Direitos</h2>
+      <p>Você tem o direito de:</p>
+      <ul>
+        <li>Acessar seus dados pessoais</li>
+        <li>Solicitar correção de informações incorretas</li>
+        <li>Solicitar exclusão de seus dados</li>
+        <li>Retirar consentimento para processamento de dados</li>
+        <li>Solicitar portabilidade dos dados</li>
+        <li>Opor-se ao processamento de dados</li>
+      </ul>
+      <p>
+        Para exercer seus direitos, entre em contato através do e-mail: 
+        <a href="mailto:privacidade@jovemapan.com.br">privacidade@jovemapan.com.br</a>
+      </p>
+    </section>
+    
+    <section>
+      <h2>9. Retenção de Dados</h2>
+      <p>
+        Mantemos suas informações apenas pelo tempo necessário para cumprir as 
+        finalidades descritas nesta política, ou conforme exigido por lei. 
+        Após esse período, os dados são excluídos ou anonimizados.
+      </p>
+    </section>
+    
+    <section>
+      <h2>10. Alterações nesta Política</h2>
+      <p>
+        Podemos atualizar esta política periodicamente. Recomendamos que você 
+        revise esta página regularmente para se manter informado sobre quaisquer 
+        alterações. A data da última atualização é indicada no topo da página.
+      </p>
+    </section>
+    
+    <section>
+      <h2>11. Contato</h2>
+      <p>
+        Se você tiver dúvidas sobre esta política de privacidade ou sobre como 
+        tratamos seus dados, entre em contato:
+      </p>
+      <ul>
+        <li>E-mail: <a href="mailto:privacidade@jovemapan.com.br">privacidade@jovemapan.com.br</a></li>
+        <li>Telefone: <a href="tel:+5511968037428">+55 (11) 96803-7428</a></li>
+        <li>Endereço: São Paulo, SP - Brasil</li>
+      </ul>
+    </section>
+  </div>
+</PostLayout>
 
 <style>
-  .privacy-section {
-    padding: 60px 0 80px;
-    background-color: #fff;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .privacy-header {
-    text-align: center;
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid #e31b1b;
-  }
-  
-  .privacy-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #212121;
-    margin-bottom: 15px;
-  }
-  
-  .last-updated {
-    color: #878787;
-    font-size: 0.9rem;
-  }
-  
   .privacy-content section {
     margin-bottom: 40px;
   }
@@ -225,14 +185,5 @@ const lastUpdated = '12 de Abril de 2026';
   .privacy-content a:hover {
     text-decoration: underline;
   }
-  
-  @media (max-width: 768px) {
-    .privacy-header h1 {
-      font-size: 2rem;
-    }
-    
-    .privacy-content h2 {
-      font-size: 1.25rem;
-    }
-  }
 </style>
+

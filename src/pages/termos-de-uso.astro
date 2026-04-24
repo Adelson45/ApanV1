@@ -1,359 +1,102 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import PostLayout from '../layouts/PostLayout.astro';
 
 const title = 'Termos de Uso | Jovem Apan - Regras e Responsabilidades';
 const description = 'Leia os termos de uso do Jovem Apan e entenda as regras de navegação, direitos e deveres ao utilizar nosso conteúdo e serviços.';
+
+const authorBio = {
+  name: 'Equipe Editorial',
+  description: 'Conteúdo revisado pelo nosso departamento jurídico e editorial para sua segurança.',
+  image: '/images/marcelo-ferreira.png',
+  profileHref: '/sobre/',
+  profileLabel: 'Sobre nós ›'
+};
+
+const indice = [
+  { label: 'Usuário', href: '#usuario' },
+  { label: 'Adesão', href: '#adesao' },
+  { label: 'Condições de Acesso', href: '#acesso' },
+  { label: 'Cookies', href: '#cookies' },
+  { label: 'Propriedade Intelectual', href: '#propriedade' },
+  { label: 'Links Externos', href: '#links' },
+  { label: 'Prazo e Alterações', href: '#prazo' },
+  { label: 'Dados Pessoais', href: '#dados' },
+  { label: 'Contato', href: '#contato' },
+];
 ---
 
-<Layout title={title} description={description}>
-  <Header />
+<PostLayout
+  title={title}
+  description={description}
+  category="LEGAL"
+  author="Jovem Apan"
+  authorBio={authorBio}
+  coverImage="/images/sobre-hero.png"
+  indice={indice}
+  hideShare={true}
+  hideAuthor={true}
+  hideComments={true}
+>
+  <div class="post-lead">
+    <p>
+      <strong>JOVEM A PAN</strong>, pessoa jurídica de direito privado, descreve, através deste documento, as regras de uso do site <a href="https://jovemapan.com.br/" rel="noopener noreferrer">https://jovemapan.com.br/</a> e qualquer outro site, loja ou aplicativo operado pelo proprietário.
+    </p>
+    <p>
+      Ao navegar neste website, consideramos que você está de acordo com os Termos de Uso abaixo. Esta política é válida a partir de dezembro de 2024.
+    </p>
+  </div>
 
-  <main id="content">
+  <h2 id="usuario">01. Usuário</h2>
+  <p>
+    A utilização deste website atribui de forma automática a condição de Usuário e implica a plena aceitação de todas as diretrizes e condições incluídas nestes Termos.
+  </p>
 
-    <!-- Page Header -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="page-badge">📋 Legal</span>
-        <h1>Termos de Uso</h1>
-        <p>Esta política de termos de uso é válida a partir de dezembro de 2024.</p>
-      </div>
-    </section>
+  <h2 id="adesao">02. Adesão em conjunto com a Política de Privacidade</h2>
+  <p>
+    A utilização deste website acarreta a adesão aos presentes Termos de Uso e a versão mais atualizada da Política de Privacidade de JOVEM A PAN.
+  </p>
 
-    <!-- Content -->
-    <section class="legal-content">
-      <div class="container">
+  <h2 id="acesso">03. Condições de Acesso</h2>
+  <p>
+    Em geral, o acesso ao website da JOVEM A PAN possui caráter gratuito e não exige prévia inscrição ou registro. Contudo, para usufruir de algumas funcionalidades, o usuário poderá precisar efetuar um cadastro, criando uma conta de usuário com login e senha próprios para acesso.
+  </p>
+  <p>
+    É de total responsabilidade do usuário fornecer apenas informações corretas, autênticas, válidas, completas e atualizadas, bem como não divulgar o seu login e senha para terceiros.
+  </p>
 
-        <div class="intro-block">
-          <p>
-            <strong>JOVEM A PAN</strong>, pessoa jurídica de direito privado, descreve, através deste documento, as regras de uso do site <a href="https://jovemapan.com.br/" rel="noopener noreferrer">https://jovemapan.com.br/</a> e qualquer outro site, loja ou aplicativo operado pelo proprietário.
-          </p>
-          <p>
-            Ao navegar neste website, consideramos que você está de acordo com os Termos de Uso abaixo.
-          </p>
-          <p>
-            Caso você não esteja de acordo com as condições deste contrato, pedimos que não faça mais uso deste website, muito menos cadastre-se ou envie os seus dados pessoais.
-          </p>
-          <p>
-            Se modificarmos nossos Termos de Uso, publicaremos o novo texto neste website, com a data de revisão atualizada. Podemos alterar este documento a qualquer momento. Caso haja alteração significativa nos termos deste contrato, podemos informá-lo por meio das informações de contato que tivermos em nosso banco de dados ou por meio de notificações.
-          </p>
-          <p>
-            A utilização deste website após as alterações significa que você aceitou os Termos de Uso revisados. Caso, após a leitura da versão revisada, você não esteja de acordo com seus termos, favor encerrar o seu acesso.
-          </p>
-        </div>
+  <h2 id="cookies">04. Cookies</h2>
+  <p>
+    Informações sobre o seu uso neste website podem ser coletadas a partir de cookies. Cookies são informações armazenadas diretamente no computador que você está utilizando. Os cookies permitem a coleta de informações tais como o tipo de navegador, o tempo despendido no website, as páginas visitadas, as preferências de idioma, e outros dados de tráfego anônimos.
+  </p>
 
-        <div class="legal-section">
-          <h2><span class="section-number">01</span> Usuário</h2>
-          <p>
-            A utilização deste website atribui de forma automática a condição de Usuário e implica a plena aceitação de todas as diretrizes e condições incluídas nestes Termos.
-          </p>
-        </div>
+  <h2 id="propriedade">05. Propriedade Intelectual</h2>
+  <p>
+    Todos os elementos de JOVEM A PAN são de propriedade intelectual da mesma ou de seus licenciados. Estes Termos ou a utilização do website não concedem a você qualquer licença ou direito de uso dos direitos de propriedade intelectual da JOVEM A PAN ou de terceiros.
+  </p>
 
-        <div class="legal-section">
-          <h2><span class="section-number">02</span> Adesão em conjunto com a Política de Privacidade</h2>
-          <p>
-            A utilização deste website acarreta a adesão aos presentes Termos de Uso e a versão mais atualizada da Política de Privacidade de JOVEM A PAN.
-          </p>
-        </div>
+  <h2 id="links">06. Links para sites de terceiros</h2>
+  <p>
+    Este website pode, de tempos em tempos, conter links de hipertexto que redirecionarão você para sites das redes dos nossos parceiros, anunciantes, fornecedores, etc. Se você clicar em um desses links para qualquer um desses sites, lembre-se que cada site possui as suas próprias práticas de privacidade e que não somos responsáveis por essas políticas.
+  </p>
 
-        <div class="legal-section">
-          <h2><span class="section-number">03</span> Condições de Acesso</h2>
-          <p>
-            Em geral, o acesso ao website da JOVEM A PAN possui caráter gratuito e não exige prévia inscrição ou registro.
-          </p>
-          <p>
-            Contudo, para usufruir de algumas funcionalidades, o usuário poderá precisar efetuar um cadastro, criando uma conta de usuário com login e senha próprios para acesso.
-          </p>
-          <p>
-            É de total responsabilidade do usuário fornecer apenas informações corretas, autênticas, válidas, completas e atualizadas, bem como não divulgar o seu login e senha para terceiros.
-          </p>
-          <p>
-            Partes deste website oferecem ao usuário a opção de publicar comentários em determinadas áreas. JOVEM A PAN não consente com a publicação de conteúdos que tenham natureza discriminatória, ofensiva ou ilícita, ou ainda infrinjam direitos de autor ou quaisquer outros direitos de terceiros.
-          </p>
-          <p>
-            A publicação de quaisquer conteúdos pelo usuário deste website, incluindo mensagens e comentários, implica em licença não-exclusiva, irrevogável e irretratável, para sua utilização, reprodução e publicação pela JOVEM A PAN no seu website, plataformas e aplicações de internet, ou ainda em outras plataformas, sem qualquer restrição ou limitação.
-          </p>
-        </div>
+  <h2 id="prazo">07. Prazos e Alterações</h2>
+  <p>
+    O funcionamento deste website é por prazo indeterminado. O website no todo ou em cada uma das suas seções, pode ser encerrado, suspenso ou interrompido unilateralmente por JOVEM A PAN, a qualquer momento e sem necessidade de prévio aviso.
+  </p>
 
-        <div class="legal-section">
-          <h2><span class="section-number">04</span> Cookies</h2>
-          <p>
-            Informações sobre o seu uso neste website podem ser coletadas a partir de cookies. Cookies são informações armazenadas diretamente no computador que você está utilizando. Os cookies permitem a coleta de informações tais como o tipo de navegador, o tempo despendido no website, as páginas visitadas, as preferências de idioma, e outros dados de tráfego anônimos.
-          </p>
-          <p>
-            Nós e nossos prestadores de serviços utilizamos informações para proteção de segurança, para facilitar a navegação, exibir informações de modo mais eficiente, e personalizar sua experiência ao utilizar este website, assim como para rastreamento online. Também coletamos informações estatísticas sobre o uso do website para aprimoramento contínuo do nosso design e funcionalidade.
-          </p>
-          <p>
-            Caso não deseje que suas informações sejam coletadas por meio de cookies, há um procedimento simples na maior parte dos navegadores que permite que os cookies sejam automaticamente rejeitados, ou oferece a opção de aceitar ou rejeitar a transferência de um cookie específico de um site determinado para o seu computador. Entretanto, isso pode gerar inconvenientes no uso do website.
-          </p>
-          <p>
-            As definições que escolher podem afetar a sua experiência de navegação. Neste sentido, rejeitamos qualquer responsabilidade pelas consequências resultantes do funcionamento limitado deste website provocado pela desativação de cookies no seu dispositivo.
-          </p>
-        </div>
+  <h2 id="dados">08. Dados Pessoais</h2>
+  <p>
+    Durante a utilização deste website, certos dados pessoais serão coletados e tratados por JOVEM A PAN e/ou pelos Parceiros. As regras relacionadas ao tratamento de dados pessoais de JOVEM A PAN estão estipuladas na Política de Privacidade.
+  </p>
 
-        <div class="legal-section">
-          <h2><span class="section-number">05</span> Propriedade Intelectual</h2>
-          <p>
-            Todos os elementos de JOVEM A PAN são de propriedade intelectual da mesma ou de seus licenciados. Estes Termos ou a utilização do website não concedem a você qualquer licença ou direito de uso dos direitos de propriedade intelectual da JOVEM A PAN ou de terceiros.
-          </p>
-        </div>
-
-        <div class="legal-section">
-          <h2><span class="section-number">06</span> Links para Sites de Terceiros</h2>
-          <p>
-            Este website poderá, de tempos a tempos, conter links de hipertexto que redirecionarão você para sites das redes dos nossos parceiros, anunciantes, fornecedores etc. Se você clicar em um desses links para qualquer um desses sites, lembre-se de que cada site possui as suas próprias práticas de privacidade e que não somos responsáveis por essas políticas. Consulte as referidas políticas antes de enviar quaisquer dados pessoais para esses sites.
-          </p>
-          <p>
-            Não nos responsabilizamos pelas políticas e práticas de coleta, uso e divulgação de outras organizações, tais como Facebook, Apple, Google, Microsoft, ou de qualquer outro desenvolvedor de software ou provedor de aplicativo. Nós recomendamos que você se informe sobre a política de privacidade e termos de uso de cada site visitado ou de cada prestador de serviço utilizado.
-          </p>
-        </div>
-
-        <div class="legal-section">
-          <h2><span class="section-number">07</span> Prazos e Alterações</h2>
-          <p>
-            O funcionamento deste website se dá por prazo indeterminado.
-          </p>
-          <p>
-            O website, no todo ou em cada uma das suas seções, pode ser encerrado, suspenso ou interrompido unilateralmente por JOVEM A PAN, a qualquer momento e sem necessidade de prévio aviso.
-          </p>
-        </div>
-
-        <div class="legal-section">
-          <h2><span class="section-number">08</span> Dados Pessoais</h2>
-          <p>
-            Durante a utilização deste website, certos dados pessoais serão coletados e tratados por JOVEM A PAN e/ou pelos Parceiros. As regras relacionadas ao tratamento de dados pessoais de JOVEM A PAN estão estipuladas na Política de Privacidade.
-          </p>
-        </div>
-
-        <div class="legal-section contact-section">
-          <h2><span class="section-number">09</span> Contato</h2>
-          <p>
-            Caso você tenha qualquer dúvida sobre os Termos de Uso, por favor, entre em contato pelo e-mail:
-          </p>
-          <a href="mailto:contato@jovemapan.com.br" class="contact-email">contato@jovemapan.com.br</a>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="related-links">
-          <a href="/politica-de-privacidade/" class="related-link">📄 Política de Privacidade</a>
-          <a href="/contato/" class="related-link">✉️ Entre em Contato</a>
-          <a href="/sobre/" class="related-link">👥 Sobre Nós</a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <Footer />
-</Layout>
+  <h2 id="contato">09. Contato</h2>
+  <p>
+    Caso você tenha qualquer dúvida sobre os Termos de Uso, por favor, entre em contato pelo e-mail <a href="mailto:contato@jovemapan.com.br">contato@jovemapan.com.br</a>.
+  </p>
+</PostLayout>
 
 <style>
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ============================================
-     PAGE HERO
-  ============================================ */
-  .page-hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 100%);
-    padding: 60px 0 50px;
-    text-align: center;
-  }
-
-  .page-badge {
-    display: inline-block;
-    background: rgba(227, 27, 27, 0.15);
-    border: 1px solid rgba(227, 27, 27, 0.4);
-    color: #e31b1b;
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 6px 16px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
-
-  .page-hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 12px;
-    line-height: 1.1;
-  }
-
-  .page-hero p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  /* ============================================
-     LEGAL CONTENT
-  ============================================ */
-  .legal-content {
-    padding: 60px 0 80px;
-    background: #fff;
-  }
-
-  .intro-block {
-    background: #f8f8f8;
-    border-left: 4px solid #e31b1b;
-    border-radius: 0 12px 12px 0;
-    padding: 28px 32px;
-    margin-bottom: 48px;
-  }
-
-  .intro-block p {
-    font-size: 0.98rem;
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .intro-block p:last-child {
-    margin-bottom: 0;
-  }
-
-  .intro-block a {
-    color: #e31b1b;
-    text-decoration: none;
-  }
-
-  .intro-block a:hover {
-    text-decoration: underline;
-  }
-
-  .legal-section {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .legal-section:last-of-type {
-    border-bottom: none;
-  }
-
-  .legal-section h2 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .section-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: #e31b1b;
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 800;
-    border-radius: 8px;
-    flex-shrink: 0;
-  }
-
-  .legal-section p {
-    font-size: 0.97rem;
-    color: #444;
-    line-height: 1.85;
-    margin-bottom: 14px;
-  }
-
-  .legal-section p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Contact section */
-  .contact-section {
-    background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 16px;
-    padding: 32px;
-    margin-top: 40px;
-  }
-
-  .contact-email {
-    display: inline-block;
-    background: #e31b1b;
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-top: 8px;
-    transition: background 0.2s, transform 0.2s;
-  }
-
-  .contact-email:hover {
-    background: #c01515;
-    transform: translateY(-2px);
-  }
-
-  /* Related links */
-  .related-links {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid #eee;
-  }
-
-  .related-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #f5f5f5;
-    color: #444;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    border: 1px solid #eee;
-    transition: all 0.2s;
-  }
-
-  .related-link:hover {
-    background: #fff;
-    color: #e31b1b;
-    border-color: #e31b1b;
-    transform: translateY(-2px);
-  }
-
-  /* ============================================
-     RESPONSIVE
-  ============================================ */
-  @media (max-width: 768px) {
-    .page-hero h1 {
-      font-size: 2rem;
-    }
-
-    .intro-block {
-      padding: 20px 20px;
-    }
-
-    .contact-section {
-      padding: 24px 20px;
-    }
-
-    .related-links {
-      flex-direction: column;
-    }
-
-    .related-link {
-      justify-content: center;
-    }
-  }
+  h2 { margin-top: 40px; margin-bottom: 20px; }
+  p { margin-bottom: 15px; }
+  .post-lead { margin-bottom: 30px; font-size: 1.1em; line-height: 1.6; }
 </style>
