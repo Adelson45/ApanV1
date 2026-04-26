@@ -57,8 +57,8 @@ const navLinks: NavLink[] = [
       <ul id="primary-menu" class="nav-menu" role="menubar">
         {navLinks.map(link => (
           <li role="none" class={link.children ? 'has-dropdown' : ''}>
-            <a href={link.href} 
-               role="menuitem" 
+            <a href={link.href}
+               role="menuitem"
                class={Astro.url.pathname === link.href ? 'active' : ''}
                aria-haspopup={link.children ? 'true' : undefined}
                aria-expanded={link.children ? 'false' : undefined}>
@@ -69,7 +69,7 @@ const navLinks: NavLink[] = [
               <ul class="dropdown-menu" role="menu">
                 {link.children.map(child => (
                   <li role="none">
-                    <a href={child.href} 
+                    <a href={child.href}
                        role="menuitem"
                        class={Astro.url.pathname === child.href ? 'active' : ''}>
                       {child.label}
@@ -221,7 +221,7 @@ const navLinks: NavLink[] = [
   .nav-menu a.active {
     color: #e31b1b;
   }
-  
+
   /* Dropdown Menu Styles */
   .has-dropdown {
     position: relative;
