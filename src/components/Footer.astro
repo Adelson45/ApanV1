@@ -186,6 +186,20 @@ const footerLinks = {
   
   .footer-links li {
     margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .footer-links li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #e31b1b;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1;
   }
   
   .footer-links a,
