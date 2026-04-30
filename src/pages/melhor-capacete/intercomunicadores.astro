@@ -1,216 +1,221 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
 
-const title = 'Melhores Intercomunicadores para Moto 2026 | Comunicação em Grupo';
-const description = 'Descubra os melhores intercomunicadores para moto de 2026. Análises de headsets Bluetooth para comunicação entre pilotos, GPS e música durante a pilotagem.';
+const title = 'Qual Melhor Intercomunicador para Capacete? 10 Opções';
+const description = 'Guia completo dos melhores intercomunicadores Bluetooth para capacete em 2026. 10 modelos analisados com prós, contras, links de afiliados e dicas para escolher o ideal.';
 const canonical = 'https://jovemapan.com.br/melhor-capacete/intercomunicadores/';
 const author = 'Pamela Pan';
-const publishDate = '18 DE ABRIL DE 2026';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2026-04-18';
 const category = 'Acessórios';
-const categoryHref = '/melhor-capacete/';
-const coverImage = '/images/sena-50s.jpg';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/dois%20motociclistas%20viajando%20na%20estrada%20com%20suas%20motos%20conectados%20com%20Intercomunicador%20Capacete%20V6%20%20Bluetooth%20Comunicador.png';
 
 const indice = [
-  {
-    "label": "Introdução",
-    "href": "#introducao"
-  },
-  {
-    "label": "Melhores Intercomunicadores para Moto 2026",
-    "href": "#recomendados",
-    "children": [
-      {
-        "label": "1. Sena 50S",
-        "href": "#item-1"
-      },
-      {
-        "label": "2. Cardo Packtalk Edge",
-        "href": "#item-2"
-      },
-      {
-        "label": "3. Interphone Urban",
-        "href": "#item-3"
-      },
-      {
-        "label": "4. Sena 20S Evo",
-        "href": "#item-4"
-      }
-    ]
-  },
-  {
-    "label": "O que Considerar na Escolha",
-    "href": "#dicas"
-  },
-  {
-    "label": "Conclusão",
-    "href": "#conclusao"
-  }
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. 10 Melhores Intercomunicadores', href: '#top10' },
+  { label: '3. Qual o melhor intercomunicador?', href: '#qual-melhor' },
+  { label: '4. Como escolher o ideal', href: '#como-escolher' },
+  { label: '5. Perguntas Frequentes', href: '#faq' },
+  { label: '6. Conclusão', href: '#conclusao' },
 ];
+
 const tags = [
-  {
-    "label": "Acessórios",
-    "href": "/melhor-capacete/"
-  },
-  {
-    "label": "Intercomunicador",
-    "href": "#"
-  },
-  {
-    "label": "Bluetooth",
-    "href": "#"
-  },
-  {
-    "label": "Comunicação",
-    "href": "#"
-  },
-  {
-    "label": "2026",
-    "href": "#"
-  }
+  { label: 'INTERCOMUNICADOR', href: '#' },
+  { label: 'BLUETOOTH', href: '#' },
+  { label: 'CAPACETE', href: '#' },
+  { label: 'CARDO', href: '#' },
+  { label: 'EJEAS', href: '#' },
+  { label: '2026', href: '#' },
 ];
-const authorBio = {
-  "name": "Pamela Pan",
-  "description": "Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.",
-  "image": "/images/Pamela pan coufundadora e editoara chefe do blog apan .png",
-  "profileHref": "/author-pamela-pan/",
-  "profileLabel": "Ver perfil completo ›"
-};
+
 const featuredProduct = {
-  "preTitle": "PREMIUM SELECTION",
-  "image": "/images/ALBA CAPA DE CHUVA EUROPA FEMININO PRETO, P.png",
-  "imageAlt": "Capa de Chuva em Destaque",
-  "name": "Alba Europa Feminino",
-  "amazonHref": "https://amzn.to/3vEOj4K"
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/Fone%20de%20ouvido%20intercomunicador%20EJEAS%20V6%20Pro%20com%20Bluetooth,%20bidirecional,%201.200%20m.png',
+  imageAlt: 'EJEAS V6 Pro Bluetooth',
+  name: 'EJEAS V6 Pro<br/>Bluetooth 1.200m',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/2Hwm11E',
+  amazonHref: 'https://amzn.to/4hh2eHs',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
 };
 
 const intercoms = [
   {
-    name: 'Sena 50S',
-    subtitle: 'Harman Kardon',
-    price: 'R$ 1.800 - R$ 2.400',
-    rating: 4.9,
-    image: '/images/sena-50s.jpg',
-    affiliateLink: 'https://amzn.to/sena50s',
-    description: 'O Sena 50S com áudio Harman Kardon é o intercomunicador premium de referência, oferecendo som de alta fidelidade e comunicação Mesh 2.0 revolucionária.',
-    features: [
-      'Áudio Harman Kardon com alto-falantes premium',
-      'Mesh 2.0 - conexão automática com grupo',
-      'Alcance de até 2km em Mesh Intercom',
-      'Bluetooth 5.0',
-      'Carregamento USB-C rápido'
-    ],
+    name: 'Intercomunicador Moman para Motocicleta',
+    image: '/images/Moman%20Intercomunicador%20para%20motocicleta%20fone%20de%20ouvido%20para%20capacete%20de%20motocicleta.png',
+    description: 'Este modelo da Moman é uma excelente porta de entrada para quem busca funcionalidade sem gastar muito. Ele oferece conexão Bluetooth estável para chamadas e música, com controles simples e intuitivos. É ideal para o motociclista urbano que precisa de comunicação básica com o garupa ou para ouvir as instruções do GPS.',
     pros: [
-      'Qualidade de som excepcional',
-      'Mesh 2.0 elimina reconexões',
-      'Comunicação em grupo ilimitada',
-      'App intuitivo e completo'
+      'Marca especializada em comunicação para motocicleta, com boa reputação em modelos "budget".',
+      'Isolamento acústico superior à média do mercado nesta faixa de preço.',
+      'Suporte a comunicação entre riders, integração com música, chamadas e GPS.',
+      'Construção resistente em alguns modelos avançados (IP65).',
     ],
     cons: [
-      'Preço premium',
-      'Bateria dura menos com Mesh ativo',
-      'Compatibilidade limitada com outras marcas'
-    ]
+      'Modelo de entrada com recursos mais básicos.',
+      'Alcance limitado em comparação com versões premium da própria marca.',
+    ],
+    amazonHref: 'https://amzn.to/4qifdwN',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2kkkPQY',
   },
   {
-    name: 'Cardo Packtalk Edge',
-    subtitle: 'JBL',
-    price: 'R$ 2.200 - R$ 2.800',
-    rating: 4.9,
-    image: '/images/cardo-packtalk-edge.jpg',
-    affiliateLink: 'https://amzn.to/cardoedge',
-    description: 'O Cardo Packtalk Edge com áudio JBL oferece tecnologia Air Mount e Dynamic Mesh Communication, sendo a escolha dos pilotos mais exigentes.',
-    features: [
-      'Áudio JBL com alto-falantes de 45mm',
-      'Dynamic Mesh Communication (DMC)',
-      'Alcance de até 1.6km',
-      'Air Mount - instalação magnética',
-      'À prova d\'água (IP67)'
-    ],
+    name: 'Intercomunicador EJEAS V6 Pro Bluetooth',
+    image: '/images/Fone%20de%20ouvido%20intercomunicador%20EJEAS%20V6%20Pro%20com%20Bluetooth,%20bidirecional,%201.200%20m.png',
+    description: 'Um verdadeiro campeão de vendas, o EJEAS V6 Pro é famoso pelo incrível custo-benefício. Permite a comunicação entre até 6 pilotos (um por vez) em um alcance de até 1200 metros. Com boa qualidade de áudio e cancelamento de ruído, é a escolha perfeita para quem quer começar a pilotar em grupo sem fazer um grande investimento. <a href="/intercomunicador-ejeas-review/">Confira a análise completa clicando aqui</a>.',
     pros: [
-      'Instalação magnética inovadora',
-      'Som JBL de alta qualidade',
-      'DMC muito estável',
-      'Controles por voz naturais'
+      'Bluetooth 5.1 traz comunicação mais estável.',
+      'Distância de intercomunicação de até ~800m declarada.',
+      'Resistência à água IP67 segundo a ficha técnica.',
+      'Preço acessível para o que oferece — bom custo-benefício.',
     ],
     cons: [
-      'Preço mais elevado da categoria',
-      'App menos intuitivo que Sena',
-      'Bateria não removível'
-    ]
+      'Por ser uma opção econômica, pode ter limitações em qualidade de som vs. topo de linha.',
+      'Resultados práticos podem variar das especificações da ficha.',
+    ],
+    amazonHref: 'https://amzn.to/4hh2eHs',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2Hwm11E',
   },
   {
-    name: 'Interphone Urban',
-    subtitle: 'U-Com 16',
-    price: 'R$ 450 - R$ 650',
-    rating: 4.4,
-    image: '/images/interphone-urban.jpg',
-    affiliateLink: 'https://amzn.to/interphoneurban',
-    description: 'O Interphone U-Com 16 é uma opção acessível italiana que oferece funcionalidades essenciais com boa qualidade para o dia a dia.',
-    features: [
-      'Conexão Bluetooth 5.1',
-      'Alcance de até 500m',
-      'Conexão com até 4 pilotos',
-      'Bateria com 16 horas de uso',
-      'Comando por voz Siri/Google'
-    ],
+    name: 'Intercomunicador Xinowy V6 Pro',
+    image: '/images/Intercomunicador%20Moto%20V6%20Pro%20Xinowy%20Capacete%20Intercomunicador.png',
+    description: 'Sendo uma variação do popular V6 Pro, o modelo da Xinowy mantém as principais características que fazem da linha um sucesso: conexão para até 6 pilotos e bom alcance. Geralmente apresenta pequenas diferenças de design ou na qualidade do fone, mas continua sendo uma alternativa robusta e confiável na mesma faixa de preço.',
     pros: [
-      'Preço acessível',
-      'Boa autonomia de bateria',
-      'Marca europeia confiável',
-      'Fácil instalação'
+      'Comunicação em grupo para até 6 riders — boa para saídas em grupo.',
+      'Alcance robusto e especificações sólidas.',
+      'Recursos como partilha de música e redução de ruído.',
+      'Conectividade moderna em versões mais avançadas da linha.',
     ],
     cons: [
-      'Alcance limitado',
-      'Qualidade de som básica',
-      'Reconexão manual necessária',
-      'Sem sistema Mesh'
-    ]
+      'Pode sair por preço mais alto que modelos básicos por suportar 6 riders.',
+      'Mais funcionalidades = mais complexidade de uso e configuração.',
+    ],
+    amazonHref: 'https://amzn.to/43ucrKW',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2CRveFQ',
   },
   {
-    name: 'Sena 20S Evo',
-    subtitle: 'Evo',
-    price: 'R$ 1.200 - R$ 1.600',
-    rating: 4.7,
-    image: '/images/sena-20s-evo.jpg',
-    affiliateLink: 'https://amzn.to/sena20sevo',
-    description: 'O Sena 20S Evo é um dos intercomunicadores mais populares do mundo, oferecendo excelente equilíbrio entre recursos e preço.',
-    features: [
-      'Áudio HD com filtros de ruído',
-      'Universal Intercom - conecta com outras marcas',
-      'Alcance de até 2km',
-      'Comunicação em conferência',
-      'Rádio FM integrado'
-    ],
+    name: 'Intercomunicador Unitário Cardo Spirit',
+    image: '/images/_Intercomunicador%20Cardo%20Spirit%20Unitario.png',
+    description: 'Quando o assunto é qualidade de áudio, a <a href="https://cardosystems.com/" target="_blank" rel="noopener noreferrer">Cardo</a> é referência. O Spirit é o modelo de entrada da marca, mas já entrega uma experiência sonora superior, com fones potentes e clareza nas chamadas. Ideal para o motociclista que não abre mão da qualidade para ouvir música e valoriza a confiabilidade de uma marca premium para comunicação com o garupa. <a href="/intercomunicador-cardo-review/">Confira a análise completa clicando aqui</a>.',
     pros: [
-      'Compatibilidade universal',
-      'Comunicação em grupo fluida',
-      'Preço mais acessível que 50S',
-      'Prova de água (IP66)'
+      'Marca premium reconhecida com alta qualidade de áudio.',
+      'Excelente integração com música, GPS e chamadas.',
+      'Facilidade de uso para piloto solo ou com passageiro.',
+      'Boa reputação de durabilidade segundo reviews.',
     ],
     cons: [
-      'Sem tecnologia Mesh',
-      'Reconexão manual entre pilotos',
-      'App com recursos limitados vs 50S'
-    ]
-  }
-];
-const features = [
-  {
-    title: 'Bluetooth vs Mesh',
-    description: 'Bluetooth requer pareamento manual entre dispositivos. Mesh cria uma rede dinâmica onde todos se conectam automaticamente. Mesh é superior para grupos.'
+      'Alcance limitado para o intercomunicador (cerca de 400m no Spirit básico).',
+      'Não é a melhor opção para grupos grandes ou motos distantes entre si.',
+    ],
+    amazonHref: 'https://amzn.to/4nYl0pA',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1G58GEP',
   },
   {
-    title: 'Alcance Real',
-    description: 'O alcance máximo é em linha reta sem obstáculos. Na cidade, espere 30-50% do alcance máximo. Terrenos acidentados reduzem significativamente.'
+    name: 'Intercomunicador Bluetooth FODSPORTS',
+    image: '/images/FODSPORTS%20Fone%20de%20ouvido%20Bluetooth%20para%20motocicleta%20FX6%201000%20m%206%20Riders%20Group%20interfone%20universal%20Bluetooth.png',
+    description: 'A Fodsports oferece uma linha de produtos com bom equilíbrio entre preço e funcionalidades. Este modelo de entrada da marca geralmente se destaca pela longa duração da bateria e pela construção resistente, sendo uma opção confiável para viagens mais longas onde a autonomia é prioridade.',
+    pros: [
+      'Marca bastante utilizada em intercomunicadores econômicos.',
+      'Boa autonomia de bateria para uso cotidiano.',
+      'Bluetooth integrado com celular para chamadas e música.',
+      'Fácil de encontrar no mercado de acessórios para moto.',
+    ],
+    cons: [
+      'Pouca cobertura técnica detalhada do modelo específico.',
+      'Pode haver limitações em alcance e qualidade de som.',
+    ],
+    amazonHref: 'https://amzn.to/3J8dA48',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1fWiKVR',
   },
   {
-    title: 'Áudio e Ruído',
-    description: 'A velocidade do vento é o maior desafio. Alto-falantes de 40mm+ e boa vedação no capacete são essenciais. Marcas como JBL e Harman Kardon oferecem qualidade superior.'
+    name: 'Intercomunicador Bluetooth Fodsports FX8',
+    image: '/images/Fodsports%20FX8%20Fone%20de%20ouvido%20Bluetooth%20para%20capacete%20de%20motocicleta%20com.png',
+    description: 'O FX8 é um passo acima na linha Fodsports. Aprimora o modelo básico com alcance maior, capacidade para conectar mais pilotos simultaneamente (geralmente até 8) e tecnologia de cancelamento de ruído mais avançada. É voltado para grupos que rodam com frequência e precisam de comunicação mais estável na estrada.',
+    pros: [
+      'Versão melhorada com mais recursos e estabilidade.',
+      'Suporta intercomunicador + música + telefone.',
+      'Bom suficiente para uso casual em grupo.',
+      'Custo menor que marcas premium.',
+    ],
+    cons: [
+      'Pode haver sacrifícios em qualidade de microfone e cancelamento de ruído.',
+      'Alcance real menor que o anunciado em alguns cenários.',
+    ],
+    amazonHref: 'https://amzn.to/46XZqvw',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2zzRJbF',
   },
   {
-    title: 'Bateria',
-    description: 'Considere que bateria diminui com o tempo. 10+ horas é ideal para viagens longas. Carregamento rápido é útil para paradas curtas.'
-  }
+    name: 'Intercomunicador Bluetooth SolaMr X10',
+    image: '/images/SolaMr%20X10%20Capacete%20de%20motocicleta%20Bluetooth,%20alto-falantes,%20fone%20de%20ouvido,%20capacete.png',
+    description: 'O SolaMr X10 se posiciona como opção competitiva no mercado de entrada, oferecendo conectividade Bluetooth para música, GPS e chamadas. Seu principal atrativo costuma ser o preço acessível, sendo uma escolha viável para quem tem um orçamento limitado e precisa das funções essenciais de um comunicador para capacete.',
+    pros: [
+      'Versão "X10" sugere upgrade na linha da marca.',
+      'Bluetooth moderno com música, GPS e chamadas.',
+      'Maior alcance ou funcionalidades extras vs. modelos anteriores.',
+    ],
+    cons: [
+      'Marca menos conhecida no mercado brasileiro.',
+      'Menor cobertura de reviews vs. grandes fabricantes.',
+      'Risco de menor suporte e durabilidade.',
+    ],
+    amazonHref: 'https://amzn.to/4oxJdTQ',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1XfB8YS',
+  },
+  {
+    name: 'Intercomunicador Wayxin T2 30m',
+    image: '/images/_Intercomunicador%20para%20Capacete%2030%20Metros%20Wayxin%20T2%20Com%20Microfone%20Bluetooth%20Preto.png',
+    description: 'O Wayxin T2 foi projetado com um propósito claro: comunicação piloto-garupa. Com seu alcance limitado a 30 metros, ele é perfeito e econômico para casais ou amigos que andam na mesma moto e querem conversar sem gritar. É simples, direto e cumpre sua função com excelência.',
+    pros: [
+      'Voltado para uso simples piloto + passageiro.',
+      'Preço muito acessível.',
+      'Fácil de instalar e usar.',
+      'Ideal para uso urbano ou passeio leve.',
+    ],
+    cons: [
+      'Alcance muito limitado (30m) — insuficiente para grupos.',
+      'Não serve para pilotagem entre várias motos com distância.',
+    ],
+    amazonHref: 'https://amzn.to/4newOTA',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/268Gvgr',
+  },
+  {
+    name: 'Fone Intercomunicador Bluetooth RGB Sem Fio',
+    image: '/images/_Fone%20De%20Ouvido%20Para%20Capacete%20Bluetooth%20Headset%20Rgb%20Sem%20Fio,%20Intercomunicador.png',
+    description: 'Este tipo de intercomunicador foca em apelo visual, com luzes RGB que adicionam um toque de estilo ao capacete. Além da estética, funciona como um headset Bluetooth padrão, permitindo ouvir música e atender chamadas. É uma escolha para quem quer se destacar visualmente sem abrir mão da conectividade básica.',
+    pros: [
+      'Design RGB chama atenção e combina com estilo moderno.',
+      'Sem fio (wireless) — liberdade de movimento.',
+      'Funções Bluetooth para chamadas e música.',
+    ],
+    cons: [
+      'Foco mais no visual que na performance técnica.',
+      'Incertezas sobre qualidade de áudio, alcance e durabilidade.',
+    ],
+    amazonHref: 'https://amzn.to/48zSqWV',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1WeytYK',
+  },
+  {
+    name: 'Intercomunicador Moman CP-E para 6 Passageiros',
+    image: '/images/Moman%20Fone%20de%20ouvido%20de%20intercomunica%C3%A7%C3%A3o%20para%20motocicleta,%20CP-E%206%20Riders%202000M%20Group%20Sistema%20de%20comunica%C3%A7%C3%A3o%20de%20capacete.png',
+    description: 'Diferente do primeiro modelo da Moman listado, o CP-E é projetado para grupos. Com suporte para até 6 pilotos, ele compete diretamente com o EJEAS V6 Pro, oferecendo uma alternativa de bom custo-benefício para quem precisa de comunicação em comboio.',
+    pros: [
+      'Comunicação em grupo para até 6 motociclistas com alcance até 2000m.',
+      'Boa autonomia de bateria.',
+      'Resistência à água e poeira (IP65).',
+      'Bluetooth 5.1, cancelamento de ruído e som de qualidade.',
+    ],
+    cons: [
+      'Pode ser excessivo para uso só com passageiro ou trajetos curtos.',
+      'Custo e complexidade não compensam para uso simples.',
+    ],
+    amazonHref: 'https://amzn.to/4nZHCWZ',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1kQrXvL',
+  },
 ];
 ---
 
@@ -219,6 +224,7 @@ const features = [
   description={description}
   canonical={canonical}
   author={author}
+  authorImage={authorImage}
   publishDate={publishDate}
   category={category}
   categoryHref={categoryHref}
@@ -228,782 +234,248 @@ const features = [
   authorBio={authorBio}
   featuredProduct={featuredProduct}
 >
-  <!-- CONTEÚDO DO ARTIGO -->
-          <div class="post-lead" id="introducao">
-            <p>{description}</p>
-          </div>
+  <p class="post-lead" id="introducao">
+    Pilotar uma moto é uma experiência de liberdade, mas a comunicação e a segurança são
+    fundamentais. Seja para coordenar uma rota com amigos, atender uma chamada importante ou
+    simplesmente curtir sua playlist favorita na estrada, a tecnologia é sua maior aliada.
+  </p>
+  <p>
+    É aqui que o <strong>intercomunicador de capacete</strong> se torna um acessório
+    indispensável, transformando a pilotagem solitária ou em grupo em uma experiência mais
+    conectada, segura e prazerosa.
+  </p>
+  <p>
+    <strong>A lista reúne produtos de marcas como Helmet, Ejeas, Cardo e Sena.</strong>
+    Analisamos o mercado para trazer uma seleção diversificada de comunicadores. Dos modelos
+    com melhor custo-benefício, ideais para o dia a dia, até equipamentos premium para longas
+    viagens em grupo, aqui você encontrará o intercomunicador de capacete perfeito para suas
+    necessidades.
+  </p>
 
-          <h2 id="recomendados">Melhores Intercomunicadores para Moto 2026</h2>
-          <p>Análises dos melhores intercoms Bluetooth com tecnologia Mesh, áudio premium e conectividade avançada.</p>
+  <h2 id="top10">10 Melhores Intercomunicadores para Capacete</h2>
+  <p>
+    Selecionamos abaixo dez modelos que se destacam em diferentes faixas de preço e estilos de
+    uso — do econômico para piloto + garupa ao premium para grandes grupos em viagens.
+  </p>
 
-          {intercoms.map((gear, index) => (
-            <div id={`item-${index + 1}`}>
-              <h3 id={`item-${index + 1}`}>{index + 1}. {gear.name} {gear.subtitle}</h3>
-              <p>{gear.description}</p>
-              
-              <div class="product-section">
-                <div class="h2-image-card" style="margin-top: 0;">
-                  <img src={gear.image} alt={gear.name} />
-                </div>
-                
-                <div class="sidebar-widget" style="background: var(--gray-light); margin-bottom: 24px; padding: 15px; border-radius: 8px; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-                  <span style="font-weight: 800; color: var(--red);">{gear.price}</span>
-                  <span style="font-weight: 800; color: var(--black);">★ {gear.rating}</span>
-                </div>
+  {intercoms.map((item, i) => (
+    <div class="product-section" id={`intercom-${i + 1}`}>
+      <h3>{i + 1}. {item.name}</h3>
+      <div class="h2-image-card product-image">
+        <img src={item.image} alt={item.name} loading="lazy" />
+      </div>
+      <p set:html={item.description}></p>
+      <div class="pros-cons-grid">
+        <div class="pc-col">
+          <h4 class="pros">PRÓS</h4>
+          <ul class="pc-list pros">
+            {item.pros.map(p => <li>{p}</li>)}
+          </ul>
+        </div>
+        <div class="pc-col">
+          <h4 class="cons">CONTRAS</h4>
+          <ul class="pc-list cons">
+            {item.cons.map(c => <li>{c}</li>)}
+          </ul>
+        </div>
+      </div>
+      <div class="btn-buy-container">
+        <a href={item.amazonHref} class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+        <a href={item.mercadoLivreHref} class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+      </div>
+    </div>
+  ))}
 
-                <h4>Características Técnicas:</h4>
-                <ul>
-                  {gear.features.map(f => <li>{f}</li>)}
-                </ul>
+  <h2 id="qual-melhor">Qual o Melhor Intercomunicador para Capacete?</h2>
+  <p>
+    A resposta honesta é: <strong>depende do seu uso</strong>. Não existe um único "melhor"
+    para todos. Para te ajudar a decidir rapidamente, aqui vão nossas recomendações por perfil:
+  </p>
+  <ul>
+    <li>
+      <strong>Melhor custo-benefício para grupos:</strong> o <strong>EJEAS V6 Pro</strong>
+      continua sendo a escolha mais popular pela capacidade de conectar vários pilotos a um
+      preço acessível.
+    </li>
+    <li>
+      <strong>Melhor qualidade de áudio:</strong> se você preza por som de alta fidelidade para
+      música e chamadas, o <strong>Cardo Spirit</strong> oferece a qualidade de uma marca
+      premium.
+    </li>
+    <li>
+      <strong>Melhor para piloto e garupa:</strong> para comunicação a dois na mesma moto, o
+      <strong>Wayxin T2</strong> é imbatível pela simplicidade e preço baixo.
+    </li>
+  </ul>
 
-                <div class="pros-cons-grid">
-                  <div class="pc-col">
-                    <h4 class="pros">Prós</h4>
-                    <ul class="pc-list pros">
-                      {gear.pros.map(p => <li>{p}</li>)}
-                    </ul>
-                  </div>
-                  <div class="pc-col">
-                    <h4 class="cons">Contras</h4>
-                    <ul class="pc-list cons">
-                      {gear.cons.map(c => <li>{c}</li>)}
-                    </ul>
-                  </div>
-                </div>
+  <h2 id="como-escolher">Como Escolher o Intercomunicador Ideal para Capacete?</h2>
+  <p>
+    Para não errar na compra, avalie estes fatores-chave antes de finalizar o pedido:
+  </p>
+  <ul>
+    <li>
+      <strong>Alcance (distância):</strong> você pilota sozinho, com garupa ou em grandes
+      grupos? Para garupa, 30 metros bastam. Para grupos, procure modelos com alcance de 800 a
+      1600 metros.
+    </li>
+    <li>
+      <strong>Número de conexões:</strong> verifique quantos pilotos podem ser pareados
+      simultaneamente. Modelos de entrada conectam 2; os mais avançados conectam 8 ou mais.
+    </li>
+    <li>
+      <strong>Qualidade do áudio:</strong> procure por tecnologias de cancelamento de ruído
+      (DSP ou CVC), que filtram o barulho do vento e do motor, garantindo comunicação clara.
+    </li>
+    <li>
+      <strong>Duração da bateria:</strong> uma boa autonomia é crucial para viagens. Verifique
+      o tempo de conversação (geralmente entre 8 e 15 horas) e o tempo em stand-by.
+    </li>
+    <li>
+      <strong>Resistência à água:</strong> a chuva não avisa. Certifique-se de que o aparelho
+      tenha pelo menos certificação <strong>IP65</strong>, que garante proteção contra jatos
+      d'água.
+    </li>
+    <li>
+      <strong>Facilidade de uso e instalação:</strong> botões grandes e de fácil acesso, mesmo
+      com luvas, são essenciais. A instalação no capacete também deve ser simples.
+    </li>
+    <li>
+      <strong>Recursos adicionais:</strong> alguns modelos oferecem rádio FM integrado,
+      compartilhamento de música com outro piloto e comandos de voz, que aumentam a conveniência.
+    </li>
+  </ul>
 
-                <div class="btn-buy-container" style="margin-top: 32px;">
-                  <a href={gear.affiliateLink} target="_blank" rel="nofollow noopener" class="btn-buy">Ver Preço na Amazon</a>
-                </div>
-              </div>
-            </div>
-          ))}
+  <h2 id="faq">Perguntas Frequentes</h2>
 
-                    <h2 id="dicas">O que Considerar na Escolha</h2>
-          <p>Para garantir a melhor comunicação, considere os seguintes pontos:</p>
-          
-          <div class="materials-grid-container">
-            {features.map(feature => (
-              <div class="product-section">
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </div>
-            ))}
-          </div>
+  <h3>Qual é o melhor intercomunicador para capacete?</h3>
+  <p>
+    O melhor intercomunicador depende da sua necessidade. Para grupos com orçamento limitado,
+    o <strong>EJEAS V6 Pro</strong> é excelente. Para qualidade de áudio superior, o
+    <strong>Cardo Spirit</strong> é uma ótima escolha. Para conversar apenas com o garupa, o
+    <strong>Wayxin T2</strong> é perfeito e econômico.
+  </p>
+
+  <h3>É permitido usar intercomunicador no capacete?</h3>
+  <p>
+    A <a href="https://www.detran.pr.gov.br/arquivos/File/legislacao/Resolucoes/Resolucao4532013.pdf" target="_blank" rel="noopener noreferrer">Resolução nº 453/2013</a>
+    do CONTRAN autoriza o uso de aparelhos de comunicação em capacetes, desde que não
+    comprometam a audição de sons do ambiente e do trânsito. <a href="/intercomunicador-e-permitido/">Para saber mais clique aqui</a>.
+  </p>
+
+  <h3>Qual é a melhor câmera para capacete?</h3>
+  <p>
+    Embora este artigo foque em comunicação, as melhores câmeras são as <em>action cams</em>
+    dedicadas, como GoPro e DJI. No entanto, marcas como a Sena oferecem modelos de
+    intercomunicadores de ponta que possuem câmeras 4K integradas, unindo o melhor dos dois
+    mundos.
+  </p>
+
+  <h3>Intercomunicador para capacete dá para ouvir música?</h3>
+  <p>
+    Sim! Praticamente todos os modelos de intercomunicador Bluetooth se conectam ao seu
+    smartphone, permitindo que você ouça suas músicas, podcasts ou receba instruções de áudio
+    do GPS com facilidade.
+  </p>
+
+  <h3>Posso usar intercomunicador no capacete em 2026?</h3>
+  <p>
+    Sim. Não há nenhuma previsão de mudança na legislação que proíba o uso de
+    intercomunicadores. Eles são considerados acessórios de segurança e conveniência, e seu
+    uso é uma prática consolidada e legal.
+  </p>
+
+  <h3>Posso ouvir música no intercomunicador?</h3>
+  <p>
+    Sim, essa é uma das principais funções. Por meio da conexão Bluetooth com seu celular,
+    você pode curtir suas playlists favoritas diretamente nos fones de ouvido do seu
+    intercomunicador.
+  </p>
+
+  <h3>O intercomunicador de capacete pode molhar?</h3>
+  <p>
+    Depende do modelo. É fundamental verificar a certificação de proteção IP. Modelos com
+    classificação <strong>IP65 ou IP67</strong> são resistentes à chuva e poeira, garantindo
+    o funcionamento mesmo em condições climáticas adversas.
+  </p>
+
+  <h3>Pode usar capacete com Bluetooth?</h3>
+  <p>
+    Sim, pode. A expressão "capacete com Bluetooth" geralmente se refere a um capacete
+    equipado com um interfone. A prática é totalmente permitida por lei e aumenta a segurança
+    ao permitir que o piloto atenda chamadas ou siga o GPS sem tirar as mãos do guidão.
+  </p>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>
+    Investir em um bom intercomunicador de capacete vai muito além do conforto — é um upgrade
+    na sua segurança e na sua experiência de pilotagem. A capacidade de se comunicar com
+    clareza, seguir rotas sem se distrair e até mesmo relaxar com sua música favorita
+    transforma qualquer viagem.
+  </p>
+  <p>
+    Agora que você tem todas as informações, escolha o intercomunicador ideal para suas
+    viagens e pilote com mais conexão e segurança. Não deixe de conferir nossa avaliação dos
+    <a href="/melhor-capacete/">melhores capacetes de moto</a>.
+  </p>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/intercomunicador-cardo-review/">Review do Intercomunicador Cardo</a></li>
+    <li><a href="/intercomunicador-ejeas-review/">Análise Completa do EJEAS V6</a></li>
+    <li><a href="/intercomunicador-e-permitido/">Intercomunicador é permitido na pilotagem?</a></li>
+    <li><a href="/melhor-capacete/">Melhores capacetes de moto</a></li>
+    <li><a href="/melhor-capacete/luvas/">Melhores luvas para motociclistas</a></li>
+    <li><a href="/melhor-capacete/capa-de-chuva/">Melhores capas de chuva</a></li>
+    <li><a href="/dica-melhor-jaqueta-motociclistas/">Melhores jaquetas para motociclistas</a></li>
+    <li><a href="/cadeados-para-moto/">Melhores cadeados para moto</a></li>
+  </ul>
 </PostLayout>
 
 <style>
-  :root {
-    --red: #E31E24;
-    --red-dark: #C41A1F;
-    --black: #000000;
-    --gray-bg: #F4F4F4;
-    --gray-light: #F9FAFB;
-    --border: #EAEAEA;
-    --text: #374151;
-    --text-meta: #777;
-    --white: #ffffff;
-    --font-primary: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-title: 'Georgia', 'Playfair Display', serif;
-  }
-
-  /* Body & Container */
-  .post-main {
-    background: var(--gray-bg);
-    padding: 30px 0 80px;
-    font-family: var(--font-primary);
-    color: var(--text);
-  }
-
-  .post-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  /* ==================================
-     1. CABEÇALHO (Breadcrumb, Título, Info)
-     ================================== */
-  .post-header-section {
-    max-width: 800px;
-    margin-left: 60px;
-    margin-bottom: 20px;
-  }
-
-  .top-breadcrumb {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: var(--text-meta);
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
-  }
-  .top-breadcrumb a { color: var(--text-meta); text-decoration: none; transition: color 0.2s;}
-  .top-breadcrumb a:hover { color: var(--red); }
-  .top-breadcrumb .current-page { color: var(--red); }
-  .separator { font-weight: normal; color: #ccc; }
-
-  .post-category-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--black);
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-
-  .post-title {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.15;
-    color: #0c1827;
-    margin: 0 0 24px;
-    letter-spacing: -0.01em;
-  }
-
-  .post-meta-data {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 0.7rem;
-    color: var(--text-meta);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .meta-author { display: flex; align-items: center; gap: 8px; color: var(--black); }
-  .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
-  .meta-info { display: flex; align-items: center; gap: 16px; }
-  .meta-item { display: flex; align-items: center; gap: 4px; color: var(--text-meta); }
-  .meta-item svg { color: var(--red); }
-
-  /* ==================================
-     2. GRID PRINCIPAL
-     ================================== */
-  .post-layout-grid {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr) 300px;
-    gap: 20px 20px;
-    align-items: start;
-  }
-
-  /* --- [ESQUERDA] Botões Sociais --- */
-  .post-social-col {
-    position: relative;
-    height: 100%;
-  }
-  .sticky-socials {
-    position: sticky;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .social-btn {
-    display: flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 4px;
-    color: var(--white); font-weight: bold; text-decoration: none;
-    font-family: Arial, sans-serif; transition: transform 0.2s;
-  }
-  .social-btn:hover { transform: scale(1.05); }
-  .social-btn.facebook { background: #3b5998; font-size: 1.1rem; font-weight: bold; }
-  .social-btn.pinterest { background: #E60023; }
-  .social-btn.youtube { background: #FF0000; }
-  .social-btn.instagram { background: #E4405F; }
-
-  /* --- [CENTRO] Artigo e Capa --- */
-  .post-content-col {
-    background: transparent;
-    min-width: 0;
-  }
-  .post-cover-image {
-    position: relative;
-    width: 733px;
-    height: 440px;
-    max-width: 100%;
-    margin: 0 auto 32px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  }
-  .post-cover-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  .verified-badge {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #1A1A1A;
-    color: #fff;
-    font-family: var(--font-primary);
-    font-size: 0.65rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border-top-right-radius: 4px;
-  }
-
-  /* --- Índice Accordion --- */
-  .post-indice {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .indice-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-  }
-  .indice-left { display: flex; align-items: center; gap: 12px; }
-  .indice-icon {
-    background: var(--red);
-    width: 32px; height: 32px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .post-indice strong {
-    color: var(--black);
-    font-size: 1.05rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-  }
-  .indice-arrow {
-    color: var(--text-meta);
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    margin-left: 12px;
-  }
-  .indice-arrow.open { transform: rotate(180deg); }
-
-  .indice-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    border-top: 1px solid transparent;
-    opacity: 0;
-  }
-  .indice-content.open {
-    max-height: 1000px;
-    border-top: 1px solid var(--border);
-    margin-top: 16px;
-    padding-top: 16px;
-    opacity: 1;
-  }
-  .indice-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .indice-links li {
-    margin-bottom: 8px;
-  }
-  .indice-links li ul {
-    list-style: none;
-    margin: 8px 0 8px 20px;
-    padding: 0;
-  }
-  .indice-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: block;
-    padding: 4px 0;
-    transition: color 0.2s;
-  }
-  .indice-links a:hover {
-    color: var(--red);
-  }
-  .indice-links a::before {
-    content: '›';
-    margin-right: 8px;
-    color: var(--red);
-    font-weight: bold;
-  }
-
-  .post-lead {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 24px;
-    font-weight: 400;
-  }
-
-  .post-content-col p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
-  .post-content-col h2 { color: var(--black); font-size: 1.8rem; font-weight: 700; margin: 32px 0 16px 0; }
-  .post-content-col h3 { color: var(--black); font-size: 1.4rem; font-weight: 600; margin: 24px 0 12px 0; }
-
-  /* --- [DIREITA] Sidebar --- */
-  .post-sidebar-col {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    position: sticky;
-    top: 100px;
-  }
-
-  .sidebar-widget {
-    border-radius: 8px;
-    padding: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    background: var(--white);
-  }
-  .sidebar-widget.produto-destaque {
-    background: #000000;
-    color: var(--white);
-    text-align: center;
-    padding: 24px 20px;
-  }
-  .frete-gratis {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin: 0 0 16px;
-  }
-  .produto-imagem {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    margin: 0 auto 16px;
-    display: block;
-  }
-  .produto-nome {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--white);
-    margin: 0 0 20px;
-    line-height: 1.4;
-  }
-  .btn-produto-destaque {
-    display: block;
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--red);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 4px;
-    margin-bottom: 12px;
-    transition: background 0.2s;
-    letter-spacing: 0.5px;
-  }
-  .btn-produto-destaque:hover {
-    background: var(--red-dark);
-  }
-
-  .sidebar-widget.newsletter-vip {
-    background: var(--red);
-    border: none;
-    color: var(--white);
-    text-align: center;
-    border-radius: 8px;
-  }
-  .newsletter-icon {
-    margin: 0 auto 10px;
-    color: var(--white);
-  }
-  .sidebar-widget.newsletter-vip h3 {
-    font-size: 1.6rem; font-weight: 900; font-style: italic; margin-bottom: 15px;
-  }
-  .sidebar-widget.newsletter-vip p {
-    font-size: 0.85rem; line-height: 1.4; margin-bottom: 24px; font-weight: 500;
-  }
-  .newsletter-form {
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .newsletter-form input {
-    width: 100%; padding: 14px; border-radius: 4px; border: none; font-size: 0.9rem;
-    font-family: var(--font-primary); box-sizing: border-box;
-  }
-  .newsletter-form button {
-    width: 100%; border-radius: 4px; border: none; font-size: 0.9rem; padding: 14px;
-    background: var(--black); color: var(--white); font-weight: 900;
-    text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    transition: background 0.2s;
-  }
-
-  .sidebar-widget.mais-lidos h3 {
-    font-size: 1.1rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-  }
-  .mais-lidos-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .mais-lidos-list li {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .mais-lidos-list a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.4;
-    transition: color 0.2s;
-    display: block;
-  }
-
-  .h2-image-card {
-    width: 100%;
-    max-width: 733px;
-    margin: 16px 0 24px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background: var(--gray-light);
-  }
-  .h2-image-card img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  .post-footer-meta {
-    margin-top: 40px;
-    padding: 24px 0;
-    border-top: 1px solid var(--border);
-  }
-  .post-tags-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-  }
-  .post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .post-tag {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
-  }
-
-  .post-share-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .post-share {
-    display: flex;
-    gap: 8px;
-  }
-  .share-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 6px;
-    color: var(--white);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .share-btn.facebook { background: #1877f2; }
-  .share-btn.twitter { background: #1DA1F2; }
-  .share-btn.link { 
-    background: #f3f4f6; 
-    color: #666;
-    border: 1px solid #d1d5db;
-  }
-
-  .author-bio-box {
-    margin-top: 40px;
-    background: var(--white);
-    border-radius: 12px;
-    padding: 32px;
-    display: flex;
-    gap: 32px;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    border: 1px solid var(--border);
-  }
-  .bio-avatar img {
-    width: 140px; 
-    height: 140px !important; 
-    aspect-ratio: 1 / 1;
-    border-radius: 50%; 
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-  }
-  .bio-content { flex: 1; }
-  .bio-label {
-    display: block; font-size: 0.75rem; font-weight: 900; color: var(--red);
-    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
-  }
-  .bio-name {
-    font-size: 1.6rem; font-weight: 900; color: var(--black); margin: 0 0 12px;
-  }
-  .bio-desc {
-    font-size: 1.05rem; line-height: 1.6; color: var(--text-meta); margin-bottom: 16px;
-  }
-  .bio-link {
-    font-size: 0.95rem; font-weight: 800; color: var(--black); text-decoration: none;
-    border-bottom: 2px solid var(--red); padding-bottom: 4px; transition: color 0.2s;
-  }
-  .bio-link:hover { color: var(--red); }
-
-  .post-comments-section {
-    margin-top: 48px;
-    padding-top: 20px;
-  }
-  .comments-title {
-    font-size: 1.4rem;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--black);
-    text-transform: uppercase;
-    border-left: 4px solid var(--red);
-    padding-left: 12px;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-  }
-  .comments-note {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
-  .comments-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .form-group.full-width textarea {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--white);
-    font-size: 0.95rem;
-    font-family: inherit;
-    color: var(--text);
-    resize: vertical;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    box-sizing: border-box;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .form-row input {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--white);
-    font-size: 0.95rem;
-    font-family: inherit;
-    color: var(--text);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    box-sizing: border-box;
-  }
-  .btn-submit-comment {
-    align-self: flex-start;
-    background: var(--red);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 16px 32px;
-    font-size: 0.9rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-top: 8px;
-  }
-
-  @media (max-width: 600px) {
-    .author-bio-box { flex-direction: column; align-items: center; text-align: center; gap: 15px; padding: 24px; }
-    .post-tags-container, .post-share-container { flex-direction: column; align-items: flex-start; gap: 12px;}
-    .btn-submit-comment { width: 100%; align-self: stretch;}
-  }
-
-  @media (max-width: 1024px) {
-    .post-layout-grid {
-      grid-template-columns: 40px 1fr;
-    }
-    .post-sidebar-col {
-      display: none;
-    }
-    .post-header-section {
-      margin-left: 60px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .post-header-section {
-      margin-left: 0;
-    }
-    .post-social-col {
-      display: none;
-    }
-    .post-layout-grid {
-      grid-template-columns: 1fr;
-    }
-    .post-cover-image {
-      height: auto;
-      min-height: 250px;
-    }
-  }
-
-  .post-content-col h2 {
-    font-family: var(--font-title); font-size: 2.2rem; font-weight: 800;
-    color: var(--black); margin: 40px 0 24px; line-height: 1.2;
-  }
-  .post-content-col h3 {
-    font-family: var(--font-primary); font-size: 1.5rem; font-weight: 900;
-    color: var(--black); margin: 32px 0 16px;
-  }
-  .post-content-col ul, .post-content-col ol {
-    margin: 0 0 24px 20px; font-size: 1.05rem; line-height: 1.8; color: var(--text);
-  }
-
   .product-section {
+    margin: 36px 0;
+    padding: 28px 24px;
     background: var(--white);
-    border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 32px;
-    margin: 40px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
-
-  .btn-buy {
-    display: block;
+  .product-section h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--black);
+  }
+  .product-section .h2-image-card.product-image {
+    max-width: 460px;
+    margin: 16px auto 20px;
+  }
+  .product-section .h2-image-card.product-image img {
+    max-height: 320px;
     width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-    text-align: center;
-    background: #E31919;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-    cursor: pointer;
+    object-fit: contain;
   }
+  .btn-buy.ml {
+    background: #FFE600 !important;
+    color: #00008B !important;
+    font-weight: 700;
+  }
+  .btn-buy.ml:hover {
+    background: #FFD600 !important;
+  }
+</style>
 
-  .pros-cons-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px;
+<style is:global>
+  a.btn-buy.ml,
+  a.btn-buy.ml:link,
+  a.btn-buy.ml:visited {
+    background: #FFE600 !important;
+    color: #00008B !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
   }
-  .pc-col {
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-  }
-  .pc-col:has(.pros) {
-    background: #F0FDF4;
-    border-color: #BBF7D0;
-  }
-  .pc-col:has(.cons) {
-    background: #FEF2F2;
-    border-color: #FECACA;
-  }
-  .pc-col h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;}
-  .pc-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
-  .pc-list li {
-    display: flex; align-items: flex-start;
-    gap: 12px;
-    font-size: 0.9rem;
-    color: var(--text);
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
-  .pc-list.pros li::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    background: #22C55E;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    background-size: 12px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .pc-list.cons li::before {
-    content: '';
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    background: #EF4444;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
-    background-size: 10px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  @media (max-width: 600px) {
-    .pros-cons-grid { grid-template-columns: 1fr; }
+  a.btn-buy.ml:hover,
+  a.btn-buy.ml:focus {
+    background: #FFD600 !important;
+    color: #00008B !important;
   }
 </style>
