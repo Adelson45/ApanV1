@@ -2,18 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { allReviews } from '../data/reviews';
 
 const title = 'Encontre os melhores capacetes para pilotar com estilo';
 const description = 'Nosso guia traz análises detalhadas dos modelos mais confiáveis.';
 
-const reviewsCapacetes = [
-  { name: 'Capacete Peels', href: '/capacete-peels-review/', image: '/images/Capacete-Peels-Crystal-Pretofosco1-2.png' },
-  { name: 'Capacete Norisk', href: '/capacete-norisk-review/', image: '/images/468852-800-auto.png' },
-  { name: 'LS2 Scope Monocolor', href: '/ls2-scope-monocolor-review/', image: '/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png' },
-  { name: 'Axxis Draken', href: '/axxis-draken-review/', image: '/images/capacete-axxis-draker-1.png' },
-  { name: 'HJC I90 Hollen', href: '/reveiw-hjc-i90-hollen/', image: '/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png' },
-  { name: 'AGV K1S', href: '/review-agv-k1/', image: '/images/Capacete-AGV-K1s.png' }
+const featuredHrefs = [
+  '/peels-icon-fast-review/',
+  '/comparacao-shark-vs-ls2/',
+  '/capacete-bieffe-b-trail-review/',
+  '/comparativo-bieffe-vs-norisk/',
+  '/analise-da-marca-x11/',
+  '/capacete-peels-freeway-review/'
 ];
+
+const reviewsCapacetes = featuredHrefs
+  .map(href => allReviews.find(r => r.href === href))
+  .filter((r): r is typeof allReviews[number] => Boolean(r))
+  .map(r => ({
+    name: r.title,
+    href: r.href,
+    image: r.image
+  }));
 
 const marcasVendidas = [
   {
@@ -67,36 +77,61 @@ const categoriasCapacetes = [
   { nome: 'Capacetes para Motos', href: '/melhor-capacete/', imagem: '/images/capacete moto -shark-preto.png' },
   { nome: 'Capacetes para Bicicleta', href: '/melhor-capacete-para-bike/', imagem: '/images/capacete-para-bicicletas-bike.png' },
   { nome: 'Capacetes para Skates', href: '/melhor-capacete-para-skate/', imagem: '/images/Capacete-de-skate.png' },
-  { nome: 'Capacete para Futebol', href: '#', imagem: '/images/Capacete-de-futebol-esportivo.png' },
-  { nome: 'Capacete para Ski', href: 'https://amzn.to/43UthDI', imagem: '/images/Capacete-de-esqui-Ledge-MIPS-1.png', external: true },
-  { nome: 'Capacete para Boxe', href: '#', imagem: '/images/capacete-chapeu-de-boxe-com-bochechas.png' }
+  { nome: 'Capacete para Futebol', href: 'https://amzn.to/4w3CRQv', imagem: '/images/Capacete-de-futebol-esportivo.png', external: true },
+  { nome: 'Capacete para Ski', href: 'https://amzn.to/4mZwjhA', imagem: '/images/Capacete-de-esqui-Ledge-MIPS-1.png', external: true },
+  { nome: 'Capacete para Boxe', href: 'https://amzn.to/42CelIG', imagem: '/images/capacete-chapeu-de-boxe-com-bochechas.png', external: true }
 ];
 
 const postsMaisVistos = [
-  { 
-    titulo: 'Intercomunicador Cardo Review', 
-    href: '/intercomunicador-cardo-review/',
-    imagem: '/images/piloto-com-sua-moro-branca-300x200.png',
-    categoria: 'REVIEWS'
-  },
-  { 
-    titulo: 'Comparativo Michelin vs Pirelli', 
-    href: '/comparativo-michelin-vs-pirelli/',
-    imagem: '/images/piloto-com-sua-moro-branca-300x200.png',
-    categoria: 'REVIEWS'
-  },
-  { 
-    titulo: 'Michelin Pilot Street Review', 
-    href: '/michelin-pilot-street-review/',
-    imagem: '/images/piloto-com-sua-moro-branca-300x200.png',
-    categoria: 'REVIEWS'
-  },
-  { 
-    titulo: 'Pirelli Super City Review', 
-    href: '/pirelli-super-city-review/',
-    imagem: '/images/piloto-com-sua-moro-branca-300x200.png',
-    categoria: 'REVIEWS'
-  }
+  { titulo: 'Intercomunicador Cardo Review', href: '/intercomunicador-cardo-review/', imagem: '/images/Intercomunicador-Cardo-Spirit%20.png', categoria: 'REVIEWS' },
+  { titulo: 'Comparativo Michelin vs Pirelli', href: '/comparativo-michelin-vs-pirelli/', imagem: '/images/Comparação-pneu-pirelli-versos-michelin.png', categoria: 'REVIEWS' },
+  { titulo: 'Michelin Pilot Street Review', href: '/michelin-pilot-street-review/', imagem: '/images/pneu-michelin-pilot-street.png', categoria: 'REVIEWS' },
+  { titulo: 'Pirelli Super City Review', href: '/pirelli-super-city-review/', imagem: '/images/seis-Pneus-de-moto-novos-em-uma-oficina-mecanca.png', categoria: 'REVIEWS' },
+
+  { titulo: 'Melhores pneus para CG160', href: '/melhores-pneus-para-cg160/', imagem: '/images/Borracheiro-em-uma-oficina-fazento-uma-troca-de-pneu-de-moto.png', categoria: 'REVIEWS' },
+  { titulo: 'Comparativo Jaqueta Texx vs X11', href: '/comparativo-jaqueta-texx-vs-x11/', imagem: '/images/Jaqueta-de-motociclista-da-marca-texx-e-uma-da-marca-x11.webp', categoria: 'REVIEWS' },
+  { titulo: 'Melhor Capacete HJC Helmets', href: '/melhor-capacete-hjc-helmets/', imagem: '/images/melhores%20capacete%20hjc%20helmets.png', categoria: 'CAPACETES' },
+  { titulo: 'Melhores Cadeados para Moto', href: '/cadeados-para-moto/', imagem: '/images/Melhores-Cadeados-para-Moto-e-bike.png', categoria: 'DICAS' },
+
+  { titulo: 'Análise Intercomunicador Ejeas V6', href: '/intercomunicador-ejeas-review/', imagem: '/images/dois motociclistas viajando na estrada com suas motos conectados com Intercomunicador Capacete V6  Bluetooth Comunicador.png', categoria: 'REVIEWS' },
+  { titulo: 'Comparação Shark vs LS2', href: '/comparacao-shark-vs-ls2/', imagem: '/images/Análise e Comparação Capacete Shark vs LS2 Scope.png', categoria: 'REVIEWS' },
+  { titulo: 'Comparação Mixs vs Mormaii', href: '/comparacao-mixs-vs-mormaii/', imagem: '/images/Comparativo Capacete Mixs versos capacete mormaii .png', categoria: 'REVIEWS' },
+  { titulo: 'Comparação MT vs Peels', href: '/comparacao-mt-vs-peels/', imagem: '/images/Análise e Comparação dos Capacete Peels Icon Fast vs Capacete  MT Stinger 2.png', categoria: 'REVIEWS' },
+
+  { titulo: 'Capacete Bieffe B-Trail Review', href: '/capacete-bieffe-b-trail-review/', imagem: '/images/analise completa do Capacete Masculino Bieffe B-Trail Frontier Azul Oculos Moto.png', categoria: 'REVIEWS' },
+  { titulo: 'HJC I90 vs AGV K1S', href: '/comparacao-agv-vs-hjc/', imagem: '/images/Comparação Capacete HJC I90 vs AGV K1S qual é o melhor .png', categoria: 'REVIEWS' },
+  { titulo: 'Melhores Capacetes Anti-ruído', href: '/capacetes-anti-ruido/', imagem: '/images/melhor capacete de moto antiruido .png', categoria: 'DICAS' },
+  { titulo: 'Comparação LS2 X Nolan', href: '/comparacao-ls2-x-nolan/', imagem: '/images/comparativo capacete LS2 versos capacte nolan.png', categoria: 'REVIEWS' },
+
+  { titulo: 'Comparativo Taurus vs ProTork', href: '/comparativo-taurus-vs-protork/', imagem: '/images/comparativo capacete pro tork versos Taurus.png', categoria: 'REVIEWS' },
+  { titulo: 'Comparativo Bieffe vs Norisk', href: '/comparativo-bieffe-vs-norisk/', imagem: '/images/comparativo cspscete bieffe versos norisk.png', categoria: 'REVIEWS' },
+  { titulo: 'Jaqueta X11 Super Air: Vale a Pena?', href: '/jaqueta-x11-air-review/', imagem: '/images/Jaqueta Moto X11 Super Air .png', categoria: 'REVIEWS' },
+  { titulo: 'Análise Jaqueta Texx', href: '/jaqueta-texx-motociclista-review/', imagem: '/images/melhorJaqueta texx para motociclista .png', categoria: 'REVIEWS' },
+
+  { titulo: 'Melhores Jaquetas Alpinestars', href: '/jaquetas-alpinestars-review/', imagem: '/images/Melhores-Jaquetas-Alpinestars-cover.png', categoria: 'DICAS' },
+  { titulo: 'X11 Crossover Adventure', href: '/x11-crossover-adventure-review/', imagem: '/images/X11-Crossover-Adventure-cover.png', categoria: 'REVIEWS' },
+  { titulo: 'Análise da Marca X11', href: '/analise-da-marca-x11/', imagem: '/images/melhores-capacete-x11-cover.png', categoria: 'REVIEWS' },
+  { titulo: 'Melhores Capacetes Adventure', href: '/capacete-adventure/', imagem: '/images/Melhores-Capacetes-Adventure-cover.png', categoria: 'DICAS' },
+
+  { titulo: 'Capacete Peels Freeway Feminino', href: '/capacete-peels-freeway-review/', imagem: '/images/Peels-Freeway-cover.png', categoria: 'REVIEWS' },
+  { titulo: 'Peels Icon Fast: Vale a Pena?', href: '/peels-icon-fast-review/', imagem: '/images/Peels-Icon-Fast-cover.png', categoria: 'REVIEWS' },
+  { titulo: 'Capacete R8 Pro Tork', href: '/capacete-r8-protork-review/', imagem: '/images/ProTork-R8-cover.png', categoria: 'REVIEWS' },
+  { titulo: 'Melhor Capacete para Bike', href: '/melhor-capacete-para-bike/', imagem: '/images/Melhores Capacetes de Ciclismo.png', categoria: 'DICAS' },
+
+  { titulo: 'Melhor Capacete para Skate', href: '/melhor-capacete-para-skate/', imagem: '/images/Melhores capacete para andar de skate.png', categoria: 'DICAS' },
+  { titulo: 'LS2 Scope Monocolor Review', href: '/ls2-scope-monocolor-review/', imagem: '/images/viseira-LS2-Scope-Monocolor-Titanium-Fosco.png', categoria: 'REVIEWS' },
+  { titulo: 'Axxis Draken Review', href: '/axxis-draken-review/', imagem: '/images/capacete-axxis-draker-1.png', categoria: 'REVIEWS' },
+  { titulo: 'HJC I90 Hollen Review', href: '/reveiw-hjc-i90-hollen/', imagem: '/images/Capacete-Hjc-I90-Davan-Preto-E-Verde-61.png', categoria: 'REVIEWS' },
+
+  { titulo: 'AGV K1S Review', href: '/review-agv-k1/', imagem: '/images/Capacete-AGV-K1s.png', categoria: 'REVIEWS' },
+  { titulo: 'Melhores Jaquetas Motociclistas', href: '/dica-melhor-jaqueta-motociclistas/', imagem: '/images/Como Escolher a Melhor Jaqueta de Moto .png', categoria: 'DICAS' },
+  { titulo: 'Capacetes Custo-Benefício', href: '/custo-beneficio/', imagem: '/images/moto-shop-cover.png', categoria: 'DICAS' },
+  { titulo: 'Melhores Capacetes 2026', href: '/melhor-capacete/', imagem: '/images/capacete moto -shark-preto.png', categoria: 'DICAS' },
+
+  { titulo: 'Como Escolher Capacete', href: '/como-escolher-capacete/', imagem: '/images/moto-shop-cover.png', categoria: 'DICAS' },
+  { titulo: 'Capacete Permitido na Pilotagem', href: '/capacete-permitido-na-pilotagem/', imagem: '/images/moto-shop-cover.png', categoria: 'DICAS' },
+  { titulo: 'Capacete Astone Review', href: '/capacete-astone-review/', imagem: '/images/moto-shop-cover.png', categoria: 'REVIEWS' },
+  { titulo: 'ProTork Evolution G8 Review', href: '/protork-evolution-g8-review/', imagem: '/images/moto-shop-cover.png', categoria: 'REVIEWS' }
 ];
 ---
 
@@ -249,9 +284,9 @@ const postsMaisVistos = [
     <section class="posts-populares-section">
       <div class="container">
         <h2>Posts mais vistos</h2>
-        <div class="posts-grid">
-          {postsMaisVistos.map(post => (
-            <div class="post-card">
+        <div class="posts-grid" id="posts-grid">
+          {postsMaisVistos.map((post, idx) => (
+            <div class="post-card" data-page={Math.floor(idx / 4) + 1} style={idx < 4 ? '' : 'display:none;'}>
               <div class="post-image">
                 <img src={post.imagem} alt={post.titulo} loading="lazy" />
                 <span class="category-badge">{post.categoria}</span>
@@ -263,19 +298,57 @@ const postsMaisVistos = [
             </div>
           ))}
         </div>
-        
-        <div class="pagination">
-          <span class="page-number active">1</span>
-          <span class="page-number">2</span>
-          <span class="page-number">3</span>
-          <span class="page-number">4</span>
-          <span class="page-number">5</span>
-          <span class="page-number">6</span>
-          <span class="page-number">7</span>
-          <span class="page-number">8</span>
-          <span class="page-number">9</span>
-          <span class="page-number">10</span>
-        </div>
+
+        <nav class="pagination" id="posts-pagination" aria-label="Paginação"></nav>
+
+        <script is:inline>
+          (function() {
+            const PER_PAGE = 4;
+            let currentPage = 1;
+            const cards = document.querySelectorAll('#posts-grid .post-card');
+            const totalPages = Math.ceil(cards.length / PER_PAGE);
+            const paginationEl = document.getElementById('posts-pagination');
+            if (!paginationEl || cards.length === 0) return;
+
+            function showPage(page) {
+              currentPage = page;
+              const start = (page - 1) * PER_PAGE;
+              const end = start + PER_PAGE;
+              cards.forEach((card, i) => {
+                card.style.display = (i >= start && i < end) ? '' : 'none';
+              });
+              renderPagination();
+              const section = document.querySelector('.posts-populares-section');
+              if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            function renderPagination() {
+              let html = '';
+              if (currentPage > 1) {
+                html += '<a href="#" class="pg-btn pg-arrow" data-page="' + (currentPage - 1) + '">‹ Anterior</a>';
+              }
+              for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                  html += '<a href="#" class="pg-btn' + (i === currentPage ? ' pg-active' : '') + '" data-page="' + i + '">' + i + '</a>';
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                  html += '<span class="pg-dots">…</span>';
+                }
+              }
+              if (currentPage < totalPages) {
+                html += '<a href="#" class="pg-btn pg-arrow" data-page="' + (currentPage + 1) + '">Proxímo ›</a>';
+              }
+              paginationEl.innerHTML = html;
+              paginationEl.querySelectorAll('.pg-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  showPage(parseInt(this.dataset.page, 10));
+                });
+              });
+            }
+
+            showPage(1);
+          })();
+        </script>
       </div>
     </section>
 
@@ -963,20 +1036,6 @@ const postsMaisVistos = [
     text-transform: uppercase;
   }
 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .page-number {
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .page-number.active {
-    color: #000;
-  }
 
   @media (max-width: 768px) {
     .posts-grid {
@@ -1068,5 +1127,56 @@ const postsMaisVistos = [
       align-items: flex-start;
     }
 
+  }
+</style>
+
+<style is:global>
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 32px 0 8px;
+    flex-wrap: wrap;
+  }
+  .pagination .pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    background: #fff;
+    color: #e31b1b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .pagination .pg-btn:hover {
+    background: #f0f0f0;
+    color: #c41818;
+    border-color: #ccc;
+  }
+  .pagination .pg-btn.pg-active {
+    background: #e31b1b;
+    color: #fff;
+    border-color: #e31b1b;
+    pointer-events: none;
+  }
+  .pagination .pg-arrow {
+    font-size: 0.85rem;
+    padding: 0 16px;
+  }
+  .pagination .pg-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    color: #777;
+    font-size: 0.9rem;
   }
 </style>
