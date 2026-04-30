@@ -1,178 +1,216 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
 
-const title = 'Melhores Luvas para Moto 2026 | Proteção e Conforto';
-const description = 'Descubra as melhores luvas para moto de 2026. Análises de luvas de couro, têxtil, impermeáveis e de verão. Proteção para suas mãos em pilotagem.';
+const title = 'Melhores Luvas para Motociclistas em 2026: 10 Ótimas Opções';
+const description = 'Guia completo das melhores luvas para moto em 2026. Análises de luvas de couro, têxtil, impermeáveis e meio dedo, com prós, contras e links de compra.';
 const canonical = 'https://jovemapan.com.br/melhor-capacete/luvas/';
 const author = 'Pamela Pan';
-const publishDate = '20 ABR, 2026';
-const category = 'ACESSÓRIOS';
-const categoryHref = '/acessorios/';
-const coverImage = '/images/luva-alpinestars-sp8.jpg';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2026-04-20';
+const category = 'Acessórios';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/um%20guidom%20de%20motocicleta%20com%20uma%20com%20uma%20m%C3%A3o%20usando%20uma%20luva%20de%20moto%20preta%20cano%20logo.png';
 
 const indice = [
-  { label: 'Introdução', href: '#introducao' },
-  { label: 'Tipos de Luvas para Moto', href: '#tipos' },
-  { label: 'Top Luvas Recomendadas', href: '#top' },
-  { label: 'Por que usar luvas de moto?', href: '#seguranca' },
-  { label: 'Conclusão', href: '#conclusao' }
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Por que usar luva?', href: '#por-que-usar' },
+  { label: '3. Como escolher a luva ideal', href: '#como-escolher' },
+  { label: '4. 10 Melhores luvas', href: '#top10' },
+  { label: '5. Perguntas Frequentes', href: '#faq' },
+  { label: '6. Mais vendidas na Amazon', href: '#mais-vendidas' },
+  { label: '7. Conclusão', href: '#conclusao' },
 ];
 
 const tags = [
-  { label: 'Review', href: '/acessorios/' },
-  { label: 'Luvas', href: '#' },
-  { label: 'Segurança', href: '#' },
-  { label: '2026', href: '#' }
+  { label: 'LUVAS', href: '#' },
+  { label: 'ACESSÓRIOS', href: '#' },
+  { label: 'SEGURANÇA', href: '#' },
+  { label: 'X11', href: '#' },
+  { label: 'ALPINESTARS', href: '#' },
+  { label: '2026', href: '#' },
 ];
-
-const authorBio = {
-  name: 'Pamela Pan',
-  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
-  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
-  profileHref: '/author-pamela-pan/',
-  profileLabel: 'Ver perfil completo ›'
-};
 
 const featuredProduct = {
-  preTitle: 'FRETE GRÁTIS',
-  image: '/images/luva-alpinestars-sp8.jpg',
-  imageAlt: 'Luva em Destaque',
-  name: 'Luva Alpinestars SP-8<br/>Premium',
-  amazonHref: 'https://amzn.to/alpinestarssp8'
+  preTitle: 'APROVEITE FRETE GRÁTIS',
+  image: '/images/uma%20%20Luva%20de%20motoqueiro%20da%20preta%20em%20couro%20da%20marca%20Alpinestars%20con%20logo%20vermelho.png',
+  imageAlt: 'Luva Alpinestars SMX-1 Air V2',
+  name: 'Luva Alpinestars<br/>SMX-1 Air V2',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/1enZv3X',
+  amazonHref: 'https://amzn.to/4o3mPlq',
 };
 
-const gloves = [
-  {
-    name: 'Luva Alpinestars SP-8',
-    subtitle: 'V2',
-    price: 'R$ 350 - R$ 480',
-    rating: 4.8,
-    image: '/images/luva-alpinestars-sp8.jpg',
-    affiliateLink: 'https://amzn.to/alpinestarssp8',
-    description: 'A Alpinestars SP-8 V2 é uma luva esportiva de couro que oferece excelente proteção e flexibilidade para pilotagem urbana e estradista.',
-    features: [
-      'Couro bovino de alta qualidade',
-      'Protetor de nós dos dedos em TPU',
-      'Palma reforçada com couro de cabra',
-      'Fechamento de velcro duplo no punho',
-      'Compatível com touchscreen'
-    ],
-    pros: [
-      'Proteção superior na categoria',
-      'Couro macio e confortável',
-      'Acabamento premium Alpinestars',
-      'Boa ventilação para couro'
-    ],
-    cons: [
-      'Preço elevado',
-      'Não é impermeável',
-      'Quebra de vento limitada'
-    ]
-  },
-  {
-    name: 'Luva X11 Race',
-    subtitle: 'Track',
-    price: 'R$ 180 - R$ 280',
-    rating: 4.6,
-    image: '/images/luva-x11-race.jpg',
-    affiliateLink: 'https://amzn.to/x11race',
-    description: 'A X11 Race Track oferece proteção de nível racing a um preço mais acessível. Excelente para pilotagem esportiva.',
-    features: [
-      'Couro sintético de alta resistência',
-      'Protetores de carbono nos nós',
-      'Reforço de borracha na palma',
-      'Cunha de proteção no pulso',
-      'Design ergonômico pré-curvado'
-    ],
-    pros: [
-      'Ótima relação custo-benefício',
-      'Proteção de nível racing',
-      'Design esportivo agressivo',
-      'Disponível em várias cores'
-    ],
-    cons: [
-      'Couro sintético (não natural)',
-      'Ventilação limitada',
-      'Durabilidade inferior ao couro premium'
-    ]
-  },
-  {
-    name: 'Luva Tutto Moto',
-    subtitle: 'Titã',
-    price: 'R$ 120 - R$ 180',
-    rating: 4.4,
-    image: '/images/luva-tutto-tita.jpg',
-    affiliateLink: 'https://amzn.to/tuttottan',
-    description: 'A Tutto Moto Titã é uma luva urbana brasileira que equilibra proteção, conforto e preço acessível para o dia a dia.',
-    features: [
-      'Material têxtil resistente',
-      'Protetores de EVA nos nós',
-      'Reforço de couro na palma',
-      'Tela touch nos dedos indicador e polegar',
-      'Punho elástico com velcro'
-    ],
-    pros: [
-      'Preço acessível',
-      'Leveza para uso urbano',
-      'Funciona com celular',
-      'Marca nacional com suporte'
-    ],
-    cons: [
-      'Proteção inferior a luvas de couro',
-      'Resistência à abrasão limitada',
-      'Menos durável em quedas'
-    ]
-  },
-  {
-    name: 'Luva Racer',
-    subtitle: 'Highway',
-    price: 'R$ 220 - R$ 320',
-    rating: 4.7,
-    image: '/images/luva-racer-highway.jpg',
-    affiliateLink: 'https://amzn.to/racerhighway',
-    description: 'A Racer Highway é uma luva de couro touring que oferece conforto para longas viagens com proteção robusta.',
-    features: [
-      'Couro de vaca premium',
-      'Membrana impermeável Hipora',
-      'Isolamento térmico Thinsulate',
-      'Protetores de carbono nos nós',
-      'Escova de limpador de viseira'
-    ],
-    pros: [
-      'Totalmente impermeável',
-      'Ótimo para frio e chuva',
-      'Couro premium macio',
-      'Versátil para touring'
-    ],
-    cons: [
-      'Quente no verão',
-      'Preço médio-alto',
-      'Peso superior a luvas leves'
-    ]
-  }
-];
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
+};
 
-const types = [
+const luvas = [
   {
-    title: 'Luvas de Couro',
-    description: 'Máxima proteção contra abrasão. Ideais para pilotagem esportiva e uso em alta velocidade.',
-    icon: '🧤'
+    name: 'Luva Alpinestars SMX-1 Air V2 M',
+    image: '/images/uma%20%20Luva%20de%20motoqueiro%20da%20preta%20em%20couro%20da%20marca%20Alpinestars%20con%20logo%20vermelho.png',
+    description: 'A SMX-1 Air V2 é a referência em luvas esportivas ventiladas para o calor. Com construção em couro e malha resistente, ela combina o DNA premium da Alpinestars com proteções avançadas para o uso urbano e em estradas em dias quentes.',
+    pros: [
+      'Excelente fluxo de ar para dias quentes.',
+      'Qualidade de construção e materiais premium.',
+      'Alto nível de proteção para uma luva de cano curto.',
+      'Compatível com touchscreen.',
+    ],
+    cons: [
+      'Preço mais elevado em comparação com marcas nacionais.',
+      'Não é indicada para o frio ou chuva.',
+    ],
+    amazonHref: 'https://amzn.to/4o3mPlq',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1enZv3X',
   },
   {
-    title: 'Luvas Têxtil',
-    description: 'Leves e ventiladas. Perfeitas para uso urbano e climas quentes.',
-    icon: '🎋'
+    name: 'Luva X11 Racer 2 Cano Longo em Couro',
+    image: '/images/Luva%20X11%20Racer%202%20Cano%20Longo%20em%20Couro%20Com%20Prote%C3%A7%C3%A3o%20detalhes%20nas%20cores%20branca,azul%20e%20vermelha.png',
+    description: 'Para quem busca segurança máxima na estrada com um ótimo custo-benefício, a X11 Racer 2 é uma escolha fantástica. Feita em couro bovino e com proteções rígidas, ela oferece segurança de nível de pista por um preço acessível.',
+    pros: [
+      'Construção robusta em couro bovino.',
+      'Proteção de cano longo para o punho.',
+      'Excelente custo-benefício na categoria.',
+      'Ajuste preciso com duplo velcro.',
+    ],
+    cons: [
+      'Pode ser quente para uso exclusivo na cidade.',
+      'O couro exige um tempo para amaciar.',
+    ],
+    amazonHref: 'https://amzn.to/4ooI2Wz',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/13kFh5m',
   },
   {
-    title: 'Luvas Impermeáveis',
-    description: 'Proteção contra chuva e frio. Essenciais para quem pilota em qualquer clima.',
-    icon: '☔'
+    name: 'Luva X11 Blackout Moto Motoqueiro',
+    image: '/images/Luva%20X11%20Blackout%20Motoqueiro%20Moto%20Motociclista%20Prote%C3%A7%C3%A3o.png',
+    description: 'A X11 Blackout é a campeã do custo-benefício para o dia a dia. Discreta, confortável e com as proteções essenciais, é a luva perfeita para quem está começando ou precisa de um par confiável para os deslocamentos urbanos.',
+    pros: [
+      'Preço extremamente competitivo.',
+      'Função touchscreen no dedo indicador.',
+      'Leve e confortável para uso diário.',
+    ],
+    cons: [
+      'Nível de proteção mais básico, focado no uso urbano.',
+      'Materiais mais simples que os modelos premium.',
+    ],
+    amazonHref: 'https://amzn.to/4opNWXm',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1aUCNpA',
   },
   {
-    title: 'Luvas de Verão',
-    description: 'Máxima ventilação. Proteção com conforto térmico em dias quentes.',
-    icon: '☀️'
-  }
+    name: 'Luva X11 Route 2 Meio Dedo em Couro',
+    image: '/images/Luva%20X11%20Route%202%20Meio%20Dedo%20Em%20Couro%20Com%20Prote%C3%A7%C3%A3o%20Tamanho%20M.png',
+    description: 'Para os dias de calor intenso ou para os amantes de motos custom, a luva meio dedo é uma opção. A Route 2 da X11 é feita em couro, oferecendo proteção na palma da mão e um visual clássico, com máxima ventilação.',
+    pros: [
+      'Máxima ventilação para o calor extremo.',
+      'Estilo clássico que combina com motos custom/clássicas.',
+      'Boa proteção na palma da mão.',
+      'Ajuste preciso com duplo velcro.',
+    ],
+    cons: [
+      'Proteção nula para as pontas dos dedos e unhas.',
+      'Uso muito específico, não recomendado para estradas.',
+    ],
+    amazonHref: 'https://amzn.to/3Jf1hD0',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1bSQ7bc',
+  },
+  {
+    name: 'Luvas KEMIMOTO de Couro de Carneiro',
+    image: '/images/KEMIMOTO%20Luvas%20de%20couro%20de%20carneiro%20para%20motociclistas,%20luvas%20protetoras%20de%20motocicleta%20para%20motocross.png',
+    description: 'Com um apelo vintage, estas luvas são feitas de couro de carneiro, que é extremamente macio e confortável. São ideais para quem busca estilo e conforto para passeios, com um toque clássico.',
+    pros: [
+      'Couro de carneiro extremamente macio e confortável.',
+      'Design retrô/vintage elegante.',
+      'Boa sensibilidade nos comandos da moto.',
+    ],
+    cons: [
+      'Proteções geralmente mais discretas e menos robustas.',
+      'Couro de carneiro é menos resistente à abrasão que o bovino.',
+    ],
+    amazonHref: 'https://amzn.to/4nSV2Up',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/28fbcoN',
+  },
+  {
+    name: 'Luva Shiver Rocket Meio Dedo',
+    image: '/images/Luva%20Shiver%20Rocket%20Meio%20Dedo%20Unissex%20Para%20Motociclista%20Motoqueiro%20Motoboy%20Ciclista.png',
+    description: 'Similar à X11 Route, a Shiver Rocket é outra ótima opção de luva meio dedo, focada no público urbano que busca um produto leve e extremamente arejado para o dia a dia.',
+    pros: [
+      'Muito leve e arejada.',
+      'Fácil de colocar e tirar.',
+      'Bom custo-benefício para uma luva de verão.',
+    ],
+    cons: [
+      'Proteção limitada à palma e articulações.',
+      'Não oferece proteção contra o frio ou chuva.',
+    ],
+    amazonHref: 'https://amzn.to/47rgv0Z',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qUmMrd',
+  },
+  {
+    name: 'Luva de Couro Preto para Motociclista',
+    image: '/images/Luva%20de%20Couro%20Preto%20para%20Motociclista,%20Prote%C3%A7%C3%A3o%20Urbana.png',
+    description: 'Este é um modelo arquetípico. A luva de couro preta, simples e sem muitos detalhes, é um clássico atemporal. Oferece boa resistência à abrasão e um visual que nunca sai de moda, sendo versátil para diversos estilos de motociclistas.',
+    pros: [
+      'Estilo icônico e versátil.',
+      'Boa durabilidade.',
+      'Modela-se à mão do piloto com o tempo.',
+    ],
+    cons: [
+      'Modelos genéricos podem ter qualidade de costura inferior.',
+      'Geralmente não possui tecnologias como touchscreen ou ventilação avançada.',
+    ],
+    amazonHref: 'https://amzn.to/4hewHpA',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1hawPet',
+  },
+  {
+    name: 'Luva Tática Meio Dedo Militar',
+    image: '/images/Luva%20Tatica%20Meio%20Dedo%20Militar%20Airsoft%20Paintball%20Motociclista.png',
+    description: 'Com um design inspirado em equipamentos militares, essas luvas são robustas e focadas na funcionalidade. Possuem proteções rígidas nas articulações e são feitas para aguentar o uso severo, atraindo quem busca um visual mais agressivo.',
+    pros: [
+      'Visual robusto e tático.',
+      'Boa proteção rígida nas articulações.',
+      'Construção durável.',
+    ],
+    cons: [
+      'Proteção limitada por ser meio dedo.',
+      'O conforto pode não ser o foco principal.',
+    ],
+    amazonHref: 'https://amzn.to/4opMt3q',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/165GfMs',
+  },
+  {
+    name: 'Luva Moto Térmica Touch Screen Resistente à Chuva',
+    image: '/images/_Luva%20Moto%20T%C3%A9rmica%20Touch%20Screen%20Resistente%20A%20Chuva%20E%20Frio%20Unissex%20Bike%20Ciclista%20Motoqueiro%20Luvas%20T%C3%A9rmicas.png',
+    description: 'Para os guerreiros que pilotam no inverno ou em regiões frias, este tipo de luva é um salva-vidas. Combina forro térmico para aquecer, membrana impermeável para a chuva e função touchscreen para praticidade.',
+    pros: [
+      'Proteção completa contra frio e chuva.',
+      'Excelente custo-benefício para uma luva de inverno.',
+      'Funcionalidade touchscreen inclusa.',
+    ],
+    cons: [
+      'Muito quente para usar fora do inverno.',
+      'Pode ser mais volumosa, reduzindo um pouco o tato.',
+    ],
+    amazonHref: 'https://amzn.to/497V5XR',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2A5zFph',
+  },
+  {
+    name: 'Luvas VCOROS de Couro Genuíno',
+    image: '/images/VCOROS%20Luvas%20De%20Couro%20Genu%C3%ADno%20Vg20%20Para%20Motocicleta%20Com%20Tela%20Sens%C3%ADvel%20Ao%20Toque,%20Adultos,%20Corrida%20Estrada,%20Cruiser,%20Motociclista.png',
+    description: 'As luvas VCOROS focam em oferecer a qualidade do couro genuíno com proteções integradas e um estilo que mescla o moderno e o retrô. São ótimas para quem busca um produto de qualidade superior sem ir para as marcas mais famosas.',
+    pros: [
+      'Feitas em couro genuíno de alta qualidade.',
+      'Proteções bem integradas ao design.',
+      'Confortáveis e com bom acabamento.',
+    ],
+    cons: [
+      'Menos conhecidas no mercado brasileiro.',
+      'O preço pode ser maior que modelos básicos.',
+    ],
+    amazonHref: 'https://amzn.to/47cnRnT',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2Tob37r',
+  },
 ];
 ---
 
@@ -181,6 +219,7 @@ const types = [
   description={description}
   canonical={canonical}
   author={author}
+  authorImage={authorImage}
   publishDate={publishDate}
   category={category}
   categoryHref={categoryHref}
@@ -190,116 +229,282 @@ const types = [
   authorBio={authorBio}
   featuredProduct={featuredProduct}
 >
-  <!-- CONTEÚDO DO ARTIGO -->
-  <div class="post-lead" id="introducao">
-    <p>Proteja suas mãos com as melhores luvas do mercado. Análises de luvas de couro, têxtil, impermeáveis e específicas para cada estilo de pilotagem.</p>
-  </div>
+  <p class="post-lead" id="introducao">
+    Pilotar uma moto é sinônimo de liberdade, mas essa liberdade vem com uma grande
+    responsabilidade. Entre todos os equipamentos de segurança, a <strong>luva de motoqueiro</strong>
+    é muitas vezes subestimada, vista apenas como um acessório.
+  </p>
+  <p>
+    No entanto, em caso de queda, nosso primeiro instinto é usar as mãos para nos proteger. É
+    nesse momento que uma boa luva faz toda a diferença entre um susto e uma lesão séria.
+  </p>
+  <p>
+    Escolher as melhores luvas para moto não é apenas uma questão de estilo, mas de segurança,
+    conforto e controle. Para te ajudar nessa missão, preparamos este guia definitivo. Aqui, você
+    aprenderá tudo sobre como escolher a luva ideal para o seu tipo de pilotagem e, em seguida,
+    apresentaremos um ranking detalhado com 10 excelentes opções disponíveis no mercado para 2026.
+  </p>
 
-  <h2 id="tipos">Tipos de Luvas para Moto</h2>
-  <div class="info-card-grid">
-    {types.map(type => (
-      <div style="background: var(--white); padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
-        <span style="font-size: 2rem; display: block; margin-bottom: 10px;">{type.icon}</span>
-        <h4 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--black);">{type.title}</h4>
-        <p style="margin: 0; color: var(--text); font-size: 0.95rem;">{type.description}</p>
-      </div>
-    ))}
-  </div>
+  <h2 id="por-que-usar">Por Que Usar uma Luva para Motoqueiro?</h2>
+  <p>
+    Se você ainda tem dúvidas sobre a importância deste equipamento, aqui estão os principais
+    motivos para nunca mais subir na moto sem um bom par de luvas:
+  </p>
+  <ul>
+    <li>
+      <strong>Proteção contra quedas e abrasão:</strong> as mãos são complexas e frágeis. Em uma
+      queda, mesmo em baixa velocidade, o asfalto pode causar ferimentos graves. Luvas com
+      proteções e materiais resistentes, como o couro, absorvem o impacto e protegem sua pele e
+      ossos.
+    </li>
+    <li>
+      <strong>Conforto e aderência ao guidão:</strong> o suor, o frio ou a chuva podem
+      comprometer sua aderência nas manoplas. As luvas garantem uma pegada firme e segura, dando
+      a você mais controle sobre a moto.
+    </li>
+    <li>
+      <strong>Proteção contra o clima:</strong> elas funcionam como uma barreira contra o vento
+      gelado no inverno, os raios UV do sol no verão e até mesmo pedriscos ou insetos que podem
+      atingir suas mãos em alta velocidade.
+    </li>
+    <li>
+      <strong>Redução da vibração:</strong> em viagens mais longas, a vibração constante do motor
+      pode causar dormência e cansaço nas mãos. Luvas de boa qualidade ajudam a amortecer essa
+      vibração, tornando a pilotagem mais confortável.
+    </li>
+  </ul>
 
-  <h2 id="top">Top Luvas Recomendadas</h2>
-  
-  {gloves.map((glove, index) => (
-    <div class="product-section" id={`produto-${index}`}>
-      <h3 style="font-size: 1.6rem; color: var(--black); margin-top: 0;">{index + 1}. {glove.name}</h3>
-      <p style="color: var(--text-meta); font-size: 1rem; margin-bottom: 20px;">{glove.subtitle} • {glove.price} • Avaliação: ★ {glove.rating}</p>
-      
-      <div class="h2-image-card" style="margin: 20px 0;">
-        <img src={glove.image} alt={glove.name} />
+  <h2 id="como-escolher">Como Escolher a Melhor Luva para Motoqueiro?</h2>
+  <p>
+    A luva perfeita não é a mesma para todo mundo. A escolha ideal depende do seu estilo de vida,
+    do tipo de moto que você pilota e das condições que costuma enfrentar. Para te ajudar a
+    encontrar o par certo, detalhamos abaixo os fatores mais importantes a serem considerados.
+  </p>
+
+  <h3>Considere o Ambiente de Uso para Escolher o Tipo de Luva</h3>
+  <p>
+    O primeiro passo é pensar onde e como você mais pilota. Suas necessidades na cidade são muito
+    diferentes das necessidades em uma longa viagem pela estrada.
+  </p>
+
+  <h3>Luva para Moto Urbana: Confortáveis para o Dia a Dia</h3>
+  <p>
+    Para quem enfrenta o trânsito da cidade, o ideal são luvas de cano curto, que são mais
+    práticas de colocar e tirar. Priorize modelos leves, flexíveis e bem ventilados, geralmente
+    feitos com tecidos sintéticos ou couro perfurado.
+  </p>
+  <p>
+    Embora mais simples, elas devem oferecer proteções básicas nas articulações para garantir sua
+    segurança nos deslocamentos diários.
+  </p>
+
+  <h3>Luva para Moto de Estrada: Equilíbrio entre Segurança e Conforto</h3>
+  <p>
+    Se o seu negócio são as viagens e estradas, a segurança fala mais alto. Opte por luvas de
+    cano longo, que protegem também os punhos. Essas luvas geralmente possuem proteções mais
+    robustas em TPU ou carbono nas articulações e sliders na palma da mão.
+  </p>
+  <p>
+    O couro bovino ou caprino é o material mais indicado pela sua altíssima resistência à abrasão.
+  </p>
+
+  <h3>Confira os Materiais e Dê Preferência aos Respiráveis</h3>
+  <p>
+    O material define a resistência, o conforto e a ventilação da luva. O couro é a escolha
+    clássica, oferecendo máxima proteção contra abrasão. Já os tecidos sintéticos, como poliéster
+    e malhas ventiladas (mesh), são excelentes para o clima quente.
+  </p>
+
+  <h3>Para Proteger-se da Chuva, Considere Luvas Impermeáveis</h3>
+  <p>
+    Ninguém gosta de pilotar com as mãos encharcadas e frias. Uma luva de moto impermeável é a
+    solução. Elas possuem membranas internas (como Gore-Tex ou similares) que impedem a entrada
+    de água, mas permitem que o suor evapore.
+  </p>
+  <p>
+    São indispensáveis para quem viaja ou não deixa de pilotar nos dias de chuva, embora possam
+    ser um pouco menos ventiladas em dias de calor intenso.
+  </p>
+
+  <h3>Avalie os Reforços de Proteção em Toda a Luva</h3>
+  <p>Uma boa luva de motoqueiro precisa ter proteções estratégicas. Fique de olho em:</p>
+  <ul>
+    <li>
+      <strong>Protetores de articulação (knuckles):</strong> peças rígidas (plástico, carbono,
+      TPU) na parte de cima da mão para proteger os ossos em caso de impacto.
+    </li>
+    <li>
+      <strong>Reforços na palma:</strong> a palma é uma área de alto atrito em uma queda. Procure
+      por modelos com couro duplo, kevlar ou "sliders" (peças rígidas que ajudam a mão a deslizar
+      no asfalto).
+    </li>
+    <li>
+      <strong>Proteções nos dedos:</strong> pequenos insertos de proteção nos dedos aumentam a
+      segurança geral.
+    </li>
+  </ul>
+
+  <h3>Para Usar Smartphone, Considere os Modelos com Touch</h3>
+  <p>
+    Hoje em dia, usar o GPS no celular é comum. Para não ter que tirar as luvas toda vez que
+    precisar mexer na tela, escolha modelos com tecido compatível com tela sensível ao toque na
+    ponta do dedo indicador e/ou polegar. É uma pequena conveniência que faz uma grande diferença.
+  </p>
+
+  <h3>Para Maior Segurança, Escolha o Tamanho com uma Margem de 1 cm</h3>
+  <p>
+    O ajuste é crucial. Uma luva apertada demais limita os movimentos e prejudica a circulação.
+    Uma luva frouxa pode sair da sua mão em uma queda. Para saber seu tamanho, meça a
+    circunferência da sua mão na parte mais larga (sem o polegar) e compare com a tabela de
+    medidas do fabricante.
+  </p>
+  <p>
+    O ideal é que os dedos não fiquem colados na ponta, garantindo conforto para acionar os
+    manetes.
+  </p>
+
+  <h2 id="top10">10 Melhores Luvas para Motoqueiro</h2>
+  <p>
+    Selecionamos abaixo dez modelos que se destacam em diferentes faixas de preço e estilos de
+    uso — do premium internacional ao melhor custo-benefício nacional, passando por opções para
+    chuva, frio e calor extremo.
+  </p>
+
+  {luvas.map((luva, i) => (
+    <div class="product-section" id={`luva-${i + 1}`}>
+      <h3>{i + 1}. {luva.name}</h3>
+      <div class="h2-image-card product-image">
+        <img src={luva.image} alt={luva.name} loading="lazy" />
       </div>
-      
-      <p>{glove.description}</p>
-      
-      <h4 style="margin-top: 20px;">Características:</h4>
-      <ul>
-        {glove.features.map(feature => (
-          <li>{feature}</li>
-        ))}
-      </ul>
-      
+      <p>{luva.description}</p>
       <div class="pros-cons-grid">
         <div class="pc-col">
-          <h4 class="pros">Prós</h4>
+          <h4 class="pros">PRÓS</h4>
           <ul class="pc-list pros">
-            {glove.pros.map(pro => (
-              <li>{pro}</li>
-            ))}
+            {luva.pros.map(p => <li>{p}</li>)}
           </ul>
         </div>
         <div class="pc-col">
-          <h4 class="cons">Contras</h4>
+          <h4 class="cons">CONTRAS</h4>
           <ul class="pc-list cons">
-            {glove.cons.map(con => (
-              <li>{con}</li>
-            ))}
+            {luva.cons.map(c => <li>{c}</li>)}
           </ul>
         </div>
       </div>
-      
-      <div class="btn-buy-container" style="margin-top: 30px;">
-        <a href={glove.affiliateLink} target="_blank" rel="noopener noreferrer" class="btn-buy">VER OFERTA NA AMAZON</a>
+      <div class="btn-buy-container">
+        <a href={luva.amazonHref} class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+        <a href={luva.mercadoLivreHref} class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
       </div>
     </div>
   ))}
 
-  <h2 id="seguranca">Por que usar luvas de moto?</h2>
-  <div style="background: #e8f5e9; border-left: 4px solid #4CAF50; padding: 24px; border-radius: 8px; margin: 30px 0;">
-    <ul>
-      <li><strong>Proteção contra abrasão:</strong> Em quedas, as mãos são frequentemente usadas para amortecer o impacto</li>
-      <li><strong>Proteção contra impacto:</strong> Protetores nos nós protegem contra fraturas em colisões</li>
-      <li><strong>Conforto térmico:</strong> Proteção contra frio, calor excessivo e vento</li>
-      <li><strong>Segurança no guidão:</strong> Melhor aderência e controle da motocicleta</li>
-      <li><strong>Proteção climática:</strong> Contra chuva, sol e intempéries</li>
-    </ul>
-    <p style="margin-top: 20px; font-weight: bold; color: #2e7d32;">
-      Nunca pilote sem luvas. Mesmo em trajetos curtos, uma queda a 30km/h pode causar ferimentos graves nas mãos.
-    </p>
-  </div>
+  <h2 id="faq">Perguntas Frequentes</h2>
+
+  <h3>Quais são os critérios para escolher uma boa luva de motoqueiro?</h3>
+  <p>
+    Resumindo, os principais critérios são: seu tipo de uso (cidade ou estrada), o material
+    (couro para resistência, tecido para ventilação), o nível de proteção (articulações, palma),
+    o tamanho correto e funcionalidades extras como touchscreen e impermeabilidade.
+  </p>
+
+  <h3>Como identificar uma luva de moto com bom custo-benefício?</h3>
+  <p>
+    Procure por marcas de entrada confiáveis, como a <strong>X11</strong>. Verifique a qualidade
+    das costuras e do material. Uma boa luva custo-benefício não economiza nas proteções
+    essenciais, como a da articulação, mesmo que tenha um acabamento mais simples.
+  </p>
+
+  <h3>Quais características são relevantes em luvas para viagens longas?</h3>
+  <p>
+    Para viagens longas, priorize: cano longo para proteger o pulso, construção em couro ou
+    material sintético de alta resistência, proteções robustas na palma e articulações, forro
+    interno confortável e, idealmente, uma membrana impermeável.
+  </p>
+
+  <h3>Como avaliar luvas para proteção contra o frio?</h3>
+  <p>
+    Verifique se a luva possui forro térmico (geralmente de fleece ou material similar), uma
+    membrana corta-vento (à prova de vento) e impermeabilidade. O conjunto desses três elementos
+    garantirá que suas mãos fiquem quentes e secas.
+  </p>
+
+  <h3>Quais são as marcas mais recomendadas de luvas?</h3>
+  <p>
+    Existem ótimas marcas para diferentes orçamentos. No segmento premium,
+    <strong>Alpinestars</strong>, <strong>Dainese</strong> e <strong>REV'IT!</strong> são
+    referências. Para um excelente custo-benefício no Brasil, a <strong>X11</strong> e a
+    <strong>Tutto Moto</strong> se destacam.
+  </p>
+
+  <h3>Como determinar o tamanho ideal da luva?</h3>
+  <p>
+    Use uma fita métrica para medir a circunferência da palma da sua mão na parte mais larga, sem
+    incluir o polegar. Com essa medida em centímetros, consulte a tabela de tamanhos fornecida
+    pelo fabricante da luva que você deseja comprar, pois pode haver pequenas variações entre as
+    marcas.
+  </p>
+
+  <h2 id="mais-vendidas">Os Mais Vendidos na Amazon</h2>
+  <p>
+    As tendências e os modelos mais populares estão sempre mudando. Uma ótima maneira de ver o
+    que outros motociclistas estão comprando e aprovando é conferir a lista de mais vendidos. Lá
+    você pode encontrar promoções e novidades do mercado.
+  </p>
+  <p>
+    <a href="https://amzn.to/3WbF6AA" target="_blank" rel="nofollow noopener noreferrer">
+      <strong>Confira as luvas de moto mais vendidas na Amazon aqui ›</strong>
+    </a>
+  </p>
 
   <h2 id="conclusao">Conclusão</h2>
-  <p>Escolher a luva certa depende do seu estilo de pilotagem e do clima predominante na sua região. O importante é nunca pilotar sem proteção nas mãos.</p>
+  <p>
+    Escolher a luva de moto certa é um investimento direto na sua segurança e no seu prazer de
+    pilotar. Como vimos, não existe uma única "melhor luva", mas sim a luva ideal para cada
+    motociclista e cada situação.
+  </p>
+  <p>
+    Seja para o dia a dia na cidade, para aquela viagem dos sonhos ou para enfrentar o inverno,
+    um par de luvas de qualidade protege suas mãos e te dá mais confiança para encarar qualquer
+    caminho.
+  </p>
+  <p>
+    Agora que você já sabe tudo sobre luvas, use nosso guia para fazer a sua escolha e pilote com
+    mais segurança e estilo. Não deixe de conferir nossa avaliação dos
+    <a href="/melhor-capacete/">melhores capacetes de moto</a>.
+  </p>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/melhor-capacete/">Guia dos melhores capacetes de moto</a></li>
+    <li><a href="/dica-melhor-jaqueta-motociclistas/">Melhores jaquetas para motociclistas</a></li>
+    <li><a href="/comparativo-jaqueta-texx-vs-x11/">Comparativo Jaqueta Texx vs X11</a></li>
+    <li><a href="/cadeados-para-moto/">Melhores cadeados para moto</a></li>
+    <li><a href="/melhor-capacete/intercomunicadores/">Melhores intercomunicadores</a></li>
+    <li><a href="/melhor-capacete/capa-de-chuva/">Melhores capas de chuva</a></li>
+  </ul>
 </PostLayout>
 
 <style>
-    .info-card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items: center;
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 20px 0;
-    }
-    .info-card-content h4 {
-      margin: 0 0 10px 0;
-      font-size: 1.1rem;
-    }
-    .info-card-content p {
-      margin: 0;
-      color: #555;
-      font-size: 0.95rem;
-    }
-    @media (max-width: 768px) {
-      .info-card-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .product-section {
-      margin-bottom: 40px;
-      padding: 24px;
-      background: var(--white);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+  .product-section {
+    margin: 36px 0;
+    padding: 28px 24px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .product-section h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--black);
+  }
+  .product-section .h2-image-card.product-image {
+    max-width: 460px;
+    margin: 16px auto 20px;
+  }
+  .product-section .h2-image-card.product-image img {
+    max-height: 320px;
+    width: 100%;
+    object-fit: contain;
+  }
 </style>
