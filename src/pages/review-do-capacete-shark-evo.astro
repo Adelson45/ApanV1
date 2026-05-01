@@ -1,20 +1,332 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Review do Capacete Shark Evo';
-const description = 'Review do Shark Evo. Capacete modular francês com excelente engenharia e tecnologia avançada.';
+const title = 'Análise Completa do Capacete Shark Articulado | Review';
+const description = 'Review completo do Capacete Shark Evo articulado: tecnologia 180°, ventilação CFD, segurança SHARP, modelos da linha Shark e onde comprar.';
 const canonical = 'https://jovemapan.com.br/review-do-capacete-shark-evo/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2025-12-03';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/capacete-shark-preto.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Por que escolher o capacete Shark?', href: '#por-que' },
+  { label: '3. Sistema articulado', href: '#articulado' },
+  { label: '4. Material e ventilação', href: '#material' },
+  { label: '5. Melhores modelos da Shark', href: '#modelos' },
+  { label: '6. Qual o capacete Shark mais seguro?', href: '#seguro' },
+  { label: '7. Que tipo de capacete devo comprar?', href: '#tipo' },
+  { label: '8. Perguntas Frequentes', href: '#faq' },
+  { label: '9. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'REVIEW', href: '/category/reviews/' },
+  { label: 'SHARK', href: '#' },
+  { label: 'EVO', href: '#' },
+  { label: 'CAPACETE MODULAR', href: '/comparativo-modular-x-integral/' },
+  { label: 'PREMIUM', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'CAPACETE PREMIUM',
+  image: '/images/capacete-shark-preto.png',
+  imageAlt: 'Capacete Shark Evo ES Articulado',
+  name: 'Shark Evo ES<br/>Articulado',
+  mercadoLivreHref: 'https://meli.la/2wZPuiw',
+  amazonHref: 'https://amzn.to/4jjimZq',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
+};
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p class="post-lead" id="introducao">
+    O <strong>Capacete Shark Articulado</strong> é uma das opções mais versáteis e
+    tecnológicas do mercado para motociclistas que não abrem mão de qualidade. Com mais
+    de <strong>30 anos de experiência</strong> em competições de alto nível, a marca
+    francesa Shark traz para o uso urbano e de viagem a mesma engenharia desenvolvida
+    para as pistas. Nesta review completa, analisamos o que torna o Shark Evo um
+    capacete diferenciado — e quais modelos da linha valem a pena.
+  </p>
+
+  <h2 id="por-que">Por que escolher o Capacete Shark?</h2>
+  <p>
+    Escolher um capacete Shark significa investir em <strong>aerodinâmica, conforto e
+    proteção</strong>. A marca aposta em sistemas patenteados, ventilação testada em
+    túnel de vento e materiais nobres como fibra de vidro e fibra de carbono nos
+    modelos topo de linha. Para um panorama mais amplo, vale ver nosso guia dos
+    <a href="/capacetes-mais-seguros/">capacetes mais seguros do mercado</a>.
+  </p>
+
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/capacete-shark-preto.png" alt="Capacete Shark Evo ES Articulado KMA Preto Fosco" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design aerodinâmico e sofisticado.</li>
+          <li>Sistema articulado para alternar entre posições.</li>
+          <li>Estrutura leve e resistente.</li>
+          <li>Interior confortável e antialérgico.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço elevado em comparação a outros capacetes.</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>Modelo em destaque:</strong> Capacete Shark Evo ES Articulado c/ Óculos KMA Preto Fosco.</p>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4jjimZq" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/2wZPuiw" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="articulado">Sistema Articulado</h2>
+  <p>
+    O grande diferencial dos capacetes Shark da linha Evo é o <strong>sistema patenteado
+    de abertura 180°</strong>: a queixeira gira completamente para a parte traseira,
+    transformando o capacete fechado em aberto sem necessidade de retirá-lo. Isso é
+    perfeito para falar com alguém em um pedágio, dar uma resfriada em dias quentes ou
+    abrir o capacete em um restaurante.
+  </p>
+  <p>
+    O modelo conta com tecnologia <strong>Auto-up / Auto-down</strong> da viseira, que
+    se levanta automaticamente quando a queixeira é girada para trás. Para entender as
+    diferenças entre tipos, veja nosso
+    <a href="/comparativo-modular-x-integral/">comparativo modular x integral</a>.
+  </p>
+
+  <h2 id="material">Material e Ventilação</h2>
+
+  <h3>Material da casca</h3>
+  <p>
+    A construção utiliza <strong>resina termoplástica de alta qualidade</strong> nos
+    modelos de entrada e <strong>fibra de vidro / fibra de carbono</strong> nos modelos
+    premium. O EPS interno é de múltiplas densidades, oferecendo absorção eficiente em
+    impactos de alta e baixa velocidade.
+  </p>
+
+  <h3>Ventilação CFD</h3>
+  <p>
+    O fluxo de ar é projetado por simulações <strong>CFD (Computational Fluid
+    Dynamics)</strong>, garantindo conforto térmico e propriedades antiembaçantes
+    eficazes — recurso herdado dos capacetes de competição.
+  </p>
+
+  <h2 id="modelos">Melhores modelos de capacete da marca Shark</h2>
+
+  <h3>Shark Evo-GT</h3>
+  <p>
+    Modelo <strong>Grand Touring</strong> com ajuste Custom Fit na queixeira e viseira
+    óptica classe 1. Ideal para viagens longas, oferecendo isolamento acústico e
+    estabilidade aerodinâmica em rodovia.
+  </p>
+
+  <h3>Shark Evo-ES</h3>
+  <p>
+    Modelo <strong>Essential</strong> da linha, com foco em custo-benefício. Mantém a
+    conversão rápida de integral para jet, ideal para o uso urbano e turismo leve.
+  </p>
+
+  <h3>Shark Evoline Series 3</h3>
+  <p>
+    Clássico robusto da linha, com excelência em <strong>homologação dupla P/J</strong>
+    (testado tanto fechado quanto aberto). Reconhecido pela durabilidade e pela
+    estabilidade em alta velocidade.
+  </p>
+
+  <h3>Como saber se o Capacete Shark é original?</h3>
+  <ul>
+    <li>Verifique o <strong>selo do INMETRO</strong> com holograma de segurança.</li>
+    <li>Inspecione o acabamento: costuras perfeitas e sem imperfeições.</li>
+    <li>Compre apenas em revendedores autorizados ou lojas oficiais nos marketplaces.</li>
+    <li>Confira a espessura da viseira e o tratamento antirrisco.</li>
+  </ul>
+
+  <h3>Quem fabrica o Capacete Shark?</h3>
+  <p>
+    A Shark é uma empresa <strong>francesa fundada em 1986 em Marselha</strong> por
+    pilotos profissionais. A marca controla todo o processo de fabricação dentro da
+    Europa, garantindo padrão de qualidade e rastreabilidade.
+  </p>
+
+  <h2 id="seguro">Qual o Capacete Shark mais seguro?</h2>
+  <p>
+    Os capacetes Shark recebem nota de <strong>4 a 5 estrelas</strong> nos testes do
+    <strong>SHARP</strong> (Protective Assessments and Testing Helmet Effectiveness
+    Rating Program), referência mundial em avaliação de capacetes.
+  </p>
+  <p>
+    A homologação <strong>P/J dupla</strong> é fundamental nos modelos articulados:
+    significa que o capacete foi testado e aprovado tanto em configuração fechada (P)
+    quanto aberta (J). Veja também
+    <a href="/capacetes-selo-inmetro/">capacetes com selo do INMETRO</a> e a
+    <a href="/comparacao-shark-vs-ls2/">comparação Shark vs LS2</a>.
+  </p>
+
+  <h2 id="tipo">Que tipo de capacete eu devo comprar?</h2>
+
+  <h3>Por que escolher capacetes premium?</h3>
+  <p>
+    Os benefícios incluem <strong>isolamento acústico</strong> superior, durabilidade,
+    conforto visual para usuários de óculos e espaço interno preparado para
+    intercomunicador. Para quem usa óculos, recomendamos nosso guia
+    <a href="/capacete-para-quem-usa-oculos/">capacete para quem usa óculos</a>.
+  </p>
+
+  <h3>Como escolher o tamanho ideal do capacete</h3>
+  <p>
+    Meça a circunferência da cabeça com fita métrica, <strong>2 cm acima das
+    sobrancelhas</strong>. Em geral: 58cm = M, 60cm = L. Confira nossa tabela completa
+    de <a href="/tamanho-do-capacete/">tamanho do capacete</a>.
+  </p>
+
+  <h3>Substituição do capacete de moto</h3>
+  <p>
+    Regra de ouro: <strong>"se caiu, trocou"</strong>. O EPS interno pode ser comprimido
+    de forma invisível em uma queda. Mesmo sem impactos, substitua o capacete a cada
+    <strong>3 a 5 anos</strong> de uso contínuo. Mais detalhes no nosso guia de
+    <a href="/capacete-prazo-validade/">prazo de validade do capacete</a>.
+  </p>
+
+  <h2 id="ofertas">Ofertas relacionadas</h2>
+  <ul>
+    <li>
+      <strong>Capacete Peels Mirage Classic Branco</strong> (frete grátis) —
+      <a href="https://amzn.to/3MjKWy9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/1qaAz5s" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Intercomunicador Ejeas V6 Plus</strong> —
+      <a href="https://amzn.to/481F17S" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2rQAwF3" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+      Veja a <a href="/intercomunicador-ejeas-review/">análise completa do Ejeas V6</a>.
+    </li>
+    <li>
+      <strong>Capacete Peels Icon Ekko</strong> —
+      <a href="https://amzn.to/4oGNbZT" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2iCYhgR" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Jaqueta Texx Armor Masculina</strong> —
+      <a href="https://amzn.to/3K2DQ0e" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2xVBsV9" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Capacete Aberto Peels Freeway King</strong> —
+      <a href="https://amzn.to/4a7tpTA" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Capacete Shoei GT-Air 3 Discipline TC-2</strong> —
+      <a href="https://amzn.to/3MeTrKC" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Capacete Nexx SX100 Core Azul Fosco</strong> —
+      <a href="https://amzn.to/4oPtAaJ" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>. Veja a
+      <a href="/review-nexx-sx100/">review do Nexx SX100</a>.
+    </li>
+    <li>
+      <strong>Luva X11 Blackout2 Meio Dedo</strong> —
+      <a href="https://amzn.to/4igG1tv" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2RAwjyL" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Mochila Moto Aerodinâmica Impermeável</strong> —
+      <a href="https://amzn.to/4pokul9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+  </ul>
+
+  <h2 id="faq">Perguntas Frequentes sobre Capacetes Shark</h2>
+
+  <h3>Qual o melhor capacete da Shark?</h3>
+  <p>
+    Para uso em pista (Racing): <strong>Race-R Pro</strong>, utilizado na MotoGP. Para
+    turismo e versatilidade no dia a dia: <strong>Shark Evo-GT</strong>.
+  </p>
+
+  <h3>Qual a diferença entre os tipos de capacetes Shark?</h3>
+  <ul>
+    <li><strong>Racing:</strong> aerodinâmica extrema, pista e alta performance.</li>
+    <li><strong>Roadster:</strong> design urbano para motos naked e clássicas.</li>
+    <li><strong>Discovery:</strong> modelos articulados focados em turismo.</li>
+    <li><strong>Metro:</strong> uso urbano diário, foco em praticidade.</li>
+  </ul>
+
+  <h3>Os capacetes Shark são adequados para todas as categorias de moto?</h3>
+  <p>
+    Sim. O design da linha Evo se adapta especialmente bem a motos
+    <strong>Big Trail e Touring</strong>, mas funciona com segurança em todas as
+    motocicletas — inclusive nas de
+    <a href="/capacete-alta-cilindrada/">alta cilindrada</a>.
+  </p>
+
+  <h3>Qual a garantia dos capacetes Shark?</h3>
+  <p>
+    A garantia oficial é de <strong>5 anos</strong> a partir do registro da data de
+    compra no site oficial, cobrindo defeitos de fabricação e montagem.
+  </p>
+
+  <h3>Os capacetes Shark têm bom sistema de ventilação?</h3>
+  <p>
+    Sim. As entradas e saídas de ar são operáveis mesmo com luvas grossas, com
+    desempenho eficiente para resfriar e desembaçar a viseira.
+  </p>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>
+    Investir em um <strong>Capacete Shark Articulado</strong> é investir em sua
+    integridade física e prazer ao pilotar. A combinação de tecnologia francesa,
+    sistema 180° patenteado, ventilação CFD e excelentes pontuações no SHARP coloca a
+    Shark entre as marcas premium mais respeitadas do mundo.
+  </p>
+  <p>
+    Se você busca versatilidade (urbano + estrada), conforto em viagens longas e
+    qualidade construtiva acima da média, vale o investimento. Complete o equipamento
+    com uma boa <a href="/dica-melhor-jaqueta-motociclistas/">jaqueta</a>, as
+    <a href="/melhor-capacete/luvas/">melhores luvas</a> e um
+    <a href="/melhor-capacete/intercomunicadores/">intercomunicador</a>.
+  </p>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/melhor-capacete/">Guia: melhores capacetes do mercado</a></li>
+    <li><a href="/melhor-capacete/bem-avaliados/">Capacetes de moto mais bem avaliados</a></li>
+    <li><a href="/capacete-alta-cilindrada/">Capacetes para alta cilindrada</a></li>
+    <li><a href="/review-do-shoei-x-spirit3/">Review do Shoei X-Spirit3</a></li>
+    <li><a href="/ls2-scope-monocolor-review/">Análise completa do LS2 Scope Monocolor</a></li>
+    <li><a href="/comparacao-shark-vs-ls2/">Comparação Shark vs LS2</a></li>
+    <li><a href="/comparativo-modular-x-integral/">Comparativo modular x integral</a></li>
+    <li><a href="/intercomunicador-cardo-review/">Review do Intercomunicador Cardo</a></li>
+    <li><a href="/comparativo-jaqueta-texx-vs-x11/">Comparativo Jaqueta Texx vs X11</a></li>
+    <li><a href="/cadeados-para-moto/">Melhores cadeados para moto</a></li>
+  </ul>
 </PostLayout>
