@@ -1,20 +1,625 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete para Alta Cilindrada';
-const description = 'Os melhores capacetes para motos de alta cilindrada: segurança e desempenho em altas velocidades.';
+const title = 'Melhores Capacetes Para Moto de Alta Cilindrada | Top 10';
+const description = 'Guia completo dos melhores capacetes para motos de alta cilindrada (acima de 600cc): Arai, Shoei, Shark, AGV, MT, HJC, LS2, Bell, Axxis e Norisk.';
 const canonical = 'https://jovemapan.com.br/capacete-alta-cilindrada/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2026-01-12';
+const category = 'Capacetes';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/melhores capacete de moto para alto cilindrada.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Por que capacetes para alta cilindrada são diferentes', href: '#diferenca' },
+  { label: '3. Critérios de escolha', href: '#criterios' },
+  { label: '4. Viseira e durabilidade', href: '#viseira' },
+  { label: '5. Top 10 Marcas', href: '#top10' },
+  { label: '6. Como escolher o melhor capacete', href: '#como-escolher' },
+  { label: '7. Limpeza e manutenção', href: '#limpeza' },
+  { label: '8. Perguntas Frequentes', href: '#faq' },
+  { label: '9. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: 'ALTA CILINDRADA', href: '#' },
+  { label: 'SEGURANÇA', href: '/capacetes-mais-seguros/' },
+  { label: 'PREMIUM', href: '#' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'TOP DE LINHA',
+  image: '/images/Capacete Shoei X-Spirit3 Norick 04 Tc-2 60.png',
+  imageAlt: 'Capacete Shoei X-Spirit3',
+  name: 'Shoei<br/>X-Spirit3',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/12PXYG7',
+  amazonHref: 'https://amzn.to/3IuPxvm',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
+};
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Capacetes"
-  categoryHref="/category/capacetes/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p class="post-lead" id="introducao">
+    Pilotar uma moto de <strong>alta cilindrada</strong> (acima de 600cc) exige equipamentos
+    à altura. Entre todos eles, o capacete é o item mais crítico: é ele quem garante
+    proteção, conforto e estabilidade aerodinâmica em velocidades elevadas. Neste guia,
+    reunimos as <strong>10 melhores marcas de capacete</strong> para motos de alta
+    cilindrada, com prós, contras e onde comprar — para você encontrar o modelo certo
+    para o seu estilo de pilotagem.
+  </p>
+
+  <h2 id="diferenca">Por que capacetes para alta cilindrada são diferentes</h2>
+  <p>
+    Velocidades mais altas e acelerações mais vigorosas exigem capacetes especialmente
+    desenvolvidos. Aerodinâmica, peso e absorção de impacto deixam de ser detalhes e
+    passam a ser determinantes: capacetes comuns geram fadiga no pescoço, ruído excessivo
+    e instabilidade — algo perigoso em motos com mais de 100cv.
+  </p>
+  <p>
+    Modelos premium são testados em <strong>túneis de vento</strong>, têm cascas em
+    materiais compostos e contam com sistemas de ventilação dimensionados para
+    rodovia/pista. Para um panorama mais amplo, vale conferir nosso guia dos
+    <a href="/capacetes-mais-seguros/">capacetes mais seguros do mercado</a>.
+  </p>
+
+  <h2 id="criterios">Critérios de escolha</h2>
+
+  <h3>Segurança</h3>
+  <p>
+    Priorize cascas em materiais compostos como <strong>fibra de vidro, aramida (Kevlar) e
+    fibra de carbono</strong>. Procure pela certificação europeia
+    <strong>ECE 22.06</strong> e, no Brasil, o selo do
+    <a href="/capacetes-selo-inmetro/">INMETRO</a> é obrigatório.
+  </p>
+
+  <h3>Conforto</h3>
+  <p>
+    Forração interna de qualidade, tecidos antialérgicos removíveis, ventilação eficiente e
+    encaixe perfeito sem pontos de pressão. Em viagens longas, o conforto é tão importante
+    quanto a segurança — o cansaço também é fator de risco.
+  </p>
+
+  <h3>Aerodinâmica</h3>
+  <p>
+    Designs validados em <strong>túnel de vento</strong>, com spoilers traseiros que
+    reduzem turbulência e o "lift effect" (efeito de levantamento), são marca registrada
+    dos capacetes premium para alta cilindrada.
+  </p>
+
+  <h3>Peso</h3>
+  <p>
+    Fibra de carbono e compostos são significativamente mais leves que policarbonato,
+    reduzindo a fadiga em jornadas longas. A diferença de 200g pode parecer pequena, mas
+    faz toda diferença após 4 horas de pilotagem.
+  </p>
+
+  <h2 id="viseira">Viseira e durabilidade</h2>
+  <ul>
+    <li>Viseira em <strong>policarbonato</strong> com 2mm+ de espessura.</li>
+    <li>Tratamentos antirrisco e anti-UV de fábrica.</li>
+    <li><strong>Pinlock®</strong>: solução mais eficaz contra embaçamento.</li>
+    <li>Manutenção: pano macio, água e sabão neutro — nunca solventes.</li>
+  </ul>
+
+  <h2 id="top10">Top 10 Marcas de Capacete para Alta Cilindrada</h2>
+
+  <h3>1. Arai — Arai Quantic</h3>
+  <p>
+    Referência absoluta em capacetes premium. Produzidos artesanalmente no Japão, são
+    sinônimo de proteção, conforto e qualidade.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Arai XD4 - Visão.png" alt="Capacete Arai" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Conforto superior em viagens longas (forração premium em nylon).</li>
+          <li>Ventilação eficiente e silenciosa (12 pontos: 7 entradas, 5 saídas).</li>
+          <li>Certificação <strong>ECE R22-06</strong>.</li>
+          <li>Sistemas FCS (Facial Contour System) e ERS (Emergency Release).</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço alto, a partir de €789.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3GS35Ay" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1Es6Ct3" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>2. Shoei — X-Spirit3</h3>
+  <p>
+    Capacete esportivo top de linha, usado em MotoGP e WorldSBK. Confira nossa
+    <a href="/review-do-shoei-x-spirit3/">review completa do Shoei X-Spirit3</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Shoei X-Spirit3 Norick 04 Tc-2 60.png" alt="Capacete Shoei X-Spirit3" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Aerodinâmica avançada (testada em túnel de vento).</li>
+          <li>Ventilação superior (6 entradas, 6 saídas).</li>
+          <li>Forração Max-Dry 3D personalizada.</li>
+          <li>Design colaborativo com pilotos profissionais.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço elevado, a partir de R$ 5.999,90.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3IuPxvm" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1r1qem6" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>3. Shark — Shark EVO ES</h3>
+  <p>
+    Marca francesa famosa pelos capacetes escamoteáveis (modulares). Veja também nossa
+    <a href="/review-shark-evo/">review do Shark EVO</a> e o
+    <a href="/comparacao-shark-vs-ls2/">comparativo Shark vs LS2</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/capacete-shark-preto.png" alt="Capacete Shark EVO ES Preto" />
+    </div>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Versatilidade modular (aberto/fechado).</li>
+        <li>Forração antialérgica, removível e lavável.</li>
+        <li>Viseira solar UV380 e sistema Autoseal.</li>
+        <li>Ventilação otimizada.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Preço a partir de R$ 3.299.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4eUCorK" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/2oPWkHY" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+  </div>
+
+  <h3>4. AGV — Linha K Series</h3>
+  <p>
+    Marca italiana com herança da MotoGP. Especialista em fibra de carbono e em capacetes
+    de design arrojado. Confira o <a href="/comparacao-agv-vs-hjc/">comparativo AGV vs HJC</a>
+    e a <a href="/review-agv-k1/">review do AGV K1</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Fechado Agv K1 Vr46 Sky Racing Team.png" alt="Capacete AGV K1 VR46" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design italiano e tecnologia herdada da MotoGP.</li>
+          <li>Especialistas em fibra de carbono.</li>
+          <li>Leve, confortável e bom para uso urbano.</li>
+          <li>Ventilação eficiente.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Modelos abertos têm menor proteção frontal.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3IuPxvm" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/2F5RrQC" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>5. MT Helmets — MT Targo S Diogo23 Tribute A3</h3>
+  <p>
+    Marca espanhola com excelente custo-benefício. Veja a
+    <a href="/capacete-mt-review/">review da linha MT</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Mt Helmets Targo S Diogo C7 Fosco.png" alt="Capacete MT Helmets Targo S Diogo" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Certificações internacionais (ECE, DOT).</li>
+          <li>Design aerodinâmico e moderno.</li>
+          <li>Excelente custo-benefício.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Ruído percebido em altas velocidades.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4kJ0fvJ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1CAqEs9" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>6. HJC — Linha RPHA</h3>
+  <p>
+    Coreana líder em vendas no mundo. Confira nosso guia dos
+    <a href="/melhor-capacete-hjc-helmets/">melhores capacetes HJC</a> e a
+    <a href="/reveiw-hjc-i90-hollen/">review do HJC i90</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete HJC RPHA 70 Carbon.png" alt="Capacete HJC RPHA 70 Carbon" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Casca leve em policarbonato com tecnologia CAD.</li>
+          <li>Sistema de ventilação ACS eficiente.</li>
+          <li>Forração removível e compatível com óculos.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preços geralmente elevados na linha topo.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3Iy669V" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1T59tZS" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>7. LS2 — LS2 Valiant FF399</h3>
+  <p>
+    Marca espanhola com forte presença no Brasil. Veja a
+    <a href="/capacete-ls2-ff808-review/">review do LS2 FF808</a> e o
+    <a href="/comparacao-ls2-x-nolan/">comparativo LS2 vs Nolan</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/cpacete com oculos interno ls2 articulado .png" alt="Capacete LS2 Valiant FF399 articulado com óculos solar interno" />
+    </div>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Abertura de 180° com versatilidade total.</li>
+        <li>Forração removível, lavável e antialérgica.</li>
+        <li>Tecnologia <strong>Outlast®</strong> (regulação térmica usada pela NASA).</li>
+        <li>Viseira solar interna e compatível com Pinlock®.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Relativamente pesado (~1.600g).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4lyVqXh" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/29R4ecw" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+  </div>
+
+  <h3>8. Bell — Bell Qualifier DLX MIPS</h3>
+  <p>
+    Marca norte-americana centenária. Confira nossa
+    <a href="/capacete-bell-review/">review da linha Bell</a> e o
+    <a href="/review-bell-qualifier-forced/">review do Bell Qualifier</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Bell Capacetes de rua Qualifier DLX MIPS.png" alt="Capacete Bell Qualifier DLX MIPS" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Conforto premium para viagens longas.</li>
+          <li>Sistema MIPS de proteção contra impactos rotacionais.</li>
+          <li>Boa ventilação multiponto.</li>
+          <li>Acabamento robusto.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço elevado nas versões topo.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/44Nqb3m" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/2Rig6Vc" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>9. Axxis — Axxis Draken</h3>
+  <p>
+    Marca em ascensão com excelente custo-benefício. Veja também
+    <a href="/axxis-draken-review/">review do Axxis Draken</a> e
+    <a href="/axxis-vs-peels/">Axxis vs Peels</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Axxis Segment Switch B5.png" alt="Capacete Axxis Segment Switch B5" />
+    </div>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Homologação INMETRO.</li>
+        <li>Bom custo-benefício.</li>
+        <li>Casca aerodinâmica em ABS com pintura PPG automotiva.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Encaixe inicial apertado pode causar desconforto.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4ePpHhG" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/28RVXBp" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+  </div>
+
+  <h3>10. Norisk — Linha Razor / Strada</h3>
+  <p>
+    Marca brasileira muito popular. Confira a
+    <a href="/capacete-norisk-review/">review da Norisk</a> e
+    <a href="/vale-pena-capacete-norisk/">vale a pena o capacete Norisk</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto Norisk Razor Preto Brilho Masculino.png" alt="Capacete Norisk Razor" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Alta resistência dos materiais.</li>
+          <li>Forração interna confortável e removível.</li>
+          <li>Engate micrométrico de fácil uso.</li>
+          <li>Designs com alta visibilidade disponíveis.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço considerado elevado frente a similares.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/46fAZtt" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1vB2mtM" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="como-escolher">Como escolher o melhor capacete</h2>
+
+  <h3>Pelo tipo de uso</h3>
+  <ul>
+    <li><strong>Aberto:</strong> conforto urbano, inadequado para alta cilindrada.</li>
+    <li><strong>Integral (Fechado):</strong> ideal e recomendado para alta cilindrada (proteção da queixeira).</li>
+    <li><strong>Articulado/Modular:</strong> versátil, exige homologação dupla P/J.</li>
+    <li><strong>Off-road:</strong> não indicado para asfalto em alta velocidade.</li>
+  </ul>
+  <p>
+    Para entender melhor as diferenças, confira o
+    <a href="/comparativo-modular-x-integral.astro">comparativo modular x integral</a>.
+  </p>
+
+  <h3>Material da casca</h3>
+  <p>
+    Cascas em compostos (fibra de vidro, carbono, aramida) são fortemente preferíveis ao
+    ABS para alta cilindrada — performance e segurança em outro patamar.
+  </p>
+
+  <h3>Tamanho</h3>
+  <p>
+    Meça a circunferência da cabeça acima das sobrancelhas e orelhas. Use nossa
+    <a href="/tamanho-do-capacete/">tabela de tamanhos</a>: o capacete deve ficar firme,
+    sem folgas, com leve pressão nas bochechas.
+  </p>
+
+  <h3>Fatores adicionais</h3>
+  <ul>
+    <li>Construção leve reduz fadiga no pescoço.</li>
+    <li>Materiais internos hipoalergênicos.</li>
+    <li>Verificação do <a href="/capacetes-selo-inmetro/">selo INMETRO</a>.</li>
+    <li>Recursos extras (viseira solar, preparação para intercomunicador, E.Q.R.S.).</li>
+  </ul>
+
+  <h2 id="limpeza">Limpeza e manutenção</h2>
+  <ul>
+    <li>Remova toda a forração interna.</li>
+    <li>Lave a forração à mão, com sabão neutro.</li>
+    <li>Seque à sombra, longe do sol direto.</li>
+    <li>Limpe casca e viseira com pano macio e sabão neutro.</li>
+  </ul>
+  <p>Para um passo a passo completo, veja nosso guia de
+  <a href="/limpeza-do-capacete/">limpeza do capacete</a>.</p>
+
+  <h2 id="bestsellers">Mais vendidos na Amazon</h2>
+  <ul>
+    <li>
+      <strong>LS2 FF358 / Stream</strong> —
+      <a href="https://amzn.to/44yfzqn" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Axxis Draken</strong> —
+      <a href="https://amzn.to/4lX4DZ9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>HJC F70</strong> —
+      <a href="https://amzn.to/4kDREuc" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+  </ul>
+
+  <h2 id="ofertas">Ofertas relacionadas</h2>
+  <ul>
+    <li>
+      <strong>Capacete Peels Mirage Classic Branco</strong> (frete grátis) —
+      <a href="https://amzn.to/3MjKWy9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/1qaAz5s" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Intercomunicador Ejeas V6 Pro</strong> —
+      <a href="https://amzn.to/481F17S" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2rQAwF3" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Capacete Peels Icon Ekko</strong> —
+      <a href="https://amzn.to/4oGNbZT" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2iCYhgR" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Jaqueta Texx Armor Masculina</strong> —
+      <a href="https://amzn.to/3K2DQ0e" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2xVBsV9" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Capacete Aberto Peels Freeway King</strong> —
+      <a href="https://amzn.to/4a7tpTA" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Capacete Shoei GT-Air 3 Discipline TC-2</strong> —
+      <a href="https://amzn.to/3MeTrKC" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Capacete Nexx SX100 Core Azul Fosco</strong> —
+      <a href="https://amzn.to/4oPtAaJ" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Luva X11 Blackout2 Meio Dedo</strong> —
+      <a href="https://amzn.to/4igG1tv" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2RAwjyL" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Mochila Moto Aerodinâmica Impermeável</strong> —
+      <a href="https://amzn.to/4pokul9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+  </ul>
+
+  <h2 id="faq">Perguntas Frequentes</h2>
+
+  <h3>Qual o melhor capacete para moto de alta cilindrada?</h3>
+  <p>
+    Não existe um único "melhor" — depende do uso. Para pista, Shoei X-Spirit3 e Arai
+    Quantic estão no topo. Para touring, LS2 Valiant e Bell Qualifier DLX brilham. Para
+    custo-benefício, MT Targo e Axxis Draken oferecem ótimas opções.
+  </p>
+
+  <h3>Capacete aberto serve para alta cilindrada?</h3>
+  <p>
+    Não recomendado. A ausência de queixeira deixa o piloto exposto a impactos diretos no
+    rosto e desconforto severo em altas velocidades. Para alta cilindrada, opte por
+    integrais ou modulares (com homologação P/J).
+  </p>
+
+  <h3>Vale a pena gastar mais em fibra de carbono?</h3>
+  <p>
+    Sim, especialmente em viagens longas e pista. A redução de peso significa menos fadiga
+    no pescoço e melhor dissipação de impacto.
+  </p>
+
+  <h3>O que é certificação ECE 22.06?</h3>
+  <p>
+    É a norma europeia mais recente, mais rigorosa que a ECE 22.05, com testes adicionais
+    de impacto rotacional e em diferentes velocidades. Ter ECE 22.06 indica capacete de
+    alto padrão.
+  </p>
+
+  <h3>Quanto tempo dura um capacete?</h3>
+  <p>
+    Em média 5 anos a partir da fabricação, mesmo sem uso intenso, devido à degradação do
+    EPS interno. Veja nosso guia sobre
+    <a href="/capacete-prazo-validade/">prazo de validade do capacete</a>.
+  </p>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>
+    Investir em um <strong>capacete de qualidade para alta cilindrada</strong> não é
+    luxo: é segurança. As 10 marcas listadas representam o que existe de melhor no mercado
+    mundial, cobrindo desde opções premium absolutas (Arai, Shoei) até alternativas com
+    excelente custo-benefício (Axxis, MT, Norisk).
+  </p>
+  <p>
+    Avalie seu uso (pista, touring, urbano), seu orçamento e — fundamental — experimente
+    antes de comprar para garantir o ajuste correto. Depois de escolher o capacete,
+    complete o equipamento com uma boa
+    <a href="/dica-melhor-jaqueta-motociclistas/">jaqueta de motociclista</a>, as
+    <a href="/melhor-capacete/luvas/">melhores luvas</a> e um
+    <a href="/melhor-capacete/intercomunicadores/">intercomunicador</a> compatível.
+  </p>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/melhor-capacete/">Guia: melhores capacetes do mercado</a></li>
+    <li><a href="/melhor-capacete/bem-avaliados/">Capacetes de moto mais bem avaliados</a></li>
+    <li><a href="/capacetes-mais-seguros/">Capacetes mais seguros do mercado</a></li>
+    <li><a href="/capacetes-selo-inmetro/">Capacetes com selo do INMETRO</a></li>
+    <li><a href="/review-do-shoei-x-spirit3/">Review do Shoei X-Spirit3</a></li>
+    <li><a href="/melhor-capacete-hjc-helmets/">Melhores capacetes HJC</a></li>
+    <li><a href="/intercomunicador-cardo-review/">Review do Intercomunicador Cardo</a></li>
+    <li><a href="/comparativo-jaqueta-texx-vs-x11/">Comparativo Jaqueta Texx vs X11</a></li>
+    <li><a href="/cadeados-para-moto/">Melhores cadeados para moto</a></li>
+  </ul>
 </PostLayout>
