@@ -1,124 +1,54 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
-import ProductCard from '../components/ProductCard.astro';
-import ProsCons from '../components/ProsCons.astro';
-import ReviewSchema from '../components/ReviewSchema.astro';
 
 const title = 'Capacete Peels é Bom? Análise Completa 2026 | Review dos Modelos';
-const description = 'Review completo dos capacetes Peels. Análise dos modelos aberto, fechado e articulado. Preço, qualidade, segurança e vale a pena comprar? Descubra agora!';
-const canonical   = 'https://jovemapan.com.br/capacete-peels-review/';
-const author      = 'Marcelo Ferreira';
-const authorImage = '/images/marcelo-ferreira.png';
-const publishDate = '2026-04-16'; // Formato ISO para o Schema
-const category    = 'Reviews';
+const description = 'Capacete Peels é bom? Análise completa 2026 dos modelos Mirage, Icon Fast, Spike, U-RB2, Freeway e mais. Prós, contras, preços e onde comprar.';
+const canonical = 'https://jovemapan.com.br/capacete-peels-review/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela pan coufundadora e editoara chefe do blog apan .png';
+const publishDate = '2026-01-24';
+const category = 'Reviews';
 const categoryHref = '/category/reviews/';
-const coverImage  = '/images/moto-shop-cover.png';
+const coverImage = '/images/melhores modelos de capacetes Peels aberto fechado e articulados.png';
 
 const indice = [
-  { label: '1. Resumo da Análise', href: '#resumo' },
-  { label: '2. Os Modelos Peels em Destaque', href: '#modelos' },
-  { label: '3. Comparativo: Peels vs Marcas Premium', href: '#comparativo' },
-  { label: '4. Veredicto Final: Vale a Pena Comprar?', href: '#veredicto' },
+  { label: '1. Análise geral dos capacetes Peels', href: '#analise' },
+  { label: '2. Por que escolher um Peels', href: '#por-que' },
+  { label: '3. Principais recursos', href: '#recursos' },
+  { label: '4. Conforto e acabamento', href: '#conforto' },
+  { label: '5. Melhores capacetes Peels Articulados', href: '#articulados' },
+  { label: '6. Capacetes Peels Fechados (Integral)', href: '#fechados' },
+  { label: '7. Capacetes Peels Mirage', href: '#mirage' },
+  { label: '8. Capacetes Peels Aberto', href: '#aberto' },
+  { label: '9. Perguntas frequentes (FAQ)', href: '#faq' },
+  { label: '10. Afinal, o Peels é bom?', href: '#veredicto' },
+  { label: '11. Conclusão', href: '#conclusao' },
 ];
 
 const tags = [
-  { label: 'REVIEW', href: '#' },
-  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: 'REVIEW', href: '/category/reviews/' },
   { label: 'PEELS', href: '#' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: 'CUSTO-BENEFÍCIO', href: '/custo-beneficio/' },
   { label: '2026', href: '#' },
 ];
 
 const featuredProduct = {
-  preTitle: 'APROVEITE FRETE GRÁTIS',
-  image: '/images/capacete-shoei.png',
-  imageAlt: 'Capacete Shoei Premium Edition',
-  name: 'Capacete Shoei<br/>Premium Edition',
-  mercadoLivreHref: '#',
-  amazonHref: '#',
+  preTitle: 'Aproveite frete GRÁTIS',
+  image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+  imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+  name: 'Capacete Moto Peels<br/>Mirage Classic Branco',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+  amazonHref: 'https://amzn.to/3MjKWy9',
 };
 
 const authorBio = {
-  name: author,
-  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
-  image: authorImage,
-  profileHref: '/author-marcelo-ferreira/',
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
 };
-
-const models = [
-  {
-    name: 'Peels Icon',
-    subtitle: 'Fechado (Integral)',
-    price: 'R$ 350 - R$ 480',
-    rating: 4.4,
-    image: '/images/peels-icon.jpg',
-    affiliateLink: 'https://amzn.to/peelsicon',
-    features: [
-      'Casco ABS de alta resistência',
-      'Certificação INMETRO e ECE 22.05',
-      'Viseira policarbonato anti-risco',
-      'Sistema de ventilação com 4 entradas',
-      'Forro removível e lavável'
-    ],
-    cons: [
-      'Acabamento de entrada',
-      'Isolamento acústico básico',
-      'Ventilação insuficiente no calor'
-    ],
-    verdict: 'Excelente custo-benefício para iniciantes e uso urbano diário.'
-  },
-  {
-    name: 'Peels Freeway',
-    subtitle: 'Aberto (3/4)',
-    price: 'R$ 220 - R$ 320',
-    rating: 4.2,
-    image: '/images/peels-freeway.jpg',
-    affiliateLink: 'https://amzn.to/peelsfreeway',
-    features: [
-      'Casco ABS leve e compacto',
-      'Certificação INMETRO',
-      'Viseira curta inclusa',
-      'Óculos de sol interno retrátil',
-      'Forro confortável para dias quentes'
-    ],
-    cons: [
-      'Menor proteção por ser aberto',
-      'Viseira não cobre todo o rosto',
-      'Ruído do vento em velocidades médias'
-    ],
-    verdict: 'Ótima opção para trânsito urbano leve e curtas distâncias.'
-  },
-  {
-    name: 'Peels Mirage',
-    subtitle: 'Articulado (Robocop)',
-    price: 'R$ 480 - R$ 650',
-    rating: 4.3,
-    image: '/images/peels-mirage.jpg',
-    affiliateLink: 'https://amzn.to/peelsmirage',
-    features: [
-      'Mecanismo de articulação reforçado',
-      'Certificação INMETRO e ECE 22.05',
-      'Dupla viseira (transparente + fumê)',
-      'Forro premium com maior conforto',
-      'Sistema de ventilação avançado'
-    ],
-    cons: [
-      'Mais pesado (1.650g)',
-      'Mecanismo requer limpeza constante',
-      'Pode gerar mais ruído aerodinâmico'
-    ],
-    verdict: 'Versatilidade máxima para quem precisa de conforto urbano e uso rodoviário eventual.'
-  }
-];
-
-const comparisonTable = [
-  { aspect: 'Preço', peels: '★★★★★', premium: '★★☆☆☆' },
-  { aspect: 'Segurança', peels: '★★★★☆', premium: '★★★★★' },
-  { aspect: 'Conforto', peels: '★★★☆☆', premium: '★★★★★' },
-  { aspect: 'Acabamento', peels: '★★★☆☆', premium: '★★★★★' },
-  { aspect: 'Ventilação', peels: '★★★☆☆', premium: '★★★★★' },
-  { aspect: 'Durabilidade', peels: '★★★☆☆', premium: '★★★★★' }
-];
 ---
 
 <PostLayout
@@ -136,102 +66,818 @@ const comparisonTable = [
   authorBio={authorBio}
   featuredProduct={featuredProduct}
 >
-  <ReviewSchema
-    title={title}
-    description={description}
-    image={models[0].image}
-    authorName={author}
-    publishDate={publishDate}
-    ratingValue={4.4}
-    lowPrice={220}
-    highPrice={650}
-  />
+  <p class="post-lead">
+    Se você é motociclista, sabe que o capacete é o item de segurança mais importante. No mercado
+    brasileiro, a <a href="https://www.peels.com.br/" target="_blank" rel="noopener noreferrer">Peels</a>
+    se destaca como uma das marcas mais populares e acessíveis. Mas com tantas opções, surge a
+    dúvida: <strong>capacete Peels é bom?</strong>
+  </p>
+  <p>
+    Para te ajudar a tomar a melhor decisão, preparamos este guia completo. Aqui, vamos fazer uma
+    análise aprofundada da marca, abordando seus principais recursos, a segurança oferecida, o nível
+    de conforto e, claro, os modelos mais procurados. Ao final, você terá todas as informações para
+    saber se um capacete Peels é a escolha certa para você.
+  </p>
 
-  <h2 id="resumo">1. Resumo da Análise</h2>
+  <h2 id="analise">Análise Geral dos Capacetes Peels</h2>
   <p>
-    A <strong>Peels</strong> é uma marca brasileira que oferece capacetes com <strong>certificação INMETRO</strong> a preços 
-    muito competitivos. Seus produtos são indicados para iniciantes, uso urbano e quem busca 
-    um segundo capacete sem gastar muito.
+    A Peels é uma marca 100% brasileira que conquistou seu espaço oferecendo produtos com design
+    moderno e um excelente <a href="/custo-beneficio/">custo-benefício</a>. Sua proposta é
+    democratizar o acesso a capacetes seguros e estilosos para o motociclista do dia a dia.
+  </p>
+
+  <h2 id="por-que">Por que escolher um capacete Peels?</h2>
+  <p>Existem três motivos principais que fazem da Peels uma escolha popular entre os motociclistas no Brasil:</p>
+  <ul>
+    <li><strong>Custo-benefício:</strong> a marca é conhecida por entregar capacetes com recursos interessantes, design variado e segurança certificada por um preço muito competitivo.</li>
+    <li><strong>Variedade de modelos:</strong> seja você um fã de capacetes abertos, <a href="/comparativo-modular-x-integral/">fechados (integrais)</a>, articulados (escamoteáveis) ou dos versáteis modelos com queixeira removível, a Peels tem uma opção para o seu estilo.</li>
+    <li><strong>Presença Nacional:</strong> por ser uma marca consolidada, é fácil encontrar capacetes Peels em lojas físicas e online, além de peças de reposição como viseiras e forros.</li>
+  </ul>
+
+  <h2 id="recursos">Principais Recursos</h2>
+  <p>Muitos dos capacetes da Peels compartilham recursos que visam melhorar a experiência do piloto. Vamos conhecer os principais.</p>
+
+  <h3>Design Aviador e Versatilidade</h3>
+  <p>
+    Um dos grandes diferenciais da Peels é a popularização do design "aviador", especialmente na
+    linha <a href="https://amzn.to/41gi9yW" target="_blank" rel="nofollow noopener noreferrer">Mirage</a>.
+    Esses modelos vêm com uma queixeira removível, permitindo que você transforme seu capacete
+    fechado em um aberto em segundos, adaptando-se perfeitamente ao clima ou ao tipo de percurso.
+  </p>
+
+  <h3>Viseiras Cristal e Fumê com Tratamento Anti-risco</h3>
+  <p>
+    A visibilidade é crucial para a segurança. A Peels equipa seus capacetes com viseiras de
+    policarbonato de 2mm com tratamento anti-risco. Além disso, muitos modelos, como o Mirage e os
+    articulados, contam com uma viseira solar interna (óculos interno fumê), um recurso prático para
+    pilotar em dias de sol sem precisar trocar de viseira.
+  </p>
+
+  <h3>Facilidade de Manutenção e Higiene</h3>
+  <p>
+    Ninguém gosta de usar um capacete sujo ou com mau cheiro. Pensando nisso, a maioria dos modelos
+    Peels possui forração interna removível e lavável. Isso facilita enormemente a
+    <a href="/limpeza-do-capacete/">higienização</a>, garantindo mais conforto e durabilidade ao seu
+    equipamento.
+  </p>
+
+  <h3>Construção em ABS e Segurança</h3>
+  <p>
+    Afinal, a principal função do capacete é proteger. Os capacetes Peels são fabricados com casco em
+    ABS injetado de alto impacto, um material projetado para absorver e dissipar a energia de uma
+    colisão. Mais importante ainda, todos os modelos são certificados pelo
+    <a href="https://www.gov.br/inmetro/pt-br/acesso-a-informacao/perguntas-frequentes/avaliacao-da-conformidade/capacetes-para-motociclistas" target="_blank" rel="nofollow noopener noreferrer">INMETRO</a>,
+    o que garante que eles passaram por rigorosos testes de segurança. Veja também a lista de
+    <a href="/capacetes-selo-inmetro/">capacetes com selo INMETRO</a>.
+  </p>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/C9mlpJwAZek?si=QqW8RN-SGOeIvQPT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <h2 id="conforto">Conforto e Acabamento</h2>
+  <p>Além da segurança, o conforto é fundamental, principalmente para quem passa muito tempo sobre duas rodas.</p>
+
+  <h3>Revestimento Interno Antialérgico</h3>
+  <p>
+    O forro interno dos capacetes Peels é feito com um tecido antialérgico, que proporciona um toque
+    macio e ajuda a evitar irritações na pele, mesmo durante o uso prolongado em dias quentes.
+  </p>
+
+  <h3>Queixeira Removível</h3>
+  <p>
+    Como mencionado, a queixeira removível é a estrela de modelos como o Peels Mirage. Ela oferece o
+    melhor de dois mundos: a proteção de um capacete fechado para estradas e a ventilação de um
+    <a href="/capacete-aberto/">capacete aberto</a> para trajetos curtos na cidade.
+  </p>
+
+  <h2 id="articulados">Melhores capacetes Peels — Articulados</h2>
+  <p>
+    A Peels entende que cada motociclista tem uma necessidade. Por isso, seu portfólio é dividido em
+    diferentes categorias. Ideais para o uso urbano, os modelos articulados (ou escamoteáveis)
+    oferecem a praticidade de levantar a parte frontal do capacete sem precisar removê-lo da cabeça.
+    Veja o <a href="/comparativo-modular-x-integral/">comparativo modular x integral</a>.
+  </p>
+
+  <div class="product-section">
+    <h3>1. Capacete Peels TR1 Control Articulado Robocop</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/PEELS Capacete Articulado Robocop Moto TR1 Preto.png" alt="Capacete Peels TR1 Articulado Robocop Preto" />
+    </div>
+    <p>
+      Com um design futurista, é um modelo que chama a atenção. Oferece a praticidade da articulação
+      com o conforto da viseira solar interna.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Versatilidade: articulado, oferece o melhor dos dois mundos (fechado e aberto).</li>
+          <li>Conforto: ótima ventilação e forração macia.</li>
+          <li>Viseira solar interna: proteção extra contra o sol.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Peso: pode ser um pouco mais pesado que um capacete fechado convencional.</li>
+          <li>Ruído: em velocidades mais altas, pode apresentar mais ruído aerodinâmico.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/44Q9lCk" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2bPLLPK" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>2. Capacete Peels U-RB2 Classic Branco Articulável</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete peels branco Articulavel.png" alt="Capacete Peels U-RB2 Classic Branco Articulável" />
+    </div>
+    <p>
+      Um clássico da marca, o U-RB2 é conhecido por sua confiabilidade e design limpo. É uma
+      excelente porta de entrada para quem busca um capacete articulado.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design moderno: estética atraente e acabamento de qualidade.</li>
+          <li>Praticidade: sistema escamoteável fácil de operar.</li>
+          <li>Viseira solar integrada para maior comodidade.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Custo: geralmente preço um pouco mais elevado.</li>
+          <li>Ventilação: menos eficiente em dias muito quentes quando totalmente fechado.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4f9Qllv" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1UjHJv4" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>3. Capacete Peels U-RB2 Dynamic</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Peels U-RB2 Dynamic Preto Vermelho Fosco.png" alt="Capacete Peels U-RB2 Dynamic Preto Vermelho Fosco" />
+    </div>
+    <p>
+      Uma variação do U-RB2 com grafismos mais modernos e arrojados, mantendo todas as qualidades do
+      modelo clássico, como a viseira solar e o forro removível.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Queixeira escamoteável (articulado), conforto urbano e praticidade.</li>
+          <li>Casco injetado em termoplástico ABS de alta absorção, viseira cristal de 2 mm.</li>
+          <li>Forração ErgonoFit antialérgica, removível e lavável.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Isolamento acústico/vedação podem deixar a desejar.</li>
+          <li>Peso relativamente elevado (~1.740 g).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/452S4oc" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/13cd8XL" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>4. Capacete Peels Escamoteável U-BR2 Ocean</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto Peels Escamoteável U-rb2 Ocean Azul Fosco.png" alt="Capacete Peels Escamoteável U-BR2 Ocean Azul Fosco" />
+    </div>
+    <p>
+      Com grafismos inspirados no oceano, este modelo traz um visual único para a linha articulada
+      da Peels, combinando estilo e funcionalidade.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Versatilidade escamoteável: queixeira que levanta, ótimo para trânsito + viagens.</li>
+          <li>Casco ABS, viseira cristal 2 mm antirrisco e óculos solar interno.</li>
+          <li>Interior antialérgico removível e lavável; ventilação superior + exaustão traseira.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Peso ~1.740 g, sentido em uso prolongado.</li>
+          <li>Possível entrada de ruído/vento em estrada.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4kWwwzu" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/32AS33v" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="fechados">Capacetes Peels Fechados (Integral)</h2>
+  <p>
+    A categoria mais tradicional, oferecendo o máximo de proteção por cobrir toda a cabeça e o
+    queixo de forma fixa. Veja também a lista de <a href="/capacetes-mais-seguros/">capacetes mais
+    seguros</a>.
+  </p>
+
+  <div class="product-section">
+    <h3>1. Capacete Fechado Moto Peels Icon Fast</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto Fechado Peels.png" alt="Capacete Moto Fechado Peels Icon Fast" />
+    </div>
+    <p>
+      O Peels Icon é um dos campeões de vendas. Com design aerodinâmico e grafismos esportivos, é
+      leve e ideal para o dia a dia. Veja a <a href="/peels-icon-fast-review/">análise completa do
+      Icon Fast</a>.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Forro interno removível e lavável em tecido antialérgico.</li>
+          <li>Sistema de ventilação eficaz com entradas de ar e exaustão traseira.</li>
+          <li>Versatilidade e bom acabamento para a faixa de preço.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Peso de ~1.450 g, pesado em uso prolongado.</li>
+          <li>Ajuste inicial pode requerer adaptação.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4mfyhsL" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1VJHqh2" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>2. Capacete Peels Fechado Spike II GTX</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Peels-Capacete-Moto-Fechado-Spike-II-GTX-Preto-FoscoAzul-60.png" alt="Peels Capacete Moto Fechado Spike II GTX Preto Fosco Azul" />
+    </div>
+    <p>
+      O Spike é outro modelo muito popular, conhecido pelo seu excelente custo-benefício. É um
+      capacete confiável, simples e eficiente para o uso diário.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Casco em termoplástico ABS de alta absorção.</li>
+          <li>Peso leve para o segmento (~1.270 g).</li>
+          <li>Forro removível e lavável em tecido antialérgico.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Pode faltar recursos premium (visor solar interno, queixeira articulada).</li>
+          <li>Visual esportivo pode não agradar a quem busca discrição.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3TXrBU7" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1ApCpSR" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>3. Capacete Peels Feminino Element</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Moto-Feminino-Peels-Icon-Element-Rosa-Azul-Fechado.png" alt="Capacete Moto Feminino Peels Icon Element Rosa Azul Fechado" />
+    </div>
+    <p>
+      Provando que segurança e estilo andam juntos, o modelo Element traz grafismos delicados e
+      cores pensadas para o público feminino, sem abrir mão da proteção de um capacete integral.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Modelo fechado topo de linha com mais proteção e estilo.</li>
+          <li>Versão Quantum com possível visor escurecido interno.</li>
+          <li>Acabamento robusto e visual premium.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço mais elevado que os modelos básicos.</li>
+          <li>Pode ter peso maior, impactando conforto em uso prolongado.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4l0YWIS" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1C99qJZ" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>4. Capacete Peels Fechado 23 Classic</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Peels-Capacete-Fechado-Moto-Icon-23-Classic-GrafiteGrafite-60.png" alt="Peels Capacete Fechado Moto Icon 23 Classic Grafite" />
+    </div>
+    <p>
+      Com um nome que remete ao ano de fundação da marca, o 23 Classic tem um design mais sóbrio e
+      elegante, ideal para quem busca discrição.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Versatilidade: queixeira removível.</li>
+          <li>Peso leve (~1,267 kg).</li>
+          <li>Forro antialérgico, removível e lavável.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Modelo mais aberto: menor proteção em rodovias.</li>
+          <li>Maior entrada de ruído/vento em alta velocidade.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/418Z7dQ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/28SnUvF" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>5. Capacete Peels Mach 5 Quantum Masculino</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto Masculino Peels Quantum.png" alt="Capacete Moto Masculino Peels Quantum" />
+    </div>
+    <p>
+      Com um nome que sugere velocidade, o Mach 5 possui um design agressivo e aerodinâmico, voltado
+      para motociclistas que gostam de um visual mais esportivo.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Estilo aventureiro, ideal para motos urbanas.</li>
+          <li>Marca nacional, com peças e manutenção acessíveis.</li>
+          <li>Visual diferenciado.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Menos especificações técnicas detalhadas publicamente.</li>
+          <li>Possivelmente menos ventilação que modelos premium.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3UxLLEg" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2b8FAMe" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="mirage">Capacetes Peels Mirage (Queixeira Removível e Óculos Solar Interno)</h2>
+  <p>
+    A linha mais versátil da marca, perfeita para quem não quer escolher entre um capacete aberto ou
+    fechado.
+  </p>
+
+  <div class="product-section">
+    <h3>1. Capacete Peels Mirage Classic Verde Militar</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Mirage-Classic-Verde-Militar-FoscoGrafite-56.png" alt="Capacete Peels Mirage Classic Verde Militar Fosco Grafite" />
+    </div>
+    <p>
+      O design que iniciou o sucesso da linha. A cor verde militar e o estilo aviador fazem dele um
+      capacete cheio de personalidade.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Acabamento especial Steel Azul para visual exclusivo.</li>
+          <li>Boa reputação para uso urbano.</li>
+          <li>Marca consolidada com histórico de custo-benefício.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Disponibilidade limitada para algumas cores.</li>
+          <li>Menor proteção em rodovias e uso intenso.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4o6L02A" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/18cbEmL" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>2. Capacete Peels Mirage Living</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Moto-Peels-Mirage-Living-Preto-Brilhante-e-Azul.png" alt="Capacete Moto Peels Mirage Living Preto Brilhante e Azul" />
+    </div>
+    <p>
+      Esta versão traz grafismos vibrantes e artísticos, transformando o capacete em um verdadeiro
+      acessório de moda.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Leveza (~1,2 kg) facilita o uso diário.</li>
+          <li>Versatilidade: queixeira removível e viseira solar interna fumê.</li>
+          <li>Forro antialérgico removível, boa ventilação e viseira antirrisco.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Proteção facial limitada vs. integral.</li>
+          <li>Forma pode exigir testar tamanhos diferentes.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/45uIjQ7" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1Dw8kok" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>3. Capacete Peels F-21 North</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Aberto-Moto-com-Queixeira-Removivel-F-21-North-Off-WhitePreto-60.png" alt="Capacete Aberto Moto com Queixeira Removível Peels F-21 North Off-White Preto" />
+    </div>
+    <p>
+      O F-21 é uma evolução do Mirage, com linhas mais modernas e um sistema de queixeira aprimorado,
+      mantendo a versatilidade e o óculos solar interno.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Boa versatilidade com queixeira removível e forro lavável.</li>
+          <li>Viseira dupla (fumê + cristal) com proteção UV e anti-risco.</li>
+          <li>Casco leve e fecho micrométrico fácil de ajustar.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Proteção reduzida vs. integrais em alta velocidade.</li>
+          <li>Possível entrada de vento e ruído em rodovias.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/40Fj1Ns" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2jqJ6j2" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>4. Capacete Peels Mirage Steel Azul</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Peels-Capacete-Aberto-Moto-com-Queixeira-Removivel-e-Oculos-Solar-Interno-Mirage-Steel-AzulLaranja-60.png" alt="Peels Capacete Aberto Moto com Queixeira Removível e Óculos Solar Interno Mirage Steel Azul Laranja" />
+    </div>
+    <p>
+      Com um acabamento que imita aço escovado e detalhes em azul, o Mirage Steel oferece um visual
+      industrial e robusto.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Queixeira removível e forro antialérgico lavável.</li>
+          <li>Viseira antirrisco de policarbonato e óculos solar interno.</li>
+          <li>Casco em ABS de alta absorção, durabilidade considerável.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Proteção facial inferior por ser semi-aberto.</li>
+          <li>Maior entrada de vento/ruído em altas velocidades.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4mzmy8H" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1mvBcrk" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="aberto">Capacetes Peels Aberto</h2>
+  <p>
+    Ideais para <a href="/capacete-para-scooter/">scooters</a> e pilotagem em baixas velocidades na
+    cidade, oferecem máxima ventilação e um estilo retrô. Veja também a
+    <a href="/capacete-peels-freeway-review/">análise da linha Freeway</a>.
+  </p>
+
+  <div class="product-section">
+    <h3>1. Capacete Peels Aberto Freeway 4Ever</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto Aberto Peels Freeway Line Up Branco Azul.png" alt="Capacete Peels Aberto Freeway 4Ever" />
+    </div>
+    <p>
+      Um modelo que combina a simplicidade de um capacete aberto com grafismos que remetem à cultura
+      da estrada e da liberdade.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Casco ABS de alta absorção, ótima base de segurança urbana.</li>
+          <li>Viseira de policarbonato 2 mm com tratamento antirrisco e troca rápida.</li>
+          <li>Forração antialérgica removível e lavável.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Modelo aberto: menos proteção facial e lateral.</li>
+          <li>Peso ~1,163 kg, ainda perceptível em uso prolongado.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/46NkEwz" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/13pSeD2" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>2. Capacete Peels Aberto Click Yesterday</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Aberto-Moto-com-Viseira-Solar-Interna-Click-Yesterday-PretoPrata-60.png" alt="Capacete Aberto Moto com Viseira Solar Interna Peels Click Yesterday Preto Prata" />
+    </div>
+    <p>
+      Com um design nostálgico e grafismos retrô, o Click Yesterday é perfeito para donos de motos
+      clássicas ou custom.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Óculos solar interno integrado.</li>
+          <li>Casco ABS com pintura automotiva perolizada.</li>
+          <li>Forração antialérgica removível e lavável.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Maior entrada de vento/ruído em alta velocidade.</li>
+          <li>Visibilidade em chuva inferior aos modelos premium.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3IOVbc8" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/2xHjf49" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>3. Capacete Peels Aberto King</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Aberto Moto Peels Freeway King Preto.png" alt="Capacete Peels Aberto King Preto" />
+    </div>
+    <p>
+      Como o nome sugere, possui um design imponente, com detalhes cromados e um acabamento premium
+      para a categoria.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Peso leve (~1.200 g) — ótimo conforto urbano.</li>
+          <li>Viseira panorâmica policarbonato 2 mm com troca rápida.</li>
+          <li>Revestimento removível/lavável e anel antifurto.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Modelo aberto: menor proteção em colisões frontais/laterais.</li>
+          <li>Visual urbano simples, menos sofisticado.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4o9RgXq" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2qJjhvK" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>4. Capacete Peels Aberto New Classic</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Aberto-Moto-Freeway-New-Classic-Preto.png" alt="Capacete Aberto Moto Peels Freeway New Classic Preto" />
+    </div>
+    <p>
+      Uma releitura do capacete aberto clássico, com forração mais confortável e materiais modernos,
+      mantendo o visual atemporal.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Casco ABS com verniz protetor e bom acabamento.</li>
+          <li>Viseira antirrisco com troca rápida.</li>
+          <li>Forração antialérgica removível e lavável.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Limitações em proteção para uso intenso/rodovia.</li>
+          <li>Especificações mais básicas do segmento.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4oniOsy" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/32oQhnq" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>5. Capacete Peels Aberto Hype Roxo/Pink</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Peels Capacete Moto Aberto Freeway Hype RoxoPink 58.png" alt="Capacete Peels Aberto Hype Roxo/Pink" />
+    </div>
+    <p>
+      Voltado para quem não tem medo de ousar, o modelo Hype traz cores vibrantes e um acabamento
+      brilhante para se destacar no trânsito. Confira a
+      <a href="/capacete-peels-freeway-review/">análise da linha Freeway</a>.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Visual diferenciado em roxo/pink.</li>
+          <li>Mesma base técnica da linha Freeway: casco ABS, viseira 2 mm, forro removível.</li>
+          <li>Ideal para uso urbano com foco em conforto + estilo.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Pode faltar recursos para uso intenso ou estrada.</li>
+          <li>Cores vibrantes podem desagradar quem busca discrição.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4lTND6y" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/1bSSryE" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="faq">Perguntas Frequentes (FAQ)</h2>
+
+  <h3>Quais são os recursos do Capacete Peels Icon?</h3>
+  <p>
+    O Peels Icon é um capacete fechado (integral) conhecido pelo seu casco aerodinâmico, forro
+    removível e lavável, e uma variedade de grafismos esportivos. É um dos modelos com melhor
+    custo-benefício da marca para uso diário. Veja a
+    <a href="/peels-icon-fast-review/">análise completa do Icon Fast</a>.
+  </p>
+
+  <h3>O Capacete Peels Spike tem boa avaliação entre os usuários?</h3>
+  <p>
+    Sim, o Peels Spike é muito bem avaliado por ser um capacete de entrada confiável e acessível. Os
+    usuários costumam elogiar sua leveza e o bom encaixe para deslocamentos urbanos.
+  </p>
+
+  <h3>Como as pessoas classificam o atendimento da Peels no Reclame AQUI?</h3>
+  <p>
+    A reputação da Peels no Reclame AQUI pode variar. Geralmente, a empresa responde às solicitações,
+    mas é sempre recomendado verificar a classificação atual no site antes da compra. Isso dá uma
+    boa ideia de como a marca lida com o pós-venda.
+  </p>
+
+  <h3>O modelo de Capacete Peels feminino oferece a mesma proteção que os modelos masculinos?</h3>
+  <p>
+    Sim, absolutamente. A estrutura de segurança, o casco em ABS e a certificação do INMETRO são os
+    mesmos. A diferença de um capacete Peels feminino está apenas no design, com grafismos e cores
+    que buscam agradar ao público feminino.
+  </p>
+
+  <h3>Como posso verificar o tamanho adequado para o meu Capacete Peels?</h3>
+  <p>
+    Para saber seu tamanho, use uma fita métrica para medir a circunferência da sua cabeça, passando
+    a fita acima das sobrancelhas e orelhas. Depois, consulte a tabela de
+    <a href="/tamanho-do-capacete/">tamanhos de capacete</a> Peels disponível no site da marca ou na
+    descrição do produto para encontrar a correspondência (ex: 58 cm = tamanho M).
+  </p>
+
+  <h3>Qual a durabilidade média de um Capacete Peels?</h3>
+  <p>
+    A recomendação geral dos fabricantes, incluindo a Peels, é trocar o capacete a cada
+    <strong>3 a 5 anos</strong> de uso regular. No entanto, se o capacete sofrer qualquer impacto,
+    mesmo uma queda boba, ele deve ser substituído imediatamente, pois sua estrutura de absorção
+    pode ter sido comprometida. Saiba mais em <a href="/capacete-prazo-validade/">prazo de validade
+    do capacete</a>.
+  </p>
+
+  <h2 id="veredicto">Afinal, o Capacete Peels é bom?</h2>
+  <p>
+    Depois de toda essa análise, podemos concluir: <strong>sim, para o público certo, o capacete
+    Peels é bom e representa uma excelente escolha.</strong>
   </p>
   <p>
-    <strong>Não espere um acabamento de casco de mil reais</strong>, mas para o preço cobrado, a Peels entrega 
-    segurança certificada, leveza e um design inegavelmente moderno. É uma escolha inteligente para uso focado no cotidiano.
+    Seu ponto forte é o incrível custo-benefício. Para o motociclista urbano, que usa a moto para
+    trabalhar (veja também o <a href="/melhor-capacete-motoboy/">melhor capacete para motoboy</a>) ou
+    para deslocamentos diários, os capacetes Peels oferecem a segurança certificada, o conforto
+    necessário e uma variedade de estilos e funcionalidades por um preço justo. Modelos como o
+    Mirage e os articulados são prova da inovação da marca em busca de praticidade.
   </p>
-  
+  <p>
+    Para pilotagem em autódromos ou em altíssima velocidade constante, talvez existam marcas mais
+    especializadas. Porém, para a grande maioria dos motociclistas brasileiros, a Peels cumpre o que
+    promete com louvor.
+  </p>
+
+  <h2>Depoimentos de Clientes</h2>
   <blockquote>
-    <strong>Nota Geral da Redação (4.4/5.0):</strong> Ótimo custo-benefício. Se seu planejamento está apertado, o capacete Peels não vai te deixar na mão no trânsito das cidades.
+    "Uso um Peels Icon para ir e voltar do trabalho todos os dias. É leve, confortável e o grafismo
+    é muito bonito. Pelo preço que paguei, valeu muito a pena."
+    <footer><strong>— Marcos G., São Paulo/SP</strong></footer>
+  </blockquote>
+  <blockquote>
+    "Tenho um Peels Mirage e adoro a versatilidade. Uso fechado quando pego a estrada no fim de
+    semana e aberto para andar na cidade. É como ter dois capacetes em um. Recomendo demais!"
+    <footer><strong>— Juliana F., Belo Horizonte/MG</strong></footer>
   </blockquote>
 
-  <h2 id="modelos">2. Os Modelos Peels em Destaque</h2>
-  <p>Conheça as três principais propostas de capacetes da marca e avalie o que se encaixa melhor no seu dia a dia e na sua moto.</p>
+  <h2 id="conclusao">Conclusão</h2>
+  <p>
+    Responder se o <strong>capacete Peels é bom</strong> é entender que a marca se posiciona de
+    forma inteligente no mercado. Ela não compete com as marcas premium de fibra de carbono, mas
+    domina o segmento de entrada e intermediário com autoridade.
+  </p>
+  <p>
+    Se você busca um capacete seguro, com design moderno, recursos práticos como viseira solar e
+    forro removível, e não quer ou não pode investir uma fortuna, a Peels é, sem dúvida, uma das
+    melhores opções disponíveis. Analise os modelos que listamos, veja qual se encaixa no seu perfil
+    e pilote com estilo e segurança.
+  </p>
+  <p>
+    Esses são apenas alguns modelos que analisamos. Veja nossa análise dos
+    <a href="/melhor-capacete/">melhores capacetes</a> de 2026.
+  </p>
 
-  {models.map((model, index) => (
-    <ProductCard 
-      name={model.name}
-      subtitle={model.subtitle}
-      price={model.price}
-      rating={model.rating}
-      image={model.image}
-      affiliateLink={model.affiliateLink}
-      rank={index + 1}
-      verdict={model.verdict}
-    >
-      <ProsCons pros={model.features} cons={model.cons} />
-    </ProductCard>
-  ))}
-
-  <h2 id="comparativo">3. Comparativo: Peels vs Marcas Premium</h2>
-  <p>Entenda o que você sacrifica — e o que você economiza — ao escolher um capacete nacional frente a nomes de peso como Shoei e Arai.</p>
-  
-  <div class="table-responsive">
-     <table>
-       <thead>
-         <tr>
-           <th>Critério Analisado</th>
-           <th>Capacetes Peels</th>
-           <th>Marcas Premium (Ex: Arai)</th>
-         </tr>
-       </thead>
-       <tbody>
-         {comparisonTable.map(row => (
-           <tr>
-             <td><strong>{row.aspect}</strong></td>
-             <td>{row.peels}</td>
-             <td>{row.premium}</td>
-           </tr>
-          ))}
-        </tbody>
-     </table>
-  </div>
-  <p style="font-size: 0.85rem; color: #666; font-style: italic; margin-top: -15px;">Nota: Marcas premium custam de 5x a 10x mais que a Peels. A comparação sempre deve considerar a diferença de investimento.</p>
-
-  <h2 id="veredicto">4. Veredicto Final: Vale a Pena Comprar?</h2>
-  <div class="info-box">
-    <p>
-      <strong> Nossa opinião final:</strong> A Peels é uma excelente porta de entrada para quem busca segurança certificada sem gastar muito. Para uso urbano e deslocamentos casa-trabalho, ela entrega tudo que você precisa. Para viagens extra longas rodoviárias em alta cilindrada, considere investir em marcas de categoria touring.
-    </p>
-  </div>
+  <h2>Posts relacionados</h2>
+  <ul>
+    <li><a href="/peels-icon-fast-review/">Peels Icon Fast: Análise Completa</a></li>
+    <li><a href="/capacete-peels-freeway-review/">Peels Freeway: Review da Linha</a></li>
+    <li><a href="/melhores-capacetes-peels/">Os Melhores Capacetes Peels</a></li>
+    <li><a href="/comparacao-mt-vs-peels/">Comparativo: MT vs Peels</a></li>
+    <li><a href="/melhor-capacete/">Melhores Capacetes de Moto 2026</a></li>
+    <li><a href="/comparativo-modular-x-integral/">Modular x Integral: Qual Escolher?</a></li>
+  </ul>
 </PostLayout>
 
 <style>
-  /* Ajustes finos para o índice que não está no layout global */
-  .post-indice {
-    background: #f3f4f6;
-    border-radius: 16px;
-    padding: 24px;
-    margin: 32px 0;
+  .video-embed {
+    position: relative;
+    width: 100%;
+    max-width: 733px;
+    aspect-ratio: 16 / 9;
+    margin: 24px 0 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
   }
-  .post-indice strong {
-    display: block;
-    margin-bottom: 16px;
-    color: #111;
-    font-size: 1.1rem;
-    font-weight: 800;
+  .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
-  .post-indice ul { list-style: none; margin: 0; padding: 0; }
-  .post-indice li { margin-bottom: 12px; }
-  .post-indice a { color: #374151; text-decoration: none; font-weight: 500; }
-  .post-indice a:hover { color: #e31b1b; }
-
-  .table-responsive { overflow-x: auto; margin: 32px 0; }
 </style>
