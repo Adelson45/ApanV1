@@ -72,12 +72,66 @@ const authorBio = {
 
 const featuredProduct = {
   preTitle: 'Aproveite frete GRÁTIS',
-  image: '/images/capacete-shoei.png',
-  imageAlt: 'Capacete Shoei',
-  name: 'Capacete Shoei Premium Edition',
-  amazonHref: 'javascript:void(0)',
-  mercadoLivreHref: 'javascript:void(0)'
+  image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+  imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+  name: 'Capacete Moto Peels<br/>Mirage Classic Branco',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+  amazonHref: 'https://amzn.to/3MjKWy9',
 };
+
+const extraProducts = [
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S',
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ',
+  },
+];
 ---
 
 <PostLayout
@@ -96,6 +150,7 @@ const featuredProduct = {
   tags={tags}
   authorBio={authorBio}
   featuredProduct={featuredProduct}
+  extraProducts={extraProducts}
 >
 
           <p class="post-lead" id="introducao">Com a evolução constante da tecnologia, novos modelos de capacetes surgem a cada ano, trazendo funcionalidades inovadoras e mais segurança. Legalmente, um capacete é a única peça do kit de motocicleta que você tem que usar e, sem dúvida, a coisa mais importante que você vai comprar.</p>
@@ -1923,6 +1978,52 @@ Ideal para quem busca estilo e funcionalidade, oferece bom conforto interno e se
     color: #00008B !important;
     font-weight: 700 !important;
     text-decoration: none !important;
+  }
+
+  /* Vídeos do YouTube responsivos — ocupam largura total da coluna (desktop e mobile) */
+  .video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 24px 0 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  @media (max-width: 600px) {
+    .video-container {
+      margin: 16px 0 24px;
+      border-radius: 8px;
+    }
+  }
+
+  /* Override do produto-destaque apenas nesta página: fundo branco como os demais widgets */
+  .sidebar-widget.produto-destaque {
+    background: #ffffff !important;
+    color: #1a1a2e !important;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    border-radius: 8px;
+  }
+  .sidebar-widget.produto-destaque .frete-gratis {
+    background: #E31E24;
+    color: #ffffff !important;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+  .sidebar-widget.produto-destaque .produto-nome {
+    color: #000000 !important;
   }
 </style>
 
