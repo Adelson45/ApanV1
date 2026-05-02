@@ -1,20 +1,201 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Certificações de Capacetes';
-const description = 'Tudo sobre certificações de capacetes: INMETRO, ECE, DOT, Snell e o que cada selo garante.';
+const title = 'Guia de Certificações de Capacetes DOT, ECE, Snell e Inmetro';
+const description = 'Não sabe o que significam os selos DOT, ECE, Snell e Inmetro no seu capacete? Entenda as diferenças e escolha o capacete de moto mais seguro para você. ✔️';
 const canonical = 'https://jovemapan.com.br/certificacoes-de-capacetes/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2026-05-01';
+const category = 'Dicas';
+const categoryHref = '/category/dicas/';
+const coverImage = '/images/Conhe%C3%A7a%20as%20principais%20certifica%C3%A7%C3%B5es%20de%20capacete%20e%20suas%20diferen%C3%A7as.png';
+
+const indice = [
+  { label: '1. Por que a certificação é essencial?', href: '#essencial' },
+  { label: '2. Principais certificações', href: '#principais-certificacoes' },
+  { label: '3. DOT (EUA)', href: '#dot' },
+  { label: '4. ECE (Europa)', href: '#ece' },
+  { label: '5. Snell Memorial Foundation', href: '#snell' },
+  { label: '6. Inmetro (Brasil)', href: '#inmetro' },
+  { label: '7. Qual certificação é a ideal?', href: '#qual-a-ideal' },
+];
+
+const tags = [
+  { label: 'CERTIFICAÇÕES', href: '#' },
+  { label: 'INMETRO', href: '#' },
+  { label: 'DOT', href: '#' },
+  { label: 'ECE', href: '#' },
+  { label: 'SNELL', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'APROVEITE 10% DE DESCONTO',
+  image: '/images/Capacete Moto Peels Icon Ekko.png',
+  imageAlt: 'Capacete Moto Peels Icon Ekko',
+  name: 'Capacete Moto<br/>Peels Icon Ekko',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+  amazonHref: 'https://amzn.to/4oGNbZT',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
+};
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Capacetes"
-  categoryHref="/category/capacetes/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p class="post-lead">
+    Para qualquer motociclista, o capacete não é apenas um acessório, é o equipamento de segurança mais vital. Ele é a única barreira entre sua cabeça e o asfalto em um cenário de acidente.
+  </p>
+  <p>
+    Mas ao escolher um novo capacete, você se depara com uma sopa de letrinhas na parte de trás: DOT, ECE, Snell, Inmetro. O que elas realmente significam? Essas etiquetas não são apenas adesivos; são a garantia de que seu capacete passou por testes rigorosos.
+  </p>
+  <p>
+    Neste guia completo, vamos decodificar as certificações de capacetes de moto, explicando o que cada selo significa, como os testes funcionam e, o mais importante, como usar esse conhecimento para escolher o <a href="/melhor-capacete/">capacete seguro</a> ideal para você.
+  </p>
+
+  <h2 id="essencial">Por que a certificação do capacete é essencial?</h2>
+  <p>
+    Ignorar a certificação de um capacete é como comprar um carro sem freios. A certificação é a prova de que o produto que você confia para proteger sua vida realmente funciona. Veja por que ela é indispensável:
+  </p>
+  <ul>
+    <li><strong>Garantia de Testes Rigorosos:</strong> Um selo de certificação significa que o capacete foi submetido a uma bateria de testes padronizados que simulam condições de acidente. Esses testes avaliam a capacidade do capacete de absorver impacto, resistir à penetração de objetos pontiagudos e garantir que a cinta de retenção (jugular) não se rompa, mantendo o capacete na sua cabeça quando você mais precisa.</li>
+    <li><strong>Obrigatoriedade Legal no Brasil:</strong> Em terras brasileiras, a regra é clara. O Código de Trânsito Brasileiro exige que todos os motociclistas utilizem capacetes com o selo do Inmetro. Pilotar sem um capacete certificado ou com a certificação irregular é uma infração grave, resultando em multa e pontos na CNH.</li>
+    <li><strong>Confiança do Consumidor:</strong> A certificação é um selo de qualidade. Ela demonstra que o fabricante investiu em engenharia, materiais de qualidade e testes para oferecer um produto que cumpre sua promessa de segurança, dando a você a tranquilidade necessária para pilotar.</li>
+  </ul>
+
+  <h2 id="principais-certificacoes">Conheça as principais certificações de capacete e suas diferenças</h2>
+  <p>
+    Agora que entendemos a importância, vamos mergulhar nas especificidades de cada selo. Embora existam várias normas pelo mundo, quatro se destacam no mercado global e brasileiro. Cada uma tem sua própria filosofia e método de teste.
+  </p>
+
+  <h3 id="dot">DOT (Department of Transportation) – EUA</h3>
+  <h4>O que é</h4>
+  <p>
+    A certificação DOT (FMVSS 218) é o padrão mínimo de segurança exigido pelo Departamento de Transportes dos Estados Unidos. Qualquer capacete vendido para uso em vias públicas nos EUA deve, obrigatoriamente, ter este selo.
+  </p>
+  <h4>Como funciona</h4>
+  <p>
+    O sistema DOT funciona com base na autocertificação. Isso significa que os próprios fabricantes são responsáveis por testar seus capacetes para garantir que eles atendam às normas exigidas. O DOT não testa e aprova os capacetes antes de irem para o mercado. No entanto, o órgão realiza testes aleatórios em capacetes comprados no varejo para fiscalizar e garantir que os fabricantes estão cumprindo as regras.
+  </p>
+
+  <h3 id="ece">ECE (Economic Commission for Europe) – ECE 22.05 e 22.06</h3>
+  <h4>O que é</h4>
+  <p>
+    A certificação ECE é o padrão legal exigido em mais de 50 países na Europa e é uma das certificações mais reconhecidas globalmente. A norma passou por uma evolução significativa, migrando da antiga ECE 22.05 para a muito mais rigorosa e moderna ECE 22.06.
+  </p>
+  
+  <div style="display: flex; justify-content: center; margin: 2rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pp5A-PfMKpc?si=92wsFfbKmHXrFU9T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <h4>Como funciona</h4>
+  <p>
+    Diferente do DOT, a norma ECE exige testes independentes. Antes que um modelo de capacete possa ser vendido, um lote de produção deve ser enviado a um laboratório terceiro credenciado para ser testado e aprovado. A nova norma ECE 22.06 elevou ainda mais o nível de segurança, incluindo:
+  </p>
+  <ul>
+    <li>Testes de impacto em velocidades mais altas e mais baixas.</li>
+    <li>Testes de impacto rotacional, que medem a capacidade do capacete de gerenciar forças angulares que podem causar lesões cerebrais graves.</li>
+    <li>Testes específicos para acessórios oficiais, como viseiras solares internas e intercomunicadores.</li>
+  </ul>
+
+  <h3 id="snell">Snell Memorial Foundation</h3>
+  <h4>O que é</h4>
+  <p>
+    A certificação Snell não é um requisito governamental, mas sim um padrão voluntário estabelecido por uma organização privada e sem fins lucrativos dos EUA. É considerada por muitos o "padrão-ouro" da segurança, especialmente focada em cenários de alta performance e competição.
+  </p>
+  <h4>Como funciona</h4>
+  <p>
+    Os testes da Snell são notoriamente mais rigorosos que os do DOT e da ECE. Eles são projetados para simular os impactos mais severos de uma corrida. Um diferencial-chave é o teste de impacto duplo, em que o capacete é atingido duas vezes no mesmo local para garantir sua integridade estrutural.
+  </p>
+  <p>
+    A fundação também se concentra na estabilidade do capacete e na resistência da viseira. Fabricantes buscam voluntariamente a certificação Snell para provar a excelência em segurança de seus produtos de ponta.
+  </p>
+
+  <h3 id="inmetro">Inmetro – A Norma Brasileira</h3>
+  <h4>O que é?</h4>
+  <p>
+    Para nós, motociclistas brasileiros, esta é a certificação mais importante do ponto de vista legal. O selo do Inmetro (seguindo a norma NBR-7471) é obrigatório para a comercialização e o uso de qualquer capacete de moto em território nacional.
+  </p>
+  <h4>Como funciona</h4>
+  <p>
+    A norma brasileira de capacete é baseada em padrões internacionais, mas adaptada para a nossa realidade. O processo exige que os capacetes, sejam eles fabricados no Brasil ou importados, passem por testes em laboratórios credenciados pelo Inmetro. Um ponto crucial é que mesmo um capacete com certificação DOT, ECE e Snell precisa obter o selo do Inmetro para ser considerado legal no Brasil.
+  </p>
+  
+  <div style="display: flex; justify-content: center; margin: 2rem 0;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6cC2RGrojho?si=s5_muco4S774JEK1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <h2 id="qual-a-ideal">Qual certificação é a ideal para você?</h2>
+  <p>
+    Saber como escolher o capacete certo envolve entender seu perfil de uso. Um capacete com múltiplas certificações (ex: ECE + DOT + Inmetro) é sempre um excelente sinal de qualidade e segurança.
+  </p>
+  <p>
+    Aqui está um guia rápido para ajudar na sua decisão:
+  </p>
+  <ul>
+    <li><strong>Uso urbano e diário:</strong> O selo do Inmetro é o requisito legal mínimo. Um capacete com certificação DOT ou ECE 22.05 já oferece um excelente nível de proteção para o trânsito do dia a dia.</li>
+    <li><strong>Viagens e estradas:</strong> Para quem pega estrada com frequência, a segurança extra é fundamental. Procure por capacetes com a certificação ECE 22.06. Os testes de impacto rotacional desta norma são um diferencial importante em velocidades mais altas.</li>
+    <li><strong>Track Day e Competição:</strong> Se você leva sua moto para a pista, a certificação Snell é a mais indicada. Ela foi projetada exatamente para os cenários de alta velocidade e impactos múltiplos típicos das corridas.</li>
+  </ul>
+  <p>
+    Agora que você está armado com conhecimento, verifique a etiqueta do seu capacete atual e, na sua próxima compra, lembre-se: a estética é importante, mas a segurança é inegociável.
+  </p>
+  <p>
+    Não escolha seu capacete apenas pela aparência, escolha pela segurança que ele oferece. Sua vida depende disso. Não deixe de conferir nossas análises dos <a href="/melhor-capacete/">melhores capacetes clicando aqui</a>.
+  </p>
+
+  <div class="product-section">
+    <h2 id="ofertas">Ofertas e Acessórios Recomendados</h2>
+    <p>Confira algumas das melhores ofertas para complementar a sua segurança no dia a dia:</p>
+    
+    <div class="pros-cons-grid">
+      <div class="pc-col" style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
+        <img src="/images/Capacete Aberto Moto Peels Mirage Classic Branco.png" alt="Peels Mirage Classic" style="max-height: 150px; margin-bottom: 1rem; border-radius: var(--radius-sm);" />
+        <h4>Capacete Peels Mirage Classic Branco</h4>
+        <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted);">Aproveite frete GRÁTIS</p>
+        <div class="btn-buy-container" style="flex-direction: column; gap: 0.5rem; margin-top: 0;">
+          <a href="https://amzn.to/3MjKWy9" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer" style="width: 100%;">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/1qaAz5s" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer" style="width: 100%;">Ver no Mercado Livre</a>
+        </div>
+      </div>
+      
+      <div class="pc-col" style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
+        <img src="/images/Intercomunicador V6 Plus para Capacete, Bluetooth, 1200m, Kit Duplo com Microfone, 2 unidades.png" alt="Intercomunicador V6 Plus" style="max-height: 150px; margin-bottom: 1rem; border-radius: var(--radius-sm);" />
+        <h4>Intercomunicador V6 Plus</h4>
+        <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted);">Aproveite 32% de DESCONTO</p>
+        <div class="btn-buy-container" style="flex-direction: column; gap: 0.5rem; margin-top: 0;">
+          <a href="https://amzn.to/481F17S" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer" style="width: 100%;">Ver na Amazon</a>
+          <a href="https://mercadolivre.com/sec/2rQAwF3" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer" style="width: 100%;">Ver no Mercado Livre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/melhor-capacete/">Melhores capacetes</a></li>
+    <li><a href="/custo-beneficio/">Capacete custo beneficio</a></li>
+    <li><a href="/capacete-aberto/">Capacete Aberto</a></li>
+    <li><a href="/intercomunicador-cardo-review/">Intercomunicador Cardo Review</a></li>
+    <li><a href="/comparativo-jaqueta-texx-vs-x11/">Comparativo Jaqueta Texx vs X11</a></li>
+    <li><a href="/cadeados-para-moto/">Melhores Cadeados para Moto</a></li>
+  </ul>
 </PostLayout>
