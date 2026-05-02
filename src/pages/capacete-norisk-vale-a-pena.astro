@@ -1,20 +1,532 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete Norisk Vale a Pena?';
-const description = 'Análise honesta da marca Norisk: vale a pena investir em capacetes Norisk em 2026?';
+const title = 'Vale a Pena Comprar um Capacete Norisk? Top 5 Opções';
+const description = 'Análise completa da marca Norisk: top 5 capacetes, conforto, segurança, certificação INMETRO e custo-benefício. Vale a pena em 2026?';
 const canonical = 'https://jovemapan.com.br/capacete-norisk-vale-a-pena/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2026-01-14';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/Vale a Pena Comprar um Capacete Norisk.png';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Top 5 Capacetes Norisk', href: '#top5' },
+  { label: '3. Análises detalhadas', href: '#analises' },
+  { label: '4. Conforto no uso diário', href: '#conforto' },
+  { label: '5. Desempenho em viagens longas', href: '#viagens' },
+  { label: '6. Segurança e certificação', href: '#seguranca' },
+  { label: '7. Sistema de viseira', href: '#viseira' },
+  { label: '8. Ventilação e temperatura', href: '#ventilacao' },
+  { label: '9. Custo-benefício', href: '#custo-beneficio' },
+  { label: '10. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'NORISK', href: '#' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: 'CUSTO-BENEFÍCIO', href: '/custo-beneficio/' },
+  { label: 'INMETRO', href: '/capacetes-selo-inmetro/' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'CUSTO-BENEFÍCIO NACIONAL',
+  image: '/images/Capacete Moto Norisk Razor Preto Brilho Masculino.png',
+  imageAlt: 'Capacete Norisk Razor',
+  name: 'Norisk<br/>Razor Edition',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/1RFCfGo',
+  amazonHref: 'https://amzn.to/46DuyjQ',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
+};
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p class="post-lead" id="introducao">
+    A pergunta <strong>"Vale a pena comprar um capacete Norisk?"</strong> é uma das mais
+    comuns entre motociclistas brasileiros. Popular por unir <strong>design moderno,
+    tecnologias relevantes e preço acessível</strong>, a Norisk se tornou referência em
+    custo-benefício no mercado nacional. Nesta análise completa, mostramos os
+    <strong>5 melhores capacetes Norisk</strong>, suas características, prós e contras —
+    para você decidir se a marca é a certa para o seu uso.
+  </p>
+
+  <h2 id="top5">Top 5 Capacetes da Norisk que analisamos</h2>
+  <style>
+    .lista-capacetes {
+      background: #fffbea;
+      padding: 20px;
+      border-radius: 12px;
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .titulo-lista {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    .item-capacete {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      background: #fff;
+      flex-wrap: wrap;
+    }
+    .info-capacete {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+    .info-capacete img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .modelo {
+      font-size: 15px;
+      font-weight: bold;
+      color: #222;
+      word-break: break-word;
+    }
+    .botao-amazon {
+      padding: 10px 16px;
+      background-color: #e60000;
+      color: white !important;
+      text-decoration: none !important;
+      font-weight: bold;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .botao-amazon:hover { opacity: 0.9; }
+    @media (max-width: 600px) {
+      .item-capacete { flex-direction: column; align-items: flex-start; }
+      .botao-amazon { margin-top: 10px; align-self: flex-end; }
+      .info-capacete { width: 100%; }
+      .info-capacete img { width: 60px; height: 60px; }
+    }
+  </style>
+
+  <div class="lista-capacetes">
+    <div class="titulo-lista">Ranking dos melhores Capacetes Norisk</div>
+
+    <div class="item-capacete">
+      <div class="info-capacete">
+        <img src="https://jovemapan.com.br/wp-content/uploads/2025/06/Capacete-Norisk-FF302-Grand-Prix-Brasil-.png" alt="Norisk FF302 Grand Prix Brasil" />
+        <div class="modelo">1. Norisk FF302 Grand Prix Brasil</div>
+      </div>
+      <a class="botao-amazon" href="https://amzn.to/4euyXb1" target="_blank" rel="nofollow">Ver na Amazon</a>
+    </div>
+
+    <div class="item-capacete">
+      <div class="info-capacete">
+        <img src="https://jovemapan.com.br/wp-content/uploads/2025/06/Capacete-Masculino-Norisk-preto.png" alt="Norisk Strada II Monocolor" />
+        <div class="modelo">2. Norisk Strada II Monocolor</div>
+      </div>
+      <a class="botao-amazon" href="https://amzn.to/3GdNWJM" target="_blank" rel="nofollow">Ver na Amazon</a>
+    </div>
+
+    <div class="item-capacete">
+      <div class="info-capacete">
+        <img src="https://jovemapan.com.br/wp-content/uploads/2025/06/Capacete-Feminino-Moto-Norisk-Strada-2-Fusion-Roxo-Oculos.png" alt="Norisk Strada 2 Fusion" />
+        <div class="modelo">3. Norisk Strada 2 Fusion</div>
+      </div>
+      <a class="botao-amazon" href="https://amzn.to/4nrdvHR" target="_blank" rel="nofollow">Ver na Amazon</a>
+    </div>
+
+    <div class="item-capacete">
+      <div class="info-capacete">
+        <img src="https://jovemapan.com.br/wp-content/uploads/2025/06/Capacete-Norisk-Flow-Daytona-Azul-e-Laranja-Tamanho60.png" alt="Norisk Flow Daytona" />
+        <div class="modelo">4. Norisk Flow Daytona</div>
+      </div>
+      <a class="botao-amazon" href="https://amzn.to/44pisZ0" target="_blank" rel="nofollow">Ver na Amazon</a>
+    </div>
+
+    <div class="item-capacete">
+      <div class="info-capacete">
+        <img src="https://jovemapan.com.br/wp-content/uploads/2025/06/Capacete-Norisk-verde-e-preto.png" alt="Norisk Capacete Darth 2" />
+        <div class="modelo">5. Norisk Capacete Darth 2</div>
+      </div>
+      <a class="botao-amazon" href="https://amzn.to/4lwk7Dg" target="_blank" rel="nofollow">Ver na Amazon</a>
+    </div>
+  </div>
+
+  <h2 id="analises">Análises detalhadas dos modelos Norisk</h2>
+
+  <h3>1. Capacete Norisk Route FF345 Articulado Speedmax</h3>
+  <p>
+    Modelo articulado (escamoteável) ideal para uso urbano e viagens curtas. A queixeira
+    levanta com um botão, deixando o capacete aberto sem precisar removê-lo. Conheça mais
+    no nosso guia de
+    <a href="/melhor-capacete/articulados/">capacetes articulados</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Norisk Force 2 Articulado Monocolor - Preto Fosco.png" alt="Capacete Norisk Route FF345 Articulado" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Versatilidade da função articulada.</li>
+          <li>Viseira solar interna fumê.</li>
+          <li>Operação fácil, mesmo com luvas.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Mais pesado que modelos integrais.</li>
+          <li>Mais ruído de vento em rodovia.</li>
+          <li>Menor isolamento acústico.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/46AoWXw" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2xQLhse" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>2. Capacete Norisk Razor Edition</h3>
+  <p>
+    Integral esportivo com <strong>design aerodinâmico agressivo</strong> e grafismos
+    vibrantes. Acompanha duas viseiras (cristal e fumê) e spoiler traseiro. Veja também
+    a <a href="/capacete-norisk-review/">review da Norisk</a>.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Norisk Edition Preto Fosco Com 2 Viseiras Spoiler.png" alt="Capacete Norisk Razor Edition" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design esportivo agressivo.</li>
+          <li>Excelente ventilação.</li>
+          <li>Construção leve.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Campo de visão um pouco limitado.</li>
+          <li>Forração não-premium.</li>
+          <li>Ruidoso em altas velocidades.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/46DuyjQ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1RFCfGo" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>3. Capacete Moto Norisk Strada 2 Cobra Spoiler</h3>
+  <p>
+    Evolução do clássico Strada com grafismo "Cobra" e spoiler traseiro aerodinâmico.
+    Ideal para uso diário com toque de pista.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto Norisk Strada 2 Cobra Spoiler Fechado Moto.png" alt="Capacete Norisk Strada 2 Cobra Spoiler" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Aerodinâmica reforçada com spoiler traseiro.</li>
+          <li>Excelente custo-benefício.</li>
+          <li>Preparação para Pinlock incluída.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Spoiler é fixo (não removível).</li>
+          <li>Algum ruído de vento em alta velocidade.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3WlByf1" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/12j5SHx" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>4. Capacete Norisk Force II Grand Prix Germany</h3>
+  <p>
+    Modelo de entrada com inspiração esportiva e grafismos chamativos "Grand Prix
+    Germany". Bom para quem busca o primeiro capacete fechado de qualidade.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Norisk Force II.png" alt="Capacete Norisk Force II Grand Prix Germany" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Preço acessível.</li>
+          <li>Grafismos inspirados no automobilismo.</li>
+          <li>Casca compacta e leve.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Recursos básicos (sem viseira solar interna).</li>
+          <li>Sistema de ventilação simples.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4nXaApY" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2r2yWX5" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h3>5. Capacete Feminino Moto Norisk Strada 2 Fusion Roxo</h3>
+  <p>
+    Versão feminina com grafismo exclusivo "Fusion" em tons roxos. Combina qualidade do
+    Strada 2 com design esportivo delicado. Veja também o
+    <a href="/melhor-capacete-infantil/">melhor capacete infantil</a> para a família toda.
+  </p>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Feminino Moto Norisk Strada 2 Fusion Roxo Oculos.png" alt="Capacete Feminino Norisk Strada 2 Fusion Roxo" />
+    </div>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design feminino exclusivo.</li>
+          <li>Mantém todos os benefícios do Strada 2.</li>
+          <li>Encaixe confortável para diferentes formatos de rosto.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Disponibilidade do grafismo limitada em algumas lojas.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4nJG5UU" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2ivFFxC" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="conforto">Conforto no Uso Diário</h2>
+
+  <h3>Forração hipoalergênica e lavável</h3>
+  <p>
+    A maioria dos capacetes Norisk possui <strong>forração interna removível, lavável e
+    hipoalergênica</strong>, com toque macio. Essencial para quem usa o capacete todos os
+    dias e quer manter a higiene em dia.
+  </p>
+
+  <h3>Sistema prático de ajuste</h3>
+  <p>
+    Engate <strong>micrométrico</strong> na jugular, que permite ajuste rápido e preciso
+    e pode ser operado com luvas — algo importante para o uso diário.
+  </p>
+
+  <h2 id="viagens">Desempenho em viagens longas</h2>
+
+  <h3>Aerodinâmica e estabilidade</h3>
+  <p>
+    Modelos como <strong>Strada 2</strong> e <strong>Razor</strong> são desenhados em
+    túnel de vento para minimizar arrasto e reduzir a fadiga no pescoço — algo que faz
+    diferença real em trajetos longos.
+  </p>
+
+  <h3>Redução de ruído</h3>
+  <p>
+    Bom isolamento acústico para a faixa de preço. <strong>Bavete</strong> (proteção
+    inferior) e <strong>narigueira</strong> (anti-embaçante) reduzem a entrada de vento
+    e desviam o ar quente da viseira. Veja também nosso guia de
+    <a href="/capacetes-anti-ruido/">capacetes anti-ruído</a>.
+  </p>
+
+  <h2 id="seguranca">Segurança e Certificação</h2>
+
+  <h3>Construção confiável</h3>
+  <p>
+    Cascos em <strong>ABS de alta pressão</strong> ou resina termoplástica, com EPS
+    interno de múltiplas densidades para absorção eficiente de impacto.
+  </p>
+
+  <h3>Certificação INMETRO</h3>
+  <p>
+    Todos os capacetes Norisk vendidos no Brasil possuem
+    <a href="/capacetes-selo-inmetro/">certificação INMETRO</a>, exigida pelo Código de
+    Trânsito Brasileiro. Muitos modelos incluem adesivos refletivos para visibilidade
+    noturna.
+  </p>
+
+  <h2 id="viseira">Sistema de Viseira</h2>
+
+  <h3>Viseira principal e solar interna</h3>
+  <p>
+    Viseira em <strong>policarbonato de 2,2 mm</strong> com tratamento antirrisco. A
+    maioria dos modelos inclui <strong>viseira solar interna fumê</strong> com proteção
+    UV — recurso muito útil em dias de sol forte.
+  </p>
+
+  <h3>Preparação para Pinlock</h3>
+  <p>
+    Os pinos para acoplar a lente <strong>Pinlock®</strong> antiembaçante já vêm de
+    fábrica em vários modelos (a lente é vendida separadamente). É um recurso fundamental
+    para chuva e dias frios.
+  </p>
+
+  <h2 id="ventilacao">Ventilação e Controle de Temperatura</h2>
+  <p>
+    Sistema de ventilação eficiente: <strong>entradas de ar frontais</strong> (queixeira e
+    topo) e saídas traseiras criam fluxo que renova o ar quente, garantindo conforto
+    térmico — algo importante no clima brasileiro.
+  </p>
+
+  <h2 id="limpeza">Limpeza e manutenção</h2>
+
+  <h3>Limpeza do forro</h3>
+  <p>
+    Remova e lave à mão com sabão neutro. Seque naturalmente à sombra. Para um passo a
+    passo completo, veja nosso guia de
+    <a href="/limpeza-do-capacete/">limpeza do capacete</a>.
+  </p>
+
+  <h3>Limpeza da casca e viseira</h3>
+  <p>
+    Use pano macio úmido com sabão neutro. Evite produtos químicos que danificam o verniz
+    e o policarbonato.
+  </p>
+
+  <h2 id="custo-beneficio">Considerações sobre o custo-benefício</h2>
+  <p>
+    A Norisk apresenta <strong>um dos melhores custo-benefícios do mercado nacional</strong>.
+    Faz parte do grupo BR Motorsport, que também representa marcas como
+    <strong>LS2</strong>, oferecendo suporte pós-venda sólido. Confira nosso guia de
+    <a href="/custo-beneficio/">capacetes custo-benefício</a> e a comparação
+    <a href="/ls2-ou-norisk/">LS2 ou Norisk: qual escolher?</a>.
+  </p>
+
+  <h3>Por que investir em Norisk?</h3>
+  <p>
+    A marca oferece tecnologias (viseira solar interna, preparação para Pinlock,
+    grafismos modernos) que custam significativamente mais em concorrentes diretas.
+  </p>
+
+  <h2 id="ofertas">Ofertas relacionadas</h2>
+  <ul>
+    <li>
+      <strong>Capacete Peels Mirage Classic Branco</strong> (frete grátis) —
+      <a href="https://amzn.to/3MjKWy9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/1qaAz5s" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Intercomunicador Ejeas V6 Plus</strong> —
+      <a href="https://amzn.to/481F17S" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2rQAwF3" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Capacete Peels Icon Ekko</strong> —
+      <a href="https://amzn.to/4oGNbZT" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2iCYhgR" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Jaqueta Texx Armor Masculina</strong> —
+      <a href="https://amzn.to/3K2DQ0e" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2xVBsV9" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Capacete Aberto Peels Freeway King</strong> —
+      <a href="https://amzn.to/4a7tpTA" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Capacete Shoei GT-Air 3 Discipline TC-2</strong> —
+      <a href="https://amzn.to/3MeTrKC" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+    <li>
+      <strong>Capacete Nexx SX100 Core Azul Fosco</strong> —
+      <a href="https://amzn.to/4oPtAaJ" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>. Veja a
+      <a href="/review-nexx-sx100/">review do Nexx SX100</a>.
+    </li>
+    <li>
+      <strong>Luva X11 Blackout2 Meio Dedo</strong> —
+      <a href="https://amzn.to/4igG1tv" target="_blank" rel="nofollow noopener noreferrer">Amazon</a> ·
+      <a href="https://mercadolivre.com/sec/2RAwjyL" target="_blank" rel="nofollow noopener noreferrer">Mercado Livre</a>.
+    </li>
+    <li>
+      <strong>Mochila Moto Aerodinâmica Impermeável</strong> —
+      <a href="https://amzn.to/4pokul9" target="_blank" rel="nofollow noopener noreferrer">Amazon</a>.
+    </li>
+  </ul>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>
+    Vale a pena comprar um capacete Norisk? <strong>A resposta é um sonoro sim</strong>.
+    A marca quebra o paradigma de que capacete acessível precisa ser básico ou inseguro:
+    entrega produtos com selo INMETRO, design atrativo, conforto para o dia a dia e
+    tecnologias práticas (viseira solar interna, preparação para Pinlock) sem custo
+    excessivo.
+  </p>
+  <p>
+    Para o piloto urbano e para quem viaja moderadamente, é uma escolha sólida. Para
+    quem pilota motos de
+    <a href="/capacete-alta-cilindrada/">alta cilindrada</a> em pista, vale considerar
+    marcas premium. Complete o equipamento com uma boa
+    <a href="/dica-melhor-jaqueta-motociclistas/">jaqueta</a>, as
+    <a href="/melhor-capacete/luvas/">melhores luvas</a> e um
+    <a href="/melhor-capacete/intercomunicadores/">intercomunicador</a>.
+  </p>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/capacete-norisk-review/">Review completa da Norisk</a></li>
+    <li><a href="/ls2-ou-norisk/">LS2 ou Norisk: qual escolher?</a></li>
+    <li><a href="/comparativo-bieffe-vs-norisk/">Comparativo Bieffe vs Norisk</a></li>
+    <li><a href="/melhor-capacete/">Guia: melhores capacetes do mercado</a></li>
+    <li><a href="/melhor-capacete/bem-avaliados/">Capacetes de moto mais bem avaliados</a></li>
+    <li><a href="/custo-beneficio/">Capacetes custo-benefício</a></li>
+    <li><a href="/capacete-alta-cilindrada/">Capacetes para alta cilindrada</a></li>
+    <li><a href="/intercomunicador-cardo-review/">Review do Intercomunicador Cardo</a></li>
+    <li><a href="/comparativo-jaqueta-texx-vs-x11/">Comparativo Jaqueta Texx vs X11</a></li>
+    <li><a href="/cadeados-para-moto/">Melhores cadeados para moto</a></li>
+  </ul>
 </PostLayout>
