@@ -23,6 +23,16 @@ interface FeaturedProduct {
   amazonHref?: string;
 }
 
+interface ExtraProduct {
+  badge?: string;
+  badgeStyle?: 'frete' | 'desconto';
+  image?: string;
+  imageAlt?: string;
+  name?: string;
+  mercadoLivreHref?: string;
+  amazonHref?: string;
+}
+
 interface PopularItem {
   label: string;
   href: string;
@@ -54,6 +64,7 @@ interface Props {
   indice?: IndiceItem[];
   tags?: Tag[];
   featuredProduct?: FeaturedProduct;
+  extraProducts?: ExtraProduct[];
   popular?: PopularItem[];
   authorBio?: AuthorBio;
   hideShare?: boolean;
@@ -79,6 +90,7 @@ const {
   indice,
   tags,
   featuredProduct,
+  extraProducts,
   popular,
   authorBio,
   hideShare = false,
@@ -358,6 +370,26 @@ const shareTitleEncoded = encodeURIComponent(title);
               )}
             </div>
           )}
+
+          {extraProducts && extraProducts.map((p) => (
+            <div class="sidebar-widget produto-widget-extra">
+              {p.badge && (
+                <p class={`widget-badge-extra ${p.badgeStyle === 'desconto' ? 'desconto' : 'frete'}`}>{p.badge}</p>
+              )}
+              {p.image && (
+                <img src={p.image} alt={p.imageAlt ?? p.name ?? 'Produto'} class="widget-img-extra" />
+              )}
+              {p.name && <h4 class="widget-name-extra">{p.name}</h4>}
+              <div class="widget-links-extra">
+                {p.mercadoLivreHref && (
+                  <a href={p.mercadoLivreHref} target="_blank" rel="noopener noreferrer nofollow" class="btn-widget-extra">VER NO MERCADO LIVRE</a>
+                )}
+                {p.amazonHref && (
+                  <a href={p.amazonHref} target="_blank" rel="noopener noreferrer nofollow" class="btn-widget-extra">VER NA AMAZON</a>
+                )}
+              </div>
+            </div>
+          ))}
 
           <div class="sidebar-widget newsletter-vip">
             <div class="newsletter-icon">
@@ -1178,6 +1210,67 @@ const shareTitleEncoded = encodeURIComponent(title);
     .h2-image-card img { max-height: 250px; }
     .h2-image-card.product-image { max-width: 100%; margin: 12px auto 20px; }
     .h2-image-card.product-image img { max-height: 280px; padding: 0; margin: 0 auto; background: transparent; }
+  }
+
+  /* Sidebar - widgets extras de produto (estilo da página /category/reviews/) */
+  .sidebar-widget.produto-widget-extra {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    text-align: center;
+  }
+  .widget-badge-extra {
+    display: inline-block;
+    background: #E31E24;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin: 0 0 12px;
+  }
+  .widget-img-extra {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    border-radius: 4px;
+    display: block;
+  }
+  .widget-name-extra {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 16px;
+    line-height: 1.4;
+  }
+  .widget-links-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .btn-widget-extra {
+    display: block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background: #E31E24;
+    color: #fff !important;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn-widget-extra:hover {
+    background: #C41A1F;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
 </style>
 

@@ -1,45 +1,105 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete Permitido na Pilotagem: O Que Diz a Lei em 2026';
-const description = 'Saiba quais capacetes são permitidos na pilotagem no Brasil. Certificações obrigatórias, modelos liberados e como evitar multas e perda da CNH.';
+const title = 'Tipos de Capacete Permitido na Pilotagem: Legislação e Dicas 2026';
+const description = 'Conheça os tipos de capacete permitidos na pilotagem no Brasil, certificações obrigatórias do INMETRO, multas do CTB e dicas para escolher com segurança.';
 const canonical = 'https://jovemapan.com.br/capacete-permitido-na-pilotagem/';
-const author = 'Marcelo Ferreira';
-const authorImage = '/images/marcelo-ferreira.png';
-const publishDate = '2026-04-23';
-const category = 'Legislação';
-const categoryHref = '/melhor-capacete/';
-const coverImage = '/images/moto-shop-cover.png';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela pan coufundadora e editoara chefe do blog apan .png';
+const publishDate = '2026-01-01';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/Tipos de capacete Permitido na Pilotagem legislacoes e dicas.png';
 
 const indice = [
-  { label: '1. Introdução', href: '#introducao' },
-  { label: '2. Certificações obrigatórias', href: '#certificacoes' },
-  { label: '3. Tipos liberados', href: '#tipos' },
-  { label: '4. Modelos proibidos', href: '#proibidos' },
-  { label: '5. Conclusão', href: '#conclusao' },
+  { label: '1. Por que é importante usar capacete', href: '#importancia' },
+  { label: '2. Quais são os tipos de capacete', href: '#tipos' },
+  { label: '3. Como escolher o melhor capacete', href: '#escolher' },
+  { label: '4. Dicas na hora de comprar', href: '#dicas-compra' },
+  { label: '5. EPIs e proteção no trânsito', href: '#epis' },
+  { label: '6. Como saber o tamanho do capacete', href: '#tamanho' },
+  { label: '7. Capacete com validade vencida', href: '#validade' },
+  { label: '8. Multa por não usar capacete', href: '#multa' },
+  { label: '9. Perguntas frequentes', href: '#faq' },
+  { label: '10. Conclusão', href: '#conclusao' },
 ];
 
 const tags = [
   { label: 'LEGISLAÇÃO', href: '#' },
   { label: 'PILOTAGEM', href: '#' },
+  { label: 'INMETRO', href: '/capacetes-selo-inmetro/' },
   { label: 'CAPACETES', href: '/melhor-capacete/' },
   { label: '2026', href: '#' },
 ];
 
 const featuredProduct = {
-  preTitle: 'APROVEITE FRETE GRÁTIS',
-  image: '/images/capacete-shoei.png',
-  imageAlt: 'Capacete Shoei Premium Edition',
-  name: 'Capacete Shoei<br/>Premium Edition',
-  mercadoLivreHref: '#',
-  amazonHref: '#',
+  preTitle: 'Aproveite frete GRÁTIS',
+  image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+  imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+  name: 'Capacete Moto Peels<br/>Mirage Classic Branco',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+  amazonHref: 'https://amzn.to/3MjKWy9',
 };
 
+const extraProducts = [
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S',
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ',
+  },
+];
+
 const authorBio = {
-  name: author,
-  description: 'Redator & Editor especializado em transformar especificações técnicas complexas em conteúdo claro, envolvente e acessível.',
-  image: authorImage,
-  profileHref: '/author-marcelo-ferreira/',
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
 };
 ---
@@ -58,14 +118,328 @@ const authorBio = {
   tags={tags}
   authorBio={authorBio}
   featuredProduct={featuredProduct}
+  extraProducts={extraProducts}
 >
-  <p class="post-lead" id="introducao">Conteúdo do post em breve.</p>
-  <h2 id="certificacoes">Certificações obrigatórias</h2>
-  <p>Em breve.</p>
-  <h2 id="tipos">Tipos liberados</h2>
-  <p>Em breve.</p>
-  <h2 id="proibidos">Modelos proibidos</h2>
-  <p>Em breve.</p>
+  <p class="post-lead">
+    Seja você um motociclista experiente ou alguém que está começando a se aventurar sobre duas
+    rodas, uma verdade é universal: o <a href="/melhor-capacete/">capacete</a> não é um acessório, é
+    o equipamento de segurança mais importante da sua vida. Escolher o modelo certo vai muito além
+    da estética; envolve entender os diferentes tipos de capacete de moto, a legislação vigente e,
+    claro, como garantir a máxima proteção.
+  </p>
+  <p>
+    Neste guia completo, vamos desvendar tudo o que você precisa saber para fazer uma escolha
+    informada, pilotar com segurança e estar em dia com a lei.
+  </p>
+
+  <h2 id="importancia">Por que é importante usar capacete de moto?</h2>
+  <p>
+    A importância do capacete é inquestionável. Em caso de acidente, a cabeça é a área mais
+    vulnerável e suscetível a lesões fatais. Estudos de segurança viária demonstram que o uso correto
+    do capacete pode reduzir o risco de traumatismo craniano em mais de <strong>70%</strong>.
+  </p>
+  <p>
+    Além de ser um salva-vidas, o uso do capacete é obrigatório por lei no Brasil. Pilotar sem este
+    equipamento ou com um modelo inadequado é considerado uma infração gravíssima. Portanto, a
+    segurança do capacete não é apenas uma recomendação, mas uma exigência legal que protege sua
+    integridade física e seu direito de dirigir. Confira também a lista dos
+    <a href="/capacetes-mais-seguros/">capacetes mais seguros</a>.
+  </p>
+
+  <h2 id="tipos">Quais são os tipos de capacete para moto?</h2>
+  <p>
+    O mercado oferece uma variedade de modelos, cada um projetado para um estilo de pilotagem e
+    nível de proteção específico. Conhecer os principais tipos de capacete para moto é o primeiro
+    passo para encontrar o parceiro ideal para suas viagens.
+  </p>
+
+  <h3>Capacete Aberto</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Aberto Moto Peels Freeway King Preto.png" alt="Capacete Aberto Moto Peels Freeway King Preto" />
+  </div>
+  <p>
+    Também conhecido como "jet", o <a href="/capacete-aberto/">capacete aberto</a> não possui a
+    proteção para o queixo (queixeira).
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Excelente ventilação.</li>
+        <li>Campo de visão amplo.</li>
+        <li>Mais leve e prático para colocar e tirar.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Nível de proteção significativamente menor.</li>
+        <li>Rosto e queixo expostos em caso de queda.</li>
+      </ul>
+    </div>
+  </div>
+  <p>
+    <strong>Ideal para:</strong> trajetos urbanos curtos e em baixa velocidade, como passeios em
+    <a href="/capacete-para-scooter/">scooters</a>. Veja se você
+    <a href="/pode-usar-capacete-aberto-rodovia/">pode usar capacete aberto na rodovia</a>.
+  </p>
+
+  <h3>Capacete Fechado ou Integral</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Shoei Gt-Air 3 Discipline Tc-2 62.png" alt="Capacete Shoei GT-Air 3 Discipline TC-2" />
+  </div>
+  <p>
+    Este é o modelo mais seguro e recomendado pela maioria dos especialistas em segurança. Como o
+    nome sugere, ele é uma peça única que cobre toda a cabeça, incluindo o queixo.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Proteção máxima contra impactos.</li>
+        <li>Protege contra detritos e intempéries.</li>
+        <li>Melhor isolamento acústico.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Pode ser mais quente em dias de calor.</li>
+        <li>Alguns modelos limitam a visão periférica.</li>
+      </ul>
+    </div>
+  </div>
+  <p>
+    <strong>Ideal para:</strong> uso diário, viagens em estradas e altas velocidades. É a escolha
+    mais segura para qualquer situação. Veja nossa lista dos
+    <a href="/capacete-alta-cilindrada/">capacetes para alta cilindrada</a>.
+  </p>
+
+  <h3>Híbrido ou Modular (Articulado)</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/capacete-shark-preto.png" alt="Capacete Modular Shark Preto" />
+  </div>
+  <p>
+    O capacete modular, ou articulado, é um modelo versátil que combina características do aberto e
+    do fechado. Sua queixeira pode ser levantada, transformando-o temporariamente em um capacete
+    aberto. Veja o <a href="/comparativo-modular-x-integral/">comparativo modular x integral</a>.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Praticidade para conversar e beber água.</li>
+        <li>Respira melhor no trânsito parado.</li>
+        <li>Não precisa remover o capacete.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Mecanismo de articulação pode ser ponto de fragilidade.</li>
+        <li>Geralmente são mais pesados.</li>
+      </ul>
+    </div>
+  </div>
+  <p>
+    <strong>Ideal para:</strong> mototurismo e motociclistas que buscam versatilidade para uso misto
+    (cidade e estrada).
+  </p>
+
+  <h3>Capacete Off-Road ou Cross</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/capacete bell fechado.png" alt="Capacete Bell Off-Road / Cross" />
+  </div>
+  <p>
+    Projetado especificamente para a prática de trilhas, enduro e motocross, o
+    <a href="/capacete-off-road-review/">capacete off-road</a> tem um design único.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Queixeira alongada para impactos e respiração.</li>
+        <li>Pala superior contra sol e detritos.</li>
+        <li>Extremamente ventilados.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Não possui viseira (exige óculos de proteção).</li>
+        <li>Aerodinâmica não é adequada para altas velocidades no asfalto.</li>
+      </ul>
+    </div>
+  </div>
+  <p>
+    <strong>Ideal para:</strong> exclusivamente para práticas esportivas off-road. Confira nossa lista
+    de <a href="/top-capacetes-offroad/">top capacetes off-road</a>.
+  </p>
+
+  <h2 id="escolher">Descubra como escolher os melhores tipos de capacetes para moto</h2>
+  <p>
+    Agora que você conhece os modelos, é hora de aprender <a href="/como-escolher-capacete/">como
+    escolher o capacete perfeito</a> para você. Considere os seguintes fatores:
+  </p>
+  <ul>
+    <li><strong>Tipo de Uso:</strong> sua rotina define o melhor modelo. É para ir ao trabalho, viajar nos fins de semana ou fazer trilha?</li>
+    <li><strong>Material do Casco:</strong> capacetes podem ser feitos de termoplástico injetado (ABS), fibra de vidro, fibra de carbono ou compósitos (tricompostos). Materiais como fibra de vidro e carbono são mais leves e absorvem melhor o impacto, mas também são mais caros.</li>
+    <li><strong>Certificação:</strong> no Brasil, é obrigatório que o capacete tenha o selo do <a href="/capacetes-selo-inmetro/">INMETRO</a>. Ele garante que o produto foi testado e aprovado em rigorosos testes de segurança. Saiba mais sobre <a href="/certificacoes-de-capacetes/">certificações de capacetes</a>.</li>
+    <li><strong>Conforto:</strong> verifique o sistema de ventilação, a qualidade do forro (dê preferência aos removíveis e laváveis) e o peso geral do capacete.</li>
+  </ul>
+
+  <h3 id="dicas-compra">Dicas na hora de comprar o capacete</h3>
+  <ul>
+    <li><strong>Experimente sempre:</strong> nunca compre um capacete sem provar. Ele deve ficar justo, sem pontos de pressão na testa ou nas têmporas.</li>
+    <li><strong>Verifique o selo do INMETRO:</strong> procure pelo selo na parte traseira e pela etiqueta interna.</li>
+    <li><strong>Teste a cinta jugular:</strong> o sistema de fechamento deve ser seguro e fácil de manusear. Os mais comuns são o de engate rápido e o Duplo-D (mais seguro). Veja <a href="/como-prender-o-capacete/">como prender corretamente</a>.</li>
+    <li><strong>Analise o peso:</strong> um capacete mais leve proporciona mais conforto em <a href="/capacete-viagens-longas/">viagens longas</a>, reduzindo a fadiga no pescoço.</li>
+    <li><strong>Confira a viseira:</strong> ela deve ter um bom campo de visão, ser resistente a riscos e, de preferência, ter tratamento antiembaçante.</li>
+  </ul>
+
+  <h2 id="epis">Saiba mais sobre motos e proteção no trânsito</h2>
+  <p>
+    O capacete é a peça central da sua segurança, mas não a única. A cultura de proteção no trânsito
+    envolve o uso de outros Equipamentos de Proteção Individual (EPIs), como luvas,
+    <a href="/dica-melhor-jaqueta-motociclistas/">jaquetas com proteções</a>, calças adequadas e
+    botas. Cada item desempenha um papel fundamental em minimizar lesões em caso de acidentes.
+    Lembre-se: <strong>vista-se para a queda, não para o passeio</strong>.
+  </p>
+
+  <h2 id="tamanho">Como saber o tamanho do capacete?</h2>
+  <p>
+    Encontrar o <a href="/tamanho-do-capacete/">tamanho do capacete</a> correto é crucial para sua
+    eficácia. Siga este passo a passo:
+  </p>
+  <ul>
+    <li><strong>Meça sua cabeça:</strong> com uma fita métrica, meça a circunferência da sua cabeça passando a fita cerca de 2 cm acima das sobrancelhas e das orelhas.</li>
+    <li><strong>Consulte a tabela:</strong> compare a medida em centímetros com a tabela de tamanhos fornecida pelo fabricante do capacete.</li>
+    <li><strong>Teste o ajuste:</strong> ao vestir, ele deve entrar com uma leve pressão. Balance a cabeça para os lados; o capacete deve se mover junto com a cabeça, sem folgas. Ele não pode estar apertado a ponto de causar dor.</li>
+  </ul>
+
+  <h2 id="validade">Como identificar capacete com validade vencida</h2>
+  <p>
+    Sim, capacete tem <a href="/capacete-prazo-validade/">prazo de validade</a>. Não se trata da
+    data em que ele "estraga", mas sim da vida útil dos materiais que o compõem. Com o tempo, a
+    espuma interna (EPS) e o casco perdem suas propriedades de absorção de impacto.
+  </p>
+  <p>
+    A maioria dos fabricantes recomenda a troca a cada <strong>3 a 5 anos</strong> a partir da data
+    de fabricação (geralmente encontrada em uma etiqueta interna). A validade do capacete é uma
+    garantia de que ele funcionará como projetado quando você mais precisar.
+  </p>
+
+  <h3>Em que momento preciso trocar de capacete?</h3>
+  <p>Você deve trocar seu capacete imediatamente se qualquer uma destas situações ocorrer:</p>
+  <ul>
+    <li><strong>Após um impacto:</strong> qualquer queda ou batida forte, mesmo que o capacete caia de uma altura considerável no chão, pode comprometer sua estrutura interna sem danos visíveis. Na dúvida, troque.</li>
+    <li><strong>Validade expirada:</strong> se ele já passou do prazo de 3 a 5 anos recomendado.</li>
+    <li><strong>Ajuste frouxo:</strong> se o forro interno já cedeu a ponto de o capacete ficar solto na sua cabeça.</li>
+    <li><strong>Danos visíveis:</strong> rachaduras, cinta jugular desfiando ou sistema de fechamento com defeito.</li>
+  </ul>
+
+  <h2 id="multa">Multa por não usar capacete</h2>
+  <p>
+    O <strong>Art. 244 do CTB</strong> configura as penalidades por conduzir motocicleta, motoneta e
+    ciclomotor de maneira indevida. Veja o detalhamento em
+    <a href="/multa-dirigir-sem-capacete/">multa por dirigir sem capacete</a>.
+  </p>
+  <p>
+    A legislação de capacete de moto é muito clara. Conforme o Código de Trânsito Brasileiro (CTB),
+    pilotar sem capacete ou com um que não atenda às normas é uma infração gravíssima. As
+    penalidades incluem:
+  </p>
+  <ul>
+    <li>Multa no valor de <strong>R$ 293,47</strong>.</li>
+    <li>Suspensão do direito de dirigir.</li>
+    <li>Recolhimento da CNH.</li>
+    <li>Retenção do veículo até a regularização.</li>
+  </ul>
+  <p>
+    Isso também vale para passageiros e para capacetes com a viseira levantada ou sem os adesivos
+    refletivos obrigatórios.
+  </p>
+
+  <h2 id="faq">Perguntas frequentes</h2>
+
+  <h3>Qual a importância de usar capacete ao pilotar?</h3>
+  <p>
+    A principal importância é a proteção da vida, reduzindo drasticamente o risco de lesões
+    cerebrais fatais em acidentes. Além disso, é uma obrigação legal para todos os motociclistas e
+    passageiros.
+  </p>
+
+  <h3>Os capacetes são todos iguais?</h3>
+  <p>
+    Não. Eles variam em tipo (aberto, fechado, modular, off-road), material de construção, nível de
+    segurança, conforto e finalidade de uso. Cada modelo é projetado para uma necessidade específica.
+  </p>
+
+  <h3>Como saber se meu capacete está adequado?</h3>
+  <p>
+    Um capacete adequado deve ter o <a href="/capacetes-selo-inmetro/">selo do INMETRO</a>, estar
+    dentro do prazo de validade, ser do tamanho correto para sua cabeça (firme e sem folgas) e estar
+    sempre com a cinta jugular devidamente afivelada.
+  </p>
+
+  <h3>É possível personalizar o capacete?</h3>
+  <p>
+    Sim, mas com cuidado. Pinturas e adesivos podem ser aplicados, desde que não utilizem solventes
+    que danifiquem o casco e não cubram os adesivos refletivos obrigatórios ou o selo do INMETRO.
+  </p>
+
+  <h3>Com que frequência devo trocar meu capacete?</h3>
+  <p>
+    A recomendação geral é trocar a cada <strong>3 a 5 anos de uso</strong>, ou imediatamente após
+    sofrer qualquer tipo de impacto, mesmo que não haja danos aparentes.
+  </p>
+
   <h2 id="conclusao">Conclusão</h2>
-  <p>Em breve.</p>
+  <p>
+    Escolher entre os diferentes tipos de capacete de moto é uma das decisões mais importantes que
+    um motociclista pode tomar. Mais do que cumprir a lei, é um investimento direto na sua segurança
+    e na sua vida. Analise seu estilo de pilotagem, priorize a segurança sobre a estética e nunca
+    economize neste item essencial.
+  </p>
+  <p>
+    Lembre-se: um bom capacete permite que você aproveite a liberdade de pilotar com a tranquilidade
+    de estar bem protegido.
+  </p>
+  <p>
+    Deixe seu comentário abaixo com sua dúvida ou compartilhe este guia com um amigo motociclista!
+  </p>
+
+  <h2>Posts relacionados</h2>
+  <ul>
+    <li><a href="/melhor-capacete/">Os Melhores Capacetes de Moto em 2026</a></li>
+    <li><a href="/capacetes-mais-seguros/">Capacetes Mais Seguros do Mercado</a></li>
+    <li><a href="/capacetes-selo-inmetro/">Capacetes com Selo INMETRO</a></li>
+    <li><a href="/multa-dirigir-sem-capacete/">Multa por Dirigir sem Capacete</a></li>
+    <li><a href="/como-escolher-capacete/">Como Escolher o Capacete Ideal</a></li>
+    <li><a href="/capacete-prazo-validade/">Prazo de Validade do Capacete</a></li>
+  </ul>
 </PostLayout>
+
+<style is:global>
+  /* Override do produto-destaque apenas nesta página: fundo branco como os demais widgets */
+  .sidebar-widget.produto-destaque {
+    background: #ffffff !important;
+    color: #1a1a2e !important;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    border-radius: 8px;
+  }
+  .sidebar-widget.produto-destaque .frete-gratis {
+    background: #E31E24;
+    color: #ffffff !important;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+  .sidebar-widget.produto-destaque .produto-nome {
+    color: #000000 !important;
+  }
+</style>
