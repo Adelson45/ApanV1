@@ -1,43 +1,64 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete Norisk Review 2026 | Análise Completa dos Modelos';
-const description = 'Review completo dos capacetes Norisk. Análise dos modelos FF302, FF391, Darth e Rover. Preço, qualidade, segurança e vale a pena comprar?';
+const title = 'Capacete Norisk é Bom? Veja Prós, Contras e se Vale a Pena';
+const description = 'Descubra se o capacete NORISK é bom! Veja análise completa com prós, contras, avaliações de usuários e se realmente vale a pena comprar em 2025. ✔️';
 const canonical   = 'https://jovemapan.com.br/capacete-norisk-review/';
-const author      = 'Arthur Gomes';
-const publishDate = '24 ABR, 2026';
+const author      = 'Pamela Pan';
+const publishDate = '2025-05-02';
 const category    = 'REVIEWS';
 const categoryHref = '/category/reviews/';
-const coverImage  = '/images/norisk-ff302.jpg';
+const coverImage  = '/images/Capacete Moto Norisk Strada.png';
 const views       = '22K VIEWS';
 const comments    = '15 COMMENTS';
 
 const indice = [
   {
-    "label": "Introdução",
-    "href": "#introducao"
+    "label": "Segurança em Primeiro Lugar",
+    "href": "#seguranca"
   },
   {
-    "label": "Resumo da Análise",
-    "href": "#resumo"
+    "label": "Conforto e Ventilação",
+    "href": "#conforto"
   },
   {
-    "label": "Modelos Analisados",
-    "href": "#modelos"
+    "label": "Estilo e Visibilidade",
+    "href": "#estilo"
   },
   {
-    "label": "Prós e Contras",
-    "href": "#pros-contras"
+    "label": "1. O capacete Norisk é bom?",
+    "href": "#pergunta1"
   },
   {
-    "label": "Comparativo",
-    "href": "#comparativo"
+    "label": "2. O capacete Norisk é aprovado pelo Inmetro?",
+    "href": "#pergunta2"
   },
   {
-    "label": "Vale a Pena Comprar?",
-    "href": "#veredicto"
+    "label": "3. O capacete Norisk é confortável?",
+    "href": "#pergunta3"
+  },
+  {
+    "label": "4. O capacete Norisk faz muito barulho?",
+    "href": "#pergunta4"
+  },
+  {
+    "label": "5. O capacete Norisk tem boa ventilação?",
+    "href": "#pergunta5"
+  },
+  {
+    "label": "6. O capacete Norisk é resistente?",
+    "href": "#pergunta6"
+  },
+  {
+    "label": "7. O capacete Norisk vale a pena?",
+    "href": "#pergunta7"
+  },
+  {
+    "label": "Conclusão",
+    "href": "#conclusao"
   }
 ];
+
 const tags = [
   {
     "label": "REVIEWS",
@@ -54,113 +75,58 @@ const tags = [
 ];
 
 const authorBio = {
-  name: 'Arthur Gomes',
-  description: 'Especialista em reviews de motos e equipamentos.',
-  image: '/images/arthur-gomes.png',
-  profileHref: '/author-arthur-gomes/',
+  name: 'Pamela Pan',
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›'
 };
 
-const featuredProduct = {
-  preTitle: 'DESTAQUE',
-  image: '/images/norisk-ff302.jpg',
-  imageAlt: 'Capacete Norisk Review 2026 | Análise Completa dos Modelos',
-  name: 'Capacete Norisk Review 2026',
-  amazonHref: 'https://amzn.to/norisk',
-  mercadoLivreHref: 'javascript:void(0)'
-};
 
-const models = [
+const extraProducts = [
   {
-    name: 'Norisk FF302',
-    type: 'Fechado (Integral)',
-    price: 'R$ 380 - R$ 550',
-    rating: 4.5,
-    image: '/images/norisk-ff302.jpg',
-    features: [
-      'Casco em termoplástico ABS',
-      'Certificação INMETRO e ECE 22.05',
-      'Viseira anti-risco',
-      'Entradas de ar superiores e frontais',
-      'Forro em tecido hipoalergênico',
-      'Peso: 1.400g'
-    ],
-    verdict: 'Excelente custo-benefício para uso urbano e viagens curtas.'
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador V6 Plus para Capacete, Bluetooth, 1200m, Kit Duplo com Microfone, 2 unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S'
   },
   {
-    name: 'Norisk FF391',
-    type: 'Fechado (Sport)',
-    price: 'R$ 480 - R$ 680',
-    rating: 4.6,
-    image: '/images/norisk-ff391.jpg',
-    features: [
-      'Design esportivo aerodinâmico',
-      'Dupla viseira (transparente + fumê)',
-      'Sistema de ventilação avançado',
-      'Forro premium removível',
-      'Preparado para intercom',
-      'Peso: 1.450g'
-    ],
-    verdict: 'Ótima opção para quem busca estilo esportivo sem gastar muito.'
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT'
   },
   {
-    name: 'Norisk Darth',
-    type: 'Aberto (3/4)',
-    price: 'R$ 280 - R$ 380',
-    rating: 4.4,
-    image: '/images/norisk-darth.jpg',
-    features: [
-      'Design moderno e agressivo',
-      'Viseira 2D anti-risco',
-      'Sistema de ventilação superior',
-      'Forro confortável removível',
-      'Óculos de sol interno',
-      'Peso: 1.100g'
-    ],
-    verdict: 'Capacete aberto estiloso para uso urbano diário.'
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  },
+    {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC'
   },
   {
-    name: 'Norisk Rover',
-    type: 'Cross/Enduro',
-    price: 'R$ 450 - R$ 600',
-    rating: 4.3,
-    image: '/images/norisk-rover.jpg',
-    features: [
-      'Casco reforçado para off-road',
-      'Pala solar removível',
-      'Viseira ampla para óculos',
-      'Forro antibacteriano',
-      'Alça de resgate de emergência',
-      'Peso: 1.350g'
-    ],
-    verdict: 'Boa opção para trilhas leves e uso misto.'
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ'
   }
-];
-
-const pros = [
-  'Preço competitivo na categoria',
-  'Design moderno e variado',
-  'Certificações completas (INMETRO/ECE)',
-  'Boa disponibilidade no mercado brasileiro',
-  'Forro confortável para o preço',
-  'Ótimo para iniciantes'
-];
-
-const cons = [
-  'Acabamento inferior a marcas premium',
-  'Isolamento acústico básico',
-  'Viseira sem tratamento anti-embaçante premium',
-  'Ventilação poderia ser melhor',
-  'Durabilidade do mecanismo de viseira',
-  'Peças de reposição limitadas'
-];
-
-const comparisonTable = [
-  { aspect: 'Preço', norisk: '★★★★★', ls2: '★★★★☆', agv: '★★☆☆☆' },
-  { aspect: 'Segurança', norisk: '★★★★☆', ls2: '★★★★☆', agv: '★★★★★' },
-  { aspect: 'Conforto', norisk: '★★★☆☆', ls2: '★★★★☆', agv: '★★★★★' },
-  { aspect: 'Design', norisk: '★★★★☆', ls2: '★★★★☆', agv: '★★★★★' },
-  { aspect: 'Acabamento', norisk: '★★★☆☆', ls2: '★★★★☆', agv: '★★★★★' }
 ];
 ---
 
@@ -178,184 +144,291 @@ const comparisonTable = [
   indice={indice}
   tags={tags}
   authorBio={authorBio}
-  featuredProduct={featuredProduct}
+  extraProducts={extraProducts}
 >
-\n<!-- Hero Section -->
-    
-<p class="post-lead" id="introducao">
-  Análise completa da marca Norisk. Review dos modelos FF302, FF391, Darth e Rover 
-          com preços, qualidade e nossa opinião sincera.
+
+<p class="post-lead">
+  Se você está em busca de um capacete que une segurança, conforto e estilo, o Capacete Masculino Norisk Razor Sharp Amarelo é definitivamente uma opção que vale a pena considerar. Com um design arrojado e a ousada cor amarela, este capacete se destaca não apenas pela estética, mas também pela funcionalidade que oferece.
 </p>
+
 <div style="background: var(--gray-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--red); margin-bottom: 30px;">
   <span style="font-size: 1.2rem; font-weight: bold; color: var(--red); display: block; margin-bottom: 5px;">Veredito: Bom</span>
-  <p style="margin: 0;">Excelente relação custo-benefício</p>
+  <p style="margin: 0;">Excelente relação custo-benefício para uso urbano</p>
+</div>
+
+<h2 id="seguranca">Segurança em Primeiro Lugar</h2>
+
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Norisk Edition Preto Fosco Com 2 Viseiras Spoiler.png" alt="Capacete Norisk Razor Sharp - Segurança" />
+  </div>
+  <p>
+    A primeira coisa a se considerar em um capacete é a segurança, e o Norisk Razor Sharp não decepciona. Ele é fabricado com material de alta resistência, que garante proteção eficaz em caso de impacto. Seu sistema de fechamento com a fivela micrométrica proporciona um ajuste seguro e confortável, evitando que o capacete se solte durante a pilotagem.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Material de alta resistência</li>
+        <li>Fivela micrométrica segura</li>
+        <li>Certificação INMETRO</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Peso acima da média</li>
+        <li>Ventilação básica</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> motociclistas urbanos que priorizam segurança certificada com bom custo-benefício.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/446t3cx" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/2fQABRt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h2 id="conforto">Conforto e Ventilação</h2>
+
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Norisk Strada.png" alt="Capacete Norisk Razor Sharp - Conforto" />
+  </div>
+  <p>
+    Outro ponto positivo é o conforto. O interior do capacete é acolchoado e removível, o que facilita a limpeza e mantém a higiene. Além disso, as aberturas de ventilação estrategicamente posicionadas ajudam a regular a temperatura interna, tornando-o ideal para longos trajetos em dias quentes.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Forro removível e lavável</li>
+        <li>Ventilação estratégica</li>
+        <li>Acolchoamento confortável</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Pode aquecer em trânsito intenso</li>
+        <li>Tamanho interno um pouco justo</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> uso diário urbano e viagens curtas a médias, onde o conforto é essencial.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/446t3cx" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/2fQABRt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h2 id="estilo">Estilo e Visibilidade</h2>
+
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Norisk Flow Daytona Azul e Laranja.png" alt="Capacete Norisk Razor Sharp - Estilo" />
+  </div>
+  <p>
+    O design vibrante e moderno do Norisk Razor Sharp dá um toque de personalidade ao look do motociclista. A cor amarela não apenas é atraente, mas também aumenta a visibilidade nas estradas, um fator crucial para a segurança.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Cor amarela aumenta visibilidade</li>
+        <li>Design moderno e arrojado</li>
+        <li>Acabamento de qualidade</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Estilo pode não agradar todos</li>
+        <li>Cor chama atenção excessiva</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> motociclistas que valorizam estilo e querem maior visibilidade no trânsito.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4eY3eRI" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/2fQABRt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h2 id="pergunta1">1. O capacete Norisk é bom?</h2>
+<p>Sim, o capacete Norisk é bom para uso urbano e diário, oferecendo custo-benefício e segurança adequada para sua faixa de preço.</p>
+
+<h2 id="pergunta2">2. O capacete Norisk é aprovado pelo Inmetro?</h2>
+<p>Sim, o capacete Norisk possui selo do Inmetro, garantindo que atende aos requisitos mínimos de segurança exigidos no Brasil.</p>
+
+<h2 id="pergunta3">3. O capacete Norisk é confortável?</h2>
+<p>Sim, o capacete Norisk é confortável, com forro interno macio e bem ajustado, ideal para trajetos curtos e médios.</p>
+
+<h2 id="pergunta4">4. O capacete Norisk faz muito barulho?</h2>
+<p>O capacete Norisk apresenta nível de ruído moderado, comum em modelos da mesma faixa de preço.</p>
+
+<h2 id="pergunta5">5. O capacete Norisk tem boa ventilação?</h2>
+<p>Sim, o capacete Norisk tem ventilação razoável, com entradas e saídas de ar que ajudam na circulação interna.</p>
+
+<h2 id="pergunta6">6. O capacete Norisk é resistente?</h2>
+<p>Sim, o capacete Norisk é resistente dentro do padrão dos capacetes de entrada, com casco em ABS de boa qualidade.</p>
+
+<h2 id="pergunta7">7. O capacete Norisk vale a pena?</h2>
+<p>Sim, o capacete Norisk vale a pena para quem busca um modelo acessível, seguro e com bom acabamento.</p>
+
+<style>
+  .lista-capacetes {
+    background: #fffbea;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+  }
+
+  .titulo-lista {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  .item-capacete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+    background: #fff;
+    flex-wrap: wrap;
+  }
+
+  .info-capacete {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .info-capacete img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .modelo {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+    word-break: break-word;
+  }
+
+  .botao-amazon {
+    padding: 10px 16px;
+    background-color: #e60000;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+
+  .botao-amazon:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 600px) {
+    .item-capacete {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .botao-amazon {
+      margin-top: 10px;
+      align-self: flex-end;
+    }
+
+    .info-capacete {
+      width: 100%;
+    }
+
+    .info-capacete img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+</style>
+
+<div class="lista-capacetes">
+  <div class="titulo-lista">Ranking dos melhores Capacetes Norisk</div>
+
+  <div class="item-capacete">
+    <div class="info-capacete">
+      <img src="/images/Capacete Norisk FF302 Grand Prix Brasil.png" alt="Norisk FF302 Grand Prix Brasil">
+      <div class="modelo">1. Norisk FF302 Grand Prix Brasil</div>
+    </div>
+    <a class="botao-amazon" href="https://amzn.to/4euyXb1" target="_blank" rel="nofollow">Ver na Amazon</a>
+  </div>
+
+  <div class="item-capacete">
+    <div class="info-capacete">
+      <img src="/images/Capacete Masculino Norisk preto.png" alt="Norisk Strada II Monocolor">
+      <div class="modelo">2. Norisk Strada II Monocolor</div>
+    </div>
+    <a class="botao-amazon" href="https://amzn.to/3GdNWJM" target="_blank" rel="nofollow">Ver na Amazon</a>
+  </div>
+
+  <div class="item-capacete">
+    <div class="info-capacete">
+      <img src="/images/Capacete Feminino Moto Norisk Strada 2 Fusion Roxo Oculos.png" alt="Norisk Strada 2 Fusion">
+      <div class="modelo">3. Norisk Strada 2 Fusion</div>
+    </div>
+    <a class="botao-amazon" href="https://amzn.to/4nrdvHR" target="_blank" rel="nofollow">Ver na Amazon</a>
+  </div>
+
+  <div class="item-capacete">
+    <div class="info-capacete">
+      <img src="/images/Capacete Norisk Flow Daytona Azul e Laranja.png" alt="Norisk Flow Daytona">
+      <div class="modelo">4. Norisk Flow Daytona</div>
+    </div>
+    <a class="botao-amazon" href="https://amzn.to/44pisZ0" target="_blank" rel="nofollow">Ver na Amazon</a>
+  </div>
+
+  <div class="item-capacete">
+    <div class="info-capacete">
+      <img src="/images/capacete Norisk verde e preto.png" alt="Norisk Capacete Darth 2">
+      <div class="modelo">5. Norisk Capacete Darth 2</div>
+    </div>
+    <a class="botao-amazon" href="https://amzn.to/4lwk7Dg" target="_blank" rel="nofollow">Ver na Amazon</a>
+  </div>
 </div>
 
 
-    <!-- Summary -->
-    <section class="summary-section" id="resumo">
-      <div class="container">
-        <div class="summary-box">
-          <h2>Resumo da Análise</h2>
-          <p>
-            A <strong>Norisk</strong> é uma marca que se consolidou no mercado brasileiro oferecendo 
-            <strong>capacetes com boa relação custo-benefício</strong>. Seus produtos são voltados para 
-            o público que busca segurança certificada sem investir em marcas premium.
-          </p>
-          <p>
-            A marca se destaca pelo <strong>design moderno</strong> e variedade de cores, sendo uma 
-            escolha popular entre jovens e iniciantes. Para uso urbano diário, entrega proteção 
-            adequada com conforto aceitável.
-          </p>
-          <div class="rating-summary">
-            <div class="rating-item">
-              <span class="rating-number">4.5</span>
-              <span class="rating-label">Nota Geral</span>
-            </div>
-            <div class="rating-item">
-              <span class="rating-stars">★★★★☆</span>
-              <span class="rating-label">Custo-Benefício</span>
-            </div>
-            <div class="rating-item">
-              <span class="rating-recommend">82%</span>
-              <span class="rating-label">Recomendam</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<h2 id="conclusao">Conclusão:</h2>
+<p>
+  Em resumo, o Capacete Masculino Norisk Razor Sharp Amarelo Moto Fechado é uma escolha excepcional para quem prioriza segurança, conforto e estilo. Com características que garantem proteção, aliado a um design marcante, ele se torna um dos melhores capacetes do mercado. Invista na sua segurança e aproveite suas aventuras sobre duas rodas com mais confiança!
+</p>
+<p>
+  Fique por dentro de tudo que acontece no mundo dos capacetes; não deixe de conferir nossa análise dos capacetes aprovados pelo Inmetro clicando <a href="https://jovemapan.com.br/melhor-capacete/aprovados-pelo-inmetro/">aqui.</a>
+</p>
 
-    <!-- Models Section -->
-    <section class="models-section" id="modelos">
-      <div class="container">
-        <h2>Modelos Analisados</h2>
-        <div class="models-grid">
-          {models.map((model, index) => (
-            <article class="model-card">
-              <div class="model-header">
-                <span class="model-type">{model.type}</span>
-                <span class="model-rating">★ {model.rating}</span>
-              </div>
-              <div class="model-image">
-                <img src={model.image} alt={model.name} loading="lazy" />
-              </div>
-              <div class="model-content">
-                <h3>{model.name}</h3>
-                <p class="model-price">{model.price}</p>
-                <div class="model-features">
-                  <h4>Principais Características</h4>
-                  <ul>
-                    {model.features.map(feature => (
-                      <li>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="model-verdict">
-                  <strong>Nossa opinião:</strong> {model.verdict}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
 
-    <!-- Pros and Cons -->
-    <section class="pros-cons-section" id="pros-contras">
-      <div class="container">
-        <div class="pros-cons-grid">
-          <div class="pros-box">
-            <h3>✓ Pontos Positivos</h3>
-            <ul>
-              {pros.map(pro => (
-                <li>{pro}</li>
-              ))}
-            </ul>
-          </div>
-          <div class="cons-box">
-            <h3>✗ Pontos Negativos</h3>
-            <ul>
-              {cons.map(con => (
-                <li>{con}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<div style="margin-top: 40px; padding: 20px;">
+  <h3 style="color: black;">Leia também</h3>
+  <ul>
+    <li><a href="#">Melhores intercomunicadores para capacete</a></li>
+    <li><a href="#">Review do Intercomunicador Ejeas V6</a></li>
+    <li><a href="#">Intercomunicador é permitido por lei?</a></li>
+    <li><a href="#">Melhores capacetes de moto</a></li>
+    <li><a href="#">Melhores cadeados para moto</a></li>
+    <li><a href="https://jovemapan.com.br/comparativo-michelin-vs-pirelli/">Comparativo Michelin vs Pirelli</a></li>
+  </ul>
+</div>
 
-    <!-- Comparison -->
-    <section class="comparison-section" id="comparativo">
-      <div class="container">
-        <h2>Norisk vs Concorrentes</h2>
-        <div class="comparison-table-wrapper">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Aspecto</th>
-                <th>Norisk</th>
-                <th>LS2</th>
-                <th>AGV (Premium)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonTable.map(row => (
-                <tr>
-                  <td><strong>{row.aspect}</strong></td>
-                  <td>{row.norisk}</td>
-                  <td>{row.ls2}</td>
-                  <td>{row.agv}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p class="comparison-note">
-          <strong>Nota:</strong> Comparação considerando faixa de preço similar. AGV custa 3x-5x mais que Norisk.
-        </p>
-      </div>
-    </section>
-
-    <!-- Final Verdict -->
-    <section class="final-verdict-section" id="veredicto">
-      <div class="container">
-        <div class="verdict-box">
-          <h2>Vale a Pena Comprar?</h2>
-          <div class="verdict-content">
-            <div class="verdict-recommend">
-              <span class="recommend-badge">👍 Recomendado</span>
-              <p class="recommend-for"><strong>Para quem é ideal:</strong></p>
-              <ul>
-                <li>Iniciantes no mundo das motos</li>
-                <li>Uso urbano diário</li>
-                <li>Quem busca design moderno</li>
-                <li>Orçamento até R$ 600</li>
-                <li>Pilotos de scooter/city</li>
-              </ul>
-            </div>
-            <div class="verdict-not-recommend">
-              <span class="not-recommend-badge">👎 Não Recomendado</span>
-              <p class="not-recommend-for"><strong>Não compre se:</strong></p>
-              <ul>
-                <li>Faz viagens longas frequentes</li>
-                <li>Pilota em estradas em alta velocidade</li>
-                <li>Busca máximo conforto e silêncio</li>
-                <li>Prefere marcas premium</li>
-              </ul>
-            </div>
-          </div>
-          <div class="final-cta">
-            <p class="final-opinion">
-              <strong>Nossa opinião final:</strong> A Norisk é uma excelente escolha para quem busca 
-              um capacete moderno, certificado e acessível. Não oferece o refinamento de marcas premium, 
-              mas entrega segurança real por um preço justo.
-            </p>
-            <a href="https://amzn.to/noriskff302" target="_blank" rel="nofollow noopener" class="btn btn-primary">
-              Ver Preços dos Modelos Norisk
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    \n\n\n</PostLayout>\n
+</PostLayout>
