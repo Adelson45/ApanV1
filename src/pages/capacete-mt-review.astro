@@ -1,20 +1,344 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete MT é Bom? Análise Completa e Sincera';
-const description = 'Review honesto da marca MT Helmets. Qualidade, certificações, modelos populares e se vale a pena o investimento.';
-const canonical = 'https://jovemapan.com.br/capacete-mt-review/';
+const title       = 'Capacete MT é Bom? Análise Completa e Sincera';
+const description = 'O capacete MT é bom e seguro? Fizemos uma análise completa da marca, seus modelos, prós e contras. Descubra se o capacete MT vale a pena para você!';
+const canonical   = 'https://jovemapan.com.br/capacete-mt-review/';
+const author      = 'Pamela Pan';
+const category    = 'Reviews';
+const categoryHref= '/category/reviews/';
+const publishDate = 'Maio 2025';
+
+const coverImage  = '/images/cover-mt-review.png';
+const views       = '40K VIEWS';
+const comments    = '15 COMMENTS';
+const authorImage = '/images/Pamela pan coufundadora e editoara chefe do blog apan .png';
+
+const indice = [
+  { label: 'Quem fabrica o capacete MT?', href: '#fabricante' },
+  { label: 'Vale a pena adquirir o Capacete MT?', href: '#vale-a-pena' },
+  { label: 'Minhas Impressões Pessoais', href: '#impressoes' },
+  { label: 'Perguntas Frequentes sobre o Capacete MT', href: '#faq' },
+  { label: 'Conclusão: Veredito Final', href: '#conclusao' }
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const extraProducts = [
+  {
+    badge: 'Frete GRÁTIS',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Aberto-Moto-Freeway-New-Classic-Preto.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9'
+  },
+  {
+    badge: '32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/dois motociclistas viajando na estrada com suas motos conectados com Intercomunicador Capacete V6  Bluetooth Comunicador.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S'
+  },
+  {
+    badge: '10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete Moto Peels Icon Ekko.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT'
+  },
+  {
+    badge: '20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Jaqueta Texx Armor Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  }
+];
+
+const featuredProduct = {
+  preTitle: 'DESTAQUE',
+  image: '/images/Capacete Mt Targo S ACOSTA23.png',
+  imageAlt: 'Capacete MT Targo S',
+  name: 'Capacete MT Targo S',
+  amazonHref: 'https://amzn.to/4q4LK9k',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/2AJfmHS'
+};
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  indice={indice}
+  tags={['Capacetes', 'MT Helmets', 'Review', 'Segurança']}
+  authorBio={authorBio}
+  extraProducts={extraProducts}
+  featuredProduct={featuredProduct}
+  authorImage={authorImage}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+
+<p class="post-lead">
+  Na hora de escolher o equipamento mais importante para a nossa segurança, a dúvida sempre surge: qual capacete comprar? Entre tantas marcas, a espanhola <a href="https://mthelmets.com.br/" target="_blank" rel="noopener noreferrer">MT Helmets</a> se destaca com uma promessa tentadora: alta segurança a um preço acessível.
+</p>
+
+<p>
+  Mas será que isso é verdade na prática? Afinal, capacete MT é bom de verdade ou é apenas mais uma opção barata no mercado? Se você já se fez essa pergunta, seja você um motociclista de primeira viagem ou um veterano procurando um bom custo-benefício, você veio ao lugar certo.
+</p>
+
+<p>
+  Neste artigo, vamos fazer uma análise completa e sincera, mergulhando fundo na história da marca, na tecnologia dos seus produtos, nos prós e contras e na experiência real de uso. Vamos juntos descobrir se um capacete MT vale a pena para o seu dia a dia sobre duas rodas.
+</p>
+
+<div class="product-section">
+  <h3>1. Capacete MT Targo S Diogo C7 Fosco</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Mt Targo S ACOSTA23.png" alt="Capacete MT Targo S" />
+  </div>
+  <p>
+    Um dos modelos mais desejados para quem busca uma entrada no universo da MT. Oferece um grafismo exclusivo e excelente aerodinâmica.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Excelente relação custo-benefício.</li>
+        <li>Certificação de segurança internacional.</li>
+        <li>Grafismos modernos e agressivos.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Falta de viseira solar interna.</li>
+        <li>Forração pode ser quente em dias extremos.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4q4LK9k" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2AJfmHS" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h2 id="fabricante">Quem fabrica o capacete MT?</h2>
+<p>
+  Para entender a qualidade de um produto, é fundamental conhecer sua origem. O capacete MT não apareceu do nada. A marca por trás dele é a MT Helmets, uma empresa espanhola chamada Manufacturas Tomás, S.A., que está no mercado desde 1968. Com mais de 50 anos de experiência, eles se tornaram um dos maiores fabricantes de capacetes do mundo.
+</p>
+<p>
+  O grande diferencial da MT Helmets é sua filosofia: democratizar a segurança. Eles focam em produzir capacetes que atendem e, muitas vezes, superam as mais rigorosas certificações de segurança internacionais, como a europeia ECE e a americana DOT, mas mantendo um preço extremamente competitivo. A fabricação é feita em larga escala, com tecnologia de ponta, permitindo que eles ofereçam um produto confiável para motociclistas em mais de 95 países.
+</p>
+
+<h2 id="vale-a-pena">Vale a pena adquirir o Capacete MT?</h2>
+
+<div class="product-section">
+  <h3>2. Capacete MT – Stinger 2 Nobilis B73 Blue Yellow Gloss</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/CAPACETE MT - STINGER 2 NOBILIS B73 BLUE YELLOW GLOSS.png" alt="Capacete MT Stinger 2 Nobilis" />
+  </div>
+  <p>
+    Vamos direto ao ponto: sim, para a grande maioria dos motociclistas, o capacete MT vale a pena, e muito. A marca entrega um nível de segurança certificado, conforto decente e design moderno por uma fração do preço de marcas premium. É, sem dúvida, uma das melhores escolhas na categoria de custo-benefício.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Cores incrivelmente vibrantes (Blue Yellow Gloss).</li>
+        <li>Casco em HIRP de alta absorção.</li>
+        <li>Preço imbatível pela qualidade entregue.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Acabamento inferior a modelos premium.</li>
+        <li>Isolamento acústico mediano na estrada.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4h47WMO" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://mercadolivre.com/sec/1JMUXBW" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<p>
+  Claro, ele não vai competir em acabamento de luxo ou silêncio absoluto com um capacete que custa cinco vezes mais, e seria injusto esperar isso. A verdadeira questão é o valor que ele entrega pelo que custa, e nesse quesito, a MT Helmets se destaca com louvor. A análise detalhada a seguir vai te mostrar exatamente o porquê.
+</p>
+
+<div class="product-section">
+  <h3>3. Capacete MT Stinger 2 – Asphalt C3 Black Matte</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/CAPACETE MT - STINGER 2 ASPHALT C3 BLACK GRAY MATTE.png" alt="Capacete MT Stinger 2 Asphalt" />
+  </div>
+  <p>
+    A popularidade da MT não é por acaso. A marca se apoia em pilares sólidos que conquistam os motociclistas. O modelo Asphalt Matte entrega visual agressivo, ideal para amantes de motos naked ou urbanas.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Visual all-black / cinza muito elegante.</li>
+        <li>Sistema de ventilação eficiente para a cidade.</li>
+        <li>Padrão de segurança ECE 22.06 e DOT.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Pintura fosca exige cuidado extra para não arranhar.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4h6AjKh" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2Qd4PrW" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<ul>
+  <li><strong>Segurança Certificada:</strong> Praticamente todos os modelos da MT possuem certificações internacionais como a ECE 22.05 (e os mais novos já com a 22.06) e a DOT. No Brasil, eles contam com a certificação do <a href="https://www.gov.br/inmetro/pt-br" target="_blank" rel="noopener noreferrer">INMETRO</a>, garantindo que o capacete passou por testes rigorosos.</li>
+  <li><strong>Tecnologia de Casco HIRP:</strong> Muitos modelos de entrada são fabricados com HIRP (High Impact Resistant Polymer), um polímero de alta resistência desenvolvido pela própria MT. Essa composição oferece excelente absorção de impacto.</li>
+  <li><strong>Design Aerodinâmico e Moderno:</strong> Os capacetes da MT ajudam a reduzir a turbulência e o arrasto em velocidades mais altas, graças aos grafismos arrojados.</li>
+  <li><strong>Variedade de Modelos:</strong> A marca oferece uma linha completa, desde integrais (fechados), escamoteáveis (articulados), abertos e off-road.</li>
+</ul>
+
+<h2 id="impressoes">Minhas Impressões Pessoais</h2>
+<p>
+  Como motociclista, já usei capacetes de diversas marcas e faixas de preço. Para esta análise, peguei um dos modelos mais populares da marca, o <strong>MT Revenge 2</strong>, e rodei com ele na cidade e em trechos de estrada. A primeira impressão é que ele “veste” muito bem, justo na medida certa, sem pontos de pressão na cabeça.
+</p>
+<p>
+  No trânsito urbano, o sistema de ventilação funciona de forma eficiente, criando um fluxo de ar que alivia o calor. O campo de visão da viseira é amplo e claro. Já na estrada, a cerca de 100-110 km/h, a aerodinâmica se mostrou boa, sem aquele efeito de “puxar” a cabeça para trás.
+</p>
+<p>
+  O ponto que confirma as críticas é o ruído do vento, que é presente, mas nada que um protetor auricular não resolva para viagens mais longas. No geral, a sensação é de um capacete robusto e seguro, que cumpre o que promete com dignidade.
+</p>
+
+<div class="product-section">
+  <h3>4. Capacete MT Revenge 2 (Exemplo)</h3>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Mt Helmets Stinger 2 Preto Fosco esportivo para moto.png" alt="Capacete MT Revenge 2" />
+  </div>
+  <p>
+    Sendo um dos campeões de venda da marca, o Revenge 2 foi o modelo escolhido para testes práticos rodoviários e urbanos.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Veste incrivelmente bem sem pontos de pressão.</li>
+        <li>Aerodinâmica fantástica a 110 km/h.</li>
+        <li>Amplo campo de visão com viseira resistente.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Ruído do vento é presente na estrada (exige protetor auricular).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/3KES33t" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2WW6qdY" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h2 id="faq">Perguntas Frequentes sobre o Capacete MT</h2>
+<p>
+  Esta seção responde diretamente às dúvidas mais comuns que os motociclistas têm sobre a marca.
+</p>
+
+<h3>Qual é o material do Capacete MT?</h3>
+<p>
+  A maioria dos modelos de entrada e intermediários da MT utiliza o casco em HIRP (High Impact Resistant Polymer), um termoplástico de alta absorção de impacto. Modelos mais avançados da marca podem ser encontrados com casco em fibra de vidro ou tricomposto (carbono, fibra de vidro e aramida).
+</p>
+
+<h3>O forro do capacete é removível?</h3>
+<p>
+  Sim, a grande maioria dos modelos de capacete MT possui forração interna completamente removível, lavável e com tratamento antialérgico. Isso é essencial para manter a higiene e a durabilidade do seu equipamento.
+</p>
+
+<h3>O capacete possui sistema de ventilação?</h3>
+<p>
+  Sim. Os capacetes MT contam com um sistema de ventilação com múltiplas entradas de ar, geralmente localizadas no queixo e no topo do casco, e saídas de ar na parte traseira. Isso cria um fluxo de ar que ajuda a remover o ar quente e a manter o piloto mais confortável.
+</p>
+
+<h3>Qual é a certificação de segurança do capacete?</h3>
+<p>
+  Os capacetes MT vendidos no Brasil possuem a certificação obrigatória do INMETRO. Além dela, eles carregam certificações internacionais de alto padrão, como a europeia ECE/ONU 22.05 (ou a nova 22.06) e a americana DOT, atestando sua qualidade e segurança globalmente.
+</p>
+
+<h3>Esse capacete é adequado para longas viagens?</h3>
+<p>
+  Sim, muitos modelos são adequados, especialmente os da linha touring e sport-touring, como o MT Atom (escamoteável) ou o MT Thunder 4. Para viagens muito longas, o motociclista pode sentir falta de um isolamento acústico superior, mas em termos de conforto e segurança, eles dão conta do recado.
+</p>
+
+<h3>Quais são as opções de cores disponíveis?</h3>
+<p>
+  Este é um dos pontos altos da marca. A MT Helmets oferece uma vasta gama de opções, desde cores sólidas e discretas (preto fosco, branco, cinza) até grafismos extremamente coloridos, réplicas de pilotos e designs agressivos.
+</p>
+
+<h3>Quais são as melhores marcas de capacetes?</h3>
+<p>
+  As “melhores” dependem do orçamento. No segmento premium, marcas como Arai, Shoei e AGV são referências mundiais. Em uma faixa de preço competitiva e com excelente custo-benefício, a MT Helmets se destaca junto com outras marcas como LS2 e Norisk.
+</p>
+
+<h3>Qual marca é boa para capacete?</h3>
+<p>
+  Uma marca “boa” é aquela que oferece segurança certificada, conforto para o seu tipo de uso e cabe no seu orçamento. Nesse sentido, a MT é uma marca excelente para quem busca o máximo de segurança sem precisar investir uma fortuna.
+</p>
+
+<h3>Quais são os principais modelos de capacete MT?</h3>
+<ul>
+  <li><strong>MT Stinger:</strong> Um excelente capacete de entrada, leve e com design agressivo.</li>
+  <li><strong>MT Revenge 2:</strong> Um dos campeões de venda, com ótima aerodinâmica e viseira de 2.2mm.</li>
+  <li><strong>MT Targo:</strong> Outra opção de entrada com grafismos muito modernos.</li>
+  <li><strong>MT Atom SV:</strong> Um capacete escamoteável (articulado) ideal para touring e uso urbano, com viseira solar interna.</li>
+</ul>
+
+<h3>Quais são os 10 capacetes mais bonitos?</h3>
+<p>
+  Beleza é algo muito subjetivo, mas a MT Helmets é consistentemente elogiada por seus designs. Grafismos como o Kre+, Revenge 2 Wasp e as diversas variações do Stinger costumam figurar entre os preferidos dos motociclistas que buscam um capacete que chame a atenção.
+</p>
+
+<h3>Qual é o melhor tipo de capacete de moto?</h3>
+<ul>
+  <li><strong>Integral (Fechado):</strong> O mais seguro de todos. Ideal para qualquer tipo de uso, especialmente estradas e velocidades mais altas. A maioria dos modelos MT é integral.</li>
+  <li><strong>Escamoteável (Articulado):</strong> Versátil, une a segurança do integral com a praticidade de um aberto quando a queixeira está levantada. Ótimo para viagens e uso urbano.</li>
+  <li><strong>Aberto:</strong> Oferece mais ventilação e praticidade na cidade, mas deixa o queixo e o rosto expostos, sendo menos seguro.</li>
+  <li><strong>Off-road:</strong> Específico para trilhas, com pala e queixeira alongada.</li>
+</ul>
+
+<h2 id="conclusao">Conclusão: Veredito Final sobre o Capacete MT</h2>
+<p>
+  Após essa análise completa, a resposta à pergunta inicial fica clara. <strong>Sim, o capacete MT é bom</strong>. Ele representa a escolha inteligente para o motociclista que prioriza a segurança certificada, mas que tem um orçamento controlado. É o capacete ideal para o dia a dia na cidade, para iniciantes e até mesmo para viagens, desde que você entenda suas limitações em conforto acústico.
+</p>
+<p>
+  Se você é um piloto de motovelocidade que busca o máximo de leveza e tecnologia ou um viajante que roda milhares de quilômetros e exige silêncio absoluto, talvez um investimento em uma marca premium seja mais indicado. Para todos os outros, a MT Helmets não apenas cumpre o que promete, como redefine o que se pode esperar de um capacete com preço justo.
+</p>
+<p>
+  Gostou da nossa análise? Deixe seu comentário abaixo com sua experiência ou dúvida sobre a marca! Boas estradas e pilote sempre equipado. Não deixe de ver nossa análise dos melhores capacetes de motocicletas clicando <a href="/melhor-capacete/" target="_blank">aqui</a>.
+</p>
+
 </PostLayout>
