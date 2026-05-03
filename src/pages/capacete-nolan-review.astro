@@ -1,20 +1,289 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete Nolan: Vale a Pena Comprar Este Modelo?';
-const description = 'Review completo da marca italiana Nolan. Tecnologia, qualidade e relação custo-benefício dos capacetes.';
+const title = 'Capacete Nolan é bom? Vale a Pena Comprar Este Modelo?';
+const description = 'Pensando em comprar um Capacete Nolan? Leia nosso review completo, veja prós, contras e descubra se este modelo italiano vale a pena para você. Análise honesta!';
 const canonical = 'https://jovemapan.com.br/capacete-nolan-review/';
+const author = 'Pamela Pan';
+const publishDate = '2026-01-01';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/comparativo nolan azul e cinza com viseira interna .png';
+
+const views = '12K VIEWS';
+const comments = '6 COMMENTS';
+
+const tags = [
+  { label: 'REVIEWS', href: '/category/reviews/' },
+  { label: 'CAPACETES', href: '#' },
+  { label: 'NOLAN', href: '#' },
+  { label: 'ITALIANA', href: '#' },
+  { label: '2026', href: '#' }
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const featuredProduct = {
+  preTitle: 'DESTAQUE 2026',
+  image: '/images/Jaqueta Alpinestars Andes V3 Drystar.png',
+  imageAlt: 'Jaqueta Alpinestars Andes V3 Drystar em Destaque',
+  name: 'Alpinestars Andes V3',
+  amazonHref: 'https://amzn.to/4weRKzF',
+  mercadoLivreHref: 'https://meli.la/1F49Kaw'
+};
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p>Escolher um capacete novo é uma das decisões mais importantes para qualquer motociclista. É um item que une segurança, conforto e estilo. Nesse universo de opções, a Nolan se destaca como uma marca italiana com décadas de tradição e inovação. Mas diante de tantas alternativas no mercado, surge a pergunta inevitável:</p>
+  
+  <p>O investimento em um capacete Nolan realmente compensa? Para responder a essa questão de forma definitiva, preparamos uma análise completa do <strong>Nolan N90-3</strong>, um dos modelos mais populares e recentes da marca, que representa o que há de melhor em tecnologia e design italiano.</p>
+
+  <h2>Modelos de Capacete Nolan em Destaque:</h2>
+  
+  <div class="product-section">
+    <h3>Capacete Robocop Nolan N90-3 Wilco Cinza Azul</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Nolan articulado N90-3 Wilco CinzaAzul (27) 58.png" alt="Capacete Nolan N100-5" />
+    </div>
+    <p>
+      Modelo modular que combina versatilidade e segurança da marca italiana.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design modular versátil</li>
+          <li>Qualidade italiana</li>
+          <li>Ótima ventilação</li>
+          <li>Acabamento premium</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço elevado</li>
+          <li>Pode ser mais pesado</li>
+          <li>Manutenção complexa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4o352tZ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/34it4Pt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>Capacete Nolan N100-5</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Nolan N100-5 Plus Distinctive PrataAzul Fosco.png" alt="Capacete Nolan N90-3 Driller" />
+    </div>
+    <p>
+      Versão com design agressivo e tecnologia de ponta da linha N90-3.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design agressivo e moderno</li>
+          <li>Tecnologia de ponta</li>
+          <li>Excelente aerodinâmica</li>
+          <li>Acabamento superior</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço premium</li>
+          <li>Pode ser mais barulhento</li>
+          <li>Disponibilidade limitada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4nAU0fB" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/34it4Pt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>Capacete Adulto Unissex, Preto/Vermelho (Black/Red)</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Nolan N100-5.png" alt="Capacete Nolan N100-5 Plus Distinctive" />
+    </div>
+    <p>
+      Versão premium com acabamento diferenciado e recursos adicionais.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Acabamento premium</li>
+          <li>Recursos exclusivos</li>
+          <li>Material de alta qualidade</li>
+          <li>Design sofisticado</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço muito elevado</li>
+          <li>Poucas unidades disponíveis</li>
+          <li>Manutenção especializada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3Wu84eV" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/34it4Pt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>Capacete Robocop Nolan N90-3 Driller Preto</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Nolan-N90-3-Driller-PretoCinza-Fosco.png" alt="Capacete Nolan N60-6 Anchor" />
+    </div>
+    <p>
+      Modelo jet com estilo clássico e moderno da Nolan.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Estilo clássico atemporal</li>
+          <li>Leve e confortável</li>
+          <li>Bom campo de visão</li>
+          <li>Fácil de usar no dia a dia</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Menor proteção facial</li>
+          <li>Não ideal para estradas</li>
+          <li>Ventilação limitada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4mNrmXu" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://meli.la/34it4Pt" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  
+  <h2>Análise completa do capacete Nolan N90-3 Wilco</h2>
+  
+  <p>
+    O Nolan N90-3 é um capacete integral (fechado) que se posiciona no topo de sua categoria, combinando tecnologia de ponta com um design funcional. Vamos detalhar seus principais pontos.
+  </p>
+  
+  <h3>Segurança:</h3>
+  <p>Este é o principal pilar da Nolan. O casco do N90-3 é construído em <strong>policarbonato Lexan™</strong>, um material patenteado que é superior ao policarbonato comum, oferecendo altíssima resistência a impactos.</p>
+  
+  <p>Mais importante ainda, ele possui a certificação <strong>ECE 22.06</strong>, a mais nova e rigorosa norma de segurança europeia. Isso significa que ele foi testado em mais pontos e sob diferentes velocidades de impacto, garantindo um nível de proteção de última geração.</p>
+  
+  <h3>Conforto e Forração:</h3>
+  <p>Ao vestir o N90-3, a sensação é de um encaixe preciso e aconchegante. A forração interna, chamada <strong>"Clima Comfort"</strong>, é feita com tecidos ecológicos, é totalmente removível, lavável e hipoalergênica.</p>
+  
+  <p>O sistema <strong>LPC (Liner Positioning Control)</strong> permite um ajuste fino do posicionamento da forração, garantindo que o capacete se adapte perfeitamente a diferentes formatos de cabeça.</p>
+  
+  <h3>Viseira e Visibilidade:</h3>
+  <p>A viseira principal oferece um campo de visão <strong>ultrawide (superamplo)</strong>, o que aumenta a segurança e o conforto visual na pilotagem. Ela possui tratamento antirrisco e vem preparada para a instalação do <strong>Pinlock®</strong> (que geralmente já vem incluso na caixa), o sistema antiembaçante mais eficiente do mercado.</p>
+  
+  <p>Além disso, o capacete conta com uma viseira solar interna (VPS) com proteção UV 400, facilmente acionada por uma alavanca lateral.</p>
+  
+  <h3>Ventilação:</h3>
+  <p>O sistema de ventilação <strong>"AirBooster Technology"</strong> é um dos destaques. Com uma grande entrada de ar no topo e outra no queixo, ele canaliza o fluxo de ar para as áreas mais críticas, distribuindo-o de forma eficiente antes de ser expelido pelos extratores traseiros. O resultado é um capacete fresco mesmo nos dias mais quentes.</p>
+  
+  <h3>Aerodinâmica e Ruído:</h3>
+  <p>O design do casco foi pensado para oferecer estabilidade em altas velocidades, reduzindo a turbulência e o efeito de "levantamento". Embora nenhum capacete seja 100% silencioso, o Nolan N90-3 apresenta um bom isolamento acústico para sua categoria, tornando viagens mais longas menos cansativas para a audição.</p>
+
+  <h2>Onde é fabricado o capacete Nolan?</h2>
+  
+  <p>De forma direta: <strong>os capacetes Nolan são 100% fabricados na Itália</strong>. A empresa mantém seu complexo industrial em Bérgamo, onde controla absolutamente todas as etapas do processo produtivo, desde o recebimento da matéria-prima (como os grânulos de policarbonato Lexan™) até a montagem final do produto.</p>
+  
+  <p>Esse controle de qualidade "Made in Italy" é um enorme diferencial, garantindo que cada capacete que sai da fábrica atenda aos mais altos padrões de segurança e acabamento.</p>
+
+  <h2>Destaques do Capacete Nolan</h2>
+  
+  <p>Para quem busca uma visão rápida, aqui estão os pontos mais importantes:</p>
+  
+  <ul>
+    <li><strong>Material Lexan™:</strong> Policarbonato patenteado de altíssima resistência</li>
+    <li><strong>Certificação ECE 22.06:</strong> Padrão europeu mais rigoroso de segurança</li>
+    <li><strong>Forração Clima Comfort:</strong> Tecidos ecológicos, removíveis e laváveis</li>
+    <li><strong>Sistema LPC:</strong> Ajuste fino do posicionamento da forração</li>
+    <li><strong>Viseira Ultrawide:</strong> Campo de visão superamplo</li>
+    <li><strong>Pinlock® Incluído:</strong> Sistema antiembaçante mais eficiente</li>
+    <li><strong>Viseira Solar VPS:</strong> Proteção UV 400 com acionamento fácil</li>
+    <li><strong>AirBooster Technology:</strong> Sistema de ventilação avançado</li>
+    <li><strong>Fabricação 100% Italiana:</strong> Controle de qualidade "Made in Italy"</li>
+    <li><strong>Garantia de 5 anos:</strong> Maior período do mercado</li>
+  </ul>
+
+  <h2>Minhas Impressões Pessoais</h2>
+  
+  <p>Colocando o Nolan N90-3 na estrada, a primeira coisa que notei foi o encaixe perfeito. Ele abraça a cabeça sem criar pontos de pressão. Em uma viagem mais longa, a eficiência da ventilação se provou excelente, e a viseira solar interna se tornou uma ferramenta indispensável, fácil de acionar mesmo com luvas.</p>
+  
+  <p>A estabilidade em rodovias é notável, e a sensação geral é de estar usando um equipamento robusto e extremamente seguro, o que transmite muita confiança na pilotagem.</p>
+
+  <h2>FAQ sobre o Capacete Nolan</h2>
+  
+  <p>Esta seção responde às dúvidas mais comuns dos motociclistas.</p>
+
+  <h3>Qual é o material do Capacete Nolan?</h3>
+  <p>A grande maioria dos modelos da Nolan, incluindo o N90-3, utiliza o <strong>policarbonato Lexan™</strong>, um termoplástico de alta performance que se destaca por sua excepcional resistência a impactos, superando o policarbonato padrão usado por muitos concorrentes.</p>
+
+  <h3>O Capacete Nolan possui garantia?</h3>
+  <p>Sim. A Nolan oferece uma <strong>garantia de fábrica de 5 anos</strong> a partir da data da compra, cobrindo eventuais defeitos de material ou de fabricação. É sempre recomendado verificar as condições específicas e registrar seu produto junto a um revendedor autorizado.</p>
+
+  <h3>Como faço para saber meu tamanho de capacete?</h3>
+  <p>É simples: com uma fita métrica, meça a circunferência da sua cabeça na altura da testa, cerca de dois dedos acima da sobrancelha, passando pela parte de trás mais saliente do crânio. Com essa medida em centímetros, consulte a tabela de tamanhos oficial da Nolan para encontrar a correspondência correta (ex: 58 cm geralmente corresponde ao tamanho M).</p>
+
+  <h3>É possível substituir o forro do Capacete Nolan?</h3>
+  <p>Sim, totalmente. A forração interna completa (almofadas de bochecha e forro superior) é projetada para ser facilmente removida para lavagem. Além disso, caso o forro se desgaste com o tempo, é possível comprar um conjunto novo para substituí-lo, renovando o conforto do seu capacete.</p>
+
+  <h3>O Capacete Nolan é adequado para uso em todas as estações?</h3>
+  <p>Com certeza. Seu eficiente sistema de ventilação o torna ótimo para o verão, enquanto a inclusão do Pinlock® garante uma visão clara e sem embaçamento nos dias frios e chuvosos, tornando-o um capacete extremamente versátil para uso o ano todo.</p>
+
+  <h3>Onde posso comprar o Capacete Nolan?</h3>
+  <p>Para garantir a autenticidade, a garantia e o suporte adequado, compre seu capacete Nolan em <strong>revendedores autorizados e lojas especializadas</strong> em equipamentos de motociclismo. Isso vale tanto para lojas físicas, onde você pode experimentar o produto, quanto para lojas online de renome.</p>
+
+  <h2>Conclusão: vale a pena adquirir o Capacete Nolan?</h2>
+  
+  <p>Após esta análise detalhada, a resposta é <strong>sim, o capacete Nolan vale muito a pena</strong>. O investimento inicial mais alto é justificado pela segurança de ponta (certificação ECE 22.06), pela qualidade de construção impecável "Made in Italy" e por um nível de conforto e funcionalidade que faz a diferença no dia a dia e em longas viagens.</p>
+  
+  <p>Ele é o capacete ideal para o motociclista que coloca a segurança e o conforto como prioridade máxima, seja para uso urbano diário ou para o mototurismo. Se você busca um produto durável, confiável e com tecnologia de ponta, o Nolan não irá decepcionar.</p>
+  
+  <p>Agora que você conhece todos os detalhes, visite uma loja e experimente um Nolan para sentir a diferença na prática. Não deixe de conferir nossa análise dos melhores capacete de motocicletas clicando <a href="https://jovemapan.com.br/melhor-capacete/">aqui</a>.</p>
+
+  <h2>Posts relacionados</h2>
+  <ul>
+    <li><a href="/melhor-capacete-bieffe/">Melhor capacete Bieffe: 5 Opções para 2026</a></li>
+    <li><a href="/capacete-norisk-vale-a-pena/">Vale a Pena Comprar um Capacete Norisk?</a></li>
+    <li><a href="/dica-melhor-jaqueta-motociclistas/">Melhores Jaquetas Motociclistas: Guia Completo</a></li>
+    <li><a href="/capacete-de-moto-infantil/">Melhor Capacete Infantil 2026</a></li>
+  </ul>
 </PostLayout>
