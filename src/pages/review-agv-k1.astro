@@ -1,117 +1,91 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'AGV K1S Review 2026 | Análise do Capacete Premium Italiano';
-const description = 'Review completo do capacete AGV K1S. Análise do modelo esportivo italiano com herança de competição, preço e vale a pena comprar?';
+const title = 'Capacete AGV K1S é Bom? Análise Completa em 2026';
+const description = 'Confira nosso review técnico do AGV K1, o capacete esportivo da AGV que combina aerodinâmica, conforto e segurança. Descubra se ele é ideal para você!';
 const canonical   = 'https://jovemapan.com.br/review-agv-k1/';
 const author      = 'Arthur Gomes';
 const publishDate = '24 ABR, 2026';
 const category    = 'REVIEWS';
 const categoryHref = '/category/reviews/';
-const coverImage  = '/images/Capacete-AGV-K1s.png';
+const coverImage  = '/images/Capacete Fechado Agv K1 Vr46 Sky Racing Team.png';
 const views       = '35K VIEWS';
 const comments    = '12 COMMENTS';
+const authorImage = '/images/Arthur .png';
 
 const indice = [
-  {
-    "label": "Introdução",
-    "href": "#introducao"
-  },
-  {
-    "label": "Sobre a AGV K1S",
-    "href": "#resumo"
-  },
-  {
-    "label": "Especificações Técnicas",
-    "href": "#especificacoes"
-  },
-  {
-    "label": "Prós e Contras",
-    "href": "#pros-contras"
-  },
-  {
-    "label": "Vale a Pena Comprar?",
-    "href": "#veredicto"
-  }
+  { label: 'Casco externo', href: '#casco-externo' },
+  { label: 'Peso', href: '#peso' },
+  { label: 'Ventilação', href: '#ventilacao' },
+  { label: 'Viseira', href: '#viseira' },
+  { label: 'Resina', href: '#resina' },
+  { label: 'Fixação', href: '#fixacao' },
+  { label: 'Ajuste', href: '#ajuste' },
+  { label: 'Barulho', href: '#barulho' },
+  { label: 'Conclusão', href: '#conclusao' }
 ];
+
 const tags = [
-  {
-    "label": "REVIEWS",
-    "href": "/category/reviews/"
-  },
-  {
-    "label": "AGV",
-    "href": "#"
-  },
-  {
-    "label": "PREMIUM",
-    "href": "#"
-  }
+  { label: 'REVIEWS', href: '/category/reviews/' },
+  { label: 'AGV', href: '#' },
+  { label: 'K1', href: '#' },
+  { label: 'PREMIUM', href: '#' }
 ];
 
 const authorBio = {
   name: 'Arthur Gomes',
   description: 'Especialista em reviews de motos e equipamentos.',
-  image: '/images/arthur-gomes.png',
-  profileHref: '/author-arthur-gomes/',
+  image: '/images/Arthur .png',
+  profileHref: '/autor-arthur-gomes/',
   profileLabel: 'Ver perfil completo ›'
 };
 
+const extraProducts = [
+  {
+    badge: 'Frete GRÁTIS',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Luva X11 Blackout Motoqueiro Moto Motociclista Proteção (1).png',
+    imageAlt: 'Luva X11 Blackout Motoqueiro',
+    name: 'Luva X11 Blackout',
+    mercadoLivreHref: 'https://meli.la/1Untv3f',
+    amazonHref: 'https://amzn.to/4uplqrQ'
+  },
+  {
+    badge: '32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/dois motociclistas viajando na estrada com suas motos conectados com Intercomunicador Capacete V6  Bluetooth Comunicador.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus',
+    mercadoLivreHref: 'https://meli.la/1N3BCqn',
+    amazonHref: 'https://amzn.to/481F17S'
+  },
+  {
+    badge: '10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete Moto Peels Icon Ekko.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Peels Icon Ekko',
+    mercadoLivreHref: 'https://meli.la/2EhMYXi',
+    amazonHref: 'https://amzn.to/4tcp07W'
+  },
+  {
+    badge: '20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Jaqueta Texx Armor Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  }
+];
+
 const featuredProduct = {
   preTitle: 'DESTAQUE',
-  image: '/images/Capacete-AGV-K1s.png',
-  imageAlt: 'AGV K1S Review 2026 | Análise do Capacete Premium Italiano',
-  name: 'AGV K1S Review 2026',
-  amazonHref: 'https://amzn.to/agvk1',
-  mercadoLivreHref: 'javascript:void(0)'
-};
-
-const specs = [
-  { label: 'Material', value: 'HIR-TH (Termoplástico de alta resistência)' },
-  { label: 'Peso', value: '1.400g (±50g)' },
-  { label: 'Certificações', value: 'ECE 22.05, DOT' },
-  { label: 'Viseira', value: 'GT2 anti-risco com tratamento anti-embaçante' },
-  { label: 'Viseira Solar', value: 'Não incluso (versão K-5 tem)' },
-  { label: 'Ventilação', value: '4 entradas frontais + 2 superiores' },
-  { label: 'Forro', value: 'Dry-Comfort removível e lavável' },
-  { label: 'Fechamento', value: 'Micrométrico de titânio' },
-  { label: 'Preço', value: 'R$ 1.200 - R$ 1.500' }
-];
-
-const pros = [
-  'Herança da marca de Valentino Rossi',
-  'Design esportivo autêntico italiano',
-  'Aerodinâmica refinada em túnel de vento',
-  'Acabamento premium impecável',
-  'Estabilidade em alta velocidade',
-  'Forro de alta qualidade',
-  'Tecnologia herdada da linha Corsa',
-  'Reputação de segurança comprovada'
-];
-
-const cons = [
-  'Preço elevado para iniciantes',
-  'Sem viseira solar na versão K1',
-  'Isolamento acústico poderia ser melhor',
-  'Ventilação inferior a alguns concorrentes',
-  'Peças de reposição caras no Brasil',
-  'Ajuste voltado para pilotos esportivos'
-];
-
-const verdict = {
-  recommend: [
-    'Pilotos esportivos e de pista',
-    'Fãs da marca AGV e Valentino Rossi',
-    'Quem busca design italiano autêntico',
-    'Pilotos de motos sport/naked',
-    'Orçamento até R$ 1.500'
-  ],
-  notRecommend: [
-    'Orçamento limitado',
-    'Uso exclusivamente urbano lento',
-    'Quem precisa de viseira solar',
-    'Pilotos de scooter/city'
-  ]
+  image: '/images/Capacete Fechado Agv K1 Vr46 Sky Racing Team.png',
+  imageAlt: 'AGV K1',
+  name: 'Capacete AGV K1',
+  amazonHref: 'https://amzn.to/4ukzanJ',
+  mercadoLivreHref: 'https://meli.la/1UbjEjm'
 };
 ---
 
@@ -129,101 +103,204 @@ const verdict = {
   indice={indice}
   tags={tags}
   authorBio={authorBio}
+  extraProducts={extraProducts}
   featuredProduct={featuredProduct}
+  authorImage={authorImage}
 >
-\n
-<p class="post-lead" id="introducao">
-  Review do capacete esportivo italiano. Herança de competição 
-          com design agressivo e tecnologia premium.
+
+<p class="post-lead">
+  O K1 é o capacete da AGV que tem um custo acessível. Os preços começam em R$ 999,00 para as cores simples e podem chegar a R$ 2.199,90 para a versão PHILLIP ISLAND. André Ferreira, da equipe de testes da JOVEMAPAN, está usando esse capacete há três meses em diferentes estradas em sua Yamaha MT-07.
 </p>
-<div style="background: var(--gray-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--red); margin-bottom: 30px;">
-  <span style="font-size: 1.2rem; font-weight: bold; color: var(--red); display: block; margin-bottom: 5px;">Veredito: Excelente</span>
-  <p style="margin: 0;">Premium italiano acessível</p>
+
+<h2 id="casco-externo">Casco externo</h2>
+
+<p>
+  O casco de resina termoplástica vem em dois tamanhos na faixa de XS-2XL. O acabamento é ótimo – tem um brilho profundo no preto simples e uma sensação geral de qualidade com bons detalhes e um spoiler de aparência agressiva na traseira, combinado com um profundo swoosh no queixo.
+</p>
+<p>
+  Quando usei este capacete pela primeira vez, percebi que o queixo baixo ocasionalmente roçava nas alças da minha mochila ao verificar os pontos cegos; no entanto, percebi que isso parou depois que me ajustei a ele.
+</p>
+<p>
+  O formato é ótimo para aqueles dias chuvosos, quando ele fica na minha mesa secando; com o capacete inteiro elevado em apenas dois pequenos pontos achatados no queixo e no centro traseiro, o forro inferior não passa o dia em uma poça absorvendo umidade.
+</p>
+
+<h2 id="peso">Peso</h2>
+
+<p>
+  Este é um capacete de tamanho pequeno e pesa 1472 g, estando entre os capacetes mais leves por menos de R$ 1.709,90 testados pelo Andre Ferreira da equipe A PAN.
+</p>
+
+<h2 id="ventilacao">Ventilação</h2>
+
+<div class="h2-image-card">
+  <img src="/images/foto-do-sistema-de-ventilacao-do-capacete-agv-k1s.png" alt="Sistema de ventilação do capacete AGV K1S" />
 </div>
 
+<p>
+  A ventilação do queixo duplo é operada por um controle deslizante interno que funciona muito facilmente com um dedo quando em movimento com luvas de verão. Verdade seja dita, levei um ou dois dias para descobrir que ele existia até tentar identificar para que servia a fenda de acesso na cortina do queixo!
+</p>
+<p>
+  Essa configuração de queixo parece muito elegante e é funcional, desde que você não esteja usando luvas de inverno com a cortina de queixo instalada, quando há muito tecido no caminho para localizar e mover o controle deslizante.
+</p>
+<p>
+  As duas aberturas externas da testa são mais incômodas, e eu nunca realmente peguei o jeito delas com minhas luvas de verão. Eu só descobri que não havia muita borda para segurar, tornando-as difíceis de localizar. Talvez seja resultado de eu estar acostumado com as rodas de rolagem no meu atual HJC Rpha 10.
+</p>
 
-    <section class="summary-section" id="resumo">
-      <div class="container">
-        <div class="summary-box">
-          <h2>Sobre a AGV K1S</h2>
-          <p>
-            A <strong>AGV</strong> é uma das marcas mais lendárias do mundo das motos, 
-            com <strong>Valentino Rossi</strong> como seu embaixador mais famoso. O 
-            <strong>K1S</strong> é o capacete de entrada da linha esportiva, trazendo 
-            tecnologia herdada dos modelos de competição.
-          </p>
-          <p>
-            O casco <strong>HIR-TH</strong> (High Resistant Thermoplastic Resin) oferece 
-            resistência superior aos termoplásticos comuns. O design é desenvolvido no 
-            mesmo túnel de vento dos modelos de MotoGP, garantindo estabilidade aerodinâmica.
-          </p>
-          <div class="rating-summary">
-            <div class="rating-item"><span class="rating-number">4.8</span><span class="rating-label">Nota Geral</span></div>
-            <div class="rating-item"><span class="rating-stars">★★★★★</span><span class="rating-label">Premium</span></div>
-            <div class="rating-item"><span class="rating-recommend">94%</span><span class="rating-label">Recomendam</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Fechado Agv K1 Vr46 Sky Racing Team (1).png" alt="Capacete AGV K1S" />
+  </div>
+  <p>
+    <strong>AGV K1S</strong> é o capacete ideal para quem busca performance e a autêntica herança das pistas. Oferece tecnologia avançada com excelente aerodinâmica e design agressivo.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Design aerodinâmico esportivo italiano.</li>
+        <li>Boa estabilidade em altas velocidades.</li>
+        <li>Herança tecnológica da linha de MotoGP da AGV.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Preço mais elevado comparado a outros modelos de entrada.</li>
+        <li>Não possui viseira solar interna.</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> motociclistas que buscam um design esportivo com segurança comprovada, dispostos a investir em qualidade premium.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4ukzanJ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/1UbjEjm" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
 
-    <section class="specs-section" id="especificacoes">
-      <div class="container">
-        <h2>Especificações Técnicas</h2>
-        <div class="specs-grid">
-          <div class="specs-image">
-            <img src="/images/Capacete-AGV-K1s.png" alt="AGV K1S" loading="lazy" />
-          </div>
-          <div class="specs-table">
-            {specs.map(spec => (
-              <div class="spec-row">
-                <span class="spec-label">{spec.label}</span>
-                <span class="spec-value">{spec.value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+<p>
+  Da perspectiva do fluxo de ar, as aberturas neste capacete funcionam bem, com as portas de exaustão no spoiler traseiro funcionando bem para manter o fluxo constante e remover o ar quente. Ao remover o forro, há canais claros entre as entradas e saídas para auxiliar o fluxo de ar. Mesmo em um dia úmido de verão, este capacete teve um bom desempenho em manter minha cabeça fria.
+</p>
 
-    <section class="pros-cons-section" id="pros-contras">
-      <div class="container">
-        <div class="pros-cons-grid">
-          <div class="pros-box">
-            <h3>✓ Pontos Positivos</h3>
-            <ul>{pros.map(pro => <li>{pro}</li>)}</ul>
-          </div>
-          <div class="cons-box">
-            <h3>✗ Pontos Negativos</h3>
-            <ul>{cons.map(con => <li>{con}</li>)}</ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<h2 id="viseira">Viseira</h2>
 
-    <section class="final-verdict-section" id="veredicto">
-      <div class="container">
-        <div class="verdict-box">
-          <h2>Vale a Pena?</h2>
-          <div class="verdict-content">
-            <div class="verdict-recommend">
-              <span class="recommend-badge">👍 Sim</span>
-              <ul>{verdict.recommend.map(item => <li>{item}</li>)}</ul>
-            </div>
-            <div class="verdict-not-recommend">
-              <span class="not-recommend-badge">👎 Não</span>
-              <ul>{verdict.notRecommend.map(item => <li>{item}</li>)}</ul>
-            </div>
-          </div>
-          <div class="final-cta">
-            <p class="final-opinion">
-              <strong>Opinião final:</strong> O AGV K1S é a porta de entrada para o mundo 
-              premium dos capacetes esportivos. Não é perfeito (falta viseira solar), mas 
-              entrega experiência italiana autêntica com segurança comprovada em pista.
-            </p>
-            <a href="https://amzn.to/agvk1" target="_blank" rel="nofollow noopener" class="btn btn-primary">Ver Preço AGV K1S</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="h2-image-card">
+  <img src="/images/viseira-do-agvk1s.png" alt="Viseira do capacete AGV K1S" />
+</div>
 
-    \n\n\n</PostLayout>\n
+<p>
+  Quando usei este capacete pela primeira vez na estrada, a grande abertura era muito perceptível e ótima para visibilidade geral. Até usar isto, eu não tinha percebido o quão obscurecida a visão periférica pode ser em algumas pálpebras. Ao mudar de faixa na rodovia, por exemplo, descobri que não precisava virar a cabeça sobre o ombro tanto para cobrir os pontos cegos.
+</p>
+<p>
+  A abertura também é alta, o que proporciona boa visibilidade frontal para aqueles que gostam de colocar o queixo dentro do tanque.
+</p>
+<p>
+  A viseira abre facilmente e fica totalmente fora de vista com uma aba no lado esquerdo, que é grande o suficiente para localizar enquanto pedala com luvas de verão e inverno. Sempre preferi abas de abertura localizadas centralmente para que eu possa abrir a viseira com a mão direita enquanto estou parado com a embreagem pressionada com a esquerda.
+</p>
+
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Fechado Agv K1 Vr46 Sky Racing Team.png" alt="Capacete AGV K1S Viseira" />
+  </div>
+  <p>
+    <strong>AGV K1S</strong> conta com um amplo campo de visão, ideal para qualquer estilo de pilotagem. Sua viseira GT2 antirrisco garante excelente visibilidade, tanto na cidade quanto nas rodovias.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Amplo campo de visão periférica e frontal.</li>
+        <li>Troca rápida da viseira sem ferramentas.</li>
+        <li>Ajuste micro-abertura para circulação de ar.</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Viseira escura precisa ser comprada à parte.</li>
+        <li>Não inclui a lente Pinlock de fábrica.</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> pilotos que prezam por um amplo ângulo de visão e praticidade na troca e manutenção da viseira.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4ukzanJ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    <a href="https://meli.la/1UbjEjm" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<p>
+  O mecanismo da viseira em si é seguro, permanecendo aberto em qualquer uma das posições predefinidas em velocidade, mesmo quando excede o limite em uma moto naked. O mecanismo permite uma remoção muito rápida e sem esforço da viseira, sem ferramentas, tudo construído em plástico durável sem molas, o que é um ponto positivo na minha opinião.
+</p>
+<p>
+  A vedação de borracha entre o capacete e a viseira é perfeitamente funcional, e não tive nenhum problema com entrada de água, mesmo em chuvas torrenciais.
+</p>
+<p>
+  A viseira pode levar um inserto antiembaçante Pinlock, mas um não está incluso. Do jeito que está, uma respiração pesada embaçará a viseira como esperado, no entanto, a ventilação é mais do que suficiente para dissipar isso imediatamente ao viajar em alta velocidade; a remoção da cortina de queixo também permitirá que ainda mais ar flua.
+</p>
+<p>
+  Como padrão, o <a href="https://www.agvbr.com/agv-helmets-brasil" target="_blank" rel="noopener noreferrer">AGV K1</a> possui um sistema de viseira de microabertura de seis posições que permite que ela seja aberta o mínimo possível; uma boa ideia, mas pessoalmente achei desnecessário em alta velocidade e não o suficiente para desembaçar em baixas velocidades em estacionamentos.
+</p>
+<p>
+  A catraca é personalizável, com outros dois pares de inserções na caixa: o par verde oferece um estágio aberto maior (para uso urbano) e o par de “corrida” só tem travas totalmente abertas e totalmente fechadas.
+</p>
+
+<h2 id="resina">Resina</h2>
+
+<div class="h2-image-card">
+  <img src="/images/forro-de-resina-do-capacete-agvk1.png" alt="Forro de resina do capacete AGV K1" />
+</div>
+
+<p>
+  O forro é totalmente removível em duas partes, mais a saia do queixo. Há espaços óbvios dentro para alto-falantes. Minha maior crítica a este capacete é um pedaço de velcro ligeiramente exposto no centro da testa para ajudar a prender o forro. Embora tenha apenas cerca de 1-2 mm, sua borda áspera esfregando na minha testa era um grande incômodo, embora isso não acontecesse sempre, dependendo de como eu colocasse o capacete.
+</p>
+<p>
+  Não importa o quanto eu tentasse mover o forro, ou remover o forro completamente para recolocar, eu não conseguia cobrir completamente essa parte exposta do velcro. Isso pode ser em parte o formato da minha cabeça, e o problema reduziu um pouco com o tempo, conforme o forro começou a comprimir.
+</p>
+
+<h2 id="fixacao">Fixação</h2>
+
+<div class="h2-image-card">
+  <img src="/images/fivela-de-encaixe-do-capacete-agvk1s.png" alt="Fivela de encaixe do capacete AGV K1S" />
+</div>
+
+<p>
+  Este capacete é equipado com uma fivela Double-D – simples, confiável e, na minha opinião, a opção mais segura, sem catracas para dar errado. Eu pessoalmente sempre optaria por isso, embora alguns possam encontrar uma desvantagem potencial, pois é praticamente impossível prender com luvas.
+</p>
+<p>
+  O acolchoamento ao redor da tira é macio e confortável e permanece no lugar durante a pedalada. Há um fecho de plástico para prender a ponta da tira para impedir que ela bata.
+</p>
+
+<h2 id="ajuste">Ajuste</h2>
+
+<p>
+  O ajuste é, claro, subjetivo, e achei o K1 um pouco difícil de colocar e tirar no começo, mas parece amolecer o suficiente depois dos primeiros usos; nada incomum aqui. O ajuste geral é muito confortável, sem saliências estranhas, peculiaridades ou pontos de pressão.
+</p>
+<p>
+  Eu não uso óculos, mas depois de pegar um emprestado por um breve período, posso dizer que este capacete os acomoda muito bem, permitindo que você os coloque exatamente onde quiser.
+</p>
+<p>
+  Nunca precisei de uma camada adicional para me aquecer sob meu atual HJC Rpha 10, mesmo em viagens longas em temperaturas baixas. No entanto, percebi que minhas orelhas ficavam frias no AGV em viagens curtas em temperaturas em torno de 17 °C (com a cortina de queixo instalada).
+</p>
+
+<h2 id="barulho">Barulho</h2>
+
+<p>
+  Embora os canais para óculos deixem seus ouvidos mais expostos, eu não reclamaria e nem chamaria esse capacete de barulhento de forma alguma. Nunca usei protetores de ouvido enquanto pilotava e esse capacete não mudou isso. Esse capacete é relativamente silencioso, sem ruídos externos de assobio ou algo assim, e a viseira é muito estável em velocidade.
+</p>
+<p>
+  Sempre recomendamos usar protetores auriculares com qualquer capacete – quando você percebe o dano que está acontecendo, é tarde demais. E ficar em casa com um assobio constante nos ouvidos é muito irritante.
+</p>
+
+<h2 id="conclusao">Conclusão</h2>
+
+<p>
+  Este é um capacete esportivo de nível básico muito bom de um fabricante premium em que muitos confiarão. Você não ficará impressionado com os recursos, mas ele oferece o básico muito bem.
+</p>
+<p>
+  Se você procura um capacete acessível, confiável e de uma marca renomada, o AGV K1S é uma excelente escolha, no entanto, vale a pena notar que uma viseira escura (se você quiser uma) custará mais uns R$ 100,00; muitos outros capacetes nesse preço vêm com protetores solares removíveis instalados.
+</p>
+<p>
+  Apesar disso, estou muito impressionado e recomendaria esta viseira. Não deixe de conferir nossa análise dos melhores capacetes de moto clicando <a href="/melhor-capacete/">aqui</a>.
+</p>
+
+</PostLayout>

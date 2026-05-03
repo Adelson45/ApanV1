@@ -685,17 +685,21 @@ const shareTitleEncoded = encodeURIComponent(title);
     background: var(--white);
   }
   .sidebar-widget.produto-destaque {
-    background: #000000;
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
     text-align: center;
     padding: 24px 20px;
   }
   .frete-gratis {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: inline-block;
+    background: var(--red);
     color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 4px;
     margin: 0 0 16px;
   }
   .produto-imagem {
@@ -708,7 +712,7 @@ const shareTitleEncoded = encodeURIComponent(title);
   .produto-nome {
     font-size: 1rem;
     font-weight: 800;
-    color: var(--white);
+    color: var(--black);
     margin: 0 0 20px;
     line-height: 1.4;
   }
