@@ -1,20 +1,286 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete Taurus é Bom? Veja o Review Completo e Descubra';
-const description = 'Review completo dos capacetes Taurus. Tradição, qualidade e relação custo-benefício da marca.';
+const title = 'Capacete San Marino Taurus: Review Completo! É Bom e Vale a Pena em 2026?';
+const description = 'Procurando um capacete bom e barato? Leia nossa análise completa do Capacete San Marino Taurus e descubra se ele oferece segurança e conforto que você precisa.';
 const canonical = 'https://jovemapan.com.br/capacete-taurus-review/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela pan coufundadora e editoara chefe do blog apan .png';
+const publishDate = '2026-01-01';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/Capacete Moto San Marino Automático Taurus Classic Preto Fosco Mais Viseira Fume.png';
+
+const indice = [
+  { label: '1. Visão Geral: Quem é a Taurus e o que é o San Marino?', href: '#visao-geral' },
+  { label: '2. Análise Detalhada dos Recursos', href: '#analise-recursos' },
+  { label: '3. Design e Acabamento', href: '#design' },
+  { label: '4. Segurança: O Ponto Mais Importante', href: '#seguranca' },
+  { label: '5. Conforto e Forração Interna', href: '#conforto' },
+  { label: '6. Viseira e Campo de Visão', href: '#viseira' },
+  { label: '7. Ventilação e Aerodinâmica', href: '#ventilacao' },
+  { label: '8. Principais Modelos', href: '#modelos' },
+  { label: '9. Para Quem o Capacete San Marino Taurus é Indicado?', href: '#indicado' },
+  { label: '10. Veredito Final', href: '#veredito' },
+];
+
+const tags = [
+  { label: 'TAURUS', href: '#' },
+  { label: 'REVIEWS', href: '/category/reviews/' },
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: 'CAPACETE ABERTO', href: '/capacete-aberto/' },
+  { label: '2026', href: '#' },
+];
+
+const featuredProduct = {
+  preTitle: 'DESTAQUE 2026',
+  image: '/images/Capacete Moto San Marino Automático Taurus Classic Preto Fosco Mais Viseira Fume.png',
+  imageAlt: 'Capacete Moto San Marino Automático Taurus Classic Preto Fosco Mais Viseira Fume',
+  name: 'Capacete San Marino<br/>Classic Preto',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/2te2dnp',
+  amazonHref: 'https://amzn.to/4uoUGro',
+};
+
+const authorBio = {
+  name: author,
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: authorImage,
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›',
+};
+
+const extraProducts = [
+  {
+    badge: 'Aproveite frete GRÁTIS',
+    badgeStyle: 'frete',
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9',
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S',
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ',
+  },
+];
+
+const views = '15K VIEWS';
+const comments = '8 COMMENTS';
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  authorImage={authorImage}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+  extraProducts={extraProducts}
+  views={views}
+  comments={comments}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+
+  <p class="post-lead">
+    Encontrar um capacete que seja seguro, confortável e, principalmente, que caiba no bolso, é um dos maiores desafios para quem pilota no dia a dia. A variedade de opções é enorme, e saber em qual confiar pode ser complicado, especialmente para motociclistas iniciantes ou para quem usa a moto como ferramenta de trabalho.
+  </p>
+
+  <p>É exatamente aí que o <a href="https://amzn.to/4o7ldXZ" target="_blank" rel="nofollow noopener noreferrer">Capacete San Marino Taurus</a> entra em cena. Onipresente nas ruas das cidades brasileiras, ele é sinônimo de capacete de entrada. Mas será que sua popularidade se justifica? Ele é apenas barato ou realmente entrega um bom valor?</p>
+
+  <p>Neste review completo e honesto, vamos destrinchar cada detalhe deste que é um dos capacetes mais vendidos do Brasil. Vamos analisar seu design, segurança, conforto e, claro, responder à pergunta principal: afinal, o capacete San Marino Taurus é bom e vale a pena o seu investimento?</p>
+
+  <h2 id="visao-geral">Visão Geral: Quem é a Taurus e o que é o San Marino?</h2>
+
+  <p>Antes de mergulhar nos detalhes, é importante entender o contexto. A Taurus Helmets é uma fabricante 100% nacional, conhecida no mercado por produzir equipamentos de segurança com um foco agressivo no <a href="https://jovemapan.com.br/custo-beneficio/">custo-benefício</a>. O modelo San Marino é o seu carro-chefe, projetado especificamente para o motociclista urbano: aquele que enfrenta o trânsito diário, faz trajetos curtos e precisa de um capacete prático e acessível para o trabalho ou locomoção.</p>
+
+
+  <h2 id="analise-recursos">Análise Detalhada dos Recursos</h2>
+
+  <p>Vamos avaliar o capacete ponto a ponto, do visual à segurança, para você saber exatamente o que esperar.</p>
+
+  <h3 id="design">Design e Acabamento</h3>
+
+  <p>O San Marino Taurus aposta em um design clássico e funcional. Sem linhas excessivamente arrojadas, seu formato é universal e agrada à maioria dos gostos. Um dos seus grandes atrativos é a imensa variedade de cores e grafismos, que vão desde os tons sóbrios e foscos até designs vibrantes e detalhados, permitindo que cada piloto encontre um que combine com seu estilo.</p>
+
+  <p>Quanto ao acabamento, é preciso ser realista: ele é condizente com sua faixa de preço. Os plásticos das entradas de ar e outros componentes são simples, mas funcionais. A pintura e os adesivos (grafismos) costumam ter uma qualidade decente, que resiste bem ao uso cotidiano se o capacete for bem cuidado.</p>
+
+  <h3 id="seguranca">Segurança: O Ponto Mais Importante</h3>
+
+  <p>Aqui está o fator decisivo para a maioria dos compradores. E a notícia é boa: sim, o capacete Taurus é confiável para seu propósito. Todo San Marino vendido no Brasil possui o <a href="https://jovemapan.com.br/melhor-capacete/aprovados-pelo-inmetro/">selo de certificação do INMETRO</a>, o que é obrigatório e crucial.</p>
+
+  <p>Mas o que isso significa na prática? Significa que o capacete foi submetido a rigorosos testes de impacto, absorção de choque e resistência da cinta jugular, sendo aprovado para proteger o piloto em caso de acidente. Seu casco é construído em ABS injetado, um material padrão na indústria, conhecido por sua boa capacidade de dissipar a energia de um impacto.</p>
+
+  <p>É fundamental, no entanto, ser honesto sobre suas limitações: este é um capacete projetado para a pilotagem urbana. Ele não oferece o mesmo nível de tecnologia e proteção de um capacete de fibra de carbono ou compósitos, que são indicados para altas velocidades e uso em rodovias ou pistas.</p>
+
+  <h3 id="conforto">Conforto e Forração Interna</h3>
+
+  <p>Um capacete pode ser seguro, mas se for desconfortável, a pilotagem se torna um suplício. O San Marino busca um equilíbrio. Sua forração interna é feita de um material simples, com tratamento antialérgico, o que é um ponto positivo. Na maioria das versões, o forro é removível e lavável, facilitando muito a higiene – algo essencial para quem usa o capacete todos os dias.</p>
+
+  <p>O "encaixe" na cabeça tende a ser universal, mas pode parecer um pouco firme no início, se moldando ao rosto com o tempo. A cinta jugular conta com um sistema de engate rápido (micrométrico), que torna o ato de colocar e tirar o capacete extremamente prático e rápido.</p>
+
+  <h3 id="viseira">Viseira e Campo de Visão</h3>
+
+  <p>A viseira do San Marino é feita em policarbonato com 2mm de espessura, um padrão de mercado que garante boa proteção contra detritos e insetos. Ela possui um tratamento antirrisco básico, que ajuda a evitar arranhões leves, mas exige cuidado no manuseio.</p>
+
+  <p>O campo de visão é amplo, permitindo uma boa visualização lateral, o que é vital para a segurança no trânsito caótico das cidades. A troca da viseira também é relativamente simples, não exigindo ferramentas.</p>
+
+  <h3 id="ventilacao">Ventilação e Aerodinâmica</h3>
+
+  <p>A ventilação é um ponto onde a simplicidade do projeto fica mais evidente. O capacete possui entradas de ar frontais (uma no queixo e uma ou duas no topo) e, geralmente, uma saída de ar traseira. Elas são funcionais, mas básicas. Em dias de calor intenso ou em trânsito muito lento, o capacete pode esquentar um pouco.</p>
+
+  <p>Em relação ao ruído, em velocidades de cidade (até 60-70 km/h), o nível é aceitável. Acima disso, o ruído do vento se torna bem perceptível, reforçando sua vocação estritamente urbana.</p>
+
+
+  <h2 id="modelos">Principais Modelos do Capacete San Marino Taurus</h2>
+
+  <div class="product-section">
+    <h3>1. Capacete San Marino Taurus Classic Preto Fosco</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Moto San Marino Automático Taurus Classic Preto Fosco Mais Viseira Fume.png" alt="Capacete San Marino Taurus Classic Preto Fosco" />
+    </div>
+    <p>O modelo Classic Preto Fosco é o mais tradicional e versátil da linha San Marino. Sua cor fosca esconde pequenos arranhões e mantém a aparência nova por mais tempo. Ideal para quem busca um capacete discreto e profissional para o dia a dia urbano.</p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Cor atemporal que nunca sai de moda</li>
+          <li>Acabamento fosco esconde arranhões</li>
+          <li>Visual sóbrio e profissional</li>
+          <li>Viseira fume de fábrica</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Absorve mais calor em dias quentes</li>
+          <li>Visual mais discreto (pode ser "comum")</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>Ideal para:</strong> motociclistas urbanos que buscam um capacete discreto, prático e de fácil manutenção.</p>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4uoUGro" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2te2dnp" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <h3>2. Capacete San Marino Taurus Branco Perolizado</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete San Marino Taurus Branco Perolizado.png" alt="Capacete San Marino Taurus Branco Perolizado" />
+    </div>
+    <p>O modelo Branco Perolizado oferece maior visibilidade no trânsito, aumentando significativamente a segurança. Sua cor clara reflete o calor do sol, mantendo a temperatura interna mais agradável em dias quentes. O acabamento perolizado confere um visual premium ao capacete.</p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Maior visibilidade no trânsito = mais segurança</li>
+          <li>Reflete calor, mantém temperatura interna mais baixa</li>
+          <li>Acabamento perolizado premium</li>
+          <li>Visual moderno e chamativo</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Exige limpeza frequente para manter aparência</li>
+          <li>Marca de dedos fica evidente</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>Ideal para:</strong> motociclistas que priorizam segurança através da visibilidade e conforto térmico.</p>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4uoUGro" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1TvBg4s" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  
+  <h2 id="indicado">Para Quem o Capacete San Marino Taurus é Indicado?</h2>
+
+  <p>Respondendo diretamente, o San Marino Taurus é a escolha ideal para um perfil bem definido de motociclista. Ele é perfeito para:</p>
+
+  <ul>
+    <li><strong>Motociclistas urbanos:</strong> Que rodam principalmente dentro da cidade, em velocidades moderadas.</li>
+    <li><strong>Iniciantes:</strong> Que precisam de um primeiro capacete seguro e acessível sem gastar muito.</li>
+    <li><strong>Entregadores e Motoboys:</strong> Profissionais que precisam de um capacete de "batalha" para o dia a dia, que seja prático e fácil de substituir.</li>
+    <li><strong>Quem tem um orçamento limitado:</strong> Para quem precisa de proteção certificada, mas não pode investir em um modelo mais caro no momento.</li>
+  </ul>
+
+  <h2 id="veredito">Veredito Final: Capacete San Marino Taurus Vale a Pena?</h2>
+
+  <p>Então, vamos à pergunta final: o Capacete San Marino Taurus vale a pena?</p>
+
+  <p>A resposta é um sonoro sim, DESDE que você seja o público-alvo correto para ele.</p>
+
+  <p>Este não é um capacete para quem busca alta performance, tecnologia de ponta ou o máximo de silêncio em viagens longas. Ele é um equipamento honesto. Pelo preço que se paga, é muito difícil encontrar um concorrente que entregue segurança certificada pelo INMETRO, praticidade e uma variedade tão grande de estilos.</p>
+
+  <p>Ele cumpre com excelência a sua proposta: ser o melhor capacete de entrada, garantindo a proteção essencial para a pilotagem urbana diária. Se você se encaixa nesse perfil, o San Marino Taurus não é apenas uma opção, é provavelmente uma das escolhas mais inteligentes que você pode fazer.</p>
+
+  <p>E você, já teve um San Marino Taurus? Concorda com nossa análise? Deixe sua opinião nos comentários abaixo! Sua experiência ajuda toda a comunidade de motociclistas.</p>
+
+  <p>Curtiu esse artigo? Não deixe de conferir nossas avaliações dos <a href="https://jovemapan.com.br/melhor-capacete/">melhores capacetes</a> de 2026 clicando <a href="https://jovemapan.com.br/melhor-capacete/">aqui</a>.</p>
+
+  <h2>Posts relacionados</h2>
+  <ul>
+    <li><a href="https://jovemapan.com.br/ls2-x-norisk/">Qual capacete é melhor, LS2 ou Norisk?</a></li>
+    <li><a href="https://jovemapan.com.br/capacete-etceter-review/">Capacete Etceter é Bom ?</a></li>
+    <li><a href="/melhor-capacete/">Melhores Capacetes de 2026</a></li>
+    <li><a href="/capacete-aberto/">Capacete Aberto: Guia Completo</a></li>
+  </ul>
+
 </PostLayout>
