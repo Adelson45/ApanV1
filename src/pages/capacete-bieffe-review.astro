@@ -1,20 +1,317 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Capacete de Moto Bieffe é Bom? Análise Completa';
-const description = 'Review da marca Bieffe. Tradição brasileira, qualidade e relação custo-benefício dos capacetes.';
-const canonical = 'https://jovemapan.com.br/capacete-bieffe-review/';
+const title = 'Capacete Bieffe é Bom? Análise COMPLETA do B-Dynamic Attractie';
+const description = 'Review honesto do Capacete Moto Bieffe B-Dynamic Attractie: segurança, conforto, durabilidade e custo-benefício. Vale a pena? Análise completa da marca Bieffe.';
+const canonical   = 'https://jovemapan.com.br/capacete-bieffe-review/';
+const author      = 'Pamela Pan';
+const publishDate = '2026-01-01';
+const category    = 'REVIEWS';
+const categoryHref = '/category/reviews/';
+const coverImage  = '/images/Capacete Moto Bieffe Premium B-Dynamic Attractie Azul com Branco.png';
+
+const views    = '17K VIEWS';
+const comments = '11 COMMENTS';
+
+const indice = [
+  { label: '1. Critérios de avaliação', href: '#criterios' },
+  { label: '2. Vantagens do capacete Bieffe', href: '#vantagens' },
+  { label: '3. Por que escolher um Bieffe', href: '#por-que' },
+  { label: '4. Características do B-Dynamic Attractie', href: '#caracteristicas' },
+  { label: '5. Perguntas frequentes', href: '#faq' },
+  { label: '6. Opiniões e alternativas', href: '#opinioes' },
+  { label: '7. Conclusão', href: '#conclusao' }
+];
+
+const tags = [
+  { label: 'REVIEWS', href: '/category/reviews/' },
+  { label: 'CAPACETES', href: '#' },
+  { label: 'BIEFFE', href: '#' },
+  { label: 'SEGURANÇA', href: '#' },
+  { label: '2026', href: '#' }
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, piloto profissional que testa equipamentos no limite. Velocidade no DNA, segurança na cabeça.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const extraProducts = [
+  {
+    badge: 'Aproveite frete GRÁTIS',
+    badgeStyle: 'frete' as const,
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9'
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S'
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ'
+  }
+];
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  extraProducts={extraProducts}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p class="post-lead">
+    Procurando um capacete que una <strong>segurança, conforto e estilo</strong>? O
+    <strong>Capacete Moto Bieffe B-Dynamic Attractie</strong> tem atraído a atenção de muitos
+    motociclistas. Mas será que ele realmente cumpre o que promete? Nesta análise completa,
+    avaliamos a fundo os capacetes Bieffe e ajudamos você a decidir se vale a pena investir.
+  </p>
+
+  <h2 id="criterios">Critérios de avaliação do Capacete Bieffe</h2>
+  <p>Para uma avaliação justa e abrangente, consideraremos os seguintes critérios:</p>
+  <table class="criteria-table">
+    <tbody>
+      <tr>
+        <th>Segurança</th>
+        <td>Certificações, materiais de absorção de impacto, sistema de fecho.</td>
+      </tr>
+      <tr>
+        <th>Conforto</th>
+        <td>Tipo de forração, ventilação, peso, ergonomia.</td>
+      </tr>
+      <tr>
+        <th>Durabilidade</th>
+        <td>Qualidade dos materiais, resistência a riscos e impactos.</td>
+      </tr>
+      <tr>
+        <th>Funcionalidades</th>
+        <td>Viseira, óculos solar interno, sistemas de comunicação.</td>
+      </tr>
+      <tr>
+        <th>Custo-benefício</th>
+        <td>Preço em relação às características e desempenho.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="vantagens">Quais são as vantagens do Capacete Bieffe?</h2>
+  <div class="product-section">
+    <h3>Capacete Bieffe B-Dynamic Attractie — o destaque da linha</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/_Capacete Moto Bieffe Premium B-Dynamic Attractie Azul com Branco Oculos Solar Interno.png" alt="Capacete Bieffe B-Dynamic Attractie Azul com Branco e óculos solar interno" />
+    </div>
+    <p>
+      O <strong>B-Dynamic Attractie</strong> é o modelo escamoteável que melhor representa a
+      proposta da marca: segurança certificada, conforto e custo-benefício competitivo para o
+      motociclista brasileiro.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Preço extremamente competitivo.</li>
+          <li>Facilidade de encontrar peças de reposição.</li>
+          <li>Forro removível e lavável.</li>
+          <li>Viseira solar interna integrada.</li>
+          <li>Versatilidade adaptável a diferentes estilos de pilotagem.</li>
+          <li>Segurança com tecnologias e materiais de qualidade.</li>
+          <li>Conforto com design ergonômico.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Alguns usuários relatam que é um pouco pesado em comparação a outros modelos.</li>
+          <li>Nível de ruído pode ser perceptível em altas velocidades.</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>Ideal para:</strong> motociclistas urbanos e de estrada que buscam um integral com bom equilíbrio entre segurança, conforto e preço.</p>
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4p6kwPq" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2L7vBgo" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="por-que">Por que escolher um capacete da Bieffe?</h2>
+  <div class="h2-image-card">
+    <img src="/images/analise completa do Capacete Masculino Bieffe B-Trail Frontier Azul Oculos Moto.png" alt="Análise completa do Capacete Masculino Bieffe B-Trail Frontier" />
+  </div>
+  <p>
+    Optar por um capacete <strong>Bieffe</strong> significa escolher uma marca brasileira com
+    anos de experiência no mercado e compromisso com inovação e segurança. A linha cobre desde
+    modelos de entrada até premium, atendendo perfis variados de motociclistas. Confira também
+    o <a href="/comparativo-bieffe-vs-norisk/">comparativo Bieffe vs Norisk</a> e a
+    <a href="/capacete-bieffe-b-trail-review/">análise do Bieffe B-Trail</a>.
+  </p>
+
+  <h2 id="caracteristicas">Principais características do Bieffe B-Dynamic Attractie</h2>
+
+  <h3>Estrutura e materiais</h3>
+  <p>
+    O B-Dynamic Attractie é construído com <strong>casco em ABS de alta resistência</strong>,
+    projetado para absorver e dissipar a energia de impactos, oferecendo proteção robusta sem
+    abrir mão da leveza.
+  </p>
+
+  <h3>Forração e ventilação</h3>
+  <ul>
+    <li><strong>Forração interna removível e lavável:</strong> tecido hipoalergênico que mantém a higiene mesmo em uso intenso.</li>
+    <li><strong>Sistema de ventilação completo:</strong> entradas de ar frontais e extratores traseiros que garantem fluxo de ar eficiente.</li>
+  </ul>
+
+  <h3>Fecho e ajuste</h3>
+  <p>
+    Equipado com <strong>fecho micrométrico</strong>, oferece ajuste preciso e seguro a cada
+    uso, sem complicações.
+  </p>
+
+  <h3>Segurança e proteção</h3>
+  <ul>
+    <li><strong>Viseira cristal de 2 mm</strong> com tratamento antirrisco e proteção UV.</li>
+    <li><strong>Atende às normas NBR 7471 do INMETRO</strong>, garantindo conformidade com as exigências de segurança brasileiras.</li>
+  </ul>
+
+  <h2 id="faq">Perguntas frequentes sobre o Capacete Bieffe</h2>
+
+  <h3>O capacete Bieffe atende às normas de segurança?</h3>
+  <p>
+    Sim. Os capacetes Bieffe comercializados no Brasil atendem rigorosamente às normas
+    <strong>NBR 7471 do INMETRO</strong>, garantindo o nível mínimo de proteção exigido por lei.
+  </p>
+
+  <h3>Qual o público-alvo do capacete Bieffe?</h3>
+  <p>
+    O B-Dynamic Attractie é ideal para motociclistas urbanos e de estrada que buscam equilíbrio
+    entre segurança, conforto e custo-benefício, sem precisar pagar pelo preço de marcas premium.
+  </p>
+
+  <h3>Como saber o tamanho correto do capacete Bieffe?</h3>
+  <p>
+    Meça a circunferência da sua cabeça na altura da testa, cerca de um centímetro acima da
+    sobrancelha, e consulte a tabela de tamanhos do fabricante. O capacete deve ficar firme,
+    sem girar livremente.
+  </p>
+
+  <h3>Os capacetes Bieffe são confortáveis em longas distâncias?</h3>
+  <p>
+    Sim. Modelos como o B-Dynamic Attractie são projetados com forrações e sistemas de
+    ventilação pensados para conforto em viagens longas, embora a sensação possa variar de
+    pessoa para pessoa.
+  </p>
+
+  <h3>Qual é a faixa de preço dos capacetes Bieffe?</h3>
+  <p>
+    A linha Bieffe tem ampla faixa de preço e se posiciona como excelente custo-benefício. O
+    B-Dynamic Attractie fica na <strong>categoria intermediária</strong>, com preço acessível
+    para suas características.
+  </p>
+
+  <h3>Onde posso comprar um capacete Bieffe?</h3>
+  <p>
+    Em lojas especializadas em produtos para motociclistas, físicas ou online. Marketplaces
+    como Amazon e Mercado Livre costumam ter as melhores ofertas e variedade de modelos.
+  </p>
+
+  <h2 id="opinioes">Opiniões dos clientes e alternativas</h2>
+
+  <h3>O que dizem os usuários</h3>
+  <p>
+    Clientes destacam <strong>qualidade do acabamento, design atraente e bom custo-benefício</strong>.
+    Muitos elogiam o conforto da forração e a eficácia do sistema de ventilação. O nível de
+    ruído em velocidades mais altas aparece em alguns relatos como ponto a considerar.
+  </p>
+
+  <h3>Comparação com outras marcas</h3>
+  <p>
+    No segmento de capacetes integrais de entrada e intermediários, o Bieffe B-Dynamic Attractie
+    compete diretamente com marcas como <strong>Helt, Norisk e Peels</strong>, destacando-se
+    pelo design moderno e pela tradição da marca. Veja o
+    <a href="/melhor-capacete-peels/">comparativo dos melhores capacetes Peels</a> e o
+    <a href="/capacete-norisk-review/">review do Norisk</a> para outras opções.
+  </p>
+
+  <h2 id="conclusao">Conclusão sobre o Capacete Bieffe B-Dynamic Attractie</h2>
+  <p>
+    O <strong>Capacete Moto Bieffe B-Dynamic Attractie</strong> se mostra uma excelente opção
+    para motociclistas que buscam um capacete integral com bom equilíbrio entre segurança,
+    conforto, estilo e preço justo. Suas certificações, materiais de qualidade e o feedback
+    positivo dos usuários o posicionam como uma <strong>escolha sólida no mercado nacional</strong>.
+  </p>
+  <p>
+    Quer comparar com outras marcas? Veja o
+    <a href="/comparativo-bieffe-vs-norisk/">comparativo Bieffe vs Norisk</a>, a
+    <a href="/capacete-bieffe-b-trail-review/">análise do Bieffe B-Trail</a> e os
+    <a href="/melhor-capacete/">melhores capacetes de moto</a> de 2026. Para completar seu
+    kit, confira nossa <a href="/dica-melhor-jaqueta-motociclistas/">dica das melhores jaquetas
+    para motociclistas</a>.
+  </p>
+
+  <h2>Posts relacionados</h2>
+  <ul>
+    <li><a href="/capacete-bieffe-b-trail-review/">Capacete Bieffe B-Trail Review</a></li>
+    <li><a href="/comparativo-bieffe-vs-norisk/">Comparativo: Bieffe vs Norisk</a></li>
+    <li><a href="/melhor-capacete-peels/">Melhores Capacetes Peels</a></li>
+    <li><a href="/capacete-norisk-review/">Review Completo do Capacete Norisk</a></li>
+    <li><a href="/capacete-x11-review/">Capacete X11 é Bom? Análise Completa</a></li>
+  </ul>
 </PostLayout>
