@@ -1094,31 +1094,39 @@ const shareTitleEncoded = encodeURIComponent(title);
     margin-top: 0;
     padding-bottom: 16px;
     border-bottom: 1px solid #EAEAEA;
-    color: #000;
+    color: #E31E24;
   }
 
   .btn-buy-container { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
   .btn-buy {
     display: block;
     width: 100%;
-    max-width: 280px;
+    max-width: 320px;
     margin: 0 auto;
     text-align: center;
     background: #E31919;
     color: #fff !important;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none !important;
-    padding: 12px 20px;
+    padding: 16px 24px;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     border: none;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: none;
+  }
+  .btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(227, 25, 25, 0.3);
   }
   .btn-buy.ml {
     background: #FFE600;
     color: #00008B !important;
-    font-weight: 700;
-    text-decoration: none !important;
+    font-weight: 800;
+  }
+  .btn-buy.ml:hover {
+    box-shadow: 0 4px 12px rgba(255, 230, 0, 0.4);
   }
 
   .pros-cons-grid {
