@@ -1177,7 +1177,6 @@ const shareTitleEncoded = encodeURIComponent(title);
   /* Cards de imagem abaixo dos H2 */
   .h2-image-card {
     width: 100%;
-    max-width: 733px;
     margin: 16px 0 24px;
     border-radius: 12px;
     overflow: hidden;
@@ -1186,20 +1185,17 @@ const shareTitleEncoded = encodeURIComponent(title);
   .h2-image-card img {
     width: 100%;
     height: auto;
-    max-height: 400px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
   }
   .h2-image-card.product-image {
-    max-width: 500px;
+    width: 100%;
     margin: 12px auto 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
   }
   .h2-image-card.product-image img {
-    max-height: 350px;
+    max-height: none;
     object-fit: contain;
     background: transparent;
     padding: 0;

@@ -1,0 +1,270 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Review Completo do Nexx SX100: Estilo, Conforto e Tecnologia';
+const description = 'Análise detalhada do capacete Nexx SX100. Descubra se este modelo português com design aerodinâmico e sistema X-COM é a escolha certa para você.';
+const canonical = 'https://jovemapan.com.br/nexx-sx100-review/';
+const author = 'Pamela Pan';
+const publishDate = '2026-01-01';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png';
+
+const views = '15K VIEWS';
+const comments = '12 COMMENTS';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. Design e Aerodinâmica', href: '#design' },
+  { label: '3. Viseira e Campo de Visão', href: '#viseira' },
+  { label: '4. Conforto e Interior', href: '#conforto' },
+  { label: '5. Ventilação (Air Dynamic System)', href: '#ventilacao' },
+  { label: '6. Tecnologia X-COM', href: '#tecnologia' },
+  { label: '7. Especificações Técnicas', href: '#especificacoes' },
+  { label: '8. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'REVIEWS', href: '/category/reviews/' },
+  { label: 'NEXX', href: '#' },
+  { label: 'SX100', href: '#' },
+  { label: 'TECNOLOGIA', href: '#' },
+  { label: '2026', href: '#' },
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const extraProducts = [
+  {
+    badge: 'Aproveite frete GRÁTIS',
+    badgeStyle: 'frete',
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9',
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S',
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ',
+  },
+];
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  extraProducts={extraProducts}
+>
+  <p id="introducao">
+    O <strong>Nexx SX.100</strong> é um daqueles capacetes que chama a atenção logo de cara pelo seu design moderno e proposta urbana premium. Fabricado pela marca portuguesa Nexx Helmets, este modelo foi projetado para oferecer um equilíbrio entre performance aerodinâmica e praticidade para o dia a dia, sem abrir mão de tecnologias encontradas em modelos de categorias superiores.
+  </p>
+
+  <h2 id="design">Design e Aerodinâmica</h2>
+  <div class="product-section">
+    <h3>Nexx SX100 Core</h3>
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png" alt="Capacete Nexx SX100 Core" />
+    </div>
+    <p>
+      O SX.100 passou por extensos testes em túnel de vento e simulações computacionais para garantir um casco leve e aerodinâmico. O resultado é um capacete estável em velocidades mais altas, com baixo nível de ruído e turbulência.
+    </p>
+    <p>
+      O spoiler traseiro não é apenas um detalhe estético; ele desempenha um papel crucial na estabilidade, reduzindo a fadiga do pescoço em viagens mais longas ou trajetos rápidos em rodovias.
+    </p>
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Excelente aerodinâmica e estabilidade em rodovias.</li>
+          <li>Design moderno e agressivo.</li>
+          <li>Campo de visão (X-Swift) extremamente amplo.</li>
+          <li>Preparação completa para o sistema X-COM.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Material termoplástico ATR (mais pesado que fibra).</li>
+          <li>Preço premium em comparação a modelos básicos.</li>
+        </ul>
+      </div>
+    </div>
+    <p><strong>Ideal para:</strong> motociclistas urbanos e de estrada que buscam tecnologia Sena integrada e design europeu.</p>
+    <div class="btn-buy-container">
+      <a href="https://meli.la/1R19ZW3" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+      <a href="https://amzn.to/4oPtAaJ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+    </div>
+  </div>
+
+  <h2 id="viseira">Viseira e Campo de Visão</h2>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/viseira-Nexx-Sx100-Skyway-PretoCinza-Fosco.png" alt="Viseira do Nexx SX100" />
+    </div>
+    <p>
+      Um dos grandes destaques do Nexx SX100 é o seu campo de visão ampliado (X-Swift). A viseira é de classe óptica 1, com tratamento anti-risco e preparada para o uso de Pinlock (incluso em muitas versões).
+    </p>
+    <ul>
+      <li><strong>Sistema X-Swift:</strong> Permite a troca rápida da viseira em menos de 8 segundos, sem o uso de ferramentas.</li>
+      <li><strong>Óculos Solar Interno:</strong> O SX.100 conta com uma viseira solar interna de 80% de tonalidade, acionada por um botão lateral de fácil acesso, ideal para dias ensolarados.</li>
+    </ul>
+  </div>
+
+  <h2 id="conforto">Conforto e Interior</h2>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/capacete-Nexx-Sx100-Skyway-PretoCinza-Fosco-1.png" alt="Interior do Nexx SX100" />
+    </div>
+    <p>
+      O interior do SX.100 é revestido com o tecido <strong>X-MART Dry</strong>, que possui um tratamento especial para secagem rápida e toque suave. Além disso, as forrações são totalmente removíveis e laváveis, com propriedades antialérgicas e antibacterianas.
+    </p>
+    <p>
+      O ajuste ao rosto é firme, mas confortável, proporcionando uma excelente vedação sonora, o que o torna um dos capacetes mais silenciosos da sua categoria.
+    </p>
+  </div>
+
+  <h2 id="ventilacao">Ventilação (Air Dynamic System)</h2>
+  <p>
+    O sistema de ventilação, chamado de <strong>Air Dynamic System</strong>, conta com uma entrada de ar frontal generosa e uma entrada superior, além de dois extratores traseiros integrados ao spoiler. Esse sistema garante uma circulação constante de ar fresco dentro do capacete, mantendo a temperatura agradável mesmo em dias quentes.
+  </p>
+
+  <h2 id="tecnologia">Tecnologia X-COM</h2>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/viseira-Nexx-Sx100-Skyway-PretoCinza-Fosco-58-3.png" alt="Sistema X-COM no Nexx SX100" />
+    </div>
+    <p>
+      O SX.100 vem preparado de fábrica para receber o sistema de intercomunicação <strong>Nexx X-COM</strong>, desenvolvido em parceria com a renomada Sena. O capacete já possui os nichos para os alto-falantes e a fiação, permitindo uma instalação limpa que não compromete o design ou a aerodinâmica.
+    </p>
+  </div>
+
+
+  <h2 id="especificacoes">Especificações Técnicas</h2>
+  <div class="specs-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th>Detalhes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Material do Casco</td>
+          <td>ATR (Advanced Thermo Resin) / Termoplástico</td>
+        </tr>
+        <tr>
+          <td>Peso aproximado</td>
+          <td>1525g +/- 50g</td>
+        </tr>
+        <tr>
+          <td>Viseira</td>
+          <td>PC Lexan com sistema X-SWIFT e classe óptica 1</td>
+        </tr>
+        <tr>
+          <td>Óculos Solar</td>
+          <td>Integrado, 80% de fumo</td>
+        </tr>
+        <tr>
+          <td>Forração</td>
+          <td>Tecidos X-MART Dry, removível e lavável</td>
+        </tr>
+        <tr>
+          <td>Fecho</td>
+          <td>Micrométrico em aço inoxidável</td>
+        </tr>
+        <tr>
+          <td>Certificações</td>
+          <td>ECE/22-05, DOT FMVSS 218 e NBR-7471:2001</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="affiliate-buttons">
+    <a href="https://meli.la/1R19ZW3" target="_blank" rel="nofollow noopener noreferrer" class="btn ml">
+      Ver Preço no Mercado Livre
+    </a>
+    <a href="https://amzn.to/4oPtAaJ" target="_blank" rel="nofollow noopener noreferrer" class="btn amazon">
+      Ver Preço na Amazon
+    </a>
+  </div>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p id="conclusao">
+    O <strong>Nexx SX.100</strong> é uma opção sólida para o motociclista urbano e para quem faz pequenas viagens. Ele oferece um pacote tecnológico e de conforto que costuma ser encontrado apenas em modelos mais caros. Se você valoriza visibilidade, silêncio e um design que foge do comum, o SX.100 certamente deve estar na sua lista de opções.
+  </p>
+
+  <p>
+    <strong>Leia também:</strong>
+    <ul>
+      <li><a href="/axxis-vs-peels/">Axxis vs Peels: Qual escolher?</a></li>
+      <li><a href="/capacete-ls2-review/">Review Completo dos Capacetes LS2</a></li>
+    </ul>
+  </p>
+</PostLayout>
