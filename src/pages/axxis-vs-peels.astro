@@ -2,19 +2,232 @@
 import PostLayout from '../layouts/PostLayout.astro';
 
 const title = 'Axxis vs Peels: Tire Sua Dúvida e Faça a Melhor Escolha';
-const description = 'Comparativo entre Axxis e Peels. Qualidade, conforto e custo-benefício para você escolher o melhor capacete.';
+const description = 'Comparativo completo entre os capacetes Axxis e Peels. Analisamos design, segurança, conforto e custo-benefício para ajudar você a escolher o melhor.';
 const canonical = 'https://jovemapan.com.br/axxis-vs-peels/';
+const author = 'Pamela Pan';
+const publishDate = '2026-03-27';
+const category = 'Reviews';
+const categoryHref = '/category/reviews/';
+const coverImage = '/images/Comparativo Completo Capacetes LS2 ou Axxis Qual Escolher.png';
+
+const views = '22K VIEWS';
+const comments = '8 COMMENTS';
+
+const indice = [
+  { label: '1. Introdução', href: '#introducao' },
+  { label: '2. ASX Axxis Eagle', href: '#axxis-eagle' },
+  { label: '3. Peels Icon Fast', href: '#peels-icon' },
+  { label: '4. Qual escolher?', href: '#comparativo' },
+  { label: '5. Perguntas Frequentes', href: '#faq' },
+  { label: '6. Conclusão', href: '#conclusao' },
+];
+
+const tags = [
+  { label: 'REVIEWS', href: '/category/reviews/' },
+  { label: 'AXXIS', href: '#' },
+  { label: 'PEELS', href: '#' },
+  { label: 'COMPARATIVO', href: '#' },
+  { label: '2026', href: '#' },
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const extraProducts = [
+  {
+    badge: 'Aproveite frete GRÁTIS',
+    badgeStyle: 'frete',
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9',
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S',
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ',
+  },
+];
 ---
 
 <PostLayout
   title={title}
   description={description}
   canonical={canonical}
-  category="Reviews"
-  categoryHref="/category/reviews/"
-  publishDate="2026-01-01"
-  author="Pamela Pan"
+  author={author}
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  views={views}
+  comments={comments}
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  extraProducts={extraProducts}
 >
-  <h2>Conteúdo em breve</h2>
-  <p>Este post está sendo preparado. Em breve traremos a análise completa.</p>
+  <p class="post-lead" id="introducao">
+    Se você está em busca de um capacete que una segurança, conforto e estilo, o <strong>ASX Axxis Eagle</strong> e o <strong>Peels Icon Fast</strong> são duas das opções mais populares no mercado brasileiro. Ambos oferecem design moderno e preços competitivos, mas qual deles é a melhor escolha para o seu perfil? Nesta análise, comparamos os principais detalhes técnicos, prós e contras de cada modelo.
+  </p>
+
+  <h2 id="axxis-eagle">1. ASX Axxis Eagle (Brilho Preto Tiffany)</h2>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete-Moto-Asx-Axxis-Eagle-Masculino.png" alt="Capacete Moto ASX Axxis Eagle" />
+    </div>
+    <p>
+      O <strong>ASX Axxis Eagle</strong> é conhecido por seu design aerodinâmico inspirado em modelos de alta performance. É um capacete que se destaca pela leveza e pelo sistema de ventilação eficiente, sendo uma escolha excelente para quem busca um visual esportivo e conforto em velocidades mais altas.
+    </p>
+
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Design aerodinâmico e moderno.</li>
+          <li>Ventilação eficiente com múltiplas entradas.</li>
+          <li>Estrutura leve, reduzindo a fadiga no pescoço.</li>
+          <li>Viseira com excelente campo de visão.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Preço ligeiramente superior aos modelos de entrada.</li>
+          <li>Isolamento acústico pode ser melhorado em altas velocidades.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/3G2zuEj" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/2jdnGng" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="peels-icon">2. Peels Icon Fast (Preto Fosco Rosa)</h2>
+  <div class="product-section">
+    <div class="h2-image-card product-image">
+      <img src="/images/Capacete Fechado Moto Peels Icon Fast Preto Fosco com Rosa 58.png" alt="Capacete Moto Peels Icon Fast" />
+    </div>
+    <p>
+      O <strong>Peels Icon Fast</strong> é um dos queridinhos do público urbano. Com uma proposta de custo-benefício imbatível, ele entrega um interior extremamente acolchoado e confortável, além de grafismos vibrantes que agradam quem busca personalização. É fabricado pela Starplast, garantindo qualidade nacional e facilidade de peças.
+    </p>
+
+    <div class="pros-cons-grid">
+      <div class="pc-col">
+        <h4 class="pros">PRÓS</h4>
+        <ul class="pc-list pros">
+          <li>Excelente relação custo-benefício.</li>
+          <li>Interior acolchoado de alta qualidade.</li>
+          <li>Grande variedade de cores e grafismos.</li>
+          <li>Certificação INMETRO rigorosa.</li>
+        </ul>
+      </div>
+      <div class="pc-col">
+        <h4 class="cons">CONTRAS</h4>
+        <ul class="pc-list cons">
+          <li>Design menos aerodinâmico que o Axxis.</li>
+          <li>Viseira de troca ligeiramente mais complexa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-buy-container">
+      <a href="https://amzn.to/4kRQgoS" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
+      <a href="https://mercadolivre.com/sec/1qdAmxa" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+    </div>
+  </div>
+
+  <h2 id="comparativo">Qual escolher: Axxis ou Peels?</h2>
+  <p>
+    A decisão entre <strong>Axxis ou Peels</strong> depende do seu estilo de uso. Se você prioriza <strong>aerodinâmica, leveza e um visual mais agressivo</strong> para pequenas viagens ou pilotagem mais rápida, o <strong>ASX Axxis Eagle</strong> é a melhor pedida.
+  </p>
+  <p>
+    Por outro lado, se você busca <strong>conforto extremo para o dia a dia urbano</strong>, facilidade de manutenção e o melhor preço possível sem abrir mão da segurança, o <strong>Peels Icon Fast</strong> é a escolha lógica. Ambos são excelentes capacetes certificados pelo INMETRO.
+  </p>
+
+  <h2 id="faq">Perguntas Frequentes</h2>
+  
+  <h3>O Capacete Axxis é bom?</h3>
+  <p>
+    Sim, os capacetes Axxis (agora sob a marca ASX no Brasil) são muito bem avaliados pela sua construção em ABS de alta pressão e pelo forro removível de qualidade superior. Eles oferecem um estilo premium por um preço de intermediário.
+  </p>
+
+  <h3>Quem fabrica o capacete Peels?</h3>
+  <p>
+    A Peels é uma marca da <strong>Starplast</strong>, uma das maiores e mais tradicionais fabricantes de capacetes do Brasil, também responsável pelas marcas Bieffe e Fly. Isso garante uma ampla rede de suporte e reposição de peças.
+  </p>
+
+  <h3>Qual capacete é mais seguro?</h3>
+  <p>
+    Ambos possuem a certificação obrigatória do <strong>INMETRO</strong>. Em termos de segurança passiva, ambos são construídos em polímero de alta resistência. Para níveis de segurança superiores (como fibra de carbono ou MIPS), você teria que buscar modelos em faixas de preço bem mais elevadas.
+  </p>
+
+  <h2 id="conclusao">Conclusão</h2>
+  <p>
+    Tanto o Axxis quanto o Peels representam o que há de melhor em termos de equipamento acessível no Brasil em 2026. Independente da sua escolha, lembre-se sempre de conferir o <a href="/tamanho-do-capacete/">tamanho ideal do capacete</a> antes de comprar para garantir a máxima eficácia da proteção.
+  </p>
+  <p>
+    Quer saber mais sobre outras marcas? Confira nossa análise sobre se o <a href="/capacete-norisk-vale-a-pena/">capacete Norisk vale a pena</a> ou nosso guia dos <a href="/capacete-de-moto-seguro/">capacetes mais seguros do mercado</a>.
+  </p>
+
+  <h2>Leia também</h2>
+  <ul>
+    <li><a href="/melhor-capacete/">Guia: os melhores capacetes de 2026</a></li>
+    <li><a href="/custo-beneficio/">Melhores capacetes custo-benefício</a></li>
+    <li><a href="/capacete-texx-review/">Review completo do Capacete Texx</a></li>
+    <li><a href="/comparacao-shark-vs-ls2/">Comparativo: Shark vs LS2</a></li>
+  </ul>
 </PostLayout>
