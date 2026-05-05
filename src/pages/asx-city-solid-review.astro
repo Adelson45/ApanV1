@@ -11,6 +11,9 @@ const category = 'Reviews';
 const categoryHref = '/category/reviews/';
 const coverImage = '/images/Capacete Moto ASX City Solid Preto Fosco.png';
 
+const views = '12K VIEWS';
+const comments = '8 COMMENTS';
+
 const indice = [
   { label: '1. Análise Completa', href: '#analise' },
   { label: '2. Principais diferenciais', href: '#diferenciais' },
@@ -44,6 +47,69 @@ const authorBio = {
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
 };
+
+const extraProducts = [
+  {
+    badge: 'Aproveite frete GRÁTIS',
+    badgeStyle: 'frete',
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9',
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S',
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC',
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto',
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ',
+  },
+];
 ---
 
 <PostLayout
@@ -56,23 +122,26 @@ const authorBio = {
   category={category}
   categoryHref={categoryHref}
   coverImage={coverImage}
+  views={views}
+  comments={comments}
   indice={indice}
   tags={tags}
   authorBio={authorBio}
   featuredProduct={featuredProduct}
+  extraProducts={extraProducts}
 >
 
   <p class="post-lead" id="analise">
     Se você está em busca de um capacete que une <strong>segurança, conforto e estilo</strong>, o <strong>Capacete Moto ASX City Solid Preto Fosco</strong> é uma opção imperdível. Com um design moderno e sóbrio, este capacete se destaca pelo acabamento em preto fosco, perfeito para quem aprecia uma estética discreta e elegante.
   </p>
 
-  <p><em>Data da revisão: Junho de 2025 | Testado por: Rodrigo Santiago</em></p>
+  <p><em>Data da revisão: Junho de 2025 | Testado por: Rodrigo Santiago | <a href="https://amzn.to/4kLPoSx" target="_blank" rel="nofollow noopener noreferrer">www.amazon.com.br</a></em></p>
 
   <div class="product-section">
     <div class="h2-image-card product-image">
       <img src="/images/Capacete Moto ASX City Solid Preto Fosco.png" alt="Capacete ASX City Solid Preto Fosco" />
     </div>
-    <div class="pros-cons-grid">
+    <div class="pros-cons-grid" id="pros-contras">
       <div class="pc-col">
         <h4 class="pros">PRÓS</h4>
         <ul class="pc-list pros">
@@ -102,7 +171,7 @@ const authorBio = {
 
   <p>Um dos principais diferenciais do ASX City é sua <strong>construção robusta em policarbonato</strong>, que oferece alta resistência a impactos, garantindo a proteção que todo motociclista precisa. O <strong>sistema de ventilação eficiente</strong> mantém a cabeça fresca durante os passeios, mesmo nos dias mais quentes.</p>
 
-  <p>O interior do capacete é <strong>acolchoado e removível</strong>, proporcionando conforto durante longos trajetos, além de facilitar a higienização. As tiras de ajuste são práticas e seguras, permitindo que você personalize o encaixe.</p>
+  <p>O interior do capacete é <strong>acolchoado e removível</strong>, proporcionando conforto durante longos trajetos, além de facilitar a higienização. As tiras de ajuste são práticas e seguras, permitindo que você personalize o encaixe e tenha uma experiência ainda mais confortável.</p>
 
   <div class="product-section">
     <div class="h2-image-card product-image">
@@ -116,12 +185,12 @@ const authorBio = {
   </div>
 
   <h2 id="seguranca">Segurança e Construção</h2>
-  <p>Em termos de segurança, o <strong>Capacete Moto ASX City Solid</strong> atende às normas de qualidade e segurança exigidas pelo <a href="/capacetes-selo-inmetro/">INMETRO</a>, proporcionando tranquilidade em suas andanças. O capacete possui:</p>
+  <p>Em termos de segurança, o <strong>Capacete Moto ASX City Solid</strong> atende às normas de qualidade e segurança exigidas pelo <a href="/capacetes-com-selo-inmetro/">INMETRO</a>, proporcionando tranquilidade em suas andanças. O capacete possui:</p>
   <ul>
-    <li><strong>Casco em policarbonato</strong> de alta resistência.</li>
+    <li><strong>Casco em policarbonato</strong> de alta resistência (ABS injetado de alto impacto).</li>
     <li><strong>EPS interno</strong> para absorção de impactos.</li>
     <li><strong>Certificações DOT e ECE</strong>, que comprovam conformidade com padrões internacionais de segurança.</li>
-    <li><strong>Viseira em policarbonato antirrisco</strong> com amplo campo de visão.</li>
+    <li><strong>Viseira em policarbonato antirrisco</strong> com amplo campo de visão de 2mm.</li>
     <li><strong>Fecho micrométrico</strong> na jugular para ajuste rápido e seguro.</li>
   </ul>
 
@@ -132,7 +201,7 @@ const authorBio = {
     <div class="h2-image-card product-image">
       <img src="/images/Capacete Moto ASX City Solid Preto Fosco (2).png" alt="Capacete ASX City Solid detalhes" />
     </div>
-    <p>A forração interna é <strong>removível e lavável</strong>, facilitando a higiene no uso diário. O ajuste anatômico garante um encaixe seguro para diferentes formatos de cabeça.</p>
+    <p>A forração interna é <strong>removível e lavável</strong>, feita em tecido antialérgico, facilitando a higiene no uso diário. O ajuste anatômico garante um encaixe seguro para diferentes formatos de cabeça.</p>
     <div class="btn-buy-container">
       <a href="https://amzn.to/4kLPoSx" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
       <a href="https://mercadolivre.com/sec/1W9Mdd2" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
@@ -151,7 +220,7 @@ const authorBio = {
   <p>Os preços variam conforme o modelo, partindo de cerca de R$ 300 e podendo chegar a R$ 1.000 em versões mais completas.</p>
 
   <h3>4. O capacete ASX possui certificação de segurança?</h3>
-  <p>Sim. Conta com certificações DOT e ECE, que comprovam conformidade com padrões internacionais de segurança, além do <a href="/capacetes-selo-inmetro/">selo INMETRO</a> exigido no Brasil.</p>
+  <p>Sim. Conta com certificações DOT e ECE, que comprovam conformidade com padrões internacionais de segurança, além do <a href="/capacetes-com-selo-inmetro/">selo INMETRO</a> exigido no Brasil.</p>
 
   <h3>5. Como deve ser feita a manutenção do capacete ASX?</h3>
   <p>A limpeza deve ser feita com água e sabão neutro. O capacete deve ser substituído após impactos fortes ou aproximadamente 5 anos de uso.</p>
