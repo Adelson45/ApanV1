@@ -75,5 +75,5 @@ export const allReviews: Review[] = [
   { title: 'Review do Capacete Shark Evo', href: '/review-do-capacete-shark-evo/', date: 'Em breve', image: '/images/capacete-shark-preto.png', excerpt: 'Review do Shark Evo. Capacete modular francês com excelente engenharia e tecnologia avançada ...' },
   { title: 'Review do Capacete Shoei X-Spirit 3', href: '/review-do-shoei-x-spirit3/', date: 'Em breve', image: '/images/Capacete Shoei X-Spirit3 Norick 04 Tc-2 60.png', excerpt: 'Análise do Shoei X-Spirit 3. Capacete de pista premium com tecnologia japonesa de ponta ...' },
   { title: 'Review do Capacete HJC i10', href: '/hjc-i10-review/', date: 'Em breve', image: '/images/Capacete de rosto completo HJC i10 Fear.png', excerpt: 'Review do HJC i10. Capacete coreano com excelente acabamento, conforto e relação custo-benefício ...' },
-  { title: 'Review do Capacete Shoei J-Cruise', href: '/review-shoei-j-cruise/', date: 'Em breve', image: '/images/capacete-Shoei-J-Cruise.png', excerpt: 'Análise do Shoei J-Cruise. Capacete aberto premium com viseira solar e máximo conforto ...' }
+  { title: 'Review do Capacete Shoei J-Cruise', href: '/reveiw-do-shoei-j-cruise/', date: 'Em breve', image: '/images/capacete-Shoei-J-Cruise.png', excerpt: 'Análise do Shoei J-Cruise. Capacete aberto premium com viseira solar e máximo conforto ...' }
 ];
