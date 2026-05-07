@@ -6,6 +6,9 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   compressHTML: true,
+  redirects: {
+    '/ls2-ou-norisk': '/ls2-x-norisk'
+  },
   integrations: [sitemap()],
   build: {
     format: 'directory'
