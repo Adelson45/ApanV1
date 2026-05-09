@@ -1,44 +1,43 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
 
-const title = 'Melhores Capacetes de Moto Até R$300 (Guia 2026)';
-const description = 'Confira os 10 melhores capacetes até 300 reais em 2026! Guia completo com opções seguras, baratas e confortáveis para o seu dia a dia. Clique e escolha o seu!';
-const canonical = 'http://localhost:4321/custo-beneficio/ate-300-reais/';
+const title = 'Melhores Capacetes até R$300: Guia 2026 com 10 Opções';
+const description = 'Capacetes até R$300 com bom custo-benefício em 2026. Pro Tork R8, Evolution G6, Liberty Three, Mixs Gladiator e mais — INMETRO garantido a preço baixo.';
+const canonical = 'https://jovemapan.com.br/custo-beneficio/ate-300-reais/';
 const author = 'Pamela Pan';
 const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
-const publishDate = '2026-05-09';
+const publishDate = '2025-06-15';
 const category = 'Custo-Benefício';
 const categoryHref = '/custo-beneficio/';
-const coverImage = '/images/capacete-de-moto-ate-300-reais.png';
+const coverImage = '/images/lista-dos-capacete-de-moo-Mais-Baratos-.png';
 
 const indice = [
-  { label: 'Capacetes até R$300 Vale a pena?', href: '#vale-a-pena' },
-  { label: 'Os 10 Melhores Capacetes até R$ 300 que Avaliamos', href: '#os-10-melhores', children: [
-    { label: '1. Capacete Pro Tork R8', href: '#pro-tork-r8' },
-    { label: '2. Capacete Pro Tork Evolution G6', href: '#pro-tork-evolution-g6' },
-    { label: '3. Capacete Pro Tork New Liberty Three', href: '#pro-tork-new-liberty-three' },
-    { label: '4. Capacete Pro Tork Evolution Evo', href: '#pro-tork-evolution-evo' },
-    { label: '5. Capacete Pro Tork Sport moto', href: '#pro-tork-sport-moto' },
-    { label: '6. Capacete Pro Tork Automático Sm', href: '#pro-tork-automatico-sm' },
-    { label: '7. Capacete Pro Tork New Atomic Skull', href: '#pro-tork-new-atomic-skull' },
-    { label: '8. Capacete Mixs Gladiator Neo', href: '#mixs-gladiator-neo' },
-    { label: '9. Capacete Mixs MX2 Storm', href: '#mixs-mx2-storm' },
-    { label: '10. Capacete Pro Tork New Liberty 3', href: '#pro-tork-new-liberty-3' }
+  { label: 'Capacetes até R$300 valem a pena?', href: '#valem' },
+  { label: 'Top 10 capacetes até R$300', href: '#top10', children: [
+    { label: '1. Pro Tork R8', href: '#protork-r8' },
+    { label: '2. Pro Tork Evolution G6', href: '#evolution-g6' },
+    { label: '3. Pro Tork New Liberty Three', href: '#liberty-three' },
+    { label: '4. Pro Tork Evolution Evo', href: '#evolution-evo' },
+    { label: '5. Pro Tork Sport Moto', href: '#sport-moto' },
+    { label: '6. Pro Tork Automático SM', href: '#automatico-sm' },
+    { label: '7. Pro Tork New Atomic Skull', href: '#atomic-skull' },
+    { label: '8. Mixs Gladiator Neo', href: '#mixs-gladiator' },
+    { label: '9. Mixs MX2 Storm', href: '#mixs-mx2' },
+    { label: '10. Pro Tork New Liberty 3', href: '#liberty3' }
   ]},
-  { label: 'Como escolher o melhor capacete até 300 reais?', href: '#como-escolher' },
+  { label: 'Como escolher capacete até R$300', href: '#como-escolher' },
   { label: 'Perguntas Frequentes', href: '#faq' },
   { label: 'Conclusão', href: '#conclusao' }
 ];
 
 const tags = [
   { label: 'CUSTO-BENEFÍCIO', href: '/custo-beneficio/' },
-  { label: 'ATÉ 300 REAIS', href: '#' },
-  { label: 'GUIA 2026', href: '#' }
+  { label: 'ATÉ R$300', href: '#' }
 ];
 
 const authorBio = {
   name: 'Pamela Pan',
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos.',
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto.',
   image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›'
@@ -53,57 +52,6 @@ const extraProducts = [
     name: 'Capacete Peels Mirage Classic',
     mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
     amazonHref: 'https://amzn.to/3MjKWy9'
-  },
-  {
-    badge: 'Aproveite 32% de DESCONTO',
-    badgeStyle: 'desconto' as const,
-    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
-    imageAlt: 'Intercomunicador V6 Plus para Capacete',
-    name: 'Intercomunicador V6 Plus para Capacete',
-    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
-    amazonHref: 'https://amzn.to/481F17S'
-  },
-  {
-    badge: 'Aproveite 10% de DESCONTO',
-    badgeStyle: 'desconto' as const,
-    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
-    imageAlt: 'Capacete Moto Peels Icon Ekko',
-    name: 'Capacete Moto Peels Icon Ekko',
-    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
-    amazonHref: 'https://amzn.to/4oGNbZT'
-  },
-  {
-    badge: 'Aproveite 20% de DESCONTO',
-    badgeStyle: 'desconto' as const,
-    image: '/images/jaqueta-Texx-Armor-Masculina.png',
-    imageAlt: 'Jaqueta Texx Armor Masculina',
-    name: 'Jaqueta Texx Armor Masculina',
-    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
-    amazonHref: 'https://amzn.to/3K2DQ0e'
-  },
-  {
-    badge: 'Aproveite 20% de DESCONTO',
-    badgeStyle: 'desconto' as const,
-    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
-    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
-    name: 'Capacete Aberto Moto Peels Freeway King Preto',
-    amazonHref: 'https://amzn.to/4a7tpTA'
-  },
-  {
-    badge: 'Aproveite 20% de DESCONTO',
-    badgeStyle: 'desconto' as const,
-    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
-    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
-    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
-    amazonHref: 'https://amzn.to/3MeTrKC'
-  },
-  {
-    badge: 'Aproveite 20% de DESCONTO',
-    badgeStyle: 'desconto' as const,
-    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
-    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
-    name: 'Capacete Nexx Sx100 Core Azul Fosco',
-    amazonHref: 'https://amzn.to/4oPtAaJ'
   }
 ];
 ---
@@ -124,212 +72,233 @@ const extraProducts = [
 >
 
 <p class="post-lead">
-  Encontrar capacetes baratos e bons é o objetivo de muitos motociclistas em 2026, especialmente com o aumento do custo de vida. Se você utiliza a moto para trabalho, deslocamentos urbanos ou lazer aos finais de semana, a segurança não pode ser deixada de lado, mesmo com o orçamento apertado.
+  É possível encontrar um <strong>capacete bom até R$300</strong>? A resposta é sim — desde que com selo INMETRO. Modelos de entrada em ABS injetado oferecem proteção adequada para uso urbano e velocidades médias.
 </p>
 
 <p>
-  Neste guia, selecionamos os melhores capacetes até 300 reais disponíveis no mercado brasileiro. Focamos em modelos que, embora econômicos, garantem a certificação obrigatória e oferecem um bom nível de conforto para o dia a dia. Prepare-se para escolher seu próximo companheiro de estrada.
+  Reunimos os <strong>10 melhores capacetes até R$300 em 2026</strong>, com Pro Tork e Mixs liderando a categoria.
 </p>
 
-<p>
-  Se você busca um capacete que não pese no bolso, acompanhe nossas recomendações e dicas para fazer a escolha certa.
-</p>
+<h2 id="valem">Capacetes até R$300 Vale a pena?</h2>
+<p>Sim, com selo INMETRO. A principal diferença em relação aos modelos premium está no acabamento, peso e isolamento acústico — não na proteção básica certificada.</p>
 
-<h2 id="vale-a-pena">Capacetes até R$300 Vale a pena?</h2>
-<p>
-  Essa é a primeira dúvida que surge: é seguro comprar um capacete nessa faixa de preço? A resposta curta é: sim, desde que tenha o selo do INMETRO.
-</p>
-<p>
-  Capacetes de entrada, como os da Pro Tork e Mixs, são fabricados em ABS injetado, um material resistente a impactos. A principal diferença para modelos mais caros (acima de R$ 600) está no acabamento, isolamento acústico e aerodinâmica.
-</p>
-<p>
-  Para uso urbano, em baixas e médias velocidades, um capacete de até R$ 300 cumpre perfeitamente a função de proteger sua cabeça e evitar multas. É o melhor custo-benefício para quem roda na cidade ou trabalha com entregas.
-</p>
+<h2 id="top10">Os 10 Melhores Capacetes até R$300</h2>
 
-<h2 id="os-10-melhores">Os 10 Melhores Capacetes até R$ 300 que Avaliamos</h2>
-<p>
-  Analisamos o mercado em 2026 e filtramos as opções mais vendidas e bem avaliadas. Confira nossa lista:
-</p>
-
-<h3 id="pro-tork-r8">1. Capacete Pro Tork R8</h3>
+<h3 id="protork-r8">1. Capacete Pro Tork R8</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/CAPACETE FECHADO PRO TORK R8.png" alt="Capacete Pro Tork R8" />
+  <p>Design esportivo com aerofólio. Visual aerodinâmico e forração antialérgica.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Visual aerodinâmico</li><li>Forração antialérgica</li><li>Ventilação eficiente</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Ruído em altas velocidades</li><li>Peso elevado</li></ul>
+    </div>
   </div>
-  <p>O Pro Tork R8 se destaca pelo design esportivo, inspirado em modelos de alta cilindrada. Ele possui um aerofólio traseiro (estético) que dá um visual muito agressivo e moderno. É um dos favoritos para quem busca estilo pagando pouco.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3TD6Ah1" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/33TxmVi" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-evolution-g6">2. Capacete Pro Tork Evolution G6</h3>
+<h3 id="evolution-g6">2. Capacete Pro Tork Evolution G6</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/_Pro Tork Capacete Evolution G6 Factory Racing Fosco .png" alt="Capacete Pro Tork Evolution G6" />
+  <p>Sistema de ventilação eficiente com peças de reposição acessíveis.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Reposição acessível</li><li>Grafismos modernos</li><li>Casco ABS de alto impacto</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Ruído em velocidade</li><li>Peso acima da média</li></ul>
+    </div>
   </div>
-  <p>Este modelo apresenta um sistema de ventilação eficiente e visor em policarbonato, garantindo visibilidade e segurança. O Pro Tork Evolution G6 é ideal para quem busca um capacete com estilo e proteção.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4eflR18" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1VHwH6Z" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-new-liberty-three">3. Capacete Pro Tork New Liberty Three</h3>
+<h3 id="liberty-three">3. Capacete Pro Tork New Liberty Three</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/CAPACETE ABERTO PRO TORK NEW LIBERTY 3 SOLID PRETO.png" alt="Capacete Pro Tork New Liberty Three" />
+  <p>Leveza e conforto — referência urbana.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Custo-benefício excelente</li><li>Ideal urbano</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Proteção limitada em alta velocidade</li></ul>
+    </div>
   </div>
-  <p>O Pro Tork New Liberty Three é conhecido por sua leveza e conforto. Com design aerodinâmico e forro interno antibacteriano, é uma excelente escolha para longas viagens.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4nnf8GI" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1ssaitG" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-evolution-evo">4. Capacete Pro Tork Evolution Evo</h3>
+<h3 id="evolution-evo">4. Capacete Pro Tork Evolution Evo</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/Review do  Capacete Moto Pro Tork Liberty Evolution G8 Evo Fechado.png" alt="Capacete Pro Tork Evolution Evo" />
+  <p>Sistema de ajuste específico, design sóbrio.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Design sóbrio</li><li>Cinta jugular micrométrica</li><li>Estabilidade urbana</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Forração não removível</li><li>Viseira pode embaçar</li></ul>
+    </div>
   </div>
-  <p>Outra opção da linha Pro Tork, o Evolution conta com um sistema de ajuste que proporciona um encaixe perfeito na cabeça, aumentando a segurança durante a pilotagem.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4lmrUDu" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1oUz5Da" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-sport-moto">5. Capacete Pro Tork Sport moto</h3>
+<h3 id="sport-moto">5. Capacete Pro Tork Sport Moto</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/CAPACETE FECHADO PRO TORK SPORT MOTO 788 PRETO ROSA .png" alt="Capacete Pro Tork Sport moto" />
+  <p>Robusto com visor amplo — um dos mais baratos do mercado.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Mais barato do mercado</li><li>Leveza</li><li>INMETRO certificado</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Acabamento simples</li><li>Ventilação inferior</li></ul>
+    </div>
   </div>
-  <p>Com um estilo robusto, o New Liberty Four é ideal para quem procura um capacete que una segurança e conforto. Seu visor amplo proporciona excelente campo de visão.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4egaK85" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1AsSUKC" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-automatico-sm">6. Capacete Pro Tork Automático Sm</h3>
+<h3 id="automatico-sm">6. Capacete Pro Tork Automático SM</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/CAPACETE-FECHADO-PRO-TORK-automatico-1.webp" alt="Capacete Pro Tork Automático Sm" />
+  <p>Escamoteável com visor móvel.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Abertura frontal prática</li><li>Bom encaixe</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Travamento frágil</li><li>Design mais antigo</li></ul>
+    </div>
   </div>
-  <p>Este capacete escamoteável é perfeito para quem busca versatilidade. A possibilidade de abrir e fechar o visor facilmente é um grande diferencial para quem utiliza a moto no dia a dia.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/468UNhZ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/25zg7Ku" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-new-atomic-skull">7. Capacete Pro Tork New Atomic Skull</h3>
+<h3 id="atomic-skull">7. Capacete Pro Tork New Atomic Skull</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/CAPACETE ABERTO PRO TORK NEW ATOMIC SKULL.png" alt="Capacete Pro Tork New Atomic Skull" />
+  <p>Design arrojado e moderno com tema caveira.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Estilo marcante</li><li>Boa aerodinâmica</li><li>Visão clara</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Pouco acolchoamento</li><li>Proteção do queixo limitada</li></ul>
+    </div>
   </div>
-  <p>Com um design arrojado, o New Atomic Skull se destaca pela sua estética e pela proteção que oferece, sendo uma escolha popular entre motociclistas jovens.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/45EgINT" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/2B4TLAk" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="mixs-gladiator-neo">8. Capacete Mixs Gladiator Neo</h3>
+<h3 id="mixs-gladiator">8. Capacete Mixs Gladiator Neo</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/Capacete Escamoteável MIXS Gladiator Neo Fosco 56.png" alt="Capacete Mixs Gladiator Neo" />
+  <p>Visual agressivo com casco resistente.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Design estiloso</li><li>Casco resistente</li><li>Viseira removível</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Mais ruidoso</li><li>Formato de viseira específico</li></ul>
+    </div>
   </div>
-  <p>O Gladiator Neo é um capacete que oferece um ótimo custo-benefício, combinando segurança e conforto, além de um design que agrada a diversos gostos.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3T9IZED" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1uoSQc9" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="mixs-mx2-storm">9. Capacete Mixs MX2 Storm</h3>
+<h3 id="mixs-mx2">9. Capacete Mixs MX2 Storm</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/Capacete Mixs MX5 Super Speed Fosco 62 Cinza Vermelho.png" alt="Capacete Mixs MX2 Storm" />
+  <p>Motocross, leve e com ótima ventilação.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Casco ABS de alta resistência</li><li>Grafismos duráveis</li><li>Preço competitivo</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Sem óculos de proteção</li><li>Viseira risca facilmente</li></ul>
+    </div>
   </div>
-  <p>Ideal para quem pratica motocross, o MX2 Storm é leve e possui um potente sistema de ventilação. Sua estrutura robusta garante proteção em terrenos acidentados.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3ZPhQuu" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
-    <a href="https://mercadolivre.com/sec/2B4TLAk" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="pro-tork-new-liberty-3">10. Capacete Pro Tork New Liberty 3</h3>
+<h3 id="liberty3">10. Capacete Pro Tork New Liberty 3</h3>
 <div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/_CAPACETE ABERTO PRO TORK NEW LIBERTY 3 PRO.png" alt="Capacete Pro Tork New Liberty 3" />
+  <p>Compacto e leve — melhor preço da categoria.</p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros"><li>Melhor preço da categoria</li><li>Manutenção acessível</li><li>Cabe em baús</li></ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons"><li>Resistência da viseira limitada</li><li>Sem isolamento acústico</li></ul>
+    </div>
   </div>
-  <p>Compacto e leve, esse modelo é uma ótima opção para quem busca um capacete que não comprometa a mobilidade, sem abrir mão da segurança.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3ZNn5L5" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1jjKy6y" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<p>
-  Antes de conferir a lista, é fundamental entender os critérios de uma boa escolha. Analisar estes pontos garante que você invista seu dinheiro em segurança e conforto, e não em uma futura dor de cabeça.
-</p>
-
-<h2 id="como-escolher">Como escolher o melhor capacete até 300 reais?</h2>
-
-<h3>Tamanho e ajuste</h3>
-<p>
-  A segurança começa com o ajuste perfeito. O capacete deve ficar justo, sem pontos de pressão, e firme na cabeça.
-</p>
-<p>
-  <strong>Como medir:</strong> Use uma fita métrica na altura das sobrancelhas para medir a circunferência da sua cabeça.<br>
-  <strong>Compare:</strong> Use a medida para consultar a tabela de tamanhos do fabricante.<br>
-  <strong>Dica de Ouro:</strong> Sempre que possível, experimente o capacete antes de comprar. <a href="/como-medir-capacete/">Veja nosso guia completo de como medir o tamanho do capacete</a>.
-</p>
-
-<h3>Material</h3>
-<p>
-  Nesta faixa de preço, o material padrão é o ABS injetado de alto impacto. Ele oferece ótima resistência contra impactos e perfurações, atendendo a todas as normas de segurança com um excelente custo-benefício.
-</p>
-
-<h3>Ventilação</h3>
-<p>
-  Pilotar no calor exige um bom fluxo de ar. Verifique se o capacete possui entradas de ar frontais e superiores adequadas para garantir ventilação durante os trajetos em dias mais quentes.
-</p>
-
-<h3>Viseira</h3>
-<p>
-  <strong>Praticidade:</strong> Sistema de troca fácil. Dê preferência a modelos com viseira de no mínimo 2mm com tratamento antirrisco.
-</p>
-
-<h3>Certificação</h3>
-<p>
-  <strong>Item Inegociável:</strong> Todo capacete no Brasil precisa ter o selo de certificação do INMETRO. Ele é a garantia de que o produto passou por testes rigorosos de segurança. Se não tiver o selo, não compre.
-</p>
+<h2 id="como-escolher">Como Escolher o Melhor Capacete até R$300?</h2>
+<ul>
+  <li><strong>Tamanho e ajuste:</strong> meça na altura das sobrancelhas.</li>
+  <li><strong>Material:</strong> ABS injetado de alto impacto é o padrão da categoria.</li>
+  <li><strong>Ventilação:</strong> entradas frontais e saídas traseiras.</li>
+  <li><strong>Viseira:</strong> policarbonato 2mm+ com sistema fácil de troca.</li>
+  <li><strong>Certificação INMETRO:</strong> obrigatória.</li>
+</ul>
 
 <h2 id="faq">Perguntas Frequentes</h2>
 
-<h3>Quais são os melhores capacetes por até R$ 300?</h3>
-<p>
-  Os capacetes Pro Tork e Mixs são amplamente reconhecidos pela sua qualidade e segurança dentro dessa faixa de preço.
-</p>
+<h3>Quais são os melhores capacetes até R$300?</h3>
+<p>Pro Tork e Mixs destacam-se pela qualidade e segurança nesta faixa.</p>
 
-<h3>Quais as vantagens do Capacete Pro Tork?</h3>
-<p>
-  Os capacetes Pro Tork são conhecidos por sua durabilidade, conforto e design arrojado, além de serem amplamente utilizados por motociclistas pelo excelente custo-benefício.
-</p>
+<h3>Quais as vantagens dos Pro Tork?</h3>
+<p>Durabilidade, conforto e design moderno — amplamente utilizados por motociclistas brasileiros.</p>
 
-<h3>Qual a diferença entre o Capacete LS2 masculino e feminino?</h3>
-<p>
-  A principal diferença está no design e no ajuste, sendo os capacetes femininos geralmente mais estilizados e com tamanhos específicos para melhor encaixe, possuindo grafismos mais delicados.
-</p>
+<h3>Diferença entre LS2 masculino e feminino?</h3>
+<p>Design diferenciado e ajustes específicos. Estruturalmente, mesma proteção.</p>
 
 <h2 id="conclusao">Conclusão</h2>
 <p>
-  Escolher um capacete de qualidade é fundamental para a segurança de qualquer motociclista. Com as opções apresentadas neste artigo, é possível encontrar modelos que aliam <a href="/custo-beneficio/">custo-benefício</a> e qualidade. Não se esqueça de considerar os fatores mencionados para garantir uma escolha assertiva. Invista na sua segurança e aproveite suas experiências sobre duas rodas com tranquilidade.
+  Comprar um capacete até R$300 é totalmente viável e seguro, desde que <strong>certificado pelo INMETRO</strong>. Pro Tork e Mixs lideram pelo equilíbrio preço-qualidade.
 </p>
 <p>
-  Se você quiser conversar sobre este artigo ou qualquer outra coisa relacionada ao motociclismo, junte-se a nós siga-nos no <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="nofollow noopener noreferrer">Facebook</a>.
+  Veja também os <a href="/custo-beneficio/ate-400-reais/">capacetes até R$400</a> e os <a href="/custo-beneficio/mais-barato/">10 mais baratos do mercado</a>.
 </p>
 
 </PostLayout>
