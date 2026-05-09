@@ -1,43 +1,47 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
 
-const title = 'Os Melhores Capacetes de Moto até 400 Reais em 2026';
-const description = 'Top 10 capacetes de moto até R$400 em 2026. Mixs, Pro Tork, EBF, Fly e mais — modelos integrais, abertos e escamoteáveis com certificação INMETRO.';
+const title = 'Os 10 Melhores Capacetes de Moto de Até 400 Reais em 2026';
+const description = 'Procurando um capacete bom e barato? Veja a lista com os 10 melhores modelos até R$400 em 2026. Guia completo para uma compra segura e econômica.';
 const canonical = 'https://jovemapan.com.br/custo-beneficio/ate-400-reais/';
 const author = 'Pamela Pan';
 const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
-const publishDate = '2025-09-12';
+const publishDate = '2026-05-09';
 const category = 'Custo-Benefício';
 const categoryHref = '/custo-beneficio/';
-const coverImage = '/images/Capacete LS2 Masculino FF808 Road Bicomposto Oculos Moto.png';
+const coverImage = '/images/melhor-Capacete-de-moto-ate-400-reais.png';
 
 const indice = [
-  { label: 'Por que investir em qualidade', href: '#qualidade' },
-  { label: 'Como escolher capacete até R$400', href: '#como-escolher' },
-  { label: 'Top 10 capacetes até R$400', href: '#top10', children: [
-    { label: '1. Mixs Gladiator Neo Articulado', href: '#mixs-gladiator' },
-    { label: '2. Pro Tork Liberty Three', href: '#liberty-three' },
-    { label: '3. Fly New Jet', href: '#fly-newjet' },
-    { label: '4. Pro Tork R8', href: '#protork-r8' },
-    { label: '5. San Marino Classic', href: '#san-marino' },
-    { label: '6. EBF New Spark Flash', href: '#ebf-spark-flash' },
-    { label: '7. EBF Thunder Open', href: '#ebf-thunder' },
-    { label: '8. Pro Tork Evolution G6', href: '#evolution-g6' },
-    { label: '9. Mirage Classic', href: '#mirage-classic' },
-    { label: '10. Liberty Evolution G8 Evo', href: '#evolution-g8' }
+  { label: 'Por que Investir em um Capacete de Qualidade é Essencial?', href: '#importancia' },
+  { label: 'Como Escolher o Capacete Ideal até R$ 400', href: '#guia-de-compra' },
+  { label: 'Os 10 Melhores Capacetes de Moto Até 400 Reais', href: '#top10', children: [
+    { label: '1. Capacete Mixs Gladiator Neo', href: '#mixs-gladiator' },
+    { label: '2. Capacete New Liberty Three', href: '#liberty-three' },
+    { label: '3. Capacete Fly New Jet', href: '#fly-new-jet' },
+    { label: '4. Capacete R8 Pro Tork', href: '#r8' },
+    { label: '5. Capacete San Marino Classic', href: '#san-marino' },
+    { label: '6. Capacete EBF New Spark Flash', href: '#ebf-spark' },
+    { label: '7. Capacete EBF Thunder Open', href: '#ebf-thunder' },
+    { label: '8. Capacete Evolution G6 Pro Tork', href: '#g6' },
+    { label: '9. Capacete Mirage Classic', href: '#mirage' },
+    { label: '10. Capacete Liberty Evolution G8', href: '#g8' }
   ]},
-  { label: 'Perguntas Frequentes', href: '#faq' },
+  { label: 'Diferença entre LS2 e Norisk?', href: '#ls2-norisk' },
+  { label: 'Capacetes aprovados pelo INMETRO', href: '#inmetro' },
+  { label: 'Marca mais confiável', href: '#marcas' },
+  { label: 'Quando trocar o capacete?', href: '#troca' },
   { label: 'Conclusão', href: '#conclusao' }
 ];
 
 const tags = [
   { label: 'CUSTO-BENEFÍCIO', href: '/custo-beneficio/' },
-  { label: 'ATÉ R$400', href: '#' }
+  { label: 'BARATO', href: '#' },
+  { label: 'ATÉ 400 REAIS', href: '#' }
 ];
 
 const authorBio = {
   name: 'Pamela Pan',
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto.',
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
   image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›'
@@ -45,13 +49,64 @@ const authorBio = {
 
 const extraProducts = [
   {
+    badge: 'Aproveite frete GRÁTIS',
+    badgeStyle: 'frete' as const,
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Peels Mirage Classic',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+    amazonHref: 'https://amzn.to/3MjKWy9'
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S'
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT'
+  },
+  {
     badge: 'Aproveite 20% de DESCONTO',
     badgeStyle: 'desconto' as const,
-    image: '/images/Capacete Aberto Moto Peels Freeway King Preto.png',
-    imageAlt: 'Peels Freeway King',
-    name: 'Capacete Peels Freeway King',
-    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
     amazonHref: 'https://amzn.to/4a7tpTA'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ'
   }
 ];
 ---
@@ -72,111 +127,100 @@ const extraProducts = [
 >
 
 <p class="post-lead">
-  Procurar um <strong>capacete bom até R$400</strong> exige equilibrar segurança, conforto e estilo dentro do orçamento. A boa notícia: o mercado nacional oferece dezenas de modelos com certificação <a href="/capacetes-com-selo-inmetro/">INMETRO</a> nessa faixa.
+  Pilotar uma motocicleta é sinônimo de liberdade, agilidade e paixão. Mas, antes de sentir o vento no rosto, há um item que é absolutamente inegociável: o capacete. Ele não é apenas um acessório obrigatório por lei, mas o principal equipamento que protege sua vida.
 </p>
 
 <p>
-  Reunimos os <strong>10 melhores capacetes até R$400 em 2026</strong>, abrangendo integrais, abertos e escamoteáveis para diferentes perfis de motociclistas.
+  A dúvida que muitos motociclistas, especialmente os iniciantes, têm é: preciso gastar uma fortuna para estar seguro? A resposta é não! É totalmente possível encontrar um capacete de qualidade, seguro e confortável sem esvaziar o bolso.
 </p>
 
-<h2 id="qualidade">Por que Investir em um Capacete de Qualidade é Essencial</h2>
-<p>Um capacete de qualidade se reflete em três pilares: <strong>Segurança, Conforto, Legalidade</strong>. Eles absorvem impactos, reduzem fadiga em viagens e cumprem a exigência INMETRO.</p>
+<p>
+  Neste guia completo, vamos provar isso. Analisamos dezenas de modelos e selecionamos os 10 melhores capacetes de moto de até 400 reais disponíveis no mercado em 2026. Além da lista, preparamos um guia de compra detalhado para te ajudar a entender o que realmente importa na hora de escolher o capacete perfeito para você.
+</p>
 
-<h2 id="como-escolher">Como Escolher o Capacete Ideal até R$400</h2>
-
-<h3>1. Tipo de capacete</h3>
+<h2 id="importancia">Por que Investir em um Capacete de Qualidade é Essencial?</h2>
+<p>Muitos veem o capacete como um gasto, mas ele é o investimento mais importante que um motociclista pode fazer. A qualidade do seu capacete se reflete em três pilares fundamentais:</p>
 <ul>
-  <li><strong>Integral (Fechado):</strong> modelo mais seguro — proteção total incluindo queixo.</li>
-  <li><strong>Aberto (Jet):</strong> ideal urbano, ventilação excelente, sem proteção do queixo.</li>
-  <li><strong>Escamoteável (Articulado):</strong> combina o melhor dos dois com queixeira móvel.</li>
+  <li><strong>Segurança:</strong> A função primária é absorver o impacto em caso de acidente, protegendo a cabeça contra lesões graves. Um capacete de qualidade, mesmo que de entrada, é projetado e testado para cumprir essa missão.</li>
+  <li><strong>Conforto:</strong> Um capacete confortável reduz a fadiga em viagens, diminui o ruído do vento e se ajusta corretamente, evitando dores de cabeça e distrações. Isso também é segurança.</li>
+  <li><strong>Legalidade:</strong> Rodar com um capacete certificado pelo INMETRO é obrigatório por lei. Usar um modelo inadequado ou fora das normas pode resultar em multas e, mais importante, colocar sua vida em risco.</li>
 </ul>
 
-<h3>2. Certificação INMETRO</h3>
-<p>Todo capacete vendido legalmente no Brasil deve ter o selo do INMETRO.</p>
+<h2 id="guia-de-compra">Guia de Compra: Como Escolher o Capacete Ideal até R$ 400</h2>
+<p>Com tantas opções no mercado, saber como escolher um capacete de moto pode ser desafiador. Siga estes passos para fazer uma compra inteligente.</p>
 
-<h3>3. Tamanho ideal</h3>
-<p>Meça 2cm acima das sobrancelhas e orelhas. O capacete novo deve ficar justo, pressionando levemente as bochechas.</p>
-
-<h3>4. Recursos extras</h3>
+<h3>1. Selecione o Tipo de Capacete Adequado para Suas Necessidades</h3>
 <ul>
-  <li>Forração lavável</li>
-  <li>Viseira solar interna</li>
-  <li>Sistema de ventilação</li>
-  <li>Preparação para intercomunicador</li>
+  <li><strong>Capacete Fechado (Integral):</strong> Considerado o modelo mais seguro de todos, pois protege toda a cabeça, incluindo o queixo. É a escolha ideal para quem pega estradas e pilota em velocidades mais altas. Excelente para viagens longas, oferecendo melhor isolamento acústico e proteção contra detritos e chuva.</li>
+  <li><strong>Capacete Aberto (Jet):</strong> Perfeito para o uso urbano no dia a dia. Oferece ampla ventilação, é mais leve e prático para colocar e tirar. No entanto, sua principal desvantagem é a falta de proteção para o queixo.</li>
+  <li><strong>Capacete Escamoteável (Articulado):</strong> É a fusão entre o capacete aberto e o fechado. Com a queixeira articulada, ele oferece a praticidade de um modelo aberto quando você está parado e a segurança de um fechado em movimento. É extremamente versátil, mas costuma ser um pouco mais pesado que os outros tipos.</li>
 </ul>
 
-<h2 id="top10">Análise: Os 10 Melhores Capacetes de Moto Até R$400</h2>
+<h3>2. Observe a Certificação de Segurança (INMETRO)</h3>
+<p>Este ponto não é negociável. Todo capacete vendido legalmente no Brasil deve ter o selo de certificação do INMETRO. Esse selo garante que o produto foi submetido a testes mínimos de resistência a impactos, durabilidade da cinta jugular e qualidade da viseira. Nunca compre um capacete sem essa certificação.</p>
+
+<h3>3. Como Escolher o Tamanho de Capacete de Moto Ideal</h3>
+<p>Um capacete frouxo pode sair da cabeça em um acidente, e um apertado causa desconforto extremo. Para encontrar o tamanho certo:</p>
+<ul>
+  <li>Com uma fita métrica, meça a circunferência da sua cabeça. Passe a fita cerca de 2 cm acima das sobrancelhas e das orelhas.</li>
+  <li>Anote o valor em centímetros e compare com a tabela de tamanhos fornecida pelo fabricante do capacete.</li>
+  <li><strong>Dica de ouro:</strong> O capacete novo deve ficar justo, pressionando levemente as bochechas, mas sem criar pontos de dor na testa ou na nuca. Tente balançar a cabeça para os lados; o capacete deve se mover junto com você, sem folgas.</li>
+</ul>
+
+<h3>4. Confira Recursos Extras que Fazem a Diferença</h3>
+<p>Mesmo em um capacete bom e barato, alguns recursos extras elevam a experiência de uso:</p>
+<ul>
+  <li><strong>Forro removível e lavável:</strong> Essencial para a higiene e durabilidade do capacete.</li>
+  <li><strong>Viseira solar interna (óculos interno):</strong> Um recurso fantástico que oferece conforto visual instantâneo contra o sol, sem a necessidade de trocar de viseira ou usar óculos de sol.</li>
+  <li><strong>Sistema de ventilação:</strong> Entradas e saídas de ar eficientes ajudam a manter a cabeça fresca e a viseira sem embaçar.</li>
+  <li><strong>Preparação para intercomunicador:</strong> Espaços internos para acomodar fones de ouvido, um diferencial para quem gosta de se comunicar ou ouvir música.</li>
+</ul>
+
+<h2 id="top10">Análise: Os 10 Melhores Capacetes de Moto Até 400 Reais</h2>
+<p>Apresentamos nossa seleção dos melhores modelos com excelente <a href="/custo-beneficio/">custo-benefício</a>. Eles foram escolhidos com base em sua popularidade, recursos, avaliações de usuários e, claro, conformidade com as normas de segurança.</p>
 
 <h3 id="mixs-gladiator">1. Capacete Mixs Gladiator Neo Articulado</h3>
 <div class="product-section">
-  <p>Modelo articulado que oferece versatilidade para uso urbano e fins de semana. Viseira solar interna.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Versatilidade aberto/fechado</li><li>Custo-benefício</li><li>Viseira solar interna</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Mais ruidoso em altas velocidades</li><li>Materiais simples</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Escamoteável MIXS Gladiator Neo Fosco 56.png" alt="Capacete Mixs Gladiator Neo Articulado" />
   </div>
+  <p>Ideal para quem busca a versatilidade de um modelo articulado sem gastar muito. É perfeito para o motociclista que transita entre o uso urbano e pequenas viagens de fim de semana.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4nlrted" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/281HbPo" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="liberty-three">2. Capacete Liberty Three Pro Tork</h3>
+<h3 id="liberty-three">2. Capacete de Moto New Liberty Three Pro Tork</h3>
 <div class="product-section">
-  <p>Aberto para uso urbano — extremamente leve e prático.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Leveza notável</li><li>Excelente ventilação</li><li>Preço acessível</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Proteção facial limitada</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/CAPACETE ABERTO PRO TORK NEW LIBERTY 3 SOLID PRETO.png" alt="Capacete New Liberty Three Pro Tork" />
   </div>
+  <p>Um clássico absoluto para o uso urbano. Este capacete aberto é extremamente popular pela sua simplicidade, leveza e preço imbatível.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3Iig5QI" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/2iBNqfN" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="fly-newjet">3. Capacete Fly New Jet</h3>
+<h3 id="fly-new-jet">3. Capacete Moto Aberto Fly New Jet</h3>
 <div class="product-section">
-  <p>Similar ao Liberty Three com design moderno.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Estilo moderno</li><li>Boa visibilidade</li><li>Fácil de colocar/tirar</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Alto ruído em velocidade</li><li>Proteção do queixo inferior</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Aberto Fly New Jet Preto Fosco.png" alt="Capacete Moto Aberto Fly New Jet" />
   </div>
+  <p>Similar ao Liberty Three, o Fly New Jet foca na praticidade e no estilo para o motociclista urbano, com um design um pouco mais moderno.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4ndJVFa" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/19HY8gw" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="protork-r8">4. Capacete R8 Pro Tork</h3>
+<h3 id="r8">4. Capacete R8 Pro Tork</h3>
 <div class="product-section">
-  <p>Modelo de entrada fechado com design agressivo.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Estética esportiva</li><li>Boa segurança</li><li>Leveza</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Ventilação básica</li><li>Forração simples</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/ProTork-R8-PretoFosco.png" alt="Capacete R8 Pro Tork" />
   </div>
+  <p>Um modelo fechado de entrada com um design agressivo e aerodinâmico, muito popular entre iniciantes que buscam um visual mais esportivo.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4nyfKIQ" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/2sR5Gt4" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
@@ -185,36 +229,22 @@ const extraProducts = [
 
 <h3 id="san-marino">5. Capacete San Marino Classic Preto Fosco</h3>
 <div class="product-section">
-  <p>Conhecido pela durabilidade e simplicidade — extremamente robusto.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Extremamente durável</li><li>Preço competitivo</li><li>Peças de reposição fáceis</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Design datado</li><li>Mais pesado</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete San Marino Classic Preto Fosco.png" alt="Capacete San Marino Classic" />
   </div>
+  <p>Um verdadeiro tanque de guerra. Este capacete é conhecido no mercado pela sua incrível durabilidade e simplicidade, sendo a escolha de muitos para trabalho e uso intenso.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/42naCyW" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/16mXYPJ" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="ebf-spark-flash">6. Capacete EBF New Spark Flash</h3>
+<h3 id="ebf-spark">6. Capacete EBF New Spark Flash</h3>
 <div class="product-section">
-  <p>Fechado com grafismos modernos e acabamento superior.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Design atraente</li><li>Bom encaixe</li><li>Forração confortável</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Viseira risca facilmente</li><li>Ventilação funcional mas não excepcional</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Ebf New Spark Flash.png" alt="Capacete EBF New Spark Flash" />
   </div>
+  <p>Este modelo fechado da EBF se destaca pelos grafismos modernos e um acabamento ligeiramente superior para sua categoria, sendo uma ótima opção de primeiro capacete.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/46ll9Ma" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1gzSsff" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
@@ -223,100 +253,73 @@ const extraProducts = [
 
 <h3 id="ebf-thunder">7. Capacete EBF Thunder Open</h3>
 <div class="product-section">
-  <p>Aberto com viseira solar interna como diferencial principal.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Viseira solar</li><li>Prático e ventilado</li><li>Design elegante</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Sem proteção do queixo</li><li>Limitado em frio/chuva</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete EBF Capacetes Thunder O Sld 60Preto.png" alt="Capacete EBF Thunder Open" />
   </div>
+  <p>Um capacete aberto que sobe o nível ao incluir uma viseira solar interna, combinando a praticidade do modelo jet com um recurso premium de conforto.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/46AkjMS" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1ma4Kie" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="evolution-g6">8. Capacete Evolution G6 Factory Racing Pro Tork</h3>
+<h3 id="g6">8. Capacete Evolution G6 Factory Racing Pro Tork</h3>
 <div class="product-section">
-  <p>Design inspirado em corrida com melhorias aerodinâmicas.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Grafismos vibrantes</li><li>Design aerodinâmico</li><li>Muito acessível</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Isolamento acústico fraco</li><li>Materiais de entrada</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/_Pro Tork Capacete Evolution G6 Factory Racing Fosco .png" alt="Capacete Evolution G6 Factory Racing Pro Tork" />
   </div>
+  <p>Parte de uma das linhas mais populares do Brasil, o G6 aposta em um visual inspirado nas pistas de corrida e melhorias na aerodinâmica.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3VNYSlj" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/1WXLh6K" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="mirage-classic">9. Capacete Mirage Classic</h3>
+<h3 id="mirage">9. Capacete Mirage Classic</h3>
 <div class="product-section">
-  <p>Entrada focada em custo-benefício — um dos fechados mais baratos do mercado.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Extremamente acessível</li><li>Leveza</li><li>INMETRO certificado</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Acabamento simples</li><li>Conforto limitado</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png" alt="Capacete Mirage Classic" />
   </div>
+  <p>Outro modelo de entrada focado puramente no custo-benefício. É a escolha para o motociclista que precisa de proteção básica e certificada com o menor investimento possível.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/3Ig7zlo" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/2XfRQiy" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h3 id="evolution-g8">10. Capacete Liberty Evolution G8 Evo</h3>
+<h3 id="g8">10. Capacete Moto Pro Tork Liberty Evolution G8 Evo</h3>
 <div class="product-section">
-  <p>Última atualização da linha Evolution.</p>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Design atualizado</li><li>Ventilação melhorada</li><li>Excelente valor</li></ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Forração simples</li><li>Vedação imperfeita em chuva</li></ul>
-    </div>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Pro Tork Liberty Evolution G8 Evo Fechado.png" alt="Capacete Liberty Evolution G8 Evo" />
   </div>
+  <p>A mais recente atualização da famosa linha Evolution, buscando modernizar o design, o conforto e a ventilação, mantendo o preço competitivo que a consagrou.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/461WjCe" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/2X8vWG6" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
-<h2 id="faq">Perguntas Frequentes</h2>
+<h2 id="ls2-norisk">Qual a diferença entre os capacetes LS2 e Norisk?</h2>
+<p>Ambas são marcas excelentes, mas geralmente atuam em uma faixa de preço superior a R$ 400. A LS2 é uma marca global com um catálogo imenso, de modelos de entrada a capacetes de alta performance. A Norisk é uma marca muito forte no Brasil, conhecida por oferecer um custo-benefício fantástico em um segmento intermediário, entregando recursos de capacetes mais caros por um preço mais acessível.</p>
 
-<h3>Qual a diferença entre capacetes LS2 e Norisk?</h3>
-<p>Ambas excelentes, geralmente acima de R$400. <a href="/capacete-ls2-review/">LS2</a> é global com catálogo extenso. <a href="/capacete-norisk-review/">Norisk</a> é forte no Brasil, oferecendo recursos premium a preços acessíveis.</p>
+<h2 id="inmetro">Quais são os capacetes aprovados pelo INMETRO?</h2>
+<p>Todos os capacetes que podem ser legalmente vendidos e utilizados em território nacional devem ser aprovados pelo INMETRO. Todos os 10 modelos listados neste artigo possuem a certificação, garantindo que passaram pelos testes de segurança necessários.</p>
 
-<h3>Quais são aprovados pelo INMETRO?</h3>
-<p>Todos os 10 modelos listados possuem certificação INMETRO obrigatória.</p>
+<h2 id="marcas">Qual é a marca mais confiável de capacetes para moto?</h2>
+<p>Não existe uma única "melhor marca", mas sim marcas confiáveis para cada faixa de preço. No segmento de capacete bom e barato (até R$ 400), marcas como Pro Tork, EBF, Mixs e Taurus (fabricante do San Marino) são as mais populares e confiáveis, dominando o mercado com produtos certificados e de grande aceitação.</p>
 
-<h3>Qual é a marca mais confiável?</h3>
-<p>No segmento até R$400, Pro Tork, EBF, Mixs e Taurus (San Marino) dominam pela popularidade e confiabilidade.</p>
-
-<h3>Quando devo trocar meu capacete?</h3>
-<p>Após qualquer impacto significativo (mesmo sem dano visível) e a cada 3-5 anos pela degradação dos materiais.</p>
+<h2 id="troca">Quando devo trocar meu capacete?</h2>
+<p>Existem duas regras de ouro para a troca do capacete:</p>
+<ul>
+  <li><strong>Após qualquer impacto significativo:</strong> Mesmo que o capacete não apresente danos visíveis, sua estrutura interna de absorção de impacto (EPS) pode ter sido comprometida. Na dúvida, troque.</li>
+  <li><strong>A cada 3 a 5 anos de uso:</strong> Com o tempo, o suor, a exposição ao sol e o uso contínuo degradam os materiais internos, fazendo com que o capacete perca sua capacidade de proteção. A maioria dos fabricantes recomenda a troca preventiva nesse intervalo.</li>
+</ul>
 
 <h2 id="conclusao">Conclusão</h2>
-<p>
-  Mesmo na faixa até R$400, há excelentes opções com certificação INMETRO e recursos modernos. Escolha o tipo (integral, aberto ou escamoteável) conforme seu uso real e priorize ajuste correto e conforto.
-</p>
-<p>
-  Veja também os <a href="/custo-beneficio/ate-300-reais/">capacetes até R$300</a> e o <a href="/custo-beneficio/bom-e-barato/">guia de capacetes bom e barato</a>.
-</p>
+<p>Escolher o melhor capacete de moto até 400 reais é uma missão totalmente possível. Como vimos, o mercado oferece excelentes opções que combinam segurança, conforto e estilo sem exigir um grande investimento. A chave é entender suas próprias necessidades: você roda mais na cidade ou na estrada? Prioriza ventilação ou silêncio?</p>
+<p>Use nosso guia para analisar os tipos de capacete, meça sua cabeça para encontrar o tamanho perfeito e avalie os recursos extras que podem fazer a diferença no seu dia a dia. Lembre-se sempre de que o capacete é seu melhor amigo no trânsito.</p>
+<p>Pilote com segurança, estilo e a certeza de que fez um investimento inteligente na sua proteção.</p>
+<p>Se você quiser conversar sobre este artigo ou qualquer outra coisa relacionada a motos, junte-se a nós seguindo nossa página do <a href="https://www.facebook.com/profile.php?id=100088166945491" target="_blank" rel="nofollow noopener noreferrer">Facebook</a>.</p>
+<p>Quer mais opções? Confira nosso <a href="/melhor-capacete/">guia geral dos melhores capacetes</a> e a página de <a href="/custo-beneficio/">capacetes custo-benefício</a>.</p>
 
 </PostLayout>
