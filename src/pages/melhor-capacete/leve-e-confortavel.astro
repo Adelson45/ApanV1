@@ -2,31 +2,35 @@
 import PostLayout from '../../layouts/PostLayout.astro';
 
 const title = '10 Capacetes Leves e Confortáveis Para 2026';
-const description = '10 capacetes leves e confortáveis em 2026. Axxis Gecko, Bieffe B-Dynamic, Peels TR1, Mixs, Joy23, Taurus, Pro Tork e Fly New Jet — análise completa.';
+const description = 'Procurando o capacete de moto mais leve e confortável para 2026? Analisamos 10 modelos incríveis e criamos o guia definitivo para você escolher o ideal. Confira';
 const canonical = 'https://jovemapan.com.br/melhor-capacete/leve-e-confortavel/';
 const author = 'Pamela Pan';
 const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
 const publishDate = '2025-09-30';
 const category = 'Capacetes';
 const categoryHref = '/melhor-capacete/';
-const coverImage = '/images/Capacete LS2 Stream 2 FF808 Vintage Branco Azul e Vermelho Brilhante Masculino.png';
+const coverImage = '/images/Melhores-Capacetes-Leves-e-Confortaveis.webp';
 
 const indice = [
-  { label: 'Como escolher um capacete leve', href: '#como-escolher' },
-  { label: 'Materiais utilizados', href: '#materiais' },
-  { label: 'Top 10 capacetes leves', href: '#top10', children: [
+  { label: 'Descubra qual o capacete mais leve', href: '#descubra' },
+  { label: 'Materiais Utilizados', href: '#materiais' },
+  { label: 'Principais Capacetes Leves', href: '#principais-leves', children: [
     { label: '1. Axxis Gecko Capital', href: '#axxis-gecko' },
     { label: '2. Bieffe B-Dynamic', href: '#bieffe-bdynamic' },
     { label: '3. Peels TR1', href: '#peels-tr1' },
     { label: '4. Texx Gladiator V3', href: '#texx-gladiator' },
-    { label: '5. Mixs MX Gladiator', href: '#mixs-gladiator' },
-    { label: '6. Peels Freeway', href: '#peels-freeway' },
-    { label: '7. JOY23 Street', href: '#joy23-street' },
-    { label: '8. Taurus', href: '#taurus' },
-    { label: '9. Pro Tork New Liberty', href: '#liberty' },
-    { label: '10. Fly New Jet', href: '#fly-newjet' }
+    { label: '5. Mixs MX Gladiator', href: '#mixs-gladiator' }
   ]},
-  { label: 'Para longas viagens', href: '#viagens' },
+  { label: '5 Modelos Confortáveis Para Longas Viagens', href: '#confortaveis-viagens', children: [
+    { label: '1. Peels Freeway', href: '#peels-freeway' },
+    { label: '2. JOY23 STREET', href: '#joy23-street' },
+    { label: '3. Taurus', href: '#taurus' },
+    { label: '4. Pro Tork New Liberty', href: '#pro-tork-liberty' },
+    { label: '5. Fly New Jet', href: '#fly-newjet' }
+  ]},
+  { label: 'Por Que Usar o Capacete de Moto?', href: '#por-que-usar' },
+  { label: 'Como Escolher o Melhor Capacete', href: '#como-escolher' },
+  { label: 'Como Lavar o Capacete de Moto?', href: '#como-lavar' },
   { label: 'Conclusão', href: '#conclusao' }
 ];
 
@@ -48,11 +52,62 @@ const extraProducts = [
   {
     badge: 'Aproveite frete GRÁTIS',
     badgeStyle: 'frete' as const,
-    image: '/images/Capacete Aberto Moto Peels Mirage Classic Branco.png',
-    imageAlt: 'Peels Mirage Classic',
-    name: 'Capacete Peels Mirage Classic',
+    image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+    imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+    name: 'Capacete Moto Peels Mirage Classic Branco',
     mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
     amazonHref: 'https://amzn.to/3MjKWy9'
+  },
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S'
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ'
   }
 ];
 ---
@@ -73,36 +128,49 @@ const extraProducts = [
 >
 
 <p class="post-lead">
-  Procurando o <strong>capacete mais leve e confortável</strong> para suas viagens? Em 2026, o mercado oferece modelos que combinam materiais avançados, forração ergonômica e ventilação eficiente — perfeitos para reduzir fadiga em trajetos longos.
+  Para qualquer motociclista, a sensação de liberdade na estrada é incomparável. Mas essa liberdade só é completa com segurança e conforto. A escolha do capacete certo é, sem dúvida, a decisão mais importante que você tomará.
 </p>
-
 <p>
-  Selecionamos 10 modelos com foco em peso reduzido e conforto prolongado.
+  Um capacete pesado pode transformar um passeio prazeroso em uma jornada de dor no pescoço e fadiga, enquanto um modelo inadequado compromete sua proteção. Pensando nisso, preparamos o guia definitivo para 2026.
+</p>
+<p>
+  Aqui, você encontrará não apenas uma lista dos 10 capacetes mais leves e confortáveis do mercado, mas também tudo o que precisa saber para fazer a escolha perfeita.
 </p>
 
-<h2 id="como-escolher">Como Escolher um Capacete Leve</h2>
-<p>O peso do capacete é uma das principais causas de fadiga no pescoço e ombros. Modelos abaixo de 1.500g já são considerados leves. Para viagens longas, busque opções abaixo de 1.400g.</p>
+<h2 id="descubra">Descubra qual o capacete mais leve e como escolher o seu</h2>
+<p>
+  A busca pelo capacete mais leve muitas vezes nos leva a uma pergunta fundamental: o que faz um capacete ser leve sem sacrificar a segurança? A resposta está na tecnologia e, principalmente, nos materiais usados em sua construção.
+</p>
+<p>
+  A leveza de um capacete é resultado direto da composição do seu casco. Neste guia completo, vamos desmistificar os materiais, apresentar os melhores modelos e ensinar você a escolher o capacete ideal para suas necessidades e seu bolso.
+</p>
 
 <h2 id="materiais">Materiais Utilizados em Capacetes Leves</h2>
+<p>A tecnologia dos materiais evoluiu drasticamente, permitindo cascos mais resistentes e surpreendentemente leves. Conhecer os principais tipos é o primeiro passo para uma boa escolha.</p>
+
 <ul>
-  <li><strong>Fibra de carbono:</strong> mais leve e resistente — opção premium</li>
-  <li><strong>Fibra de vidro/compósitos:</strong> equilíbrio custo-resistência</li>
-  <li><strong>Policarbonato/ABS:</strong> opções acessíveis</li>
+  <li><strong>Fibra de Carbono:</strong> O auge da tecnologia. É o material mais leve e resistente disponível, capaz de absorver e distribuir a energia de um impacto com extrema eficiência. Geralmente encontrado em capacetes de alta performance e valor mais elevado.</li>
+  <li><strong>Fibra de Vidro / Compósitos:</strong> Uma combinação de materiais (como fibra de vidro, Kevlar e outras resinas) que cria um capacete com um excelente equilíbrio entre peso, resistência e custo. É um meio-termo fantástico, muito popular em modelos intermediários e premium.</li>
+  <li><strong>Policarbonato / ABS:</strong> São polímeros injetados muito resistentes e com ótimo custo-benefício. Embora sejam um pouco mais pesados que as fibras, a tecnologia atual permite a fabricação de capacetes em ABS com peso competitivo, sendo a escolha mais comum em modelos de entrada e intermediários.</li>
 </ul>
 
-<h2 id="top10">Top 10 Capacetes Leves e Confortáveis</h2>
+<h2 id="principais-leves">Principais Capacetes Leves no Mercado</h2>
+<p>Analisamos o mercado e selecionamos 5 modelos que se destacam pela combinação de leveza, praticidade e tecnologia. São ideais para quem busca agilidade no dia a dia sem abrir mão da segurança.</p>
 
-<h3 id="axxis-gecko">1. Axxis Gecko Capital</h3>
+<h3 id="axxis-gecko">1. Capacete Moto Axxis Escamoteável Gecko Capital</h3>
 <div class="product-section">
-  <p>Custo-benefício com viseira solar interna.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Axxis Escamoteável Gecko Capital.png" alt="Capacete Moto Axxis Escamoteável Gecko Capital" loading="lazy" />
+  </div>
+  <p>Este modelo da Axxis é um excelente exemplo de capacete escamoteável moderno. Com um design aerodinâmico e casco em resina termoplástica de alta pressão (ABS), ele oferece um bom equilíbrio de peso e resistência. É ideal para o motociclista urbano que também encara viagens curtas e precisa da praticidade de levantar a queixeira em paradas rápidas. Seu peso aproximado fica em torno de 1.650g.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Custo-benefício</li><li>Viseira solar interna</li></ul>
+      <ul class="pc-list pros"><li>Design aerodinâmico</li><li>Praticidade urbana</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Ruidoso em altas velocidades</li></ul>
+      <ul class="pc-list cons"><li>Peso de 1.650g pode ser sentido em trajetos longos</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -111,17 +179,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="bieffe-bdynamic">2. Bieffe B-Dynamic</h3>
+<h3 id="bieffe-bdynamic">2. Capacete Moto Bieffe B-Dynamic Escamoteavel</h3>
 <div class="product-section">
-  <p>Forro removível com boa ventilação.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Bieffe B-Dynamic Escamoteavel Preto.png" alt="Capacete Moto Bieffe B-Dynamic Escamoteavel" loading="lazy" />
+  </div>
+  <p>A Bieffe é conhecida por seus produtos de qualidade, e o B-Dynamic não foge à regra. Este capacete articulado se destaca pelo forro interno confortável e removível, facilitando a higienização. O sistema de ventilação é eficiente, tornando-o uma ótima opção para climas mais quentes. É um capacete versátil para uso misto (cidade e estrada).</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Forro removível</li><li>Boa ventilação</li></ul>
+      <ul class="pc-list pros"><li>Forro confortável e removível</li><li>Ventilação eficiente</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Design conservador</li></ul>
+      <ul class="pc-list cons"><li>Design mais conservador</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -130,17 +201,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="peels-tr1">3. Peels TR1</h3>
+<h3 id="peels-tr1">3. Capacete Articulado Robocop Peels TR1</h3>
 <div class="product-section">
-  <p>Design moderno com encaixe agradável.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Articulado Robocop Peels Tr1 Nkd Verde Escamoteavel.png" alt="Capacete Articulado Robocop Peels TR1" loading="lazy" />
+  </div>
+  <p>Com um design arrojado que lhe rendeu o apelido de “Robocop”, o Peels TR1 é focado na praticidade. Seu sistema de abertura da queixeira é simples de operar, e ele oferece um campo de visão amplo. É um modelo popular entre motociclistas que valorizam a estética e a versatilidade para o trânsito urbano.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Design moderno</li><li>Encaixe confortável</li></ul>
+      <ul class="pc-list pros"><li>Abertura fácil da queixeira</li><li>Amplo campo de visão</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Isolamento acústico baixo</li></ul>
+      <ul class="pc-list cons"><li>Isolamento acústico poderia ser melhor</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -149,17 +223,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="texx-gladiator">4. Texx Gladiator V3</h3>
+<h3 id="texx-gladiator">4. Capacete Texx Escamot Gladiator V3 Reisen</h3>
 <div class="product-section">
-  <p>Rico em recursos com forração antialérgica.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Texx Escamot Gladiator V3 Reisen Azul Vermelho Branco 60.png" alt="Capacete Texx Escamot Gladiator V3 Reisen" loading="lazy" />
+  </div>
+  <p>O Gladiator V3 da Texx é um modelo que aposta nos recursos extras. Além da praticidade do sistema escamoteável, ele geralmente vem com viseira solar interna e uma forração com tratamento antialérgico. É um capacete robusto, pensado para quem busca um pacote completo de funcionalidades para o dia a dia e pequenas viagens.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Rico em recursos</li><li>Forração antialérgica</li></ul>
+      <ul class="pc-list pros"><li>Viseira solar interna</li><li>Forração antialérgica</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Design conservador</li></ul>
+      <ul class="pc-list cons"><li>Peso devido aos recursos adicionais</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -168,17 +245,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="mixs-gladiator">5. Mixs MX Gladiator</h3>
+<h3 id="mixs-gladiator">5. Capacete de Moto Mixs MX Gladiator Articulado</h3>
 <div class="product-section">
-  <p>Preço competitivo e leveza.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete de Moto Mixs MX Gladiator Articulado Escamoteável Robocop.png" alt="Capacete de Moto Mixs MX Gladiator Articulado" loading="lazy" />
+  </div>
+  <p>Posicionado como uma opção de excelente custo-benefício, o Mixs MX Gladiator oferece a funcionalidade de um capacete articulado por um preço acessível. É uma escolha inteligente para motociclistas iniciantes ou para quem precisa de um segundo capacete para trajetos curtos, garantindo a segurança essencial e a praticidade do design.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Preço competitivo</li><li>Leveza</li></ul>
+      <ul class="pc-list pros"><li>Custo-benefício excelente</li><li>Praticidade urbana</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Acabamento básico</li></ul>
+      <ul class="pc-list cons"><li>Acabamento mais básico</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -187,13 +267,19 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="peels-freeway">6. Peels Freeway</h3>
+<h2 id="confortaveis-viagens">5 Melhores Modelos de Capacetes Confortáveis Para Longas Viagens</h2>
+<p>Quando o destino é longe, o conforto se torna tão vital quanto a segurança. Um capacete confortável para longas viagens deve ter forração macia, boa aerodinâmica para reduzir o arrasto e um sistema de ventilação que funcione. Para este perfil, os capacetes abertos são imbatíveis no quesito ventilação e sensação de liberdade em velocidades de cruzeiro.</p>
+
+<h3 id="peels-freeway">1. Capacete Aberto Moto Peels Freeway</h3>
 <div class="product-section">
-  <p>Leveza extrema com estilo vintage.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Aberto Moto Peels Freeway King BrancoColor 58 (1).png" alt="Capacete Aberto Moto Peels Freeway" loading="lazy" />
+  </div>
+  <p>O Peels Freeway é um clássico. Ele combina um design vintage com a praticidade de um capacete aberto. É extremamente leve e ventilado, ideal para pilotar na cidade em dias quentes. A qualidade da viseira e da forração interna são pontos fortes, garantindo conforto mesmo após horas de uso.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Leveza extrema</li><li>Estilo vintage</li></ul>
+      <ul class="pc-list pros"><li>Extremamente leve e ventilado</li><li>Design clássico e estiloso</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
@@ -206,17 +292,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="joy23-street">7. JOY23 Street</h3>
+<h3 id="joy23-street">2. Capacete Aberto JOY23 STREET</h3>
 <div class="product-section">
-  <p>Variedade de designs com leveza.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Aberto JOY23 STREET ART PRETO FOSCO 60.png" alt="Capacete Aberto JOY23 STREET" loading="lazy" />
+  </div>
+  <p>Este modelo foca em oferecer conforto e estilo para o motociclista urbano. Com uma ampla variedade de cores e grafismos, o JOY23 STREET é leve e possui um encaixe agradável. A viseira de bom tamanho protege bem os olhos contra detritos, sendo uma ótima escolha para o dia a dia.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Variedade de designs</li><li>Leve</li></ul>
+      <ul class="pc-list pros"><li>Variedade de cores e grafismos</li><li>Encaixe agradável e leve</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Ruído de vento</li></ul>
+      <ul class="pc-list cons"><li>Maior exposição a ruído do vento</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -225,17 +314,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="taurus">8. Taurus</h3>
+<h3 id="taurus">3. Capacete Aberto Taurus</h3>
 <div class="product-section">
-  <p>Durabilidade com preço acessível.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/San Marino Capacete Aberto Joy 23 By Taurus Bege Couro (1).png" alt="Capacete Aberto Taurus" loading="lazy" />
+  </div>
+  <p>A Taurus é uma marca tradicional e sinônimo de durabilidade. Seus capacetes abertos, como a linha Zarref, são conhecidos pela robustez e simplicidade. É um capacete funcional, sem muitos luxos, mas que cumpre perfeitamente seu papel de proteger com conforto e um ótimo custo-benefício.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Durabilidade</li><li>Preço acessível</li></ul>
+      <ul class="pc-list pros"><li>Tradicional e durável</li><li>Ótimo custo-benefício</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Recursos limitados</li></ul>
+      <ul class="pc-list cons"><li>Sem recursos avançados</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -244,17 +336,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="liberty">9. Pro Tork New Liberty</h3>
+<h3 id="pro-tork-liberty">4. Capacete Aberto Pro Tork New Liberty</h3>
 <div class="product-section">
-  <p>Extremamente acessível e leve.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/CAPACETE ABERTO PRO TORK NEW LIBERTY 3 GP 88.png" alt="Capacete Aberto Pro Tork New Liberty" loading="lazy" />
+  </div>
+  <p>Provavelmente um dos capacetes mais populares do Brasil, o Pro Tork New Liberty é a porta de entrada para muitos motociclistas. É extremamente leve, prático e atende às normas de segurança. Sua popularidade se deve à sua simplicidade e ao preço imbatível, sendo perfeito para uso estritamente urbano.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Extremamente acessível</li><li>Leve</li></ul>
+      <ul class="pc-list pros"><li>Preço imbatível</li><li>Leve e prático para cidade</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Acabamento básico</li></ul>
+      <ul class="pc-list cons"><li>Acabamento simples</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -263,17 +358,20 @@ const extraProducts = [
   </div>
 </div>
 
-<h3 id="fly-newjet">10. Fly New Jet</h3>
+<h3 id="fly-newjet">5. Capacete Moto Aberto Fly New Jet</h3>
 <div class="product-section">
-  <p>Design moderno com boa ventilação.</p>
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Aberto Fly New Jet Cinza Brilhante.png" alt="Capacete Moto Aberto Fly New Jet" loading="lazy" />
+  </div>
+  <p>O Fly New Jet se destaca por unir a leveza de um capacete aberto a um design mais moderno e aerodinâmico. Ele oferece um bom campo de visão e forração confortável, tornando-se uma opção interessante para quem quer um pouco mais de estilo e qualidade sem abrir mão da praticidade do modelo aberto.</p>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros"><li>Design moderno</li><li>Boa ventilação</li></ul>
+      <ul class="pc-list pros"><li>Design aerodinâmico</li><li>Bom campo de visão</li></ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons"><li>Preço ligeiramente superior</li></ul>
+      <ul class="pc-list cons"><li>Proteção menor no queixo</li></ul>
     </div>
   </div>
   <div class="btn-buy-container">
@@ -282,15 +380,86 @@ const extraProducts = [
   </div>
 </div>
 
-<h2 id="viagens">5 Melhores Modelos para Longas Viagens</h2>
-<p>Para viagens prolongadas, priorize <strong>ventilação eficiente, conforto interno excepcional e baixo peso</strong>. Os modelos abertos como Peels Freeway e JOY23 Street são ideais para climas quentes; já os fechados como Bieffe B-Dynamic e Texx Gladiator V3 oferecem mais proteção e isolamento.</p>
+<h2 id="por-que-usar">Por Que Usar o Capacete de Moto?</h2>
+<p>
+  Pode parecer óbvio, mas é sempre bom reforçar: o capacete é o seu principal equipamento de segurança. Ele não é apenas obrigatório por lei, mas é a barreira vital entre sua cabeça e o asfalto em caso de acidente.
+</p>
+<p>
+  Estudos mostram que o uso correto do capacete pode reduzir o risco de lesões fatais na cabeça em mais de 40% e de lesões graves em mais de 70%. Usar capacete não é uma opção, é um ato de responsabilidade com a sua própria vida.
+</p>
+
+<h2 id="como-escolher">Como Escolher o Melhor Capacete de Moto</h2>
+<p>
+  Escolher o melhor capacete de moto vai além de olhar a estética ou o preço. É um processo que envolve analisar o tipo de uso que você fará, o material do casco, o tamanho correto para sua cabeça e os recursos que podem facilitar sua vida e aumentar seu conforto.
+</p>
+
+<h3>Escolha o Capacete de Acordo com o Modelo e Tipo de Uso</h3>
+<p>Existem quatro tipos principais de capacete, cada um projetado para um tipo de pilotagem.</p>
+
+<h4>Capacete Aberto: Mais Conforto para o Dia a Dia na Cidade</h4>
+<p>Ideal para baixas velocidades e climas quentes. Oferece máxima ventilação e praticidade, mas deixa o queixo e o rosto expostos, oferecendo um nível de proteção menor.</p>
+
+<h4>Capacete Fechado (Integral): Mais Segurança em Estradas e Cidades</h4>
+<p>Oferece o mais alto nível de proteção, cobrindo toda a cabeça e o queixo. É a escolha ideal para quem pega estradas e preza pela máxima segurança, além de oferecer melhor isolamento acústico.</p>
+
+<h4>Capacete Articulado: Versátil e Prático para Percursos On Road</h4>
+<p>Também conhecido como escamoteável ou modular, ele combina a segurança do capacete fechado com a praticidade do aberto, pois sua queixeira pode ser levantada. É perfeito para quem transita entre cidade e estrada.</p>
+
+<h4>Capacete Off-Road: Ideal para Pistas e Trilhas de Motocross</h4>
+<p>Projetado para o motocross, possui queixeira alongada para facilitar a respiração, pala para proteger do sol e de detritos, e não possui viseira, sendo usado em conjunto com óculos de proteção específicos.</p>
+
+<h3>Prefira Modelos com Cascos Feitos em ABS</h3>
+<p>Ao analisar o material do casco, entenda que o ABS é um excelente ponto de partida, oferecendo segurança certificada com um ótimo custo-benefício. Para quem busca um capacete mais leve e com maior capacidade de absorção de impacto, os modelos em fibra de vidro (compósitos) são o próximo nível. No topo da pirâmide, a fibra de carbono oferece a máxima leveza e resistência.</p>
+
+<h3>Como escolher o tamanho de capacete de moto ideal? / Confira se o Tamanho do Capacete É Ideal para Você</h3>
+<p>Um capacete frouxo pode sair da sua cabeça em um acidente. Um muito apertado causa dores e desconforto. Encontrar o tamanho ideal é simples:</p>
+<ul>
+  <li><strong>Use uma fita métrica:</strong> Passe a fita ao redor da sua cabeça, cerca de 2 cm acima das sobrancelhas e das orelhas.</li>
+  <li><strong>Anote a medida:</strong> O valor em centímetros corresponde ao seu tamanho.</li>
+  <li><strong>Consulte a tabela do fabricante:</strong> Cada marca possui uma tabela de conversão. Por exemplo, 58 cm geralmente corresponde ao tamanho M (ou 58).</li>
+</ul>
+<p>Ao provar, o capacete deve entrar justo, sem criar pontos de pressão dolorosos. Ele não deve se mover se você balançar a cabeça para os lados ou para cima e para baixo.</p>
+
+<h3>Escolha um Capacete Leve e Confortável</h3>
+<p>Após definir o tipo e o tamanho, o peso e o conforto são os fatores de desempate. Verifique o peso aproximado nas especificações do produto. Lembre-se que o conforto também vem da qualidade da forração interna, que deve ser macia e, de preferência, antialérgica.</p>
+
+<h3>Garanta Sua Segurança, Prefira Capacetes com Selo do Inmetro</h3>
+<p>Este ponto não é negociável. O selo do Inmetro garante que o capacete foi submetido a rigorosos testes de impacto, resistência da cinta jugular e qualidade da viseira. Nunca compre um capacete sem o selo do Inmetro. Sua segurança depende disso.</p>
+
+<h3>Capacetes com Recursos Extras São Mais Práticos</h3>
+<p>Alguns detalhes podem fazer toda a diferença no dia a dia:</p>
+<ul>
+  <li><strong>Viseira solar interna (sun visor):</strong> Um óculos de sol embutido, acionado por um botão.</li>
+  <li><strong>Forro removível e lavável:</strong> Essencial para manter a higiene do capacete.</li>
+  <li><strong>Fecho micrométrico:</strong> Mais prático para o uso diário. O fecho Duplo-D é considerado mais seguro para pistas.</li>
+  <li><strong>Preparação para intercomunicador:</strong> Espaços internos para acomodar os fones e o microfone.</li>
+  <li><strong>Bavete e narigueira:</strong> Acessórios que reduzem a turbulência e evitam que a viseira embace.</li>
+</ul>
+
+<h2 id="como-lavar">Como Lavar o Capacete de Moto?</h2>
+<p>Manter seu capacete limpo é fundamental para sua saúde e para a durabilidade do equipamento.</p>
+
+<h3>Forro Interno</h3>
+<p>Se o forro for removível, lave-o à mão com sabão neutro, sem torcer, e deixe secar completamente à sombra. Se for fixo, utilize espumas de limpeza a seco específicas para capacetes.</p>
+
+<h3>Viseira</h3>
+<p>Limpe a viseira apenas com um pano de microfibra macio, água e sabão neutro. Produtos químicos podem danificar o material e seus tratamentos, como o antirrisco.</p>
+
+<h3>Ventilação</h3>
+<p>As entradas e saídas de ar são cruciais para o conforto térmico. Elas permitem que o ar fresco circule, removendo o ar quente e úmido de dentro do capacete, o que ajuda a reduzir o suor e a manter o foco na pilotagem.</p>
+
+<h3>Óculos</h3>
+<p>Se você usa óculos de grau, procure por capacetes que tenham um sistema “Easy Fit” ou recortes específicos na forração na altura das hastes, garantindo muito mais conforto.</p>
+
+<h3>Substituição / Troca</h3>
+<p>Um capacete tem prazo de validade. A recomendação geral dos fabricantes é de troca a cada 3 a 5 anos de uso, pois os materiais internos perdem sua capacidade de absorção de impacto. E atenção: após sofrer qualquer queda ou impacto forte, o capacete deve ser substituído imediatamente, mesmo que não apresente danos visíveis.</p>
 
 <h2 id="conclusao">Conclusão</h2>
 <p>
-  Capacetes leves e confortáveis são essenciais para reduzir fadiga em viagens. Priorize <strong>peso, ventilação, forração de qualidade</strong> e certificação INMETRO sempre.
+  A escolha do melhor capacete de moto para 2026 é um investimento direto na sua segurança e no seu prazer de pilotar. Lembre-se dos passos essenciais: defina seu tipo de uso, meça sua cabeça para encontrar o tamanho perfeito, analise os materiais e, acima de tudo, verifique se o modelo possui o selo do Inmetro. Um capacete leve e confortável fará toda a diferença em seus trajetos, sejam eles curtos ou longas viagens.
 </p>
 <p>
-  Veja também: <a href="/capacete-para-viagens-longas/">capacetes para viagens longas</a> e o <a href="/melhor-capacete/bem-avaliados/">guia dos mais bem avaliados</a>.
+  E você, qual capacete leve e confortável recomenda? Deixe seu comentário abaixo e compartilhe sua experiência. Não escolha seu capacete apenas pela aparência, escolha pela segurança que ele oferece. Sua vida depende disso. Conferir nossas análises dos melhores capacetes clicando <a href="/melhor-capacete/">aqui.</a>
 </p>
 
 </PostLayout>
