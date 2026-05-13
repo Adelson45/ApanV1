@@ -98,6 +98,22 @@ const footerLinks = {
       </div>
     </div>
     
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h3>Receba nossas análises</h3>
+          <p>Cadastre seu e-mail e receba reviews e dicas semanais.</p>
+        </div>
+        <form id="footer-newsletter-form" class="newsletter-form-footer" novalidate>
+          <input type="email" name="email" placeholder="Seu melhor e-mail" required />
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+          <button type="submit">Inscrever-se</button>
+        </form>
+      </div>
+      <p class="newsletter-feedback" id="footer-newsletter-feedback" style="display:none;"></p>
+    </div>
+
     <!-- Affiliate Disclosure & Social -->
     <div class="footer-middle">
       <div class="affiliate-disclosure">
@@ -136,6 +152,42 @@ const footerLinks = {
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  (function() {
+    const form = document.getElementById('footer-newsletter-form');
+    if (!form) return;
+    const feedback = document.getElementById('footer-newsletter-feedback');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      feedback.style.display = 'none';
+      const fd = new FormData(form);
+      try {
+        const res = await fetch('/api/newsletter/subscribe/', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            email: fd.get('email'),
+            website: fd.get('website'),
+            source: 'footer'
+          })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'Erro');
+        form.reset();
+        feedback.textContent = 'Inscrição realizada com sucesso!';
+        feedback.style.color = '#22c55e';
+      } catch (err) {
+        feedback.textContent = 'Erro: ' + err.message;
+        feedback.style.color = '#fca5a5';
+      }
+      feedback.style.display = 'block';
+      btn.disabled = false;
+    });
+  })();
+</script>
 
 <style>
   .site-footer {
@@ -244,6 +296,44 @@ const footerLinks = {
     margin: 0;
   }
   
+  /* Newsletter no rodapé */
+  .footer-newsletter {
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 30px;
+  }
+  .newsletter-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .newsletter-text h3 { margin: 0 0 4px; font-size: 1.2rem; color: #fff; }
+  .newsletter-text p { margin: 0; color: #b0b0b0; font-size: .9rem; }
+  .newsletter-form-footer {
+    display: flex; gap: 8px; flex: 1; min-width: 280px; max-width: 480px;
+    position: relative;
+  }
+  .newsletter-form-footer input[type=email] {
+    flex: 1; padding: 12px 14px; border-radius: 6px; border: none; font-size: .95rem;
+  }
+  .newsletter-form-footer button {
+    padding: 12px 22px; background: #e31b1b; color: #fff; border: none;
+    border-radius: 6px; font-weight: 700; cursor: pointer; font-size: .9rem;
+    text-transform: uppercase; letter-spacing: .5px;
+  }
+  .newsletter-form-footer button:hover { background: #c41a1f; }
+  .newsletter-form-footer button:disabled { opacity: .6; cursor: wait; }
+  .newsletter-feedback {
+    margin: 12px 0 0; font-size: .9rem; font-weight: 600; text-align: center;
+  }
+  @media (max-width: 640px) {
+    .newsletter-inner { flex-direction: column; align-items: stretch; }
+    .newsletter-form-footer { max-width: none; }
+  }
+
   /* Affiliate Disclosure & Buttons */
   .footer-middle {
     text-align: center;

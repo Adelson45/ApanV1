@@ -1,0 +1,203 @@
+---
+export const prerender = false;
+import { requireAdmin } from '../../lib/auth';
+import { supabaseAdmin } from '../../lib/supabase';
+
+const admin = await requireAdmin(Astro.cookies);
+if (!admin) return Astro.redirect('/admin/login/');
+
+const [pendingRes, approvedRes, subsRes] = await Promise.all([
+  supabaseAdmin.from('comments').select('*').eq('status', 'pending').order('created_at', { ascending: false }).limit(100),
+  supabaseAdmin.from('comments').select('*').eq('status', 'approved').order('approved_at', { ascending: false }).limit(50),
+  supabaseAdmin.from('newsletter_subscribers').select('*').order('created_at', { ascending: false }).limit(200)
+]);
+
+const pending = pendingRes.data ?? [];
+const approved = approvedRes.data ?? [];
+const subs = subsRes.data ?? [];
+
+const fmt = (s: string) => new Date(s).toLocaleString('pt-BR');
+---
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Painel Admin · Jovem Apan</title>
+<meta name="robots" content="noindex, nofollow" />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Inter', system-ui, sans-serif;
+    background: #f4f4f4; color: #212121;
+  }
+  header {
+    background: #0c1827; color: #fff; padding: 16px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  header h1 { margin: 0; font-size: 1.1rem; }
+  header form { margin: 0; }
+  header button {
+    background: transparent; color: #fff; border: 1px solid #fff;
+    padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: .85rem;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 2px solid #e5e7eb; }
+  .tab {
+    background: none; border: none; padding: 12px 20px; cursor: pointer;
+    font-weight: 700; color: #6b7280; border-bottom: 3px solid transparent;
+    margin-bottom: -2px; font-size: .9rem;
+  }
+  .tab.active { color: #E31E24; border-bottom-color: #E31E24; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .card {
+    background: #fff; border-radius: 8px; padding: 20px;
+    margin-bottom: 12px; border: 1px solid #e5e7eb;
+  }
+  .meta { display: flex; gap: 12px; font-size: .8rem; color: #6b7280; margin-bottom: 8px; flex-wrap: wrap; }
+  .meta strong { color: #212121; }
+  .slug { background: #f4f4f4; padding: 2px 8px; border-radius: 4px; font-family: monospace; }
+  .content-text { white-space: pre-wrap; line-height: 1.5; color: #374151; margin: 8px 0 12px; }
+  .actions { display: flex; gap: 8px; }
+  .btn { padding: 8px 14px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: .8rem; }
+  .btn-approve { background: #16a34a; color: #fff; }
+  .btn-reject { background: #6b7280; color: #fff; }
+  .btn-delete { background: #dc2626; color: #fff; }
+  .btn:disabled { opacity: .5; cursor: wait; }
+  .empty { text-align: center; color: #6b7280; padding: 40px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: .9rem; }
+  th { background: #f9fafb; font-size: .75rem; text-transform: uppercase; letter-spacing: .5px; color: #6b7280; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+  .stat { background: #fff; padding: 18px; border-radius: 8px; border: 1px solid #e5e7eb; }
+  .stat .num { font-size: 1.8rem; font-weight: 900; color: #E31E24; }
+  .stat .label { font-size: .8rem; color: #6b7280; text-transform: uppercase; letter-spacing: .5px; }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .toolbar a { background: #E31E24; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .85rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Painel Jovem Apan — {admin.email}</h1>
+  <form method="POST" action="/api/admin/logout/">
+    <button type="submit">Sair</button>
+  </form>
+</header>
+
+<div class="container">
+
+  <div class="stats">
+    <div class="stat"><div class="num">{pending.length}</div><div class="label">Pendentes</div></div>
+    <div class="stat"><div class="num">{approved.length}</div><div class="label">Aprovados (recentes)</div></div>
+    <div class="stat"><div class="num">{subs.length}</div><div class="label">Inscritos newsletter</div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="pending">Pendentes ({pending.length})</button>
+    <button class="tab" data-tab="approved">Aprovados</button>
+    <button class="tab" data-tab="newsletter">Newsletter</button>
+  </div>
+
+  <div class="panel active" id="panel-pending">
+    {pending.length === 0 && <div class="empty">Nenhum comentário pendente</div>}
+    {pending.map((c) => (
+      <div class="card" data-id={c.id}>
+        <div class="meta">
+          <span><strong>{c.author_name}</strong> &lt;{c.author_email}&gt;</span>
+          <span>·</span>
+          <span class="slug">{c.page_slug}</span>
+          <span>·</span>
+          <span>{fmt(c.created_at)}</span>
+        </div>
+        <div class="content-text">{c.content}</div>
+        <div class="actions">
+          <button class="btn btn-approve" data-action="approve">Aprovar</button>
+          <button class="btn btn-reject" data-action="reject">Rejeitar</button>
+          <button class="btn btn-delete" data-action="delete">Excluir</button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="panel" id="panel-approved">
+    {approved.length === 0 && <div class="empty">Nenhum comentário aprovado</div>}
+    {approved.map((c) => (
+      <div class="card" data-id={c.id}>
+        <div class="meta">
+          <span><strong>{c.author_name}</strong></span>
+          <span>·</span>
+          <span class="slug">{c.page_slug}</span>
+          <span>·</span>
+          <span>{c.approved_at ? fmt(c.approved_at) : fmt(c.created_at)}</span>
+        </div>
+        <div class="content-text">{c.content}</div>
+        <div class="actions">
+          <button class="btn btn-reject" data-action="reject">Despublicar</button>
+          <button class="btn btn-delete" data-action="delete">Excluir</button>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="panel" id="panel-newsletter">
+    <div class="toolbar">
+      <span>Total: <strong>{subs.length}</strong> inscritos</span>
+      <a href="/api/admin/newsletter-export/">Exportar CSV</a>
+    </div>
+    {subs.length === 0 && <div class="empty">Nenhum inscrito ainda</div>}
+    {subs.length > 0 && (
+      <table>
+        <thead><tr><th>E-mail</th><th>Origem</th><th>Inscrição</th></tr></thead>
+        <tbody>
+          {subs.map((s) => (
+            <tr>
+              <td>{s.email}</td>
+              <td>{s.source ?? '—'}</td>
+              <td>{fmt(s.created_at)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+
+</div>
+
+<script is:inline>
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('button[data-action]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const card = btn.closest('.card');
+      const id = Number(card.dataset.id);
+      const action = btn.dataset.action;
+      if (action === 'delete' && !confirm('Excluir definitivamente este comentário?')) return;
+      const allBtns = card.querySelectorAll('button');
+      allBtns.forEach(b => b.disabled = true);
+      try {
+        const res = await fetch('/api/admin/moderate/', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ id, action })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'Erro');
+        card.style.transition = 'opacity .3s';
+        card.style.opacity = '0';
+        setTimeout(() => card.remove(), 300);
+      } catch (e) {
+        alert('Erro: ' + e.message);
+        allBtns.forEach(b => b.disabled = false);
+      }
+    });
+  });
+</script>
+</body>
+</html>

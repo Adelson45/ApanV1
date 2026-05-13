@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   site: 'https://jovemapan.com.br',
   output: 'static',
+  adapter: vercel(),
   trailingSlash: 'always',
   compressHTML: true,
   redirects: {
@@ -20,4 +22,3 @@ export default defineConfig({
     }
   }
 });
-// Triggering deploy after activating GitHub Pages
