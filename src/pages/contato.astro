@@ -49,7 +49,7 @@ const description = 'Entre em contato conosco para dúvidas, sugestões ou parce
           </div>
           
           <div class="contact-form-wrapper">
-            <form id="contactForm" class="contact-form" action="/api/contact" method="POST">
+            <form id="contactForm" class="contact-form" action="/api/contact/" method="POST" novalidate>
               <h2>Envie uma mensagem</h2>
               
               <div class="form-group">
@@ -103,6 +103,8 @@ const description = 'Entre em contato conosco para dúvidas, sugestões ou parce
                 </label>
               </div>
               
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+
               <button type="submit" class="btn btn-primary btn-full">
                 Enviar Mensagem
               </button>
@@ -131,9 +133,10 @@ const description = 'Entre em contato conosco para dúvidas, sugestões ou parce
     
     try {
       const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-      
-      const response = await fetch('/api/contact', {
+      const data: Record<string, any> = Object.fromEntries(formData);
+      data.privacy = (form.querySelector('#privacy') as HTMLInputElement)?.checked || false;
+
+      const response = await fetch('/api/contact/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
