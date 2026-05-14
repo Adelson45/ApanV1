@@ -539,38 +539,85 @@ const popular = [
 <h2 id="peels-vs-asx">Capacete Peels ou ASX: Qual Marca Escolher?</h2>
 <p>Vamos analisar em um comparativo direto:</p>
 
-<table>
-  <thead>
-    <tr><th>Característica</th><th>Peels</th><th>ASX</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Posicionamento</strong></td>
-      <td>Foco no público urbano com designs inovadores e ousados. Forte apelo ao motociclista jovem.</td>
-      <td>Foco em custo-benefício e qualidade de construção. Associada à HJC.</td>
-    </tr>
-    <tr>
-      <td><strong>Segurança</strong></td>
-      <td>Todos certificados pelo INMETRO. Casco em ABS de alta pressão nos modelos de entrada.</td>
-      <td>Certificação INMETRO e alguns modelos com certificações internacionais. Construção sólida.</td>
-    </tr>
-    <tr>
-      <td><strong>Design/Grafismos</strong></td>
-      <td>Ponto forte. Grafismos criativos e designs únicos.</td>
-      <td>Mais sóbrios e esportivos, seguindo linha global.</td>
-    </tr>
-    <tr>
-      <td><strong>Conforto/Acabamento</strong></td>
-      <td>Bom para a faixa de preço, mais simples em modelos de entrada.</td>
-      <td>Elogiada pelo conforto e bom encaixe.</td>
-    </tr>
-    <tr>
-      <td><strong>Custo-Benefício</strong></td>
-      <td>Excelente. Estilosos e funcionais a preços competitivos.</td>
-      <td>Uma das melhores. Entrega características de capacetes mais caros por preço acessível.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="comparativo-table">
+    <thead>
+      <tr><th>Característica</th><th>Peels</th><th>ASX</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Característica"><strong>Posicionamento</strong></td>
+        <td data-label="Peels">Foco no público urbano com designs inovadores e ousados. Forte apelo ao motociclista jovem.</td>
+        <td data-label="ASX">Foco em custo-benefício e qualidade de construção. Associada à HJC.</td>
+      </tr>
+      <tr>
+        <td data-label="Característica"><strong>Segurança</strong></td>
+        <td data-label="Peels">Todos certificados pelo INMETRO. Casco em ABS de alta pressão nos modelos de entrada.</td>
+        <td data-label="ASX">Certificação INMETRO e alguns modelos com certificações internacionais. Construção sólida.</td>
+      </tr>
+      <tr>
+        <td data-label="Característica"><strong>Design/Grafismos</strong></td>
+        <td data-label="Peels">Ponto forte. Grafismos criativos e designs únicos.</td>
+        <td data-label="ASX">Mais sóbrios e esportivos, seguindo linha global.</td>
+      </tr>
+      <tr>
+        <td data-label="Característica"><strong>Conforto/Acabamento</strong></td>
+        <td data-label="Peels">Bom para a faixa de preço, mais simples em modelos de entrada.</td>
+        <td data-label="ASX">Elogiada pelo conforto e bom encaixe.</td>
+      </tr>
+      <tr>
+        <td data-label="Característica"><strong>Custo-Benefício</strong></td>
+        <td data-label="Peels">Excelente. Estilosos e funcionais a preços competitivos.</td>
+        <td data-label="ASX">Uma das melhores. Entrega características de capacetes mais caros por preço acessível.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 25px 0;
+  }
+  .comparativo-table {
+    margin: 0 !important;
+  }
+  @media (max-width: 720px) {
+    .table-responsive { overflow-x: visible; }
+    .comparativo-table thead { display: none; }
+    .comparativo-table tbody, .comparativo-table tr, .comparativo-table td {
+      display: block;
+      width: 100%;
+    }
+    .comparativo-table tr {
+      background: #fff;
+      border: 1px solid #EAEAEA;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      padding: 12px 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .comparativo-table td {
+      border: none !important;
+      border-bottom: 1px solid #f4f4f4 !important;
+      padding: 10px 14px !important;
+      text-align: left !important;
+    }
+    .comparativo-table tr td:last-child { border-bottom: none !important; }
+    .comparativo-table td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: #E31E24;
+      margin-bottom: 4px;
+    }
+  }
+</style>
 
 <h3>Conclusão: Qual escolher?</h3>
 <p><strong>Escolha Peels se:</strong> Você busca um capacete com design diferenciado, criativo e com forte apelo urbano.</p>
