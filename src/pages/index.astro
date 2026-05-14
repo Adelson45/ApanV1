@@ -310,7 +310,7 @@ const postsMaisVistos = [
             const paginationEl = document.getElementById('posts-pagination');
             if (!paginationEl || cards.length === 0) return;
 
-            function showPage(page) {
+            function showPage(page, scroll) {
               currentPage = page;
               const start = (page - 1) * PER_PAGE;
               const end = start + PER_PAGE;
@@ -318,8 +318,10 @@ const postsMaisVistos = [
                 card.style.display = (i >= start && i < end) ? '' : 'none';
               });
               renderPagination();
-              const section = document.querySelector('.posts-populares-section');
-              if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              if (scroll) {
+                const section = document.querySelector('.posts-populares-section');
+                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }
 
             function renderPagination() {
@@ -341,12 +343,12 @@ const postsMaisVistos = [
               paginationEl.querySelectorAll('.pg-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                   e.preventDefault();
-                  showPage(parseInt(this.dataset.page, 10));
+                  showPage(parseInt(this.dataset.page, 10), true);
                 });
               });
             }
 
-            showPage(1);
+            showPage(1, false);
           })();
         </script>
       </div>
