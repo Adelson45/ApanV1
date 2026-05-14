@@ -1,0 +1,574 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+
+const title = 'Melhor Capacete Integral: 10 Ótimas Opções';
+const description = 'Guia completo dos 10 melhores capacetes integrais com excelente custo-benefício em 2025. Análise de segurança, conforto e funcionalidades dos modelos campeões.';
+const canonical = 'https://jovemapan.com.br/melhor-capacete/integral/';
+const author = 'Pamela Pan';
+const authorImage = '/images/Pamela%20pan%20coufundadora%20e%20editoara%20chefe%20do%20blog%20apan%20.png';
+const publishDate = '2025-09-15';
+const category = 'Capacetes';
+const categoryHref = '/melhor-capacete/';
+const coverImage = '/images/Melhor%20Capacete%20integral.png';
+
+const indice = [
+  { label: 'Os 10 Melhores Capacetes Integrais', href: '#top10', children: [
+    { label: '1. Peels Icon', href: '#peels-icon' },
+    { label: '2. Norisk Razor', href: '#norisk-razor' },
+    { label: '3. Pro Tork R8', href: '#protork-r8' },
+    { label: '4. ASX Draken Vector', href: '#asx-draken' },
+    { label: '5. LS2 Classic Rafael Paschoalin', href: '#ls2-classic' },
+    { label: '6. EBF Spark Spider', href: '#ebf-spark' },
+    { label: '7. Bell Qualifier', href: '#bell-qualifier' },
+    { label: '8. Mixs MX5 Super Speed', href: '#mixs-mx5' },
+    { label: '9. X Troy Drone', href: '#x-troy-drone' },
+    { label: '10. Stealth Solid', href: '#stealth-solid' }
+  ]},
+  { label: 'Guia de Escolha', href: '#guia-escolha' },
+  { label: 'Tipos de Capacetes', href: '#tipos' },
+  { label: 'Capacetes Mais Vendidos na Amazon', href: '#amazon' },
+  { label: 'Perguntas Frequentes', href: '#faq' },
+  { label: 'Conclusão', href: '#conclusao' }
+];
+
+const tags = [
+  { label: 'CAPACETES', href: '/melhor-capacete/' },
+  { label: 'INTEGRAL', href: '/melhor-capacete/integral/' },
+  { label: 'CUSTO BENEFÍCIO', href: '/custo-beneficio/' }
+];
+
+const authorBio = {
+  name: 'Pamela Pan',
+  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  image: '/images/Pamela pan coufundadora e editoara chefe do blog apan .png',
+  profileHref: '/author-pamela-pan/',
+  profileLabel: 'Ver perfil completo ›'
+};
+
+const featuredProduct = {
+  preTitle: 'Aproveite frete GRÁTIS',
+  image: '/images/Capacete-Aberto-Moto-Peels-Mirage-Classic-Branco.png',
+  imageAlt: 'Capacete Moto Peels Mirage Classic Branco',
+  name: 'Capacete Moto Peels Mirage Classic Branco',
+  mercadoLivreHref: 'https://mercadolivre.com/sec/1qaAz5s',
+  amazonHref: 'https://amzn.to/3MjKWy9'
+};
+
+const extraProducts = [
+  {
+    badge: 'Aproveite 32% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Intercomunicador-V6-Plus-para-Capacete-Bluetooth-1200m-Kit-Duplo-com-Microfone-2-unidades.png',
+    imageAlt: 'Intercomunicador V6 Plus para Capacete',
+    name: 'Intercomunicador V6 Plus para Capacete',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2rQAwF3',
+    amazonHref: 'https://amzn.to/481F17S'
+  },
+  {
+    badge: 'Aproveite 10% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Moto-Peels-Icon-Ekko-1.png',
+    imageAlt: 'Capacete Moto Peels Icon Ekko',
+    name: 'Capacete Moto Peels Icon Ekko',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2iCYhgR',
+    amazonHref: 'https://amzn.to/4oGNbZT'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/jaqueta-Texx-Armor-Masculina.png',
+    imageAlt: 'Jaqueta Texx Armor Masculina',
+    name: 'Jaqueta Texx Armor Masculina',
+    mercadoLivreHref: 'https://mercadolivre.com/sec/2xVBsV9',
+    amazonHref: 'https://amzn.to/3K2DQ0e'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/capacete-Aberto-Moto-Peels-Freeway-King-Preto.png',
+    imageAlt: 'Capacete Aberto Moto Peels Freeway King Preto',
+    name: 'Capacete Aberto Moto Peels Freeway King Preto',
+    amazonHref: 'https://amzn.to/4a7tpTA'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Shoei-Gt-Air-3-Discipline-Tc-2-62.png',
+    imageAlt: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    name: 'Capacete Shoei Gt-Air 3 Discipline Tc-2',
+    amazonHref: 'https://amzn.to/3MeTrKC'
+  },
+  {
+    badge: 'Aproveite 20% de DESCONTO',
+    badgeStyle: 'desconto' as const,
+    image: '/images/Capacete-Nexx-Sx100-Core-Azul-Fosco.png',
+    imageAlt: 'Capacete Nexx Sx100 Core Azul Fosco',
+    name: 'Capacete Nexx Sx100 Core Azul Fosco',
+    amazonHref: 'https://amzn.to/4oPtAaJ'
+  }
+];
+
+const popular = [
+  { label: 'Intercomunicador Cardo Review', href: '/intercomunicador-cardo-review/' },
+  { label: 'Comparativo Michelin vs Pirelli', href: '/comparativo-michelin-vs-pirelli/' },
+  { label: 'Michelin Pilot Street Review', href: '/michelin-pilot-street-review/' },
+  { label: 'Melhor Capacete HJC Helmets', href: '/melhor-capacete-hjc-helmets/' },
+  { label: 'Melhores Cadeados para Moto', href: '/cadeados-para-moto/' }
+];
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author={author}
+  authorImage={authorImage}
+  authorHref="/author-pamela-pan/"
+  publishDate={publishDate}
+  category={category}
+  categoryHref={categoryHref}
+  coverImage={coverImage}
+  coverImageAlt="Melhor capacete integral - guia completo"
+  indice={indice}
+  tags={tags}
+  authorBio={authorBio}
+  featuredProduct={featuredProduct}
+  extraProducts={extraProducts}
+  popular={popular}
+>
+
+<p class="post-lead">
+  Para todo motociclista, a sensação de liberdade na estrada é incomparável, mas ela vem acompanhada de uma grande responsabilidade: a segurança. Encontrar um <strong>capacete integral</strong> com boa qualidade é o maior desafio para quem quer se proteger sem comprometer o orçamento.
+</p>
+
+<p>
+  A boa notícia é que equipar-se com qualidade não precisa custar muito. Neste guia, apresentamos os <strong>10 melhores capacetes integrais com ótimo custo-benefício em 2025</strong>, analisando o material de construção do casco, qualidade da viseira, eficiência do sistema de ventilação, conforto do forro interno e avaliações reais de usuários.
+</p>
+
+<h2 id="top10">Os 10 Melhores Capacetes Integrais em Custo x Benefício</h2>
+
+<h3 id="peels-icon">1. Capacete Peels Icon</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Fechado Peels Icon Fast Preto Fosco.png" alt="Capacete Peels Icon Fast" loading="lazy" />
+  </div>
+  <p>
+    O <strong>Peels Icon</strong> é um dos campeões de vendas no Brasil e um excelente ponto de partida para quem busca seu primeiro capacete. Ele combina um design moderno com funcionalidades essenciais para o uso urbano, com casco injetado em ABS, viseira de 2mm e sistema de ventilação funcional.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Preço extremamente acessível</li>
+        <li>Grande variedade de grafismos</li>
+        <li>Fácil de encontrar peças de reposição</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Pode ser ruidoso em velocidades altas</li>
+        <li>Acabamento interno simples</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Motociclistas urbanos, entregadores e trajetos curtos.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/3Kjht6B" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/1LGbtav" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="norisk-razor">2. Capacete Norisk Razor</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Norisk Razor Preto Brilho Masculino.png" alt="Capacete Norisk Razor" loading="lazy" />
+  </div>
+  <p>
+    O <strong>Norisk Razor</strong> eleva o padrão dos capacetes de entrada. Ele se destaca pelo design aerodinâmico e por frequentemente incluir uma <strong>viseira solar interna</strong>, um diferencial enorme nesta faixa de preço. Conta com casco em ABS, forração removível e bom sistema de ventilação.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Excelente custo-benefício</li>
+        <li>Viseira solar interna</li>
+        <li>Design moderno</li>
+        <li>Bom encaixe na cabeça</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Acionamento da viseira solar pode ser rígido</li>
+        <li>Acabamento interno simples</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Uso diário na cidade e pequenas viagens em estradas.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/3IMmKD0" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2MbYNMc" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="protork-r8">3. Capacete Pro Tork R8</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/CAPACETE FECHADO PRO TORK R8.png" alt="Capacete Pro Tork R8" loading="lazy" />
+  </div>
+  <p>
+    A Pro Tork é uma gigante nacional e o <strong>R8</strong> é um de seus carros-chefe. Este capacete foca no essencial: proteção e baixo custo. É a definição de um capacete "pau para toda obra", com casco em ABS e design compacto.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Um dos capacetes mais baratos do mercado</li>
+        <li>Leve e com design compacto</li>
+        <li>Design moderno</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Ventilação e isolamento acústico limitados</li>
+        <li>Forração simples</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Motociclistas urbanos em baixa velocidade e máxima economia. Veja a <a href="/capacete-r8-protork-review/">review completa do Pro Tork R8</a>.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/46Jvx0I" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2w6JgHs" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="asx-draken">4. Capacete ASX Draken Vector</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Asx Draken Solid Cor Preto Tamanho M.png" alt="Capacete ASX Draken" loading="lazy" />
+  </div>
+  <p>
+    O <strong>ASX Draken</strong> se destaca pelo seu visual agressivo e esportivo, muitas vezes encontrado em capacetes mais caros. Além do estilo, ele entrega qualidade com seu casco em ABS, narigueira e bavete inclusos, e forração de boa qualidade.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Design esportivo e arrojado</li>
+        <li>Bom sistema de ventilação</li>
+        <li>Acompanha narigueira e bavete</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Pode ter formato mais justo</li>
+        <li>Importante experimentar antes de comprar</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Uso urbano e em estradas com visual de pista.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/48188tR" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/1a1rkte" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="ls2-classic">5. Capacete LS2 Classic Rafael Paschoalin</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Moto Ls2 Ff358 S Digital Rafael Paschoalin Spoiler.png" alt="Capacete LS2 FF358 Rafael Paschoalin" loading="lazy" />
+  </div>
+  <p>
+    A <strong>LS2</strong> é uma marca de renome mundial, e ter um modelo de entrada com a qualidade da marca já é uma grande vantagem. O <strong>FF358</strong>, muitas vezes encontrado em edições especiais como a do piloto Rafael Paschoalin, oferece um acabamento superior, forro de alta densidade e nível de segurança confiável.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Qualidade de marca premium</li>
+        <li>Forro de alta densidade</li>
+        <li>Acabamento superior</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Geralmente mais caro que concorrentes nacionais de entrada</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Motociclistas que exigem qualidade de marca premium. Confira também a <a href="/capacete-ls2-review/">review do LS2</a>.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/3VFv7Di" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/1JgQiNV" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="ebf-spark">6. Capacete EBF Spark Spider</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Masculino Feminino Ebf Spark Spider Preto Vermelho.png" alt="Capacete EBF Spark Spider" loading="lazy" />
+  </div>
+  <p>
+    A <strong>EBF</strong> é outra marca nacional forte, e o <strong>Spark Spider</strong> é um modelo que equilibra bem preço e design. Com grafismos chamativos, construção robusta em ABS e forração removível e lavável.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Design com grafismos arrojados</li>
+        <li>Forração removível</li>
+        <li>Preço competitivo</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Sistema de troca de viseira pode não ser prático</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Uso urbano diário com design diferenciado.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4nXVuk8" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2DGshD2" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="bell-qualifier">7. Capacete Bell Qualifier</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Bell Qualifier Capacete de rua unissex para adultos.png" alt="Capacete Bell Qualifier" loading="lazy" />
+  </div>
+  <p>
+    O <strong>Bell Qualifier</strong> é a porta de entrada para uma das marcas mais icônicas e seguras do mundo. Embora seu preço seja um pouco acima dos modelos nacionais, o investimento se justifica pela <strong>aerodinâmica superior</strong> e ventilação avançada (Velocity Flow Ventilation™).
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Tecnologia de marca premium</li>
+        <li>Excelente ventilação</li>
+        <li>Aerodinâmica estável em altas velocidades</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Preço mais elevado</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Quem pega estrada com frequência e busca uma marca renomada sem custo top de linha. Veja a <a href="/review-do-bell-qualifier-forced/">review completa do Bell Qualifier</a>.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/3VBOKMD" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/1mzNEu1" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="mixs-mx5">8. Capacete Mixs MX5 Super Speed</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete Mixs MX5 Super Speed 60 CinzaLaranja.png" alt="Capacete Mixs MX5 Super Speed" loading="lazy" />
+  </div>
+  <p>
+    O <strong>Mixs MX5</strong> segue a linha dos capacetes de ótimo custo-benefício focados no uso diário. Com um design limpo, casco em ABS, forro removível e entradas de ar funcionais.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Leveza</li>
+        <li>Simplicidade</li>
+        <li>Um dos preços mais baixos do mercado</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Acabamento reflete sua faixa econômica</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Trajetos curtos, segundo capacete ou para garupa.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/46soP07" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2Re619V" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="x-troy-drone">9. Capacete X Troy Drone</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/Capacete X Troy Drone 60PfoPrata.png" alt="Capacete X Troy Drone" loading="lazy" />
+  </div>
+  <p>
+    O <strong>X Troy Drone</strong> chama a atenção pelo seu design futurista e grafismos modernos. É uma opção para quem quer se destacar no trânsito, com casco em ABS, forro removível e sistema de ventilação básico.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Design futurista</li>
+        <li>Grafismos modernos</li>
+        <li>Preço competitivo</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Sistema de ventilação básico</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Motociclistas jovens que valorizam estética.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4gOssB9" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/2NsMSaF" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h3 id="stealth-solid">10. Capacete Integral Stealth Solid</h3>
+<div class="product-section">
+  <div class="h2-image-card product-image">
+    <img src="/images/CAPACETE FECHADO PRO TORK STEALTH SOLID BRILHANTE PRETO TAM. 58 VIS. FUMÊ.png" alt="Capacete Stealth Solid" loading="lazy" />
+  </div>
+  <p>
+    Como o nome sugere, o <strong>Stealth Solid</strong> é uma opção sólida e discreta. Ele foca 100% na funcionalidade e segurança, sem grandes detalhes estéticos. Construção robusta em ABS e visual clássico.
+  </p>
+  <div class="pros-cons-grid">
+    <div class="pc-col">
+      <h4 class="pros">PRÓS</h4>
+      <ul class="pc-list pros">
+        <li>Design sóbrio e minimalista</li>
+        <li>Construção robusta</li>
+        <li>Preço muito competitivo</li>
+      </ul>
+    </div>
+    <div class="pc-col">
+      <h4 class="cons">CONTRAS</h4>
+      <ul class="pc-list cons">
+        <li>Poucos recursos extras</li>
+        <li>Ventilação básica</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>Ideal para:</strong> Quem prioriza uso diário funcional e discreto.</p>
+  <div class="btn-buy-container">
+    <a href="https://amzn.to/4nVq4ea" class="btn-buy" target="_blank" rel="nofollow noopener noreferrer">Ver oferta na Amazon</a>
+    <a href="https://mercadolivre.com/sec/1rg9roE" class="btn-buy ml" target="_blank" rel="nofollow noopener noreferrer">Ver no Mercado Livre</a>
+  </div>
+</div>
+
+<h2 id="guia-escolha">Guia de Escolha: O Que Considerar Antes de Comprar</h2>
+
+<h3>Escolha o Capacete com o Tamanho Ideal para Evitar Desconforto</h3>
+<p>
+  Meça a circunferência da sua cabeça com uma fita métrica, passando dois dedos acima das sobrancelhas até a parte traseira mais proeminente. Anote a medida em centímetros e consulte a <strong>tabela de tamanhos do fabricante</strong>. O ajuste ideal é aquele em que o capacete entra justo, sem pontos de pressão dolorosos, e fica firme sem se mover ao balançar a cabeça. Veja nosso <a href="/tamanho-do-capacete/">guia completo de tamanho de capacete</a>.
+</p>
+
+<h3>Capacetes em Material ABS Têm Melhor Custo-Benefício</h3>
+<p>
+  Todos os capacetes desta lista possuem casco em <strong>ABS (Acrilonitrila Butadieno Estireno)</strong>. Este é um tipo de plástico injetado de alta resistência, que oferece um excelente nível de proteção contra impactos para o uso em cidades e estradas.
+</p>
+
+<h3>Verifique o Peso do Capacete</h3>
+<p>
+  Para modelos de entrada em ABS, a faixa ideal de peso fica entre <strong>1.400g e 1.600g</strong>. Essa informação geralmente está em um adesivo na parte traseira ou na descrição online. O peso afeta o conforto e a fadiga, especialmente em viagens longas.
+</p>
+
+<h3>Confira Recursos Extras</h3>
+<p>Recursos valiosos que podem fazer diferença no dia a dia:</p>
+<ul>
+  <li><strong>Viseira solar interna (sun visor)</strong></li>
+  <li><strong>Forro removível e lavável</strong></li>
+  <li><strong>Bavete e narigueira</strong></li>
+  <li><strong>Preparação para intercomunicador</strong> — veja nossas dicas em <a href="/intercomunicador-cardo-review/">intercomunicadores</a></li>
+</ul>
+
+<h3>Observe a Certificação de Segurança</h3>
+<p>
+  Este é o item mais importante e não negociável. No Brasil, todo capacete deve ter o <strong>selo de certificação do <a href="https://www.gov.br/inmetro/pt-br" target="_blank" rel="noopener noreferrer">INMETRO</a></strong>. Esse selo garante que o produto foi submetido a rigorosos testes de impacto, resistência da cinta jugular e qualidade da viseira. Saiba mais em <a href="/capacetes-com-selo-inmetro/">capacetes com selo INMETRO</a>.
+</p>
+
+<h2 id="tipos">Tipos de Capacetes</h2>
+
+<h3>Capacetes Integrais</h3>
+<p>
+  Construído em peça única, protege toda a cabeça incluindo queixo e rosto. É o tipo mais seguro e obrigatório para uso em rodovias em alta velocidade.
+</p>
+
+<h3>Capacetes Modulares (Escamoteáveis)</h3>
+<p>
+  Possuem queixeira articulada e levantável. São versáteis para uso na cidade, permitindo conversar sem precisar tirar o capacete. O mecanismo pode ser um ponto frágil em caso de impacto severo. Veja o <a href="/comparativo-modular-x-integral/">comparativo modular x integral</a>.
+</p>
+
+<h3>Capacetes Open Face (Abertos)</h3>
+<p>
+  Sem proteção de queixo. Oferecem maior campo visual e ventilação, mas são indicados apenas para uso urbano em baixíssima velocidade. Conheça os <a href="/capacete-aberto/">melhores capacetes abertos</a>.
+</p>
+
+<h3>Capacetes Off-Road</h3>
+<p>
+  Específicos para trilhas e motocross. Possuem queixeira alongada, pala longa e não usam viseira (usa-se óculos específicos). Veja os <a href="/capacete-off-road-review/">melhores capacetes off-road</a>.
+</p>
+
+<h3>Capacetes Urbanos</h3>
+<p>
+  Tipo aberto, muito leves, design simples. Para deslocamentos curtos em scooters e motos de baixa cilindrada. Confira a <a href="/capacete-para-scooter/">linha para scooter</a>.
+</p>
+
+<h3>Substituição e Troca de Capacetes</h3>
+<p>
+  A recomendação é trocar a cada <strong>3 a 5 anos de uso</strong>. Os materiais internos perdem capacidade de absorção após este período. Se o capacete sofrer impacto, deve ser substituído imediatamente, mesmo sem danos visíveis. Saiba mais em <a href="/capacete-prazo-validade/">prazo de validade do capacete</a>.
+</p>
+
+<h2 id="amazon">Capacetes Mais Vendidos na Amazon</h2>
+<p>
+  Quer ver o que outros motociclistas estão comprando agora? Uma ótima dica é conferir a <a href="https://amzn.to/480d2qZ" target="_blank" rel="nofollow noopener noreferrer">lista de capacetes mais vendidos na Amazon</a>.
+</p>
+
+<h2 id="faq">Perguntas Frequentes</h2>
+
+<h3>Quais são as marcas de capacetes mais recomendadas?</h3>
+<p>
+  Para custo-benefício, recomendamos: <strong>Norisk, LS2, Peels, Pro Tork e ASX</strong>. Na categoria superior: <strong>AGV, Shoei, Arai e Bell</strong>. Veja nosso ranking de <a href="/melhor-capacete/mais-vendidas/">marcas mais vendidas</a>.
+</p>
+
+<h3>Como comparar a segurança dos capacetes?</h3>
+<p>
+  Verifique a certificação INMETRO, pesquise os testes do programa britânico <a href="https://sharp.dft.gov.uk/" target="_blank" rel="noopener noreferrer">S.H.A.R.P</a>, e opte sempre por um modelo integral (fechado).
+</p>
+
+<h3>Quais características fazem do capacete uma boa escolha?</h3>
+<p>
+  Ajuste perfeito ao tamanho, material de qualidade (ABS), peso equilibrado, sistema de ventilação eficiente e recursos extras úteis. Confira nosso <a href="/capacete-de-moto-seguro/">guia de capacete seguro</a>.
+</p>
+
+<h3>Qual a diferença entre integrais e escamoteáveis em proteção?</h3>
+<p>
+  O integral é estruturalmente mais seguro. O escamoteável possui um mecanismo na queixeira que pode ser um ponto vulnerável em colisão forte.
+</p>
+
+<h3>Quais são os critérios para escolher um capacete?</h3>
+<ul>
+  <li>Segurança (INMETRO)</li>
+  <li>Tipo de uso</li>
+  <li>Tamanho e ajuste</li>
+  <li>Material e peso</li>
+  <li>Orçamento</li>
+</ul>
+
+<h2 id="conclusao">Conclusão</h2>
+<p>
+  Escolher um <strong>capacete integral</strong> é uma missão totalmente possível. Como vimos nesta lista, o mercado oferece opções incríveis que garantem a sua segurança sem esvaziar a sua carteira. Lembre-se de seguir nosso guia sobre como escolher o tamanho, verificar os materiais, o peso e, acima de tudo, a <strong>certificação de segurança</strong>. Investir em um bom capacete é investir na sua vida.
+</p>
+
+<p>
+  Para continuar sua pesquisa, confira também nossos guias de <a href="/melhor-capacete/">melhores capacetes</a>, <a href="/custo-beneficio/">custo-benefício</a> e <a href="/capacete-aberto/">capacete aberto</a>.
+</p>
+
+</PostLayout>
