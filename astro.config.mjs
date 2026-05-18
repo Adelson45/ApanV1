@@ -12,6 +12,9 @@ export default defineConfig({
     '/ls2-ou-norisk': '/ls2-x-norisk'
   },
   integrations: [sitemap()],
+  security: {
+    checkOrigin: false
+  },
   build: {
     format: 'directory'
   },
