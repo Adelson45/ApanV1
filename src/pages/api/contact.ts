@@ -1,6 +1,7 @@
 export const prerender = false;
 import type { APIRoute } from 'astro';
 import { getClientIp, checkRateLimit } from '../../lib/ratelimit';
+import { supabaseAdmin } from '../../lib/supabase';
 
 const BREVO_API = 'https://api.brevo.com/v3/smtp/email';
 const FROM_EMAIL = 'contato@jovemapan.com.br';
@@ -87,6 +88,15 @@ export const POST: APIRoute = async ({ request }) => {
       console.error('Brevo error:', res.status, errText);
       return json({ ok: false, error: { message: 'Erro ao enviar e-mail', code: 'EMAIL_ERROR' } }, 500);
     }
+
+    await supabaseAdmin.from('contact_messages').insert({
+      name: String(name).slice(0, 200),
+      email: String(email).toLowerCase().slice(0, 200),
+      subject: String(subject).slice(0, 300),
+      message: String(message).slice(0, 5000),
+      ip_address: ip,
+      user_agent: request.headers.get('user-agent')?.slice(0, 300) ?? null
+    });
 
     return json({ ok: true, data: { message: 'Mensagem enviada com sucesso' } });
   } catch (error) {

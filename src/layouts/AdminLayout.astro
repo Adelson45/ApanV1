@@ -1,0 +1,151 @@
+---
+interface Props {
+  title: string;
+  active: 'dashboard' | 'inscritos' | 'pendentes' | 'aprovados' | 'contatos';
+  pageTitle: string;
+  pageSubtitle?: string;
+  pageIcon?: string;
+}
+const { title, active, pageTitle, pageSubtitle, pageIcon } = Astro.props;
+
+const nav = [
+  { key: 'dashboard',  href: '/admin/',                       label: 'Dashboard',  svg: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>' },
+  { key: 'inscritos',  href: '/admin/inscritos/',             label: 'Inscritos',  svg: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
+  { key: 'pendentes',  href: '/admin/comentarios/pendentes/', label: 'Pendentes',  svg: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
+  { key: 'aprovados',  href: '/admin/comentarios/aprovados/', label: 'Aprovados',  svg: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>' },
+  { key: 'contatos',   href: '/admin/contatos/',              label: 'Contatos',   svg: '<path d="M3 11l18-8-8 18-2-8z"/>' }
+];
+---
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="robots" content="noindex, nofollow" />
+<style is:global>
+  html, body { margin: 0; padding: 0; }
+  *,*::before,*::after { box-sizing: border-box; }
+  html { background: #0f0f12; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0f0f12;
+    color: #e6e6e6;
+    min-height: 100vh;
+  }
+  .admin-shell {
+    display: flex;
+    min-height: 100vh;
+  }
+  /* SIDEBAR */
+  aside.sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    background: #16161a;
+    border-right: 1px solid #232328;
+    display: flex; flex-direction: column;
+    padding: 24px 16px;
+    position: sticky; top: 0;
+    height: 100vh;
+    align-self: flex-start;
+  }
+  .brand { padding: 4px 12px 24px; border-bottom: 1px solid #232328; margin-bottom: 16px; }
+  .brand h1 { font-size: 1.4rem; font-weight: 900; margin: 0; letter-spacing: .5px; }
+  .brand h1 .red { color: #e31b1b; }
+  .brand small { color: #8a8a8f; font-size: .65rem; letter-spacing: 2px; font-weight: 700; }
+  nav.menu { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+  nav.menu a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 14px; border-radius: 8px;
+    color: #b6b6bc; text-decoration: none;
+    font-size: .92rem; font-weight: 600;
+    transition: background .15s, color .15s;
+  }
+  nav.menu a:hover { background: #1f1f24; color: #fff; }
+  nav.menu a.active { background: #e31b1b; color: #fff; }
+  nav.menu a svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .logout-form { margin-top: auto; padding-top: 16px; }
+  .logout-form button {
+    width: 100%;
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 14px; border-radius: 8px;
+    background: transparent; border: none;
+    color: #8a8a8f; cursor: pointer;
+    font-size: .9rem; font-weight: 600; text-align: left;
+  }
+  .logout-form button:hover { color: #fff; background: #1f1f24; }
+  .logout-form svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* MAIN */
+  main.content { padding: 28px 36px; min-width: 0; flex: 1; }
+  .page-head { margin-bottom: 24px; }
+  .page-head h2 {
+    margin: 0 0 4px; font-size: 1.5rem; font-weight: 800;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .page-head h2 .pico { color: #e31b1b; display: inline-flex; }
+  .page-head p { margin: 0; color: #8a8a8f; font-size: .9rem; }
+
+  /* Componentes reutilizáveis */
+  .panel {
+    background: #16161a;
+    border: 1px solid #232328;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .empty { color: #6e6e74; text-align: center; padding: 40px 20px; }
+
+  @media (max-width: 900px) {
+    .admin-shell { flex-direction: column; }
+    aside.sidebar {
+      width: 100%;
+      position: static; height: auto;
+      flex-direction: row; flex-wrap: wrap;
+      padding: 12px 16px;
+      border-right: none;
+      border-bottom: 1px solid #232328;
+    }
+    .brand { width: 100%; padding: 0 0 12px; margin-bottom: 12px; border-bottom: 1px solid #232328; }
+    nav.menu { flex-direction: row; flex-wrap: wrap; gap: 4px; flex: 1; }
+    nav.menu a { padding: 8px 12px; font-size: .85rem; }
+    .logout-form { margin: 0; padding: 0; }
+    .logout-form button { padding: 8px 12px; font-size: .85rem; }
+    main.content { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="admin-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>JOVEM <span class="red">APAN</span></h1>
+      <small>ADMIN CMS</small>
+    </div>
+    <nav class="menu">
+      {nav.map(item => (
+        <a href={item.href} class={active === item.key ? 'active' : ''}>
+          <svg viewBox="0 0 24 24" set:html={item.svg}></svg>
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </nav>
+    <form class="logout-form" method="POST" action="/api/admin/logout/">
+      <button type="submit">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Sair</span>
+      </button>
+    </form>
+  </aside>
+
+  <main class="content">
+    <header class="page-head">
+      <h2>
+        {pageIcon && <span class="pico" set:html={pageIcon}></span>}
+        {pageTitle}
+      </h2>
+      {pageSubtitle && <p>{pageSubtitle}</p>}
+    </header>
+    <slot />
+  </main>
+</div>
+</body>
+</html>

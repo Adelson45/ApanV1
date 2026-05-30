@@ -1,0 +1,259 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { requireAdmin } from '../../../lib/auth';
+import { supabaseAdmin } from '../../../lib/supabase';
+
+const admin = await requireAdmin(Astro.cookies);
+if (!admin) return Astro.redirect('/admin/login/');
+
+const { data } = await supabaseAdmin
+  .from('comments')
+  .select('*')
+  .eq('status', 'approved')
+  .order('approved_at', { ascending: false })
+  .limit(200);
+const list = data ?? [];
+const fmt = (s: string) => new Date(s).toLocaleString('pt-BR');
+---
+<AdminLayout
+  title="Comentários Aprovados · Admin"
+  active="aprovados"
+  pageTitle="Comentários Aprovados"
+  pageSubtitle={`${list.length} comentários publicados`}
+>
+  {list.length === 0 && <div class="panel empty">Nenhum comentário aprovado ainda.</div>}
+  {list.map(c => (
+    <div class={`cm-card ${c.admin_reply ? 'is-replied is-collapsed' : ''}`} data-id={c.id}>
+      <div class="cm-meta">
+        <span class="cm-author">{c.author_name}</span>
+        <span class="cm-sep">·</span>
+        <span class="cm-slug">{c.page_slug}</span>
+        <span class="cm-sep">·</span>
+        <span class="cm-date">aprovado em {fmt(c.approved_at ?? c.created_at)}</span>
+        {c.admin_reply && (
+          <button class="toggle-collapse" type="button" title="Expandir/Minimizar">
+            <span class="ico-expand">▼</span>
+            <span class="ico-collapse">▲</span>
+            <span class="toggle-label">Respondido</span>
+          </button>
+        )}
+      </div>
+      {c.admin_reply && (
+        <div class="cm-summary">
+          <em>{c.content.slice(0, 100)}{c.content.length > 100 ? '…' : ''}</em>
+          <br />
+          <span class="summary-reply">✓ {c.admin_reply_author ?? 'Equipe'} respondeu em {fmt(c.admin_reply_at ?? c.approved_at ?? c.created_at)}</span>
+        </div>
+      )}
+      <div class="cm-body">{c.content}</div>
+
+      {c.admin_reply && (
+        <div class="reply-box">
+          <div class="reply-head">
+            <strong>{c.admin_reply_author ?? 'Equipe Jovem Apan'}</strong> respondeu
+            <span class="reply-date">em {fmt(c.admin_reply_at ?? c.approved_at)}</span>
+          </div>
+          <div class="reply-body">{c.admin_reply}</div>
+          <div class="reply-actions">
+            <button class="btn-link" data-toggle-reply data-author={c.admin_reply_author ?? ''} data-reply={c.admin_reply}>Editar</button>
+            <button class="btn-link danger" data-action="delete-reply">Excluir resposta</button>
+          </div>
+        </div>
+      )}
+
+      <div class="cm-actions">
+        {!c.admin_reply && <button class="btn btn-reply" data-toggle-reply>Responder</button>}
+        <button class="btn btn-reject" data-action="reject">Despublicar</button>
+        <button class="btn btn-delete" data-action="delete">Excluir</button>
+      </div>
+
+      <form class="reply-form" hidden>
+        <label>Responder como</label>
+        <input type="text" name="author" placeholder="Ex: Pamela Pan" required maxlength="120" />
+        <label>Sua resposta</label>
+        <textarea name="reply" rows="4" placeholder="Escreva a resposta…" required maxlength="4000"></textarea>
+        <div class="reply-form-actions">
+          <button type="submit" class="btn btn-approve">Publicar resposta</button>
+          <button type="button" class="btn btn-reject" data-cancel-reply>Cancelar</button>
+        </div>
+        <p class="reply-hint">A resposta aparecerá no site e será enviada por e-mail para <strong>{c.author_email}</strong>.</p>
+      </form>
+    </div>
+  ))}
+
+  <style is:global>
+    .cm-card { background: #16161a; border: 1px solid #232328; border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; }
+    .cm-card .cm-meta { font-size: .8rem; color: #8a8a8f; margin-bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .cm-card .cm-author { color: #fff; font-weight: 700; }
+    .cm-card .cm-slug { background: #232328; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: .75rem; }
+    .cm-card .cm-sep { color: #444; }
+    .cm-card .cm-body { color: #d6d6dc; line-height: 1.55; white-space: pre-wrap; margin-bottom: 14px; font-size: .95rem; }
+    .cm-card .cm-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cm-card .btn { padding: 8px 16px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: .8rem; line-height: 1; }
+    .cm-card .btn-approve { background: #16a34a; color: #fff; }
+    .cm-card .btn-reply { background: #3b82f6; color: #fff; }
+    .cm-card .btn-reject { background: #6b7280; color: #fff; }
+    .cm-card .btn-delete { background: #dc2626; color: #fff; }
+    .cm-card .btn:disabled { opacity: .5; cursor: wait; }
+
+    .cm-card .reply-box {
+      background: #0f0f12;
+      border-left: 3px solid #e31b1b;
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin: 0 0 14px 24px;
+    }
+    .cm-card .reply-box .reply-head {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      font-size: .85rem; color: #d6d6dc; margin-bottom: 8px;
+    }
+    .cm-card .reply-box .reply-head strong { color: #fff; font-weight: 700; }
+    .cm-card .reply-box .reply-date { color: #8a8a8f; margin-left: auto; font-size: .78rem; }
+    .cm-card .reply-box .reply-body {
+      color: #d6d6dc; line-height: 1.55; white-space: pre-wrap; font-size: .9rem; margin: 0 0 10px;
+    }
+    .cm-card .reply-box .reply-actions { display: flex; gap: 14px; }
+    .cm-card .reply-box .btn-link {
+      background: none; border: none; color: #8a8a8f;
+      font-size: .78rem; cursor: pointer; padding: 0; font-weight: 600;
+    }
+    .cm-card .reply-box .btn-link:hover { color: #fff; text-decoration: underline; }
+    .cm-card .reply-box .btn-link.danger:hover { color: #f87171; }
+
+    .cm-card .reply-form {
+      margin-top: 14px; padding: 16px; background: #0f0f12; border-radius: 8px;
+      border: 1px solid #232328; display: flex; flex-direction: column; gap: 8px;
+    }
+    .cm-card .reply-form label {
+      font-size: .7rem; color: #8a8a8f; text-transform: uppercase; letter-spacing: .5px; font-weight: 700;
+    }
+    .cm-card .reply-form input,
+    .cm-card .reply-form textarea {
+      background: #16161a; border: 1px solid #232328; border-radius: 6px;
+      padding: 10px 12px; color: #e6e6e6; font-family: inherit; font-size: .9rem; resize: vertical;
+      width: 100%; box-sizing: border-box;
+    }
+    .cm-card .reply-form input:focus,
+    .cm-card .reply-form textarea:focus { outline: none; border-color: #3b82f6; }
+    .cm-card .reply-form-actions { display: flex; gap: 8px; margin-top: 6px; }
+    .cm-card .reply-hint { color: #6e6e74; font-size: .75rem; margin: 4px 0 0; }
+
+    /* MINIMIZAÇÃO */
+    .cm-card.is-replied { border-left: 3px solid #16a34a; }
+    .cm-card .toggle-collapse {
+      margin-left: auto;
+      background: #232328;
+      border: none;
+      color: #b6b6bc;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: .7rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .cm-card .toggle-collapse:hover { background: #2c2c32; color: #fff; }
+    .cm-card .toggle-collapse .ico-collapse { display: none; }
+    .cm-card.is-collapsed .toggle-collapse .ico-expand { display: inline; }
+    .cm-card.is-collapsed .toggle-collapse .ico-collapse { display: none; }
+    .cm-card:not(.is-collapsed) .toggle-collapse .ico-expand { display: none; }
+    .cm-card:not(.is-collapsed) .toggle-collapse .ico-collapse { display: inline; }
+
+    .cm-card .cm-summary {
+      color: #8a8a8f;
+      font-size: .85rem;
+      line-height: 1.5;
+      padding: 8px 0 0;
+    }
+    .cm-card .cm-summary em { color: #b6b6bc; font-style: italic; }
+    .cm-card .cm-summary .summary-reply { color: #16a34a; font-weight: 600; font-size: .8rem; }
+    .cm-card:not(.is-collapsed) .cm-summary { display: none; }
+
+    .cm-card.is-collapsed .cm-body,
+    .cm-card.is-collapsed .reply-box,
+    .cm-card.is-collapsed .cm-actions,
+    .cm-card.is-collapsed .reply-form { display: none !important; }
+  </style>
+
+  <script is:inline>
+    document.querySelectorAll('.cm-card').forEach(card => {
+      card.querySelector('.toggle-collapse')?.addEventListener('click', () => {
+        card.classList.toggle('is-collapsed');
+      });
+
+      const form = card.querySelector('.reply-form');
+      const replyInput = form?.querySelector('textarea[name="reply"]');
+      const authorInput = form?.querySelector('input[name="author"]');
+
+      card.querySelectorAll('[data-toggle-reply]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (!form) return;
+          if (authorInput && !authorInput.value) authorInput.value = btn.dataset.author || '';
+          if (replyInput && !replyInput.value) replyInput.value = btn.dataset.reply || '';
+          form.hidden = false;
+          replyInput?.focus();
+        });
+      });
+      card.querySelector('[data-cancel-reply]')?.addEventListener('click', () => {
+        if (form) form.hidden = true;
+      });
+
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = Number(card.dataset.id);
+        const author = authorInput.value.trim();
+        const reply = replyInput.value.trim();
+        if (!author || !reply) return;
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        try {
+          const res = await fetch('/api/admin/moderate/', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ id, action: 'reply', author, reply })
+          });
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || 'Erro');
+          location.reload();
+        } catch (err) {
+          alert('Erro: ' + err.message);
+          btn.disabled = false;
+        }
+      });
+
+      card.querySelectorAll('button[data-action]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const action = btn.dataset.action;
+          const id = Number(card.dataset.id);
+          if (action === 'delete' && !confirm('Excluir definitivamente este comentário?')) return;
+          if (action === 'delete-reply' && !confirm('Excluir a resposta?')) return;
+          card.querySelectorAll('button').forEach(b => b.disabled = true);
+          try {
+            const res = await fetch('/api/admin/moderate/', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ id, action })
+            });
+            const data = await res.json();
+            if (!data.ok) throw new Error(data.error || 'Erro');
+            if (action === 'delete' || action === 'reject') {
+              card.style.transition = 'opacity .3s';
+              card.style.opacity = '0';
+              setTimeout(() => card.remove(), 300);
+            } else {
+              location.reload();
+            }
+          } catch (err) {
+            alert('Erro: ' + err.message);
+            card.querySelectorAll('button').forEach(b => b.disabled = false);
+          }
+        });
+      });
+    });
+  </script>
+</AdminLayout>

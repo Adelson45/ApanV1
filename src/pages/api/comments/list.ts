@@ -11,7 +11,7 @@ export const GET: APIRoute = async ({ url }) => {
   }
   const { data, error } = await supabaseAdmin
     .from('comments')
-    .select('id, author_name, content, created_at, approved_at')
+    .select('id, author_name, content, created_at, approved_at, admin_reply, admin_reply_author, admin_reply_at')
     .eq('page_slug', slug)
     .eq('status', 'approved')
     .order('approved_at', { ascending: false })

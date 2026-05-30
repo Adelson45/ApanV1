@@ -1,0 +1,58 @@
+---
+export const prerender = false;
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { requireAdmin } from '../../lib/auth';
+import { supabaseAdmin } from '../../lib/supabase';
+
+const admin = await requireAdmin(Astro.cookies);
+if (!admin) return Astro.redirect('/admin/login/');
+
+const { data } = await supabaseAdmin
+  .from('newsletter_subscribers')
+  .select('*')
+  .order('created_at', { ascending: false })
+  .limit(500);
+const subs = data ?? [];
+const fmt = (s: string) => new Date(s).toLocaleString('pt-BR');
+---
+<AdminLayout
+  title="Inscritos · Admin"
+  active="inscritos"
+  pageTitle="Inscritos da Newsletter"
+  pageSubtitle={`Total: ${subs.length} inscritos`}
+>
+  <div class="toolbar">
+    <a href="/api/admin/newsletter-export/" class="btn-primary">Exportar CSV</a>
+  </div>
+
+  <div class="panel" style="padding:0; overflow:hidden;">
+    {subs.length === 0 && <div class="empty">Nenhum inscrito ainda.</div>}
+    {subs.length > 0 && (
+      <table class="data-table">
+        <thead><tr><th>E-mail</th><th>Origem</th><th>Inscrição</th></tr></thead>
+        <tbody>
+          {subs.map(s => (
+            <tr>
+              <td>{s.email}</td>
+              <td>{s.source ?? '—'}</td>
+              <td>{fmt(s.created_at)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
+
+  <style>
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 16px; }
+    .btn-primary {
+      background: #e31b1b; color: #fff; padding: 9px 18px;
+      border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .85rem;
+    }
+    .btn-primary:hover { background: #c41a1f; }
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th { background: #1c1c20; color: #8a8a8f; font-size: .7rem; text-transform: uppercase; letter-spacing: .5px; padding: 12px 16px; text-align: left; border-bottom: 1px solid #232328; }
+    .data-table td { padding: 12px 16px; font-size: .9rem; border-bottom: 1px solid #232328; color: #d6d6dc; }
+    .data-table tr:last-child td { border-bottom: none; }
+  </style>
+</AdminLayout>

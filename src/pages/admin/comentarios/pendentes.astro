@@ -1,0 +1,88 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { requireAdmin } from '../../../lib/auth';
+import { supabaseAdmin } from '../../../lib/supabase';
+
+const admin = await requireAdmin(Astro.cookies);
+if (!admin) return Astro.redirect('/admin/login/');
+
+const { data } = await supabaseAdmin
+  .from('comments')
+  .select('*')
+  .eq('status', 'pending')
+  .order('created_at', { ascending: false })
+  .limit(200);
+const list = data ?? [];
+const fmt = (s: string) => new Date(s).toLocaleString('pt-BR');
+---
+<AdminLayout
+  title="Comentários Pendentes · Admin"
+  active="pendentes"
+  pageTitle="Comentários Pendentes"
+  pageSubtitle={`${list.length} aguardando moderação`}
+>
+  {list.length === 0 && <div class="panel empty">Nenhum comentário pendente. 🎉</div>}
+  {list.map(c => (
+    <div class="cm-card" data-id={c.id}>
+      <div class="cm-meta">
+        <span class="cm-author">{c.author_name}</span>
+        <span class="cm-sep">·</span>
+        <span class="cm-email">{c.author_email}</span>
+        <span class="cm-sep">·</span>
+        <span class="cm-slug">{c.page_slug}</span>
+        <span class="cm-sep">·</span>
+        <span class="cm-date">{fmt(c.created_at)}</span>
+      </div>
+      <div class="cm-body">{c.content}</div>
+      <div class="cm-actions">
+        <button class="btn btn-approve" data-action="approve">Aprovar</button>
+        <button class="btn btn-reject" data-action="reject">Rejeitar</button>
+        <button class="btn btn-delete" data-action="delete">Excluir</button>
+      </div>
+    </div>
+  ))}
+
+  <style>
+    .cm-card { background: #16161a; border: 1px solid #232328; border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; }
+    .cm-meta { font-size: .8rem; color: #8a8a8f; margin-bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .cm-author { color: #fff; font-weight: 700; }
+    .cm-email { color: #b6b6bc; }
+    .cm-slug { background: #232328; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: .75rem; }
+    .cm-sep { color: #444; }
+    .cm-body { color: #d6d6dc; line-height: 1.55; white-space: pre-wrap; margin-bottom: 14px; font-size: .95rem; }
+    .cm-actions { display: flex; gap: 8px; }
+    .btn { padding: 8px 16px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: .8rem; }
+    .btn-approve { background: #16a34a; color: #fff; }
+    .btn-reject { background: #6b7280; color: #fff; }
+    .btn-delete { background: #dc2626; color: #fff; }
+    .btn:disabled { opacity: .5; cursor: wait; }
+  </style>
+
+  <script is:inline>
+    document.querySelectorAll('button[data-action]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const card = btn.closest('.cm-card');
+        const id = Number(card.dataset.id);
+        const action = btn.dataset.action;
+        if (action === 'delete' && !confirm('Excluir definitivamente?')) return;
+        card.querySelectorAll('button').forEach(b => b.disabled = true);
+        try {
+          const res = await fetch('/api/admin/moderate/', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ id, action })
+          });
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || 'Erro');
+          card.style.transition = 'opacity .3s';
+          card.style.opacity = '0';
+          setTimeout(() => card.remove(), 300);
+        } catch (e) {
+          alert('Erro: ' + e.message);
+          card.querySelectorAll('button').forEach(b => b.disabled = false);
+        }
+      });
+    });
+  </script>
+</AdminLayout>
