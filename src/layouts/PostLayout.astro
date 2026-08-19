@@ -1434,13 +1434,16 @@ const shareTitleEncoded = encodeURIComponent(title);
     object-position: center;
     display: block;
   }
+  /* Foto de produto ocupava a largura inteira da coluna. Limitada e
+     centralizada para nao dominar o bloco de analise. */
   .h2-image-card.product-image {
     width: 100%;
+    max-width: 380px;
     margin: 12px auto 20px;
     display: block;
   }
   .h2-image-card.product-image img {
-    max-height: none;
+    max-height: 320px;
     object-fit: contain;
     background: transparent;
     padding: 0;
