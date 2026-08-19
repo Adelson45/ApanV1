@@ -84,6 +84,10 @@ const navLinks: NavLink[] = [
           </li>
         ))}
       </ul>
+
+      {/* Irmao do .nav-menu para o backdrop reagir ao .is-open so com CSS,
+          sem precisar de estado extra no script. */}
+      <div class="nav-backdrop" aria-hidden="true"></div>
     </nav>
 
     <SearchModal />
@@ -210,6 +214,11 @@ const navLinks: NavLink[] = [
     margin: 0;
     padding: 0;
     gap: 30px;
+  }
+
+  /* Existe apenas como backdrop do drawer mobile. */
+  .nav-backdrop {
+    display: none;
   }
   
   .nav-menu a {
@@ -370,22 +379,48 @@ const navLinks: NavLink[] = [
     }
     
     .nav-menu {
+      /* Drawer lateral: entra deslizando da esquerda para a direita.
+         Comeca abaixo do header para o hamburguer seguir acessivel e
+         permitir fechar sem precisar do backdrop. */
       position: fixed;
       top: 80px;
       left: 0;
-      right: 0;
+      right: auto;
+      bottom: 0;
+      width: 280px;
+      max-width: 80vw;
       background-color: #121212;
       flex-direction: column;
       padding: 20px;
       gap: 0;
-      transform: translateY(-100%);
+      overflow-y: auto;
+      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.45);
+      z-index: 1001;
+      transform: translateX(-100%);
+      visibility: hidden;
+      transition: transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    .nav-menu.is-open {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .nav-backdrop {
+      display: block;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1000;
     }
-    
-    .nav-menu.is-open {
-      transform: translateY(0);
+
+    .nav-menu.is-open ~ .nav-backdrop {
       opacity: 1;
       visibility: visible;
     }
