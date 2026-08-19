@@ -22,6 +22,11 @@ export default defineConfig({
     build: {
       cssCodeSplit: true,
       minify: true
+    },
+    server: {
+      watch: {
+        ignored: ['**/node_modules/**', '**/dist/**', '**/.astro/**', '**/.git/**', '**/.vercel/**']
+      }
     }
   }
 });
