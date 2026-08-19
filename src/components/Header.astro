@@ -286,6 +286,21 @@ const navLinks: NavLink[] = [
       height: 42px;
     }
 
+    /* No mobile a lupa fica antes do hamburguer, deixando o menu na borda
+       direita. O botao vem do SearchModal, entao precisa de :global para o
+       CSS escopado do Header alcanca-lo. */
+    .logo {
+      order: 1;
+    }
+
+    .header-container :global(.search-toggle) {
+      order: 2;
+    }
+
+    .main-nav {
+      order: 3;
+    }
+
     .dropdown-arrow {
       display: inline-block;
       font-size: 0.7rem;
