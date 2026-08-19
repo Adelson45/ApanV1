@@ -194,9 +194,17 @@ const shareTitleEncoded = encodeURIComponent(title);
         <!-- [CENTRO] Artigo -->
         <article class="post-content-col" data-pagefind-body>
 
+          {/* Metadados para os cards da busca. Ficam aqui dentro porque o
+              Pagefind so le metadados de dentro da regiao indexada, e o
+              titulo/categoria do post estao fora deste <article>.
+              A forma atributo[content] evita que virgulas no texto quebrem o parser. */}
+          <meta data-pagefind-meta="title[content]" content={title} />
+          <meta data-pagefind-meta="description[content]" content={description} />
+          <meta data-pagefind-meta="category[content]" content={displayCategory} />
+
           {coverImage && (
             <div class="post-cover-image">
-              <img src={coverImage} alt={coverImageAlt ?? title} />
+              <img src={coverImage} alt={coverImageAlt ?? title} data-pagefind-meta="image[src]" />
               <div class="verified-badge">
                 <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 APAN VERIFIED

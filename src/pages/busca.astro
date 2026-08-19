@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Busca » jovemapan.com.br';
+const description = 'Busque por capacetes, marcas, reviews e dicas em todo o conteúdo do Jovem Apan.';
+
+// Resultados de busca interna nao devem ser indexados pelo Google.
+const robots = 'noindex, follow';
+---
+
+<Layout title={title} description={description} robots={robots}>
+  <Header />
+
+  <main>
+    <section class="breadcrumb-section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">›</span>
+          <span class="current">Busca</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="search-page">
+      <div class="container">
+        <h1 id="search-heading">Busca</h1>
+        <p class="search-count" id="search-count" role="status" aria-live="polite"></p>
+
+        <form class="search-page-form" id="search-page-form" role="search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+          </svg>
+          <input
+            type="search"
+            id="search-page-input"
+            name="q"
+            placeholder="Buscar capacetes, marcas, reviews..."
+            autocomplete="off"
+            aria-label="Termo de busca"
+          />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <div class="posts-grid" id="search-grid"></div>
+
+        <div class="search-empty" id="search-empty" hidden>
+          <p class="empty-title">Nenhum resultado encontrado.</p>
+          <p class="empty-hint">Tente termos mais gerais, como a marca (LS2, Norisk, X11) ou o tipo de capacete.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('search-page-form') as HTMLFormElement | null;
+  const input = document.getElementById('search-page-input') as HTMLInputElement | null;
+  const grid = document.getElementById('search-grid');
+  const heading = document.getElementById('search-heading');
+  const count = document.getElementById('search-count');
+  const empty = document.getElementById('search-empty');
+
+  let pagefind: any = null;
+  let loadFailed = false;
+
+  async function loadPagefind() {
+    if (pagefind || loadFailed) return;
+    try {
+      const path = '/pagefind/pagefind.js';
+      pagefind = await import(/* @vite-ignore */ path);
+      await pagefind.options({ excerptLength: 30 });
+    } catch {
+      loadFailed = true;
+    }
+  }
+
+  function escapeHtml(value: string) {
+    return value.replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string
+    ));
+  }
+
+  const PLACEHOLDER = `
+    <div class="thumb-placeholder">
+      <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#bbb" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <path d="m21 15-5-5L5 21"></path>
+      </svg>
+    </div>`;
+
+  function card(item: any) {
+    const title = escapeHtml(item.meta?.title ?? 'Sem título');
+    const category = item.meta?.category ? escapeHtml(item.meta.category) : '';
+    // Prefere a descricao do post; o excerpt do Pagefind e o texto cru da pagina.
+    const text = item.meta?.description ? escapeHtml(item.meta.description) : item.excerpt;
+    const image = item.meta?.image
+      ? `<img src="${escapeHtml(item.meta.image)}" alt="${title}" loading="lazy" />`
+      : PLACEHOLDER;
+
+    return `
+      <article class="post-card">
+        <a href="${item.url}" class="card-image" tabindex="-1" aria-hidden="true">${image}</a>
+        <div class="card-body">
+          ${category ? `<span class="card-category">${category}</span>` : ''}
+          <h2 class="card-title"><a href="${item.url}">${title}</a></h2>
+          <p class="card-text">${text}</p>
+        </div>
+      </article>`;
+  }
+
+  function setCount(text: string) {
+    if (count) count.textContent = text;
+  }
+
+  async function runSearch(term: string) {
+    if (!grid || !heading) return;
+
+    if (!term) {
+      heading.textContent = 'Busca';
+      setCount('Digite um termo para buscar no site.');
+      grid.innerHTML = '';
+      if (empty) empty.hidden = true;
+      return;
+    }
+
+    heading.textContent = `Busca por: "${term}"`;
+    setCount('Buscando...');
+    grid.innerHTML = '';
+    if (empty) empty.hidden = true;
+
+    await loadPagefind();
+
+    if (loadFailed || !pagefind) {
+      setCount('Busca indisponível: o índice ainda não foi gerado.');
+      return;
+    }
+
+    const search = await pagefind.search(term);
+    const items = await Promise.all(search.results.map((r: any) => r.data()));
+
+    if (!items.length) {
+      setCount('');
+      if (empty) empty.hidden = false;
+      return;
+    }
+
+    setCount(items.length === 1 ? '1 resultado encontrado' : `${items.length} resultados encontrados`);
+    grid.innerHTML = items.map(card).join('');
+  }
+
+  function termFromUrl() {
+    return (new URLSearchParams(window.location.search).get('q') ?? '').trim();
+  }
+
+  // Busca inicial a partir da URL (?q=), o que torna o resultado compartilhavel.
+  const initial = termFromUrl();
+  if (input) input.value = initial;
+  runSearch(initial);
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const term = input?.value.trim() ?? '';
+    const url = term ? `?q=${encodeURIComponent(term)}` : window.location.pathname;
+    window.history.pushState({}, '', url);
+    runSearch(term);
+  });
+
+  // Mantem os resultados coerentes com os botoes voltar/avancar do navegador.
+  window.addEventListener('popstate', () => {
+    const term = termFromUrl();
+    if (input) input.value = term;
+    runSearch(term);
+  });
+</script>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb-section {
+    background: #f5f5f5;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .breadcrumb {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #777;
+  }
+
+  .breadcrumb a {
+    color: #777;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: #e31b1b;
+  }
+
+  .breadcrumb .sep {
+    margin: 0 8px;
+    color: #bbb;
+  }
+
+  .search-page {
+    padding: 40px 0 70px;
+  }
+
+  .search-page h1 {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+    color: #121212;
+  }
+
+  .search-count {
+    margin: 0 0 24px;
+    color: #777;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .search-page-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 6px 6px 6px 18px;
+    max-width: 560px;
+    margin-bottom: 36px;
+    color: #999;
+  }
+
+  .search-page-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #222;
+    padding: 8px 0;
+  }
+
+  .search-page-form button {
+    background: #e31b1b;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 22px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .search-page-form button:hover {
+    background: #c41616;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 26px;
+  }
+
+  /* Cards seguem o mesmo desenho dos "Posts mais vistos" da home. */
+  .posts-grid :global(.post-card) {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .posts-grid :global(.post-card:hover) {
+    transform: translateY(-5px);
+  }
+
+  .posts-grid :global(.card-image) {
+    display: block;
+    height: 180px;
+    background: #eee;
+  }
+
+  .posts-grid :global(.card-image img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .posts-grid :global(.thumb-placeholder) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .posts-grid :global(.card-body) {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .posts-grid :global(.card-category) {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #e31b1b;
+  }
+
+  .posts-grid :global(.card-title) {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+  .posts-grid :global(.card-title a) {
+    color: #121212;
+    text-decoration: none;
+  }
+
+  .posts-grid :global(.card-title a:hover) {
+    color: #e31b1b;
+  }
+
+  .posts-grid :global(.card-text) {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #777;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .posts-grid :global(.card-text mark) {
+    background: rgba(227, 27, 27, 0.15);
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  .search-empty {
+    padding: 30px 0;
+  }
+
+  .empty-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #121212;
+    margin: 0 0 6px;
+  }
+
+  .empty-hint {
+    font-family: 'Open Sans', sans-serif;
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .search-page h1 {
+      font-size: 1.5rem;
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

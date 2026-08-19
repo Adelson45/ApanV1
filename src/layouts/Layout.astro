@@ -4,13 +4,15 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonical?: string;
+  robots?: string;
 }
 
 const {
   title = 'Reviews de Capacetes para Moto, Bike e Mais | Qual o Melhor?',
   description = 'Confira análises completas e imparciais dos melhores capacetes do mercado. Comparativos, avaliações de usuários e dicas para escolher o modelo ideal!',
   ogImage = '/images/Logo-dos-melhores-capacetes.png',
-  canonical
+  canonical,
+  robots = 'max-image-preview:large'
 } = Astro.props;
 
 const canonicalUrl = canonical || (Astro.url.pathname === '/' 
@@ -25,7 +27,7 @@ const canonicalUrl = canonical || (Astro.url.pathname === '/'
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="max-image-preview:large" />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
     
     <!-- Open Graph -->

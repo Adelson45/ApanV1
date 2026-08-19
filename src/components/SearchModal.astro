@@ -20,7 +20,7 @@
 
 <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar no site" hidden>
   <div class="search-panel">
-    <div class="search-field">
+    <form class="search-field" id="search-form" role="search">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <circle cx="11" cy="11" r="7"></circle>
         <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
@@ -34,13 +34,15 @@
         aria-controls="search-results"
       />
       <button type="button" class="search-close" id="search-close" aria-label="Fechar busca">✕</button>
-    </div>
+    </form>
 
     <p class="search-status" id="search-status" role="status" aria-live="polite">
       Digite ao menos 2 letras para buscar.
     </p>
 
     <ul class="search-results" id="search-results"></ul>
+
+    <a class="search-see-all" id="search-see-all" href="/busca/" hidden>Ver todos os resultados ›</a>
   </div>
 </div>
 
@@ -52,6 +54,8 @@
   const closeBtn = document.getElementById('search-close');
   const status = document.getElementById('search-status');
   const results = document.getElementById('search-results');
+  const form = document.getElementById('search-form');
+  const seeAll = document.getElementById('search-see-all');
 
   let pagefind: any = null;
   let loadFailed = false;
@@ -88,6 +92,7 @@
     document.body.style.overflow = '';
     if (input) input.value = '';
     if (results) results.innerHTML = '';
+    if (seeAll) seeAll.hidden = true;
     setStatus('Digite ao menos 2 letras para buscar.');
     (lastFocused as HTMLElement | null)?.focus?.();
   }
@@ -108,6 +113,7 @@
 
     if (term.length < 2) {
       results.innerHTML = '';
+      if (seeAll) seeAll.hidden = true;
       setStatus('Digite ao menos 2 letras para buscar.');
       return;
     }
@@ -129,23 +135,49 @@
 
     if (!top.length) {
       results.innerHTML = '';
+      if (seeAll) seeAll.hidden = true;
       setStatus(`Nenhum resultado para "${term}".`);
       return;
     }
 
-    setStatus(`${search.results.length} resultado(s) para "${term}".`);
-    results.innerHTML = top.map((item: any) => `
-      <li>
-        <a href="${item.url}">
-          <span class="result-title">${escapeHtml(item.meta?.title ?? 'Sem título')}</span>
-          <span class="result-excerpt">${item.excerpt}</span>
-        </a>
-      </li>
-    `).join('');
+    const total = search.results.length;
+    setStatus(total === 1 ? '1 resultado' : `${total} resultados`);
+
+    results.innerHTML = top.map((item: any) => {
+      const title = escapeHtml(item.meta?.title ?? 'Sem título');
+      const category = item.meta?.category ? escapeHtml(item.meta.category) : '';
+      const thumb = item.meta?.image
+        ? `<img src="${escapeHtml(item.meta.image)}" alt="" loading="lazy" />`
+        : '<span class="result-thumb-empty" aria-hidden="true"></span>';
+
+      return `
+        <li>
+          <a href="${item.url}">
+            <span class="result-thumb">${thumb}</span>
+            <span class="result-text">
+              ${category ? `<span class="result-category">${category}</span>` : ''}
+              <span class="result-title">${title}</span>
+            </span>
+          </a>
+        </li>`;
+    }).join('');
+
+    // O overlay mostra so os primeiros; a pagina /busca/ lista todos.
+    if (seeAll) {
+      seeAll.setAttribute('href', `/busca/?q=${encodeURIComponent(term)}`);
+      seeAll.hidden = total <= top.length;
+    }
   }
 
   toggle?.addEventListener('click', openSearch);
   closeBtn?.addEventListener('click', closeSearch);
+
+  // Enter leva para a pagina de resultados completa.
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const term = input?.value.trim();
+    if (term) window.location.href = `/busca/?q=${encodeURIComponent(term)}`;
+  });
 
   // Clique fora do painel fecha o overlay.
   overlay?.addEventListener('click', (e) => {
@@ -269,8 +301,10 @@
   }
 
   .search-results a {
-    display: block;
-    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
   }
@@ -280,27 +314,62 @@
     background: rgba(227, 27, 27, 0.12);
   }
 
+  .result-thumb {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #262626;
+  }
+
+  .result-thumb img,
+  .result-thumb-empty {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .result-text {
+    min-width: 0;
+  }
+
+  .result-category {
+    display: block;
+    color: #e31b1b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
   .result-title {
     display: block;
     color: #fff;
     font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 1.4;
   }
 
-  .result-excerpt {
+  .search-see-all {
     display: block;
-    color: #aaa;
+    padding: 14px 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e31b1b;
+    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    line-height: 1.5;
+    font-weight: 700;
+    text-decoration: none;
   }
 
-  /* Pagefind envolve os termos encontrados em <mark>. */
-  .result-excerpt :global(mark) {
-    background: rgba(227, 27, 27, 0.3);
-    color: #fff;
-    padding: 0 2px;
-    border-radius: 2px;
+  .search-see-all[hidden] {
+    display: none;
+  }
+
+  .search-see-all:hover {
+    background: rgba(227, 27, 27, 0.12);
   }
 
   @media (max-width: 768px) {
