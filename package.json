@@ -6,17 +6,18 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site .vercel/output/static",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/vercel": "^8.0.0",
-    "@supabase/supabase-js": "^2.45.0"
+    "@supabase/supabase-js": "^2.45.0",
+    "astro": "^5.0.0"
   },
   "devDependencies": {
+    "pagefind": "^1.5.2",
     "typescript": "^5.0.0"
   }
 }

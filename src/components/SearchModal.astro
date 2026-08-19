@@ -1,0 +1,315 @@
+---
+// Busca do site via Pagefind.
+// O índice é gerado no build (`pagefind --site .vercel/output/static`) e servido
+// em /pagefind/. Em `astro dev` sem um build prévio a busca fica indisponível —
+// o overlay avisa em vez de falhar silenciosamente.
+---
+
+<button
+  type="button"
+  class="search-toggle"
+  id="search-toggle"
+  aria-label="Abrir busca"
+  aria-haspopup="dialog"
+>
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+    <circle cx="11" cy="11" r="7"></circle>
+    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+  </svg>
+</button>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Buscar no site" hidden>
+  <div class="search-panel">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+      </svg>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Buscar capacetes, marcas, reviews..."
+        autocomplete="off"
+        aria-label="Termo de busca"
+        aria-controls="search-results"
+      />
+      <button type="button" class="search-close" id="search-close" aria-label="Fechar busca">✕</button>
+    </div>
+
+    <p class="search-status" id="search-status" role="status" aria-live="polite">
+      Digite ao menos 2 letras para buscar.
+    </p>
+
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('search-toggle');
+  const overlay = document.getElementById('search-overlay');
+  const panel = overlay?.querySelector('.search-panel');
+  const input = document.getElementById('search-input') as HTMLInputElement | null;
+  const closeBtn = document.getElementById('search-close');
+  const status = document.getElementById('search-status');
+  const results = document.getElementById('search-results');
+
+  let pagefind: any = null;
+  let loadFailed = false;
+  let lastFocused: Element | null = null;
+  let debounce: number | undefined;
+  let runId = 0;
+
+  // Carrega o Pagefind sob demanda para não pesar o carregamento inicial da página.
+  // O caminho fica numa variável para o Vite não tentar resolvê-lo no build —
+  // o arquivo só existe depois que o Pagefind roda sobre o HTML gerado.
+  async function loadPagefind() {
+    if (pagefind || loadFailed) return;
+    try {
+      const path = '/pagefind/pagefind.js';
+      pagefind = await import(/* @vite-ignore */ path);
+      await pagefind.options({ excerptLength: 25 });
+    } catch {
+      loadFailed = true;
+    }
+  }
+
+  function openSearch() {
+    if (!overlay) return;
+    lastFocused = document.activeElement;
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    input?.focus();
+    loadPagefind();
+  }
+
+  function closeSearch() {
+    if (!overlay) return;
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    if (input) input.value = '';
+    if (results) results.innerHTML = '';
+    setStatus('Digite ao menos 2 letras para buscar.');
+    (lastFocused as HTMLElement | null)?.focus?.();
+  }
+
+  function setStatus(text: string) {
+    if (status) status.textContent = text;
+  }
+
+  function escapeHtml(value: string) {
+    return value.replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string
+    ));
+  }
+
+  async function runSearch(term: string) {
+    if (!results) return;
+    const current = ++runId;
+
+    if (term.length < 2) {
+      results.innerHTML = '';
+      setStatus('Digite ao menos 2 letras para buscar.');
+      return;
+    }
+
+    await loadPagefind();
+
+    if (loadFailed || !pagefind) {
+      setStatus('Busca indisponível: rode "npm run build" para gerar o índice.');
+      return;
+    }
+
+    setStatus('Buscando...');
+    const search = await pagefind.search(term);
+    // Uma busca mais recente já começou enquanto esta aguardava — descarta o resultado.
+    if (current !== runId) return;
+
+    const top = await Promise.all(search.results.slice(0, 8).map((r: any) => r.data()));
+    if (current !== runId) return;
+
+    if (!top.length) {
+      results.innerHTML = '';
+      setStatus(`Nenhum resultado para "${term}".`);
+      return;
+    }
+
+    setStatus(`${search.results.length} resultado(s) para "${term}".`);
+    results.innerHTML = top.map((item: any) => `
+      <li>
+        <a href="${item.url}">
+          <span class="result-title">${escapeHtml(item.meta?.title ?? 'Sem título')}</span>
+          <span class="result-excerpt">${item.excerpt}</span>
+        </a>
+      </li>
+    `).join('');
+  }
+
+  toggle?.addEventListener('click', openSearch);
+  closeBtn?.addEventListener('click', closeSearch);
+
+  // Clique fora do painel fecha o overlay.
+  overlay?.addEventListener('click', (e) => {
+    if (!panel?.contains(e.target as Node)) closeSearch();
+  });
+
+  input?.addEventListener('input', () => {
+    window.clearTimeout(debounce);
+    debounce = window.setTimeout(() => runSearch(input.value.trim()), 200);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay && !overlay.hidden) {
+      closeSearch();
+      return;
+    }
+    // Ctrl/Cmd+K abre a busca de qualquer lugar do site.
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (overlay?.hidden) openSearch();
+    }
+  });
+</script>
+
+<style>
+  .search-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  .search-toggle:hover {
+    color: #e31b1b;
+  }
+
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    padding: 90px 20px 20px;
+  }
+
+  .search-overlay[hidden] {
+    display: none;
+  }
+
+  .search-panel {
+    background: #1a1a1a;
+    border-radius: 6px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .search-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #888;
+  }
+
+  .search-field input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+
+  .search-field input::placeholder {
+    color: #777;
+  }
+
+  .search-close {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    line-height: 1;
+  }
+
+  .search-close:hover {
+    color: #e31b1b;
+  }
+
+  .search-status {
+    margin: 0;
+    padding: 12px 18px;
+    color: #999;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+  }
+
+  .search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 8px;
+    overflow-y: auto;
+  }
+
+  .search-results li {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .search-results a {
+    display: block;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .search-results a:hover,
+  .search-results a:focus-visible {
+    background: rgba(227, 27, 27, 0.12);
+  }
+
+  .result-title {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .result-excerpt {
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Pagefind envolve os termos encontrados em <mark>. */
+  .result-excerpt :global(mark) {
+    background: rgba(227, 27, 27, 0.3);
+    color: #fff;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .search-overlay {
+      padding: 70px 12px 12px;
+    }
+
+    .search-toggle {
+      padding: 8px;
+    }
+  }
+</style>
