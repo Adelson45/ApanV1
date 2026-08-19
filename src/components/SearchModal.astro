@@ -296,11 +296,14 @@
     overflow-y: auto;
   }
 
-  .search-results li {
+  /* Os resultados sao injetados por innerHTML e por isso nao recebem o
+     atributo de escopo do Astro. Sem :global() nenhuma destas regras casa,
+     e as imagens vazam em tamanho natural. */
+  .search-results :global(li) {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .search-results a {
+  .search-results :global(a) {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -309,33 +312,36 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-  .search-results a:hover,
-  .search-results a:focus-visible {
+  .search-results :global(a:hover),
+  .search-results :global(a:focus-visible) {
     background: rgba(227, 27, 27, 0.12);
   }
 
-  .result-thumb {
+  .search-results :global(.result-thumb) {
     flex: 0 0 64px;
     width: 64px;
     height: 48px;
     border-radius: 4px;
     overflow: hidden;
     background: #262626;
+    padding: 4px;
+    box-sizing: border-box;
   }
 
-  .result-thumb img,
-  .result-thumb-empty {
+  /* contain + padding para o produto aparecer inteiro, sem corte nas bordas. */
+  .search-results :global(.result-thumb img),
+  .search-results :global(.result-thumb-empty) {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
-  .result-text {
+  .search-results :global(.result-text) {
     min-width: 0;
   }
 
-  .result-category {
+  .search-results :global(.result-category) {
     display: block;
     color: #e31b1b;
     font-size: 10px;
@@ -345,7 +351,7 @@
     margin-bottom: 2px;
   }
 
-  .result-title {
+  .search-results :global(.result-title) {
     display: block;
     color: #fff;
     font-weight: 600;
