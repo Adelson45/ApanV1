@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && pagefind --site .vercel/output/static",
+    "build": "astro build && pagefind --site .vercel/output/static && node -e \"require('fs').cpSync('.vercel/output/static/pagefind','public/pagefind',{recursive:true})\"",
     "preview": "astro preview",
     "astro": "astro"
   },

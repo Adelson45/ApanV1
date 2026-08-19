@@ -3,6 +3,9 @@ dist/
 .astro/
 .vercel/
 
+# indice de busca gerado pelo Pagefind (copia local para o dev server)
+public/pagefind/
+
 # dependencies
 node_modules/
 
