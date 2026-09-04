@@ -46,9 +46,21 @@ export default defineConfig({
   trailingSlash: 'always',
   compressHTML: true,
   redirects: {
-    '/ls2-ou-norisk': '/ls2-x-norisk'
+    '/ls2-ou-norisk': '/ls2-x-norisk',
+    '/reveiw-do-shoei-j-cruise': '/review-do-shoei-j-cruise',
+    '/reveiw-do-shoei-j-cruise/': '/review-do-shoei-j-cruise/',
+    '/reveiw-hjc-i90-hollen': '/review-hjc-i90-hollen',
+    '/reveiw-hjc-i90-hollen/': '/review-hjc-i90-hollen/'
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.includes('/admin') &&
+        !page.includes('/api') &&
+        !page.includes('/404') &&
+        !page.includes('_exemplo')
+    })
+  ],
   security: {
     checkOrigin: false
   },

@@ -117,9 +117,125 @@ const displayCategory = categoryLabel ?? category;
 
 const shareUrlEncoded = encodeURIComponent(pageUrl);
 const shareTitleEncoded = encodeURIComponent(title);
+
+function parsePublishDate(dateStr?: string): string {
+  if (!dateStr) return '2025-01-01T00:00:00-03:00';
+  if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
+    return dateStr.includes('T') ? dateStr : `${dateStr}T00:00:00-03:00`;
+  }
+  const months: Record<string, string> = {
+    jan: '01', fev: '02', mar: '03', abr: '04', mai: '05', jun: '06',
+    jul: '07', ago: '08', set: '09', out: '10', nov: '11', dez: '12'
+  };
+  const match = dateStr.toLowerCase().match(/(\d{1,2})\s+(?:de\s+)?([a-z]{3})[a-z]*[,.\s]+(?:de\s+)?(\d{4})/);
+  if (match) {
+    const day = match[1].padStart(2, '0');
+    const month = months[match[2].slice(0, 3)] || '01';
+    const year = match[3];
+    return `${year}-${month}-${day}T00:00:00-03:00`;
+  }
+  return '2025-01-01T00:00:00-03:00';
+}
+
+const isoDatePublished = parsePublishDate(publishDate);
+const fullImageUrl = coverImage
+  ? (coverImage.startsWith('http') ? coverImage : `https://jovemapan.com.br${coverImage.startsWith('/') ? coverImage : '/' + coverImage}`)
+  : 'https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png';
+
+const categoryFullUrl = categoryHref.startsWith('http')
+  ? categoryHref
+  : `https://jovemapan.com.br${categoryHref.startsWith('/') ? categoryHref : '/' + categoryHref}`;
+
+const postSchemaGraph = [
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumblist`,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jovemapan.com.br/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": displayCategory,
+        "item": categoryFullUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": title,
+        "item": pageUrl
+      }
+    ]
+  },
+  {
+    "@type": "Organization",
+    "@id": "https://jovemapan.com.br/#organization",
+    "name": "Jovem Apan",
+    "description": "Reviews de Capacetes para Moto, Bike e Mais",
+    "url": "https://jovemapan.com.br/",
+    "telephone": "+5511968037428",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png",
+      "@id": "https://jovemapan.com.br/#organizationLogo",
+      "width": 350,
+      "height": 70
+    },
+    "image": {
+      "@id": "https://jovemapan.com.br/#organizationLogo"
+    }
+  },
+  {
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    "isPartOf": {
+      "@id": "https://jovemapan.com.br/#website"
+    },
+    "headline": title,
+    "description": description,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl
+    },
+    "datePublished": isoDatePublished,
+    "dateModified": isoDatePublished,
+    "image": {
+      "@type": "ImageObject",
+      "url": fullImageUrl
+    },
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": authorHref && authorHref !== '#' ? `https://jovemapan.com.br${authorHref}` : undefined
+    },
+    "publisher": {
+      "@id": "https://jovemapan.com.br/#organization"
+    },
+    "inLanguage": "pt-BR",
+    "breadcrumb": {
+      "@id": `${pageUrl}#breadcrumblist`
+    }
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://jovemapan.com.br/#website",
+    "url": "https://jovemapan.com.br/",
+    "name": "jovemapan.com.br",
+    "alternateName": "Jovem Apan",
+    "inLanguage": "pt-BR",
+    "publisher": {
+      "@id": "https://jovemapan.com.br/#organization"
+    }
+  }
+];
 ---
 
-<Layout title={title} description={description} canonical={pageUrl} ogImage={coverImage || undefined}>
+<Layout title={title} description={description} canonical={pageUrl} ogImage={coverImage || undefined} schemaGraph={postSchemaGraph}>
   <Header />
 
   <main class="post-main">

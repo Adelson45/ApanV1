@@ -5,6 +5,7 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   robots?: string;
+  schemaGraph?: any[];
 }
 
 const {
@@ -12,12 +13,77 @@ const {
   description = 'Confira análises completas e imparciais dos melhores capacetes do mercado. Comparativos, avaliações de usuários e dicas para escolher o modelo ideal!',
   ogImage = '/images/Logo-dos-melhores-capacetes.png',
   canonical,
-  robots = 'max-image-preview:large'
+  robots = 'max-image-preview:large',
+  schemaGraph
 } = Astro.props;
 
 const canonicalUrl = canonical || (Astro.url.pathname === '/' 
   ? 'https://jovemapan.com.br/' 
   : `https://jovemapan.com.br${Astro.url.pathname}`);
+
+const ogImageUrl = ogImage.startsWith('http') 
+  ? ogImage 
+  : `https://jovemapan.com.br${ogImage.startsWith('/') ? ogImage : '/' + ogImage}`;
+
+const defaultGraph = [
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumblist`,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jovemapan.com.br/"
+      }
+    ]
+  },
+  {
+    "@type": "Organization",
+    "@id": `https://jovemapan.com.br/#organization`,
+    "name": "Jovem Apan",
+    "description": "Reviews de Capacetes para Moto, Bike e Mais",
+    "url": "https://jovemapan.com.br/",
+    "telephone": "+5511968037428",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png",
+      "@id": "https://jovemapan.com.br/#organizationLogo",
+      "width": 350,
+      "height": 70
+    },
+    "image": {
+      "@id": "https://jovemapan.com.br/#organizationLogo"
+    }
+  },
+  {
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    "url": canonicalUrl,
+    "name": title,
+    "description": description,
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@id": "https://jovemapan.com.br/#website"
+    },
+    "breadcrumb": {
+      "@id": `${canonicalUrl}#breadcrumblist`
+    }
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://jovemapan.com.br/#website",
+    "url": "https://jovemapan.com.br/",
+    "name": "jovemapan.com.br",
+    "alternateName": "Jovem Apan",
+    "inLanguage": "pt-BR",
+    "publisher": {
+      "@id": "https://jovemapan.com.br/#organization"
+    }
+  }
+];
+
+const finalGraph = schemaGraph && schemaGraph.length > 0 ? schemaGraph : defaultGraph;
 ---
 
 <!DOCTYPE html>
@@ -37,14 +103,14 @@ const canonicalUrl = canonical || (Astro.url.pathname === '/'
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageUrl} />
     
     <!-- Favicons -->
     <link rel="icon" href="/images/cropped-fivecon-32x32.png" sizes="32x32" />
@@ -64,65 +130,7 @@ const canonicalUrl = canonical || (Astro.url.pathname === '/'
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "@id": `${canonicalUrl}#breadcrumblist`,
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "@id": `${canonicalUrl}#listItem`,
-              "position": 1,
-              "name": "Home"
-            }
-          ]
-        },
-        {
-          "@type": "Organization",
-          "@id": `${canonicalUrl}#organization`,
-          "name": "Jovem Apan",
-          "description": description,
-          "url": "https://jovemapan.com.br/",
-          "telephone": "+5511968037428",
-          "logo": {
-            "@type": "ImageObject",
-            "url": `https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png`,
-            "@id": `https://jovemapan.com.br/#organizationLogo`,
-            "width": 350,
-            "height": 70
-          },
-          "image": {
-            "@id": `https://jovemapan.com.br/#organizationLogo`
-          }
-        },
-        {
-          "@type": "WebPage",
-          "@id": `${canonicalUrl}#webpage`,
-          "url": canonicalUrl,
-          "name": title,
-          "description": description,
-          "inLanguage": "pt-BR",
-          "isPartOf": {
-            "@id": `https://jovemapan.com.br/#website`
-          },
-          "breadcrumb": {
-            "@id": `${canonicalUrl}#breadcrumblist`
-          },
-          "datePublished": "2025-05-02T04:00:15+00:00",
-          "dateModified": new Date().toISOString()
-        },
-        {
-          "@type": "WebSite",
-          "@id": `https://jovemapan.com.br/#website`,
-          "url": "https://jovemapan.com.br/",
-          "name": "jovemapan.com.br",
-          "alternateName": "Jovem Apan",
-          "inLanguage": "pt-BR",
-          "publisher": {
-            "@id": `https://jovemapan.com.br/#organization`
-          }
-        }
-      ]
+      "@graph": finalGraph
     })} />
     
     <!-- Google Analytics -->
