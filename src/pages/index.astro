@@ -193,7 +193,7 @@ const postsMaisVistos = [
                   <h3>{marca.nome}</h3>
                 </div>
                 <div class="table-cell action-cell">
-                  <a href={marca.linkAfiliado} target="_blank" rel="nofollow noopener" class="btn-ir-loja">IR A LOJA</a>
+                  <a href={marca.linkAfiliado} target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn-ir-loja">IR A LOJA</a>
                 </div>
               </div>
               
@@ -267,7 +267,7 @@ const postsMaisVistos = [
               href={cat.href} 
               class="categoria-card" 
               target={cat.external ? "_blank" : undefined}
-              rel={cat.external ? "nofollow noopener" : undefined}
+              rel={cat.external ? "sponsored nofollow noopener noreferrer" : undefined}
             >
               <h3>{cat.nome}</h3>
               <div class="categoria-icon">

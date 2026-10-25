@@ -677,12 +677,12 @@ const postSchemaGraph = [
                 <h4 class="produto-nome" set:html={featuredProduct!.name} />
               )}
               {featuredProduct!.mercadoLivreHref && (
-                <a href={featuredProduct!.mercadoLivreHref} target="_blank" rel="noopener noreferrer nofollow" class="btn-produto-destaque ml">
+                <a href={featuredProduct!.mercadoLivreHref} target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn-produto-destaque ml">
                   VER NO MERCADO LIVRE
                 </a>
               )}
               {featuredProduct!.amazonHref && (
-                <a href={featuredProduct!.amazonHref} target="_blank" rel="noopener noreferrer nofollow" class="btn-produto-destaque amazon">
+                <a href={featuredProduct!.amazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn-produto-destaque amazon">
                   VER OFERTA NA AMAZON
                 </a>
               )}
@@ -700,10 +700,10 @@ const postSchemaGraph = [
               {p.name && <h4 class="widget-name-extra">{p.name}</h4>}
               <div class="widget-links-extra">
                 {p.mercadoLivreHref && (
-                  <a href={p.mercadoLivreHref} target="_blank" rel="noopener noreferrer nofollow" class="btn-widget-extra">VER NO MERCADO LIVRE</a>
+                  <a href={p.mercadoLivreHref} target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn-widget-extra">VER NO MERCADO LIVRE</a>
                 )}
                 {p.amazonHref && (
-                  <a href={p.amazonHref} target="_blank" rel="noopener noreferrer nofollow" class="btn-widget-extra">VER NA AMAZON</a>
+                  <a href={p.amazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer" class="btn-widget-extra">VER NA AMAZON</a>
                 )}
               </div>
             </div>
