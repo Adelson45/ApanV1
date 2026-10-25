@@ -277,6 +277,36 @@
       "source": "/reviews/",
       "destination": "/category/reviews/",
       "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*/feed",
+      "destination": "/:path*/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*/feed/",
+      "destination": "/:path*/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:slug/",
+      "destination": "/",
+      "statusCode": 301
     }
   ],
   "rewrites": [
