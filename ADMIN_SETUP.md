@@ -30,15 +30,18 @@ Crie o arquivo `.env` na raiz (copie de `.env.example`):
 SUPABASE_URL=https://SEU-PROJETO.supabase.co
 SUPABASE_ANON_KEY=eyJ...
 SUPABASE_SERVICE_ROLE_KEY=eyJ...
+ADMIN_EMAILS=voce@exemplo.com
 ```
 
 As chaves estão em **Project Settings → API** no Supabase.
+
+`ADMIN_EMAILS` lista (separados por vírgula) os e-mails que podem entrar no painel. Sem ela, ninguém acessa o `/admin` — mesmo com login válido no Supabase. Recomenda-se também desativar cadastros públicos em **Authentication → Providers → Email → Allow new users to sign up**.
 
 > ⚠️ **NUNCA** commite o `.env`. O `SERVICE_ROLE_KEY` dá acesso total ao banco.
 
 ## 5. Configurar no Vercel
 
-Em **Vercel → Project → Settings → Environment Variables**, adicione as três variáveis acima (Production + Preview + Development).
+Em **Vercel → Project → Settings → Environment Variables**, adicione as variáveis acima (Production + Preview + Development).
 
 ## 6. Rodar localmente
 

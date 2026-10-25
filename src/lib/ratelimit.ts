@@ -22,5 +22,12 @@ export async function checkRateLimit(
     .gte('created_at', oneHourAgo);
   if ((count ?? 0) >= maxPerHour) return false;
   await supabaseAdmin.from('rate_limit').insert({ ip_address: ip, action });
+
+  // Limpeza ocasional (~5% das chamadas) dos registros com mais de 1 dia,
+  // pra tabela não crescer indefinidamente.
+  if (Math.random() < 0.05) {
+    const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+    await supabaseAdmin.from('rate_limit').delete().lt('created_at', oneDayAgo);
+  }
   return true;
 }
