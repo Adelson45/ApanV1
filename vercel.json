@@ -2,6 +2,283 @@
   "version": 2,
   "buildCommand": "npm run build",
   "framework": "astro",
+  "redirects": [
+    {
+      "source": "/ls2-ou-norisk",
+      "destination": "/ls2-x-norisk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ls2-ou-norisk/",
+      "destination": "/ls2-x-norisk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/reveiw-do-shoei-j-cruise",
+      "destination": "/review-do-shoei-j-cruise/",
+      "statusCode": 301
+    },
+    {
+      "source": "/reveiw-do-shoei-j-cruise/",
+      "destination": "/review-do-shoei-j-cruise/",
+      "statusCode": 301
+    },
+    {
+      "source": "/reveiw-hjc-i90-hollen",
+      "destination": "/review-hjc-i90-hollen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/reveiw-hjc-i90-hollen/",
+      "destination": "/review-hjc-i90-hollen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-protork-review",
+      "destination": "/capacete-pro-tork-review/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-protork-review/",
+      "destination": "/capacete-pro-tork-review/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhores-capacetes-peels-aberto",
+      "destination": "/melhor-capacete-peels/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhores-capacetes-peels-aberto/",
+      "destination": "/melhor-capacete-peels/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-viagens-longas",
+      "destination": "/capacete-para-viagens-longas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-viagens-longas/",
+      "destination": "/capacete-para-viagens-longas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conserto-de-capacete",
+      "destination": "/reparo-e-acessorios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conserto-de-capacete/",
+      "destination": "/reparo-e-acessorios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-permitido-na-pilotagem.astro",
+      "destination": "/capacete-permitido-na-pilotagem/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/fechado-bom-e-barato",
+      "destination": "/custo-beneficio/bom-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/fechado-bom-e-barato/",
+      "destination": "/custo-beneficio/bom-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/leticia-spiller",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/leticia-spiller/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/capacetes",
+      "destination": "/melhor-capacete/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/capacetes/",
+      "destination": "/melhor-capacete/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete-para-big-trail",
+      "destination": "/capacete-big-trail/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete-para-big-trail/",
+      "destination": "/capacete-big-trail/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/capacetes-ate-200",
+      "destination": "/custo-beneficio/ate-300-reais/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/capacetes-ate-200/",
+      "destination": "/custo-beneficio/ate-300-reais/",
+      "statusCode": 301
+    },
+    {
+      "source": "/camera-para-capacete",
+      "destination": "/melhor-capacete/intercomunicadores/",
+      "statusCode": 301
+    },
+    {
+      "source": "/camera-para-capacete/",
+      "destination": "/melhor-capacete/intercomunicadores/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comparacao-x11vs-bieffe",
+      "destination": "/capacete-x11-review/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comparacao-x11vs-bieffe/",
+      "destination": "/capacete-x11-review/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-com-oculos",
+      "destination": "/capacete-para-quem-usa-oculos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-com-oculos/",
+      "destination": "/capacete-para-quem-usa-oculos/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/adelson",
+      "destination": "/sobre/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/adelson/",
+      "destination": "/sobre/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/marcelo-ferreira",
+      "destination": "/author-marcelo-ferreira/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/marcelo-ferreira/",
+      "destination": "/author-marcelo-ferreira/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/paula-becker",
+      "destination": "/author-paula-becker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/paula-becker/",
+      "destination": "/author-paula-becker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/arthur",
+      "destination": "/autor-arthur-gomes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/arthur/",
+      "destination": "/autor-arthur-gomes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/pamela-pan",
+      "destination": "/author-pamela-pan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/pamela-pan/",
+      "destination": "/author-pamela-pan/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author",
+      "destination": "/sobre/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/",
+      "destination": "/sobre/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/beto-simonetti",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/beto-simonetti/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/bom-e-barato-para-estrada",
+      "destination": "/melhor-capacete/para-estrada/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/bom-e-barato-para-estrada/",
+      "destination": "/melhor-capacete/para-estrada/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-site-para-comprar",
+      "destination": "/qual-compra/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-site-para-comprar/",
+      "destination": "/qual-compra/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacetes-selo-inmetro",
+      "destination": "/capacetes-com-selo-inmetro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacetes-selo-inmetro/",
+      "destination": "/capacetes-com-selo-inmetro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/julian-ercolini",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/julian-ercolini/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/reviews",
+      "destination": "/category/reviews/",
+      "statusCode": 301
+    },
+    {
+      "source": "/reviews/",
+      "destination": "/category/reviews/",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     {
       "source": "/sitemap.xml",
