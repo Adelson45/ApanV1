@@ -62,7 +62,7 @@ interface Props {
   views?: string;
   comments?: string;
   indice?: IndiceItem[];
-  tags?: Tag[];
+  tags?: (Tag | string)[];
   featuredProduct?: FeaturedProduct;
   extraProducts?: ExtraProduct[];
   popular?: PopularItem[];
@@ -112,6 +112,64 @@ const popularList = popular ?? defaultPopular;
 const hasFeatured = !!featuredProduct;
 const hasIndice = !!indice && indice.length > 0;
 const hasTags = !!tags && tags.length > 0;
+
+// Tags sem link próprio (href ausente ou '#') apontam para a página do tema,
+// quando existe uma; senão viram texto. Nunca linkam para a própria página.
+const TAG_PAGES: Record<string, string> = {
+  'REVIEW': '/category/reviews/', 'ANALISE': '/category/reviews/',
+  'CAPACETES': '/melhor-capacete/', 'CAPACETE': '/melhor-capacete/', 'RANKING': '/melhor-capacete/', 'TOP 10': '/melhor-capacete/',
+  'GUIA': '/guia-definitivo/', 'GUIA DE COMPRA': '/guia-definitivo/', 'GUIA 2026': '/guia-definitivo/',
+  'CUSTO-BENEFICIO': '/custo-beneficio/', 'CUSTO BENEFICIO': '/custo-beneficio/',
+  'BOM E BARATO': '/custo-beneficio/bom-e-barato/', 'BARATO': '/custo-beneficio/mais-barato/',
+  'MAIS PROCURADOS': '/custo-beneficio/mais-procurados/', 'ATE R$300': '/custo-beneficio/ate-300-reais/',
+  'ATE R$400': '/custo-beneficio/ate-400-reais/', 'ATE R$1000': '/melhor-capacete-ate-1000-reais/',
+  'MAIS VENDIDOS': '/melhor-capacete/mais-vendidas/', 'AMAZON': '/melhor-capacete/mais-vendido-na-amazon/',
+  'BEM AVALIADOS': '/melhor-capacete/bem-avaliados/', 'BONITOS': '/melhor-capacete/mais-bonitos/',
+  'MARCAS': '/melhor-capacete/marcas/', 'BRASIL': '/melhor-capacete/marca-no-brasil/',
+  'ABERTO': '/capacete-aberto/', 'CAPACETE ABERTO': '/capacete-aberto/', '3/4': '/capacete-aberto/',
+  'ARTICULADO': '/melhor-capacete/articulados/', 'ESCAMOTEAVEL': '/melhor-capacete/articulados/',
+  'ADVENTURE': '/capacete-adventure/', 'BIG TRAIL': '/capacete-big-trail/',
+  'OFF-ROAD': '/capacete-off-road-review/', 'MOTOCROSS': '/capacete-off-road-review/',
+  'ESPORTIVO': '/capacete-esportivo-barato/', 'ESPORTIVA': '/melhor-capacete/para-moto-esportiva/',
+  'ALTA CILINDRADA': '/capacete-alta-cilindrada/', 'ESTRADA': '/melhor-capacete/para-estrada/',
+  'RODOVIA': '/melhor-capacete/para-estrada/', 'URBANO': '/capacete-para-cidade/', 'URBANDO': '/capacete-para-cidade/',
+  'SCOOTER': '/capacete-para-scooter/', 'MOTOBOY': '/capacete-para-motoboy/', 'INFANTIL': '/capacete-de-moto-infantil/',
+  'FEMININO': '/capacetes-feminino/', 'LEVES': '/melhor-capacete/leve-e-confortavel/',
+  'CONFORTO': '/melhor-capacete/leve-e-confortavel/', 'OCULOS': '/capacete-para-quem-usa-oculos/',
+  'SKATE': '/melhor-capacete-para-skate/', 'CAPACETE SKATE': '/melhor-capacete-para-skate/',
+  'CAPACETE BIKE': '/melhor-capacete-para-bike/', 'CICLISMO': '/melhor-capacete-para-bike/',
+  'SEGURANCA': '/capacete-de-moto-seguro/', 'INMETRO': '/capacetes-com-selo-inmetro/',
+  'CERTIFICACOES': '/certificacoes-de-capacetes/', 'ECE': '/certificacoes-de-capacetes/',
+  'ECE 22.06': '/certificacoes-de-capacetes/', 'DOT': '/certificacoes-de-capacetes/', 'SNELL': '/certificacoes-de-capacetes/',
+  'TAMANHO': '/tamanho-do-capacete/', 'AJUSTE': '/tamanho-do-capacete/', 'VALIDADE': '/capacete-prazo-validade/',
+  'LIMPEZA': '/limpeza-do-capacete/', 'MANUTENCAO': '/limpeza-do-capacete/', 'REPARO': '/reparo-e-acessorios/',
+  'ANTI-RUIDO': '/capacetes-anti-ruido/', 'SILENCIOSO': '/capacetes-anti-ruido/', 'NARIGUEIRA': '/narigueira-capacete-seguranca-conforto/',
+  'LEGISLACAO': '/capacete-permitido-na-pilotagem/', 'CTB': '/capacete-permitido-na-pilotagem/',
+  'PILOTAGEM': '/capacete-permitido-na-pilotagem/', 'MULTA': '/multa-dirigir-sem-capacete/',
+  'INTERCOMUNICADOR': '/melhor-capacete/intercomunicadores/', 'BLUETOOTH': '/melhor-capacete/intercomunicadores/',
+  'ANATEL': '/intercomunicador-e-permitido/', 'CARDO': '/intercomunicador-cardo-review/', 'EJEAS': '/intercomunicador-ejeas-review/',
+  'CHUVA': '/melhor-capacete/para-chuva/', 'CAPA DE CHUVA': '/melhor-capacete/capa-de-chuva/', 'IMPERMEAVEL': '/melhor-capacete/capa-de-chuva/',
+  'LUVAS': '/melhor-capacete/luvas/', 'JAQUETAS': '/dica-melhor-jaqueta-motociclistas/',
+  'TRAVAS': '/melhor-trava-para-moto/', 'ANTIFURTO': '/melhor-trava-para-moto/', 'ANTI-FURTO': '/melhor-trava-para-moto/',
+  'CADEADOS': '/cadeados-para-moto/', 'BATERIAS': '/melhores-baterias-de-moto/',
+  'PNEUS': '/comparativo-michelin-vs-pirelli/', 'PIRELLI': '/comparativo-michelin-vs-pirelli/',
+  'MICHELIN': '/comparativo-michelin-vs-pirelli/', 'CG 160': '/melhores-pneus-para-cg160/',
+  'LS2': '/capacete-ls2-review/', 'X11': '/analise-da-marca-x11/', 'PEELS': '/melhor-capacete-peels/',
+  'PRO TORK': '/capacete-pro-tork-review/', 'NORISK': '/capacete-norisk-review/', 'MORMAII': '/capacete-mormaii-review/',
+  'HJC': '/melhor-capacete-hjc-helmets/', 'TEXX': '/capacete-texx-review/', 'MT HELMETS': '/capacete-mt-review/',
+  'BIEFFE': '/melhor-capacete-bieffe/', 'BIFFE': '/melhor-capacete-bieffe/', 'TAURUS': '/capacete-taurus-review/',
+  'NOLAN': '/capacete-nolan-review/', 'MIXS': '/capacetes-mixs-review/', 'BELL': '/bell-vale-a-pena/',
+  'ALPINESTARS': '/jaquetas-alpinestars-review/', 'HELT': '/capacete-helt-e-bom/', 'ASTONE': '/capacete-astone-review/',
+  'ASX': '/asx-city-solid-review/', 'ETCETER': '/capacete-etceter-review/', 'NEXX': '/nexx-sx100-review/'
+};
+
+const normalizeTag = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').trim().toUpperCase();
+const currentPath = Astro.url.pathname.replace(/\/?$/, '/');
+const resolvedTags = (tags ?? []).map((t) => {
+  const tag: Tag = typeof t === 'string' ? { label: t } : t;
+  const href = tag.href && tag.href !== '#' ? tag.href : TAG_PAGES[normalizeTag(tag.label)];
+  return { label: tag.label, href: href && href !== currentPath ? href : undefined };
+});
 const hasAuthorBio = !!authorBio;
 const displayCategory = categoryLabel ?? category;
 
@@ -140,7 +198,7 @@ function parsePublishDate(dateStr?: string): string {
 const isoDatePublished = parsePublishDate(publishDate);
 const fullImageUrl = coverImage
   ? (coverImage.startsWith('http') ? coverImage : `https://jovemapan.com.br${coverImage.startsWith('/') ? coverImage : '/' + coverImage}`)
-  : 'https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png';
+  : 'https://jovemapan.com.br/images/logo-dos-melhores-capacetes.png';
 
 const categoryFullUrl = categoryHref.startsWith('http')
   ? categoryHref
@@ -180,7 +238,7 @@ const postSchemaGraph = [
     "telephone": "+5511968037428",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://jovemapan.com.br/images/Logo-dos-melhores-capacetes.png",
+      "url": "https://jovemapan.com.br/images/logo-dos-melhores-capacetes.png",
       "@id": "https://jovemapan.com.br/#organizationLogo",
       "width": 350,
       "height": 70
@@ -370,8 +428,8 @@ const postSchemaGraph = [
               <div class="post-tags-container">
                 <strong>TAGS:</strong>
                 <div class="post-tags">
-                  {tags!.map((tag) => (
-                    <a href={tag.href ?? '#'}>{tag.label}</a>
+                  {resolvedTags.map((tag) => (
+                    tag.href ? <a href={tag.href}>{tag.label}</a> : <span>{tag.label}</span>
                   ))}
                 </div>
               </div>
@@ -1191,6 +1249,10 @@ const postSchemaGraph = [
     letter-spacing: 0.5px; transition: border-color 0.2s, color 0.2s; background: transparent;
   }
   .post-tags a:hover { border-color: #E31E24; color: #C41A1F; }
+  .post-tags span {
+    border: 1px solid #EAEAEA; border-radius: 4px; padding: 8px 16px;
+    font-size: 0.75rem; font-weight: 800; color: #666; letter-spacing: 0.5px;
+  }
 
   .webcreation-social-wrapper {
     display: flex;
