@@ -1,160 +1,48 @@
 # Jovem Apan - Reviews de Capacetes
 
-Site de reviews e comparativos de capacetes para moto, bike e mais. Migrado de WordPress para Astro + Bun.
+Site de reviews e comparativos de capacetes e acessórios para moto ([jovemapan.com.br](https://jovemapan.com.br)). Migrado de WordPress para Astro.
 
 ## 🚀 Tecnologias
 
-- **[Astro](https://astro.build/)** - Framework web para sites de conteúdo
-- **Bun** - Runtime e gerenciador de pacotes (alternativa ao Node.js)
-- **TypeScript** - Tipagem estática
-- **CSS Vanilla** - Estilização sem frameworks externos
+- **[Astro 5](https://astro.build/)** - páginas estáticas + rotas de servidor (adapter Vercel)
+- **TypeScript** e **CSS puro**
+- **[Supabase](https://supabase.com/)** - comentários, newsletter, mensagens de contato e login do admin
+- **[Brevo](https://www.brevo.com/)** - envio de e-mails (contato e respostas a comentários)
+- **[Pagefind](https://pagefind.app/)** - busca do site, gerada no build
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura
 
 ```
-.
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro          # Layout base com SEO
-│   ├── components/
-│   │   ├── Header.astro          # Navegação principal
-│   │   └── Footer.astro          # Rodapé
-│   └── pages/
-│       ├── index.astro           # Página inicial
-│       ├── contato.astro         # Página de contato
-│       ├── politica-de-privacidade.astro
-│       ├── 404.astro             # Página não encontrada
-│       └── api/
-│           └── contact.ts        # API Route para formulário
-├── public/
-│   ├── styles/
-│   │   └── main.css              # Estilos globais
-│   ├── fonts/                    # Fontes locais
-│   ├── images/                   # Imagens do site
-│   └── robots.txt
-├── package.json
-├── astro.config.mjs
-└── tsconfig.json
+src/
+├── components/   # Header, Footer, SearchModal, ProductCard, ProsCons, ReviewSchema
+├── layouts/      # Layout (base/SEO), PostLayout (posts), AdminLayout (painel)
+├── lib/          # supabase, auth (admin), ratelimit
+└── pages/
+    ├── *.astro   # posts e páginas do site
+    ├── admin/    # painel admin (login, comentários, contatos, inscritos)
+    └── api/      # comentários, newsletter, contato e ações do admin
+public/           # imagens, fontes, estilos, robots.txt
+supabase/         # SQL das tabelas
 ```
 
-## 🛠️ Instalação
+## 🛠️ Desenvolvimento
 
 ```bash
-# Com Bun (recomendado)
-bun install
-
-# Ou com npm
 npm install
+npm run dev       # http://localhost:4321
+npm run build     # build + índice de busca do Pagefind
+npm run preview
 ```
 
-## 📝 Scripts Disponíveis
+Copie `.env.example` para `.env` e preencha as variáveis (Supabase, Brevo e `ADMIN_EMAILS`). O passo a passo do painel admin está em [`ADMIN_SETUP.md`](./ADMIN_SETUP.md).
 
-```bash
-# Desenvolvimento
-bun run dev          # ou: npm run dev
+## 🚀 Deploy
 
-# Build para produção
-bun run build        # ou: npm run build
+O deploy é feito na **Vercel**, automaticamente a cada push na branch `main`. As mesmas variáveis do `.env` precisam estar em **Vercel → Settings → Environment Variables**.
 
-# Preview da build
-bun run preview      # ou: npm run preview
-```
-
-## ✨ Funcionalidades
-
-- ✅ **SEO Otimizado**: Meta tags, Schema.org, Open Graph, Sitemap automático
-- ✅ **Performance**: HTML estático, zero JavaScript runtime
-- ✅ **Acessibilidade**: ARIA labels, navegação por teclado, contraste adequado
-- ✅ **Responsivo**: Layout adaptável a todos os dispositivos
-- ✅ **Formulário de Contato**: API Route com validação
-- ✅ **Analytics**: Google Analytics e Google Tag Manager
-- ✅ **Newsletter**: Cadastro de e-mails
-
-## 🔧 Configuração
-
-### Variáveis de Ambiente (opcional)
-
-Crie um arquivo `.env` na raiz:
-
-```env
-# Para envio de e-mails via API de contato
-RESEND_API_KEY=sua_chave_aqui
-CONTACT_EMAIL=contato@jovemapan.com.br
-```
-
-### Google Analytics
-
-O GA e GTM já estão configurados no Layout.astro. Para alterar os IDs:
-
-```astro
-<!-- Layout.astro -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=SEU_GA_ID"></script>
-```
-
-## 🖼️ Migração de Imagens
-
-As imagens do projeto original estão em `images/`. Para usar no Astro:
-
-1. Copie as imagens necessárias para `public/images/`
-2. Atualize os caminhos no código (ex: `/images/logo.png`)
-
-## 📄 Páginas
-
-| Página | Descrição |
-|--------|-----------|
-| `/` | Home com categorias e reviews em destaque |
-| `/contato` | Formulário de contato com API |
-| `/politica-de-privacidade` | Página de privacidade LGPD/GDPR |
-| `/404` | Página não encontrada |
-
-## 🔍 SEO
-
-O projeto inclui:
-- Meta tags dinâmicas por página
-- Schema.org JSON-LD (Organization, WebSite, WebPage)
-- Sitemap XML automático (`/sitemap-index.xml`)
-- Canonical URLs
-- Twitter Cards e Open Graph
-
-## � Deploy
-
-### Vercel (Recomendado)
-
-O projeto está otimizado para deploy na Vercel:
-
-```bash
-# Instale a CLI da Vercel
-npm i -g vercel
-
-# Deploy (comando interativo)
-vercel
-
-# Deploy em produção
-vercel --prod
-```
-
-Ou use o botão **"Deploy with Vercel"** no repositório GitHub.
-
-Veja mais detalhes em [`VERCEL_DEPLOY.md`](./VERCEL_DEPLOY.md)
-
-### GitHub Pages
-
-Alternativa gratuita disponível. Veja [`GITHUB_DEPLOY.md`](./GITHUB_DEPLOY.md)
-
-## �🚧 Roadmap
-
-- [ ] Integração com Resend para envio de e-mails
-- [ ] Páginas de reviews individuais
-- [ ] Sistema de busca
-- [ ] Filtros de comparativos
-- [ ] Páginas de categoria (/capacetes-moto, etc.)
+Redirects 301 de URLs antigas ficam em `redirects` no [`astro.config.mjs`](./astro.config.mjs).
 
 ## 📞 Contato
 
 - **E-mail**: contato@jovemapan.com.br
-- **Telefone**: +55 (11) 96803-7428
 - **Site**: https://jovemapan.com.br
-
----
-
-Desenvolvido com ❤️ usando Astro + Bun
