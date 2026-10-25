@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { imageSize } from '../lib/imageSize';
 
 interface IndiceItem {
   label: string;
@@ -173,6 +174,17 @@ const resolvedTags = (tags ?? []).map((t) => {
 const hasAuthorBio = !!authorBio;
 const displayCategory = categoryLabel ?? category;
 
+const bioImage = authorBio
+  ? authorBio.image ?? authorImage ?? `https://ui-avatars.com/api/?name=${encodeURIComponent(authorBio.name ?? author)}&background=random`
+  : undefined;
+const [coverSize, authorSize, bioSize, featuredSize, ...extraSizes] = await Promise.all([
+  imageSize(coverImage),
+  imageSize(authorImage),
+  imageSize(bioImage),
+  imageSize(featuredProduct?.image),
+  ...(extraProducts ?? []).map((p) => imageSize(p.image))
+]);
+
 const shareUrlEncoded = encodeURIComponent(pageUrl);
 const shareTitleEncoded = encodeURIComponent(title);
 
@@ -319,7 +331,7 @@ const postSchemaGraph = [
         <div class="post-meta-data">
           <div class="meta-author">
             {authorImage && (
-              <img src={authorImage} alt={author} class="author-avatar" />
+              <img src={authorImage} alt={author} class="author-avatar" {...authorSize} decoding="async" />
             )}
             <strong>{author.toUpperCase()}</strong>
           </div>
@@ -378,7 +390,7 @@ const postSchemaGraph = [
 
           {coverImage && (
             <div class="post-cover-image">
-              <img src={coverImage} alt={coverImageAlt ?? title} data-pagefind-meta="image[src]" />
+              <img src={coverImage} alt={coverImageAlt ?? title} data-pagefind-meta="image[src]" {...coverSize} fetchpriority="high" decoding="async" />
               <div class="verified-badge">
                 <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 APAN VERIFIED
@@ -479,8 +491,11 @@ const postSchemaGraph = [
               <div class="author-bio-box">
                 <div class="bio-avatar">
                   <img
-                    src={authorBio!.image ?? authorImage ?? `https://ui-avatars.com/api/?name=${encodeURIComponent(authorBio!.name ?? author)}&background=random`}
+                    src={bioImage}
                     alt={authorBio!.name ?? author}
+                    {...bioSize}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="bio-content">
@@ -671,6 +686,8 @@ const postSchemaGraph = [
                   src={featuredProduct!.image}
                   alt={featuredProduct!.imageAlt ?? featuredProduct!.name ?? 'Produto em destaque'}
                   class="produto-imagem"
+                  {...featuredSize}
+                  decoding="async"
                 />
               )}
               {featuredProduct!.name && (
@@ -689,13 +706,13 @@ const postSchemaGraph = [
             </div>
           )}
 
-          {extraProducts && extraProducts.map((p) => (
+          {extraProducts && extraProducts.map((p, i) => (
             <div class="sidebar-widget produto-widget-extra">
               {p.badge && (
                 <p class={`widget-badge-extra ${p.badgeStyle === 'desconto' ? 'desconto' : 'frete'}`}>{p.badge}</p>
               )}
               {p.image && (
-                <img src={p.image} alt={p.imageAlt ?? p.name ?? 'Produto'} class="widget-img-extra" />
+                <img src={p.image} alt={p.imageAlt ?? p.name ?? 'Produto'} class="widget-img-extra" {...extraSizes[i]} loading="lazy" decoding="async" />
               )}
               {p.name && <h4 class="widget-name-extra">{p.name}</h4>}
               <div class="widget-links-extra">
