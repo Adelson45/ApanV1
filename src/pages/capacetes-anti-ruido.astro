@@ -1,5 +1,6 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { fichas } from '../data/fichasTecnicas';
 
 const title = 'Qual é o Capacete de Moto Mais Silencioso? Guia 2026';
 const description = 'Descubra os capacetes anti-ruído mais silenciosos do mercado. Análise técnica de modelos Norisk, ASX, LS2, Peels, MT, HJC e Bieffe, com prós, contras e links de compra.';
@@ -11,8 +12,6 @@ const category = 'Reviews';
 const categoryHref = '/category/reviews/';
 const coverImage = '/images/melhor-capacete-de-moto-antiruido.webp';
 
-const views = '15K VIEWS';
-const comments = '10 COMMENTS';
 
 const indice = [
   { label: '1. Introdução', href: '#introducao' },
@@ -63,12 +62,11 @@ const featuredProduct = {
   category={category}
   categoryHref={categoryHref}
   coverImage={coverImage}
-  views={views}
-  comments={comments}
   indice={indice}
   tags={tags}
   authorBio={authorBio}
   featuredProduct={featuredProduct}
+  fichaTecnica={fichas('ls2-stream-ii', 'asx-draken-solid', 'hjc-c10')}
 >
   <p class="post-lead" id="introducao">
     Todo motociclista que já pegou a estrada sabe que o vento é um adversário constante. O ruído do
@@ -374,7 +372,7 @@ const featuredProduct = {
 
   <h2 id="feedback">Capacete de motociclista mais silencioso: baseado em feedback</h2>
   <p>
-    Analisando reviews de usuários e testes práticos, o <strong>HJC C10</strong> e o <strong>MT
+    Analisando avaliações de usuários, o <strong>HJC C10</strong> e o <strong>MT
     Targo S</strong> costumam levar a melhor no quesito silêncio dentro da categoria intermediária.
     Usuários relatam que, com a viseira travada e bavete instalada, o assovio agudo é drasticamente
     reduzido comparado aos concorrentes nacionais.

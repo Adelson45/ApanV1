@@ -1,8 +1,9 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { fichas } from '../data/fichasTecnicas';
 
-const title = 'Capacete Axxis é bom? Análise Completa!';
-const description = 'Saiba tudo sobre o Draken antes de comprar, se ele oferece segurança ECE 22.06 ou DOT, descubra na nossa análise os prós e contras.';
+const title = 'Capacete Axxis Draken é bom? Ficha Técnica, Prós e Contras';
+const description = 'Veja peso, casco, viseira, forro e selo do Inmetro do capacete Draken, com dados oficiais da fabricante, além de prós e contras antes de comprar.';
 const canonical   = 'https://jovemapan.com.br/axxis-draken-review/';
 const author      = 'Pamela Pan';
 const publishDate = '2025-04-01';
@@ -10,19 +11,13 @@ const category    = 'REVIEWS';
 const categoryHref = '/category/reviews/';
 const coverImage  = '/images/capacete-axxis-draker-2.webp';
 
-const views       = '12K VIEWS';
-const comments    = '8 COMMENTS';
 
 const indice = [
-  { label: 'Casco externo', href: '#casco-externo' },
-  { label: 'Peso', href: '#peso' },
+  { label: 'Casco e peso', href: '#casco-externo' },
   { label: 'Ventilação', href: '#ventilacao' },
   { label: 'Viseira', href: '#viseira' },
-  { label: 'Resina', href: '#resina' },
-  { label: 'Fixação', href: '#fixacao' },
-  { label: 'Ajuste', href: '#ajuste' },
-  { label: 'Barulho', href: '#barulho' },
-  { label: 'Análise do Axxis Draken – Conclusão', href: '#conclusao' }
+  { label: 'Forro e fixação', href: '#resina' },
+  { label: 'Conclusão', href: '#conclusao' }
 ];
 
 const tags = [
@@ -30,12 +25,12 @@ const tags = [
   { label: 'AXXIS', href: '#' },
   { label: 'CAPACETE', href: '#' },
   { label: 'DRAKEN', href: '#' },
-  { label: 'ECE 22.06', href: '#' }
+  { label: 'INMETRO', href: '#' }
 ];
 
 const authorBio = {
   name: 'Pamela Pan',
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  description: 'Pamela Pan é motociclista e editora-chefe do Jovem Apan, onde coordena as análises de capacetes e equipamentos.',
   image: '/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp',
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›'
@@ -91,53 +86,16 @@ const extraProducts = [
   category={category}
   categoryHref={categoryHref}
   coverImage={coverImage}
-  views={views}
-  comments={comments}
   indice={indice}
   tags={tags}
   authorBio={authorBio}
   extraProducts={extraProducts}
+  updatedDate="2026-11-08"
+  fichaTecnica={fichas('asx-draken-solid')}
 >
 
 <p class="post-lead">
-  O <strong>Axxis Draken</strong>, que estamos analisando aqui, cumpre os requisitos do exigente padrão ECE 22.06 e, surpreendentemente, oferece alguns recursos interessantes, considerando seu preço acessível.
-</p>
-
-<p>
-  É evidente a diferença em relação a capacetes de categoria mais premium, mas para quem tem um orçamento mais enxuto e não roda grandes distâncias, ele pode ser uma excelente escolha. Tenho utilizado esse capacete em uma Z1000 para testar seu desempenho na prática.
-</p>
-
-<div style="background: var(--gray-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--red); margin-bottom: 30px;">
-  <span style="font-size: 1.2rem; font-weight: bold; color: var(--red); display: block; margin-bottom: 5px;">Data da revisão: Abril de 2025</span>
-  <p style="margin: 0;">Testado por: Adelson Gomes | <a href="https://amzn.to/4k6AAxh" target="_blank" rel="sponsored nofollow noopener noreferrer">www.amazon.com.br</a></p>
-</div>
-
-<h2 id="casco-externo">Casco externo</h2>
-
-<p>
-  Com preço de R$ 449,99 na cor preto brilhante ou fosco, você também pode escolher entre várias opções de grafismos por R$ 599,99. As primeiras impressões da concha termoplástica do Axxis Draken são bem positivas, principalmente pela pintura em branco perolado brilhante, que realmente chama a atenção.
-</p>
-
-<p>
-  Observando mais de perto, e sem muita surpresa, é possível notar pequenas imperfeições sob a pintura. No meu caso específico, havia um pequeno lascado na camada de verniz da entrada de ar do queixo.
-</p>
-
-<p>
-  Algo mais perceptível é o acabamento um pouco grosseiro ao redor da parte superior da abertura da viseira e na ventilação superior. Se estivéssemos falando de um capacete de R$ 1.000 ou mais, isso certamente seria bem frustrante.
-</p>
-
-<p>
-  Mas, considerando a faixa de preço, vale mais como uma observação para quem quer entender as principais diferenças entre capacetes de entrada e modelos mais caros.
-</p>
-
-<h2 id="peso">Peso</h2>
-
-<p>
-  Com tamanho médio, o Axxis Draken marcou 1.523 gramas na minha balança, o que é um peso bastante dentro da média para um capacete homologado no padrão ECE 22.06 — talvez até levemente mais leve do que muitos nessa categoria.
-</p>
-
-<p>
-  O mais relevante quando falamos de conforto e cansaço no pescoço é que ele não apresenta nenhum arrasto perceptível, seja andando em linha reta ou durante aquelas olhadas rápidas por cima do ombro.
+  O <strong>Draken</strong> é um capacete fechado vendido na loja oficial da ASX, que também comercializa a marca Axxis. Os dados abaixo são da versão ASX Draken Solid publicada pela fabricante, sem teste próprio de rodagem. Em outras versões, confira as especificações no anúncio.
 </p>
 
 <div class="product-section">
@@ -148,160 +106,51 @@ const extraProducts = [
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
       <ul class="pc-list pros">
-        <li>Certificação ECE 22.06</li>
-        <li>Forro totalmente removível</li>
-        <li>Peso leve (1.523g)</li>
-        <li>Bom custo-benefício</li>
-        <li>Fecho micrométrico prático</li>
+        <li>Selo do Inmetro instalado, segundo a fabricante</li>
+        <li>Forro removível e hipoalergênico</li>
+        <li>Sistema de troca rápida da viseira</li>
+        <li>Fecho micrométrico</li>
       </ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
       <ul class="pc-list cons">
-        <li>Ventilação mediana</li>
-        <li>Acabamento grosseiro em detalhes</li>
-        <li>Sem viseira solar interna</li>
-        <li>Dificuldade na remoção do forro central</li>
-        <li>Sem liberação rápida da viseira</li>
+        <li>Não possui adaptação para Pinlock</li>
+        <li>Casco em ABS, material mais simples do que fibra</li>
+        <li>Sem viseira solar interna informada</li>
       </ul>
     </div>
   </div>
-  <p><strong>Ideal para:</strong> pilotos com orçamento limitado que não percorrem grandes distâncias e buscam segurança certificada.</p>
+  <p><strong>Ideal para:</strong> quem procura um capacete fechado de entrada com selo do Inmetro informado pela fabricante.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4tP31oI" class="btn-buy" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://meli.la/2DyjDYA" class="btn-buy ml" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver no Mercado Livre</a>
   </div>
 </div>
 
+<h2 id="casco-externo">Casco e peso</h2>
+<p>
+  Segundo a ASX, o casco é de <strong>resina termoplástica ABS</strong>, com pintura e verniz automotivos PPG e estrutura interna em EPS de dupla densidade. O peso médio informado é de <strong>1.500 g</strong>. A fabricante também afirma que o Draken foi o primeiro capacete certificado pelo Inmetro no tamanho 64.
+</p>
+
 <h2 id="ventilacao">Ventilação</h2>
-
 <p>
-  O Axxis Draken conta com uma entrada de ar no queixo, que pode ser aberta ou fechada, uma ventilação superior e um extrator traseiro que permanece sempre aberto.
-</p>
-
-<p>
-  A ventilação do queixo direciona o fluxo de ar diretamente para a viseira, utilizando canais grandes que passam por dentro do protetor de nariz — que, vale destacar, não é removível. Isso ajuda bastante a reduzir o embaçamento, especialmente se você não estiver usando um Pinlock.
-</p>
-
-<p>
-  Claro, a eficiência desse sistema também vai depender bastante do tipo de bolha ou para-brisa da sua moto. No meu caso, mesmo não sentindo o fluxo de ar diretamente na testa, percebi que o ar entra livremente pela frente e se dissipa bem pela parte interna da viseira.
-</p>
-
-<p>
-  Já a ventilação superior leva o ar para duas entradas no revestimento interno de EPS (poliestireno expandido), que se conectam a canais que percorrem o capacete até saírem por duas aberturas na parte traseira, ajudando na extração do ar quente através do escape fixo.
-</p>
-
-<p>
-  Com a ventilação superior aberta, as entradas de ar não ficam completamente expostas, o que acaba limitando um pouco o fluxo nessa região. Na prática, durante o uso, não consegui sentir o ar passando de forma perceptível.
-</p>
-
-<p>
-  Claro que algum movimento de ar acontece lá dentro, mas, sendo bem sincero, está longe de ser a melhor ventilação que já experimentei em um capacete.
+  A marca descreve um sistema de ventilação de fácil acionamento, com entradas de ar em ABS. O desempenho não foi medido por nós.
 </p>
 
 <h2 id="viseira">Viseira</h2>
-
 <p>
-  A viseira do Axxis Draken é acionada por uma aba única localizada no lado esquerdo, feita para ser operada com o polegar. Pessoalmente, eu prefiro quando essa aba é centralizada ou quando há uma segunda aba do lado direito, o que facilitaria bastante o manuseio enquanto seguramos a embreagem. De todo modo, ela encaixa com segurança, veda muito bem e não permite a entrada de água pela parte superior.
+  A viseira <strong>ASX V18B</strong> é de policarbonato de 2 mm e tem sistema de troca rápida. A fabricante informa que ela <strong>não possui adaptação para Pinlock</strong>, um ponto a considerar para quem anda em dias frios ou chuvosos.
 </p>
 
-<div class="h2-image-card">
-  <img src="/images/viseira-do-capacete-axxis-draken.webp" alt="Viseira do Capacete Axxis Draken" width="452" height="300" loading="lazy" decoding="async" />
-</div>
-
+<h2 id="resina">Forro e fixação</h2>
 <p>
-  Um ponto positivo é que a viseira possui uma posição de abertura inicial que permite uma entrada extra de ar algo que, sinceramente, muitos capacetes premium poderiam aprender a implementar. Depois dessa primeira abertura, há dois estágios de catraca, suaves, porém firmes, antes que ela se abra totalmente. Vale destacar que, em velocidades mais altas, a viseira permanece aberta no estágio total, mas tende a se fechar automaticamente nas duas posições intermediárias.
+  O forro é <strong>removível e hipoalergênico</strong>. O sistema de retenção é em poliacetal, com cinta jugular de engate rápido micrométrico. Antes de comprar, consulte o guia de medidas da marca e, se puder, experimente em uma loja.
 </p>
 
+<h2 id="conclusao">Conclusão</h2>
 <p>
-  O capacete oferece a possibilidade de instalar um Pinlock 70, que é um nível médio de proteção contra embaçamento (para referência, o Pinlock 30 é o mais básico e o 120, o mais avançado).
-</p>
-
-<p>
-  Esse acessório é vendido separadamente por cerca de R$ 250. Porém, se você comprar o Pinlock junto com o capacete, vale negociar com a loja, pois em alguns casos ele pode ser incluído sem acréscimo de impostos, ajudando a reduzir o valor final.
-</p>
-
-<p>
-  Se você costuma pilotar em dias frios, a recomendação é investir nesse acessório. Já viseiras extras custam cerca de R$ 109,00.
-</p>
-
-<p>
-  Um ponto negativo é que o Draken S não possui sistema de liberação rápida da viseira. Para removê-la, você vai precisar de uma chave de fenda Phillips PH2, além de retirar um parafuso e uma arruela grande, moldada, de cada lado.
-</p>
-
-<p>
-  Outro detalhe importante: não há viseira solar interna embutida no Axxis Draken.
-</p>
-
-<h2 id="resina">Resina</h2>
-
-<p>
-  Um ponto muito positivo do Axxis Draken é contar com um forro totalmente removível, algo que nem sempre se vê em capacetes dessa faixa de preço. Isso facilita bastante na hora da higienização e manutenção.
-</p>
-
-<div class="h2-image-card">
-  <img src="/images/forro-do-axxis-draken-2.webp" alt="Forro do Capacete Axxis Draken" width="452" height="300" loading="lazy" decoding="async" />
-</div>
-
-<p>
-  O tecido é confortável, tem um toque agradável e aparenta ser bem construído. No entanto, tive certa dificuldade na hora de remover a parte central do forro, que fica na coroa do capacete. As almofadas das bochechas são simples de retirar e recolocar, mas o forro da parte superior estava preso bem firme entre a concha externa e o EPS. Cheguei até a rasgar uma parte tentando puxar.
-</p>
-
-<p>
-  O grande problema está na largura das abas de encaixe, que dificulta bastante a remoção. Portanto, se você perceber que está oferecendo muita resistência, recomendo não forçar. Nessa situação, uma boa solução é lavar o interior do capacete diretamente no chuveiro, sem remover essa parte do forro.
-</p>
-
-<h2 id="fixacao">Fixação</h2>
-
-<p>
-  O fecho micrométrico de catraca do Axxis Draken é bem prático e fácil de usar, garantindo um ajuste seguro toda vez que você coloca o capacete. O bom é que você só precisa fazer o ajuste uma única vez — depois disso, é só encaixar e pronto. Esse tipo de fecho, além de mais rápido e prático do que o tradicional duplo D, ainda oferece um nível de segurança excelente.
-</p>
-
-<div class="h2-image-card">
-  <img src="/images/fixacao-do-capacete-axxis-draken.webp" alt="Fixação do Capacete Axxis Draken" width="300" height="199" loading="lazy" decoding="async" />
-</div>
-
-<p>
-  Se for para apontar um detalhe que poderia ser melhor, é o fato de que a sobra da fita de ajuste não pode ser dobrada e presa na própria manguinha de tecido. Dá até para empurrá-la para dentro do slot da almofada da bochecha, mas, se ela escapar, acaba ficando balançando um pouco. Nada que comprometa o uso, mas seria um pequeno detalhe fácil de resolver.
-</p>
-
-<h2 id="ajuste">Ajuste</h2>
-
-<p>
-  Ajuste e conforto são, sem dúvida, os fatores mais importantes na hora de escolher qualquer capacete de moto. Afinal, até aquele pequeno ponto de pressão que você sente na loja pode se transformar em uma dor bem incômoda depois de uma ou duas horas pilotando — e isso, convenhamos, tem total potencial para arruinar qualquer viagem.
-</p>
-
-<p>
-  No meu caso, achei o Axxis Draken S confortável. Meu tamanho habitual é o M (médio), e ele ficou com um ajuste bem justo, talvez até um pouco mais apertado do que o esperado, além de parecer que fica ligeiramente alto na cabeça. Ainda assim, é consideravelmente mais confortável do que outros capacetes de baixo custo que já usei.
-</p>
-
-<p>
-  Se você usa óculos, vale um alerta: eles encaixam, sim, mas ficam um pouco apertados nas laterais, então pode gerar certo desconforto em viagens mais longas. Por isso, reforço que é fundamental experimentar o capacete pessoalmente antes de comprar, para garantir que ele se adapte perfeitamente ao seu formato de cabeça.
-</p>
-
-<h2 id="barulho">Barulho</h2>
-
-<p>
-  O nível de ruído que você sente com qualquer capacete depende muito da bolha e da carenagem da sua moto, mas no caso do Axxis Draken, não percebi nenhum barulho ou apito incômodo durante o uso.
-</p>
-
-<h2 id="conclusao">Análise do Axxis Draken – Conclusão</h2>
-
-<p>
-  O Axxis Draken se apresenta como uma opção muito interessante para quem busca um capacete com bom custo-benefício dentro do padrão ECE 22.06. Apesar de algumas limitações, como a ventilação mediana e o acabamento que deixa a desejar em alguns detalhes, ele surpreende pela qualidade geral do forro, segurança e conforto, especialmente considerando seu preço acessível.
-</p>
-
-<p>
-  Para pilotos com orçamento limitado e que não percorrem grandes distâncias, o Draken pode ser uma escolha bastante adequada, oferecendo proteção confiável sem pesar no bolso. No entanto, para quem prioriza ventilação superior, facilidade de remoção do forro ou sistemas avançados de viseira, talvez valha a pena investir um pouco mais.
-</p>
-
-<p>
-  Em resumo, o Axxis Draken cumpre o que promete e é um capacete que merece ser considerado por quem quer aliar economia e segurança sem abrir mão do conforto básico.
-</p>
-
-
-<p>
-  Estamos preparando análises de mais capacetes acessíveis, mas <a href="https://jovemapan.com.br/melhor-capacete/">aqui</a> estão algumas outras opções para você considerar.
+  Pelas especificações, o <strong>Draken</strong> oferece o básico esperado em um capacete de entrada, com selo do Inmetro informado e forro removível. A falta de adaptação para Pinlock é o principal ponto de atenção. Confira o selo na unidade comprada e veja outras opções em nosso <a href="/melhor-capacete/">guia dos melhores capacetes</a>.
 </p>
 
 </PostLayout>

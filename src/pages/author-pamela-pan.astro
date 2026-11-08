@@ -1,23 +1,50 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
 
-const title = 'Pamela Pan | Piloto Profissional e Cofundadora Jovem Apan';
-const description = 'Conheça Pamela Pan, piloto de MotoGP e co-fundadora da jovem apan. Descubra como sua experiência nas pistas transforma nossos reviews e dicas de segurança.';
+const title = 'Pamela Pan | Motociclista e Editora-chefe do Jovem Apan';
+const description = 'Conheça Pamela Pan, motociclista, cofundadora e editora-chefe do Jovem Apan, e veja como ela avalia capacetes e equipamentos.';
+const profileImage = '/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp';
+const instagramPamela = 'https://www.instagram.com/apanpamela';
+const instagramSite = 'https://www.instagram.com/jovem_apan';
 
 const authorBio = {
   name: 'Pamela Pan',
-  description: 'Cofundadora e Editora-chefe do Blog Apan, especializada em trazer as melhores análises e tendências do mundo das duas rodas.',
-  image: '/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp',
+  description: 'Motociclista, cofundadora e editora-chefe do Jovem Apan.',
+  image: profileImage,
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›'
 };
 
 const indice = [
-  { label: 'Bio', href: '#introducao' },
-  { label: 'Destaques', href: '#destaques' },
-  { label: 'Experiência', href: '#experiencia' },
-  { label: 'Educação', href: '#educacao' },
+  { label: 'Quem é Pamela Pan', href: '#introducao' },
+  { label: 'O que ela faz no Jovem Apan', href: '#funcao' },
+  { label: 'Como os equipamentos são avaliados', href: '#avaliacao' },
+  { label: 'Artigos em destaque', href: '#artigos' },
+  { label: 'Onde acompanhar', href: '#redes' },
 ];
+
+const artigos = [
+  { label: 'Capacetes aprovados pelo Inmetro', href: '/melhor-capacete/aprovados-pelo-inmetro/' },
+  { label: 'Melhores capacetes escamoteáveis', href: '/melhor-capacete/articulados/' },
+  { label: 'Capacetes leves e confortáveis', href: '/melhor-capacete/leve-e-confortavel/' },
+  { label: 'Melhores capacetes para scooter', href: '/capacete-para-scooter/' },
+  { label: 'Avaliação do LS2 FF808 Stream II', href: '/capacete-ls2-review/' },
+];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: 'https://jovemapan.com.br/author-pamela-pan/',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Pamela Pan',
+    jobTitle: 'Motociclista e editora-chefe',
+    image: `https://jovemapan.com.br${profileImage}`,
+    url: 'https://jovemapan.com.br/author-pamela-pan/',
+    sameAs: [instagramPamela],
+    worksFor: { '@id': 'https://jovemapan.com.br/#organization' },
+  },
+};
 ---
 
 <PostLayout
@@ -26,75 +53,49 @@ const indice = [
   category="EQUIPE"
   author="Pamela Pan"
   authorBio={authorBio}
-  coverImage="/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp"
+  coverImage={profileImage}
+  coverImageAlt="Pamela Pan, cofundadora e editora-chefe do Jovem Apan"
   indice={indice}
   hideShare={true}
   hideAuthor={true}
   hideComments={true}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
   <div class="author-profile-header" id="introducao">
     <div class="author-photo">
-      <img src="/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp" alt="Pamela Pan" width="1080" height="1080" loading="lazy" decoding="async" />
+      <img src={profileImage} alt="Pamela Pan" width="1080" height="1080" loading="lazy" decoding="async" />
     </div>
-    <span class="author-role">Cofundadora e Editora-chefe</span>
-    <h1 class="author-name">Pamela Pan</h1>
-    <div class="author-title">
-      <span class="icon">🏆</span> Piloto Profissional de MotoGP
-    </div>
+    <span class="author-role">Cofundadora e editora-chefe</span>
+    <p class="author-name">Pamela Pan</p>
+    <div class="author-title">Motociclista e editora-chefe do Jovem Apan</div>
     <p class="author-intro-text">
-      Para Pamela Pan, a vida a 300 km/h não é uma exceção, é o escritório. Como piloto profissional de MotoGP e co-fundadora do jovem apan, ela vive e respira a busca incessante pelo limite da performance, onde cada detalhe do equipamento e cada decisão milimétrica definem o resultado. Essa experiência é a base de autoridade que ela traz para cada análise técnica no blog.
+      Pamela Pan é motociclista, cofundadora e editora-chefe do Jovem Apan. O blog nasceu de uma conversa de garagem entre ela e o engenheiro de tráfego <a href="/author-marcelo-ferreira/">Marcelo Ferreira</a>: de um lado, a prática de quem anda de moto; do outro, a ciência da segurança viária.
     </p>
   </div>
 
-  <h2 id="destaques">Destaques</h2>
-  <div class="highlights-grid">
-    <div class="highlight-card">
-      <div class="highlight-icon">🏆</div>
-      <h3>Piloto Profissional de MotoGP</h3>
-      <p>Anos de experiência competindo nos circuitos mais desafiadores do mundo, trazendo um conhecimento prático incomparável sobre dinâmica e tecnologia.</p>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-icon">⚡</div>
-      <h3>Especialista em Performance Extrema</h3>
-      <p>Responsável por levar os equipamentos testados no blog ao seu limite absoluto, garantindo que nossas análises reflitam condições rigorosas.</p>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-icon">🛡️</div>
-      <h3>Defensora da Segurança Ativa</h3>
-      <p>Pamela aplica a mesma mentalidade de prevenção de riscos das pistas para desenvolver dicas de pilotagem focadas na segurança real.</p>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-icon">💡</div>
-      <h3>Visão Estratégica</h3>
-      <p>Criadora da filosofia do blog, unindo a paixão pela velocidade com um compromisso inabalável com a precisão técnica e honestidade.</p>
-    </div>
-  </div>
+  <h2 id="funcao">O que ela faz no Jovem Apan</h2>
+  <p>Como editora-chefe, Pamela define os critérios usados para avaliar capacetes e equipamentos e revisa os conteúdos sobre performance e pilotagem.</p>
+  <p>A experiência sobre a moto orienta o que ela observa em um equipamento: se ele protege, se continua confortável depois de horas de uso e se atende quem vai realmente usá-lo no dia a dia.</p>
 
-  <h2 id="experiencia">Experiência</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Co-fundadora e Especialista Chefe de Performance</h3>
-      <p><strong>Jovem Apan</strong></p>
-      <p>Desenvolve e supervisiona a metodologia de testes para todos os equipamentos. Valida tecnicamente o conteúdo sobre performance e dinâmica.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Piloto de Testes e Desenvolvimento</h3>
-      <p><strong>Fabricantes de Equipamentos Premium</strong></p>
-      <p>Colaborou com marcas líderes no desenvolvimento de capacetes e macacões, oferecendo feedback crítico para produtos de alta performance.</p>
-    </div>
-  </div>
-
-  <h2 id="educacao">Educação</h2>
-  <ul class="education-list">
-    <li><strong>Academia de Pilotagem de Alta Performance:</strong> Treinamento intensivo de nível internacional.</li>
-    <li><strong>Certificações Avançadas em Dinâmica Veicular:</strong> Cursos especializados em leitura de dados e ajustes.</li>
-    <li><strong>Treinamentos de Segurança (FIM Standard):</strong> Conhecimento essencial de segurança holística em pista.</li>
+  <h2 id="avaliacao">Como os equipamentos são avaliados</h2>
+  <ul>
+    <li><strong>Segurança em primeiro lugar:</strong> certificação e ajuste correto vêm antes de estilo ou preço.</li>
+    <li><strong>Uso real:</strong> cada modelo é considerado para o tipo de pilotagem a que se destina, como cidade, estrada ou trilha.</li>
+    <li><strong>Transparência sobre a origem dos dados:</strong> quando um post traz teste próprio, o bloco "Como testamos" informa quem testou e em quais condições. Quando os dados vêm do fabricante, a ficha técnica indica a fonte.</li>
+    <li><strong>Links de afiliado:</strong> o site pode receber comissão por compras feitas pelos links publicados.</li>
   </ul>
 
-  <blockquote class="author-quote">
-    <p>"As pistas me ensinaram que a confiança é tudo. Você precisa confiar na sua moto e no seu equipamento. Criamos o jovem apan para ser essa base de confiança."</p>
-    <cite>— Pamela Pan</cite>
-  </blockquote>
+  <h2 id="artigos">Artigos em destaque</h2>
+  <ul>
+    {artigos.map((a) => <li><a href={a.href}>{a.label}</a></li>)}
+  </ul>
+
+  <h2 id="redes">Onde acompanhar</h2>
+  <div class="social-links-list">
+    <a href={instagramPamela} target="_blank" rel="noopener noreferrer">Instagram da Pamela: @apanpamela</a>
+    <a href={instagramSite} target="_blank" rel="noopener noreferrer">Instagram do Jovem Apan: @jovem_apan</a>
+  </div>
 </PostLayout>
 
 <style>
@@ -156,9 +157,6 @@ const indice = [
     font-size: 1.1rem;
     font-weight: 600;
     color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
     margin-bottom: 20px;
   }
 
@@ -169,39 +167,22 @@ const indice = [
     max-width: 700px;
   }
 
-  .highlights-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin: 30px 0;
+  .social-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0 32px;
   }
-  .highlight-card {
-    background: #fdfdfd;
-    border: 1px solid #eee;
-    border-radius: 16px;
-    padding: 24px;
+
+  .social-links-list a {
+    font-weight: 700;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
-  .highlight-icon { font-size: 2rem; margin-bottom: 10px; }
-  .highlight-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-  
-  .timeline-item {
-    margin-bottom: 24px;
-    padding-left: 20px;
-    border-left: 3px solid #e31b1b;
-  }
-  
-  .author-quote {
-    background: #fafafa;
-    border-left: 4px solid #e31b1b;
-    padding: 20px 30px;
-    margin: 40px 0;
-    font-style: italic;
-  }
-  
+
   @media (max-width: 768px) {
-    .highlights-grid { grid-template-columns: 1fr; }
+    .author-profile-header { padding: 40px 20px; }
     .author-name { font-size: 2rem; }
   }
 </style>
-
-

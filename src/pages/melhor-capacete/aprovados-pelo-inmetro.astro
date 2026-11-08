@@ -1,5 +1,6 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
+import { fichas } from '../../data/fichasTecnicas';
 
 const title = '18 Melhores Capacetes Aprovados pelo INMETRO em 2026';
 const description = 'Descubra os 18 capacetes mais recomendados e aprovados pelo Inmetro em 2026. Modelos seguros, confortáveis e com ótimo custo-benefício para sua proteção.';
@@ -26,6 +27,8 @@ const indice = [
   { label: '12. Norisk Orion SV Denver', href: '#norisk-orion' },
   { label: '13. Pro Tork Liberty G8 Evo', href: '#pro-tork-g8' },
   { label: 'Top 5 mais vendidos da Amazon', href: '#top-5-amazon' },
+  { label: 'O que significa o selo do Inmetro', href: '#selo-inmetro' },
+  { label: 'Como usar o capacete corretamente', href: '#uso-correto' },
   { label: 'Perguntas Frequentes', href: '#faq' },
 ];
 
@@ -38,7 +41,7 @@ const tags = [
 
 const authorBio = {
   name: author,
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  description: 'Pamela Pan é motociclista e editora-chefe do Jovem Apan, onde coordena as análises de capacetes e equipamentos.',
   image: authorImage,
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
@@ -58,6 +61,7 @@ const authorBio = {
   indice={indice}
   tags={tags}
   authorBio={authorBio}
+  fichaTecnica={fichas('norisk-ff302-soul', 'mixs-captiva-storm', 'asx-city-solid', 'bieffe-b-pace')}
 >
 
   <p class="post-lead">
@@ -123,7 +127,7 @@ const authorBio = {
       <img src="/images/capacete-norisk-ff302-grand-prix-brasil.webp" alt="Capacete Norisk FF302 Grand Prix Brasil" width="600" height="400" loading="lazy" decoding="async" />
     </div>
     <p>O Capacete Norisk FF302 Grand Prix Brasil é ideal para os motociclistas que buscam um produto com um excelente custo-benefício. Com design esportivo e leve, é fabricado em material resistente, promovendo segurança sem abrir mão do conforto.</p>
-    <p>Aprovado pelo Inmetro, conta com visor de grande visibilidade e sistema de ventilação eficiente, aumentando a experiência de pilotagem. <a href="/capacete-norisk-review/">Análise completa do Norisk.</a></p>
+    <p>Aprovado pelo Inmetro, conta com visor de grande visibilidade e sistema de ventilação eficiente, aumentando a experiência de pilotagem. <a href="/capacete-norisk-vale-a-pena/">Análise completa do Norisk.</a></p>
     <div class="pros-cons-grid">
       <div class="pc-col">
         <h4 class="pros">PRÓS</h4>
@@ -561,6 +565,24 @@ const authorBio = {
     </table>
   </div>
 
+  <h2 id="selo-inmetro">O que significa o selo do Inmetro</h2>
+  <p>O selo indica que o capacete foi avaliado de acordo com a norma técnica <strong>NBR 7471</strong>. A avaliação inclui pontos como:</p>
+  <ul>
+    <li><strong>Absorção de impacto:</strong> a capacidade do casco de dissipar a energia de uma batida.</li>
+    <li><strong>Resistência da cinta jugular:</strong> para que o capacete não saia da cabeça durante um impacto.</li>
+    <li><strong>Resistência da viseira:</strong> para proteger os olhos sem se estilhaçar.</li>
+  </ul>
+  <p>Para uso nas vias públicas do Brasil, o capacete precisa ser certificado. Usar um modelo irregular pode gerar penalidades, como explicamos no <a href="/multa-dirigir-sem-capacete/">guia sobre multa por capacete</a>.</p>
+  <p>Na hora de conferir, procure o selo colado no casco e a etiqueta de certificação na parte interna. Em caso de dúvida, consulte o <a href="https://www.gov.br/inmetro/pt-br" target="_blank" rel="noopener noreferrer">site oficial do Inmetro</a>.</p>
+
+  <h2 id="uso-correto">Como usar o capacete corretamente</h2>
+  <ul>
+    <li><strong>Cinta jugular:</strong> deve ficar firme sob o queixo, sem folga. Com a cinta frouxa, o capacete pode sair da cabeça em uma queda.</li>
+    <li><strong>Tamanho:</strong> o capacete deve ficar justo, sem pontos de pressão doloridos e sem se mexer quando você balança a cabeça.</li>
+    <li><strong>Viseira:</strong> mantenha limpa e sem arranhões que atrapalhem a visão, principalmente à noite.</li>
+    <li><strong>Depois de um impacto forte:</strong> troque o capacete, mesmo sem dano visível.</li>
+  </ul>
+
   <h2 id="faq">Perguntas Frequentes (FAQ)</h2>
 
   <h3>1. Como saber se o capacete é aprovado pelo inmetro?</h3>
@@ -597,7 +619,7 @@ const authorBio = {
   <h2>Leia também</h2>
   <ul>
     <li><a href="/capacete-ls2-review/">Review Capacete LS2</a></li>
-    <li><a href="/capacete-norisk-review/">Review Capacete Norisk</a></li>
+    <li><a href="/capacete-norisk-vale-a-pena/">Review Capacete Norisk</a></li>
     <li><a href="/custo-beneficio/">Melhores Capacetes Custo-Benefício</a></li>
     <li><a href="/capacete-aberto/">Melhores Capacetes Abertos</a></li>
     <li><a href="/melhor-capacete/articulados/">Melhores Capacetes Articulados</a></li>

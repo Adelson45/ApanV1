@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { imageSize } from '../lib/imageSize';
+import { FICHAS_CONSULTADAS_EM, type FichaTecnicaItem } from '../data/fichasTecnicas';
 
 interface IndiceItem {
   label: string;
@@ -47,6 +48,16 @@ interface AuthorBio {
   profileLabel?: string;
 }
 
+/** Dados reais do teste. O bloco e o selo so aparecem no post que preencher isto. */
+interface ComoTestamos {
+  testadoPor?: string;
+  tempoDeUso?: string;
+  moto?: string;
+  condicoes?: string;
+  medicoes?: { label: string; valor: string }[];
+  observacoes?: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -57,6 +68,10 @@ interface Props {
   categoryHref?: string;
   categoryLabel?: string;
   publishDate?: string;
+  /** Data ISO (AAAA-MM-DD) da ultima revisao real do conteudo. */
+  updatedDate?: string;
+  comoTestamos?: ComoTestamos;
+  fichaTecnica?: FichaTecnicaItem[];
   author?: string;
   authorImage?: string;
   authorHref?: string;
@@ -83,6 +98,9 @@ const {
   categoryHref = '/',
   categoryLabel,
   publishDate = '',
+  updatedDate,
+  comoTestamos,
+  fichaTecnica,
   author = 'Jovem Apan',
   authorImage = '',
   authorHref = '#',
@@ -121,12 +139,12 @@ const TAG_PAGES: Record<string, string> = {
   'CAPACETES': '/melhor-capacete/', 'CAPACETE': '/melhor-capacete/', 'RANKING': '/melhor-capacete/', 'TOP 10': '/melhor-capacete/',
   'GUIA': '/guia-definitivo/', 'GUIA DE COMPRA': '/guia-definitivo/', 'GUIA 2026': '/guia-definitivo/',
   'CUSTO-BENEFICIO': '/custo-beneficio/', 'CUSTO BENEFICIO': '/custo-beneficio/',
-  'BOM E BARATO': '/custo-beneficio/bom-e-barato/', 'BARATO': '/custo-beneficio/mais-barato/',
+  'BOM E BARATO': '/custo-beneficio/bonito-e-barato/', 'BARATO': '/custo-beneficio/bonito-e-barato/',
   'MAIS PROCURADOS': '/custo-beneficio/mais-procurados/', 'ATE R$300': '/custo-beneficio/ate-300-reais/',
   'ATE R$400': '/custo-beneficio/ate-400-reais/', 'ATE R$1000': '/melhor-capacete-ate-1000-reais/',
-  'MAIS VENDIDOS': '/melhor-capacete/mais-vendidas/', 'AMAZON': '/melhor-capacete/mais-vendido-na-amazon/',
-  'BEM AVALIADOS': '/melhor-capacete/bem-avaliados/', 'BONITOS': '/melhor-capacete/mais-bonitos/',
-  'MARCAS': '/melhor-capacete/marcas/', 'BRASIL': '/melhor-capacete/marca-no-brasil/',
+  'MAIS VENDIDOS': '/melhor-capacete/marcas/', 'AMAZON': '/custo-beneficio/mais-procurados/',
+  'BEM AVALIADOS': '/custo-beneficio/mais-procurados/', 'BONITOS': '/melhor-capacete/mais-bonitos/',
+  'MARCAS': '/melhor-capacete/marcas/', 'BRASIL': '/melhor-capacete/marcas/',
   'ABERTO': '/capacete-aberto/', 'CAPACETE ABERTO': '/capacete-aberto/', '3/4': '/capacete-aberto/',
   'ARTICULADO': '/melhor-capacete/articulados/', 'ESCAMOTEAVEL': '/melhor-capacete/articulados/',
   'ADVENTURE': '/capacete-adventure/', 'BIG TRAIL': '/capacete-big-trail/',
@@ -139,7 +157,7 @@ const TAG_PAGES: Record<string, string> = {
   'CONFORTO': '/melhor-capacete/leve-e-confortavel/', 'OCULOS': '/capacete-para-quem-usa-oculos/',
   'SKATE': '/melhor-capacete-para-skate/', 'CAPACETE SKATE': '/melhor-capacete-para-skate/',
   'CAPACETE BIKE': '/melhor-capacete-para-bike/', 'CICLISMO': '/melhor-capacete-para-bike/',
-  'SEGURANCA': '/capacete-de-moto-seguro/', 'INMETRO': '/capacetes-com-selo-inmetro/',
+  'SEGURANCA': '/capacete-de-moto-seguro/', 'INMETRO': '/melhor-capacete/aprovados-pelo-inmetro/',
   'CERTIFICACOES': '/certificacoes-de-capacetes/', 'ECE': '/certificacoes-de-capacetes/',
   'ECE 22.06': '/certificacoes-de-capacetes/', 'DOT': '/certificacoes-de-capacetes/', 'SNELL': '/certificacoes-de-capacetes/',
   'TAMANHO': '/tamanho-do-capacete/', 'AJUSTE': '/tamanho-do-capacete/', 'VALIDADE': '/capacete-prazo-validade/',
@@ -151,12 +169,12 @@ const TAG_PAGES: Record<string, string> = {
   'ANATEL': '/intercomunicador-e-permitido/', 'CARDO': '/intercomunicador-cardo-review/', 'EJEAS': '/intercomunicador-ejeas-review/',
   'CHUVA': '/melhor-capacete/para-chuva/', 'CAPA DE CHUVA': '/melhor-capacete/capa-de-chuva/', 'IMPERMEAVEL': '/melhor-capacete/capa-de-chuva/',
   'LUVAS': '/melhor-capacete/luvas/', 'JAQUETAS': '/dica-melhor-jaqueta-motociclistas/',
-  'TRAVAS': '/melhor-trava-para-moto/', 'ANTIFURTO': '/melhor-trava-para-moto/', 'ANTI-FURTO': '/melhor-trava-para-moto/',
+  'TRAVAS': '/cadeados-para-moto/', 'ANTIFURTO': '/cadeados-para-moto/', 'ANTI-FURTO': '/cadeados-para-moto/',
   'CADEADOS': '/cadeados-para-moto/', 'BATERIAS': '/melhores-baterias-de-moto/',
   'PNEUS': '/comparativo-michelin-vs-pirelli/', 'PIRELLI': '/comparativo-michelin-vs-pirelli/',
   'MICHELIN': '/comparativo-michelin-vs-pirelli/', 'CG 160': '/melhores-pneus-para-cg160/',
   'LS2': '/capacete-ls2-review/', 'X11': '/analise-da-marca-x11/', 'PEELS': '/melhor-capacete-peels/',
-  'PRO TORK': '/capacete-pro-tork-review/', 'NORISK': '/capacete-norisk-review/', 'MORMAII': '/capacete-mormaii-review/',
+  'PRO TORK': '/capacete-pro-tork-review/', 'NORISK': '/capacete-norisk-vale-a-pena/', 'MORMAII': '/capacete-mormaii-e-bom/',
   'HJC': '/melhor-capacete-hjc-helmets/', 'TEXX': '/capacete-texx-review/', 'MT HELMETS': '/capacete-mt-review/',
   'BIEFFE': '/melhor-capacete-bieffe/', 'BIFFE': '/melhor-capacete-bieffe/', 'TAURUS': '/capacete-taurus-review/',
   'NOLAN': '/capacete-nolan-review/', 'MIXS': '/capacetes-mixs-review/', 'BELL': '/bell-vale-a-pena/',
@@ -174,6 +192,19 @@ const resolvedTags = (tags ?? []).map((t) => {
 const hasAuthorBio = !!authorBio;
 const displayCategory = categoryLabel ?? category;
 
+// Mesmas funcoes descritas nas paginas de perfil de cada autor.
+const AUTHOR_PROFILES: Record<string, { role: string; href: string }> = {
+  'Pamela Pan': { role: 'Motociclista e editora-chefe', href: '/author-pamela-pan/' },
+  'Marcelo Ferreira': { role: 'Engenheiro de tráfego e cofundador', href: '/author-marcelo-ferreira/' },
+  'Paula Becker': { role: 'Especialista em equipamentos', href: '/author-paula-becker/' },
+  'Arthur Gomes': { role: 'Estradeiro e redator', href: '/autor-arthur-gomes/' },
+};
+const authorProfile = AUTHOR_PROFILES[author];
+const authorLink = authorBio?.profileHref ?? authorProfile?.href ?? (authorHref !== '#' ? authorHref : undefined);
+
+// O card principal continua; a lateral mostra no maximo mais um produto.
+const visibleExtras = (extraProducts ?? []).slice(0, 1);
+
 const bioImage = authorBio
   ? authorBio.image ?? authorImage ?? `https://ui-avatars.com/api/?name=${encodeURIComponent(authorBio.name ?? author)}&background=random`
   : undefined;
@@ -182,7 +213,7 @@ const [coverSize, authorSize, bioSize, featuredSize, ...extraSizes] = await Prom
   imageSize(authorImage),
   imageSize(bioImage),
   imageSize(featuredProduct?.image),
-  ...(extraProducts ?? []).map((p) => imageSize(p.image))
+  ...visibleExtras.map((p) => imageSize(p.image))
 ]);
 
 const shareUrlEncoded = encodeURIComponent(pageUrl);
@@ -208,6 +239,10 @@ function parsePublishDate(dateStr?: string): string {
 }
 
 const isoDatePublished = parsePublishDate(publishDate);
+const isoDateModified = updatedDate ? parsePublishDate(updatedDate) : isoDatePublished;
+const updatedLabel = updatedDate
+  ? new Date(isoDateModified).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+  : undefined;
 const fullImageUrl = coverImage
   ? (coverImage.startsWith('http') ? coverImage : `https://jovemapan.com.br${coverImage.startsWith('/') ? coverImage : '/' + coverImage}`)
   : 'https://jovemapan.com.br/images/logo-dos-melhores-capacetes.png';
@@ -273,7 +308,7 @@ const postSchemaGraph = [
       "url": pageUrl
     },
     "datePublished": isoDatePublished,
-    "dateModified": isoDatePublished,
+    "dateModified": isoDateModified,
     "image": {
       "@type": "ImageObject",
       "url": fullImageUrl
@@ -281,7 +316,8 @@ const postSchemaGraph = [
     "author": {
       "@type": "Person",
       "name": author,
-      "url": authorHref && authorHref !== '#' ? `https://jovemapan.com.br${authorHref}` : undefined
+      "url": authorLink ? `https://jovemapan.com.br${authorLink}` : undefined,
+      "jobTitle": authorProfile?.role
     },
     "publisher": {
       "@id": "https://jovemapan.com.br/#organization"
@@ -333,13 +369,23 @@ const postSchemaGraph = [
             {authorImage && (
               <img src={authorImage} alt={author} class="author-avatar" {...authorSize} decoding="async" />
             )}
-            <strong>{author.toUpperCase()}</strong>
+            <div class="meta-author-text">
+              {authorLink
+                ? <a href={authorLink}><strong>{author.toUpperCase()}</strong></a>
+                : <strong>{author.toUpperCase()}</strong>}
+              {authorProfile && <span class="meta-author-role">{authorProfile.role}</span>}
+            </div>
           </div>
           <div class="meta-info">
             {publishDate && (
               <span class="meta-item">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 {publishDate}
+              </span>
+            )}
+            {updatedLabel && (
+              <span class="meta-item">
+                <strong>Atualizado em {updatedLabel}</strong>
               </span>
             )}
             {views && (
@@ -391,10 +437,12 @@ const postSchemaGraph = [
           {coverImage && (
             <div class="post-cover-image">
               <img src={coverImage} alt={coverImageAlt ?? title} data-pagefind-meta="image[src]" {...coverSize} fetchpriority="high" decoding="async" />
-              <div class="verified-badge">
-                <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                APAN VERIFIED
-              </div>
+              {comoTestamos && (
+                <div class="verified-badge">
+                  <svg viewBox="0 0 24 24" width="12" height="12" stroke="var(--red)" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  APAN VERIFIED
+                </div>
+              )}
             </div>
           )}
 
@@ -430,9 +478,48 @@ const postSchemaGraph = [
             </div>
           )}
 
+          {comoTestamos && (
+            <section class="como-testamos" aria-labelledby="como-testamos-titulo">
+              <h2 id="como-testamos-titulo">Como testamos</h2>
+              <dl>
+                {comoTestamos.testadoPor && <div><dt>Testado por</dt><dd>{comoTestamos.testadoPor}</dd></div>}
+                {comoTestamos.tempoDeUso && <div><dt>Tempo de uso</dt><dd>{comoTestamos.tempoDeUso}</dd></div>}
+                {comoTestamos.moto && <div><dt>Moto</dt><dd>{comoTestamos.moto}</dd></div>}
+                {comoTestamos.condicoes && <div><dt>Condições</dt><dd>{comoTestamos.condicoes}</dd></div>}
+                {comoTestamos.medicoes?.map((m) => <div><dt>{m.label}</dt><dd>{m.valor}</dd></div>)}
+              </dl>
+              {comoTestamos.observacoes && <p>{comoTestamos.observacoes}</p>}
+            </section>
+          )}
+
           <div class="post-content-body">
             <slot />
           </div>
+
+          {fichaTecnica && fichaTecnica.length > 0 && (
+            <section class="ficha-tecnica" aria-labelledby="ficha-tecnica-titulo">
+              <h2 id="ficha-tecnica-titulo">Ficha técnica dos fabricantes</h2>
+              <div class="ficha-tabela">
+                <table>
+                  <thead>
+                    <tr><th scope="col">Modelo</th><th scope="col">Peso</th><th scope="col">Casco</th><th scope="col">Certificação</th><th scope="col">Fonte</th></tr>
+                  </thead>
+                  <tbody>
+                    {fichaTecnica.map((f) => (
+                      <tr>
+                        <th scope="row">{f.modelo}</th>
+                        <td>{f.peso ?? '—'}</td>
+                        <td>{f.casco ?? '—'}</td>
+                        <td>{f.certificacao ?? '—'}</td>
+                        <td><a href={f.fonte.href} target="_blank" rel="noopener noreferrer">{f.fonte.label}</a></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p>Dados informados pelos fabricantes e consultados em {FICHAS_CONSULTADAS_EM}. Não são medições nossas. O sinal “—” indica que a página consultada não traz a informação. Antes de comprar, confira o selo do Inmetro no próprio capacete.</p>
+            </section>
+          )}
 
           <!-- Footer do Post: Tags, Share, Bio -->
           <div class="post-footer">
@@ -706,7 +793,7 @@ const postSchemaGraph = [
             </div>
           )}
 
-          {extraProducts && extraProducts.map((p, i) => (
+          {visibleExtras.map((p, i) => (
             <div class="sidebar-widget produto-widget-extra">
               {p.badge && (
                 <p class={`widget-badge-extra ${p.badgeStyle === 'desconto' ? 'desconto' : 'frete'}`}>{p.badge}</p>
@@ -845,6 +932,24 @@ const postSchemaGraph = [
   }
   .meta-author { display: flex; align-items: center; gap: 8px; color: var(--black); }
   .author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+  .meta-author-text { display: flex; flex-direction: column; line-height: 1.25; }
+  .meta-author-text a { color: inherit; text-decoration: none; }
+  .meta-author-text a:hover { color: var(--red); }
+  .meta-author-role { color: var(--text-meta); font-size: 0.8em; font-weight: 400; }
+  .como-testamos { border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 4px; padding: 20px; margin: 24px 0; }
+  .como-testamos h2 { font-size: 1.15rem; margin: 0 0 12px; }
+  .como-testamos dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px 20px; margin: 0; }
+  .como-testamos dt { color: var(--text-meta); font-size: 0.8rem; }
+  .como-testamos dd { margin: 2px 0 0; font-weight: 700; }
+  .como-testamos p { margin: 14px 0 0; }
+  .ficha-tecnica { margin: 32px 0; }
+  .ficha-tecnica h2 { font-size: 1.25rem; margin: 0 0 12px; }
+  .ficha-tabela { overflow-x: auto; border: 1px solid var(--border); border-radius: 4px; }
+  .ficha-tecnica table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 0.9rem; }
+  .ficha-tecnica th, .ficha-tecnica td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  .ficha-tecnica tbody tr:last-child th, .ficha-tecnica tbody tr:last-child td { border-bottom: 0; }
+  .ficha-tecnica thead th { color: var(--text-meta); font-size: 0.8rem; }
+  .ficha-tecnica p { color: var(--text-meta); font-size: 0.85rem; margin: 10px 0 0; }
   .meta-info { display: flex; align-items: center; gap: 16px; }
   .meta-item { display: flex; align-items: center; gap: 4px; color: var(--text-meta); }
   .meta-item svg { color: var(--red); }

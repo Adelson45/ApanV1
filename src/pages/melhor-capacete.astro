@@ -1,5 +1,6 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { fichas } from '../data/fichasTecnicas';
 
 const title = 'Melhores Capacetes de Moto em 2026 | Guia Completo e Atualizado';
 const description = 'Confira os melhores capacetes para moto em 2026. Avaliações, marcas confiáveis como Arai, Bell, Shark, Shoei, dicas de segurança e modelos com certificação Inmetro.';
@@ -10,8 +11,6 @@ const publishDate = '20 ABR, 2026';
 const category    = 'CAPACETES';
 const categoryHref = '/melhor-capacete/';
 const coverImage  = '/images/piloto-com-sua-moro-branca.webp';
-const views       = '45K VIEWS';
-const comments    = '12 COMMENTS';
 
 const indice = [
   { label: 'Introdução', href: '#introducao' },
@@ -144,13 +143,12 @@ const extraProducts = [
   category={category}
   categoryHref={categoryHref}
   coverImage={coverImage}
-  views={views}
-  comments={comments}
   indice={indice}
   tags={tags}
   authorBio={authorBio}
   featuredProduct={featuredProduct}
   extraProducts={extraProducts}
+  fichaTecnica={fichas('hjc-i90', 'ls2-stream-ii', 'asx-city-solid', 'asx-draken-solid')}
 >
 
           <p class="post-lead" id="introducao">Com a evolução constante da tecnologia, novos modelos de capacetes surgem a cada ano, trazendo funcionalidades inovadoras e mais segurança. Legalmente, um capacete é a única peça do kit de motocicleta que você tem que usar e, sem dúvida, a coisa mais importante que você vai comprar.</p>
@@ -191,7 +189,7 @@ const extraProducts = [
               <a href="https://lista.mercadolivre.com.br/" class="btn-buy ml" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver no Mercado Livre</a>
             </div>
           <p>Ninguém avaliou todos os tipos de capacetes, independentemente do que eles alegam, e alguns podem estar sendo pagos para influenciar você, ou talvez querer vender uma marca específica.</p>
-          <p>Neste artigo, destacaremos nossos favoritos e o manteremos atualizado regularmente à medida que <a href="https://jovemapan.com.br/melhor-capacete/bem-avaliados/">avaliamos</a> mais produtos, mas o mais importante é que um capacete se ajuste adequadamente a você.</p>
+          <p>Neste artigo, destacaremos nossos favoritos e o manteremos atualizado regularmente à medida que <a href="https://jovemapan.com.br/custo-beneficio/mais-procurados/">avaliamos</a> mais produtos, mas o mais importante é que um capacete se ajuste adequadamente a você.</p>
           <p>Se você quiser saber o quão boas são certas marcas com base nas opiniões de mais de 5.000 pilotos do mundo que cobrem mais de 10 milhões de km, confira nosso vídeo mais adiante neste artigo.</p>
           <p>Um capacete corretamente ajustado não é apenas sobre segurança; se o seu não for totalmente confortável, pode significar a diferença entre amar motociclismo e levar tudo. Você DEVE experimentar um capacete corretamente antes de comprar.</p>
           <p>Algumas lojas online permitem que você devolva as compras que ainda têm os adesivos da viseira, mas não há nada melhor do que ir até uma loja e experimentar uma variedade – experimente algo de cada fabricante e, a princípio, não olhe os preços – apenas sinta o quão bem os diferentes modelos podem se ajustar a você.</p>
@@ -511,7 +509,7 @@ const extraProducts = [
             </div>
           </div>
 
-          <p>Estes são apenas alguns dos muitos capacetes integrais de motocicleta que testamos na A Pan. Como o ajuste é tão importante, não deixe de conferir todas as nossas outras avaliações dos melhores capacetes de motocicleta, dos preços mais baixos aos mais altos da linha.</p>
+          <p>Estes são apenas alguns dos muitos capacetes integrais de motocicleta que analisamos no Jovem Apan. Como o ajuste é tão importante, não deixe de conferir todas as nossas outras avaliações dos melhores capacetes de motocicleta, dos preços mais baixos aos mais altos da linha.</p>
 
           <h2 id="integral-1000">Melhor capacete integral abaixo de R$ 1.000,00 em 2026</h2>
           <p>Aqui estão cinco dos nossos melhores capacetes integrais abaixo de R$ 1.000,00 com base em nossas avaliações. Não deixe de conferir regularmente, pois manteremos atualizado conforme avaliamos outros capacetes.</p>
@@ -836,7 +834,7 @@ const extraProducts = [
             </div>
           </div>
 
-          <p>Estes são apenas alguns dos muitos capacetes integrais de motocicleta que testamos na A Pan. Não deixe de ver o comparativo do LS2 versus Axxis clicando <a href="https://jovemapan.com.br/melhor-capacete/axxis-x-ls2/">aqui</a>.</p>
+          <p>Estes são apenas alguns dos muitos capacetes integrais de motocicleta que analisamos no Jovem Apan. Não deixe de ver o comparativo do LS2 versus Axxis clicando <a href="https://jovemapan.com.br/melhor-capacete/axxis-x-ls2/">aqui</a>.</p>
 
           <h2 id="top-norisk">Os 5 Melhores modelos da marca Norisk</h2>
           <p>A <strong>Norisk</strong> é uma das marcas brasileiras mais respeitadas do segmento de capacetes, oferecendo modelos com bom acabamento, certificação e preço competitivo. Confira os 5 melhores modelos da marca em 2026. Saiba mais lendo nosso guia <a href="https://jovemapan.com.br/capacete-norisk-vale-a-pena/">se vale a pena comprar um Norisk</a>.</p>
@@ -1044,7 +1042,7 @@ const extraProducts = [
           <p>Recursos como <a href="https://jovemapan.com.br/narigueira-capacete-seguranca-conforto/">narigueira</a>, fechamento rápido, forros removíveis e laváveis facilitam a manutenção e o uso diário. Alguns capacetes também possuem conectividade Bluetooth, permitindo que o motociclista ouça música ou faça chamadas sem precisar parar. Investir em capacetes com essas funcionalidades torna a pilotagem mais segura e agradável, ajustando-se às necessidades de cada usuário.</p>
 
           <h2 id="top-amazon" style="color: #000;">Top 5 mais vendidos na Amazon</h2>
-          <p>Para fechar nosso guia, separamos os 5 capacetes <a href="https://jovemapan.com.br/melhor-capacete/mais-vendido-na-amazon/">mais vendidos na Amazon</a> em 2026, com excelentes avaliações de compradores e ótima relação custo-benefício.</p>
+          <p>Para fechar nosso guia, separamos os 5 capacetes <a href="https://jovemapan.com.br/custo-beneficio/mais-procurados/">mais vendidos na Amazon</a> em 2026, com excelentes avaliações de compradores e ótima relação custo-benefício.</p>
 
           <div class="product-section" id="protork-attack-hsa">
             <h3>1. Capacete Escamoteável Pro Tork Attack HSA Rosa</h3>

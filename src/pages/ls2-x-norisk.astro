@@ -1,5 +1,6 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { fichas } from '../data/fichasTecnicas';
 
 const title = 'Qual capacete é melhor, LS2 ou Norisk? Guia Completo 2026';
 const description = 'LS2 ou Norisk: qual escolher? Nosso guia definitivo compara tecnologia, design e segurança para te ajudar a decidir. Leia agora e pilote com mais confiança! 💪';
@@ -101,14 +102,12 @@ const extraProducts = [
 
 const authorBio = {
   name: author,
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  description: 'Pamela Pan é motociclista e editora-chefe do Jovem Apan, onde coordena as análises de capacetes e equipamentos.',
   image: authorImage,
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
 };
 
-const views = '12K VIEWS';
-const comments = '6 COMMENTS';
 ---
 
 <PostLayout
@@ -125,8 +124,7 @@ const comments = '6 COMMENTS';
   tags={tags}
   authorBio={authorBio}
   extraProducts={extraProducts}
-  views={views}
-  comments={comments}
+  fichaTecnica={fichas('ls2-storm', 'norisk-route')}
 >
 
   <p class="post-lead">

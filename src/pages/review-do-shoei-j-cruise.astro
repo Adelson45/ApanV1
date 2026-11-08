@@ -1,8 +1,9 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { fichas } from '../data/fichasTecnicas';
 
-const title = 'Review Shoei J-Cruise | O Capacete Ideal para Uso Urbano';
-const description = 'Conheça o Shoei J-Cruise, um capacete aberto pensado para o uso urbano. Conforto, proteção e praticidade em um só modelo. Veja nossa análise detalhada. 🏍️';
+const title = 'Shoei J-Cruise 3: Peso, Certificação e Recursos do Capacete Aberto';
+const description = 'Veja peso, certificação, casco, ventilação e viseira do Shoei J-Cruise 3, com dados oficiais da fabricante, e descubra para quem esse capacete aberto faz sentido.';
 const canonical = 'https://jovemapan.com.br/review-do-shoei-j-cruise/';
 const author = 'Pamela Pan';
 const authorImage = '/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp';
@@ -13,10 +14,10 @@ const coverImage = '/images/capacete-shoei-j-cruise.webp';
 
 const indice = [
   { label: '1. Introdução', href: '#introducao' },
-  { label: '2. Casco Externo e Acabamento', href: '#casco' },
-  { label: '3. Peso e Conforto Aerodinâmico', href: '#peso' },
-  { label: '4. Ventilação Aprimorada', href: '#ventilacao' },
-  { label: '5. Viseira e Qualidade Óptica', href: '#viseira' },
+  { label: '2. Casco', href: '#casco' },
+  { label: '3. Peso', href: '#peso' },
+  { label: '4. Ventilação', href: '#ventilacao' },
+  { label: '5. Viseiras', href: '#viseira' },
   { label: '6. Prós e Contras', href: '#pros-contras' },
   { label: '7. Conclusão', href: '#conclusao' },
 ];
@@ -74,7 +75,7 @@ const extraProducts = [
 
 const authorBio = {
   name: author,
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto.',
+  description: 'Pamela Pan é motociclista e editora-chefe do Jovem Apan, onde coordena as análises de capacetes e equipamentos.',
   image: authorImage,
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
@@ -96,53 +97,42 @@ const authorBio = {
   authorBio={authorBio}
   featuredProduct={featuredProduct}
   extraProducts={extraProducts}
+  updatedDate="2026-11-08"
+  fichaTecnica={fichas('shoei-j-cruise-3')}
 >
   <p class="post-lead" id="introducao">
-    Apesar das evidentes limitações em termos de segurança quando comparado a um capacete integral,
-    sou uma grande entusiasta da linha <strong>J-Cruise da Shoei</strong>. A liberdade de movimento
-    e o amplo campo de visão que um capacete aberto "jet" proporciona são imbatíveis no uso urbano.
-    Recentemente, testei a versão mais atualizada, agora com a rigorosa certificação <strong>ECE 22.06</strong>.
+    O <strong>Shoei J-Cruise 3</strong> é um capacete aberto do tipo jet voltado ao uso urbano. Esta
+    análise reúne as informações publicadas pela Shoei, sem teste próprio de rodagem. Como todo
+    capacete aberto, ele oferece menos proteção ao rosto do que um integral.
   </p>
 
-  <h2 id="casco">Casco Externo e Acabamento</h2>
+  <h2 id="casco">Casco</h2>
   <p>
-    Como já era de se esperar vindo da Shoei — e especialmente dentro dessa faixa de preço — o acabamento
-    e os detalhes são simplesmente impecáveis. O modelo que testei, em preto fosco, transmite uma
-    sensação clara de qualidade premium, embora exija cuidado redobrado com marcas de dedos.
-  </p>
-  <p>
-    A estrutura utiliza a tecnologia <strong>AIM (Advanced Integrated Matrix)</strong> da Shoei,
-    combinando fibras orgânicas e de vidro em camadas multidirecionais. Isso garante resistência superior
-    e flexibilidade necessária para absorver impactos, mantendo o peso controlado. O J-Cruise é
-    fabricado em três tamanhos de casco diferentes, garantindo um ajuste proporcional para cada piloto.
+    Segundo a Shoei, o casco é feito em <strong>AIM</strong> e vem em três tamanhos: XS a M, L, e XL
+    a XXL. Ter mais de um tamanho de casco ajuda a manter o capacete proporcional à cabeça de quem usa.
   </p>
 
-  <h2 id="peso">Peso e Conforto Aerodinâmico</h2>
+  <h2 id="peso">Peso</h2>
   <p>
-    No tamanho L (Grande), o capacete pesou cerca de <strong>1.465g</strong>. Embora seja mais pesado
-    que um capacete aberto minimalista, o design aerodinâmico do J-Cruise faz um trabalho excelente
-    em eliminar turbulências. Durante a pilotagem, o peso é praticamente imperceptível, mesmo ao
-    fazer checagens de ponto cego em velocidades mais altas.
+    A Shoei Europa informa <strong>1.400 g</strong> para a versão ECE. A marca explica que mede o peso
+    em um modelo de cor lisa no tamanho M, com variação de até 50 g. A versão vendida nos EUA é
+    listada com 3,07 lb, cerca de 1.390 g.
   </p>
 
-  <h2 id="ventilacao">Ventilação Aprimorada</h2>
+  <h2 id="ventilacao">Ventilação</h2>
   <p>
-    A Shoei afirma que a ventilação foi aprimorada em <strong>70%</strong> em relação ao modelo anterior.
-    O sistema conta com três entradas de ar superiores independentes, cada uma com três níveis de
-    regulagem. Essa flexibilidade permite personalizar o fluxo de ar de acordo com o clima, mantendo
-    a cabeça fresca sem comprometer o isolamento acústico.
+    A Shoei afirma que uma saída de ar adicional no topo aumenta o fluxo de ar em <strong>70%</strong>.
+    O número é da fabricante e não foi medido por nós.
   </p>
 
-  <h2 id="viseira">Viseira e Qualidade Óptica</h2>
+  <h2 id="viseira">Viseiras</h2>
   <p>
-    A viseira principal (CJ-2) oferece uma visão panorâmica e vedação perfeita contra chuva.
-    Internamente, o J-Cruise conta com a viseira solar retrátil <strong>QSV-2</strong>, a mesma
-    utilizada em modelos como Neotec 3 e GT-Air 3. A qualidade óptica é excelente, sem distorções,
-    mesmo usando óculos de grau simultaneamente.
+    A viseira principal é a <strong>CJ-2</strong>, e o capacete usa a viseira solar interna
+    <strong>QSV-2</strong>. Antes de comprar, confirme no anúncio quais viseiras acompanham a versão escolhida.
   </p>
 
   <h2 id="pros-contras">Prós e Contras</h2>
-  <p>Confira o resumo da nossa análise detalhada do Shoei J-Cruise:</p>
+  <p>Resumo com base nas especificações da fabricante:</p>
 
   <div class="product-section">
     <div class="h2-image-card product-image">
@@ -152,22 +142,22 @@ const authorBio = {
       <div class="pc-col">
         <h4 class="pros">PRÓS</h4>
         <ul class="pc-list pros">
-          <li><strong>Certificação ECE 22.06:</strong> O mais alto padrão de segurança para capacetes atuais.</li>
-          <li><strong>Ventilação Excepcional:</strong> Fluxo de ar 70% superior e totalmente ajustável.</li>
-          <li><strong>Qualidade Shoei:</strong> Acabamento premium e durabilidade de materiais.</li>
-          <li><strong>Campo de Visão:</strong> Visão panorâmica ideal para o trânsito urbano intenso.</li>
+          <li><strong>Norma ECE 22.06:</strong> certificação informada para a versão europeia.</li>
+          <li><strong>Ventilação:</strong> 70% mais fluxo de ar, segundo a Shoei.</li>
+          <li><strong>Viseira solar interna:</strong> usa o sistema QSV-2.</li>
+          <li><strong>Três tamanhos de casco:</strong> melhor proporção entre os tamanhos.</li>
         </ul>
       </div>
       <div class="pc-col">
         <h4 class="cons">CONTRAS</h4>
         <ul class="pc-list cons">
-          <li><strong>Preço Elevado:</strong> Investimento alto para um capacete de rosto aberto.</li>
-          <li><strong>Acabamento Fosco:</strong> Exige limpeza frequente para evitar manchas de gordura.</li>
-          <li><strong>Proteção Facial:</strong> Naturalmente inferior a um modelo integral (fechado).</li>
+          <li><strong>Proteção facial:</strong> menor do que em um capacete integral.</li>
+          <li><strong>Preço:</strong> fica na faixa premium dos capacetes abertos.</li>
+          <li><strong>Certificação varia por mercado:</strong> confira o selo da unidade comprada.</li>
         </ul>
       </div>
     </div>
-    <p><strong>Ideal para:</strong> Motociclistas urbanos que buscam o máximo em conforto, praticidade e visibilidade, sem abrir mão da tecnologia e segurança de uma marca premium.</p>
+    <p><strong>Ideal para:</strong> quem anda principalmente na cidade e procura um capacete aberto premium, ciente da menor proteção ao rosto.</p>
     <div class="btn-buy-container">
       <a href="https://amzn.to/3YqcGUy" class="btn-buy" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver na Amazon</a>
       <a href="https://mercadolivre.com/sec/1p94o6E" class="btn-buy ml" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver no Mercado Livre</a>
@@ -176,14 +166,12 @@ const authorBio = {
 
   <h2 id="conclusao">Conclusão</h2>
   <p>
-    O <strong>Shoei J-Cruise</strong> não é um capacete de entrada, e seu preço reflete isso. No entanto,
-    o investimento se justifica pela combinação de recursos bem pensados, design refinado e a
-    sensação de segurança que só uma marca como a Shoei consegue entregar em um modelo aberto.
+    Pelas especificações, o <strong>Shoei J-Cruise 3</strong> combina casco em AIM, viseira solar interna
+    e norma ECE 22.06 na versão europeia, por um preço de marca premium. Para velocidades mais altas ou
+    estrada, um integral continua sendo a opção mais protetora.
   </p>
   <p>
-    Para quem valoriza a conveniência e o campo de visão amplo no dia a dia da cidade, ele certamente
-    merece estar no topo da lista. Se você busca o equilíbrio entre o "feeling" de liberdade de um
-    capacete aberto e a tecnologia de ponta, o J-Cruise é a escolha certa.
+    Antes de comprar, confira o selo do Inmetro na unidade vendida no Brasil e experimente o tamanho em uma loja, se puder.
   </p>
 
   <h2>Leia também</h2>

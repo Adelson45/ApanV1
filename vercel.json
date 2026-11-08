@@ -4,6 +4,206 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/capacetes-com-selo-inmetro",
+      "destination": "/melhor-capacete/aprovados-pelo-inmetro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacetes-com-selo-inmetro/",
+      "destination": "/melhor-capacete/aprovados-pelo-inmetro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/marca-no-brasil",
+      "destination": "/melhor-capacete/marcas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/marca-no-brasil/",
+      "destination": "/melhor-capacete/marcas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/mais-vendidas",
+      "destination": "/melhor-capacete/marcas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/mais-vendidas/",
+      "destination": "/melhor-capacete/marcas/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-mormaii-review",
+      "destination": "/capacete-mormaii-e-bom/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-mormaii-review/",
+      "destination": "/capacete-mormaii-e-bom/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-norisk-review",
+      "destination": "/capacete-norisk-vale-a-pena/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-norisk-review/",
+      "destination": "/capacete-norisk-vale-a-pena/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-aberto-vale-a-pena",
+      "destination": "/capacete-aberto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/capacete-aberto-vale-a-pena/",
+      "destination": "/capacete-aberto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-trava-para-moto",
+      "destination": "/cadeados-para-moto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-trava-para-moto/",
+      "destination": "/cadeados-para-moto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/bom-e-barato",
+      "destination": "/custo-beneficio/bonito-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/bom-e-barato/",
+      "destination": "/custo-beneficio/bonito-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/mais-barato",
+      "destination": "/custo-beneficio/bonito-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/mais-barato/",
+      "destination": "/custo-beneficio/bonito-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/qual-compra",
+      "destination": "/melhor-capacete/",
+      "statusCode": 301
+    },
+    {
+      "source": "/qual-compra/",
+      "destination": "/melhor-capacete/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia-de-escolha-custo-beneficio",
+      "destination": "/custo-beneficio/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia-de-escolha-custo-beneficio/",
+      "destination": "/custo-beneficio/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/bem-avaliados",
+      "destination": "/custo-beneficio/mais-procurados/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/bem-avaliados/",
+      "destination": "/custo-beneficio/mais-procurados/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/mais-vendido-na-amazon",
+      "destination": "/custo-beneficio/mais-procurados/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete/mais-vendido-na-amazon/",
+      "destination": "/custo-beneficio/mais-procurados/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/capacetes-para-seguranca-e-conforto",
+      "destination": "/capacete-de-moto-seguro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/capacetes-para-seguranca-e-conforto/",
+      "destination": "/capacete-de-moto-seguro/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/marca-boa-e-barato",
+      "destination": "/custo-beneficio/bonito-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-beneficio/marca-boa-e-barato/",
+      "destination": "/custo-beneficio/bonito-e-barato/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete-para-cidade",
+      "destination": "/capacete-para-cidade/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-capacete-para-cidade/",
+      "destination": "/capacete-para-cidade/",
+      "statusCode": 301
+    },
+    {
+      "source": "/como-limpa-o-capacete",
+      "destination": "/limpeza-do-capacete/",
+      "statusCode": 301
+    },
+    {
+      "source": "/como-limpa-o-capacete/",
+      "destination": "/limpeza-do-capacete/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-intercomunicador-para-capacete",
+      "destination": "/melhor-capacete/intercomunicadores/",
+      "statusCode": 301
+    },
+    {
+      "source": "/melhor-intercomunicador-para-capacete/",
+      "destination": "/melhor-capacete/intercomunicadores/",
+      "statusCode": 301
+    },
+    {
+      "source": "/acessorios",
+      "destination": "/reparo-e-acessorios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/acessorios/",
+      "destination": "/reparo-e-acessorios/",
+      "statusCode": 301
+    },
+    {
+      "source": "/axxis-x-ls2",
+      "destination": "/melhor-capacete/axxis-x-ls2/",
+      "statusCode": 301
+    },
+    {
+      "source": "/axxis-x-ls2/",
+      "destination": "/melhor-capacete/axxis-x-ls2/",
+      "statusCode": 301
+    },
+    {
       "source": "/ls2-ou-norisk",
       "destination": "/ls2-x-norisk/",
       "statusCode": 301
@@ -80,12 +280,12 @@
     },
     {
       "source": "/custo-beneficio/fechado-bom-e-barato",
-      "destination": "/custo-beneficio/bom-e-barato/",
+      "destination": "/custo-beneficio/bonito-e-barato/",
       "statusCode": 301
     },
     {
       "source": "/custo-beneficio/fechado-bom-e-barato/",
-      "destination": "/custo-beneficio/bom-e-barato/",
+      "destination": "/custo-beneficio/bonito-e-barato/",
       "statusCode": 301
     },
     {
@@ -240,22 +440,22 @@
     },
     {
       "source": "/melhor-site-para-comprar",
-      "destination": "/qual-compra/",
+      "destination": "/melhor-capacete/",
       "statusCode": 301
     },
     {
       "source": "/melhor-site-para-comprar/",
-      "destination": "/qual-compra/",
+      "destination": "/melhor-capacete/",
       "statusCode": 301
     },
     {
       "source": "/capacetes-selo-inmetro",
-      "destination": "/capacetes-com-selo-inmetro/",
+      "destination": "/melhor-capacete/aprovados-pelo-inmetro/",
       "statusCode": 301
     },
     {
       "source": "/capacetes-selo-inmetro/",
-      "destination": "/capacetes-com-selo-inmetro/",
+      "destination": "/melhor-capacete/aprovados-pelo-inmetro/",
       "statusCode": 301
     },
     {

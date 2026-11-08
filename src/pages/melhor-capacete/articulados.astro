@@ -1,5 +1,6 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
+import { fichas } from '../../data/fichasTecnicas';
 
 const title = 'Melhor Capacete Escamoteável em 2026 | 10 Ótimas Opções';
 const description = 'Confira os melhores capacetes articulados, escamoteáveis e modulares. Guia completo com dicas, comparativos e os modelos mais vendidos em 2026. Confira e ganhe.';
@@ -40,7 +41,7 @@ const featuredProduct = {
 
 const authorBio = {
   name: author,
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos.',
+  description: 'Pamela Pan é motociclista e editora-chefe do Jovem Apan, onde coordena as análises de capacetes e equipamentos.',
   image: authorImage,
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›',
@@ -61,6 +62,7 @@ const authorBio = {
   tags={tags}
   authorBio={authorBio}
   featuredProduct={featuredProduct}
+  fichaTecnica={fichas('peels-urb2-dynamic', 'norisk-route', 'ls2-strobe-ii', 'hjc-i90', 'shoei-neotec-ii')}
 >
   <p class="post-lead">
     Encontrar o capacete perfeito é um dos passos mais importantes para qualquer motociclista. Ele não é apenas um item de segurança obrigatório, mas um companheiro de estrada que garante conforto e funcionalidade.
@@ -618,7 +620,7 @@ const authorBio = {
     Lembre-se de que o melhor capacete é aquele que se ajusta perfeitamente à sua cabeça, atende às normas de segurança e se encaixa no seu orçamento e estilo de pilotagem. A sua segurança e conforto na estrada dependem disso.
   </p>
   <p>
-    Essas são apenas algumas das opções disponíveis. Você pode conferir todos os capacetes que testamos <a href="/melhor-capacete/">aqui.</a> E você, já usa um capacete escamoteável? Deixe seu comentário e ajude outros motociclistas!
+    Essas são apenas algumas das opções disponíveis. Você pode conferir todos os capacetes que analisamos <a href="/melhor-capacete/">aqui.</a> E você, já usa um capacete escamoteável? Deixe seu comentário e ajude outros motociclistas!
   </p>
 
   <h2>Leia também</h2>

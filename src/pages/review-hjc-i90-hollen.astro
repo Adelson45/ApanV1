@@ -1,8 +1,9 @@
 ---
 import PostLayout from '../layouts/PostLayout.astro';
+import { fichas } from '../data/fichasTecnicas';
 
-const title = 'Análise Completa do HJC I90 Hollen: Prós e Contras';
-const description = 'Descubra tudo sobre o capacete HJC Hollen I90: análise completa do conforto, segurança com certificação ECE 22.06 e desempenho. Veja se ele é ideal para você.';
+const title = 'HJC i90 Hollen: Certificação, Recursos, Prós e Contras';
+const description = 'Veja certificação, casco, viseira solar, interior e compatibilidade com intercomunicador do HJC i90, com dados oficiais da fabricante, além de prós e contras.';
 const canonical   = 'https://jovemapan.com.br/review-hjc-i90-hollen/';
 const author      = 'Pamela Pan';
 const publishDate = '2025-04-01';
@@ -10,19 +11,13 @@ const category    = 'REVIEWS';
 const categoryHref = '/category/reviews/';
 const coverImage  = '/images/capacete-hjc-i90-hollen-viseira-solar-azul-ou-grafite-bmw.webp';
 
-const views       = '18K VIEWS';
-const comments    = '12 COMMENTS';
-
 const indice = [
-  { label: 'Casco externa', href: '#casco-externa' },
-  { label: 'Peso', href: '#peso' },
+  { label: 'Certificação', href: '#certificacao' },
+  { label: 'Casco e tamanhos', href: '#casco-externa' },
   { label: 'Ventilação', href: '#ventilacao' },
-  { label: 'Viseira', href: '#viseira' },
-  { label: 'Forro', href: '#forro' },
-  { label: 'Fixação', href: '#fixacao' },
-  { label: 'Ajustar', href: '#ajustar' },
-  { label: 'Posso instalar meu próprio intercomunicador no HJC I90?', href: '#intercomunicador' },
-  { label: 'Três alternativas ao HJC I90', href: '#alternativas' },
+  { label: 'Viseiras', href: '#viseira' },
+  { label: 'Interior', href: '#forro' },
+  { label: 'Intercomunicador', href: '#intercomunicador' },
   { label: 'Conclusão', href: '#conclusao' }
 ];
 
@@ -31,12 +26,12 @@ const tags = [
   { label: 'HJC', href: '#' },
   { label: 'I90', href: '#' },
   { label: 'HOLLEN', href: '#' },
-  { label: 'ECE 22.06', href: '#' }
+  { label: 'ECE 22.05', href: '#' }
 ];
 
 const authorBio = {
   name: 'Pamela Pan',
-  description: 'Velocidade no DNA, segurança na cabeça. Eu sou Pamela Pan, piloto profissional de moto. Nas pistas, testo os limites da máquina e dos meus equipamentos. Neste blog, trago essa experiência do asfalto para você.',
+  description: 'Pamela Pan é motociclista e editora-chefe do Jovem Apan, onde coordena as análises de capacetes e equipamentos.',
   image: '/images/pamela-pan-coufundadora-e-editoara-chefe-do-blog-apan.webp',
   profileHref: '/author-pamela-pan/',
   profileLabel: 'Ver perfil completo ›'
@@ -91,201 +86,90 @@ const extraProducts = [
   category={category}
   categoryHref={categoryHref}
   coverImage={coverImage}
-  views={views}
-  comments={comments}
   indice={indice}
   tags={tags}
   authorBio={authorBio}
   extraProducts={extraProducts}
+  updatedDate="2026-11-08"
+  fichaTecnica={fichas('hjc-i90')}
 >
 
 <p class="post-lead">
-  O <strong>HJC Hollen</strong>, em análise aqui, é o primeiro capacete abaixo de R$ 2.500 que testamos que é certificado pela ECE 22.06. Este é um padrão de teste muito mais rigoroso do que o ECE 22.05, que passou a ser descontinuado em todos os capacetes produzidos a partir de julho de 2023.
+  O <strong>HJC i90</strong> é um capacete escamoteável voltado ao uso em viagens e no dia a dia. Esta análise reúne as informações publicadas pela HJC, sem teste próprio de rodagem. Alguns dados podem variar entre os modelos vendidos em cada país.
 </p>
-
-<p>
-  Pessoalmente, eu recomendaria a qualquer um que esteja procurando comprar um novo capacete de motocicleta que busque um que seja certificado pela ECE 22.06, pois ele comprovadamente tem o potencial de oferecer melhor proteção. E com a HJC lançando este a um preço tão bom, pode ser uma escolha óbvia para muitos motociclistas.
-</p>
-
-<p>
-  Eu o usei em uma Honda CBR 1000 2023 e uma BMW R1200 GS 2022 para descobrir se é uma opção econômica decente.
-</p>
-
-<div style="background: var(--gray-light); padding: 20px; border-radius: 8px; border-left: 4px solid var(--red); margin-bottom: 30px;">
-  <span style="font-size: 1.2rem; font-weight: bold; color: var(--red); display: block; margin-bottom: 5px;">Data da revisão: Abril de 2025</span>
-  <p style="margin: 0;">Testado por: Rodrigo Barros | <a href="https://amzn.to/4rNuC90" target="_blank" rel="sponsored nofollow noopener noreferrer">www.amazon.com.br</a></p>
-</div>
 
 <div class="product-section">
   <div class="h2-image-card product-image">
-    <img src="/images/capacete-hjc-c10-tins-vermelho-cinza-preto-59-vermelho-fosco-5859.webp" alt="Capacete HJC C10 Tins" width="600" height="400" loading="lazy" decoding="async" />
+    <img src="/images/capacete-hjc-i90-may-preto-e-verde-63.webp" alt="Capacete HJC i90 May" width="600" height="400" loading="lazy" decoding="async" />
   </div>
   <div class="pros-cons-grid">
     <div class="pc-col">
       <h4 class="pros">PRÓS</h4>
       <ul class="pc-list pros">
-        <li>Certificação ECE 22.06</li>
-        <li>Preço acessível (abaixo de R$ 2.500)</li>
-        <li>Garantia de 3 anos</li>
-        <li>Acabamento perfeito</li>
-        <li>4 tamanhos diferentes de casco</li>
-        <li>Adesivo ACU Gold para corridas</li>
+        <li>Viseira solar interna</li>
+        <li>Viseira preparada para Pinlock</li>
+        <li>Interior removível, com canais para óculos</li>
+        <li>Compatível com o sistema SMART HJC</li>
       </ul>
     </div>
     <div class="pc-col">
       <h4 class="cons">CONTRAS</h4>
       <ul class="pc-list cons">
-        <li>Peso elevado (1.548g)</li>
-        <li>Forro não totalmente removível</li>
-        <li>Apenas fecho micrométrico</li>
-        <li>Ligeira distorção na viseira</li>
+        <li>Certificação informada é a ECE 22.05, e não a 22.06, mais recente</li>
+        <li>A página oficial não informa o peso</li>
+        <li>Sistema SMART HJC é vendido separadamente</li>
       </ul>
     </div>
   </div>
-  <p><strong>Ideal para:</strong> motociclistas que buscam a mais alta certificação de segurança (ECE 22.06) com excelente custo-benefício.</p>
+  <p><strong>Ideal para:</strong> quem procura um escamoteável com viseira solar e preparo para intercomunicador.</p>
   <div class="btn-buy-container">
     <a href="https://amzn.to/4rNuC90" class="btn-buy" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver na Amazon</a>
     <a href="https://mercadolivre.com/sec/24aPjSu" class="btn-buy ml" target="_blank" rel="sponsored nofollow noopener noreferrer">Mercado Livre</a>
   </div>
 </div>
 
-<h2 id="casco-externa">Casco externa</h2>
-
+<h2 id="certificacao">Certificação</h2>
 <p>
-  Disponível nos tamanhos 56 a 62, HJC Hollen tem um casco de 'composto de policarbonato avançado' com um acabamento perfeito. Começando em R$ 1.447, para cores lisas, o Cs 15 em teste aqui é vendido por R$ 899, junto com várias outras opções gráficas.
+  A página da HJC nos EUA informa que o i90 atende às normas <strong>DOT FMVSS 218</strong> e <strong>ECE 22.05</strong> nos tamanhos XS a 2XL. Do 3XL ao 5XL, a certificação informada é apenas DOT.
+</p>
+<p>
+  A ECE 22.05 é a geração anterior da norma europeia. Se a ECE 22.06 for prioridade para você, procure um modelo que informe essa certificação. No Brasil, confira sempre o selo do Inmetro na unidade comprada.
 </p>
 
+<h2 id="casco-externa">Casco e tamanhos</h2>
 <p>
-  O C10 tem um adesivo ACU Gold, o que significa que pode ser usado sem questionamentos em dias de pista e em corridas.
+  A HJC descreve o casco como de <strong>policarbonato avançado</strong>, projetado por computador para ser leve e compacto. A fabricante não publica o peso nessa página. Antes de comprar, confira o tamanho na tabela abaixo e, se puder, experimente em uma loja.
 </p>
-
-<p>
-  A ampla faixa de tamanhos se deve ao fato de o I90 substituir não apenas o CS-15 certificado pela ECE 22.05, mas também o CL-Y, que foi projetado para pilotos/garupas mais jovens. Quatro tamanhos diferentes de casco são usados ​​nessa faixa de tamanhos, o que significa que o proprietário de um 3XS não terá o casco externo de um 2XL empoleirado em sua cabeça.
-</p>
-
-<p>
-  O I90 vem com garantia de três anos a partir da data de compra ou cinco anos a partir da data de fabricação, o que ocorrer primeiro.
-</p>
-
-<div class="product-section">
-  <div class="h2-image-card product-image">
-    <img src="/images/capacete-hjc-i90-may-preto-e-verde-63.webp" alt="Capacete HJC I90 May" width="600" height="400" loading="lazy" decoding="async" />
-  </div>
-  <div class="pros-cons-grid">
-    <div class="pc-col">
-      <h4 class="pros">PRÓS</h4>
-      <ul class="pc-list pros">
-        <li>Certificação ECE 22.06</li>
-        <li>Preço acessível (abaixo de R$ 2.500)</li>
-        <li>Garantia de 3 anos</li>
-        <li>Boa ventilação</li>
-        <li>Adesivo ACU Gold para uso em pista</li>
-        <li>Viseira 10mm maior que CS-15</li>
-        <li>Compatível com intercomunicadores</li>
-      </ul>
-    </div>
-    <div class="pc-col">
-      <h4 class="cons">CONTRAS</h4>
-      <ul class="pc-list cons">
-        <li>Forro não totalmente removível</li>
-        <li>Peso um pouco elevado (1.548g)</li>
-        <li>Distorção na borda inferior da viseira</li>
-        <li>Não é ideal para alta velocidade</li>
-        <li>Apenas fecho micrométrico</li>
-      </ul>
-    </div>
-  </div>
-  <p><strong>Ideal para:</strong> motociclistas que buscam segurança certificada ECE 22.06 com ótimo custo-benefício para uso no dia a dia.</p>
-  <div class="btn-buy-container">
-    <a href="https://amzn.to/4rNuC90" class="btn-buy" target="_blank" rel="sponsored nofollow noopener noreferrer">Ver na Amazon</a>
-    <a href="https://mercadolivre.com/sec/24aPjSu" class="btn-buy ml" target="_blank" rel="sponsored nofollow noopener noreferrer">Mercado Livre</a>
-  </div>
+<div class="h2-image-card">
+  <img src="/images/tabela-de-tamanhos-do-capacete-escamoteavel-motociclista-hjc-i90.webp" alt="Tabela de tamanhos do capacete HJC i90" width="600" height="400" loading="lazy" decoding="async" />
 </div>
-
-<h2 id="peso">Peso</h2>
-
-<p>
-  Afirmando pesar 1.500g, este médio inclina minha balança para 1.548g. Na minha experiência até agora, os capacetes ECE 22.06 tendem a ser um pouco mais pesados ​​do que muitas tampas ECE 22.05; este é 123g mais pesado do que o HJC CS-15 que analisei alguns anos atrás e apenas 40g mais leve do que o Arai QUantc com casco de fibra composta.
-</p>
-
-<p>
-  Mas o peso realmente não foi um problema em nenhum capacete de motocicleta que testei. Segure um mais pesado e um mais leve em cada mão e você sentirá a diferença, mas ao pilotar é a aerodinâmica que faz você perceber uma tampa. Em uso, não tive problemas com o peso – ou formato – do HJC C10.
-</p>
 
 <h2 id="ventilacao">Ventilação</h2>
-
 <p>
-  Com uma ampla e fácil de operar abertura de ventilação no queixo que sobe para a parte de trás da viseira e sobe até a testa, e duas aberturas fechadas/semiabertas/totalmente abertas na parte superior, a ventilação no HJC C10 é boa, com o ar fluindo bem para o escapamento de porta dupla sempre aberto na parte traseira.
+  O i90 usa o sistema que a HJC chama de <strong>Advanced Channeling Ventilation</strong>, com canais internos para a circulação do ar. Essa é a descrição da fabricante, e o desempenho não foi medido por nós.
 </p>
 
+<h2 id="viseira">Viseiras</h2>
 <p>
-  Embora eu não tenha mais um CS-15 para comparar diretamente, com base na minha análise, o I90 tem ventilação melhorada.O excelente mecanismo de viseira do HJC também auxilia na ventilação, abrindo cerca de um centímetro para maior fluxo de ar.
+  A viseira principal é a <strong>HJ-33</strong>, com proteção de 99% contra raios UV-A e UV-B, segundo a HJC, e preparada para película Pinlock. A viseira solar interna <strong>HJ-V9</strong> é acionada por uma alavanca.
 </p>
 
-<h2 id="viseira">Viseira</h2>
-
+<h2 id="forro">Interior</h2>
 <p>
-  A I90 tem uma abertura 10 mm maior que a CS-15, o que representa um aumento de 5% na visão periférica em ambos os lados.
+  O interior é removível, com tecido antibacteriano que absorve a umidade e canais para quem usa óculos.
 </p>
 
+<h2 id="intercomunicador">Posso instalar intercomunicador no HJC i90?</h2>
 <p>
-  Eu certamente não tive problemas com pilotagem normal e verificações de ombro, além da escultura pesada da viseira na parte inferior, levando à distorção que causou flashes muito pequenos, mas ocasionalmente perceptíveis, de áreas escuras ao longo da borda inferior.
-</p>
-
-<p>
-  Isso só acontece com a viseira aberta, e logo me acostumei. Mas, às vezes, dava a sensação de que algo estava se movendo no canto do meu olho. Não é, de forma alguma, um motivo para deixar de comprar esse capacete — só comento porque é algo que nunca tinha notado antes.
-</p>
-
-<h2 id="forro">Forro</h2>
-
-<p>
-  O HJC C10 vem com uma saia de queixo e almofadas de bochecha removíveis, mas o restante do forro é fixo. Embora seja mais prático limpar um capacete com forro totalmente removível, ainda é possível lavar esse modelo com água do chuveiro e deixar secar naturalmente, se for preciso. O forro não tem nenhum destaque especial, mas é macio e confortável, o que já é suficiente para não ter que reclamar.
-</p>
-
-<h2 id="fixacao">Fixação</h2>
-
-<p>
-  O C10 vem com um fecho micrométrico tipo catraca, que garante um ajuste firme e é fácil de usar. Ele também permite pequenos ajustes para que fique bem apertado. Embora não seja o preferido dos pilotos de corrida, esse sistema é muito prático e funciona bem — até mesmo com luvas.
-</p>
-
-<div class="h2-image-card">
-  <img src="/images/fecho-do-hj-hollen.webp" alt="Fecho do Capacete HJC Hollen" width="300" height="199" loading="lazy" decoding="async" />
-</div>
-
-<h2 id="ajustar">Ajustar</h2>
-
-<div class="h2-image-card">
-  <img src="/images/tabela-de-tamanhos-do-capacete-escamoteavel-motociclista-hjc-i90.webp" alt="Tabela de tamanhos do Capacete HJC I90" width="600" height="400" loading="lazy" decoding="async" />
-</div>
-
-<p>
-  O ajuste de capacete é algo bem pessoal. Se você está começando agora, é uma boa ideia ir até uma loja e contar com a ajuda de alguém para encontrar o tamanho certo — muitos motociclistas acabam usando capacetes maiores do que deveriam.
-</p>
-
-<p>
-  No meu caso, o tamanho médio habitual ficou ótimo no HJC. Não senti nenhum ponto de pressão e ele é confortável no geral. Parece até que tem um pouco mais de acolchoamento do que outros modelos, o que pode se adaptar com o tempo. Lembrando que este não é um capacete de corrida para uso em alta velocidade, mas é excelente para uso no dia a dia.
-</p>
-
-<h2 id="intercomunicador">Posso instalar meu próprio intercomunicador no HJC I90?</h2>
-
-<p>
-  Sim! O HJC I90 possui espaços internos no revestimento de EPS (poliestireno expandido) para acomodar alto-falantes, além de um vão entre o EPS e a calota externa ideal para encaixar sistemas de comunicação. Isso significa que a maioria dos intercomunicadores Bluetooth ou mesh pode ser instalada sem dificuldades.
-</p>
-
-<h2 id="alternativas">Três alternativas ao HJC I90</h2>
-
-<p>
-  Nessa faixa de preço, é difícil encontrar concorrentes diretos, já que o HJC I90 é um dos primeiros capacetes acessíveis com certificação ECE 22.06 que testamos. Ainda assim, ao pesquisar no site <a href="https://jovemapan.com.br/">www.jovemapan.com.br</a> e filtrar por capacetes com essa certificação, encontramos algumas outras boas opções para considerar.
+  Sim. A HJC informa compatibilidade com o <strong>SMART HJC</strong>, sistema Bluetooth desenvolvido com a Sena e vendido separadamente. Antes de comprar outra marca, confirme se ela encaixa no modelo.
 </p>
 
 <h2 id="conclusao">Conclusão</h2>
-
 <p>
-  Estou realmente impressionado com o HJC I90: ele oferece conforto, bom preço e a segurança da certificação ECE 22.06. Sim, há uma diferença perceptível entre ele e capacetes de alto padrão, mas será que essa diferença justifica um preço quatro ou cinco vezes maior? Tenho minhas dúvidas. Não deixe de conferir nossa análise dos melhores modelos da marca HJC clicando <a href="https://jovemapan.com.br/melhor-capacete-hjc-helmets/">aqui</a>.
+  Pelas especificações, o <strong>HJC i90</strong> reúne viseira solar, preparo para Pinlock, interior removível e compatibilidade com intercomunicador. O principal ponto de atenção é a certificação ECE 22.05 informada pela fabricante.
 </p>
-
 <p>
-  Você realmente recebe o que paga, mas para quem busca um bom custo-benefício, o HJC I90 é, sem dúvida, uma escolha inteligente.
+  Veja também os <a href="/melhor-capacete/articulados/">melhores capacetes escamoteáveis</a> e os <a href="/melhor-capacete-hjc-helmets/">melhores modelos da HJC</a>.
 </p>
 
 </PostLayout>

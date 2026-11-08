@@ -36,7 +36,7 @@ const marcasVendidas = [
       'Segurança Avançada - Certificação ECE R22-06, Sistema de Contorno Facial (FCS) e Sistema de Abertura de Emergência (ERS)'
     ],
     contras: [
-      'Preço Elevado - A partir de €789 para versões decoradas',
+      'Preço Elevado - Custo alto, principalmente nas versões decoradas',
       'Peso Relativamente Alto - Pode causar desconforto em longos períodos',
       'Design Tradicional - Pode ser considerado conservador por alguns motociclistas'
     ]
@@ -76,10 +76,7 @@ const marcasVendidas = [
 const categoriasCapacetes = [
   { nome: 'Capacetes para Motos', href: '/melhor-capacete/', imagem: '/images/capacete-moto-shark-preto.webp' },
   { nome: 'Capacetes para Bicicleta', href: '/melhor-capacete-para-bike/', imagem: '/images/capacete-para-bicicletas-bike.webp' },
-  { nome: 'Capacetes para Skates', href: '/melhor-capacete-para-skate/', imagem: '/images/capacete-de-skate.webp' },
-  { nome: 'Capacete para Futebol', href: 'https://amzn.to/4w3CRQv', imagem: '/images/capacete-de-futebol-esportivo.webp', external: true },
-  { nome: 'Capacete para Ski', href: 'https://amzn.to/4mZwjhA', imagem: '/images/capacete-de-esqui-ledge-mips-1.webp', external: true },
-  { nome: 'Capacete para Boxe', href: 'https://amzn.to/42CelIG', imagem: '/images/capacete-chapeu-de-boxe-com-bochechas.webp', external: true }
+  { nome: 'Capacetes para Skates', href: '/melhor-capacete-para-skate/', imagem: '/images/capacete-de-skate.webp' }
 ];
 
 const postsMaisVistos = [
@@ -265,9 +262,7 @@ const postsMaisVistos = [
           {categoriasCapacetes.map(cat => (
             <a 
               href={cat.href} 
-              class="categoria-card" 
-              target={cat.external ? "_blank" : undefined}
-              rel={cat.external ? "sponsored nofollow noopener noreferrer" : undefined}
+              class="categoria-card"
             >
               <h3>{cat.nome}</h3>
               <div class="categoria-icon">
@@ -387,7 +382,7 @@ const postsMaisVistos = [
               revisarmos.
             </p>
             <p>
-              Nossas análises são feitas com base em testes práticos e pesquisas completas, 
+              Nossas análises são feitas com base em pesquisa e em dados dos fabricantes, 
               garantindo que você receba informações precisas e atualizadas. Avaliamos diversos 
               aspectos dos capacetes, incluindo materiais utilizados, sistemas de ventilação, 
               peso, ajuste e facilidade de limpeza.
