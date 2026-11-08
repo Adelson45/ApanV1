@@ -205,6 +205,12 @@ const authorLink = authorBio?.profileHref ?? authorProfile?.href ?? (authorHref 
 // O card principal continua; a lateral mostra no maximo mais um produto.
 const visibleExtras = (extraProducts ?? []).slice(0, 1);
 
+// O aviso de afiliado so aparece em paginas que realmente tem links de compra.
+const slotHtml = await Astro.slots.render('default');
+const hasAffiliateLinks = !!featuredProduct
+  || visibleExtras.length > 0
+  || /amzn\.to|link\.amazon|amazon\.com\.br|mercadolivre\.com|meli\.la/.test(slotHtml);
+
 const bioImage = authorBio
   ? authorBio.image ?? authorImage ?? `https://ui-avatars.com/api/?name=${encodeURIComponent(authorBio.name ?? author)}&background=random`
   : undefined;
@@ -446,6 +452,10 @@ const postSchemaGraph = [
             </div>
           )}
 
+          {hasAffiliateLinks && (
+            <p class="affiliate-notice">Este conteúdo tem links de afiliado. Se você comprar por eles, o Jovem Apan pode receber uma comissão, sem custo extra para você.</p>
+          )}
+
           {hasIndice && (
             <div class="post-indice" id="indice-accordion">
               <div class="indice-header" onclick="toggleIndice()">
@@ -493,7 +503,7 @@ const postSchemaGraph = [
           )}
 
           <div class="post-content-body">
-            <slot />
+            <Fragment set:html={slotHtml} />
           </div>
 
           {fichaTecnica && fichaTecnica.length > 0 && (
@@ -942,6 +952,7 @@ const postSchemaGraph = [
   .como-testamos dt { color: var(--text-meta); font-size: 0.8rem; }
   .como-testamos dd { margin: 2px 0 0; font-weight: 700; }
   .como-testamos p { margin: 14px 0 0; }
+  .affiliate-notice { color: var(--text-meta); font-size: 0.85rem; line-height: 1.5; margin: 16px 0; }
   .ficha-tecnica { margin: 32px 0; }
   .ficha-tecnica h2 { font-size: 1.25rem; margin: 0 0 12px; }
   .ficha-tabela { overflow-x: auto; border: 1px solid var(--border); border-radius: 4px; }

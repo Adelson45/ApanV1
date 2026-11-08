@@ -4,6 +4,16 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/review-do-bell-qualifier-forced",
+      "destination": "/bell-vale-a-pena/",
+      "statusCode": 301
+    },
+    {
+      "source": "/review-do-bell-qualifier-forced/",
+      "destination": "/bell-vale-a-pena/",
+      "statusCode": 301
+    },
+    {
       "source": "/capacetes-com-selo-inmetro",
       "destination": "/melhor-capacete/aprovados-pelo-inmetro/",
       "statusCode": 301
