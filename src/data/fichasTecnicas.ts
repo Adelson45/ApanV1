@@ -95,6 +95,12 @@ export const fichasTecnicas = {
     certificacao: 'DOT FMVSS 218',
     fonte: { ...hjc, href: 'https://hjchelmets.us/pages/c10' },
   },
+  'taurus-th7': {
+    modelo: 'Taurus TH7',
+    peso: '1,1 kg (média)',
+    certificacao: 'NBR 7471 (Inmetro)',
+    fonte: { label: 'Taurus', href: 'https://www.taurushelmets.com/products/capacete-th7-branco-brilho' },
+  },
   'shoei-j-cruise-3': {
     modelo: 'Shoei J-Cruise 3 (versão Europa)',
     peso: '1.400 g',

@@ -1,0 +1,80 @@
+---
+import PostLayout from '../layouts/PostLayout.astro';
+
+const title = 'Câmera para Capacete de Moto: Como Escolher e o que Diz a Lei';
+const description = 'Veja como escolher câmera para capacete de moto, o que observar em peso, estabilização e fixação, exemplos da GoPro e os cuidados com a legislação.';
+const canonical = 'https://jovemapan.com.br/camera-para-capacete/';
+
+const indice = [
+  { label: 'O que observar na câmera', href: '#observar' },
+  { label: 'Exemplos da GoPro', href: '#exemplos' },
+  { label: 'Como fixar com segurança', href: '#fixar' },
+  { label: 'Câmera no capacete dá multa?', href: '#legislacao' },
+  { label: 'Perguntas frequentes', href: '#faq' },
+];
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author="Equipe Jovem Apan"
+  publishDate="2026-11-08"
+  category="Dicas"
+  categoryHref="/category/dicas/"
+  indice={indice}
+  tags={['CAPACETE', 'LEGISLACAO', 'SEGURANCA']}
+  hideAuthor={true}
+>
+  <p class="post-lead">
+    Uma câmera no capacete registra viagens e pode ajudar a documentar o trajeto, mas acrescenta peso em cima da cabeça e exige cuidado na instalação. Este guia reúne dados dos fabricantes e informações publicadas sobre a legislação, sem teste próprio de rodagem.
+  </p>
+
+  <h2 id="observar">O que observar na câmera</h2>
+  <ul>
+    <li><strong>Peso e tamanho:</strong> quanto mais leve e compacta, menor o esforço no pescoço e o arrasto com o vento.</li>
+    <li><strong>Estabilização:</strong> reduz a trepidação, que é grande em uma moto.</li>
+    <li><strong>Resolução:</strong> 4K já atende a maioria dos usos. Resoluções maiores geram arquivos mais pesados.</li>
+    <li><strong>Resistência à água:</strong> importante para quem pega chuva.</li>
+    <li><strong>Bateria e cartão:</strong> veja a autonomia em gravação e a capacidade do cartão de memória.</li>
+    <li><strong>Áudio:</strong> o vento atrapalha bastante. Teste o som antes de uma viagem longa.</li>
+  </ul>
+
+  <h2 id="exemplos">Exemplos da GoPro</h2>
+  <p>Os dados abaixo foram publicados pela <a href="https://investor.gopro.com/press-releases/press-release-details/2024/GoPro-Announces-Two-New-Cameras-The-399-HERO13-Black-and-the-199-HERO/default.aspx" target="_blank" rel="noopener noreferrer">GoPro no lançamento dos modelos</a>. Não são medições nossas.</p>
+  <ul>
+    <li><strong>GoPro HERO:</strong> pesa 86 g, grava em 4K e é resistente à água até 5 m. A estabilização é aplicada pelo aplicativo Quik.</li>
+    <li><strong>GoPro HERO13 Black:</strong> grava em até 5.3K a 60 quadros por segundo e tem estabilização HyperSmooth na própria câmera.</li>
+  </ul>
+  <p>Pela diferença de peso e recursos, a HERO favorece quem quer leveza, enquanto a HERO13 Black é voltada a quem precisa de mais qualidade de imagem.</p>
+
+  <h2 id="fixar">Como fixar com segurança</h2>
+  <ul>
+    <li>Use suportes feitos para capacete e siga o manual do fabricante da câmera e do capacete.</li>
+    <li>Não fure, corte nem altere o casco, porque isso pode comprometer a proteção.</li>
+    <li>Mantenha a câmera fora do campo de visão e sem atrapalhar a abertura da viseira.</li>
+    <li>Confira se ela está firme antes de sair. Uma peça solta é um risco para você e para os outros.</li>
+    <li>Não mexa na câmera com a moto em movimento.</li>
+  </ul>
+
+  <h2 id="legislacao">Câmera no capacete dá multa?</h2>
+  <p>
+    Não encontramos uma regra específica do Contran sobre câmera no capacete, e a fiscalização pode depender da interpretação do agente. Segundo <a href="https://autopapo.com.br/motos/camera-no-capacete-pode-gerar-multa/" target="_blank" rel="noopener noreferrer">reportagem do AutoPapo de outubro de 2025</a>, um policial rodoviário afirmou que uma câmera preparada para esse uso não causaria problemas.
+  </p>
+  <p>
+    O caso do <strong>celular preso ao capacete</strong> é diferente. A mesma reportagem cita autuação pelo art. 252, VI do CTB, infração média com multa de R$ 130,16 e cinco pontos. Por isso, evite usar o celular como câmera de capacete. Veja também <a href="/intercomunicador-e-permitido/">as regras sobre intercomunicador</a>.
+  </p>
+
+  <h2 id="faq">Perguntas frequentes</h2>
+
+  <h3>Onde colocar a câmera no capacete?</h3>
+  <p>A posição depende do suporte e do capacete. O importante é não bloquear a visão, a viseira ou as saídas de ar, e seguir o manual da câmera.</p>
+
+  <h3>A câmera pesa muito no capacete?</h3>
+  <p>Depende do modelo. Mesmo poucas dezenas de gramas fazem diferença em viagens longas, principalmente se a câmera ficar alta. Por isso, prefira um modelo compacto e uma posição baixa.</p>
+
+  <h3>Posso usar o celular como câmera no capacete?</h3>
+  <p>Não recomendamos, porque há relatos de autuação e o aparelho pode atrapalhar a visão.</p>
+
+  <p><em>Este conteúdo é informativo e não substitui orientação jurídica. As regras e os valores das multas podem mudar.</em></p>
+</PostLayout>

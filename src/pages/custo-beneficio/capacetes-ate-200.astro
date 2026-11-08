@@ -1,0 +1,84 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import { fichas } from '../../data/fichasTecnicas';
+
+const title = 'Capacete até R$ 200: Existe Opção Segura? Veja o que Conferir';
+const description = 'Saiba o que esperar de um capacete até R$ 200, como conferir o selo do Inmetro, quais cuidados tomar com ofertas baratas e quando vale aumentar o orçamento.';
+const canonical = 'https://jovemapan.com.br/custo-beneficio/capacetes-ate-200/';
+const coverImage = '/images/capa-capacetes-mais-baratos.webp';
+
+const indice = [
+  { label: 'Dá para comprar um capacete seguro até R$ 200?', href: '#da-para' },
+  { label: 'Exemplo nessa faixa de preço', href: '#exemplo' },
+  { label: 'O que conferir antes de comprar', href: '#conferir' },
+  { label: 'O que evitar', href: '#evitar' },
+  { label: 'Quando vale gastar mais', href: '#gastar-mais' },
+  { label: 'Perguntas frequentes', href: '#faq' },
+];
+---
+
+<PostLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  author="Equipe Jovem Apan"
+  publishDate="2026-11-08"
+  category="Custo-Benefício"
+  categoryHref="/custo-beneficio/"
+  coverImage={coverImage}
+  coverImageAlt="Capacetes de moto de baixo custo"
+  indice={indice}
+  tags={['CUSTO-BENEFICIO', 'BARATO', 'INMETRO']}
+  hideAuthor={true}
+  fichaTecnica={fichas('taurus-th7')}
+>
+  <p class="post-lead">
+    Com R$ 200, a escolha fica bem limitada. Ainda assim, o preço baixo não dispensa o principal: o capacete precisa ser certificado pelo Inmetro. Este guia reúne o que conferir antes de comprar, com base em dados de fabricantes e de órgãos de trânsito, sem teste próprio de rodagem.
+  </p>
+
+  <h2 id="da-para">Dá para comprar um capacete seguro até R$ 200?</h2>
+  <p>
+    Pode ser possível, mas são poucas as opções, e os preços mudam com frequência. Nessa faixa, espere o básico: casco simples, poucos recursos extras e menos conforto do que em modelos mais caros.
+  </p>
+  <p>
+    O que não pode faltar é a certificação. Um capacete novo deve ter o <strong>selo do Inmetro no casco</strong> e uma <strong>etiqueta interna de certificação</strong>, além dos adesivos retrorrefletivos, como explica o <a href="https://www.to.gov.br/secom/noticias/detran-esclarece-duvidas-sobre-o-uso-do-capacete-por-motociclista/1kg3yjbcxgrk" target="_blank" rel="noopener noreferrer">Detran do Tocantins</a>.
+  </p>
+
+  <h2 id="exemplo">Exemplo nessa faixa de preço</h2>
+  <p>
+    O <a href="https://www.taurushelmets.com/collections/th7" target="_blank" rel="noopener noreferrer">Taurus TH7</a> é um capacete fechado que aparece na loja oficial da marca a R$ 159,00 nas páginas mais recentes consultadas em novembro de 2026. Páginas mais antigas da própria loja mostram R$ 299,00, então confirme o valor atual antes de comprar. A Taurus informa certificação NBR 7471 e peso médio de 1,1 kg.
+  </p>
+
+  <h2 id="conferir">O que conferir antes de comprar</h2>
+  <ul>
+    <li><strong>Selo e etiqueta:</strong> veja se o anúncio mostra o selo do Inmetro. Ao receber, confira o selo no casco e a etiqueta interna.</li>
+    <li><strong>Tipo de capacete:</strong> para o mesmo orçamento, um modelo fechado protege o queixo e o rosto, o que um aberto não faz.</li>
+    <li><strong>Viseira:</strong> precisa cobrir os olhos com a moto em movimento. À noite, use sempre o padrão cristal.</li>
+    <li><strong>Tamanho:</strong> meça a cabeça e consulte a tabela do fabricante. Veja como fazer no <a href="/tamanho-do-capacete/">guia de tamanho de capacete</a>.</li>
+    <li><strong>Vendedor:</strong> prefira a loja oficial ou revendedores conhecidos, com nota fiscal e política de troca.</li>
+  </ul>
+
+  <h2 id="evitar">O que evitar</h2>
+  <ul>
+    <li><strong>Capacete usado:</strong> pode ter sofrido um impacto sem sinal visível, o que compromete a proteção.</li>
+    <li><strong>Anúncio sem marca, modelo ou selo:</strong> sem esses dados, não há como confirmar a certificação.</li>
+    <li><strong>Preço muito abaixo do normal:</strong> compare com a loja oficial da marca antes de pagar.</li>
+    <li><strong>Modelos que não protegem a nuca e as laterais:</strong> os chamados "coquinhos" não servem para pilotar nas vias públicas.</li>
+  </ul>
+
+  <h2 id="gastar-mais">Quando vale gastar mais</h2>
+  <p>
+    Se você usa a moto todos os dias, pega estrada ou trabalha com ela, vale esticar o orçamento. Recursos como forro removível, viseira de troca rápida e viseira solar interna costumam aparecer em faixas um pouco acima. Compare as opções de <a href="/custo-beneficio/ate-300-reais/">capacetes até R$ 300</a> e <a href="/custo-beneficio/ate-400-reais/">até R$ 400</a>.
+  </p>
+
+  <h2 id="faq">Perguntas frequentes</h2>
+
+  <h3>Capacete barato é inseguro?</h3>
+  <p>O preço sozinho não define a segurança. O que importa primeiro é a certificação do Inmetro e o tamanho correto. Modelos mais caros costumam acrescentar materiais melhores e mais conforto.</p>
+
+  <h3>Como saber se o capacete é aprovado pelo Inmetro?</h3>
+  <p>Confira o selo no casco e a etiqueta interna de certificação. Veja mais no nosso guia de <a href="/melhor-capacete/aprovados-pelo-inmetro/">capacetes aprovados pelo Inmetro</a>.</p>
+
+  <h3>Posso comprar capacete usado para economizar?</h3>
+  <p>Não recomendamos. Sem conhecer o histórico, não dá para saber se ele já sofreu uma queda ou está no fim da vida útil.</p>
+</PostLayout>

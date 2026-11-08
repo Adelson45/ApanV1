@@ -7,6 +7,8 @@ export interface Review {
 }
 
 export const allReviews: Review[] = [
+  { title: 'Capacete até R$ 200: o que conferir', href: '/custo-beneficio/capacetes-ate-200/', date: 'Novembro 8, 2026', image: '/images/capa-capacetes-mais-baratos.webp', excerpt: 'O que esperar nessa faixa de preço e como conferir o selo do Inmetro.' },
+  { title: 'Capacete com óculos interno é bom?', href: '/capacete-com-oculos/', date: 'Novembro 8, 2026', image: '/images/cpacete-com-oculos-interno-ls2-articulado.webp', excerpt: 'Vantagens, cuidados e regras sobre a viseira solar interna.' },
   { title: 'Intercomunicador Cardo Review', href: '/intercomunicador-cardo-review/', date: 'Janeiro 23, 2026', image: '/images/intercomunicador-cardo-spirit.webp', excerpt: 'Intercomunicador Cardo Spirit é bom? Se você está buscando uma resposta direta: sim, o Interfone Cardo Spirit é excelente. Ele ...' },
   { title: 'Comparativo Michelin vs Pirelli', href: '/comparativo-michelin-vs-pirelli/', date: 'Janeiro 16, 2026', image: '/images/comparacao-pneu-pirelli-versos-michelin.webp', excerpt: 'Análise e Comparação: Pneu de Moto Michelin vs Pirelli Escolher o pneu certo para sua moto não é apenas uma ...' },
   { title: 'Michelin Pilot Street Review', href: '/michelin-pilot-street-review/', date: 'Janeiro 16, 2026', image: '/images/pneu-michelin-pilot-street-2.webp', excerpt: 'Análise completa do pneu Michelin Pilot Street. Desempenho, durabilidade e aderência em diferentes condições ...' },
