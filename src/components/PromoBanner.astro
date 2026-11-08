@@ -1,0 +1,105 @@
+---
+interface Props {
+  href: string;
+  end: string;
+}
+
+const { href, end } = Astro.props;
+const endTime = new Date(end).getTime();
+---
+
+<aside class="promo-banner" aria-label="Publicidade: promoção Black dos Sonhos" data-pagefind-ignore>
+  <span class="promo-label">Publicidade</span>
+  <div class="promo-brand">
+    <img src="/images/black-dos-sonhos-amazon.webp" alt="Black dos Sonhos Amazon" width="191" height="158" loading="lazy" decoding="async" />
+  </div>
+  <div class="promo-offer">
+    <p class="promo-title">Concorra a um prêmio de</p>
+    <p class="promo-value"><span>R$</span>1.000.000</p>
+    <p class="promo-note">Entregue em certificados de barra de ouro</p>
+    <p class="promo-title promo-title-sm">e a prêmios semanais</p>
+    <a class="promo-cta" href={href} target="_blank" rel="sponsored nofollow noopener noreferrer">Cadastre e concorra</a>
+    <p class="promo-rules">Promoção da Amazon, sujeita a regulamento.</p>
+  </div>
+</aside>
+<script is:inline define:vars={{ endTime }}>
+  if (Date.now() >= endTime) document.currentScript.previousElementSibling.remove();
+</script>
+
+<style>
+  .promo-banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0 28px;
+    padding: 28px 24px 24px;
+    overflow: hidden;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 34% 26% at 10% 100%, rgba(208, 226, 240, 0.5), transparent 72%),
+      radial-gradient(ellipse 30% 20% at 26% 0, rgba(208, 226, 240, 0.34), transparent 72%),
+      radial-gradient(ellipse 24% 22% at 100% 100%, rgba(208, 226, 240, 0.34), transparent 72%),
+      #161d27;
+  }
+
+  .promo-label {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: #c6ced9;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .promo-brand { display: flex; justify-content: center; }
+  .promo-brand img { display: block; width: 100%; max-width: 191px; height: auto; mix-blend-mode: lighten; }
+
+  .promo-offer p { margin: 0; }
+  .promo-title { font-size: clamp(1.15rem, 2.8vw, 1.65rem); font-weight: 800; line-height: 1.15; }
+  .promo-title-sm { font-size: clamp(1.05rem, 2.4vw, 1.4rem); }
+
+  .promo-value {
+    margin: 4px 0 !important;
+    color: #f4c95d;
+    background: linear-gradient(180deg, #fff1b8 8%, #f1c04f 46%, #a9701c 88%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(2.6rem, 8.2vw, 4.4rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .promo-value span { margin-right: 4px; font-size: 0.42em; vertical-align: 0.7em; }
+
+  .promo-note { margin-bottom: 8px !important; color: #e6ebf2; font-size: 0.78rem; }
+
+  .promo-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin-top: 12px;
+    padding: 0 26px;
+    border-radius: 999px;
+    background: #ff7a12;
+    color: #fff !important;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+  .promo-cta:hover { background: #e96800; }
+  .promo-cta:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+  .promo-rules { margin-top: 8px !important; color: #c6ced9; font-size: 0.7rem; }
+
+  @media (max-width: 620px) {
+    .promo-banner { grid-template-columns: 1fr; padding: 30px 16px 20px; }
+    .promo-brand img { max-width: 150px; }
+  }
+</style>
