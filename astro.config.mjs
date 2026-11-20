@@ -51,6 +51,7 @@ export default defineConfig({
         !page.includes('/admin') &&
         !page.includes('/api') &&
         !page.includes('/404') &&
+        !page.includes('/busca') &&
         !page.includes('_exemplo')
     })
   ],

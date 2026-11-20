@@ -118,7 +118,7 @@ const {
   hideComments = false,
 } = Astro.props;
 
-const pageUrl = canonical ?? `https://jovemapan.com.br${Astro.url.pathname}`;
+const pageUrl = canonical?.startsWith('https://jovemapan.com.br/') ? canonical : `https://jovemapan.com.br${Astro.url.pathname}`;
 
 const defaultPopular: PopularItem[] = [
   { label: 'Melhores Capacetes de Moto 2026', href: '/melhor-capacete/' },

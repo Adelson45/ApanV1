@@ -497,6 +497,61 @@
       "source": "/tag/:slug/",
       "destination": "/",
       "statusCode": 301
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/:n",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/:n/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:cat/page/:n",
+      "destination": "/category/:cat/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:cat/page/:n/",
+      "destination": "/category/:cat/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*/amp",
+      "destination": "/:path*/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*/amp/",
+      "destination": "/:path*/",
+      "statusCode": 301
     }
   ],
   "rewrites": [

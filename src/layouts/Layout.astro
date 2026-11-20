@@ -17,7 +17,8 @@ const {
   schemaGraph
 } = Astro.props;
 
-const canonicalUrl = canonical || (Astro.url.pathname === '/' 
+// So aceita canonical do proprio dominio; qualquer outro (ex.: localhost) cai no endereco da pagina.
+const canonicalUrl = (canonical?.startsWith('https://jovemapan.com.br/') ? canonical : undefined) || (Astro.url.pathname === '/' 
   ? 'https://jovemapan.com.br/' 
   : `https://jovemapan.com.br${Astro.url.pathname}`);
 
